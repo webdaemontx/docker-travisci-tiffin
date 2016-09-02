@@ -1,0 +1,105 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function tiffin_config_install() {
+
+  // Add the DS region blocks variables.
+  //tiffin_config_set_ds_region_blocks();
+}
+/**
+ * Implements hook_uninstall().
+ */
+function tiffin_config_uninstall() {
+
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function tiffin_config_update_7301($sandbox) {
+    module_enable(array("admin_menu"));
+    module_enable(array("admin_menu_toolbar"));
+
+  if(module_exists("toolbar")) {
+    module_disable(array("toolbar"));
+  }
+}
+
+/**
+ * Enable the Workbench modules for moderation and access for editors
+ * workbench, workbench_access, workbench_media, and workbench_moderation.
+ */
+function tiffin_config_update_7302($sandbox) {
+  module_enable(array("workbench"));
+  module_enable(array("workbench_access"));
+  module_enable(array("workbench_media"));
+  module_enable(array("workbench_moderation"));
+
+}
+
+/** Enable the paragraphs and paragraphs_bundle_permissions modules */
+function tiffin_config_update_7303($sandbox) {
+  module_enable(array("paragraphs"));
+  module_enable(array("paragraphs_bundle_permissions"));
+}
+
+/** Enable DHTML menu module */
+function tiffin_config_update_7304($sandbox) {
+  module_enable(array("dhtml_menu"));
+}
+
+/** Enable module_missing_message_fixer module  */
+function tiffin_config_update_7305($sandbox) {
+  module_enable(array("module_missing_message_fixer"));
+}
+
+/** Enable Panels/Panelizer and Display Suite modules */
+function tiffin_config_update_7306($sandbox) {
+  $modules = array("panelizer", "skinr_panels", "panels", "fieldable_panels_panes", "custom_breadcrumb_panels", "panels_mini", "panels_node", "ds", "ds_extras", "ds_format", "ds_forms", "ds_ui");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
+/** Enable Void menu, Parallax background, Scroll Reveal modules */
+function tiffin_config_update_7307($sandbox) {
+  $modules = array("void_menu", "parallax_bg", "scrollreveal");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
+/**
+ *
+ * Set the DS region block values.
+ */
+
+/*
+function tiffin_config_set_ds_region_blocks() {
+
+  // Add the DS region blocks variables.
+  $settings = variable_get('ds_extras_region_blocks', array());
+
+  if (!isset($settings['s_news_image'])) {
+    $settings['s_news_image'] = array(
+      'title' => t('News Image'),
+      'info' => 'node_tiffin_config_item_full',
+    );
+  }
+  else {
+    watchdog('tiffin_config', '%msg', array('%msg' => 'DS extras News Image already in use'), WATCHDOG_NOTICE);
+  }
+  variable_set('ds_extras_region_blocks', $settings );
+}
+*/
