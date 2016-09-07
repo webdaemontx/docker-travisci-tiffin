@@ -61,12 +61,22 @@ function tiffin_content_install() {
   );
 
   menu_link_save($item);
-
-
 }
 /**
  * Implements hook_uninstall().
  */
 function tiffin_content_uninstall() {
 
+}
+
+function tiffin_content_update_7301($sandbox) {
+  db_update('block')
+    ->fields([
+      'region' => '-1',
+    ])
+    ->condition('theme', 'bootstrap_barrio')
+    ->condition('module', 'system')
+    ->condition('delta', 'navigation')
+    ->execute()
+  ;
 }
