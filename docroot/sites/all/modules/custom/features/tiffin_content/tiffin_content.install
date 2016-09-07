@@ -7,57 +7,61 @@
  * Implements hook_install().
  */
 function tiffin_content_install() {
-  // Need to pass the array by reference, so create it as a local variable
-  // first to avoid triggering strict warnings.
   $item = array(
-    'link_path' => 'admissions',
+    'link_path' => '<front>',
     'link_title' => 'Admissions',
     'menu_name' => 'main-menu',
     'weight' => 2,
     'expanded' => 0,
+    'plid' => 0,
   );
 
-  $item_id = menu_link_save($item);
+  menu_link_save($item);
 
   $item = array(
-    'link_path' => 'academics',
+    'link_path' => '<front>',
     'link_title' => 'Academics',
     'menu_name' => 'main-menu',
     'weight' => 4,
     'expanded' => 0,
+    'plid' => 0,
   );
 
-  $item_id = menu_link_save($item);
+  menu_link_save($item);
 
   $item = array(
-    'link_path' => 'about',
+    'link_path' => '<front>',
     'link_title' => 'About TU',
     'menu_name' => 'main-menu',
     'weight' => 6,
     'expanded' => 0,
+    'plid' => 0,
   );
 
-  $item_id = menu_link_save($item);
+  menu_link_save($item);
 
   $item = array(
-    'link_path' => 'life-at-tu',
+    'link_path' => '<front>',
     'link_title' => 'Life at TU',
     'menu_name' => 'main-menu',
     'weight' => 8,
     'expanded' => 0,
+    'plid' => 0,
   );
 
-  $item_id = menu_link_save($item);
+  menu_link_save($item);
 
   $item = array(
-    'link_path' => 'athletics',
+    'link_path' => '<front>',
     'link_title' => 'Athletics',
     'menu_name' => 'main-menu',
     'weight' => 10,
     'expanded' => 0,
+    'plid' => 0,
   );
 
-  $item_id = menu_link_save($item);
+  menu_link_save($item);
+
 
 }
 /**
