@@ -80,3 +80,17 @@ function tiffin_content_update_7301($sandbox) {
     ->execute()
   ;
 }
+
+function tiffin_content_update_7302($sandbox) {
+  $mytheme = 'bootstrap_barrio';
+  foreach (array('user' => 'login', 'system' => 'powered-by') as $module => $delta) {
+    $num_updated = db_update('block') // Table name no longer needs {}
+    ->fields(array(
+      'region' => '-1',
+    ))
+      ->condition('module', $module, '=')
+      ->condition('delta', $delta, '=')
+      ->condition('theme', $mytheme, '=')
+      ->execute();
+  }
+}
