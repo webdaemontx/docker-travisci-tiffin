@@ -1499,7 +1499,9 @@ function menu_tree_check_access(&$tree, $node_links = array()) {
     $nids = array_keys($node_links);
     $select = db_select('node', 'n');
     $select->addField('n', 'nid');
-    $select->condition('n.status', 1);
+    if (!user_access('bypass node access')) {
+      $select->condition('n.status', 1);
+    }
     $select->condition('n.nid', $nids, 'IN');
     $select->addTag('node_access');
     $nids = $select->execute()->fetchCol();
@@ -1519,6 +1521,11 @@ function _menu_tree_check_access(&$tree) {
   $new_tree = array();
   foreach ($tree as $key => $v) {
     $item = &$tree[$key]['link'];
+    // Do not load hidden menu items if not in active breadcrumb trail and
+    // user can't administer the menu.
+    if (!empty($item['hidden']) && empty($item['in_active_trail']) && !user_access('administer menu')) {
+      continue;
+    }
     _menu_link_translate($item);
     if ($item['access'] || ($item['in_active_trail'] && strpos($item['href'], '%') !== FALSE)) {
       if ($tree[$key]['below']) {

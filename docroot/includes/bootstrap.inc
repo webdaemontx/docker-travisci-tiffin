@@ -842,6 +842,9 @@ function drupal_get_filename($type, $name, $filename = NULL, $trigger_error = TR
   // exists as all additions have gone through a file_exists() check.
   // The location of files will not change during the request, so do not use
   // drupal_static().
+  if (empty($name)) {
+     return NULL;
+  }
   static $files = array();
 
   // Profiles are a special case: they have a fixed location and naming.
@@ -2788,6 +2791,23 @@ function _drupal_bootstrap_page_header() {
  */
 function drupal_get_bootstrap_phase() {
   return drupal_bootstrap(NULL, FALSE);
+}
+
+/**
+ * Returns whether a simpletest is running or peparing to run.
+ *
+ * @param $set
+ *   Set whether a test is running.
+ *
+ * @return
+ *   TRUE if test is running, false otherwise.
+ */
+function drupal_test_running($set = NULL) {
+  static $test_running = NULL;
+  if (isset($set)) {
+    $test_running = $set;
+  }
+  return isset($test_running) ? $test_running : (bool)drupal_valid_test_ua();
 }
 
 /**

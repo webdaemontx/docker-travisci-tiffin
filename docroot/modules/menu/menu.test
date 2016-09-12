@@ -759,3 +759,128 @@ class MenuNodeTestCase extends DrupalWebTestCase {
     return $this->assertTrue(isset($selects[0]) && !isset($options[0]), $message ? $message : t('Option @option for field @id does not exist.', array('@option' => $option, '@id' => $id)), t('Browser'));
   }
 }
+
+/**
+ * Class MenuNodeUnpublishedTestCase
+ * Test to assure Unpublished Nodes with menu links are editable.
+ *
+ * see https://drupal.org/node/460408 for more information.
+ */
+class MenuNodeUnpublishedTestCase extends DrupalWebTestCase {
+  protected $big_user;
+  protected $med_user;
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Unpublished node issue',
+      'description' => 'testing unpubished node issue.',
+      'group' => 'Menu'
+    );
+  }
+
+  /**
+   * Create users.
+   *
+   * @return bool|void
+   */
+  function setup() {
+    parent::setUp('menu');
+    $this->big_user = $this->drupalCreateUser(array(
+      'access administration pages',
+      'bypass node access',
+      'administer content types',
+      'administer menu',
+      'create page content',
+      'edit any page content',
+      'delete any page content',
+    ));
+    $this->med_user = $this->drupalCreateUser(array(
+      'access administration pages',
+      'administer content types',
+      'administer menu',
+    ));
+  }
+
+  /**
+   * Tests that menu items pointing to unpublished nodes are editable.
+   */
+  function testUnpublishedNodeMenuItem() {
+    $this->drupalLogin($this->big_user);
+
+    // Create an unpublished node.
+    $node = $this->drupalCreateNode(array(
+      'type' => 'article',
+      'title' => 'hey monkey',
+      'status' => NODE_NOT_PUBLISHED,
+    ));
+    $item = $this->addMenuLink(0, 'node/' . $node->nid);
+    // see that we can view the link in the manage area.
+    $this->drupalGet('admin/structure/menu/manage/navigation');
+    $this->assertText($item['link_title'], "Menu link to unpublished node is visible to users with 'bypass node access' permission");
+    $this->drupalLogout();
+
+    // Login with user without bypass node access and confirm item is not editable.
+    $this->drupalLogin($this->med_user);
+    $this->drupalGet('admin/structure/menu/manage/navigation'); // default menu is navigation.
+    $this->assertNoText($item['link_title'], "Menu link to unpublished node is only visible to users with 'bypass node access' permission");
+  }
+
+  /**
+   * Horribly stolen from the MenuTestCase. Not in the least bit DRY.
+   * @param int $plid
+   * @param string $link
+   * @param string $menu_name
+   * @param bool $expanded
+   *
+   * @return mixed
+   */
+  function addMenuLink($plid = 0, $link = '<front>', $menu_name = 'navigation', $expanded = TRUE) {
+    // View add menu link page.
+    $this->drupalGet("admin/structure/menu/manage/$menu_name/add");
+    $this->assertResponse(200);
+
+    $title = '!link_' . $this->randomName(16);
+    $edit = array(
+      'link_path' => $link,
+      'link_title' => $title,
+      'description' => '',
+      'enabled' => TRUE, // Use this to disable the menu and test.
+      'expanded' => $expanded, // Setting this to true should test whether it works when we do the std_user tests.
+      'parent' =>  $menu_name . ':' . $plid,
+      'weight' => '0',
+    );
+
+    // Add menu link.
+    $this->drupalPost(NULL, $edit, t('Save'));
+    $this->assertResponse(200);
+    // Unlike most other modules, there is no confirmation message displayed.
+    $this->assertText($title, 'Menu link was added');
+
+    $item = db_query('SELECT * FROM {menu_links} WHERE link_title = :title', array(':title' => $title))->fetchAssoc();
+    $this->assertTrue(t('Menu link was found in database.'));
+    $this->assertMenuLink($item['mlid'], array('menu_name' => $menu_name, 'link_path' => $link, 'has_children' => 0, 'plid' => $plid));
+
+    return $item;
+  }
+
+  /**
+   * Again.. Stolen from MenuTestCase...
+   * @param $mlid
+   * @param array $expected_item
+   */
+  function assertMenuLink($mlid, array $expected_item) {
+    // Retrieve menu link.
+    $item = db_query('SELECT * FROM {menu_links} WHERE mlid = :mlid', array(':mlid' => $mlid))->fetchAssoc();
+    $options = unserialize($item['options']);
+    if (!empty($options['query'])) {
+      $item['link_path'] .= '?' . drupal_http_build_query($options['query']);
+    }
+    if (!empty($options['fragment'])) {
+      $item['link_path'] .= '#' . $options['fragment'];
+    }
+    foreach ($expected_item as $key => $value) {
+      $this->assertEqual($item[$key], $value, format_string('Parameter %key had expected value.', array('%key' => $key)));
+    }
+  }
+
+}

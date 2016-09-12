@@ -1,0 +1,12 @@
+name = Webform UUID
+description = Enables basic UUID/Deploy support for webforms, components and validation rules.
+core = 7.x
+package = Webform
+dependencies[] = webform
+dependencies[] = uuid
+; Information added by Drupal.org packaging script on 2014-11-14
+version = "7.x-1.0"
+core = "7.x"
+project = "webform_uuid"
+datestamp = "1416007082"
+
