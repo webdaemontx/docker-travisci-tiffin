@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Config feature.
+ */
+
+include_once 'tiffin_config.features.inc';
