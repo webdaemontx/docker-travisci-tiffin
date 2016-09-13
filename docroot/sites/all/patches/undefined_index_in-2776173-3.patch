@@ -1,0 +1,17 @@
+diff --git a/plugins/entity/PanelizerEntityDefault.class.php b/plugins/entity/PanelizerEntityDefault.class.php
+index 805be86..fa9e702 100644
+--- a/plugins/entity/PanelizerEntityDefault.class.php
++++ b/plugins/entity/PanelizerEntityDefault.class.php
+@@ -752,6 +752,12 @@ abstract class PanelizerEntityDefault implements PanelizerEntityInterface {
+         }
+         $this->enabled_view_modes[$bundle][$view_mode] = $view_mode_info['label'];
+       }
++
++      // If no enabled view modes were found, set an empty entry so future
++      // calls of this function can be skipped.
++      if (!isset($this->enabled_view_modes[$bundle])) {
++        $this->enabled_view_modes[$bundle] = array();
++      }
+     }
+
+     return $this->enabled_view_modes[$bundle];
