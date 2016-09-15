@@ -22,6 +22,7 @@ regions[page_bottom] = Page bottom
 ; Stylesheets
 ; ========================================
 stylesheets[all][] = css/wetkit_bootstrap.styles.css
+stylesheets[all][] = css/tiffin_custom.css
 
 ; ========================================
 ; Scripts
@@ -39,6 +40,7 @@ stylesheets[all][] = css/wetkit_bootstrap.styles.css
 ;scripts[] = bootstrap/js/tab.js
 ;scripts[] = bootstrap/js/transition.js
 scripts[] = js/wetkit-bootstrap.modules.js
+
 
 ; ========================================
 ; Settings

@@ -103,7 +103,6 @@
       <div class="row">
         <div id="wb-sttl" class="col-md-8">
           <?php if ($site_name || $site_slogan || $logo): ?>
-            <a href="<?php print $site_name_url; ?>">
               <?php if ($logo && $logo_svg): ?>
                 <object id="header-logo" data='<?php print $logo_svg; ?>' role="img" tabindex="-1" type="image/svg+xml">
                   <img alt="<?php print t('WxT Logo'); ?>" src="<?php print $logo; ?>"  />
@@ -119,7 +118,6 @@
                   <small><?php print $site_slogan; ?></small>
                 <?php endif; ?>
               </span>
-            </a>
           <?php endif; ?>
         </div>
         <section id="wb-srch" class="col-md-4 visible-md visible-lg">

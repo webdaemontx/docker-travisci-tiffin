@@ -90,3 +90,9 @@ function wetkit_bootstrap_css_alter(&$css) {
     $css = array_diff_key($css, drupal_map_assoc($excludes));
   }
 }
+
+
+drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/animated-menu-line.js', array(
+    'type' => 'file',
+    'group' => JS_THEME,
+));
