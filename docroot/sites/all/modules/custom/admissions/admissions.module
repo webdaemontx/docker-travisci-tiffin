@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Admissions feature.
+ */
+
+include_once 'admissions.features.inc';
