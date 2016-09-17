@@ -1,0 +1,17 @@
+name = Admissions
+description = Feature of all of the Admissions Content Types, Views, Panels and associated display elements
+core = 7.x
+package = Tiffin
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = strongarm
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = panels:layouts:1
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[page_manager_pages][] = admissions_landing_page
+features[panels_layout][] = admissions_undergraduate_graduate
+features[variable][] = panels_page_default
+project path = sites/all/modules/custom
