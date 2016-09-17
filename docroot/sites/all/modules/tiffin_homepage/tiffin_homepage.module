@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Homepage feature.
+ */
+
+include_once 'tiffin_homepage.features.inc';
