@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Homepage News Slideshow feature.
+ */
+
+include_once 'tiffin_homepage_news_slideshow.features.inc';
