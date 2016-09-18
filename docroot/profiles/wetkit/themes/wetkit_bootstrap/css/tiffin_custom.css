@@ -1,0 +1,596 @@
+
+
+@import 'https://fonts.googleapis.com/css?family=Nunito:300';
+
+body{
+    font-family: 'Nunito', sans-serif;
+    body: padding-top: 0px;
+}
+
+
+
+
+
+
+
+/* OLD Homepage slideshow
+
+
+.carousel-s2{
+  height: 371px;
+
+}
+.carousel-s2 .field-item img.img-responsive {
+  max-height: 375px;
+  max-width: 464px;
+}
+
+.carousel-s2 ul[role=tablist]{
+  display: none;
+}
+
+
+.pane-bean-main-slider{
+    background-image: url('../images/slideshow-campus.png');
+}
+
+.wb-tabs.carousel-s1 figure, .wb-tabs.carousel-s2 figure{
+    background-color: transparent;
+}
+
+.wb-tabs.carousel-s2{
+    background-color: transparent;
+}
+
+
+
+
+End Homepage slideshow */
+
+
+
+
+/* Homepage Slider */
+
+
+
+.flex-direction-nav{
+    display: none;
+}
+
+.views-field-field-news-front-slider-image img.img-responsive {
+    max-height: 375px;
+    max-width: 464px;
+}
+
+
+.view-homepage-news-slidehow{
+    background-image: url('../images/slideshow-campus-para.jpg');
+    background-size: 1600px 915px;
+
+height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+div.view-homepage-news-slidehow{
+
+}
+
+
+
+
+ul.slides li.flex-active-slide{
+    margin: 0px auto;
+    width: 870px !important;
+}
+
+
+div#flexslider-1{
+width: 900px;
+margin: 0px auto 0px auto;
+    background-color: transparent;
+    border: 0px;
+}
+
+div#flexslider-1 ul.slides li.flex-active-slide{
+    position: relative;
+    height: 540px;
+}
+
+
+div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title{
+    top: 94px;
+    position: absolute;
+    left: 20px;
+    z-index: 1;
+    background-color: #D9BF75;
+    padding: 6px 122px 4px 6px;
+    height: 44px;
+    min-width: 320px;
+    opacity: .85;
+}
+
+div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image{
+    width: 464px;
+    position: absolute;
+    top: 74px;
+    left: 20px;
+}
+
+div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-quick-news-description{
+    position: absolute;
+    top: 200px;
+    left: 508px;
+}
+div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-quick-news-description p{
+    color: white;
+}
+
+
+div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
+    position: absolute;
+    top:470px;
+    text-align: left;
+    left: 26%;
+}
+
+.flex-direction-nav a{
+    height: 46px !important;
+}
+
+.flex-control-paging li a.flex-active {
+    background: #D9BF75;
+}
+
+.flex-control-paging li a{
+    background: #979557;
+}
+
+
+
+
+/* Homepage Slider */
+
+
+
+
+
+
+
+
+
+
+/* Nav */
+
+#wb-sm{
+    height: 85px;
+    padding-top: 15px;
+    padding-left: 40px;
+}
+
+
+/* End Nav */
+
+
+
+
+
+
+
+
+/* Menu */
+#wb-sm .menu{
+    font-size: 24px;
+    margin-right: 5%;
+}
+
+.wb-menu .menu > li a{
+    padding: 0px;
+}
+
+.wb-menu .menu > li{
+    padding: 10px 12px 10px 10px;
+}
+
+.wb-menu .menu > li.first{
+    margin: 0px 0px 0px 74px;
+}
+
+.wb-menu .menu > li a.first {
+    padding: 0px 0px 0px 41px;
+}
+
+
+ul[role=menubar]{
+    float: left;
+    clear: none;
+}
+
+.list-inline li a:hover,
+.list-inline li a:focus{
+  background-color: #546D5E !important;
+  color: white !important;
+}
+
+.list-inline li a{
+  background-color: #365543 !important;
+  border-left: 0px !important;
+  color: white !important;
+}
+
+.list-inline  > li:last-child > a{
+  border-right: 0px !important;
+}
+
+
+
+
+
+
+
+
+/* ..........underline animation */
+
+
+/* ..........end underline animation */
+
+/* End Menu */
+
+
+
+
+
+
+
+
+
+
+
+/* logo */
+#tiffin_logo{
+    float: left;
+    clear: none;
+}
+
+#tiffin_logo img{
+    width: 140px;
+    height: 55px;
+}
+/* End logo */
+
+
+
+
+
+
+
+
+
+#wb-sm{
+    background-color: #365543 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* The hidden stuff */
+
+button#wb-srch-sub{
+    display: none;
+}
+/*
+.navbar-nav ul li a[href^="/user/login"]{
+    display: none;
+}
+*/
+
+@media (min-width: 992px) {
+    #wb-bnr {
+        display: none !important;
+    }
+}
+
+div.flex-caption{
+    display: none !important;
+}
+
+
+/* End hidden stuff */
+
+
+
+
+
+
+
+/* Nav search Container */
+
+#wb-srch {
+    float: left;
+    clear: none;
+    width: 300px;
+    padding-top: 0px;
+    text-align: left;
+}
+
+/* End nav search container*/
+
+
+
+
+
+
+
+
+/* Nav search animation */
+
+#search-form input {
+    outline: none;
+}
+
+#search-form input::-webkit-search-decoration,
+#search-form input::-webkit-search-cancel-button {
+    display: none;
+}
+
+
+
+#search-form input:-moz-placeholder {
+    color: #999;
+}
+#search-form input::-webkit-input-placeholder {
+    color: #999;
+}
+
+
+
+
+#search-form input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+    background: #546D5E url(../images/search-mag.png) no-repeat 9px center;
+    border: 0px;
+    padding: 9px 10px 9px 32px;
+
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    width: 34px;
+    padding-left: 10px;
+    color: transparent;
+    cursor: pointer;
+}
+#search-form input[type=search]:hover {
+    background-color: #fff;
+}
+#search-form input[type=search]:focus {
+    width: 330px;
+    padding-left: 32px;
+    color: #000;
+    background-color: #fff;
+    cursor: auto;
+    -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+#search-form input:-moz-placeholder {
+    color: transparent;
+}
+#search-form input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+/* End nav search animation */
+
+
+
+/* Footer */
+
+
+footer{
+    background-color: #365543 !important;
+}
+
+footer a, footer h3 a{
+    color: white !important;
+}
+
+
+/* End footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body.page-admissions {
+    background-image: url('../images/image-apply-now-top-background.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 1400px;
+    background-position: center;
+}
+
+body.page-admissions h1{
+    text-align: center;
+    color: white;
+}
+body.page-admissions main{
+    background-color: transparent;
+}
+
+ul#icons-admissions-landing-page-first{
+    width: 870px;
+}
+ul#icons-admissions-landing-page-first p{
+    color: #365543;
+    text-align: center;
+    margin-top: 240px;
+    width: 100%;
+    font-size: 30px;
+}
+
+ul#icons-admissions-landing-page-last{
+    width: 1000px;
+}
+
+ul#icons-admissions-landing-page-first,
+ul#icons-admissions-landing-page-last{
+    clear: both;
+    list-style-type: none !important;
+    margin: 0px auto 0px auto;
+}
+
+ul#icons-admissions-landing-page-first a div,
+ul#icons-admissions-landing-page-last a div{
+    height: 100%;
+    width: 100%;
+}
+
+
+ul#icons-admissions-landing-page-first li{
+    width: 410px;
+    height: 320px;
+    background-color: white;
+    float: left;
+}
+
+
+ul#icons-admissions-landing-page-first li:nth-of-type(1){
+    clear: none;
+    margin: 0px 10px 10px 0px;
+}
+
+ul#icons-admissions-landing-page-first li:nth-of-type(2){
+    clear: right;
+    margin: 0px 0px 10px 0px;
+}
+
+
+
+
+
+ul#icons-admissions-landing-page-last li{
+    width: 310px;
+    height: 150px;
+    margin: 0px 10px 10px 0px;
+    background-color: white;
+}
+
+
+ul#icons-admissions-landing-page-last li:nth-of-type(1){
+    float: left;
+    clear: left;
+}
+ul#icons-admissions-landing-page-last li:nth-of-type(2){
+    float: left;
+    clear: none;
+}
+ul#icons-admissions-landing-page-last li:nth-of-type(3){
+    float: left;
+    clear: right;
+}
+ul#icons-admissions-landing-page-last li:nth-of-type(4){
+    float: left;
+    clear: none;
+}
+ul#icons-admissions-landing-page-last li:nth-of-type(5){
+    float: left;
+    clear: none;
+}
+ul#icons-admissions-landing-page-last li:nth-of-type(6){
+    float: left;
+    clear: right;
+}
+
+
+
+
+
+
+
+
+
+/*------------------TESTS BELOW--------------------*/
+
+
+/*
+ul.menu ul {
+    list-style: none;
+    list-style-type: none;
+}
+
+ul.menu ul li {
+    float: left;
+    display: inline-block;
+}
+ul.menu li a {
+    text-decoration: none;
+
+
+}
+
+ul.menu li a:hover {
+
+}
+ul.menu:after {
+    font-size: 0;
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+
+#magic-line {
+    position: absolute;
+    height: 10px;
+    background: #13b9e7;
+    width: 60px;
+    bottom: -22px;
+    left:0px;
+    padding: 0 !important;
+    z-index: 9;
+    border-radius: 5px;
+}
+
+ul.menu {
+    position: relative;
+}
+*/
