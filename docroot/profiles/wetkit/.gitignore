@@ -11,4 +11,11 @@ compass_app_log.txt
 *.vi
 *.sass-cache
 
+# Ignore Contributed Modules
+#/modules/
 
+# Ignore Contributed Libraries
+#/libraries/
+
+# Ignore Contributed Themes
+#/themes/
