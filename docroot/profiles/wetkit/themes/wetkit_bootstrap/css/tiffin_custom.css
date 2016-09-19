@@ -8,7 +8,11 @@ body{
 }
 
 
-
+img{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 
 
 
@@ -45,7 +49,14 @@ body{
 
 
 
-End Homepage slideshow */
+End OLD Homepage slideshow */
+
+
+
+
+
+
+
 
 
 
@@ -191,7 +202,17 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 
+
+
+
+
+
+
+
+
 /* Menu */
+
+
 #wb-sm .menu{
     font-size: 24px;
     margin-right: 5%;
@@ -237,17 +258,7 @@ ul[role=menubar]{
 
 
 
-
-
-
-
-
-/* ..........underline animation */
-
-
-/* ..........end underline animation */
-
-/* End Menu */
+/* End menu */
 
 
 
@@ -260,6 +271,8 @@ ul[role=menubar]{
 
 
 /* logo */
+
+
 #tiffin_logo{
     float: left;
     clear: none;
@@ -269,6 +282,8 @@ ul[role=menubar]{
     width: 140px;
     height: 55px;
 }
+
+
 /* End logo */
 
 
@@ -295,6 +310,7 @@ ul[role=menubar]{
 
 
 /* The hidden stuff */
+
 
 button#wb-srch-sub{
     display: none;
@@ -324,7 +340,9 @@ div.flex-caption{
 
 
 
+
 /* Nav search Container */
+
 
 #wb-srch {
     float: left;
@@ -333,6 +351,7 @@ div.flex-caption{
     padding-top: 0px;
     text-align: left;
 }
+
 
 /* End nav search container*/
 
@@ -344,6 +363,7 @@ div.flex-caption{
 
 
 /* Nav search animation */
+
 
 #search-form input {
     outline: none;
@@ -407,7 +427,16 @@ div.flex-caption{
     color: transparent;
 }
 
+
 /* End nav search animation */
+
+
+
+
+
+
+
+
 
 
 
@@ -435,6 +464,245 @@ footer a, footer h3 a{
 
 
 
+/* Academics page */
+
+body.page-academics h1{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+body.page-academics {
+    background-image: url('../images/image-apply-now-top-background.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 1400px;
+    background-position: center;
+}
+
+body.page-academics main{
+    background-color: transparent;
+}
+
+/* End academics page */
+
+
+
+
+
+
+
+
+
+
+/* Apply now landing page */
+
+
+
+body.page-apply-now {
+    background-image: url('../images/image-apply-now-top-background.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 1400px;
+    background-position: center;
+}
+
+body.page-apply-now h1{
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+body.page-apply-now main{
+    background-color: transparent;
+}
+
+
+
+
+
+ul#icons-apply-now-landing-page-first{
+    width: 950px;
+}
+ul#icons-apply-now-landing-page-first div p{
+    color: #365543;
+    text-align: center;
+    margin-top: 200px;
+    width: 100%;
+    font-size: 38px;
+    text-decoration: none;
+}
+
+ul#icons-apply-now-landing-page-mid{
+    width: 950px;
+}
+ul#icons-apply-now-landing-page-last{
+    width: 490px;
+}
+ul#icons-apply-now-landing-page-mid div p,
+ul#icons-apply-now-landing-page-last div p{
+    color: #365543;
+    text-align: center;
+    margin-top: 107px;
+    width: 100%;
+    font-size: 30px;
+}
+
+ul#icons-apply-now-landing-page-first,
+ul#icons-apply-now-landing-page-mid,
+ul#icons-apply-now-landing-page-last{
+    clear: both;
+    list-style-type: none !important;
+    margin: 0px auto 0px auto;
+}
+ul#icons-apply-now-landing-page-first a,
+ul#icons-apply-now-landing-page-mid a,
+ul#icons-apply-now-landing-page-last a{
+    text-decoration: none;
+}
+
+ul#icons-apply-now-landing-page-first a div{
+    width: 450px;
+    height: 260px;
+    display: flex;
+}
+ul#icons-apply-now-landing-page-mid a div,
+ul#icons-apply-now-landing-page-last a div{
+    width: 220px;
+    height: 150px;
+    display: flex;
+}
+
+
+ul#icons-apply-now-landing-page-first li{
+    width: 450px;
+    height: 260px;
+    background-color: white;
+    float: left;
+    opacity:  .95;
+}
+
+
+ul#icons-apply-now-landing-page-first li:nth-of-type(1){
+    clear: none;
+    margin: 0px 10px 10px 0px;
+    background-image: url('../images/icon-undergrad-man.png');
+    background-repeat: no-repeat;
+    background-position: 140px 9px;
+}
+
+ul#icons-apply-now-landing-page-first li:nth-of-type(2){
+    clear: right;
+    margin: 0px 0px 10px 0px;
+    background-image: url('../images/icon-undergrad-woman.png');
+    background-repeat: no-repeat;
+    background-position: 140px 9px;
+}
+
+
+
+
+
+ul#icons-apply-now-landing-page-mid li,
+ul#icons-apply-now-landing-page-last li{
+    width: 220px;
+    height: 150px;
+    margin: 0px 10px 10px 0px;
+    background-color: white;
+    opacity:  .95;
+}
+
+
+ul#icons-apply-now-landing-page-mid li:nth-of-type(1),
+ul#icons-apply-now-landing-page-mid li:nth-of-type(2),
+ul#icons-apply-now-landing-page-mid li:nth-of-type(3),
+ul#icons-apply-now-landing-page-mid li:nth-of-type(4),
+ul#icons-apply-now-landing-page-last li:nth-of-type(1),
+ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
+    background-repeat: no-repeat;
+}
+
+ul#icons-apply-now-landing-page-mid li:nth-of-type(1){
+    float: left;
+    clear: left;
+    background-image: url('../images/icon-transfer.png');
+    background-position: 70px 16px;
+    background-size: 40%;
+}
+ul#icons-apply-now-landing-page-mid li:nth-of-type(1) div p{
+    margin-top: 100px;
+}
+ul#icons-apply-now-landing-page-mid li:nth-of-type(2){
+    float: left;
+    clear: none;
+    background-image: url('../images/icon-hat-credit-plus.png');
+    background-position: 40px 22px;
+}
+ul#icons-apply-now-landing-page-mid li:nth-of-type(2) div p{
+    margin-top: 110px;
+    font-size: 22px;
+}
+ul#icons-apply-now-landing-page-mid li:nth-of-type(3){
+    float: left;
+    clear: none;
+    background-image: url('../images/icon-laptop-online.png');
+    background-position: 49px 23px;
+    background-size: 57%;
+}
+ul#icons-apply-now-landing-page-mid li:nth-of-type(4){
+    float: left;
+    clear: right;
+    background-image: url('../images/icon-globe-international.png');
+    background-position: 62px 8px;
+    margin-right: 0px !important;
+}
+ul#icons-apply-now-landing-page-last li:nth-of-type(1){
+    float: left;
+    clear: none;
+    background-image: url('../images/icon-ohio-off-campus.png');
+    background-position: 63px 6px;
+}
+ul#icons-apply-now-landing-page-last li:nth-of-type(2){
+    float: left;
+    clear: right;
+    background-image: url('../images/icon-shield-veterans.png');
+    background-position: 74px 14px;
+    margin-right: 0px !important;
+}
+ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p{
+    margin-top: 110px;
+    font-size: 22px;
+}
+
+
+
+
+/* End apply now landing page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Admissions page */
+
+
+#admissions-sub-title{
+    clear: both;
+    width: 187px;
+    margin: -19px auto 20px auto;
+    clear: both;
+    color: white;
+    font-size: 23px;
+}
 
 
 
@@ -450,24 +718,35 @@ body.page-admissions {
 body.page-admissions h1{
     text-align: center;
     color: white;
+    text-decoration: underline;
 }
 body.page-admissions main{
     background-color: transparent;
 }
 
+
 ul#icons-admissions-landing-page-first{
     width: 870px;
 }
-ul#icons-admissions-landing-page-first p{
+ul#icons-admissions-landing-page-first div p{
     color: #365543;
     text-align: center;
     margin-top: 240px;
     width: 100%;
-    font-size: 30px;
+    font-size: 38px;
+    text-decoration: none;
 }
 
 ul#icons-admissions-landing-page-last{
     width: 1000px;
+}
+
+ul#icons-admissions-landing-page-last div p{
+    color: #365543;
+    text-align: center;
+    margin-top: 107px;
+    width: 100%;
+    font-size: 30px;
 }
 
 ul#icons-admissions-landing-page-first,
@@ -476,11 +755,20 @@ ul#icons-admissions-landing-page-last{
     list-style-type: none !important;
     margin: 0px auto 0px auto;
 }
+ul#icons-admissions-landing-page-first a,
+ul#icons-admissions-landing-page-last a{
+    text-decoration: none;
+}
 
-ul#icons-admissions-landing-page-first a div,
+ul#icons-admissions-landing-page-first a div{
+    width: 410px;
+    height: 320px;
+    display: flex;
+}
 ul#icons-admissions-landing-page-last a div{
-    height: 100%;
-    width: 100%;
+    width: 310px;
+    height: 150px;
+    display: flex;
 }
 
 
@@ -489,17 +777,24 @@ ul#icons-admissions-landing-page-first li{
     height: 320px;
     background-color: white;
     float: left;
+    opacity:  .95;
 }
 
 
 ul#icons-admissions-landing-page-first li:nth-of-type(1){
     clear: none;
     margin: 0px 10px 10px 0px;
+    background-image: url('../images/icon-undergrad-man.png');
+    background-repeat: no-repeat;
+    background-position: 120px 30px;
 }
 
 ul#icons-admissions-landing-page-first li:nth-of-type(2){
     clear: right;
     margin: 0px 0px 10px 0px;
+    background-image: url('../images/icon-undergrad-woman.png');
+    background-repeat: no-repeat;
+    background-position: 120px 30px;
 }
 
 
@@ -511,33 +806,71 @@ ul#icons-admissions-landing-page-last li{
     height: 150px;
     margin: 0px 10px 10px 0px;
     background-color: white;
+    opacity:  .95;
 }
 
+
+ul#icons-admissions-landing-page-last li:nth-of-type(1),
+ul#icons-admissions-landing-page-last li:nth-of-type(2),
+ul#icons-admissions-landing-page-last li:nth-of-type(3),
+ul#icons-admissions-landing-page-last li:nth-of-type(4),
+ul#icons-admissions-landing-page-last li:nth-of-type(5),
+ul#icons-admissions-landing-page-last li:nth-of-type(6) {
+    background-repeat: no-repeat;
+}
 
 ul#icons-admissions-landing-page-last li:nth-of-type(1){
     float: left;
     clear: left;
+    background-image: url('../images/icon-transfer.png');
+    background-position: 100px 0px;
 }
 ul#icons-admissions-landing-page-last li:nth-of-type(2){
     float: left;
     clear: none;
+    background-image: url('../images/icon-laptop-online.png');
+    background-position: 87px 11px;
 }
 ul#icons-admissions-landing-page-last li:nth-of-type(3){
     float: left;
     clear: right;
+    background-image: url('../images/icon-hat-credit-plus.png');
+    background-position: 80px 10px;
 }
 ul#icons-admissions-landing-page-last li:nth-of-type(4){
     float: left;
     clear: none;
+    background-image: url('../images/icon-globe-international.png');
+    background-position: 110px 8px;
 }
 ul#icons-admissions-landing-page-last li:nth-of-type(5){
     float: left;
     clear: none;
+    background-image: url('../images/icon-ohio-off-campus.png');
+    background-position: 110px 10px;
 }
 ul#icons-admissions-landing-page-last li:nth-of-type(6){
     float: left;
     clear: right;
+    background-image: url('../images/icon-shield-veterans.png');
+    background-position: 116px 10px;
 }
+
+
+/* End admissions page */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
