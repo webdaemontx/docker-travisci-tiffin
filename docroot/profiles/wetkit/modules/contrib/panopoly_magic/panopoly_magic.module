@@ -87,7 +87,6 @@ function panopoly_magic_ajax_form_callback() {
   list($form, $form_state, $form_id, $form_build_id, $commands) = ajax_get_form();
   ctools_include('content');
   ctools_include('modal');
-  ctools_include('plugins', 'panels');
 
   if (isset($form_state['no_redirect']) && !isset($form_state['form_info'])) {
     $form_state += array(
