@@ -37,7 +37,18 @@ function tiffin_config_update_7302($sandbox) {
   }
 }
 
+/** Disable the built-in Slider and replace with FlexSlider */
+function tiffin_config_update_7303($sandbox) {
+  $modules = array("flexslider", "flexslider_fields", "flexslider_picture", "flexslider_views");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
 
+
+}
 
 /**
  *

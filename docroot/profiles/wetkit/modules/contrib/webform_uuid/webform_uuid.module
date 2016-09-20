@@ -75,6 +75,15 @@ function webform_entity_uuid_presave(&$entity, $entity_type) {
 }
 
 /**
+ * Implements hook_webform_submission_presave().
+ */
+function webform_uuid_webform_submission_presave(&$entity, &$submission) {
+  if (uuid_is_valid($entity->webform['nid'])) {
+    $entity->webform['nid'] = current(entity_get_id_by_uuid('node', array($entity->webform['nid'])));
+  }
+}
+
+/**
  * Implements hook_entity_uuid_save().
  */
 function webform_entity_uuid_save($entity, $entity_type) {
@@ -163,4 +172,13 @@ function webform_uuid_node_features_export_render_alter(&$export, &$node, $modul
     // Append the validation rule to the validation array.
     $export->webform['validation'][] = $rule;
   }
+}
+
+function webform_uuid_form_alter(&$form, &$form_state, $form_id)
+{
+   if (!empty($form['#node']) && !empty($form['#node']->uuid))
+   {
+      //Change the CSS ID that identifies this form for cross-server use from webform-NID to webform-UUID-{UUID} -RyanC
+      $form['#attributes']['id'] = 'webform-uuid-'.$form['#node']->uuid;
+   }
 }
