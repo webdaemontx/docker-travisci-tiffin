@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Apply Now feature.
+ */
+
+include_once 'apply_now.features.inc';

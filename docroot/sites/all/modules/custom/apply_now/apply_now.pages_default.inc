@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * admissions.pages_default.inc
+ * apply_now.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function admissions_default_page_manager_pages() {
+function apply_now_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'admissions_landing_page';
+  $page->name = 'apply_now_landing_page';
   $page->task = 'page';
-  $page->admin_title = 'Admissions Landing Page';
+  $page->admin_title = 'Apply Now Landing Page';
   $page->admin_description = 'This is the main Admissions Landing Page';
-  $page->path = 'admissions';
+  $page->path = 'apply-now';
   $page->access = array(
     'logic' => 'and',
   );
@@ -28,9 +28,9 @@ function admissions_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_admissions_landing_page__panel';
+  $handler->name = 'page_apply_now_landing_page__panel_context_e14b5ca8-7690-45ca-a112-015103906106';
   $handler->task = 'page';
-  $handler->subtask = 'admissions_landing_page';
+  $handler->subtask = 'apply_now_landing_page';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -43,7 +43,7 @@ function admissions_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'name' => 'panel',
+    'name' => '',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -101,20 +101,21 @@ function admissions_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',
-    'title' => 'Admissions',
+    'title' => 'Apply Now',
     'title_heading' => 'h1',
-    'body' => '<div id="admissions-sub-title">Choose Your Path</div>
-<ul id="icons-admissions-landing-page-first">
-<li><a href=""><div><p>Undergraduate</p></div></a></li>
-<li><a href=""><div><p>Graduate</p></div></a></li>
+    'body' => '<ul id="icons-apply-now-landing-page-first">
+<li><a href=""><div><p>First Year Student</p></div></a></li>
+<li><a href=""><div><p>Graduate Student</p></div></a></li>
 </ul>
-<ul id="icons-admissions-landing-page-last">
+<ul id="icons-apply-now-landing-page-mid">
 <li><a href=""><div><p>Transfer</p></div></a></li>
-<li><a href=""><div><p>Online</p></div></a></li>
 <li><a href=""><div><p>College Credit Plus</p></div></a></li>
+<li><a href=""><div><p>Online</p></div></a></li>
 <li><a href=""><div><p>International</p></div></a></li>
+</ul>
+<ul id="icons-apply-now-landing-page-last">
 <li><a href=""><div><p>Off-Campus</p></div></a></li>
-<li><a href=""><div><p>Veterans</p></div></a></li>
+<li><a href=""><div><p>Non-degree seeking</p></div></a></li>
 </ul>
 ',
     'format' => 'wetkit_html_text',
@@ -135,7 +136,7 @@ function admissions_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['admissions_landing_page'] = $page;
+  $pages['apply_now_landing_page'] = $page;
 
   return $pages;
 
