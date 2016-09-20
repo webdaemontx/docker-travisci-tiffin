@@ -59,7 +59,19 @@ function tiffin_config_update_7304($sandbox) {
   }
 }
 
-/**git 
+/** Change or set the Site Name to Tiffin University
+ * Change or set the Site Front Page to /home
+ **/
+function tiffin_config_update_7305($sandbox) {
+  if (variable_get("site_name") != "Tiffin University") {
+    variable_set("site_name", "Tiffin University");
+  }
+  if (variable_get("site_frontpage") != "home") {
+    variable_set("site_frontpage", "home");
+  }
+}
+
+/**git
  *
  * Set the DS region block values.
  */
