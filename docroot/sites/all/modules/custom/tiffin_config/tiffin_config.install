@@ -46,11 +46,20 @@ function tiffin_config_update_7303($sandbox) {
       drupal_set_message("Enabled " . $module);
     }
   }
-
-
 }
 
-/**
+/** Enable the Email field */
+function tiffin_config_update_7304($sandbox) {
+  $modules = array("email", "telephone", "node_export", "node_export_features", "node_export_features_ui", "panels_node");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
+/**git 
  *
  * Set the DS region block values.
  */
