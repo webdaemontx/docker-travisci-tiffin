@@ -109,6 +109,33 @@ function academics_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_graduate_html|node|program|form';
+  $field_group->group_name = 'group_graduate_html';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'program';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Graduate',
+    'weight' => '10',
+    'children' => array(
+      0 => 'group_header_tabs',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-graduate-html field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_graduate_html|node|program|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_header_tabs|node|program|form';
   $field_group->group_name = 'group_header_tabs';
   $field_group->entity_type = 'node';
@@ -250,6 +277,33 @@ function academics_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_undergraduate_html|node|program|form';
+  $field_group->group_name = 'group_undergraduate_html';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'program';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Undergraduate',
+    'weight' => '9',
+    'children' => array(
+      0 => 'group_undergraduate_tabs',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_undergraduate_html|node|program|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_undergraduate_tabs|node|program|form';
   $field_group->group_name = 'group_undergraduate_tabs';
   $field_group->entity_type = 'node';
@@ -280,11 +334,13 @@ function academics_field_group_info() {
   t('Admission');
   t('Curriculum');
   t('Four Year Course Sequence');
+  t('Graduate');
   t('Graduate Tabs');
   t('Header');
   t('Related Majors & Minors');
   t('Sample Courses');
   t('Tuition & Fees');
+  t('Undergraduate');
   t('Undergraduate Tabs');
 
   return $field_groups;
