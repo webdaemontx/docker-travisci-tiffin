@@ -46,11 +46,32 @@ function tiffin_config_update_7303($sandbox) {
       drupal_set_message("Enabled " . $module);
     }
   }
-
-
 }
 
-/**
+/** Enable the Email field */
+function tiffin_config_update_7304($sandbox) {
+  $modules = array("email", "telephone", "node_export", "node_export_features", "node_export_features_ui", "panels_node");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
+/** Change or set the Site Name to Tiffin University
+ * Change or set the Site Front Page to /home
+ **/
+function tiffin_config_update_7305($sandbox) {
+  if (variable_get("site_name") != "Tiffin University") {
+    variable_set("site_name", "Tiffin University");
+  }
+  if (variable_get("site_frontpage") != "home") {
+    variable_set("site_frontpage", "home");
+  }
+}
+
+/**git
  *
  * Set the DS region block values.
  */
