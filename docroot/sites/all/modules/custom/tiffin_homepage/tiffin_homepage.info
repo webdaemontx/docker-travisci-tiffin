@@ -14,5 +14,4 @@ features[features_api][] = api:2
 features[page_manager_pages][] = Tiffin Homepage
 features[panels_mini][] = homepage_submenu
 features[panels_mini][] = join_the_tu_family_white_backgro
-features[views_view][] = homepage_news_slidehow
 project path = sites/all/modules/custom
