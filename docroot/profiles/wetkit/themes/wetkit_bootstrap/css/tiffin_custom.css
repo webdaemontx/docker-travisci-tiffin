@@ -477,7 +477,7 @@ div.flex-caption{
     clear: none;
 }
 
-#mini-panel-join_the_tu_family_white_backgro ul li a{
+#mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
     margin: 46px 0px 0px 23px;
     text-decoration: none;
     color: #365543;
