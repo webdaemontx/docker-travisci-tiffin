@@ -19,5 +19,13 @@
  */
 ?>
 <div class="<?php print $classes; ?>">
-  <?php print render($content); ?>
+    <div id="tiffin_logo" class="footer-logo">
+        <img alt="WxT Logo" src="http://tiffin.dev.dd:8083/sites/default/files/tiffin-logo_0.png">
+    </div>
+    <div id="footer-address">
+        <p> 155 Miami St | Tiffin, OH 44883<br/>
+        Phone: (800) 968-6446<br/>
+        <span id="copyright">&copy;2016 Tiffin University</span></p>
+    </div>
+    <?php print render($content); ?>
 </div>
