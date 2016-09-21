@@ -443,6 +443,159 @@ div.flex-caption{
 
 
 
+/* Join the TU Family (white background) */
+
+
+#mini-panel-join_the_tu_family_white_backgro h3{
+    width: 324px;
+    margin: 10px auto 40px auto;
+    color: #D9BF75;
+    font-size: 37px;
+
+}
+#mini-panel-join_the_tu_family_white_backgro h3 span{
+    color: #365543;
+}
+
+#mini-panel-join_the_tu_family_white_backgro{
+    height: 260px;
+}
+
+
+#mini-panel-join_the_tu_family_white_backgro ul {
+    list-style-type: none;
+    width: 1150px;
+    margin: 0px auto 0px auto;
+
+}
+
+#mini-panel-join_the_tu_family_white_backgro ul li{
+    list-style-type: none;
+    margin-left: 30px;
+    width: 350px;
+    float: left;
+    clear: none;
+}
+
+#mini-panel-join_the_tu_family_white_backgro ul li a{
+    margin: 46px 0px 0px 23px;
+    text-decoration: none;
+    color: #365543;
+    font-size: 28px;
+    float: left;
+    clear: none;
+}
+
+
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1){
+    margin-left: 0px;
+}
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div,
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div,
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div{
+    height: 114px;
+    width: 114px;
+    background-repeat: no-repeat;
+    background-size: 114px 114px;
+    float: left;
+    clear: none;
+}
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div{
+    background-image: url('../images/icon-join-apply-now.png');
+}
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div{
+    background-image: url('../images/icon-join-visit-campus.png');
+}
+#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div{
+    background-image: url('../images/icon-join-request-info.png');
+}
+
+
+/* Join the TU Family (white background) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Homepage submenu */
+
+
+#mini-panel-homepage_submenu{
+
+}
+
+#mini-panel-homepage_submenu a{
+    text-decoration: none;
+}
+
+#mini-panel-homepage_submenu ul {
+    float: left;
+    clear: none;
+    list-style-type: none;
+    height: 87px;
+    margin-bottom: 0px;
+}
+
+#mini-panel-homepage_submenu ul li{
+     float: left;
+     clear: none;
+}
+
+
+
+#mini-panel-homepage_submenu ul:nth-of-type(1){
+    background-color: #365543;
+    width: 65%;
+    font-size: 25px;
+    padding-left: 100px;
+}
+
+#mini-panel-homepage_submenu ul:nth-of-type(1) li{
+    margin-top: 30px;
+    margin-right: 40px;
+    color: white;
+}
+#mini-panel-homepage_submenu ul:nth-of-type(1) li a{
+    color: white;
+}
+
+
+
+
+#mini-panel-homepage_submenu ul:nth-of-type(2){
+    background-color: #ffffff;
+    width: 35%;
+    font-size: 33px;
+    padding-left: 30px;
+}
+
+#mini-panel-homepage_submenu ul:nth-of-type(2) li{
+    margin-top: 23px;
+    color: #365543;
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+#mini-panel-homepage_submenu ul:nth-of-type(2) li a{
+    color: #365543;
+}
+
+/* End homepage submenu */
+
+
+
+
 /* Footer */
 
 
