@@ -281,10 +281,8 @@ function wetkit_core_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'menus' => array(
-      'menu-wet-footer' => 'menu-wet-footer',
       'menu-wet-header' => 'menu-wet-header',
       'main-menu' => 'main-menu',
-      'menu-wet-mid-footer' => 'menu-wet-mid-footer',
       'navigation' => 'navigation',
       'menu-wet-terms' => 'menu-wet-terms',
       'management' => 0,
