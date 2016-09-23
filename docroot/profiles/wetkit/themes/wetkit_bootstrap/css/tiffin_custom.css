@@ -602,18 +602,21 @@ div.flex-caption{
 
 /* Footer */
 
-
-footer{
+#footer{
     background-color: #365543 !important;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
 
-footer a, footer h3 a{
+#footer a, #footer h3 a{
     color: white !important;
 }
 
-footer section.col-sm-3{
+.region-footer section.col-sm-3{
     display: none;
 }
+
 div.menu-block-wrapper ul{
     width: 580px;
     font-size: 20px;
