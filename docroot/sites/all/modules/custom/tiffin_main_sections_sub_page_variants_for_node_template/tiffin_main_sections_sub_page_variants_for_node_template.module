@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Main Sections Sub-Page variants for Node template feature.
+ */
+
+include_once 'tiffin_main_sections_sub_page_variants_for_node_template.features.inc';

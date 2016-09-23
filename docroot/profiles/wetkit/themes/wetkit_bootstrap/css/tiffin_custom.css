@@ -522,6 +522,13 @@ div.flex-caption{
 
 
 
+/* pane-menu-tree */
+
+
+
+
+
+
 
 
 
@@ -617,7 +624,7 @@ div.flex-caption{
     display: none;
 }
 
-div.menu-block-wrapper ul{
+#footer div.menu-block-wrapper ul{
     width: 580px;
     font-size: 20px;
 }

@@ -1,0 +1,11 @@
+name = Tiffin Sidebar Menus
+core = 7.x
+package = Tiffin
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:2
+features[menu_custom][] = menu-about-tu
+features[menu_custom][] = menu-academics
+features[menu_custom][] = menu-admissions
+features[menu_custom][] = menu-life-at-tu
+project path = sites/all/modules/custom

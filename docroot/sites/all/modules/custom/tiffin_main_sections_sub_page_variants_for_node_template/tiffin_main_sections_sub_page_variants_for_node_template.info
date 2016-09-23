@@ -1,0 +1,13 @@
+name = Tiffin Main Sections Sub-Page variants for Node template
+description = These are all the panel pages for rendering sub-pages related to the main sections of the site.
+core = 7.x
+package = Tiffin
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = node_view__about-tu-sub-pages
+features[page_manager_handlers][] = node_view__academics-sub-pages
+features[page_manager_handlers][] = node_view__admissions-sub-pages
+features[page_manager_handlers][] = node_view__life-at-tu-sub-pages
+project path = sites/all/modules/custom
