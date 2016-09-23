@@ -71,6 +71,17 @@ function tiffin_config_update_7305($sandbox) {
   }
 }
 
+/** Enable the Webform Email module **/
+function tiffin_config_update_7306($sandbox) {
+  $modules = array("phone", "webform_phone");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
 /**git
  *
  * Set the DS region block values.
