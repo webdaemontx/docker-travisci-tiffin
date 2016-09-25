@@ -555,7 +555,7 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * above. Make sure that you understand the effects of this feature before
  * uncommenting the line below.
  */
-# drupal_fast_404();
+ drupal_fast_404();
 
 /**
  * External access proxy settings:
@@ -615,7 +615,21 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  *
  * Remove the leading hash sign to enable.
  */
-$conf['theme_debug'] = TRUE;
+$conf['theme_debug'] = FALSE;
+
+# Incresase memory limit
+if ( (strpos($_GET['q'], 'admin') === 0) ||
+  (strpos($_GET['q'], 'node/add') === 0) ||
+  (strpos($_GET['q'], 'node/') === 0 && preg_match('/^node\/[\d]+\/edit/', $_GET['q']) === 1)
+) {
+  ini_set('memory_limit', '512M');
+} else {
+  ini_set('memory_limit', '192M');
+}
+if (drupal_is_cli()) {
+  ini_set('memory_limit', '512M');
+}
+
 
 // <DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.
