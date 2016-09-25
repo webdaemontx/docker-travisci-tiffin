@@ -462,10 +462,35 @@ div.flex-caption{
 }
 
 
+@media screen and (max-width: 928px) {
+    #mini-panel-join_the_tu_family_white_backgro ul {
+        display: flex;
+        list-style-type: none;
+        width: 100%;
+        margin: 0px auto 0px auto;
+
+    }
+
+}
+
 #mini-panel-join_the_tu_family_white_backgro ul {
     list-style-type: none;
     width: 1150px;
     margin: 0px auto 0px auto;
+
+}
+
+@media screen and (max-width: 1152px) {
+    #mini-panel-join_the_tu_family_white_backgro ul {
+        width: 850px;
+    }
+
+}
+
+@media screen and (max-width: 860px) {
+    #mini-panel-join_the_tu_family_white_backgro ul {
+        width: 100%;
+    }
 
 }
 
@@ -476,6 +501,26 @@ div.flex-caption{
     float: left;
     clear: none;
 }
+@media screen and (max-width: 717px) {
+    #mini-panel-join_the_tu_family_white_backgro ul li{
+        list-style-type: none;
+        margin-left: 30px;
+        width: 100% !important;
+        float: left;
+        clear: both;
+    }
+
+}
+
+@media screen and (max-width: 1152px) and (min-width: 717px){
+    #mini-panel-join_the_tu_family_white_backgro ul li{
+        width: 250px;
+    }
+
+}
+
+
+
 
 #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
     margin: 46px 0px 0px 23px;
@@ -485,6 +530,22 @@ div.flex-caption{
     float: left;
     clear: none;
 }
+
+@media screen and (max-width: 1152px) {
+    #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
+        margin: 16px 0px 0px 37px;
+    }
+
+}
+
+@media screen and (max-width: 928px) {
+    #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
+        margin: 6px 0px 0px 23px;
+    }
+
+}
+
+
 
 
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1){
@@ -500,6 +561,17 @@ div.flex-caption{
     float: left;
     clear: none;
 }
+
+@media screen and (max-width: 1152px) {
+    #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div,
+    #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div,
+    #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div{
+        margin: 0px auto 0px auto;
+        float: none;
+    }
+
+}
+
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div{
     background-image: url('../images/icon-join-apply-now.png');
 }
@@ -539,11 +611,10 @@ div.flex-caption{
 
 
 #mini-panel-homepage_submenu{
-
+display: flex;
 }
 
 #mini-panel-homepage_submenu .pane-content{
-    display: flex;
 }
 
 #mini-panel-homepage_submenu a{
@@ -558,6 +629,15 @@ div.flex-caption{
     margin-bottom: 0px;
 }
 
+@media (max-width: 500px) {
+    #mini-panel-homepage_submenu ul {
+        height: 200px;
+        font-size: 17px;
+        line-height: 12px;
+    }
+}
+
+
 #mini-panel-homepage_submenu ul li{
      float: left;
      clear: none;
@@ -567,28 +647,55 @@ div.flex-caption{
 
 #mini-panel-homepage_submenu ul:nth-of-type(1){
     background-color: #365543;
-    width: 65%;
+    width: 70%;
     font-size: 25px;
-    padding-left: 100px;
+    padding-left: 5%;
+    display: flex;
+}
+
+
+@media screen and (max-width: 928px) {
+    #mini-panel-homepage_submenu ul:nth-of-type(1){
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1154px) {
+    #mini-panel-homepage_submenu ul:nth-of-type(1){
+        font-size: 20px;
+        padding-left: 10%;
+    }
 }
 
 #mini-panel-homepage_submenu ul:nth-of-type(1) li{
     margin-top: 30px;
-    margin-right: 40px;
+    margin-right: 4%;
     color: white;
+    line-height: 27px;
 }
 #mini-panel-homepage_submenu ul:nth-of-type(1) li a{
     color: white;
 }
 
 
-
-
 #mini-panel-homepage_submenu ul:nth-of-type(2){
     background-color: #ffffff;
-    width: 442px;
+    width: 30%;
     font-size: 33px;
     padding-left: 30px;
+    line-height: 5px;
+    padding-top: 20px;
+}
+
+
+@media screen and (max-width: 928px) {
+    #mini-panel-homepage_submenu ul:nth-of-type(2){
+        background-color: #d8be7a;
+        width: 342px;
+        clear: both;
+        float: none;
+        margin: 0px auto 20px auto;
+    }
 }
 
 #mini-panel-homepage_submenu ul:nth-of-type(2) li{
