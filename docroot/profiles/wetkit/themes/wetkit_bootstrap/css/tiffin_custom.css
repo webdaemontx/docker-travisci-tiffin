@@ -20,7 +20,7 @@ main{
 }
 
 
-#opener{display: none;}
+
 
 
 
@@ -330,6 +330,9 @@ ul[role=menubar]{
   border-right: 0px !important;
 }
 
+ul[role=menubar] #opener{
+    display: none;
+}
 
 
 /* End menu */
