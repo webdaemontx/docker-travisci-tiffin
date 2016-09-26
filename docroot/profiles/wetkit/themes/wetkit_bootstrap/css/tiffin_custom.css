@@ -895,7 +895,7 @@ body.page-academics {
     background-image: url('../images/image-apply-now-top-background.png');
     background-repeat: no-repeat;
     background-color: transparent;
-    background-size: 1400px;
+    background-size: cover;
     background-position: center;
 }
 
@@ -922,7 +922,7 @@ body.page-apply-now {
     background-image: url('../images/image-apply-now-top-background.png');
     background-repeat: no-repeat;
     background-color: transparent;
-    background-size: 1400px;
+    background-size: cover;
     background-position: center;
 }
 
