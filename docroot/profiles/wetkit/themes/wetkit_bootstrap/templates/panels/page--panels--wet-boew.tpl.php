@@ -117,6 +117,7 @@
 
 
 <div id="tiffin_logo">
+    <a href="<?php print url('<front>'); ?>">
           <?php if ($site_name || $site_slogan || $logo): ?>
           <?php if ($logo && $logo_svg): ?>
             <object id="header-logo" data='<?php print $logo_svg; ?>' role="img" tabindex="-1" type="image/svg+xml">
@@ -126,6 +127,7 @@
             <img alt="<?php print t('WxT Logo'); ?>" src="<?php print $logo; ?>"  />
           <?php endif; ?>
         <?php endif; ?>
+    </a>
 </div>
 
 
