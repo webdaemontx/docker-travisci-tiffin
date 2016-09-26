@@ -630,6 +630,37 @@ if (drupal_is_cli()) {
   ini_set('memory_limit', '512M');
 }
 
+# Memcache configuration
+if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+  switch ($_ENV['AH_SITE_ENVIRONMENT']) {
+    case 'prod':
+      /*if (isset($conf['memcache_servers'])) {
+        $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
+        $conf['cache_default_class'] = 'MemCacheDrupal';
+        $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+      }
+      # Add in stampede protection
+      $conf['memcache_stampede_protection'] = TRUE;
+      # Move semaphore out of the database and into memory for performance purposes
+      $conf['lock_inc'] = './sites/all/modules/contrib/memcache/memcache-lock.inc';
+      break;
+  }*/
+      $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+      $conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
+      $conf['memcache_stampede_protection'] = TRUE;
+      $conf['cache_default_class'] = 'MemCacheDrupal';
+
+      // The 'cache_form' bin must be assigned to non-volatile storage.
+      $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+
+      // Don't bootstrap the database when serving pages from the cache.
+      $conf['page_cache_without_database'] = TRUE;
+      $conf['page_cache_invoke_hooks'] = FALSE;
+      break;
+  }
+}
+
+
 
 // <DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.
