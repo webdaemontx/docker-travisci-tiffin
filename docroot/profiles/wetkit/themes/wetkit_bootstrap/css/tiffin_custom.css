@@ -22,6 +22,8 @@ main{
 
 #opener{display: none;}
 
+
+
 /* OLD Homepage slideshow
 
 
@@ -503,10 +505,14 @@ div.flex-caption{
 /* End nav search animation */
 
 
+.glyphicon-chevron-down::before {
+    content: "";
+}
 
 
-
-
+body.page-admissions .pane-1{
+    clear: both;
+}
 
 
 
@@ -514,6 +520,11 @@ div.flex-caption{
 
 /* Join the TU Family (white background) */
 
+body.page-admissions .pane-join-the-tu-family-white-backgro,
+body.page-academics .pane-join-the-tu-family-white-backgro{
+    padding-top: 130px;
+    clear: both;
+}
 
 #mini-panel-join_the_tu_family_white_backgro h3{
     width: 324px;
@@ -528,6 +539,8 @@ div.flex-caption{
 
 #mini-panel-join_the_tu_family_white_backgro{
     height: 260px;
+    background-color: white;
+    clear: both;
 }
 
 

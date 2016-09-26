@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Tiffin Social Media Mini Panel feature.
- */
-
-include_once 'tiffin_social_media_mini_panel.features.inc';

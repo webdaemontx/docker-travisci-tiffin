@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Tiffin Homepage Top Hero Minipanel feature.
- */
-
-include_once 'tiffin_homepage_top_hero_minipanel.features.inc';
