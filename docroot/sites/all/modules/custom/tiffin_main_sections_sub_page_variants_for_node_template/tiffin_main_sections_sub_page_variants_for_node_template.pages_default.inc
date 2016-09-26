@@ -101,7 +101,7 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
     'body' => '<div class="footer">
 <div class="menu-block-wrapper menu-block-1 menu-name-menu-wet-mid-footer parent-mlid-0 menu-level-1">
     <div id="tiffin_logo" class="footer-logo">
-        <img alt="WxT Logo" src="http://tiffin.dev.dd:8083/sites/default/files/tiffin-logo_0.png">
+        <img alt="Tiffin University Logo" src="sites/default/files/tiffin-logo_0.png">
     </div>
     <div id="footer-address">
         <p> 155 Miami St | Tiffin, OH 44883<br>
