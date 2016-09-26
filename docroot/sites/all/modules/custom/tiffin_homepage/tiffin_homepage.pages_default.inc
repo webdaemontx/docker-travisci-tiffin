@@ -90,6 +90,29 @@ function tiffin_homepage_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-7e88b760-7b79-4cdb-950e-44bd1ccd9cc6';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'homepage_top_hero';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7e88b760-7b79-4cdb-950e-44bd1ccd9cc6';
+  $display->content['new-7e88b760-7b79-4cdb-950e-44bd1ccd9cc6'] = $pane;
+  $display->panels['middle'][0] = 'new-7e88b760-7b79-4cdb-950e-44bd1ccd9cc6';
+  $pane = new stdClass();
   $pane->pid = 'new-3b10c54f-3e5f-4f44-981c-9c919e1254f0';
   $pane->panel = 'middle';
   $pane->type = 'page_messages';
@@ -103,11 +126,57 @@ function tiffin_homepage_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '3b10c54f-3e5f-4f44-981c-9c919e1254f0';
   $display->content['new-3b10c54f-3e5f-4f44-981c-9c919e1254f0'] = $pane;
-  $display->panels['middle'][0] = 'new-3b10c54f-3e5f-4f44-981c-9c919e1254f0';
+  $display->panels['middle'][1] = 'new-3b10c54f-3e5f-4f44-981c-9c919e1254f0';
+  $pane = new stdClass();
+  $pane->pid = 'new-ac533fb2-118c-4de1-8345-c7c0991afe3d';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'homepage_submenu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'ac533fb2-118c-4de1-8345-c7c0991afe3d';
+  $display->content['new-ac533fb2-118c-4de1-8345-c7c0991afe3d'] = $pane;
+  $display->panels['middle'][2] = 'new-ac533fb2-118c-4de1-8345-c7c0991afe3d';
+  $pane = new stdClass();
+  $pane->pid = 'new-003869dd-973f-4a77-b276-5ebb2e33019b';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'homepage_social_media';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '003869dd-973f-4a77-b276-5ebb2e33019b';
+  $display->content['new-003869dd-973f-4a77-b276-5ebb2e33019b'] = $pane;
+  $display->panels['middle'][3] = 'new-003869dd-973f-4a77-b276-5ebb2e33019b';
   $pane = new stdClass();
   $pane->pid = 'new-bd9f7111-d114-448d-ae11-3cbc601e756c';
   $pane->panel = 'middle';
@@ -138,34 +207,11 @@ function tiffin_homepage_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 4;
   $pane->locks = array();
   $pane->uuid = 'bd9f7111-d114-448d-ae11-3cbc601e756c';
   $display->content['new-bd9f7111-d114-448d-ae11-3cbc601e756c'] = $pane;
-  $display->panels['middle'][1] = 'new-bd9f7111-d114-448d-ae11-3cbc601e756c';
-  $pane = new stdClass();
-  $pane->pid = 'new-ac533fb2-118c-4de1-8345-c7c0991afe3d';
-  $pane->panel = 'middle';
-  $pane->type = 'panels_mini';
-  $pane->subtype = 'homepage_submenu';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'ac533fb2-118c-4de1-8345-c7c0991afe3d';
-  $display->content['new-ac533fb2-118c-4de1-8345-c7c0991afe3d'] = $pane;
-  $display->panels['middle'][2] = 'new-ac533fb2-118c-4de1-8345-c7c0991afe3d';
+  $display->panels['middle'][4] = 'new-bd9f7111-d114-448d-ae11-3cbc601e756c';
   $pane = new stdClass();
   $pane->pid = 'new-b427ca87-5f63-4e3e-9f58-4fbbd87bdb8d';
   $pane->panel = 'middle';
@@ -184,11 +230,11 @@ function tiffin_homepage_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = 'b427ca87-5f63-4e3e-9f58-4fbbd87bdb8d';
   $display->content['new-b427ca87-5f63-4e3e-9f58-4fbbd87bdb8d'] = $pane;
-  $display->panels['middle'][3] = 'new-b427ca87-5f63-4e3e-9f58-4fbbd87bdb8d';
+  $display->panels['middle'][5] = 'new-b427ca87-5f63-4e3e-9f58-4fbbd87bdb8d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
