@@ -65,7 +65,7 @@ End OLD Homepage slideshow */
 
 #social_media_home{
     background-image: url('../images/image-homepage-socialmedia.jpg');
-    background-size: 2400px 450px;
+    background-size: 3400px 690px;
     height: 224px;
     background-attachment: fixed;
     background-position: center;
@@ -113,6 +113,24 @@ End OLD Homepage slideshow */
 /* End homepage social media */
 
 
+
+
+
+
+
+/* Homepage hero */
+
+#mini-panel-homepage_top_hero{
+    height: 640px;
+    width: 100%;
+    background-image: url('../images/image-hero-top-one.jpg');
+    background-size: 1200px 574px;
+    background-size: cover;
+}
+
+
+
+/* End homepage hero */
 
 
 
