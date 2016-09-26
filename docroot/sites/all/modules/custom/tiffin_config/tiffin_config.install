@@ -82,6 +82,28 @@ function tiffin_config_update_7306($sandbox) {
   }
 }
 
+/** Enable the Acquia Connector **/
+function tiffin_config_update_7307($sandbox) {
+  $modules = array("acquia_spi", "acquia_search", "acquia_agent");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
+/** Enable the Imagecache Token and memcache modules **/
+function tiffin_config_update_7308($sandbox) {
+  $modules = array("acquia_spi", "imagecache_token", "memcache");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
+
 /**git
  *
  * Set the DS region block values.
