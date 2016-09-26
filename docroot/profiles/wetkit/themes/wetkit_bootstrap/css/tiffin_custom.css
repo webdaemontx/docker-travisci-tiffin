@@ -61,6 +61,57 @@ End OLD Homepage slideshow */
 
 
 
+/* Homepage social media */
+
+#social_media_home{
+    background-image: url('../images/image-homepage-socialmedia.jpg');
+    background-size: 2400px 450px;
+    height: 224px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#social_media_home ul{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+}
+#social_media_home ul li{
+    width: 33%;
+    background-position: center;
+    height: 96px;
+    margin-top: 70px;
+}
+
+#social_media_home ul li div{
+    width: 33%;
+    height: 96px;
+}
+
+#social_media_home ul li:nth-of-type(1){
+    background-image: url('../images/fb.png');
+    background-repeat: no-repeat;
+}
+
+#social_media_home ul li:nth-of-type(2){
+    background-image: url('../images/instagram.png');
+    height: 96px;
+    background-repeat: no-repeat;
+}
+
+#social_media_home ul li:nth-of-type(3){
+    background-image: url('../images/twitter.png');
+    height: 96px;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* End homepage social media */
+
 
 
 
