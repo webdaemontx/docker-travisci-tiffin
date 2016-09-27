@@ -73,7 +73,9 @@ End OLD Homepage slideshow */
 /* Sidebar menus */
 
 
-
+.pane-menu-about-tu .active-trail a.list-group-item{
+    font-style: italic;
+}
 
 
 .pane-menu-about-tu .active-trail{
@@ -86,6 +88,7 @@ End OLD Homepage slideshow */
 
 .pane-menu-about-tu .active-trail h3 a{
     color: white !important;
+    font-style: italic;
 }
 
 
@@ -316,11 +319,45 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     padding-left: 40px;
 }
 
+#wb-bar{
+    background: #365543;
+}
 
 /* End Nav */
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile nav */
+
+#mb-pnl.modal-content,
+#mb-pnl .modal-body,
+#mb-pnl .lng-ofr,
+#mb-pnl .srch-pnl,
+#mb-pnl .sm-pnl{
+    background-color: #365543;
+}
+
+.overlay-def .modal-header{
+    background-color: #D9BF75;
+}
+
+
+
+/* End mobile nav */
 
 
 
@@ -342,6 +379,12 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     margin-right: 1%;
 }
 
+@media (max-width: 1240px) {
+    #wb-sm .menu {
+        font-size: 21px;
+    }
+}
+
 .wb-menu .menu > li a{
     padding: 0px;
 }
@@ -353,6 +396,28 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 .wb-menu .menu > li.first{
     margin: 0px 0px 0px 74px;
 }
+
+
+
+
+@media (max-width: 1240px) {
+    .wb-menu .menu > li.first{
+        margin: 0px 0px 0px 24px;
+    }
+}
+
+
+
+
+/* test */
+
+#wb-srch .form-group{
+    display: inline;
+}
+
+/* test */
+
+
 
 .wb-menu .menu > li a.first {
     padding: 0px 0px 0px 41px;
@@ -474,7 +539,7 @@ div.flex-caption{
 #wb-srch {
     float: left;
     clear: none;
-    width: 300px;
+    width: 165px;
     padding-top: 0px;
     text-align: left;
 }
@@ -490,6 +555,7 @@ div.flex-caption{
 
 
 /* Nav search animation */
+
 
 
 #search-form input {
@@ -534,11 +600,20 @@ div.flex-caption{
     color: transparent;
     cursor: pointer;
 }
+/*
+media screen and (max-width: 928px) {
+    #search-form input[type=search] {
+
+    }
+
+}
+*/
+
 #search-form input[type=search]:hover {
     background-color: #fff;
 }
 #search-form input[type=search]:focus {
-    width: 330px;
+    width: 180px;
     padding-left: 32px;
     color: #000;
     background-color: #fff;
