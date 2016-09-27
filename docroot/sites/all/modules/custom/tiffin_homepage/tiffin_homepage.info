@@ -17,4 +17,5 @@ features[panels_mini][] = homepage_social_media
 features[panels_mini][] = homepage_submenu
 features[panels_mini][] = homepage_top_hero
 features[panels_mini][] = join_the_tu_family_white_backgro
+features[panels_mini][] = you_and_tu
 project path = sites/all/modules/custom

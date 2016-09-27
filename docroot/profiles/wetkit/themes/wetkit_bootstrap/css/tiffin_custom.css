@@ -184,9 +184,14 @@ End OLD Homepage slideshow */
     background-size: cover;
 }
 
-
-
 /* End homepage hero */
+
+
+
+
+
+
+
 
 
 
@@ -324,12 +329,107 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     background: #365543;
 }
 
+#wb-lng ul, #wb-glb-mn .pnl-btn {
+    float: none;
+    margin: 0px auto 0px auto;
+}
+
 /* End Nav */
 
 
 
 
 
+
+
+
+
+
+
+
+/* You and TU */
+
+
+#mini-panel-you_and_tu{
+    height: 360px;
+}
+#mini-panel-you_and_tu #you-and-tu h2{
+    height: 38px;
+    width: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-image: url('../images/icon-u-tu.png');
+    margin-bottom: 0px;
+}
+
+#mini-panel-you_and_tu #you-and-tu{
+}
+
+#mini-panel-you_and_tu #you-and-tu ul{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    list-style-type: none;
+}
+#mini-panel-you_and_tu #you-and-tu p{
+    font-size: 28px;
+    width: 306px;
+    margin: 0px auto;
+    color: #365543;
+}
+#mini-panel-you_and_tu #you-and-tu ul li a{
+    text-decoration: none;
+}
+#mini-panel-you_and_tu #you-and-tu ul li h3{
+    color: #D9BF75;
+    font-size: 38px;
+    text-decoration: none;
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(1){
+
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(2){
+
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(3){
+
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li div{
+    height: 130px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+
+#mini-panel-you_and_tu #you-and-tu ul li{
+    width: 33%;
+    text-align: center;
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li div h3{
+    padding-top: 130px;
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(1) div{
+    background-image: url('../images/icon-paper-plane.png');
+    background-position: center;
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(2) div{
+    background-image: url('../images/icon-campus-life.png');
+}
+
+#mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(3) div{
+    background-image: url('../images/icon-happy-student.png');
+}
+
+
+/* End you and TU */
 
 
 

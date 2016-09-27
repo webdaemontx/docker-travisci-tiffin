@@ -420,5 +420,69 @@ function tiffin_homepage_default_panels_mini() {
   $mini->display = $display;
   $export['join_the_tu_family_white_backgro'] = $mini;
 
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
+  $mini->name = 'you_and_tu';
+  $mini->category = '';
+  $mini->admin_title = 'You and TU';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '4b2fafbc-6634-4357-9e5c-ecf6fa365f48';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'you_and_tu';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-5d8b9c1e-114e-4706-a4b3-fefc876a1f21';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div id="you-and-tu">
+<h2></h2>
+<p>Your Journey awaits you</p>
+<ul>
+<li><a href=""><div><h3>Start your Journey</h3></div></a></li>
+<li><a href=""><div><h3>Campus Life</h3></div></a></li>
+<li><a href=""><div><h3>Your career connection</h3></div></a></li>
+</ul></div>',
+    'format' => 'wetkit_html_text',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5d8b9c1e-114e-4706-a4b3-fefc876a1f21';
+  $display->content['new-5d8b9c1e-114e-4706-a4b3-fefc876a1f21'] = $pane;
+  $display->panels['middle'][0] = 'new-5d8b9c1e-114e-4706-a4b3-fefc876a1f21';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $mini->display = $display;
+  $export['you_and_tu'] = $mini;
+
   return $export;
 }
