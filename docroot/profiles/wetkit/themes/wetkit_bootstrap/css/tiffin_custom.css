@@ -63,7 +63,57 @@ End OLD Homepage slideshow */
 
 
 
+
+
+
+
+
+
+
+/* Sidebar menus */
+
+
+
+
+
+.pane-menu-about-tu .active-trail{
+    background-color: #C09212;
+}
+
+.pane-menu-about-tu .active-trail h3{
+    border: 0px !important;
+}
+
+.pane-menu-about-tu .active-trail h3 a{
+    color: white !important;
+}
+
+
+#wb-sec h3{
+    border: 0px !important;
+}
+
+
+
+
+/* End sidebar menus */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Homepage social media */
+
 
 #social_media_home{
     background-image: url('../images/image-homepage-socialmedia.jpg');
