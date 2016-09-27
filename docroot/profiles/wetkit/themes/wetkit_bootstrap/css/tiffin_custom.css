@@ -5,6 +5,7 @@
 body{
     font-family: 'Nunito', sans-serif;
     body: padding-top: 0px;
+    overflow-x: hidden
 }
 
 
