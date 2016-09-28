@@ -1323,9 +1323,8 @@ ul#icons-apply-now-landing-page-last a div{
 ul#icons-apply-now-landing-page-first li{
     width: 450px;
     height: 260px;
-    background-color: white;
     float: left;
-    opacity:  .95;
+    background: rgba(255, 255, 255, 0.90);
 }
 
 
@@ -1354,8 +1353,7 @@ ul#icons-apply-now-landing-page-last li{
     width: 220px;
     height: 150px;
     margin: 0px 10px 10px 0px;
-    background-color: white;
-    opacity:  .95;
+    background: rgba(255, 255, 255, 0.90);
 }
 
 
@@ -1453,11 +1451,12 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p{
 
 
 body.page-admissions {
-    background-image: url('../images/image-apply-now-top-background.png');
+    background-image: url('../images/image-admissions-hero-landing.jpg');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 body.page-admissions h1{
@@ -1520,9 +1519,8 @@ ul#icons-admissions-landing-page-last a div{
 ul#icons-admissions-landing-page-first li{
     width: 410px;
     height: 320px;
-    background-color: white;
     float: left;
-    opacity:  .95;
+    background: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -1551,7 +1549,7 @@ ul#icons-admissions-landing-page-last li{
     height: 150px;
     margin: 0px 10px 10px 0px;
     background-color: white;
-    opacity:  .95;
+    background: rgba(255, 255, 255, 0.85);
 }
 
 
