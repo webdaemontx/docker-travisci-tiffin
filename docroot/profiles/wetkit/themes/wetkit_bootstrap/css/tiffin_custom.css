@@ -344,6 +344,58 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 
+/* Graduate Admissions */
+
+
+
+
+
+
+.pane-graduate-admissions-hero ul{
+    list-style-type: none;
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+}
+
+.pane-graduate-admissions-hero ul li{
+    width: 33%;
+    border: 1px solid blue;
+    margin-right: 1%;
+    height: 88px;
+    background-position: 7% center;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+}
+
+.pane-graduate-admissions-hero ul li div{
+    margin-top: 30px;
+}
+
+
+.pane-graduate-admissions-hero ul li:nth-of-type(1){
+    background-image: url('../images/icon-1.png');
+    background-size: 11.5%;
+}
+
+.pane-graduate-admissions-hero ul li:nth-of-type(2){
+    background-image: url('../images/icon-2.png');
+    background-size: 15%;
+}
+
+.pane-graduate-admissions-hero ul li:nth-of-type(3){
+    background-image: url('../images/icon-3.png');
+    background-size: 15%;
+}
+
+    /* Graduate Admissions */
+
+
+
+
+
+
+
 
 
 
@@ -351,7 +403,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 #mini-panel-you_and_tu{
-    height: 360px;
+    height: 380px;
 }
 #mini-panel-you_and_tu #you-and-tu h2{
     height: 38px;
