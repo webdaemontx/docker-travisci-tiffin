@@ -1033,12 +1033,15 @@ display: flex;
 
 @media (max-width: 500px) {
     #mini-panel-homepage_submenu ul {
-        height: 200px;
+        height: 120px;
         font-size: 17px;
         line-height: 12px;
     }
 }
 
+#mini-panel-homepage_submenu ul:nth-of-type(2) {
+    height: 77px;
+}
 
 #mini-panel-homepage_submenu ul li{
      float: left;
@@ -1211,12 +1214,12 @@ display: flex;
 
 body.page-academics h1{
     text-align: center;
-    color: white;
+    color: #365543;
     text-decoration: underline;
 }
 
 body.page-academics {
-    background-image: url('../images/image-apply-now-top-background.png');
+    background-image: url('../images/image-academics-hero-landing.jpg');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: cover;
@@ -1243,7 +1246,7 @@ body.page-academics main{
 
 
 body.page-apply-now {
-    background-image: url('../images/image-apply-now-top-background.png');
+    background-image: url('../images/image-apply-now-hero.jpg');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: cover;
