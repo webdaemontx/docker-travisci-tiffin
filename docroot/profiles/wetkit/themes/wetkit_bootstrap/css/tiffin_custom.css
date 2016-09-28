@@ -182,6 +182,8 @@ End OLD Homepage slideshow */
     background-image: url('../images/image-hero-top-one.jpg');
     background-size: 1200px 574px;
     background-size: cover;
+    background-position: 0px -90px;
+    background-repeat: no-repeat;
 }
 
 /* End homepage hero */
@@ -348,34 +350,71 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 
+.pane-graduate-admissions-hero{
+    background-image: url('../images/new-graduate-admissions-top-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 360px;
+    width: 100%;
 
+
+
+
+    background-attachment: fixed;
+
+}
+
+.pane-graduate-admissions-hero h2 {
+    text-align: center;
+    color: #365543;
+    text-decoration: none;
+    font-size: 41px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
 
 
 .pane-graduate-admissions-hero ul{
     list-style-type: none;
-    width: 90%;
-    margin: 0px auto;
+    width: 85%;
+    margin: 80px auto 0px auto;
     display: flex;
 }
 
 .pane-graduate-admissions-hero ul li{
     width: 33%;
-    border: 1px solid blue;
     margin-right: 1%;
     height: 88px;
     background-position: 7% center;
     background-repeat: no-repeat;
     padding-left: 10px;
+    background-color: white;
+    opacity: 0.85;
 }
 
-.pane-graduate-admissions-hero ul li div{
-    margin-top: 30px;
+.pane-graduate-admissions-hero ul li div p{
+    padding: 20px 0px 0px 25%;
 }
 
+.pane-graduate-admissions-hero ul li:nth-of-type(1) div{
+}
+
+.pane-graduate-admissions-hero ul li:nth-of-type(3) div{
+}
+
+
+.pane-graduate-admissions-hero ul li a{
+    color: #365543;
+    font-size: 31px;
+    text-decoration: none;
+}
 
 .pane-graduate-admissions-hero ul li:nth-of-type(1){
     background-image: url('../images/icon-1.png');
     background-size: 11.5%;
+    background-position: 4% center;
+    padding-left: 5px;
 }
 
 .pane-graduate-admissions-hero ul li:nth-of-type(2){
@@ -425,9 +464,10 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 }
 #mini-panel-you_and_tu #you-and-tu p{
     font-size: 28px;
-    width: 306px;
+    width: 100%;
     margin: 0px auto;
     color: #365543;
+    text-align: center;
 }
 #mini-panel-you_and_tu #you-and-tu ul li a{
     text-decoration: none;
@@ -1406,12 +1446,11 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p{
 
 
 
-
 body.page-admissions {
     background-image: url('../images/image-apply-now-top-background.png');
     background-repeat: no-repeat;
     background-color: transparent;
-    background-size: 1400px;
+    background-size: cover;
     background-position: center;
 }
 
