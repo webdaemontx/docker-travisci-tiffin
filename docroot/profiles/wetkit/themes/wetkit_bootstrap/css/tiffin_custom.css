@@ -182,7 +182,6 @@ End OLD Homepage slideshow */
     background-image: url('../images/image-hero-top-one.jpg');
     background-size: 1200px 574px;
     background-size: cover;
-    background-position: 0px -90px;
     background-repeat: no-repeat;
 }
 
@@ -1090,7 +1089,11 @@ display: flex;
     padding-top: 20px;
 }
 
-
+@media screen and (max-width: 1050px) {
+    #mini-panel-homepage_submenu ul:nth-of-type(2){
+        font-size: 28px;
+    }
+}
 @media screen and (max-width: 928px) {
     #mini-panel-homepage_submenu ul:nth-of-type(2){
         background-color: #d8be7a;
