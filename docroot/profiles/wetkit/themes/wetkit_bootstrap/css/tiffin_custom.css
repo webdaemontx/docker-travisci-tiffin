@@ -153,7 +153,7 @@ End OLD Homepage slideshow */
 
 #social_media_home ul li:nth-of-type(2){
     background-image: url('../images/instagram.png');
-    height: 96px;
+    height: 97px;
     background-repeat: no-repeat;
 }
 
@@ -859,7 +859,7 @@ body.page-academics .pane-join-the-tu-family-white-backgro{
 }
 
 #mini-panel-join_the_tu_family_white_backgro{
-    height: 260px;
+    height: 265px;
     background-color: white;
     clear: both;
 }
