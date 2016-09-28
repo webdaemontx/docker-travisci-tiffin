@@ -1,0 +1,12 @@
+name = Tiffin Graduate Admissions Page
+core = 7.x
+package = Tiffin
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels_mini
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = panels_mini:panels_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = graduate_admissions
+features[panels_mini][] = graduate_admissions_hero
+project path = sites/all/modules/custom

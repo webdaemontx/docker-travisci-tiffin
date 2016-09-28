@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Graduate Admissions Page feature.
+ */
+
+include_once 'tiffin_graduate_admissions_page.features.inc';
