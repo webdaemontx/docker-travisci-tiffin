@@ -113,13 +113,8 @@ function entity_entity_view_content_type_render($entity_type, $conf, $panel_args
   $block->delta = $entity_type . '-' . str_replace('-', '_', $conf['view_mode']);
 
   $entity_id = $context->argument;
-  $entity = isset($context->data) ? clone($context->data) : NULL;
-  if (empty($entity)) {
-    $block->content = '';
-  }
-  else {
-    $block->content = entity_view($entity_type, array($entity_id => $entity), $conf['view_mode']);
-  }
+  $entity = entity_load_single($entity_type, $entity_id);
+  $block->content = entity_view($entity_type, array($entity_id => $entity), $conf['view_mode']);
   return $block;
 }
 
