@@ -1,0 +1,13 @@
+name = Tiffin Undergraduate Admissions
+core = 7.x
+package = Tiffin
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels_mini
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = panels_mini:panels_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = undergraduate_admissions
+features[panels_mini][] = undergraduate_admissions_hero
+features[panels_mini][] = undergraduate_social_media
+project path = sites/all/modules/custom

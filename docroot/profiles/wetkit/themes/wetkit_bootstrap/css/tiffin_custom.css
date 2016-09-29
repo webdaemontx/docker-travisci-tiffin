@@ -444,6 +444,96 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 
+/* Undergraduate Admissions */
+
+
+
+.pane-undergraduate-admissions-hero{
+    background-image: url('../images/image-undergraduate-hero-landing.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 360px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 30px;
+}
+
+.pane-undergraduate-admissions-hero h2 {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 41px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+
+.pane-undergraduate-admissions-hero ul{
+    list-style-type: none;
+    width: 85%;
+    margin: 80px auto 0px auto;
+    display: flex;
+}
+
+.pane-undergraduate-admissions-hero ul li{
+    width: 33%;
+    margin-right: 1%;
+    height: 88px;
+    background: rgba(255, 255, 255, 0.90);
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    background-color: white;
+    background-position: 7% center;
+}
+
+.pane-undergraduate-admissions-hero ul li div p{
+    padding: 20px 0px 0px 25%;
+}
+
+.pane-undergraduate-admissions-hero ul li:nth-of-type(1) div{
+}
+
+.pane-undergraduate-admissions-hero ul li:nth-of-type(3) div{
+}
+
+
+.pane-undergraduate-admissions-hero ul li a{
+    color: #365543;
+    font-size: 31px;
+    text-decoration: none;
+}
+
+.pane-undergraduate-admissions-hero ul li:nth-of-type(1){
+    background-image: url('../images/icon-1.png');
+    background-size: 11.5%;
+    background-position: 4% center;
+    padding-left: 5px;
+}
+
+.pane-undergraduate-admissions-hero ul li:nth-of-type(2){
+    background-image: url('../images/icon-2.png');
+    background-size: 15%;
+}
+
+.pane-undergraduate-admissions-hero ul li:nth-of-type(3){
+    background-image: url('../images/icon-3.png');
+    background-size: 15%;
+}
+
+/* End undergraduate admissions */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

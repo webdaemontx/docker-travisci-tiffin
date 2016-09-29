@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Undergraduate Admissions feature.
+ */
+
+include_once 'tiffin_undergraduate_admissions.features.inc';
