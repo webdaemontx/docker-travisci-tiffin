@@ -389,11 +389,10 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     width: 33%;
     margin-right: 1%;
     height: 88px;
-    background-position: 7% center;
-    background-repeat: no-repeat;
     padding-left: 10px;
-    background-color: white;
-    opacity: 0.85;
+    background: rgba(255, 255, 255, .85);
+    background-repeat: no-repeat;
+    background-position: 7% center;
 }
 
 .pane-online-admissions-hero ul li div p{
@@ -484,11 +483,11 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     width: 33%;
     margin-right: 1%;
     height: 88px;
-    background: rgba(255, 255, 255, 0.90);
+    background: rgba(255, 255, 255, .85);
     background-repeat: no-repeat;
     padding-left: 10px;
-    background-color: white;
     background-position: 7% center;
+
 }
 
 .pane-undergraduate-admissions-hero ul li div p{
