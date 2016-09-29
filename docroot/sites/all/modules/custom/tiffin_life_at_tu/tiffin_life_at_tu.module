@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Life at TU feature.
+ */
+
+include_once 'tiffin_life_at_tu.features.inc';
