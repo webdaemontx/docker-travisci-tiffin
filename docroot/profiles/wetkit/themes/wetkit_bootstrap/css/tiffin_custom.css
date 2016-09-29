@@ -26,6 +26,23 @@ main{
 }
 
 
+/* mobile nav */
+
+
+.btn-default{
+    border-color: transparent;
+}
+
+#wb-bar{
+    border-bottom: 0px;
+}
+
+.glyphicon{
+    font-size: 37px;
+}
+
+/* End mobile nav */
+
 
 /* OLD Homepage slideshow
 
