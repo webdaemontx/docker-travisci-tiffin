@@ -21,7 +21,9 @@ main{
 }
 
 
-
+.breadcrumb{
+    display: none;
+}
 
 
 
@@ -345,6 +347,110 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 
+
+
+/* Online Admissions */
+
+
+
+.pane-online-admissions-hero{
+    background-image: url('../images/image-online-programs-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 360px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 30px;
+}
+
+.pane-online-admissions-hero h2 {
+    text-align: center;
+    color: #365543;
+    text-decoration: none;
+    font-size: 41px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+
+.pane-online-admissions-hero ul{
+    list-style-type: none;
+    width: 85%;
+    margin: 80px auto 0px auto;
+    display: flex;
+}
+
+.pane-online-admissions-hero ul li{
+    width: 33%;
+    margin-right: 1%;
+    height: 88px;
+    background-position: 7% center;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    background-color: white;
+    opacity: 0.85;
+}
+
+.pane-online-admissions-hero ul li div p{
+    padding: 20px 0px 0px 25%;
+}
+
+.pane-online-admissions-hero ul li:nth-of-type(1) div{
+}
+
+.pane-online-admissions-hero ul li:nth-of-type(3) div{
+}
+
+
+.pane-online-admissions-hero ul li a{
+    color: #365543;
+    font-size: 31px;
+    text-decoration: none;
+}
+
+.pane-online-admissions-hero ul li:nth-of-type(1){
+    background-image: url('../images/icon-1.png');
+    background-size: 11.5%;
+    background-position: 4% center;
+    padding-left: 5px;
+}
+
+.pane-online-admissions-hero ul li:nth-of-type(2){
+    background-image: url('../images/icon-2.png');
+    background-size: 15%;
+}
+
+.pane-online-admissions-hero ul li:nth-of-type(3){
+    background-image: url('../images/icon-3.png');
+    background-size: 15%;
+}
+
+/* End online admissions */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Graduate Admissions */
 
 
@@ -356,12 +462,8 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     background-position: center;
     height: 360px;
     width: 100%;
-
-
-
-
     background-attachment: fixed;
-
+    padding-top: 30px;
 }
 
 .pane-graduate-admissions-hero h2 {
@@ -426,7 +528,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     background-size: 15%;
 }
 
-    /* Graduate Admissions */
+/* End graduate admissions */
 
 
 

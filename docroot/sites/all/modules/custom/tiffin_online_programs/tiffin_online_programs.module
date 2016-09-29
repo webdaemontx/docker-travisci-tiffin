@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Online Programs feature.
+ */
+
+include_once 'tiffin_online_programs.features.inc';
