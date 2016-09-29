@@ -239,10 +239,14 @@ ul.slides li.flex-active-slide{
 
 
 div#flexslider-1{
-width: 900px;
-margin: 0px auto 0px auto;
+    width: 900px;
+    margin: 0px auto 0px auto;
     background-color: transparent;
     border: 0px;
+}
+
+div#flexslider-1 a{
+    outline: 0;
 }
 
 div#flexslider-1 ul.slides li.flex-active-slide{
