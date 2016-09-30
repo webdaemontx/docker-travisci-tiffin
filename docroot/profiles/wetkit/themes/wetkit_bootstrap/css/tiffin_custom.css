@@ -277,11 +277,10 @@ div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title{
     position: absolute;
     left: 20px;
     z-index: 1;
-    background-color: #D9BF75;
-    padding: 6px 122px 4px 6px;
+    background-color: rgba(217, 191, 117, 0.50);
+    padding: 6px 5% 4px 6px !important;
     height: 44px;
     min-width: 320px;
-    opacity: .85;
 }
 
 div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a{
