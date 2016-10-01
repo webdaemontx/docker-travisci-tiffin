@@ -1,0 +1,14 @@
+name = About TU
+core = 7.x
+package = Tiffin
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels_mini
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = panels_mini:panels_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = about_us
+features[panels_mini][] = about_tiffin_ohio
+features[panels_mini][] = about_tu_hero_top
+features[panels_mini][] = discover_tiffin_ohio
+project path = sites/all/modules/custom

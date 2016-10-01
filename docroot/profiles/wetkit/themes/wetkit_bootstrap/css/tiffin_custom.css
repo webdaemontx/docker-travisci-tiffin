@@ -37,9 +37,17 @@ main{
     border-bottom: 0px;
 }
 
-.glyphicon{
-    font-size: 37px;
+@media (min-width: 992px) {
+    .glyphicon {
+        display: none;
+    }
 }
+@media (max-width: 992px) {
+    .glyphicon{
+        font-size: 37px;
+    }
+}
+
 
 /* End mobile nav */
 
@@ -205,6 +213,11 @@ End OLD Homepage slideshow */
 }
 
 /* End homepage hero */
+
+
+
+
+
 
 
 
@@ -1050,6 +1063,10 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     padding: 0px;
 }
 
+.wb-menu .hvr-underline-reveal::before{
+    background: white !important;
+}
+
 .wb-menu .menu > li{
     padding: 10px 12px 10px 10px;
 }
@@ -1092,7 +1109,6 @@ ul[role=menubar]{
 
 .list-inline li a:hover,
 .list-inline li a:focus{
-  background-color: #546D5E !important;
   color: white !important;
 }
 
@@ -1294,6 +1310,17 @@ media screen and (max-width: 928px) {
 /* End nav search animation */
 
 
+
+
+
+
+
+
+
+
+
+
+
 .glyphicon-chevron-down::before {
     content: "";
 }
@@ -1302,6 +1329,261 @@ media screen and (max-width: 928px) {
 body.page-admissions .pane-1{
     clear: both;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About TU Top */
+
+.pane-about-tu-hero-top{
+    background-image: url('../images/image-abouttu-hero-landing.jpg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 375px;
+}
+
+.pane-about-tu-hero-top h1{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.pane-about-tu-hero-top #abouttutop{
+    height: 194px;
+    background-color: #dbc073;
+    background: rgba(218, 192, 115, .90);
+    margin-top: 114px;
+}
+
+
+
+
+.pane-about-tu-hero-top #abouttutop ul{
+    list-style-type: none;
+    display: flex;
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+
+.pane-about-tu-hero-top #abouttutop ul li{
+    width: 33%;
+    background-position: center;
+    height: 96px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.pane-about-tu-hero-top #abouttutop ul li a{
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.pane-about-tu-hero-top #abouttutop ul li div{
+}
+
+.pane-about-tu-hero-top #abouttutop ul li div p{
+    line-height: 40px;
+    padding: 20px;
+}
+
+.pane-about-tu-hero-top #abouttutop ul li div.hvr-bounce-to-bottom::before{
+    background: #365543 !important;
+}
+
+.pane-about-tu-hero-top #abouttutop ul li:nth-of-type(1){
+    background-image: url('../images/.png');
+    background-repeat: no-repeat;
+}
+
+.pane-about-tu-hero-top #abouttutopul li:nth-of-type(2){
+    background-image: url('../images/.png');
+    height: 97px;
+    background-repeat: no-repeat;
+}
+
+.pane-about-tu-hero-top #abouttutop ul li:nth-of-type(3){
+    background-image: url('../images/.png');
+    height: 96px;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* End about tu top */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Tiffin Ohio */
+
+
+
+.pane-about-tiffin-ohio{
+    background-image: url('../images/image-discover-city-of-tiffin.jpg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 465px;
+
+}
+
+
+.pane-about-tiffin-ohio p{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.pane-about-tiffin-ohio ul{
+    list-style-type: none;
+    width: 100%;
+    clear: both;
+}
+.pane-about-tiffin-ohio ul li{
+    list-style-type: none;
+    width: 100%;
+    clear: both;
+    display: flex;
+}
+.pane-about-tiffin-ohio ul li p:nth-of-type(1) {
+    width: 40%;
+    text-align: right;
+    padding-right: 10px;
+}
+.pane-about-tiffin-ohio ul li p:nth-of-type(2) {
+    width: 60%;
+}
+.pane-about-tiffin-ohio h3{
+    margin-top: 80px;
+    border: 1px solid #dbc073;
+    height: 66px;
+    padding-top: 3px;
+    padding-left: 12px;
+    padding-right: 10px;
+    color: white;
+    font-size: 54px;
+    float: left; clear: both;
+    margin-bottom: 30px;
+}
+
+#about-tiffin{
+    width: 462px;
+    margin: 0px auto 0px auto;
+}
+
+
+/* About Tiffin Ohio */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Discover Tiffin Ohio */
+
+
+.pane-discover-tiffin-ohio{
+    background-image: url('../images/image-discover-city-of-tiffin.jpg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    height: 465px;
+}
+
+.pane-discover-tiffin-ohio a{
+    text-decoration: none;
+}
+.pane-discover-tiffin-ohio p{
+    margin-top: 200px;
+    border: 1px solid #dbc073;
+    height: 86px;
+    padding-top: 3px;
+    padding-left: 12px;
+    color: white;
+    font-size: 54px;
+}
+
+#discover-tiffin{
+    width: 642px;
+    margin: 0px auto 0px auto;
+}
+
+
+/* End Discover Tiffin Ohio */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1793,7 +2075,7 @@ ul#icons-apply-now-landing-page-first li{
     width: 450px;
     height: 260px;
     float: left;
-    background: rgba(255, 255, 255, 0.90);
+    background: rgba(255, 255, 255, 1);
 }
 
 
