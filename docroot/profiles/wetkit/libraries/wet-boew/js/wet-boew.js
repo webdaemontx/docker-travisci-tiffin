@@ -6961,6 +6961,8 @@ $document.on( "mouseleave", selector + " .menu", function( event ) {
 } );
 
 // Touchscreen "touches" on menubar items should close the submenu if it is open
+
+	/*
 $document.on( "touchstart click", selector + " .item[aria-haspopup=true]", function( event ) {
 	var isTouchstart = event.type === "touchstart",
 		which = event.which,
@@ -6982,7 +6984,7 @@ $document.on( "touchstart click", selector + " .item[aria-haspopup=true]", funct
 		}
 	}
 } );
-
+*/
 // Click on menu items with submenus should open and close those submenus
 $document.on( "click", selector + " [role=menu] [aria-haspopup=true]", function( event ) {
 	var menuItem = event.currentTarget,

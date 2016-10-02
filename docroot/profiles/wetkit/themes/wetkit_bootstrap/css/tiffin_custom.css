@@ -5,7 +5,11 @@
 body{
     font-family: 'Nunito', sans-serif;
     body: padding-top: 0px;
-    overflow-x: hidden
+    overflow-x: hidden;
+    /*
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    */
 }
 
 
