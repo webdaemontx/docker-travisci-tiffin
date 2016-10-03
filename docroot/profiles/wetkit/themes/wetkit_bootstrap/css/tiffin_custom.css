@@ -2,6 +2,7 @@
 
 @import 'https://fonts.googleapis.com/css?family=Nunito:300';
 
+
 body{
     font-family: 'Nunito', sans-serif;
     body: padding-top: 0px;
@@ -10,6 +11,7 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     */
+
 }
 
 
@@ -142,88 +144,8 @@ End OLD Homepage slideshow */
 
 
 
-/* homepage responsive phones */
 
 
-
-@media (max-width: 575px) {
-    #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
-        margin: 0px !important;
-        width: 100% !important;
-    }
-    #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 h2{
-        font-size: 36px !important;
-    }
-    #mini-panel-homepage_top_hero div#edit-submitted-degree-type div label {
-        font-size: 31px !important;
-    }
-    #mini-panel-homepage_top_hero div#edit-submitted-degree-type div:nth-of-type(1){
-        width: 100% !important;
-    }
-    #mini-panel-homepage_top_hero div.pane-webform-client-block-1061{
-        height: 330px !important;
-    }
-    #mini-panel-homepage_top_hero select.form-select{
-        width: 100% !important;
-    }
-    #mini-panel-homepage_submenu ul:nth-of-type(1){
-        padding-left: 5% !important;
-        display: block !important;
-        height: 170px !important;
-    }
-    #mini-panel-homepage_submenu ul:nth-of-type(1) li{
-        width: 100% !important;
-        clear: both !important;
-        margin-top: 10px !important;
-    }
-    #mini-panel-homepage_submenu ul:nth-of-type(2){
-        width: 100% !important;
-        text-align: center;
-        margin: 0px auto 0px auto !important;
-        padding-left: 7% !important;
-    }
-    #social_media_home{
-        margin: 0px !important;
-        padding: 0px !important;
-    }
-    #social_media_home ul{
-        margin: 0px !important;
-        padding: 0px !important;
-        width: 280px !important;
-
-    }
-    #social_media_home ul li{
-        background-size: 70%;
-    }
-    #social_media_home ul li:nth-of-type(1){
-        background-size: 38%;
-    }
-    #social_media_home ul li div{
-
-    }
-    #mini-panel-join_the_tu_family_white_backgro{
-
-    }
-    #mini-panel-join_the_tu_family_white_backgro h3{
-        width: 100% !important;
-        font-size: 30px !important;
-        margin: 0px 0px 0px 20px !important;
-    }
-    #mini-panel-join_the_tu_family_white_backgro ul{
-        padding: 0px 0px 0px 10px;
-    }
-    #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
-        margin: 0px;
-        text-align: center;
-    }
-}
-
-
-
-
-
-
-/* end homepage responsive phones */
 
 
 
@@ -2570,54 +2492,90 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 
 
+/* homepage responsive phones */
 
 
 
+@media (max-width: 575px) {
+    body{
+        moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+    }
+    #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
+        margin: 0px !important;
+        width: 100% !important;
+    }
+    #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 h2{
+        font-size: 36px !important;
+    }
+    #mini-panel-homepage_top_hero div#edit-submitted-degree-type div label {
+        font-size: 31px !important;
+    }
+    #mini-panel-homepage_top_hero div#edit-submitted-degree-type div:nth-of-type(1){
+        width: 100% !important;
+    }
+    #mini-panel-homepage_top_hero div.pane-webform-client-block-1061{
+        height: 330px !important;
+    }
+    #mini-panel-homepage_top_hero select.form-select{
+        width: 100% !important;
+    }
+    #mini-panel-homepage_submenu ul:nth-of-type(1){
+        padding-left: 5% !important;
+        display: block !important;
+        height: 170px !important;
+    }
+    #mini-panel-homepage_submenu ul:nth-of-type(1) li{
+        width: 100% !important;
+        clear: both !important;
+        margin-top: 10px !important;
+    }
+    #mini-panel-homepage_submenu ul:nth-of-type(2){
+        width: 100% !important;
+        text-align: center;
+        margin: 0px auto 0px auto !important;
+        padding-left: 7% !important;
+    }
+    #social_media_home{
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    #social_media_home ul{
+        margin: 0px !important;
+        padding: 0px !important;
+        width: 280px !important;
 
-/*------------------TESTS BELOW--------------------*/
+    }
+    #social_media_home ul li{
+        background-size: 70%;
+    }
+    #social_media_home ul li:nth-of-type(1){
+        background-size: 38%;
+    }
+    #social_media_home ul li div{
 
+    }
+    #mini-panel-join_the_tu_family_white_backgro{
 
-/*
-ul.menu ul {
-    list-style: none;
-    list-style-type: none;
+    }
+    #mini-panel-join_the_tu_family_white_backgro h3{
+        width: 100% !important;
+        font-size: 30px !important;
+        margin: 0px 0px 0px 20px !important;
+    }
+    #mini-panel-join_the_tu_family_white_backgro ul{
+        padding: 0px 0px 0px 10px;
+    }
+    #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
+        margin: 0px;
+        text-align: center;
+    }
 }
 
-ul.menu ul li {
-    float: left;
-    display: inline-block;
-}
-ul.menu li a {
-    text-decoration: none;
-
-
-}
-
-ul.menu li a:hover {
-
-}
-ul.menu:after {
-    font-size: 0;
-    content: '';
-    display: table;
-    clear: both;
-}
 
 
 
-#magic-line {
-    position: absolute;
-    height: 10px;
-    background: #13b9e7;
-    width: 60px;
-    bottom: -22px;
-    left:0px;
-    padding: 0 !important;
-    z-index: 9;
-    border-radius: 5px;
-}
 
-ul.menu {
-    position: relative;
-}
-*/
+
+/* end homepage responsive phones */
