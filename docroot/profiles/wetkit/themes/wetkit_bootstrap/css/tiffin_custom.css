@@ -1714,9 +1714,11 @@ body.page-admissions .pane-1{
 /* Join the TU Family (white background) */
 
 body.page-admissions .pane-join-the-tu-family-white-backgro,
-body.page-academics .pane-join-the-tu-family-white-backgro{
+body.page-academics .pane-join-the-tu-family-white-backgro,
+body.page-apply-now{
     padding-top: 130px;
     clear: both;
+
 }
 
 #mini-panel-join_the_tu_family_white_backgro h3{
