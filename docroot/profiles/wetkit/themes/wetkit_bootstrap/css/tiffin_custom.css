@@ -54,6 +54,9 @@ main{
     }
 }
 
+.hvr-underline-from-center:before{
+    background: #365543 !important
+}
 
 /* End mobile nav */
 
@@ -548,7 +551,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     margin-right: 1%;
     height: 200px;
     padding-left: 10px;
-    background: rgba(255, 255, 255, .70);
+    background: rgba(255, 255, 255, .87);
     background-repeat: no-repeat;
     background-position: 7% center;
 }
@@ -1715,7 +1718,7 @@ body.page-admissions .pane-1{
 
 body.page-admissions .pane-join-the-tu-family-white-backgro,
 body.page-academics .pane-join-the-tu-family-white-backgro,
-body.page-apply-now{
+body.page-apply-now .pane-join-the-tu-family-white-backgro{
     padding-top: 130px;
     clear: both;
 
