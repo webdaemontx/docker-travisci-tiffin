@@ -925,6 +925,15 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     text-decoration: none;
 }
 
+@media (max-width: 1000px) {
+    .pane-undergraduate-admissions-hero ul li a{
+        font-size: 24px;
+    }
+    .pane-undergraduate-admissions-hero ul li div p{
+        padding: 27px 0px 0px 25%;
+    }
+}
+
 .pane-undergraduate-admissions-hero ul li:nth-of-type(1){
     background-image: url('../images/icon-1.png');
     background-size: 11.5%;
@@ -2779,11 +2788,13 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 /* Program pages responsive */
 
 @media (max-width: 775px) {
-    .pane-graduate-admissions-hero{
+    .pane-graduate-admissions-hero,
+    .pane-undergraduate-admissions-hero{
         height: 400px;
     }
 
-    .pane-graduate-admissions-hero ul{
+    .pane-graduate-admissions-hero ul,
+    .pane-undergraduate-admissions-hero ul{
         display: block;
         margin: 10px auto 0px auto;
         width: 100%;
@@ -2791,23 +2802,28 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
         padding: 0px;
     }
 
-    .pane-graduate-admissions-hero ul li{
+    .pane-graduate-admissions-hero ul li,
+    .pane-undergraduate-admissions-hero ul li{
         width: 100%;
         float: left;
         clear: both;
     }
     .pane-graduate-admissions-hero ul li:nth-of-type(3),
-    .pane-graduate-admissions-hero ul li:nth-of-type(2){
+    .pane-undergraduate-admissions-hero ul li:nth-of-type(3),
+    .pane-graduate-admissions-hero ul li:nth-of-type(2),
+    .pane-undergraduate-admissions-hero ul li:nth-of-type(2){
         background-size: 10%;
     }
-    .pane-graduate-admissions-hero ul li:nth-of-type(1){
+    .pane-graduate-admissions-hero ul li:nth-of-type(1),
+    .pane-undergraduate-admissions-hero ul li:nth-of-type(1){
         background-size: 7.5%;
         background-position: 6% center;
     }
 }
 
 @media (max-width: 500px) {
-    .pane-graduate-admissions-hero h2{
+    .pane-graduate-admissions-hero h2,
+    .pane-undergraduate-admissions-hero h2{
         font-size: 30px;
     }
 }
