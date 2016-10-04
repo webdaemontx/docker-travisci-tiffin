@@ -177,6 +177,8 @@ End OLD Homepage slideshow */
     width: 100%;
 }
 #social_media_home ul li{
+    float: left;
+    clear: none;
     width: 33%;
     background-position: center;
     height: 96px;
@@ -554,7 +556,11 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     background: rgba(255, 255, 255, .87);
     background-repeat: no-repeat;
     background-position: 7% center;
+    float: left;
+    clear: none;
 }
+
+
 
 .pane-life-at-tu-hero-top ul li div{
     width: 100%;
@@ -1066,6 +1072,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     width: 100%;
     height: 140px;
     display: flex;
+    display: -ms-flex;
     list-style-type: none;
 }
 #mini-panel-you_and_tu #you-and-tu p{
@@ -1107,6 +1114,8 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 #mini-panel-you_and_tu #you-and-tu ul li{
     width: 33%;
     text-align: center;
+    float: left;
+    clear: none;
 }
 
 #mini-panel-you_and_tu #you-and-tu ul li div h3{
@@ -2584,3 +2593,28 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 
 /* end homepage responsive phones */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .pane-life-at-tu-hero-top ul li{
+        width: 32%;
+margin-bottom: 20px;
+    }
+    .pane-dragon-perks ul{
+        display: block;
+    }
+
+    .pane-dragon-perks ul li{
+        width: 22%;
+        float: left;
+        clear: none;
+
+    }
+    .pane-life-at-tu-hero-top ul:nth-of-type(2) li:nth-of-type(1) p{
+        width: 220px;
+    }
+    .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(3) p{
+        width: 235px;
+    }
+}
+
+
