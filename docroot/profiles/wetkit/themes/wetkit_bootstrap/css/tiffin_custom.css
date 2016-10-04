@@ -2594,6 +2594,11 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 /* end homepage responsive phones */
 
+
+
+
+/* IE 10 Fixes */
+
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .pane-life-at-tu-hero-top ul li{
         width: 32%;
@@ -2615,6 +2620,48 @@ margin-bottom: 20px;
     .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(3) p{
         width: 235px;
     }
+    .pane-about-tu-hero-top #abouttutop ul{
+        display: block;
+    }
+    .pane-about-tu-hero-top #abouttutop ul li{
+        float: left;
+        clear: none;
+
+    }
+    .pane-about-tiffin-ohio ul{
+        width: 600px;
+    }
+    .pane-about-tiffin-ohio ul li{
+    }
+    .pane-about-tiffin-ohio ul li p{
+        float: left;
+        clear: none;
+    }
+
+
+    #search-form input[type=search] {
+        border: 0px;
+        padding: 9px 10px 9px 32px;
+
+        -webkit-border-radius: 10em;
+        -moz-border-radius: 10em;
+        border-radius: 10em;
+        height: 50px;
+        width: 50px;
+        padding-left: 10px;
+        color: transparent;
+        cursor: pointer;
+    }
+    .panel-separator{
+        height: 0px !important;
+    }
+    .pane-homepage-social-media{
+        clear: both;
+    }
+    #mini-panel-homepage_social_media{
+        clear: both;
+    }
 }
 
 
+/* End IE 10 fixes */
