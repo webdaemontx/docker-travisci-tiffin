@@ -2661,6 +2661,32 @@ margin-bottom: 20px;
     #mini-panel-homepage_social_media{
         clear: both;
     }
+    .pane-graduate-admissions-hero ul{
+        display: block;
+    }
+
+    .pane-graduate-admissions-hero ul li{
+        float: left !important;
+        clear: none !important;
+        width: 32% !important;
+    }
+
+    .pane-online-admissions-hero ul{
+        display: block;
+    }
+    .pane-online-admissions-hero ul li{
+        float: left !important;
+        clear: none !important;
+        width: 32% !important;
+    }
+    .pane-undergraduate-admissions-hero ul{
+        display: block;
+    }
+    .pane-undergraduate-admissions-hero ul li{
+        float: left !important;
+        clear: none !important;
+        width: 32% !important;
+    }
 }
 
 
