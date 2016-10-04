@@ -1837,6 +1837,7 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro{
     width: 350px;
     float: left;
     clear: none;
+    text-align: center;
 }
 @media screen and (max-width: 717px) {
     #mini-panel-join_the_tu_family_white_backgro ul li{
@@ -1881,6 +1882,14 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro{
     }
 
 }
+
+@media screen and (max-width: 780px) {
+    #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
+        margin: 6px 0px 0px 23px;
+        font-size: 21px;
+    }
+}
+
 
 
 
@@ -2036,14 +2045,17 @@ display: flex;
 
 
 @media screen and (max-width: 928px) {
+    #mini-panel-homepage_submenu{
+        background-color: #d8be7a;
+    }
+    #mini-panel-homepage_submenu div{
+        width: 100%;
+    }
     #mini-panel-homepage_submenu ul:nth-of-type(2){
         background-color: #d8be7a;
-        width: 100%;
+        width: 300px;
         margin: 0px auto 0px auto;
         text-align: center;
-        columns: 3;
-        -webkit-columns: 3;
-        -moz-columns: 3;
     }
 }
 
@@ -2623,22 +2635,34 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
         padding-left: 7% !important;
     }
 
+
+
+
+
     #mini-panel-join_the_tu_family_white_backgro{
 
     }
     #mini-panel-join_the_tu_family_white_backgro h3{
         width: 100% !important;
         font-size: 30px !important;
-        margin: 0px 0px 0px 20px !important;
+        text-align: center;
     }
     #mini-panel-join_the_tu_family_white_backgro ul{
-        padding: 0px 0px 0px 10px;
+        padding: 0px 10px 0px 10px;
+    }
+    #mini-panel-join_the_tu_family_white_backgro ul li{
+        text-align: center;
+    }
+    #mini-panel-join_the_tu_family_white_backgro ul li div{
+        height: 90px !important;
+        width: 90px !important;
+        background-size: 90px 90px !important;
     }
     #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2){
         margin: 0px;
         text-align: center;
-    }
 
+    }
 
 
 
@@ -2698,6 +2722,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
     #mini-panel-you_and_tu #you-and-tu ul li div{
         background-position: center center;
     }
+
 }
 
 
@@ -2725,11 +2750,13 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
     #social_media_home ul li div{
 
     }
+
 }
 @media (max-width: 376px) {
     .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image{
         width: 75% !important;
     }
+
 }
 
 
@@ -2737,6 +2764,76 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 
 /* end homepage responsive phones */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Program pages responsive */
+
+@media (max-width: 775px) {
+    .pane-graduate-admissions-hero{
+        height: 400px;
+    }
+
+    .pane-graduate-admissions-hero ul{
+        display: block;
+        margin: 10px auto 0px auto;
+        width: 100%;
+        float: left;
+        padding: 0px;
+    }
+
+    .pane-graduate-admissions-hero ul li{
+        width: 100%;
+        float: left;
+        clear: both;
+    }
+    .pane-graduate-admissions-hero ul li:nth-of-type(3),
+    .pane-graduate-admissions-hero ul li:nth-of-type(2){
+        background-size: 10%;
+    }
+    .pane-graduate-admissions-hero ul li:nth-of-type(1){
+        background-size: 7.5%;
+        background-position: 6% center;
+    }
+}
+
+@media (max-width: 500px) {
+    .pane-graduate-admissions-hero h2{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 376px) {
+    .pane-graduate-admissions-hero ul li p{
+        font-size: 20px !important;
+        margin-top: 13px;
+    }
+}
+/* Program page responsive */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
