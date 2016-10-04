@@ -865,7 +865,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 
 
-/* Undergraduate Admissions */
+/* Undergraduate Admissions Top */
 
 
 
@@ -942,17 +942,65 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     background-size: 15%;
 }
 
-/* End undergraduate admissions */
+/* End undergraduate admissions top*/
 
 
 
 
 
+/* Undergraduate Admissions */
 
 
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .view-undergraduate-admissions{
+    width: 90%;
+    margin: 0px auto 0px auto;
+
+}
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .view-undergraduate-admissions h2,
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-schools h2{
+    text-align: center;
+}
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-schools .view-content{
+    text-align: center;
+}
+.view-undergraduate-admissions .view-content{
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane  .view-undergraduate-admissions .view-content a{
+    font-size: 21px;
+    color: #11361E;
+    text-decoration: none;
+}
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane  .view-undergraduate-admissions .view-filters{
+
+}
+
+#edit-submit-undergraduate-admissions{
+font-size: 24px;
+border-radius: 0px;
+background-color: rgba(54, 85, 67, 0.85);
+border-style: none;
+border: 0px solid transparent !important;
+}
 
 
-
+#edit-field-program-location-tid{
+    float: left;
+    clear: none;
+    height: 47px;
+    width: 390px;
+    background: url('../images/down-triangle.png') no-repeat right;
+    background-color: rgba(255, 255, 255, 0.75);
+    background-position-x: 360px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    color: #365543;
+}
+    /* End undergraduate Admissions */
 
 
 
@@ -1984,15 +2032,25 @@ display: flex;
         font-size: 28px;
     }
 }
+
+
+
 @media screen and (max-width: 928px) {
     #mini-panel-homepage_submenu ul:nth-of-type(2){
         background-color: #d8be7a;
-        width: 342px;
-        clear: both;
-        float: none;
-        margin: 0px auto 20px auto;
+        width: 100%;
+        margin: 0px auto 0px auto;
+        text-align: center;
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
     }
 }
+
+
+
+
+
 
 #mini-panel-homepage_submenu ul:nth-of-type(2) li{
     margin-top: 23px;
@@ -2510,6 +2568,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 
 
+
 @media (max-width: 575px) {
     body{
         moz-text-size-adjust: none;
@@ -2522,18 +2581,30 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
     }
     #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 h2{
         font-size: 36px !important;
+        margin-bottom: 20px;
     }
     #mini-panel-homepage_top_hero div#edit-submitted-degree-type div label {
         font-size: 31px !important;
     }
+
+    #mini-panel-homepage_top_hero div#edit-submitted-degree-type div label input {
+        margin-right: 12px;
+        height: 20px;
+    }
     #mini-panel-homepage_top_hero div#edit-submitted-degree-type div:nth-of-type(1){
         width: 100% !important;
     }
+    #mini-panel-homepage_top_hero div#edit-submitted-degree-type div:nth-of-type(2) {
+        width: 100% !important;
+        margin-bottom: 14px;
+    }
+
     #mini-panel-homepage_top_hero div.pane-webform-client-block-1061{
         height: 330px !important;
     }
     #mini-panel-homepage_top_hero select.form-select{
         width: 100% !important;
+        margin-right: 20px;
     }
     #mini-panel-homepage_submenu ul:nth-of-type(1){
         padding-left: 5% !important;
@@ -2551,25 +2622,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
         margin: 0px auto 0px auto !important;
         padding-left: 7% !important;
     }
-    #social_media_home{
-        margin: 0px !important;
-        padding: 0px !important;
-    }
-    #social_media_home ul{
-        margin: 0px !important;
-        padding: 0px !important;
-        width: 280px !important;
 
-    }
-    #social_media_home ul li{
-        background-size: 70%;
-    }
-    #social_media_home ul li:nth-of-type(1){
-        background-size: 38%;
-    }
-    #social_media_home ul li div{
-
-    }
     #mini-panel-join_the_tu_family_white_backgro{
 
     }
@@ -2585,8 +2638,99 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
         margin: 0px;
         text-align: center;
     }
+
+
+
+
+
+
+
+
+    div#flexslider-1{
+        width: 100%;
+    }
+
+    .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title {
+        top: inherit !important;
+        position: relative !important;
+        left: inherit !important;
+        float: left;
+        clear: both;
+        min-width: 100% !important;
+    }
+    .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image,
+    .view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav,
+    .view-homepage-news-slidehow #flexslider-1 .views-field-field-quick-news-description{
+        width: 50% !important;
+        position: relative !important;
+        top: inherit !important;
+        left: inherit !important;
+        margin: 0px auto 0px auto;
+        text-align: center !important;
+    }
+    .view-homepage-news-slidehow #flexslider-1 .views-field-field-quick-news-description{
+        display: none;
+        width: 100%;
+    }
+    .views-field-field-news-front-slider-image img.img-responsive {
+        max-width: 284px;
+    }
+
+    div#flexslider-1 ul.slides li.flex-active-slide{
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .view-homepage-news-slidehow{
+        height: 340px;
+    }
+
+
+
+    #mini-panel-you_and_tu #you-and-tu ul li div{
+        background-size: 70%;
+    }
+    #mini-panel-you_and_tu #you-and-tu ul li h3{
+        font-size: 29px;
+    }
+    #mini-panel-you_and_tu #you-and-tu ul{
+        padding: 0px;
+    }
+    #mini-panel-you_and_tu #you-and-tu ul li div{
+        background-position: center center;
+    }
 }
 
+
+
+@media (max-width: 415px) {
+    .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image{
+        width: 69% !important;
+    }
+    #social_media_home{
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    #social_media_home ul{
+        margin: 0px !important;
+        padding: 0px !important;
+        width: 100%;
+
+    }
+    #social_media_home ul li{
+        background-size: 70%;
+    }
+    #social_media_home ul li:nth-of-type(1){
+        background-size: 38%;
+    }
+    #social_media_home ul li div{
+
+    }
+}
+@media (max-width: 376px) {
+    .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image{
+        width: 75% !important;
+    }
+}
 
 
 
