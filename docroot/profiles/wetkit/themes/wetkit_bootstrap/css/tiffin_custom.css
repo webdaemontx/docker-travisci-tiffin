@@ -61,39 +61,86 @@ main{
 /* End mobile nav */
 
 
-/* OLD Homepage slideshow
 
 
-.carousel-s2{
-  height: 371px;
 
-}
+
+
+/* Brought in from block CSS */
+
 .carousel-s2 .field-item img.img-responsive {
-  max-height: 375px;
-  max-width: 464px;
-}
-
-.carousel-s2 ul[role=tablist]{
-  display: none;
-}
-
-
-.pane-bean-main-slider{
-    background-image: url('../images/slideshow-campus.png');
-}
-
-.wb-tabs.carousel-s1 figure, .wb-tabs.carousel-s2 figure{
-    background-color: transparent;
-}
-
-.wb-tabs.carousel-s2{
-    background-color: transparent;
+    max-height: 375px;
+    max-width: 464px;
 }
 
 
 
+@media (min-width: 992px) {
+    li.menu-mlid-5246 {
+        display: none;
+    }
+    li.menu-mlid-1826{
+        margin-left: 26px !important;
+    }
+}
 
-End OLD Homepage slideshow */
+li.slflnk {
+    display: none !important;
+}
+
+
+
+
+
+
+body.page-academics .hvr-underline-from-center:before{
+    background: #365543 !important;
+    height: 7px !important;
+}
+
+body.page-admissions .hvr-underline-from-center:before{
+    background: #D9BF75 !important;
+    height: 7px !important;
+}
+
+body.page-apply-now .hvr-underline-from-center:before{
+    background: #D9BF75 !important;
+    height: 7px !important;
+}
+
+body.page-campuslife .hvr-underline-from-center:before{
+    background: #D9BF75 !important;
+    height: 7px !important;
+}
+
+.hvr-shrink{
+    transition-duration: 0.2s !important;
+    -webkit-transition-duration: 0.2s !important;
+}
+
+
+.expanded ul{
+    background-color: white;
+}
+
+
+.expanded ul li{
+
+}
+
+.expanded ul li{
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+
+
+.expanded ul {
+    background-color: #eaeaea;
+    padding-bottom: 20px;
+}
+
+/* End brought it from block CSS */
 
 
 
@@ -419,6 +466,7 @@ div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title{
     padding: 6px 5% 4px 6px !important;
     height: 44px;
     min-width: 320px;
+    opacity: 1 !important;
 }
 
 div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a{
@@ -918,7 +966,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 .pane-undergraduate-admissions-hero ul li:nth-of-type(3) div{
 }
 
-
+.view-id-schools a,
 .pane-undergraduate-admissions-hero ul li a{
     color: #365543;
     font-size: 31px;
@@ -965,7 +1013,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     margin: 0px auto;
 }
 
-.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-title h2,
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title,
 .pane-schools h2{
     color: #11361E;
     text-align: center;
