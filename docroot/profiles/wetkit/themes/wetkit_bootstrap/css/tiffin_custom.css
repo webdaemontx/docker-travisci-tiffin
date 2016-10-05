@@ -966,6 +966,11 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 .pane-undergraduate-admissions-hero ul li:nth-of-type(3) div{
 }
 
+.pane-undergraduate-admissions-hero ul li a{
+    color: #365543;
+    font-size: 31px;
+    text-decoration: none;
+}
 
 @media (max-width: 1000px) {
     .pane-undergraduate-admissions-hero ul li a{
