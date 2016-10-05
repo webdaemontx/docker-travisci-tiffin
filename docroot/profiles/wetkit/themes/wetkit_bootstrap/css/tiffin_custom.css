@@ -1464,6 +1464,7 @@ div.flex-caption{
     -moz-transition: all .5s;
     transition: all .5s;
     width: 34px;
+    height: 34px;
     padding-left: 10px;
     color: transparent;
     cursor: pointer;
@@ -1791,8 +1792,9 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro{
 }
 
 #mini-panel-join_the_tu_family_white_backgro h3{
-    width: 324px;
-    margin: 10px auto 40px auto;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
     color: #D9BF75;
     font-size: 37px;
 
@@ -2785,15 +2787,160 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 
 
+
+
+
+
+/* Admissions landing responsive */
+
+
+@media (max-width: 1000px) {
+    ul#icons-admissions-landing-page-first li{
+        width: 100%;
+        background-position: center 43px !important;
+    }
+    ul#icons-apply-now-landing-page-first li{
+        background-position: center 15px !important;
+        width: 100%;
+    }
+    ul#icons-admissions-landing-page-first,
+    ul#icons-apply-now-landing-page-first{
+        width: 80%;
+        padding: 0px;
+    }
+    ul#icons-admissions-landing-page-first a div,
+    ul#icons-apply-now-landing-page-first a div,
+    ul#icons-apply-now-landing-page-mid a div,
+    ul#icons-apply-now-landing-page-last a div{
+        width: 100%;
+    }
+    ul#icons-admissions-landing-page-last li,
+    ul#icons-apply-now-landing-page-mid li,
+    ul#icons-apply-now-landing-page-last li{
+        width: 49%;
+        background-position: center center !important;
+        float: left;
+        clear: none;
+    }
+
+    ul#icons-admissions-landing-page-last li:nth-child(2),
+    ul#icons-apply-now-landing-page-mid li:nth-child(2),
+    ul#icons-apply-now-landing-page-last li:nth-child(2),
+    ul#icons-admissions-landing-page-last li:nth-child(4),
+    ul#icons-apply-now-landing-page-mid li:nth-child(4),
+    ul#icons-admissions-landing-page-last li:nth-child(6){
+        margin-right: 0px;
+    }
+    ul#icons-apply-now-landing-page-mid li:nth-child(2),
+    ul#icons-apply-now-landing-page-mid li:nth-child(3){
+        background-size: 46% !important;
+    }
+
+    ul#icons-apply-now-landing-page-mid li:nth-child(3),
+    ul#icons-apply-now-landing-page-mid li:nth-child(4){
+        background-position: center 7px !important;
+    }
+
+    ul#icons-apply-now-landing-page-mid li:nth-child(2){
+        background-position: center 14px !important;
+    }
+    ul#icons-admissions-landing-page-last li:nth-child(2),
+    ul#icons-apply-now-landing-page-last li:nth-child(2),
+    ul#icons-admissions-landing-page-last li:nth-child(4),
+    ul#icons-apply-now-landing-page-last li:nth-child(4),
+    ul#icons-admissions-landing-page-last li:nth-child(6),
+    ul#icons-apply-now-landing-page-last li:nth-child(6){
+        background-position: center 19px !important;
+    }
+    ul#icons-admissions-landing-page-last li:nth-child(3),
+    ul#icons-apply-now-landing-page-last li:nth-child(3){
+        background-position: center 26px !important;
+    }
+    ul#icons-apply-now-landing-page-mid li:nth-child(1){
+        background-position: center 0px !important;
+        background-size: 35% !important;
+    }
+    ul#icons-admissions-landing-page-last li:nth-child(5),
+    ul#icons-apply-now-landing-page-last li:nth-child(5){
+        background-position: center 2px !important;
+    }
+    ul#icons-admissions-landing-page-last li:nth-child(1),
+    ul#icons-apply-now-landing-page-last li:nth-child(1){
+        background-position: center 2px !important;
+    }
+    ul#icons-admissions-landing-page-last,
+    ul#icons-apply-now-landing-page-mid,
+    ul#icons-apply-now-landing-page-last{
+        width: 82%;
+        padding: 0px;
+    }
+    ul#icons-admissions-landing-page-last a div,
+    ul#icons-apply-now-landing-page-last a div{
+        width: 100%;
+    }
+
+    ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p,
+    ul#icons-apply-now-landing-page-mid li:nth-of-type(2) div p{
+        font-size: 26px;
+    }
+}
+
+
+
+
+@media (max-width: 660px) {
+    ul#icons-admissions-landing-page-last li,
+    ul#icons-apply-now-landing-page-mid li,
+    ul#icons-apply-now-landing-page-last li{
+        width: 100% !important;
+    }
+    ul#icons-apply-now-landing-page-mid li:nth-child(2),
+    ul#icons-apply-now-landing-page-mid li:nth-child(3){
+        background-size: 38% !important;
+    }
+    ul#icons-apply-now-landing-page-mid li:nth-child(1){
+        background-size: 28%;
+    }
+    ul#icons-apply-now-landing-page-mid li:nth-child(2){
+        background-position: center 25px !important;
+    }
+}
+
+/* End admissions landing responsive */
+
+
+
+
+
+
+
+
+
 /* Program pages responsive */
+@media (max-width: 1000px) {
+    .pane-graduate-admissions-hero ul li p{
+        font-size: 24px !important;
+        margin-top: 10px;
+    }
+    .pane-online-admissions-hero ul li p{
+        font-size: 24px !important;
+        margin-top: 10px;
+    }
+    .pane-undergraduate-admissions-hero ul li p{
+        font-size: 24px !important;
+        margin-top: 2px;
+    }
+}
 
 @media (max-width: 775px) {
     .pane-graduate-admissions-hero,
+    .pane-online-admissions-hero,
     .pane-undergraduate-admissions-hero{
         height: 400px;
     }
 
     .pane-graduate-admissions-hero ul,
+    .pane-online-admissions-hero ul,
     .pane-undergraduate-admissions-hero ul{
         display: block;
         margin: 10px auto 0px auto;
@@ -2803,6 +2950,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
     }
 
     .pane-graduate-admissions-hero ul li,
+    .pane-online-admissions-hero ul li,
     .pane-undergraduate-admissions-hero ul li{
         width: 100%;
         float: left;
@@ -2810,11 +2958,14 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
     }
     .pane-graduate-admissions-hero ul li:nth-of-type(3),
     .pane-undergraduate-admissions-hero ul li:nth-of-type(3),
+    .pane-online-admissions-hero ul li:nth-of-type(3),
     .pane-graduate-admissions-hero ul li:nth-of-type(2),
+    .pane-online-admissions-hero ul li:nth-of-type(2),
     .pane-undergraduate-admissions-hero ul li:nth-of-type(2){
         background-size: 10%;
     }
     .pane-graduate-admissions-hero ul li:nth-of-type(1),
+    .pane-online-admissions-hero ul li:nth-of-type(1),
     .pane-undergraduate-admissions-hero ul li:nth-of-type(1){
         background-size: 7.5%;
         background-position: 6% center;
@@ -2823,6 +2974,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 @media (max-width: 500px) {
     .pane-graduate-admissions-hero h2,
+    .pane-online-admissions-hero h2,
     .pane-undergraduate-admissions-hero h2{
         font-size: 30px;
     }
