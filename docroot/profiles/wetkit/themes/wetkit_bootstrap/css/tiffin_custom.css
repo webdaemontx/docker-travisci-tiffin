@@ -1012,6 +1012,10 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     margin: 0px auto;
 }
 
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form .views-exposed-widget{
+    padding: 0px !important;
+}
+
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title,
 .pane-schools h2{
     color: #11361E;
@@ -1023,7 +1027,9 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-schools .view-content .views-row{
     margin-bottom: 11px;
 }
-
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form .views-exposed-widget .btn{
+    margin-top: 0px !important;
+}
 .view-undergraduate-admissions .view-content{
     columns: 3;
     -webkit-columns: 3;
@@ -1044,6 +1050,10 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 }
 
 
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane  .views-exposed-form .views-exposed-widget .form-submit {
+    margin-top: 28px;
+}
+
 .views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane{
 
 
@@ -1063,7 +1073,7 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 }
 
 #edit-field-program-location-tid-wrapper .label{
-    display: none;
+    display: none !important;
 }
 
 #edit-submit-undergraduate-admissions{
