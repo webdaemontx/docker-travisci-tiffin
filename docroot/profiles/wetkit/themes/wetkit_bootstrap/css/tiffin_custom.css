@@ -1044,19 +1044,22 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 
 }
 
-.views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form {
+.views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane .view-filters {
     width: 510px;
     margin: 0px auto 0px auto;
 }
-.views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane  .views-exposed-widget{
+.views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form .views-exposed-widget{
     padding: 0px !important;
 }
 
 
-.views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane  .form-submit{
+.views-exposed-form-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-widget .form-submit{
     margin-top: 0px  !important;
 }
 
+#edit-field-program-location-tid-wrapper .label{
+    display: none;
+}
 
 #edit-submit-undergraduate-admissions{
 font-size: 24px;
@@ -1068,6 +1071,7 @@ border: 0px solid transparent !important;
 
 
 #edit-field-program-location-tid{
+    border-radius: 0px;
     float: left;
     clear: none;
     height: 47px;
@@ -2807,6 +2811,13 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
     }
     #mini-panel-you_and_tu #you-and-tu ul li div{
         background-position: center center;
+    }
+
+
+    .view-undergraduate-admissions .view-content{
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
     }
 
 }
