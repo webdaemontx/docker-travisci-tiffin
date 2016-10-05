@@ -960,13 +960,14 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
 /* Undergraduate Admissions */
 
 
-.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .view-undergraduate-admissions{
-    width: 90%;
-    margin: 0px auto 0px auto;
-
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane{
+    width: 80%;
+    margin: 0px auto;
 }
-.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .view-undergraduate-admissions h2,
-.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-schools h2{
+
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-title h2,
+.pane-schools h2{
+    color: #11361E;
     text-align: center;
 }
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-schools .view-content{
@@ -977,8 +978,11 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     -webkit-columns: 3;
     -moz-columns: 3;
 }
-
-.pane-undergraduate-admissions-undergraduate-program-list-panel-pane  .view-undergraduate-admissions .view-content a{
+.pane-schools{
+    width: 280px;
+    margin: 0px auto 50px auto;
+}
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane  .view-content a{
     font-size: 21px;
     color: #11361E;
     text-decoration: none;
