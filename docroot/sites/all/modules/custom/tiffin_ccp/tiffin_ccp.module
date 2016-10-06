@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin CCP feature.
+ */
+
+include_once 'tiffin_ccp.features.inc';
