@@ -1,0 +1,7 @@
+name = Tiffin Testimonials View
+core = 7.x
+package = Tiffin
+dependencies[] = defaultconfig
+features[defaultconfig][] = views_default_views:testimonials_slider
+features[features_api][] = api:2
+project path = sites/all/modules/custom
