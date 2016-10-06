@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin International Admissions feature.
+ */
+
+include_once 'tiffin_international_admissions.features.inc';

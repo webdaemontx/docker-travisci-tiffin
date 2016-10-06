@@ -409,13 +409,13 @@ body.page-campuslife .hvr-underline-from-center:before{
     display: none;
 }
 
-.views-field-field-news-front-slider-image img.img-responsive {
+div.views-field-field-news-front-slider-image img.img-responsive {
     max-height: 375px;
     max-width: 464px;
 }
 
 
-.view-homepage-news-slidehow{
+div.view-homepage-news-slidehow{
     background-image: url('../images/slideshow-campus-para.jpg');
     background-size: 1600px 915px;
     height: 540px;
@@ -434,24 +434,24 @@ div.view-homepage-news-slidehow{
 
 
 
-ul.slides li.flex-active-slide{
+.view-homepage-news-slidehow ul.slides li.flex-active-slide{
     margin: 0px auto;
     width: 870px !important;
 }
 
 
-div#flexslider-1{
+.view-homepage-news-slidehow div#flexslider-1{
     width: 900px;
     margin: 0px auto 0px auto;
     background-color: transparent;
     border: 0px;
 }
 
-div#flexslider-1 a{
+.view-homepage-news-slidehow div#flexslider-1 a{
     outline: 0;
 }
 
-div#flexslider-1 ul.slides li.flex-active-slide{
+.view-homepage-news-slidehow div#flexslider-1 ul.slides li.flex-active-slide{
     position: relative;
     height: 460px;
 }
@@ -500,15 +500,15 @@ div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav{
     left: 26%;
 }
 
-.flex-direction-nav a{
+div.view-homepage-news-slidehow .flex-direction-nav a{
     height: 46px !important;
 }
 
-.flex-control-paging li a.flex-active {
+div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
     background: #D9BF75;
 }
 
-.flex-control-paging li a{
+div.view-homepage-news-slidehow .flex-control-paging li a{
     background: #979557;
 }
 
@@ -1057,7 +1057,7 @@ ul#click-on-programs {
 
 
 
-/* Undergraduate Admissions */
+/* Undergraduate Admissions Midview*/
 
 
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane{
@@ -1168,7 +1168,32 @@ border: 0px solid transparent !important;
 
 
 
-/* End undergraduate Admissions */
+/* End undergraduate Admissions Midview*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2728,6 +2753,206 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6){
 
 
 /* End admissions page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Testimonials slider*/
+
+.pane-testimonials-slider{
+    clear: both;
+}
+.view-testimonials-slider{
+    position: relative;
+}
+
+.view-testimonials-slider .view-header h3{
+    font-size: 50px;
+    font-weight: normal;
+}
+.view-testimonials-slider .view-header{
+    position: absolute;
+    top: 20px;
+    z-index: 3;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+
+.view-testimonials-slider .view-content{
+    top: 0px;
+}
+
+
+
+
+
+.view-testimonials-slider .flexslider-1{
+
+}
+
+
+
+.view-testimonials-slider .flexslider{
+    border: none !important;
+}
+div.views-field-field-testimonials-image{
+
+}
+
+
+.view-testimonials-slider .flex-control-nav{
+    bottom: 10px;
+    z-index: 5;
+}
+
+.views-field-field-testimonials-blurb{
+    position: absolute;
+    top: 40%; left: 21%;
+    width: 550px;
+    font-size: 22px;
+    text-align: center;
+    color: #ffffff;
+}
+
+..view-testimonials-slider .flex-control-paging li a.flex-active {
+    background: #D9BF75;
+}
+
+.view-testimonials-slider .flex-control-paging li a{
+    background: #979557;
+}
+
+/* End Testimonials slider*/
+
+
+
+
+
+
+
+
+
+
+
+/* International Admissions */
+
+#mini-panel-international_top_nav{
+
+}
+#mini-panel-international_top_nav ul{
+    list-style-type: none;
+    width: 620px;
+    margin: 5px auto 7px auto;
+}
+#mini-panel-international_top_nav ul li{
+    float: left;
+    clear: none;
+    text-align: left;
+    padding-right: 25px;
+}
+
+#mini-panel-international_top_nav ul li a{
+    text-decoration: none !important;
+    font-size: 22px;
+    color: #365543 !important;
+}
+
+
+
+
+.pane-international-admissions-hero{
+    background-image: url('../images/image-online-programs-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 360px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 30px;
+}
+
+.pane-international-admissions-hero h2 {
+    text-align: center;
+    color: #365543;
+    text-decoration: none;
+    font-size: 41px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+
+.pane-international-admissions-hero ul{
+    list-style-type: none;
+    width: 85%;
+    margin: 80px auto 0px auto;
+    display: flex;
+}
+
+.pane-international-admissions-hero ul li{
+    width: 33%;
+    margin-right: 1%;
+    height: 88px;
+    background-position: 7% center;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    background-color: white;
+    opacity: 0.85;
+}
+
+.pane-international-admissions-hero ul li div p{
+    padding: 20px 0px 0px 25%;
+}
+
+.pane-international-admissions-hero ul li:nth-of-type(1) div{
+}
+
+.pane-international-admissions-hero ul li:nth-of-type(3) div{
+}
+
+
+.pane-international-admissions-hero ul li a{
+    color: #365543;
+    font-size: 31px;
+    text-decoration: none;
+}
+
+.pane-international-admissions-hero ul li:nth-of-type(1){
+    background-image: url('../images/icon-1.png');
+    background-size: 11.5%;
+    background-position: 4% center;
+    padding-left: 5px;
+}
+
+.pane-international-admissions-hero ul li:nth-of-type(2){
+    background-image: url('../images/icon-2.png');
+    background-size: 15%;
+}
+
+.pane-international-admissions-hero ul li:nth-of-type(3){
+    background-image: url('../images/icon-3.png');
+    background-size: 15%;
+}
+
+/* End international admissions */
+
+
 
 
 
