@@ -3026,8 +3026,8 @@ div.views-field-field-testimonials-image{
     background-image: url('../images/college-credit-plus-background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    height: 360px;
+    background-position: top center;
+    height: 410px;
     width: 100%;
     background-attachment: fixed;
     padding-top: 30px;
@@ -3056,7 +3056,7 @@ div.views-field-field-testimonials-image{
     height: 88px;
 }
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) {
-    margin: 80px auto 0px auto;
+    margin: 160px auto 0px auto;
     width: 724px;
 }
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(2){
