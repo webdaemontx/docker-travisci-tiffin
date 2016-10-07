@@ -13,70 +13,74 @@ function academics_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__program';
+  $strongarm->name = 'panelizer_defaults_taxonomy_term_major';
   $strongarm->value = array(
-    'view_modes' => array(),
-    'extra_fields' => array(
-      'form' => array(
-        'metatags' => array(
-          'weight' => '3',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '1',
-        ),
+    'status' => 1,
+    'view modes' => array(
+      'page_manager' => array(
+        'status' => 1,
+        'substitute' => '',
+        'default' => 1,
+        'choice' => 0,
       ),
-      'display' => array(),
+      'default' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+      'featured' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
     ),
   );
-  $export['field_bundle_settings_node__program'] = $strongarm;
+  $export['panelizer_defaults_taxonomy_term_major'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_program';
-  $strongarm->value = '0';
-  $export['language_content_type_program'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_program';
-  $strongarm->value = array();
-  $export['menu_options_program'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_program';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_program'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_program';
+  $strongarm->name = 'panelizer_defaults_taxonomy_term_schools';
   $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
+    'status' => 1,
+    'view modes' => array(
+      'page_manager' => array(
+        'status' => 1,
+        'substitute' => '',
+        'default' => 1,
+        'choice' => 1,
+      ),
+      'default' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+      'featured' => array(
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
+        'choice' => 0,
+      ),
+    ),
   );
-  $export['node_options_program'] = $strongarm;
+  $export['panelizer_defaults_taxonomy_term_schools'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_program';
-  $strongarm->value = '1';
-  $export['node_preview_program'] = $strongarm;
+  $strongarm->name = 'panelizer_taxonomy_term:major:page_manager_selection';
+  $strongarm->value = 'taxonomy_term:major:default';
+  $export['panelizer_taxonomy_term:major:page_manager_selection'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_program';
-  $strongarm->value = 0;
-  $export['node_submitted_program'] = $strongarm;
+  $strongarm->name = 'panelizer_taxonomy_term:schools:page_manager_selection';
+  $strongarm->value = 'taxonomy_term:schools:default';
+  $export['panelizer_taxonomy_term:schools:page_manager_selection'] = $strongarm;
 
   return $export;
 }

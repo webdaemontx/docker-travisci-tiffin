@@ -25,9 +25,9 @@ function academics_field_group_info() {
     'children' => array(
       0 => 'field_4y_course_sequence_title',
       1 => 'field_first_year',
-      2 => 'field_sophomore',
-      3 => 'field_junior',
-      4 => 'field_senior',
+      2 => 'field_junior',
+      3 => 'field_senior',
+      4 => 'field_sophomore',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -85,13 +85,13 @@ function academics_field_group_info() {
     'label' => 'Curriculum',
     'weight' => '17',
     'children' => array(
-      0 => 'field_curriculum_summary',
-      1 => 'field_curriculum_program_content',
+      0 => 'field_curriculum_comp_lang_req',
+      1 => 'field_curriculum_core_courses',
       2 => 'field_curriculum_internship',
-      3 => 'field_curriculum_thesis',
-      4 => 'field_curriculum_comp_lang_req',
-      5 => 'field_curriculum_prerequisites',
-      6 => 'field_curriculum_core_courses',
+      3 => 'field_curriculum_prerequisites',
+      4 => 'field_curriculum_program_content',
+      5 => 'field_curriculum_summary',
+      6 => 'field_curriculum_thesis',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -116,19 +116,20 @@ function academics_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Graduate',
-    'weight' => '10',
+    'label' => 'Program Tabs',
+    'weight' => '12',
     'children' => array(
       0 => 'group_header_tabs',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Program Tabs',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-graduate-html field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-program-tabs-html field-group-tab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $field_groups['group_graduate_html|node|program|form'] = $field_group;
@@ -143,16 +144,15 @@ function academics_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_graduate_html';
   $field_group->data = array(
-    'label' => 'Graduate Tabs',
+    'label' => 'Program Tabs',
     'weight' => '10',
     'children' => array(
-      0 => 'group_admission_tabs',
-      1 => 'group_curriculum_tab',
-      2 => 'group_tuition_fees',
+      0 => 'group_curriculum_tab',
+      1 => 'group_tuition_fees',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
-      'label' => 'Graduate Tabs',
+      'label' => 'Program Tabs',
       'instance_settings' => array(
         'id' => '',
         'classes' => 'group-graduate-tabs field-group-htabs',
@@ -172,7 +172,7 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Header',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(
       0 => 'field_poster',
       1 => 'field_program_summary',
@@ -260,6 +260,7 @@ function academics_field_group_info() {
     'weight' => '18',
     'children' => array(
       0 => 'field_tuition_and_fees',
+      1 => 'field_undergraduate_tuition_fees',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -285,7 +286,7 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Undergraduate',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'group_undergraduate_tabs',
     ),
@@ -315,8 +316,8 @@ function academics_field_group_info() {
     'weight' => '13',
     'children' => array(
       0 => 'group_4year_course_sequence',
-      1 => 'group_sample_courses_tab',
-      2 => 'group_related_majors_minors_tab',
+      1 => 'group_related_majors_minors_tab',
+      2 => 'group_sample_courses_tab',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -334,9 +335,8 @@ function academics_field_group_info() {
   t('Admission');
   t('Curriculum');
   t('Four Year Course Sequence');
-  t('Graduate');
-  t('Graduate Tabs');
   t('Header');
+  t('Program Tabs');
   t('Related Majors & Minors');
   t('Sample Courses');
   t('Tuition & Fees');
