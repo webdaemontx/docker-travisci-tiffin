@@ -1,0 +1,5 @@
+name = Tiffin Npc
+description = the Net Price Calculator for Tiffin University
+core = 7.x
+package = Tiffin
+version = 7.x-1.0

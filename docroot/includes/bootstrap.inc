@@ -8,7 +8,7 @@
 /**
  * The current system version.
  */
-define('VERSION', '7.50');
+define('VERSION', '7.51');
 
 /**
  * Core API compatibility.
@@ -842,9 +842,6 @@ function drupal_get_filename($type, $name, $filename = NULL, $trigger_error = TR
   // exists as all additions have gone through a file_exists() check.
   // The location of files will not change during the request, so do not use
   // drupal_static().
-  if (empty($name)) {
-     return NULL;
-  }
   static $files = array();
 
   // Profiles are a special case: they have a fixed location and naming.
@@ -1075,8 +1072,8 @@ function _drupal_get_filename_perform_file_scan($type, $name) {
  */
 function _drupal_get_filename_fallback_trigger_error($type, $name, $error_type) {
   // Hide messages due to known bugs that will appear on a lot of sites.
-  // @todo Remove this in https://www.drupal.org/node/2762241
-  if (empty($name) || ($type == 'module' && $name == 'default')) {
+  // @todo Remove this in https://www.drupal.org/node/2383823
+  if (empty($name)) {
     return;
   }
 
@@ -1088,7 +1085,7 @@ function _drupal_get_filename_fallback_trigger_error($type, $name, $error_type) 
     // triggered during low-level operations that cannot necessarily be
     // interrupted by a watchdog() call.
     if ($error_type == 'missing') {
-      _drupal_trigger_error_with_delayed_logging(format_string('The following @type is missing from the file system: %name. In order to fix this, put the @type back in its original location. For more information, see <a href="@documentation">the documentation page</a>.', array('@type' => $type, '%name' => $name, '@documentation' => 'https://www.drupal.org/node/2487215')), E_USER_WARNING);
+      _drupal_trigger_error_with_delayed_logging(format_string('The following @type is missing from the file system: %name. For information about how to fix this, see <a href="@documentation">the documentation page</a>.', array('@type' => $type, '%name' => $name, '@documentation' => 'https://www.drupal.org/node/2487215')), E_USER_WARNING);
     }
     elseif ($error_type == 'moved') {
       _drupal_trigger_error_with_delayed_logging(format_string('The following @type has moved within the file system: %name. In order to fix this, clear caches or put the @type back in its original location. For more information, see <a href="@documentation">the documentation page</a>.', array('@type' => $type, '%name' => $name, '@documentation' => 'https://www.drupal.org/node/2487215')), E_USER_WARNING);
@@ -2791,23 +2788,6 @@ function _drupal_bootstrap_page_header() {
  */
 function drupal_get_bootstrap_phase() {
   return drupal_bootstrap(NULL, FALSE);
-}
-
-/**
- * Returns whether a simpletest is running or peparing to run.
- *
- * @param $set
- *   Set whether a test is running.
- *
- * @return
- *   TRUE if test is running, false otherwise.
- */
-function drupal_test_running($set = NULL) {
-  static $test_running = NULL;
-  if (isset($set)) {
-    $test_running = $set;
-  }
-  return isset($test_running) ? $test_running : (bool)drupal_valid_test_ua();
 }
 
 /**
