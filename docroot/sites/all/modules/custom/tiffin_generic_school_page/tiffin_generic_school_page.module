@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Generic School Page feature.
+ */
+
+include_once 'tiffin_generic_school_page.features.inc';
