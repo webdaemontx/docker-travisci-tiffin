@@ -130,7 +130,8 @@ body.page-campuslife .hvr-underline-from-center:before{
 
 .expanded ul li{
     padding-left: 30px;
-    padding-top: 20px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
 }
 
 
@@ -164,6 +165,7 @@ body.page-campuslife .hvr-underline-from-center:before{
 
 .pane-menu-about-tu .active-trail{
     background-color: #C09212;
+    color: #fff;
 }
 
 .pane-menu-about-tu .active-trail h3{
@@ -3894,3 +3896,74 @@ margin-bottom: 20px;
 
 
 /* End IE 10 fixes */
+
+/* Left-Nav CSS Tweak from Justin 10/7/2016 */
+.menu-block-wrapper {
+
+}
+
+.menu-block-wrapper .nav li {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 7px 0;
+}
+
+.menu-block-wrapper .nav h3 {
+    padding: 0 !important;
+}
+
+.menu-block-wrapper > .nav > li > h3 a {
+    display: block;
+    margin: 0;
+    padding: 7px 14px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 28px 15px 28px;
+    font-size: 13px;
+    padding-bottom: 15px;
+    padding-top: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    background-color: #eaeaea;
+    border-color: #b5c1d4;
+    color: #333;
+    -webkit-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border: 0;
+    border-left: 3px solid #385443;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.menu-block-wrapper .nav > li > h3 a:hover,
+.menu-block-wrapper .nav > li > h3 a:focus {
+    background-color: #f8f8f8;
+    color: #385443;
+    border-width: 8px;
+}
+
+.menu-block-wrapper .nav > .active-trail h3 a {
+    background-color: #385443;
+}
+
+.menu-block-wrapper .nav > .active-trail h3 a:hover,
+.menu-block-wrapper .nav > .active-trail h3 a:focus {
+    background-color: #384A43;
+}
