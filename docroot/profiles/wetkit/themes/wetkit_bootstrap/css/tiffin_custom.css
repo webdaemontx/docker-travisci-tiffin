@@ -1,6 +1,6 @@
 
 
-@import 'https://fonts.googleapis.com/css?family=Nunito:300';
+@import 'https://fonts.googleapis.com/css?family=Muli';
 
 
 body{
@@ -546,6 +546,156 @@ div.view-homepage-news-slidehow .flex-control-paging li a{
 
 
 /* End Nav */
+
+
+
+
+
+
+
+/* Generic program page */
+
+
+#mini-panel-generic_program_page_hero{
+
+}
+
+#mini-panel-generic_program_page_hero ul{
+    list-style-type: none;
+}
+#mini-panel-generic_program_page_hero ul:nth-of-type(1){}
+#mini-panel-generic_program_page_hero ul:nth-of-type(2){}
+#mini-panel-generic_program_page_hero ul li{
+    float: left;
+    clear: none;
+    width: 32%;
+    height: 88px;
+    border: 1px solid #D9BF75;
+}
+
+/* End generic program page */
+
+
+
+
+
+
+
+/* Generic school page */
+
+
+
+.pane-generic-school-page-hero {
+    background-image: url('../images/image-generic-school.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px -60px;
+    height: 700px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 0px;
+}
+
+.pane-generic-school-page-hero .pane-1{
+    margin: 0px auto 170px auto;
+    width: 100%;
+    text-align: center;
+}
+
+
+.pane-generic-school-page-hero .pane-1 h2{
+    color: white;
+    font-size: 58px;
+}
+
+
+.pane-generic-school-page-hero .pane-2{
+    margin: 0px auto 0px auto;
+    width: 80%;
+    color: white;
+    background-color: transparent;
+    font-weight: 100;
+    font-size: 18px;
+}
+#mini-panel-generic_school_page_hero .heroclicks{
+    width: 100%;
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul{
+    list-style-type: none;
+    height: 77px;
+    padding: 0px;
+}
+#mini-panel-generic_school_page_hero .heroclicks ul:nth-of-type(1) {
+    margin: 40px auto 0px auto;
+    width: 682px;
+}
+#mini-panel-generic_school_page_hero .heroclicks ul:nth-of-type(2){
+    margin: 5px auto 0px auto;
+    clear: both;
+    width: 452px;
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul li{
+    margin-right: 4px;
+    height: 77px;
+    background-color: transparent;
+    float: left;
+    border: 1px solid #D9BF75;
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul:nth-of-type(1) li{
+    width: 220px;
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul:nth-of-type(2) li{
+    width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul li div p{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul li div{
+    width: 100%;
+    height: 88px;
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul li:nth-of-type(1) div{
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul li:nth-of-type(3) div{
+}
+
+
+#mini-panel-generic_school_page_hero .heroclicks ul li a{
+    font-weight: bold;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+
+
+#mini-panel-generic_school_page_hero .heroclicks ul:nth-of-type(1) li:nth-of-type(1){
+
+}
+
+#mini-panel-generic_school_page_hero .heroclicks ul:nth-of-type(2) li:nth-of-type(1){
+
+}
+
+
+
+
+
+/* End generic school page */
+
+
+
+
 
 
 
@@ -1988,7 +2138,7 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro{
 }
 
 #mini-panel-join_the_tu_family_white_backgro{
-    height: 265px;
+    height: 235px;
     background-color: white;
     clear: both;
 }
