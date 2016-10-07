@@ -130,15 +130,15 @@ body.page-campuslife .hvr-underline-from-center:before{
 
 .expanded ul li{
     padding-left: 30px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+    padding-top: 3px;
+    padding-bottom: 11px;
 }
 
 
 
 .expanded ul {
     background-color: #eaeaea;
-    padding-bottom: 20px;
+    padding-bottom: 2.5px;
 }
 
 /* End brought it from block CSS */
