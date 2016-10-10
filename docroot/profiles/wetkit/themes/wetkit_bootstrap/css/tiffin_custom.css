@@ -3025,6 +3025,16 @@ div.views-field-field-testimonials-image{
     color: #ffffff;
 }
 
+.views-field-body{
+    position: absolute;
+    top: 40% !important;
+    left: 32% !important;
+    width: 40%;
+    font-size: 22px;
+    text-align: center;
+    color: #ffffff;
+}
+
 ..view-testimonials-slider .flex-control-paging li a.flex-active {
     background: #D9BF75;
 }
