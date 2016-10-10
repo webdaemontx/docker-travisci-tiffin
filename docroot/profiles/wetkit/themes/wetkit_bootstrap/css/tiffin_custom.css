@@ -3026,6 +3026,7 @@ div.views-field-field-testimonials-image{
 }
 
 .views-field-body{
+    background: rgba(76,76,76,.5);
     position: absolute;
     top: 40% !important;
     left: 32% !important;
