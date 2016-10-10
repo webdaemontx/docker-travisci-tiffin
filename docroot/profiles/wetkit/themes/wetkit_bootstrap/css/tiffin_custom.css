@@ -3016,21 +3016,12 @@ div.views-field-field-testimonials-image{
     z-index: 5;
 }
 
-.views-field-field-testimonials-blurb{
-    position: absolute;
-    top: 40%; left: 28%;
-    width: 550px;
-    font-size: 22px;
-    text-align: center;
-    color: #ffffff;
-}
-
 .views-field-body{
     background: rgba(76,76,76,.5);
     position: absolute;
-    top: 40% !important;
+    top: 25% !important;
     left: 32% !important;
-    width: 40%;
+    width: 45%;
     font-size: 22px;
     text-align: center;
     color: #ffffff;
