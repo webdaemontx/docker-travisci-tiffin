@@ -3025,6 +3025,7 @@ div.views-field-field-testimonials-image{
     font-size: 22px;
     text-align: left;
     color: #ffffff;
+    padding: 5px 25px 15px 25px;
 }
 
 ..view-testimonials-slider .flex-control-paging li a.flex-active {
