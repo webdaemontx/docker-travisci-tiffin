@@ -1997,16 +1997,18 @@ ul#click-on-programs {
 
 /* Undergraduate Admissions Midview*/
 
-
+.pane-undergraduate-admissions-panel-pane-1,
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane{
     width: 80%;
     margin: 0px auto;
 }
 
+.pane-undergraduate-admissions-panel-pane-1 .views-exposed-form .views-exposed-widget,
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form .views-exposed-widget{
     padding: 0px !important;
 }
 
+.pane-undergraduate-admissions-panel-pane-1 h2.pane-title,
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title,
 .pane-schools h2{
     color: #11361E;
@@ -2017,6 +2019,8 @@ ul#click-on-programs {
     background-size: 27px;
     font-size: 29px;
 }
+
+.pane-undergraduate-admissions-panel-pane-1 h2.pane-title
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title{
     background-position-x: 140px !important;
     width: 179px !important;
@@ -2030,6 +2034,8 @@ ul#click-on-programs {
     text-align: left;
     font-weight: bold;
 }
+
+
 
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane .pane-schools .view-content{
     text-align: center;
