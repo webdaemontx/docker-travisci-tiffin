@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin get to know TU feature.
+ */
+
+include_once 'tiffin_get_to_know_tu.features.inc';
