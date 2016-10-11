@@ -641,7 +641,12 @@ div.view-homepage-news-slidehow .flex-control-paging li a{
 
 
 
+/* visit tu form */
 
+div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 main{
+    width: 90%;
+}
+/* end visit tu form */
 
 
 
@@ -1046,6 +1051,424 @@ div.view-homepage-news-slidehow .flex-control-paging li a{
 
 
 /* End generic hero */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Criminal justice school hero */
+
+
+
+.pane-generic-school-page-hero-crim {
+    background-image: url('../images/image-generic-school.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+    height: 700px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 0px;
+}
+
+.pane-generic-school-page-hero-crim .pane-1{
+    margin: 0px auto 150px auto;
+    width: 100%;
+    text-align: center;
+}
+
+
+.pane-generic-school-page-hero-crim .pane-1 h2{
+    color: white;
+    font-size: 58px;
+
+}
+
+
+.pane-generic-school-page-hero-crim .pane-2{
+    margin: 0px auto 0px auto;
+    width: 72%;
+    color: white;
+    background-color: transparent;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .5px;
+    text-align: justify;
+}
+#mini-panel-generic_school_page_hero_crim .heroclicks{
+    width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul{
+    list-style-type: none;
+    height: 77px;
+    padding: 0px;
+}
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) {
+    margin: 40px auto 0px auto;
+    width: 682px;
+}
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2){
+    margin: 5px auto 0px auto;
+    clear: both;
+    width: 452px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li{
+    margin-right: 4px;
+    height: 77px;
+    background-color: transparent;
+    float: left;
+    border: 1px solid #D9BF75;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) li{
+    width: 220px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) li{
+    width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li div p{
+    padding-top: 25px;
+    text-align: center;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li div{
+    width: 100%;
+    height: 88px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li:nth-of-type(1) div{
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li:nth-of-type(3) div{
+}
+
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) li:nth-of-type(1){
+
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) li:nth-of-type(1){
+
+}
+
+
+
+
+
+/* End Criminal justice school hero */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* School of arts and sciences hero */
+
+
+
+.pane-generic-school-page-hero-arts {
+    background-image: url('../images/image-generic-school.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+    height: 700px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 0px;
+}
+
+.pane-generic-school-page-hero-arts .pane-1{
+    margin: 0px auto 82px auto;
+    width: 100%;
+    text-align: center;
+}
+
+
+.pane-generic-school-page-hero-arts .pane-1 h2{
+    color: white;
+    font-size: 58px;
+
+}
+
+
+.pane-generic-school-page-hero-arts .pane-2{
+    margin: 0px auto 0px auto;
+    width: 72%;
+    color: white;
+    background-color: transparent;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .5px;
+    text-align: justify;
+}
+#mini-panel-generic_school_page_hero_arts .heroclicks{
+    width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul{
+    list-style-type: none;
+    height: 77px;
+    padding: 0px;
+}
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) {
+    margin: 40px auto 0px auto;
+    width: 682px;
+}
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2){
+    margin: 5px auto 0px auto;
+    clear: both;
+    width: 452px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li{
+    margin-right: 4px;
+    height: 77px;
+    background-color: transparent;
+    float: left;
+    border: 1px solid #D9BF75;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) li{
+    width: 220px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) li{
+    width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li div p{
+    padding-top: 25px;
+    text-align: center;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li div{
+    width: 100%;
+    height: 88px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li:nth-of-type(1) div{
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li:nth-of-type(3) div{
+}
+
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) li:nth-of-type(1){
+
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) li:nth-of-type(1){
+
+}
+
+
+
+
+
+/* End School of arts and sciences hero */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* School of business hero */
+
+
+
+.pane-generic-school-page-hero-biz {
+    background-image: url('../images/image-generic-school.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+    height: 700px;
+    width: 100%;
+    background-attachment: fixed;
+    padding-top: 0px;
+}
+
+.pane-generic-school-page-hero-biz .pane-1{
+    margin: 0px auto 40px auto;
+    width: 100%;
+    text-align: center;
+}
+
+
+.pane-generic-school-page-hero-biz .pane-1 h2{
+    color: white;
+    font-size: 58px;
+
+}
+
+
+.pane-generic-school-page-hero-biz .pane-2{
+    margin: 0px auto 0px auto;
+    width: 72%;
+    color: white;
+    background-color: transparent;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .5px;
+    text-align: justify;
+}
+#mini-panel-generic_school_page_hero_biz .heroclicks{
+    width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul{
+    list-style-type: none;
+    height: 77px;
+    padding: 0px;
+}
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) {
+    margin: 40px auto 0px auto;
+    width: 682px;
+}
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2){
+    margin: 5px auto 0px auto;
+    clear: both;
+    width: 452px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li{
+    margin-right: 4px;
+    height: 77px;
+    background-color: transparent;
+    float: left;
+    border: 1px solid #D9BF75;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) li{
+    width: 220px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) li{
+    width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li div p{
+    padding-top: 25px;
+    text-align: center;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li div{
+    width: 100%;
+    height: 88px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li:nth-of-type(1) div{
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li:nth-of-type(3) div{
+}
+
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li a{
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) li:nth-of-type(1){
+
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) li:nth-of-type(1){
+
+}
+
+
+
+
+
+/* End School of business hero */
+/* http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Generic School Social Media */
@@ -1595,9 +2018,10 @@ ul#click-on-programs {
     font-size: 29px;
 }
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title{
-    background-position-x: 133px;
-    width: 160px;
+    background-position-x: 140px !important;
+    width: 179px !important;
     text-align: left;
+
 }
 
 .pane-schools h2{
@@ -2248,7 +2672,7 @@ body.page-admissions .pane-1{
     background-color: transparent;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: 0px -150px;
     height: 375px;
 }
 
