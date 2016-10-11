@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Visit TU Pages feature.
+ */
+
+include_once 'visit_tu_pages.features.inc';
