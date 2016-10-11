@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Social Content: SoundCloud module.
+ */
+ 
+/**
+ * Implements hook_social_content_class_info().
+ */
+function social_content_soundcloud_social_content_class_info() {
+  return array(
+    'soundcloud' => 'SocialContentSoundCloud',
+  );
+}
