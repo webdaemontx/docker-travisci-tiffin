@@ -585,6 +585,353 @@ div.view-homepage-news-slidehow .flex-control-paging li a{
 
 
 
+
+
+
+/* Get to know TU */
+
+
+.pane-get-to-know-tu{
+    height: 550px;
+    background-image: url('../images/get-to-know-campus-background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.pane-get-to-know-tu div#watchtour{
+    margin-top: 2%;
+    background-image: url(../images/watch-tour.png);
+    margin-left: 60%;
+    background-repeat: no-repeat;
+    height: 161px;
+    width: 356px;
+    background-position: 0px 53px;
+    font-size: 40px;
+    font-weight: 100;
+    color: white;
+}
+
+.pane-get-to-know-tu div#playtour{
+    background-image: url(../images/icon-opaque-play-video.png);
+    background-position: center;
+    height: 181px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+.pane-get-to-know-tu div#watchtourshell{
+    padding-top: 2%;
+    height: 550px;
+    width: 100%;
+}
+
+.pane-get-to-know-tu  a{
+    text-decoration: none;
+}
+
+
+/* End get to know TU */
+
+
+
+
+
+
+
+
+
+
+
+/* Visit TU Landing Hero */
+
+#experienceTU{
+    width: 556px;
+    height: 275px;
+    margin: 0px auto;
+    background-color: rgba(52, 85, 67, 0.50);
+    color: white;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-bottom: 86px;
+    background-image: url(../images/travel-tour-tiffin.png);
+    background-repeat: no-repeat;
+    background-position: 380px 89px;
+    background-size: 29%;
+
+}
+
+#experienceTU h1{
+    margin-top: 0px;
+    font-weight: 200;
+    font-size: 54px;
+    margin-bottom: 0px;
+}
+#exptudate{
+    font-size: 32px;
+    font-weight: 100;
+}
+
+#experienceTU p:nth-of-type(1){
+    text-decoration: underline;
+    padding: 12px 0px 0px 0px;
+    margin-bottom: 0px;
+}
+
+#experienceTU p:nth-of-type(2){
+
+}
+#experienceTU div#bookyourvisitclick{
+    background-image: url(../images/book-your-visit-click.png);
+    background-repeat: no-repeat;
+    height: 71px;
+    width: 345px;
+
+}
+
+#visittulandingbottom{
+
+    background-image: url(../images/visit-landing-hero-bottom.png);
+    background-repeat: no-repeat;
+    height: 260px;
+    width: 100%;
+}
+
+#visittulandingbottom p{
+    color: #365543;
+    font-size: 25px;
+    font-weight: 100;
+    margin: 0px auto 0px auto;
+    width: 650px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+#mini-panel-visit_tu_landing_hero div.visittop{
+    background-color: rgba(255, 255, 255, 0.70);
+    height: 42px;
+}
+#mini-panel-visit_tu_landing_hero div.visittop ul{
+    list-style-type: none;
+    width: 812px;
+    padding: 5px 0px 7px 0px;
+    margin: 0px auto 0px auto;
+}
+#mini-panel-visit_tu_landing_hero div.visittop ul li{
+    float: left;
+    clear: none;
+    text-align: left;
+    padding-right: 25px;
+}
+#mini-panel-visit_tu_landing_hero div.visittop ul li:nth-of-type(5){
+    padding-right: 0px;
+}
+#mini-panel-visit_tu_landing_hero div.visittop ul li a{
+    text-decoration: none !important;
+    font-size: 22px;
+    color: #365543 !important;
+}
+
+
+#mini-panel-visit_tu_landing_hero{
+    height: 707px;
+    background-image: url('../images/visit-landing-hero.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* End visit TU Landing Hero */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Visit TU */
+
+
+#mini-panel-visit_tu_hero{
+    height: 550px;
+    background-image: url('../images/image-visit-tu-top-background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+#mini-panel-visit_tu_hero div.visittop{
+    background-color: rgba(255, 255, 255, 0.70);
+    height: 42px;
+}
+#mini-panel-visit_tu_hero div.visittop ul{
+    list-style-type: none;
+    width: 812px;
+    padding: 5px 0px 7px 0px;
+    margin: 0px auto 0px auto;
+}
+#mini-panel-visit_tu_hero div.visittop ul li{
+    float: left;
+    clear: none;
+    text-align: left;
+    padding-right: 25px;
+}
+#mini-panel-visit_tu_hero div.visittop ul li:nth-of-type(5){
+    padding-right: 0px;
+}
+#mini-panel-visit_tu_hero div.visittop ul li a{
+    text-decoration: none !important;
+    font-size: 22px;
+    color: #365543 !important;
+}
+
+
+
+
+#mini-panel-visit_tu_hero h2{
+    color: white;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 33px;
+    margin-bottom: 80px;
+}
+
+#mini-panel-visit_tu_hero ul#visitclicks{
+    list-style-type: none;
+    width: 814px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+@media (max-width: 770px) {
+    #mini-panel-visit_tu_hero ul#visitclicks li {
+        float: left !important;
+        clear: both !important;
+        margin-bottom: 10px;
+    }
+    #mini-panel-visit_tu_hero ul#visitclicks{
+        list-style-type: none;
+        width: 250px;
+        margin: 0px auto;
+        padding: 0px;
+    }
+    .pane-get-to-know-tu{
+        clear: both;
+    }
+    #mini-panel-visit_tu_hero{
+        height: 1100px;
+    }
+    .pane-get-to-know-tu div#watchtour{
+        margin: 0px auto;
+    }
+    #mini-panel-visit_tu_hero div.visittop{
+        height: 170px !important;
+    }
+    #mini-panel-visit_tu_hero div.visittop ul{
+        width: 192px;
+    }
+    #mini-panel-visit_tu_hero div.visittop ul li{
+        float: left;
+        clear: both;
+    }
+}
+#mini-panel-visit_tu_hero ul#visitclicks li{
+    width: 250px;
+    float: left;
+    clear: none;
+    height: 250px;
+    background: rgba(255, 255, 255, .80);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    background-size: 50%;
+
+}
+#mini-panel-visit_tu_hero ul#visitclicks li a div{
+    width: 100%;
+    height: 250px;
+    float: left;
+}
+#mini-panel-visit_tu_hero ul#visitclicks li a{
+    color: #365543;
+    font-size: 27px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#mini-panel-visit_tu_hero ul#visitclicks li:nth-of-type(1){
+    background-image: url('../images/icon-visit-individual.png');
+    background-position: center 40px;
+}
+
+#mini-panel-visit_tu_hero ul#visitclicks li:nth-of-type(2){
+    background-image: url('../images/icon-visit-group.png');
+    background-position: center 52px;
+    background-size: 70%;
+}
+
+#mini-panel-visit_tu_hero ul#visitclicks li:nth-of-type(3){
+    background-image: url('../images/icon-visit-open-house.png');
+    background-position: center 50px;
+}
+
+#mini-panel-visit_tu_hero ul#visitclicks li a div p{
+    margin-top: 187px;
+}
+
+
+
+
+
+
+
+
+
+
+/* End Visit TU */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Generic school hero */
 
 
@@ -3018,8 +3365,8 @@ div.views-field-field-testimonials-image{
 
 .views-field-field-testimonials-blurb{
     position: absolute;
-    top: 40%; left: 28%;
-    width: 550px;
+    top: 40%; left: 32%;
+    width: 40%;
     font-size: 22px;
     text-align: center;
     color: #ffffff;

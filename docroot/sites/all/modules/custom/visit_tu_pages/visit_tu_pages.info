@@ -1,0 +1,14 @@
+name = Visit TU Pages
+core = 7.x
+package = Tiffin
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels_mini
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = panels_mini:panels_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = visit_tu
+features[page_manager_pages][] = visit_tu_landing
+features[panels_mini][] = visit_tu_hero
+features[panels_mini][] = visit_tu_landing_hero
+project path = sites/all/modules/custom
