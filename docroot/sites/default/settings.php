@@ -299,6 +299,15 @@ $drupal_hash_salt = '';
  * for you.
  */
 # $base_url = 'http://www.example.com';  // NO trailing slash!
+if ($_SERVER['HTTP_HOST'] === 'tiffin.edu') {
+  $base_url = 'http://tiffin.edu';
+} elseif ($_SERVER['HTTP_HOST'] === 'tiffindev.prod.acquia-sites.com') {
+  $base_url = 'http://tiffindev.prod.acquia-sites.com';
+} elseif ($_SERVER['HTTP_HOST'] === 'tiffinstg.prod.acquia-sites.com') {
+  $base_url = 'http://tiffinstg.prod.acquia-sites.com';
+} elseif ($_SERVER['HTTP_HOST'] === 'tiffin.prod.acquia-sites.com') {
+  $base_url = 'http://tiffin.prod.acquia-sites.com';
+}
 
 /**
  * PHP settings:
@@ -659,8 +668,6 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       break;
   }
 }
-
-
 
 // <DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.
