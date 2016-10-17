@@ -295,19 +295,4 @@ class panels_mini_ui extends ctools_export_ui {
     panels_edit_display_form_submit($form, $form_state);
     $form_state['item']->display = $form_state['display'];
   }
-
-  /**
-   * {@inheritdoc}
-   *
-   * Ensure the UUID's are re-generated to be unique.
-   */
-  public function clone_page($js, $input, $original, $step = NULL) {
-    // If this is the first step ensure the uuids are re-generated.
-    if (empty($this->plugin['use wizard']) || empty($step)) {
-      if (isset($original->display)) {
-        $original->display = $original->display->clone_display();
-      }
-    }
-    return parent::clone_page($js, $input, $original, $step);
-  }
 }

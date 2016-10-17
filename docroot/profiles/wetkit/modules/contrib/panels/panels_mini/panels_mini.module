@@ -166,25 +166,14 @@ function panels_mini_block_list_alter(&$blocks) {
 
     if (!empty($panel_mini->requiredcontexts)) {
       if (!$current_page || empty($current_page['contexts'])) {
-        foreach ($panel_mini->requiredcontexts as $context) {
-          if (empty($context['optional'])) {
-            unset($blocks[$key]);
-            continue;
-          }
-        }
+        unset($blocks[$key]);
+        continue;
       }
       else {
         $required = array();
         foreach ($panel_mini->requiredcontexts as $context) {
           $info = ctools_get_context($context['name']);
-
-          // Check if the required context is actually required.
-          if (!empty($context['optional'])) {
-            $required[] = new ctools_context_optional($context['identifier'], $info['context name']);
-          }
-          else {
-            $required[] = new ctools_context_required($context['identifier'], $info['context name']);
-          }
+          $required[] = new ctools_context_required($context['identifier'], $info['context name']);
         }
         if (!ctools_context_match_requirements($current_page['contexts'], $required)) {
           unset($blocks[$key]);
