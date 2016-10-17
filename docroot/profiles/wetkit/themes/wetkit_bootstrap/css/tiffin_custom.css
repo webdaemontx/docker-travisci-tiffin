@@ -2020,7 +2020,7 @@ ul#click-on-programs {
     font-size: 29px;
 }
 
-.pane-undergraduate-admissions-panel-pane-1 h2.pane-title
+.pane-undergraduate-admissions-panel-pane-1 h2.pane-title,
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title{
     background-position-x: 140px !important;
     width: 179px !important;
@@ -3793,19 +3793,19 @@ div.views-field-field-testimonials-image{
     z-index: 5;
 }
 
-.views-field-body{
+.view-testimonials-slider .views-field-body{
     background: rgba(76,76,76,.5);
     position: absolute;
     top: 25% !important;
-    left: 32% !important;
-    width: 45%;
+    left: 10% !important;
+    width: 80%;
     font-size: 22px;
     text-align: left;
     color: #ffffff;
     padding: 5px 25px 15px 25px;
 }
 
-..view-testimonials-slider .flex-control-paging li a.flex-active {
+.view-testimonials-slider .flex-control-paging li a.flex-active {
     background: #D9BF75;
 }
 
