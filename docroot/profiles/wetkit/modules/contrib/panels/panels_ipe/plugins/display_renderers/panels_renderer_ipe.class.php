@@ -338,7 +338,6 @@ class panels_renderer_ipe extends panels_renderer_editor {
     }
 
     // Otherwise it was submitted.
-    $old_clean_key = $this->clean_key;
     if (!empty($form_state['clicked_button']['#save-display'])) {
       // Saved. Save the cache.
       panels_edit_cache_save($this->cache);
@@ -355,12 +354,9 @@ class panels_renderer_ipe extends panels_renderer_editor {
       panels_edit_cache_clear($this->cache);
     }
 
-    // Return the old clean key for the endIPE command, because when a new
-    // revision is created, the key gets changed, and the JS cannot find a
-    // editor with a new key, which causes the command not be executed at all.
     $this->commands[] = array(
       'command' => 'endIPE',
-      'key' => $old_clean_key,
+      'key' => $this->clean_key,
     );
   }
 

@@ -417,9 +417,7 @@ function _18n_panels_fetch_all_panel_displays($reset = FALSE) {
 
           if (!empty($page_manager_handler->conf['display'])) {
             $panels_display = $page_manager_handler->conf['display'];
-            if (isset($panels_display->uuid)) {
-              $displays['exported-' . $panels_display->uuid] = $panels_display;
-            }
+            $displays['exported-' . $panels_display->uuid] = $panels_display;
           }
           elseif ($is_exported && isset($page_manager_handler->conf['did'])) {
             $panels_display = panels_load_display($page_manager_handler->conf['did']);

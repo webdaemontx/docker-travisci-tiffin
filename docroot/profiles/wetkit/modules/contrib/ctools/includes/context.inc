@@ -997,15 +997,17 @@ function ctools_context_get_context_from_relationships($relationships, &$context
     if (is_array($rdata['context'])) {
       $rcontexts = array();
       foreach ($rdata['context'] as $cid) {
-        if (!empty($contexts[$cid])) {
-          $rcontexts[] = $contexts[$cid];
+        if (empty($contexts[$cid])) {
+          continue 2;
         }
+        $rcontexts[] = $contexts[$cid];
       }
     }
     else {
-      if (!empty($contexts[$rdata['context']])) {
-        $rcontexts = $contexts[$rdata['context']];
+      if (empty($contexts[$rdata['context']])) {
+        continue;
       }
+      $rcontexts = $contexts[$rdata['context']];
     }
 
     $cid = ctools_context_id($rdata, 'relationship');

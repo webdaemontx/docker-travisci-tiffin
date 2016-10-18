@@ -183,7 +183,7 @@
             <section>
                 <source_id>menu_wet_mid_footer_eng_4</source_id>
                 <menu_name>menu-wet-mid-footer</menu_name>
-                <link_title>Stay Connected</link_title>
+                <link_title>test</link_title>
                 <link_path>front</link_path>
                 <weight>1</weight>
             </section>
