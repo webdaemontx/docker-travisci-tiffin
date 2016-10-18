@@ -60,6 +60,15 @@ main{
     background: #365543 !important
 }
 
+
+.sticky-bottom {
+    position: fixed !important;
+    bottom: 0px !important;
+    z-index: 3;
+    width: 100%;
+    height: 77px;
+}
+
 /* End mobile nav */
 
 
@@ -3097,7 +3106,20 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro{
 
 
 #mini-panel-homepage_submenu{
-display: flex;
+    display: flex;
+    /*
+    background:#fff;
+    height:60px;
+    z-index:170;
+    margin:0 auto;
+    border-bottom:1px solid #dadada;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    text-align: center;
+    */
 }
 
 #mini-panel-homepage_submenu .pane-content{
@@ -5274,3 +5296,8 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 
 /************** End brought in from block ********************/
+
+
+
+
+
