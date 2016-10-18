@@ -46,6 +46,7 @@ scripts[] = js/wetkit-bootstrap.modules.js
 scripts[] = js/animatedModal.min.js
 scripts[] = js/scroll-fun.js
 
+
 ; ========================================
 ; Settings
 ; ========================================
