@@ -5,10 +5,14 @@ jQuery(function(){
 
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() >= 190) {
+
             jQuery('#mini-panel-homepage_submenu').addClass('sticky-bottom');
+
         }
         else {
+
             jQuery('#mini-panel-homepage_submenu').removeClass('sticky-bottom');
+
         }
     });
 
@@ -37,9 +41,16 @@ jQuery(document).ready(function () {
         if(youtu.top < posventana + 700){
 
             /* WORKS! */
+            jQuery('#mini-panel-homepage_submenu').fadeOut("slow", function() {
+                jQuery('#mini-panel-homepage_submenu').removeClass('sticky-bottom');
+            });
+        }
 
-            jQuery('#mini-panel-homepage_submenu').removeClass('sticky-bottom');
 
+        else if(youtu.top > posventana + 700){
+            jQuery('#mini-panel-homepage_submenu').fadeIn("slow", function() {
+
+            });
         }
     });
 
