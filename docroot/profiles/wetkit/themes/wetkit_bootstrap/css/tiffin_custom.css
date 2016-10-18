@@ -2020,7 +2020,7 @@ ul#click-on-programs {
     font-size: 29px;
 }
 
-.pane-undergraduate-admissions-panel-pane-1 h2.pane-title
+.pane-undergraduate-admissions-panel-pane-1 h2.pane-title,
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title{
     background-position-x: 140px !important;
     width: 179px !important;
@@ -3793,12 +3793,12 @@ div.views-field-field-testimonials-image{
     z-index: 5;
 }
 
-.views-field-body{
+.view-testimonials-slider .views-field-body{
     background: rgba(76,76,76,.5);
     position: absolute;
     top: 25% !important;
-    left: 32% !important;
-    width: 45%;
+    left: 10% !important;
+    width: 80%;
     font-size: 22px;
     text-align: left;
     color: #ffffff;
@@ -4789,3 +4789,495 @@ margin-bottom: 20px;
 .menu-block-wrapper .nav > .active-trail h3 a:focus {
     background-color: #384A43;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************** Brought in from block:eeds to get merged in with above ********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nav#wb-sec div.menu-block-wrapper li.leaf a,
+nav#wb-sec div.menu-block-wrapper li.leaf a:visited{
+    color: #365543 !important;
+}
+
+nav#wb-sec div.menu-block-wrapper li a.active-trail,
+nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail,
+nav#wb-sec div.menu-block-wrapper li h3 a.active-trail{
+    color: #ffffff !important;
+}
+
+
+
+nav#wb-sec div.menu-block-wrapper .expanded ul li{
+    padding-top: 10px !important;
+}
+.pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title,
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title,
+.pane-undergraduate-admissions-panel-pane-2 h2.pane-title {
+    background-color: transparent;
+    width: 210px;
+    color: #365543;
+    text-align: center;
+    background: url('../images/arrow-down.png') no-repeat right;
+    margin: 31px auto 30px auto;
+    background-size: 27px;
+    background-position-x: 179px;
+    font-size: 29px;
+    width: 210px;
+}
+
+
+
+
+
+
+
+.page-academics-graduate h2,
+.page-academics-undergrad h2{
+    margin: 30px auto 0px auto;
+    font-size: 41px;
+    color: #365543;
+}
+
+.page-academics-undergrad h2{
+    width: 526px;
+}
+.page-academics-graduate h2{
+    width: 422px;
+}
+@media (max-width: 550px){
+    .page-academics-graduate h2,
+    .page-academics-undergrad h2{
+        width: 300px;
+        font-size: 20px;}
+}
+.pane-undergraduate-admissions-graduate-program-list-panel-pane .view-id-undergraduate_admissions .view-content .views-row a,
+.pane-undergraduate-admissions-panel-pane-2 .view-id-undergraduate_admissions .view-content .views-row a,
+.pane-undergraduate-admissions-panel-pane-1 .view-id-undergraduate_admissions .view-content .views-row a{
+    font-size: 21px;
+    text-decoration: none;
+    color: #11361E;
+}
+
+.pane-undergraduate-admissions-graduate-program-list-panel-pane,
+.pane-undergraduate-admissions-panel-pane-2{
+    width: 80%;
+    margin: 0px auto;
+}
+
+@media (min-width: 992px){
+    .pane-undergraduate-admissions-panel-pane-2 .glyphicon,
+    .pane-undergraduate-admissions-panel-pane-1 .glyphicon{
+        display: block !important;
+    }
+}
+
+@media (max-width: 500px){
+    .pane-undergraduate-admissions-panel-pane-2 .glyphicon,
+    .pane-undergraduate-admissions-panel-pane-1 .glyphicon{
+        display: none !important;
+    }
+    .pane-undergraduate-admissions-panel-pane-2 .form-autocomplete .form-control,
+    .pane-undergraduate-admissions-panel-pane-1 .form-autocomplete .form-control{
+        width: 300px;
+    .pane-undergraduate-admissions-panel-pane-2 .input-group-addon,
+    .pane-undergraduate-admissions-panel-pane-1 .input-group-addon{
+        display: none !important;}
+}
+}
+
+
+.pane-undergraduate-admissions-panel-pane-2,
+.pane-undergraduate-admissions-panel-pane-1{
+    background-color: rgba(255, 255, 255, 0.80);
+    padding: 17px;
+    margin-top: 40px;
+}
+
+
+.pane-undergraduate-admissions-panel-pane-2 h2.pane-title,
+.pane-undergraduate-admissions-panel-pane-1 h2.pane-title{
+    margin-top: 0px !important;
+    background-color: transparent;
+    width: 210px;
+    color: #365543;
+}
+.pane-bean-schools-bean-block{margin-bottom: 20px;}
+.pane-bean-schools-bean-block h2{
+    text-align: center;
+    background-position-x: 304px;
+    width: 332px;
+    text-align: left;
+    font-weight: bold;
+    margin: 50px auto 20px auto;
+}
+.pane-bean-schools-bean-block .pane-content{}
+.pane-bean-schools-bean-block ul{
+    margin: 0px auto;
+    padding: 0px;
+    width: 250px;
+    list-style-type: none;
+    font-size: 21px;
+    color: #11361E;
+    text-decoration: none;
+}
+.pane-bean-schools-bean-block ul a{
+    color: #11361E;
+    text-decoration: none;
+}
+div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 main{
+    width: 90%;
+}
+.views-exposed-form label{
+    font-weight: 100 !important;
+    color: #a58024 !important
+}
+.view-id-undergraduate_admissions .view-filters {
+    width: 390px !important
+}
+.pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(2) p {
+    padding-top: 33px !important;
+}
+.views-field-field-testimonials-blurb{
+    position: absolute;
+    top: 40% !important;
+    left: 32% !important;
+    width: 40%;
+    font-size: 22px;
+}
+
+.menu-block-wrapper .nav > .active-trail h3 a {
+    background-color: #385443 !important;
+    color: #D9C072 !important;
+
+
+
+.pane-about-tiffin-ohio p{
+    font-size: 17px;
+}
+
+
+
+
+
+.pane-schools h2{
+    background-position-x: 318px;
+    width: 345px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pane-undergraduate-admissions-graduate-program-list-panel-pane{
+    width: 80%;
+    margin: 0px auto;
+}
+
+.pane-undergraduate-admissions-graduate-program-list-panel-pane .views-exposed-form .views-exposed-widget{
+    padding: 0px !important;
+}
+
+.pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title,
+.pane-schools h2{
+    color: #11361E;
+    text-align: center;
+    background: url(../images/arrow-down.png) no-repeat right;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 31px auto 30px auto;
+    background-size: 27px;
+    font-size: 29px;
+}
+.pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title{
+    background-position-x: 133px;
+    width: 160px;
+    text-align: left;
+}
+
+.pane-schools h2{
+    background-position-x: 304px;
+    width: 332px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.pane-undergraduate-admissions-graduate-program-list-panel-pane .pane-schools .view-content{
+    text-align: center;
+}
+.view-id-graduate_admissions .view-content .views-row,
+.view-id-schools .view-content .views-row{
+    margin-bottom: 16px;
+    text-align: left;
+    line-height: 20px;
+}
+.pane-undergraduate-admissions-graduate-program-list-panel-pane .views-exposed-form .views-exposed-widget .btn{
+    margin-top: 28px !important;
+}
+.view-graduate-admissions .view-content{
+    margin-top: 27px;
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+.pane-schools{
+    width: 280px;
+    margin: 0px auto 50px auto;
+    line-height: 26px;
+}
+.
+.pane-undergraduate-admissions-graduate-program-list-panel-pane  .view-content a, .pane-schools a{
+    font-size: 21px;
+    color: #11361E;
+    text-decoration: none;
+}
+
+
+
+
+.view-id-graduate_admissions .view-filters {
+    width: 510px;
+    margin: 0px auto 0px auto;
+}
+.views-exposed-form-graduate-admissions-graduate-program-list-panel-pane .views-exposed-form .views-exposed-widget{
+    padding: 0px !important;
+}
+
+
+.views-exposed-form-graduate-admissions-graduate-program-list-panel-pane .views-exposed-widget .form-submit{
+    margin-top: 0px  !important;
+}
+
+#edit-field-program-location-tid-wrapper .label{
+    display: none !important;
+}
+
+#edit-submit-graduate-admissions{
+    font-size: 24px;
+    border-radius: 0px;
+    background-color: rgba(54, 85, 67, 0.85);
+    border-style: none;
+    border: 0px solid transparent !important;
+}
+
+
+#edit-field-program-location-tid{
+    border-radius: 0px;
+    float: left;
+    clear: none;
+    height: 47px;
+    width: 390px;
+    background: url('../images/down-triangle.png') no-repeat right;
+    background-color: rgba(255, 255, 255, 0.75);
+    background-position-x: 360px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    color: #365543;
+}
+
+
+
+
+
+
+
+
+
+
+.pane-about-tiffin-ohio h3{
+    font-size: 52px !important;
+}
+
+.pane-about-tu-hero-top{
+    background-position: 0px -150px !important;
+]
+
+
+
+
+
+</style>
+
+
+
+
+
+
+  <style type="text/css">
+.view-testimonials-slider .views-field-body{
+    background: rgba(76,76,76,.5);
+    position: absolute;
+    top: 25% !important;
+    left: 10% !important;
+    width: 80% !important;
+    font-size: 22px;
+    text-align: left;
+    color: #ffffff;
+    padding: 5px 25px 15px 25px;
+}
+
+.pane-giving-hero-top h1 ,
+.pane-advancement-hero-top h1 ,
+.pane-alumni-hero-top h1 {
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.pane-giving-hero-top,
+.pane-advancement-hero-top,
+.pane-alumni-hero-top {
+    background-image: url('../images/image-abouttu-hero-landing.jpg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.pane-giving-hero-top,
+.pane-advancement-hero-top,
+.pane-alumni-hero-top {
+    height: 375px;
+}
+
+.pane-giving-hero-top,
+.pane-advancement-hero-top,
+.pane-alumni-hero-top {
+    height: 695px;
+}
+
+
+.pane-giving-hero-top,
+.pane-advancement-hero-top,
+.pane-alumni-hero-top {
+    background-position: 0px 20px !important;
+}
+
+.pane-giving-hero-top .hvr-bounce-to-bottom::before,
+.pane-advancement-hero-top .hvr-bounce-to-bottom::before,
+.pane-alumni-hero-top .hvr-bounce-to-bottom::before{
+    background: #365543 !important;
+}
+.pane-giving-hero-top #abouttutop,
+.pane-advancement-hero-top #abouttutop,
+.pane-alumni-hero-top #abouttutop {
+    height: 194px;
+    background-color: #dbc073;
+    background: rgba(218, 192, 115, .90);
+    margin-top: 118px;
+}
+
+
+.pane-giving-hero-top #abouttutop ul ,
+.pane-advancement-hero-top #abouttutop ul ,
+.pane-alumni-hero-top #abouttutop ul {
+    list-style-type: none;
+    display: flex;
+    width: 80%;
+    margin: 0px auto;
+}
+
+
+.pane-giving-hero-top #abouttutop ul li:nth-of-type(1),
+.pane-advancement-hero-top #abouttutop ul li:nth-of-type(1),
+.pane-alumni-hero-top #abouttutop ul li:nth-of-type(1) {
+    background-image: url(../images/.png);
+    background-repeat: no-repeat;
+}
+
+
+.pane-giving-hero-top #abouttutop ul li,
+.pane-advancement-hero-top #abouttutop ul li,
+.pane-alumni-hero-top #abouttutop ul li {
+    width: 33%;
+    background-position: center;
+    height: 96px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+.pane-giving-hero-top #abouttutop ul li a ,
+.pane-advancement-hero-top #abouttutop ul li a ,
+.pane-alumni-hero-top #abouttutop ul li a {
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+}
+.pane-giving-hero-top #introblurbs,
+.pane-advancement-hero-top #introblurbs,
+.pane-alumni-hero-top #introblurbs{
+    color: white;
+    margin: 0px auto;
+    width: 80%;
+    font-weight: 100;
+    font-size: 18px;
+    background-color: rgba(42, 72, 68, 0.5);
+    padding: 10px;
+}
+.pane-giving-hero-top #abouttutop ul li div p,
+.pane-advancement-hero-top #abouttutop ul li div p,
+.pane-alumni-hero-top #abouttutop ul li div p {
+    line-height: 40px;
+    padding: 20px;
+}
+
+
+
+
+/************** End brought in from block ********************/

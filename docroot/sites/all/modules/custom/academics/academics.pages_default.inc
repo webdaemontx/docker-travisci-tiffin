@@ -171,7 +171,7 @@ function academics_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_academics_landing_page__panel_context_38a80bb0-52c6-40e2-8ee8-599dd88afdea';
+  $handler->name = 'page_academics_landing_page__panel_context_6ddd49aa-4645-4df6-9325-8c14d5672e91';
   $handler->task = 'page';
   $handler->subtask = 'academics_landing_page';
   $handler->handler = 'panel_context';
@@ -187,10 +187,6 @@ function academics_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => '',
-    'metatag_panels' => array(
-      'enabled' => 1,
-      'metatags' => array(),
-    ),
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -251,8 +247,8 @@ function academics_default_page_manager_pages() {
     'title' => 'Academics',
     'title_heading' => 'h1',
     'body' => '<ul id="icons-admissions-landing-page-first">
-<li class="hvr-shrink"><a href="/majors"><div class="hvr-underline-from-center"><p>Undergraduate</p></div></a></li>
-<li class="hvr-shrink"><a href="/graduateprograms"><div class="hvr-underline-from-center"><p>Graduate</p></div></a></li>
+<li><a href=""><div><p>Undergraduate</p></div></a></li>
+<li><a href=""><div><p>Graduate</p></div></a></li>
 </ul>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
