@@ -1887,10 +1887,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 
 .pane-undergraduate-admissions-hero{
-    background-image: url('../images/image-undergraduate-hero-landing.jpg');
+    background-image: url('../images/image-undergrad-admissions-background-new.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: 0px -230px;
     height: 360px;
     width: 100%;
     background-attachment: fixed;
