@@ -24,7 +24,7 @@ regions[page_bottom] = Page bottom
 stylesheets[all][] = css/wetkit_bootstrap.styles.css
 stylesheets[all][] = css/tiffin_custom.css
 stylesheets[all][] = css/hover-min.css
-stylesheets[all][] = animate.min.css
+
 
 ; ========================================
 ; Scripts
@@ -41,9 +41,9 @@ stylesheets[all][] = animate.min.css
 ;scripts[] = bootstrap/js/scrollspy.js
 ;scripts[] = bootstrap/js/tab.js
 ;scripts[] = bootstrap/js/transition.js
-scripts[] = js/animated-menu-line.js
 scripts[] = js/wetkit-bootstrap.modules.js
 scripts[] = js/animatedModal.min.js
+scripts[] = js/animated-menu-line.js
 scripts[] = js/scroll-fun.js
 
 
