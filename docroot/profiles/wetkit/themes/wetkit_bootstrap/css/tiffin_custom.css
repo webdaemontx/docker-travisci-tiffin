@@ -4900,9 +4900,9 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li{
     background: url('../images/arrow-down.png') no-repeat right;
     margin: 31px auto 30px auto;
     background-size: 27px;
-    background-position-x: 179px;
+    background-position-x: 179px !important;
     font-size: 29px;
-    width: 210px;
+    width: 210px !important;
 }
 
 
