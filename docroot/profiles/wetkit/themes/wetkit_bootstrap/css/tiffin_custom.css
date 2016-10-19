@@ -14,6 +14,24 @@ body{
 
 }
 
+.search-info{
+    display: none;
+}
+
+a{
+    color: #385443;
+}
+a:hover{
+    color: #C09212;
+}
+
+a:visited {
+    /* 9c7508
+    color: #C09212 !important;
+    */
+
+color: #9c7508;
+}
 
 img{
     -webkit-box-shadow: none;
