@@ -57,4 +57,5 @@
       <p class="search-info"><?php print $info; ?></p>
     <?php endif; ?>
   </div>
+    <a href="<?php print $url; ?>"><?php print $url; ?></a>
 </li>
