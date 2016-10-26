@@ -44,12 +44,6 @@
           if (!media && media_definition.fid) {
             Drupal.media.filter.ensureSourceMap();
             var source = Drupal.settings.mediaSourceMap[media_definition.fid];
-
-            // Skip unknown items.
-            if (!source) {
-              continue;
-            }
-
             media = document.createElement(source.tagName);
             media.src = source.src;
             media.innerHTML = source.innerHTML;
@@ -94,16 +88,18 @@
       var attributes = {};
 
       for (var field in options) {
-        // If the field is set to false, use an empty string for output.        
+        // If the field is set to false, use an empty string for output.
         options[field] = options[field] === false ? '' : options[field];
-        if (field.match(/^field_file_image_alt_text/)) {
+        //if (field.match(/^field_file_image_alt_text/)) {
+        if (field.match(new RegExp('^' + Drupal.settings.media.img_alt_field))) {
           attributes.alt = options[field];
           if (includeFieldID) {
             attributes.altField = field;
           }
         }
 
-        if (field.match(/^field_file_image_title_text/)) {
+        //if (field.match(/^field_file_image_title_text/)) {
+        if (field.match(new RegExp('^' + Drupal.settings.media.img_title_field))) {
           attributes.title = options[field];
           if (includeFieldID) {
             attributes.titleField = field;
@@ -186,21 +182,24 @@
       // media_get_file_without_label().
       //
       // Finds the media-element class.
-      var classRegex = 'class=[\'"][^\'"]*?media-element';
+      var classRegex = 'class=([\'"])[^\\1]*?media-element';
       // Image tag with the media-element class.
       var regex = '<img[^>]+' + classRegex + '[^>]*?>';
       // Or a span with the media-element class (used for documents).
       // \S\s catches any character, including a linebreak; JavaScript does not
       // have a dotall flag.
       regex += '|<span[^>]+' + classRegex + '[^>]*?>[\\S\\s]+?</span>';
-
       var matches = content.match(RegExp(regex, 'gi'));
       if (matches) {
         for (i = 0; i < matches.length; i++) {
-          markup = matches[i];
-          macro = Drupal.media.filter.create_macro($(markup));
-          Drupal.settings.tagmap[macro] = markup;
-          content = content.replace(markup, macro);
+          var markup = matches[i];
+          var macro = Drupal.media.filter.create_macro($(markup));
+          // If we have a truthy response, store the macro and perform the
+          // replacement.
+          if (macro) {
+            Drupal.settings.tagmap[macro] = markup;
+            content = content.replace(markup, macro);
+          }
         }
       }
 
@@ -232,13 +231,16 @@
 
       // Extract attributes represented by fields and use those values to keep
       // them in sync, usually alt and title.
-      var attributes = Drupal.media.filter.parseAttributeFields(info.fields);
+      info.fields = info.attributes;
+      var attributes = Drupal.media.filter.parseAttributeFields(info.attributes);
       info.attributes = $.extend(info.attributes, attributes);
 
       // Move attributes from the file info array to the placeholder element.
       if (info.attributes) {
         $.each(Drupal.settings.media.wysiwyg_allowed_attributes, function(i, a) {
-          element.attr(a, info.attributes[a]);
+          if (info.attributes[a]) {
+            element.attr(a, $('<textarea />').html(info.attributes[a]).text());
+          }
         });
         delete(info.attributes);
 
@@ -265,6 +267,10 @@
 
       var classes = ['media-element'];
       if (info.view_mode) {
+        // Remove any existing view mode classes.
+        element.removeClass (function (index, css) {
+          return (css.match (/\bfile-\S+/g) || []).join(' ');
+        });
         classes.push('file-' + info.view_mode.replace(/_/g, '-'));
       }
       element.addClass(classes.join(' '));
