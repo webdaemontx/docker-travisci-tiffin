@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Render panel panes in a region as using Masonry layout.
+ */
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function masonry_panels_ctools_plugin_directory($module, $plugin) {
+  if (($module == 'panels' || $module == 'ctools') && $plugin == 'styles') {
+    return 'plugins/' . $plugin;
+  }
+  return NULL;
+}
