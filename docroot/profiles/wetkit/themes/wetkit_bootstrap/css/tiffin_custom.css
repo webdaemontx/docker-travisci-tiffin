@@ -313,8 +313,9 @@ body.page-campuslife .hvr-underline-from-center:before{
 #mini-panel-homepage_top_hero{
     /*
     height: 580px;
-    */
     height: 80% !important;
+        */
+    height: 77vh;
     width: 100%;
     background-image: url('../images/image-hero-top-one.jpg');
     background-size: 1200px 574px;
@@ -668,6 +669,61 @@ div.view-homepage-news-slidehow .flex-control-paging li a{
 
 
 /* End get to know TU */
+
+
+
+
+
+/* might want to consolidate CSS at some point */
+
+
+
+/* TU Drone */
+
+
+.pane-tu-drone-vid{
+    height: 550px;
+    background-image: url('../images/image-drone-background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.pane-tu-drone-vid div#watchtour{
+    margin-top: 2%;
+    background-image: url(../images/drone-click.png);
+    margin-left: 60%;
+    background-repeat: no-repeat;
+    height: 161px;
+    width: 356px;
+    background-position: 0px 53px;
+    font-size: 40px;
+    font-weight: 100;
+    color: white;
+}
+
+.pane-tu-drone-vid div#playtour{
+    background-image: url(../images/icon-opaque-play-video.png);
+    background-position: center;
+    height: 181px;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+.pane-tu-drone-vid div#watchtourshell{
+    padding-top: 2%;
+    height: 550px;
+    width: 100%;
+}
+
+.pane-tu-drone-vid  a{
+    text-decoration: none;
+}
+
+
+/* End TU drone */
 
 
 
@@ -2731,7 +2787,7 @@ body.page-admissions .pane-1{
     background-attachment: fixed;
     background-size: cover;
     background-position: 0px -150px;
-    height: 375px;
+    height: 383px;
 }
 
 .pane-about-tu-hero-top h1{
