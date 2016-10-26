@@ -1,1 +1,226 @@
 <?php
+
+
+function tiffin_npc_install() {
+
+}
+
+function tiffin_npc_uninstall() {
+
+}
+
+function tiffin_npc_schema() {
+  $schema['tiffin_npc_table'] = array (
+    'description' => t('tiffin_npc Registration Table'),
+    'fields' => array(
+      'calculationGUID' => array(
+        'description' => t('GUID for Net Price Calculator'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'first' => array(
+        'description' => t('First Name'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
+      'last' => array(
+        'description' => t('Last Name'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
+      'email' => array(
+        'description' => t('Email'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
+      'address' => array(
+        'description' => t('Address'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
+      'address_2' => array(
+        'description' => t('Applicant Address 2'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ),
+      'city' => array(
+        'description' => t('City'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
+      'state' => array(
+        'description' => t('State'),
+        'type' => 'varchar',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'zip' => array(
+        'description' => t('Zip Code'),
+        'type' => 'varchar',
+        'length' => 12,
+        'not null' => TRUE,
+      ),
+      'phone_type' => array(
+        'description' => t('Type of phone'),
+        'type' => 'varchar',
+        'length' => 12,
+        'not null' => TRUE,
+      ),
+      'phone_number' => array(
+        'description' => t('Applicant Phone#'),
+        'type' => 'varchar',
+        'length' => 15,
+        'not null' => TRUE,
+      ),
+      'high_school_grad_year' => array(
+        'description' => t('Year graduated from High School'),
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'prep_courses_score' => array(
+        'description' => t('College Prep Courses Score'),
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ),
+      'high_school_gpa' => array(
+        'description' => t('College Prep Courses Score'),
+        'type' => 'varchar',
+        'length' => 4,
+        'not null' => TRUE,
+      ),
+
+      'sat-act' => array(
+        'description' => t('SAT or ACT score'),
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+      ),
+      'sat' => array(
+        'description' => t('SAT Score'),
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'act' => array(
+        'description' => t('ACT Score'),
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'born_before_1973' => array(
+        'description' => t('Was applicant before January 1, 1993?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'married' => array(
+        'description' => t('Applicant marital status'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'in_masters_or_doctorate_program' => array(
+        'description' => t('Is applicant enrolled in a Masters or Doctoral program.'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'active_duty' => array(
+        'description' => t('Applicant serving on Active Duty'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'veteran' => array(
+        'description' => t('Is the applicant a veteran.'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'have_dependent_children' => array(
+        'description' => t('Does applicant have dependent children?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'other_dependents' => array(
+        'description' => t('Does applicant have other dependents?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'parents_deceased' => array(
+        'description' => t('Are applicants parents deceased?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'emancipated_or_guardianship' => array(
+        'description' => t('Is applicant emancipated or in legal guardianship?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'unaccompanied_youth' => array(
+        'description' => t('Is applicant an unaccompanied youth?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'homeless_youth' => array(
+        'description' => t('Is applicant classified as homeless?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'efc' => array(
+        'description' => t('Expected Family Contribution'),
+        'type' => 'varchar',
+        'length' => 15,
+        'not null' => TRUE,
+      ),
+      'ohio_residents' => array(
+        'description' => t('Lived in Ohio at least 12 months?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'extra_curricular_activities' => array(
+        'description' => t('Does the applicant expect to participate in extra curriculars?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'scholarships' => array(
+        'description' => t('Is applicant classified as homeless?'),
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+      ),
+      'which_activity' => array(
+        'description' => t('Which extra curricular activities interested in?'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'extra_activity' => array(
+        'description' => t('Additional extra curricular activity?'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('calculationGUID'),
+  );
+
+  return $schema;
+}
