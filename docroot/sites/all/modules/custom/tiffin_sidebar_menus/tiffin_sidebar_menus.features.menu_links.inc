@@ -10,630 +10,385 @@
 function tiffin_sidebar_menus_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-about-tu_commencement:home.
-  $menu_links['menu-about-tu_commencement:home'] = array(
+  // Exported menu link: menu-about-tu_commencement:node/211.
+  $menu_links['menu-about-tu_commencement:node/211'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/211',
+    'router_path' => 'node/%',
     'link_title' => 'Commencement',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_commencement:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_commencement:node/211',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -40,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 10,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_employment:home.
-  $menu_links['menu-about-tu_employment:home'] = array(
+  // Exported menu link: menu-about-tu_employment:node/131.
+  $menu_links['menu-about-tu_employment:node/131'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/131',
+    'router_path' => 'node/%',
     'link_title' => 'Employment',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_employment:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_employment:node/131',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -42,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 8,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_host-an-event:home.
-  $menu_links['menu-about-tu_host-an-event:home'] = array(
+  // Exported menu link: menu-about-tu_host-an-event:http://eventscheduling.tiffin.edu/virtualems/.
+  $menu_links['menu-about-tu_host-an-event:http://eventscheduling.tiffin.edu/virtualems/'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'http://eventscheduling.tiffin.edu/virtualems/',
+    'router_path' => '',
     'link_title' => 'Host An Event',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_host-an-event:home',
+      'external' => 1,
+      'identifier' => 'menu-about-tu_host-an-event:http://eventscheduling.tiffin.edu/virtualems/',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 0,
+    'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 7,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_institutional-diversity:home.
-  $menu_links['menu-about-tu_institutional-diversity:home'] = array(
+  // Exported menu link: menu-about-tu_institutional-diversity:node/36.
+  $menu_links['menu-about-tu_institutional-diversity:node/36'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/36',
+    'router_path' => 'node/%',
     'link_title' => 'Institutional Diversity',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_institutional-diversity:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_institutional-diversity:node/36',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -41,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 9,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_maps--directions:home.
-  $menu_links['menu-about-tu_maps--directions:home'] = array(
+  // Exported menu link: menu-about-tu_maps--directions:node/196.
+  $menu_links['menu-about-tu_maps--directions:node/196'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/196',
+    'router_path' => 'node/%',
     'link_title' => 'Maps & Directions',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_maps--directions:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_maps--directions:node/196',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 3,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_meet-our-faculty:home.
-  $menu_links['menu-about-tu_meet-our-faculty:home'] = array(
+  // Exported menu link: menu-about-tu_meet-our-faculty:node/236.
+  $menu_links['menu-about-tu_meet-our-faculty:node/236'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/236',
+    'router_path' => 'node/%',
     'link_title' => 'Meet Our Faculty',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_meet-our-faculty:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_meet-our-faculty:node/236',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 5,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_news--events:home.
-  $menu_links['menu-about-tu_news--events:home'] = array(
+  // Exported menu link: menu-about-tu_our-campuses:node/246.
+  $menu_links['menu-about-tu_our-campuses:node/246'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'News & Events',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_news--events:home',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -44,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: menu-about-tu_our-campuses:home.
-  $menu_links['menu-about-tu_our-campuses:home'] = array(
-    'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/246',
+    'router_path' => 'node/%',
     'link_title' => 'Our Campuses',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_our-campuses:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_our-campuses:node/246',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 2,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_presidents-welcome:home.
-  $menu_links['menu-about-tu_presidents-welcome:home'] = array(
+  // Exported menu link: menu-about-tu_presidents-welcome:node/16.
+  $menu_links['menu-about-tu_presidents-welcome:node/16'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/16',
+    'router_path' => 'node/%',
     'link_title' => 'President\'s Welcome',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_presidents-welcome:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_presidents-welcome:node/16',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 0,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_tu-at-a-glance:home.
-  $menu_links['menu-about-tu_tu-at-a-glance:home'] = array(
+  // Exported menu link: menu-about-tu_tu-at-a-glance:node/216.
+  $menu_links['menu-about-tu_tu-at-a-glance:node/216'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'TU At a Glance',
+    'link_path' => 'node/216',
+    'router_path' => 'node/%',
+    'link_title' => 'TU At A Glance',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_tu-at-a-glance:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_tu-at-a-glance:node/216',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 1,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-about-tu_visiting-tiffin-oh:home.
-  $menu_links['menu-about-tu_visiting-tiffin-oh:home'] = array(
+  // Exported menu link: menu-about-tu_visiting-tiffin-oh:node/81.
+  $menu_links['menu-about-tu_visiting-tiffin-oh:node/81'] = array(
     'menu_name' => 'menu-about-tu',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/81',
+    'router_path' => 'node/%',
     'link_title' => 'Visiting Tiffin, OH',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-about-tu_visiting-tiffin-oh:home',
+      'external' => 0,
+      'identifier' => 'menu-about-tu_visiting-tiffin-oh:node/81',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'weight' => 4,
+    'customized' => 0,
+    'language' => 'en',
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_academic-resources:home.
-  $menu_links['menu-academics_academic-resources:home'] = array(
+  // Exported menu link: menu-academics_academic-resources:node/1856.
+  $menu_links['menu-academics_academic-resources:node/1856'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1856',
+    'router_path' => 'node/%',
     'link_title' => 'Academic Resources',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_academic-resources:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_academic-resources:node/1856',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -43,
-    'customized' => 1,
+    'weight' => 4,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_assessment:home.
-  $menu_links['menu-academics_assessment:home'] = array(
+  // Exported menu link: menu-academics_assessment:node/1631.
+  $menu_links['menu-academics_assessment:node/1631'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1631',
+    'router_path' => 'node/%',
     'link_title' => 'Assessment',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_assessment:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_assessment:node/1631',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -39,
-    'customized' => 1,
+    'weight' => 8,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_associate-programs:home.
-  $menu_links['menu-academics_associate-programs:home'] = array(
+  // Exported menu link: menu-academics_china-program:node/651.
+  $menu_links['menu-academics_china-program:node/651'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'Associate Programs',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_associate-programs:home',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: menu-academics_calendar--catalog:home.
-  $menu_links['menu-academics_calendar--catalog:home'] = array(
-    'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'Calendar & Catalog',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_calendar--catalog:home',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -40,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: menu-academics_china-program:home.
-  $menu_links['menu-academics_china-program:home'] = array(
-    'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/651',
+    'router_path' => 'node/%',
     'link_title' => 'China Program',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_china-program:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_china-program:node/651',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
+    'weight' => 1,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_disability-services:home.
-  $menu_links['menu-academics_disability-services:home'] = array(
+  // Exported menu link: menu-academics_disability-services:node/121.
+  $menu_links['menu-academics_disability-services:node/121'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/121',
+    'router_path' => 'node/%',
     'link_title' => 'Disability Services',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_disability-services:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_disability-services:node/121',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -38,
-    'customized' => 1,
+    'weight' => 9,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_graduate-programs:home.
-  $menu_links['menu-academics_graduate-programs:home'] = array(
+  // Exported menu link: menu-academics_library:node/1111.
+  $menu_links['menu-academics_library:node/1111'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'Graduate Programs',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_graduate-programs:home',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: menu-academics_library:home.
-  $menu_links['menu-academics_library:home'] = array(
-    'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1111',
+    'router_path' => 'node/%',
     'link_title' => 'Library',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_library:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_library:node/1111',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -44,
-    'customized' => 1,
+    'weight' => 3,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_meet-our-faculty:home.
-  $menu_links['menu-academics_meet-our-faculty:home'] = array(
+  // Exported menu link: menu-academics_meet-our-faculty:node/236.
+  $menu_links['menu-academics_meet-our-faculty:node/236'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/236',
+    'router_path' => 'node/%',
     'link_title' => 'Meet Our Faculty',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_meet-our-faculty:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_meet-our-faculty:node/236',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -41,
-    'customized' => 1,
+    'weight' => 6,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_online-and-off-campus-bachelor-degree-programs:home.
-  $menu_links['menu-academics_online-and-off-campus-bachelor-degree-programs:home'] = array(
+  // Exported menu link: menu-academics_schools:node/1176.
+  $menu_links['menu-academics_schools:node/1176'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'Online and Off-Campus Bachelor Degree Programs',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_online-and-off-campus-bachelor-degree-programs:home',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: menu-academics_schools:home.
-  $menu_links['menu-academics_schools:home'] = array(
-    'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1176',
+    'router_path' => 'node/%',
     'link_title' => 'Schools',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_schools:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_schools:node/1176',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -45,
-    'customized' => 1,
+    'weight' => 2,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_special-programs:home.
-  $menu_links['menu-academics_special-programs:home'] = array(
+  // Exported menu link: menu-academics_special-programs:node/1756.
+  $menu_links['menu-academics_special-programs:node/1756'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1756',
+    'router_path' => 'node/%',
     'link_title' => 'Special Programs',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_special-programs:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_special-programs:node/1756',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => -42,
-    'customized' => 1,
+    'weight' => 5,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-academics_transcript-request:home.
-  $menu_links['menu-academics_transcript-request:home'] = array(
+  // Exported menu link: menu-academics_transcript-request:node/1626.
+  $menu_links['menu-academics_transcript-request:node/1626'] = array(
     'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1626',
+    'router_path' => 'node/%',
     'link_title' => 'Transcript Request',
     'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_transcript-request:home',
+      'external' => 0,
+      'identifier' => 'menu-academics_transcript-request:node/1626',
     ),
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -37,
-    'customized' => 1,
+    'weight' => 10,
+    'customized' => 0,
     'language' => 'und',
-    'menu_links_customized' => 1,
-  );
-  // Exported menu link: menu-academics_undergraduate-programs:home.
-  $menu_links['menu-academics_undergraduate-programs:home'] = array(
-    'menu_name' => 'menu-academics',
-    'link_path' => 'home',
-    'router_path' => 'home',
-    'link_title' => 'Undergraduate Programs',
-    'options' => array(
-      'attributes' => array(),
-      'item_attributes' => array(
-        'id' => '',
-        'class' => '',
-        'style' => '',
-      ),
-      'identifier' => 'menu-academics_undergraduate-programs:home',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-    'language' => 'und',
-    'menu_links_customized' => 1,
+    'menu_links_customized' => 0,
   );
   // Exported menu link: menu-admissions_apply-now:home.
   $menu_links['menu-admissions_apply-now:home'] = array(
@@ -649,6 +404,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_apply-now:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -674,6 +430,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_financial-aid:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -699,6 +456,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_graduate:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -724,6 +482,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_international:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -749,6 +508,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_online-and-off-campus-bachelor-degree-programs:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -774,6 +534,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_transfer:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -799,6 +560,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_undergraduate:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -824,6 +586,7 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
         'style' => '',
       ),
       'identifier' => 'menu-admissions_visit-tiffin-university:home',
+      'external' => 0,
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -841,32 +604,27 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
   t('Academic Resources');
   t('Apply Now');
   t('Assessment');
-  t('Associate Programs');
-  t('Calendar & Catalog');
   t('China Program');
   t('Commencement');
   t('Disability Services');
   t('Employment');
   t('Financial Aid');
   t('Graduate');
-  t('Graduate Programs');
   t('Host An Event');
   t('Institutional Diversity');
   t('International');
   t('Library');
   t('Maps & Directions');
   t('Meet Our Faculty');
-  t('News & Events');
   t('Online and Off-Campus Bachelor Degree Programs');
   t('Our Campuses');
   t('President\'s Welcome');
   t('Schools');
   t('Special Programs');
-  t('TU At a Glance');
+  t('TU At A Glance');
   t('Transcript Request');
   t('Transfer');
   t('Undergraduate');
-  t('Undergraduate Programs');
   t('Visit Tiffin University');
   t('Visiting Tiffin, OH');
 
