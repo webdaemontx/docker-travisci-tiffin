@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="animate.min.css">
+</head>
+
+<body>
+<!--Call your modal-->
+<a id="demo01" href="#animatedModal">DEMO01</a>
+
+<!--DEMO01-->
+<div id="animatedModal">
+    <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+    <div class="close-animatedModal">
+        CLOSE MODAL
+    </div>
+
+    <div class="modal-content">
+        test test test test test etst    test test test test test etst    test test test test test etst    test test test test test etst
+    </div>
+</div>
+
+<script src="jquery.js"></script>
+<script src="animatedModal.min.js"></script>
+<script>
+    $("#demo01").animatedModal();
+</script>
+</body>
+

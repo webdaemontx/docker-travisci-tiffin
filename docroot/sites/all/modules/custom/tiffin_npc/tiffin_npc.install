@@ -15,8 +15,8 @@ function tiffin_npc_schema() {
     'fields' => array(
       'calculationGUID' => array(
         'description' => t('GUID for Net Price Calculator'),
-        'type' => 'serial',
-        'unsigned' => TRUE,
+        'type' => 'varchar',
+        'length' => 255,
         'not null' => TRUE,
       ),
       'first' => array(
@@ -67,6 +67,12 @@ function tiffin_npc_schema() {
         'length' => 12,
         'not null' => TRUE,
       ),
+      'county' => array(
+        'description' => t('County'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ),
       'phone_type' => array(
         'description' => t('Type of phone'),
         'type' => 'varchar',
@@ -97,8 +103,7 @@ function tiffin_npc_schema() {
         'length' => 4,
         'not null' => TRUE,
       ),
-
-      'sat-act' => array(
+      'satact' => array(
         'description' => t('SAT or ACT score'),
         'type' => 'varchar',
         'length' => 5,
@@ -115,6 +120,12 @@ function tiffin_npc_schema() {
         'type' => 'varchar',
         'length' => 10,
         'not null' => FALSE,
+      ),
+      'intended_major' => array(
+        'description' => t('Intended Major'),
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
       ),
       'born_before_1973' => array(
         'description' => t('Was applicant before January 1, 1993?'),
@@ -214,6 +225,18 @@ function tiffin_npc_schema() {
       ),
       'extra_activity' => array(
         'description' => t('Additional extra curricular activity?'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'create_from_ip' => array(
+        'description' => t('IP Address of browser / user'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'create_date' => array(
+        'description' => t('Date this submission was created'),
         'type' => 'varchar',
         'length' => 255,
         'not null' => TRUE,
