@@ -342,13 +342,6 @@ function _bootstrap_process_theme_registry_suggestions(&$registry, $themes) {
   // Merge in normal core detections first.
   $registry = drupal_array_merge_deep($registry, drupal_find_theme_functions($registry, $themes));
 
-  // Make sure that menu links don't get themed like regular entities.
-  $hooks = preg_grep('/^menu_link(\.|__).+$/', array_keys($registry));
-  foreach ($hooks as $hook) {
-    $registry[$hook]['render element'] = 'element';
-    $registry[$hook]['base hook'] = 'menu_link';
-  }
-
   // Processor functions work in two distinct phases with the process
   // functions always being executed after the preprocess functions.
   $variable_process_phases = array(

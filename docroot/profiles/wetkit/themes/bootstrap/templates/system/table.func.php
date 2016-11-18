@@ -118,12 +118,6 @@ function bootstrap_table($variables) {
     $attributes['class'][] = 'sticky-enabled';
   }
 
-  // Multiple-value form element may contain an autocomplete field that is
-  // incompatible with 'table-responsive' class's overflow:auto.
-  if (!empty($attributes['class']) && in_array('field-multiple-table', $attributes['class'])) {
-    $responsive = FALSE;
-  }
-
   $output = '';
 
   if ($responsive) {
