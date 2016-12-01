@@ -127,6 +127,6 @@ function webform_options_united_states($component, $flat, $arguments) {
     'WA' => t('Washington'),
     'WV' => t('West Virginia'),
     'WI' => t('Wisconsin'),
-    'WY' => t('Wyoming'),
+    'Not US' => t('Not US'),
   );
 }
