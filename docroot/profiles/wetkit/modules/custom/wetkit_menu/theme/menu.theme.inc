@@ -281,7 +281,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
       // Add our own wrapper.
       unset($element['#below']['#theme_wrappers']);
       // Generate as standard dropdown.
-      $element['#title'] .= $has_chevron;
+      $element['#title'] .= ' <span class="expicon glyphicon glyphicon-chevron-down"></span>';
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
@@ -293,11 +293,11 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
       foreach ($element['#below'] as $key => $link) {
         if (is_numeric($key)) {
           if ($element['#below'][$key]['#original_link']['has_children'] && $element['#below'][$key]['#original_link']['expanded']) {
-            $element['#below'][$key]['#title'] = $element['#below'][$key]['#title'] . $has_chevron;
+            $element['#below'][$key]['#title'] = $element['#below'][$key]['#title'] . '<span class="expicon glyphicon glyphicon-chevron-down"></span>';
             $element['#below'][$key]['#localized_options']['attributes']['data-target'] = '#';
             $element['#below'][$key]['#attributes']['class'][] = 'dropdown';
-           $element['#below'][$key]['#localized_options']['html'] = TRUE;
-         }
+            $element['#below'][$key]['#localized_options']['html'] = TRUE;
+          }
         }
       }
       $sub_menu = '<ul class="list-group menu list-unstyled">' . drupal_render($element['#below']) . '</ul>';
@@ -305,6 +305,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
     elseif ((!empty($element['#original_link']['depth'])) && $element['#original_link']['expanded'] && $element['#original_link']['depth'] == 2) {
       unset($element['#below']['#theme_wrappers']);
       // Generate as standard dropdown.
+      $element['#title'] .= ' <span class="caret"></span>';
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
