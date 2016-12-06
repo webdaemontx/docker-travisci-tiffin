@@ -12,7 +12,7 @@ define('MEDIA_WYSIWYG_TOKEN_REGEX', '/\[\[.*?\]\]/s');
  *
  * @TODO check for security probably pass text through filter_xss
  */
-function media_wysiwyg_filter($text, $filter, $format, $langcode, $cache, $cache_id) {
+function media_wysiwyg_filter($text, $filter = NULL, $format = NULL, $langcode = NULL, $cache = NULL, $cache_id = NULL) {
   $replacements = array();
   $patterns = array();
   $rendered_text = $text;

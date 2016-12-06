@@ -617,17 +617,16 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 $conf['theme_debug'] = FALSE;
 
-# Incresase memory limit
-if ( (strpos($_GET['q'], 'admin') === 0) ||
-  (strpos($_GET['q'], 'node/add') === 0) ||
-  (strpos($_GET['q'], 'node/') === 0 && preg_match('/^node\/[\d]+\/edit/', $_GET['q']) === 1)
-) {
-  ini_set('memory_limit', '512M');
-} else {
-  ini_set('memory_limit', '192M');
-}
-if (drupal_is_cli()) {
-  ini_set('memory_limit', '512M');
+# Increase memory limit locally
+if(!isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+  if ((strpos($_GET['q'], 'admin') === 0) || (strpos($_GET['q'], 'node/add') === 0) || (strpos($_GET['q'], 'node/') === 0 && preg_match('/^node\/[\d]+\/edit/', $_GET['q']) === 1)) {
+    ini_set('memory_limit', '512M');
+  } else {
+    ini_set('memory_limit', '198M');
+  }
+  if (drupal_is_cli()) {
+    ini_set('memory_limit', '512M');
+  }
 }
 
 # Memcache configuration

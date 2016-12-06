@@ -231,8 +231,7 @@
 
       // Extract attributes represented by fields and use those values to keep
       // them in sync, usually alt and title.
-      info.fields = info.attributes;
-      var attributes = Drupal.media.filter.parseAttributeFields(info.attributes);
+      var attributes = Drupal.media.filter.parseAttributeFields(info.fields);
       info.attributes = $.extend(info.attributes, attributes);
 
       // Move attributes from the file info array to the placeholder element.
