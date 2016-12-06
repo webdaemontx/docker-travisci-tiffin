@@ -1,4 +1,0 @@
-name = Tiffin Individual Visit Calendar
-description = Pull Webform Submissions and display available / booked dates and times for scheduling Individual Visits
-package = Tiffin
-core = 7.x
