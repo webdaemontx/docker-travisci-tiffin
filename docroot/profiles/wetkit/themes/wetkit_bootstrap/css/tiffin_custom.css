@@ -4994,6 +4994,7 @@ nav#wb-sec div.menu-block-wrapper li a.active-trail,
 nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail,
 nav#wb-sec div.menu-block-wrapper li h3 a.active-trail{
     color: #ffffff !important;
+    background-color: #a58024;
 }
 
 
