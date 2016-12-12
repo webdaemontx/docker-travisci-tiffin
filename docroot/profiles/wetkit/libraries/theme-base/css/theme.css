@@ -2531,7 +2531,7 @@ select[multiple].input-lg,
   .form-inline .radio input[type="radio"],
   .form-inline .checkbox input[type="checkbox"] {
     position: relative;
-    margin-left: 0; }
+    margin: 0 3px 0 2px; }
   .form-inline .has-feedback .form-control-feedback {
     top: 0; } }
 
