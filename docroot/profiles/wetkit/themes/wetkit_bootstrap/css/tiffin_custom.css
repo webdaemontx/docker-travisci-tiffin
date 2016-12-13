@@ -372,8 +372,8 @@ div.views-field-field-news-front-slider-image img.img-responsive {
 div.view-homepage-news-slidehow {
   background-attachment: fixed;
   background-image: url('../images/slideshow-campus-para.jpg');
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: 1600px 915px;
   background-size: cover;
   height: 540px;
@@ -470,7 +470,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 }
 
 #wb-bar {
-  background: red;
+  background: #365543;
 }
 
 #wb-lng ul, #wb-glb-mn .pnl-btn {
@@ -4677,3 +4677,1501 @@ width: 100%;
 */
 
 /************** End brought in from block ********************/
+
+/* FLOATING SITE submenu needs to merge with Custom CSS */
+
+#mini-panel-floating_all_submenu {
+  display: flex;
+  /*
+  background:#fff;
+  height:60px;
+  z-index:170;
+  margin:0 auto;
+  border-bottom:1px solid #dadada;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  text-align: center;
+  */
+}
+
+#mini-panel-floating_all_submenu .pane-content {
+}
+
+#mini-panel-floating_all_submenu a {
+  text-decoration: none;
+}
+
+#mini-panel-floating_all_submenu ul {
+  clear: none;
+  float: left;
+  height: 87px;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+  #mini-panel-floating_all_submenu ul {
+    font-size: 17px;
+    height: 120px;
+    line-height: 12px;
+  }
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(2) {
+  height: 77px;
+}
+
+#mini-panel-floating_all_submenu ul li {
+  clear: none;
+  float: left;
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(1) {
+  background-color: #365543;
+  display: flex;
+  font-size: 25px;
+  padding-left: 5%;
+  width: 70%;
+}
+
+@media screen and (max-width: 928px) {
+  #mini-panel-floating_all_submenu ul:nth-of-type(1) {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1154px) {
+  #mini-panel-floating_all_submenu ul:nth-of-type(1) {
+    font-size: 20px;
+    padding-left: 10%;
+  }
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(1) li {
+  color: white;
+  line-height: 27px;
+  margin-right: 4%;
+  margin-top: 30px;
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(1) li a {
+  color: white;
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(2) {
+  background-color: #ffffff;
+  font-size: 33px;
+  line-height: 5px;
+  padding-left: 30px;
+  padding-top: 20px;
+  width: 30%;
+}
+
+@media screen and (max-width: 1050px) {
+  #mini-panel-floating_all_submenu ul:nth-of-type(2) {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 928px) {
+  #mini-panel-floating_all_submenu {
+    background-color: #d8be7a;
+  }
+
+  #mini-panel-floating_all_submenu div {
+    width: 100%;
+  }
+
+  #mini-panel-floating_all_submenu ul:nth-of-type(2) {
+    background-color: #d8be7a;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    width: 300px;
+  }
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(2) li {
+  color: #365543;
+  font-weight: bold;
+  margin-right: 6px;
+  margin-top: 23px;
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(2) li a {
+  color: #365543;
+}
+
+/* End SITE submenu */
+
+/* Extras */
+
+#mini-panel-floating_all_submenu {
+  margin-left: -15px;
+}
+
+#mini-panel-floating_all_submenu ul:nth-of-type(2) {
+  padding-top: 0;
+}
+
+/* End Extras */
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  border-color: transparent !important;
+}
+
+.btn-default {
+  color: #385443;
+}
+
+.btn-primary.active,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.open > .btn-primary.dropdown-toggle {
+  background-color: #D9BF75;
+  color: #fff;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color: #365543;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+  background-color: #365543;
+  border-color: #365543;
+  color: #fff;
+  cursor: default;
+  z-index: 2;
+}
+
+.menu-name-menu-wet-mid-footer {
+  height: 210px !important;
+}
+
+.view-social-feed .masonry-item,
+.view-id-staff_listing .masonry-item {
+  width: 32%;
+}
+
+.view-id-staff_listing .img-responsive {
+  margin: 0 auto;
+}
+
+#mini-panel-online_admissions_top_nav ul,
+#mini-panel-off_campus_admissions_top_nav ul {
+  list-style-type: none;
+  margin: 5px auto 7px auto;
+  width: 505px;
+}
+
+#mini-panel-online_admissions_top_nav ul li,
+#mini-panel-off_campus_admissions_top_nav ul li {
+  clear: none;
+  float: left;
+  padding-right: 25px;
+  text-align: left;
+}
+
+#mini-panel-online_admissions_top_nav ul li a,
+#mini-panel-off_campus_admissions_top_nav ul li a {
+  color: #365543 !important;
+  font-size: 22px;
+  text-decoration: none !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.pane-advancement-hero-top .hvr-bounce-to-bottom::before {
+  background-color: #D9BF75 !important;
+}
+
+.pane-international-admissions-hero h2 {
+  color: white !important;
+}
+
+.pane-bean-schools-bean-block h2 {
+  color: #365543;
+}
+
+.pane-undergraduate-admissions-panel-pane-3,
+.pane-undergraduate-admissions-panel-pane-4,
+.pane-undergraduate-admissions-panel-pane-5,
+.pane-undergraduate-admissions-panel-pane-6 {
+  margin: 0 auto;
+  padding-bottom: 60px;
+  width: 80%;
+}
+
+.pane-undergraduate-admissions-panel-pane-3 .view-content a,
+.pane-undergraduate-admissions-panel-pane-4 .view-content a,
+.pane-undergraduate-admissions-panel-pane-5 .view-content a,
+.pane-undergraduate-admissions-panel-pane-6 .view-content a {
+  color: #11361E;
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.pane-undergraduate-admissions-panel-pane-3 h2,
+.pane-undergraduate-admissions-panel-pane-4 h2,
+.pane-undergraduate-admissions-panel-pane-5 h2,
+.pane-undergraduate-admissions-panel-pane-6 h2 {
+  background-color: rgba(255, 255, 255, 0.75);
+  background-size: 27px;
+  color: #11361E;
+  font-size: 29px;
+  margin: 31px auto 30px auto;
+  text-align: center;
+  text-align: left;
+}
+
+.pane-undergraduate-admissions-panel-pane-3 h2 {
+  background-position-x: 171px !important;
+  width: 200px !important;
+}
+
+.pane-undergraduate-admissions-panel-pane-4 h2 {
+  background-position-x: 171px !important;
+  width: 456px !important;
+}
+
+.pane-undergraduate-admissions-panel-pane-5 h2 {
+  background-position-x: 171px !important;
+  width: 370px !important;
+}
+
+.pane-undergraduate-admissions-panel-pane-6 h2 {
+  background-position-x: 171px !important;
+  width: 530px !important;
+}
+
+.page-international ol.breadcrumb,
+.page-academics ol.breadcrumb,
+.page-about ol.breadcrumb,
+.page-campuslife ol.breadcrumb,
+.page-admissions ol.breadcrumb,
+.page-ccp ol.breadcrumb,
+.node-type-program ol.breadcrumb,
+.page-degreecomp ol.breadcrumb,
+.page-undergrad-welcome ol.breadcrumb {
+  display: none;
+}
+
+#mb-pnl .sec-pnl a,
+#mb-pnl .sec-pnl summary {
+  color: #D9BF75;
+}
+
+#mb-pnl .sec-pnl {
+  background: #365543 !important;
+}
+
+nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
+  background-color: #C09212;
+  color: #ffffff !important;
+}
+
+.pane-the-faculty-for-program-pages {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.pane-the-faculty-for-program-pages .img-responsive {
+  margin: 0 auto;
+}
+
+.btn-primary {
+  background-color: #365543;
+  border-color: transparent;
+  border-radius: 0;
+  border-width: 0;
+  color: #D9BF75;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.pane-online-admissions-hero {
+  background-image: url(/sites/default/files/image-online-tiffin-background_0.jpg) !important;
+}
+
+.pane-online-admissions-hero h2 {
+  color: white !important;
+}
+
+body.node-type-program .pane-node-field-degree-type {
+  top: 85px !important;
+}
+
+.pane-webform-client-block-1576 {
+  width: 100% !important;
+}
+
+.pane-webform-client-block-1576 .pane-content {
+  margin: 0 auto;
+  padding: 50px 0 60px 0;
+  width: 70%;
+}
+
+.pane-webform-client-block-1576 .pane-title {
+  color: #11361E;
+  font-size: 27px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.pane-schools h2 {
+  background-color: rgba(255, 255, 255, 0.75);
+  background-position-x: 321px !important;
+  background-size: 27px;
+  color: #11361E;
+  font-size: 29px;
+  font-weight: bold;
+  margin: 31px auto 30px auto;
+  padding-top: 30px;
+  text-align: center;
+  text-align: left;
+  width: 362px !important;
+}
+
+.pane-generic-school-page-hero-biz {
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-test-criminal-justice-quatro.jpg') !important;
+  margin-top: -50px;
+}
+
+/* image-school-business-background.jpg */
+.pane-generic-school-page-hero-crim {
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-business-test.jpg') !important;
+  margin-top: -50px;
+}
+
+/* image-criminal-justice-background.jpg */
+
+.pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title {
+  background-color: rgba(255, 255, 255, 0.75);
+  background-position-x: 171px !important;
+  background-size: 27px;
+  color: #11361E;
+  font-size: 29px;
+  margin: 31px auto 30px auto;
+  text-align: center;
+  text-align: left;
+  width: 200px !important;
+
+}
+
+#footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 15px 0 0 10% !important;
+  width: 50% !important;
+}
+
+#footer ul li {
+  clear: none;
+  float: left;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 33%
+}
+
+#footer ul li:nth-of-type(7) {
+  width: 33%;
+}
+
+#footer ul li:nth-of-type(8) {
+  width: 66%;
+}
+
+#footer ul li a {
+  text-decoration: none;
+}
+
+.pane-giving-hero-top h1,
+.pane-advancement-hero-top h1,
+.pane-alumni-hero-top h1 {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.pane-giving-hero-top,
+.pane-advancement-hero-top,
+.pane-alumni-hero-top {
+  background-attachment: fixed;
+  background-color: transparent;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.pane-giving-hero-top {
+  height: 695px;
+}
+
+.pane-advancement-hero-top {
+  height: 355px;
+}
+
+.pane-alumni-hero-top {
+  height: 565px;
+}
+
+.pane-giving-hero-top {
+  height: 395px;
+}
+
+.pane-giving-hero-top,
+.pane-advancement-hero-top,
+.pane-alumni-hero-top {
+  background-position: 0 20px !important;
+}
+
+.pane-giving-hero-top .hvr-bounce-to-bottom::before,
+.pane-advancement-hero-top .hvr-bounce-to-bottom::before,
+.pane-alumni-hero-top .hvr-bounce-to-bottom::before {
+  background: #365543 !important;
+}
+
+.pane-giving-hero-top #abouttutop,
+.pane-advancement-hero-top #abouttutop,
+.pane-alumni-hero-top #abouttutop {
+  margin-top: 20px;
+}
+
+.pane-giving-hero-top #abouttutop ul,
+.pane-advancement-hero-top #abouttutop ul,
+.pane-alumni-hero-top #abouttutop ul {
+  display: flex;
+  list-style-type: none;
+  margin: 40px auto 0 auto;
+  width: 682px;
+}
+
+.pane-giving-hero-top #abouttutop ul li:nth-of-type(1),
+.pane-advancement-hero-top #abouttutop ul li:nth-of-type(1),
+.pane-alumni-hero-top #abouttutop ul li:nth-of-type(1) {
+  /* JP: Missing image */
+  /*background-image: url(../images/.png);*/
+  background-repeat: no-repeat;
+}
+
+.pane-giving-hero-top #abouttutop ul li,
+.pane-advancement-hero-top #abouttutop ul li,
+.pane-alumni-hero-top #abouttutop ul li {
+  background-color: transparent;
+  border: 1px solid #D9BF75;
+  float: left;
+  height: 77px;
+  margin-right: 4px;
+  width: 220px;
+}
+
+.pane-giving-hero-top #abouttutop ul li a,
+.pane-advancement-hero-top #abouttutop ul li a,
+.pane-alumni-hero-top #abouttutop ul li a {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.pane-giving-hero-top #introblurbs,
+.pane-advancement-hero-top #introblurbs,
+.pane-alumni-hero-top #introblurbs {
+  background-color: rgba(42, 72, 68, 0.5);
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0 auto;
+  padding: 10px;
+  width: 80%;
+}
+
+.pane-giving-hero-top #abouttutop ul li div p,
+.pane-advancement-hero-top #abouttutop ul li div p,
+.pane-alumni-hero-top #abouttutop ul li div p {
+  padding-top: 25px;
+  text-align: center;
+}
+
+/*
+width: 100%;
+    height: 88px;
+*/
+#mini-panel-homepage_top_hero {
+
+  height: 77vh !important;
+}
+
+#mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
+  height: 192px;
+  margin: 10% 10% 0% 10%;
+}
+
+.pane-cabinet-members .masonry-item,
+.pane-board-members .masonry-item {
+  padding-bottom: 2% !important;
+}
+
+.view-id-faculty .img-responsive,
+.pane-cabinet-members .img-responsive,
+.pane-board-members .img-responsive {
+  margin: 10px auto 18px auto;
+}
+
+.view-id-faculty .masonry-item .views-field-field-faculty-title,
+.view-id-faculty .masonry-item .views-field-title,
+.pane-cabinet-members .masonry-item .views-field-title,
+.pane-board-members .masonry-item .views-field-title,
+.pane-cabinet-members .masonry-item .field-name-field-board-position .field-item,
+.pane-board-members .masonry-item .field-name-field-board-position .field-item {
+  text-align: center;
+}
+
+.masonry-processed .views-row-even {
+  border: 1px solid #95d0ad;
+  text-align: center;
+}
+
+.masonry-processed .views-row-even .field {
+  color: #365543;
+}
+
+.masonry-processed .views-row-even .views-field-title {
+  color: #5daf6c;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+.masonry-processed .views-row-even .views-field-title a {
+  color: #365543;
+}
+
+.masonry-processed .views-row-even .views-field-title-1 {
+  color: #365543;
+}
+
+.masonry-processed .views-row-even .views-field-field-quick-news-description {
+  color: #365543;
+  margin-top: 20px;
+}
+
+.masonry-processed .views-row-odd {
+  border: 1px solid #dbc073;
+  text-align: center;
+}
+
+.masonry-processed .views-row-odd .field {
+  color: #887235;
+}
+
+.masonry-processed .views-row-odd .views-field-title {
+  color: #dbc073;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.pane-faculty-panel-pane-3 .masonry-processed .views-row-odd .views-field-title a,
+.pane-faculty-panel-pane-2 .masonry-processed .views-row-odd .views-field-title a,
+.pane-faculty-panel-pane-1 .masonry-processed .views-row-odd .views-field-title a {
+  color: #887235;
+  text-align: center;
+}
+
+.masonry-processed .views-row-odd .views-field-title a {
+  color: #887235;
+}
+
+.masonry-processed .views-row-odd .views-field-title-1 {
+  color: #887235;
+}
+
+.masonry-processed .views-row-odd .views-field-field-quick-news-description {
+  color: #887235;
+  margin-top: 20px;
+}
+
+.masonry-processed {
+  margin-bottom: 70px;
+}
+
+.pane-faculty-panel-pane-3 h2.pane-title,
+.pane-faculty-panel-pane-2 h2.pane-title,
+.pane-faculty-panel-pane-1 h2.pane-title,
+.pane-news h2.pane-title,
+.pane-cabinet-members h2.pane-title,
+.pane-board-members h2.pane-title {
+  color: #365543;
+  font-size: 39px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pane-faculty-panel-pane-3,
+.pane-faculty-panel-pane-2,
+.pane-faculty-panel-pane-1,
+.pane-cabinet-members {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.node-type-news-page .field-name-field-news-front-slider-image {
+  display: none;
+}
+
+/* Off-campus Admissions */
+
+.pane-off-campus-admissions-hero {
+  background-attachment: fixed;
+  background-image: url('/sites/default/files/off-campus_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 360px;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.pane-off-campus-admissions-hero h2 {
+  color: #ffffff;
+  font-size: 41px;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pane-off-campus-admissions-hero ul {
+  display: flex;
+  list-style-type: none;
+  margin: 80px auto 0 auto;
+  width: 85%;
+}
+
+.pane-off-campus-admissions-hero ul li {
+  background: rgba(255, 255, 255, .85);
+  background-position: 7% center;
+  background-repeat: no-repeat;
+  height: 88px;
+  margin-right: 1%;
+  padding-left: 10px;
+  width: 33%;
+}
+
+.pane-off-campus-admissions-hero ul li div p {
+  padding: 20px 0 0 25%;
+}
+
+.pane-off-campus-admissions-hero ul li:nth-of-type(1) div {
+}
+
+.pane-off-campus-admissions-hero ul li:nth-of-type(3) div {
+}
+
+.pane-off-campus-admissions-hero ul li a {
+  color: #365543;
+  font-size: 31px;
+  text-decoration: none;
+}
+
+.pane-off-campus-admissions-hero ul li:nth-of-type(1) {
+  background-image: url('http://tiffin.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/icon-1.png');
+  background-position: 4% center;
+  background-size: 11.5%;
+  padding-left: 5px;
+}
+
+.pane-off-campus-admissions-hero ul li:nth-of-type(2) {
+  background-image: url('http://tiffin.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/icon-2.png');
+  background-size: 15%;
+}
+
+.pane-off-campus-admissions-hero ul li:nth-of-type(3) {
+  background-image: url('http://tiffin.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/icon-3.png');
+  background-size: 15%;
+}
+
+/* End off-campus admissions */
+
+/* responsive life at tu */
+
+@media (max-width: 1080px) {
+  .pane-undergraduate-program .views-field-title a {
+    font-size: 26px;
+  }
+
+  .pane-life-at-tu-hero-top ul li p {
+    font-size: 25px !important;
+    line-height: 26px;
+    margin: 42px 0 0 48% !important;
+    text-align: center !important;
+    width: 100px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .pane-life-at-tu-hero-top ul {
+    display: block;
+    margin: 0 auto 0 auto !important;
+    width: 90% !important;
+  }
+
+  .pane-life-at-tu-hero-top ul li {
+    clear: both !important;
+    float: left !important;
+    width: 100% !important;
+  }
+
+  .pane-life-at-tu-hero-top ul li p {
+    margin: 64px 0 0 33% !important;
+    width: 200px !important;
+  }
+
+  .pane-life-at-tu-hero-top {
+    height: 1320px !important;
+  }
+
+  .pane-dragon-perks ul li {
+    height: 196px;
+    width: 100% !important;
+  }
+
+  .pane-dragon-perks ul {
+    display: block;
+  }
+}
+
+@media (max-width: 675px) {
+  .pane-discover-tiffin-ohio p {
+    font-size: 32px;
+    height: 57px;
+    margin-top: 160px;
+  }
+
+  body.node-type-program .pane-discover-tiffin-ohio {
+    height: 315px;
+  }
+
+  .view-life-at-tu-faculty .masonry-processed .masonry-item {
+    clear: none;
+    float: left !important;
+    height: 230px;
+    left: 0 !important;
+    position: relative !important;
+    top: 0 !important;
+    width: 49% !important;
+  }
+
+  .view-life-at-tu-faculty .img-responsive {
+    height: 190px;
+    max-width: 133px;
+  }
+
+  .masonry-processed .views-row-odd .views-field-title-1,
+  .masonry-processed .views-row-even .views-field-title-1 {
+    font-size: 14px;
+  }
+
+  .pane-tu-drone-vid div#watchtour {
+    margin-left: 8%;
+  }
+
+  #tiffinClickMap {
+    display: none;
+  }
+
+}
+
+/* responsive life at tu */
+/* responsive undergrad */
+
+.pane-financial-aid-virtual-tour {
+  height: 560px;
+}
+
+#finaidandcalc div {
+  height: 437px;
+}
+
+@media (max-width: 1110px) {
+  .pane-financial-aid-virtual-tour {
+    height: 570px;
+  }
+
+  #finaidandcalc {
+    width: 85%;
+  }
+
+  #finaidandcalc div {
+    height: 426px;
+  }
+}
+
+@media (max-width: 725px) {
+  .pane-financial-aid-virtual-tour {
+    height: 1040px !important;
+  }
+
+  #finaidandcalc div {
+    float: none !important;
+    height: 437px;
+    margin: 0 auto !important;
+    width: 75%;
+  }
+
+  #finaidandcalc a:nth-of-type(2) div {
+    margin-top: 20px !important;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .pane-financial-aid-virtual-tour {
+    height: 680px;
+  }
+
+  #finaidandcalc div {
+    height: 256px;
+  }
+
+}
+
+/* responsive undergrad */
+@media (max-width: 1400px) {
+  .view-testimonials-slider .views-field-body {
+    font-size: 18px;
+    top: 15% !important;
+  }
+
+  .view-testimonials-slider .view-header h3 {
+    font-size: 36px;
+    margin-top: -7px;
+
+  }
+}
+
+@media (max-width: 1060px) {
+  .view-testimonials-slider .views-field-body {
+    font-size: 16px;
+    font-weight: 100;
+    top: 15% !important;
+  }
+
+  .view-testimonials-slider .view-header h3 {
+    color: #365543;
+    font-size: 36px;
+    margin-top: -15px;
+  }
+}
+
+@media (max-width: 890px) {
+  .view-testimonials-slider .views-field-body {
+    font-size: 14px;
+  }
+
+  .view-testimonials-slider div.media-element-container div.file-image-jpe img,
+  .view-testimonials-slider div.media-element-container div.file-image-jpeg img {
+    height: 30% !important;
+    width: 30% !important;
+  }
+}
+
+@media (max-width: 940px) {
+
+  div.view-homepage-news-slidehow {
+    height: 640px;
+  }
+
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-quick-news-description,
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
+    left: 0;
+    margin: 0 auto 0 auto;
+    position: static;
+    top: 0;
+  }
+
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
+    width: 65%;
+  }
+
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-quick-news-description {
+    width: 54%;
+  }
+
+  div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav {
+    left: 0;
+    margin: 20px auto 0 auto;
+    position: static;
+    text-align: left;
+    top: 0;
+    width: 120px;
+  }
+
+  div.views-field-field-news-front-slider-image img.img-responsive {
+    margin: 0 auto 0 auto;
+  }
+
+  .view-homepage-news-slidehow div#flexslider-1 {
+    width: 100%;
+  }
+
+  .flexslider .slides > li {
+    padding-top: 40px;
+  }
+
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title {
+    position: static;
+  }
+
+}
+
+@media (max-width: 575px) {
+
+  div.view-homepage-news-slidehow {
+    height: 410px;
+  }
+}
+
+@media (max-width: 845px) {
+  .pane-undergraduate-program .pane-content {
+    font-size: 14px;
+  }
+
+  #admissions-counselor ul li {
+    width: 48%;
+  }
+}
+
+@media (max-width: 650px) {
+
+  #admissions-counselor ul li {
+    width: 70%;
+  }
+}
+
+@media (max-width: 780px) {
+  #mini-panel-ccp_meet_your {
+    background-size: 260%;
+  }
+
+  .pane-ccp-admissions-hero .midclicks ul li,
+  .pane-international-admissions-hero ul li {
+    clear: both !important;
+    float: left !important;
+    height: 85px;
+    width: 100% !important;
+
+  }
+
+  .pane-international-admissions-hero ul li:nth-of-type(1) {
+
+  }
+
+  .pane-ccp-admissions-hero .midclicks ul,
+  .pane-international-admissions-hero ul {
+    display: block;
+    width: 100%;
+  }
+
+  .pane-international-admissions-hero {
+    height: 490px;
+  }
+
+  .pane-undergraduate-program {
+    background-size: 320%;
+    height: 760px;
+  }
+
+  body.node-type-program ul.quicktabs-tabs li {
+    clear: none;
+    float: left;
+    height: 95px !important;
+  }
+
+  .pane-quicktabs-undergraduate-program-tabs {
+    margin-top: -350px !important;
+    padding: 0;
+  }
+
+  .pane-undergraduate-program .views-field-title a {
+    font-size: 29px !important;
+  }
+
+  body.node-type-program .pane-node-field-degree-type {
+    display: none;
+  }
+
+  .pane-undergraduate-program .pane-content {
+    padding-top: 10px;
+  }
+
+  body.node-type-program ul.quicktabs-tabs {
+    margin: 0 0 30px 34px;
+    padding: 0;
+    width: 80%;
+  }
+
+  .view-testimonials-slider .views-field-body {
+    font-size: 14px !important;
+  }
+
+  .view-testimonials-slider div.media-element-container div.file-image-jpe img,
+  .view-testimonials-slider div.media-element-container div.file-image-jpeg img {
+    display: none;
+  }
+
+  .views-field-field-testimonials-image {
+    display: none;
+  }
+
+  body.node-type-program .pane-testimonials-slider {
+    height: 227px;
+  }
+
+  .flex-control-nav {
+    display: none;
+  }
+
+  .view-testimonials-slider .views-field-body {
+    font-size: 22px;
+    margin-top: 10px;
+    position: static;
+    width: 100% !important;
+  }
+
+  .view-testimonials-slider h3 {
+    color: #365543;
+    margin-top: 20px;
+  }
+
+  /*
+  .views-field-field-testimonials-image{
+      display: none;
+  }
+  */
+  .pane-ccp-admissions-hero h2 {
+    font-size: 32px;
+  }
+
+  .pane-ccp-admissions-hero {
+    height: 780px;
+  }
+
+  .pane-ccp-admissions-hero .midclicks ul li {
+    background-size: 10% !important;
+  }
+
+  .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(1) {
+    background-size: 5% !important;
+  }
+
+  .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(2),
+  .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(3) {
+    background-position: 5% center;
+    background-size: 7% !important;
+  }
+
+  .pane-ccp-admissions-hero div.tiptop ul {
+    display: none;
+  }
+
+  .pane-ccp-admissions-hero div.tiptop {
+    display: none;
+  }
+
+}
+
+@media (max-width: 555px) {
+  body.node-type-program ul.quicktabs-tabs li {
+    clear: none;
+    float: left;
+    height: 73px !important;
+  }
+
+  body.node-type-program ul.quicktabs-tabs li a {
+    font-size: 17px !important;
+  }
+
+  body.node-type-program ul.quicktabs-tabs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  #ccpEN ul li a {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 730px) {
+  #ccpEN ul li {
+    margin-right: 2px;
+  }
+
+  #ccpEN ul li a {
+    font-size: 17px !important;
+  }
+}
+
+.logoMobile {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .logoMobile {
+    display: block;
+  }
+
+  #wb-glb-mn ul.pnl-btn li:nth-of-type(1) {
+    width: 30% !important;
+  }
+
+  #wb-glb-mn ul.pnl-btn li:nth-of-type(2) {
+    border: 0 !important;
+    width: 70% !important;
+  }
+
+  #wb-glb-mn ul.pnl-btn li:nth-of-type(2) a:nth-of-type(1) {
+    background-color: transparent !important;
+  }
+
+  #wb-glb-mn ul.pnl-btn li:nth-of-type(2) a.hvr-underline-reveal {
+    background-color: transparent !important;
+  }
+}
+
+/* Criminal justice school hero */
+
+.pane-generic-school-page-hero-crim {
+  background-attachment: fixed;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  padding-top: 0;
+  width: 100%;
+}
+
+.pane-generic-school-page-hero-crim .pane-1 {
+  margin: 0 auto 150px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.pane-generic-school-page-hero-crim .pane-1 h2 {
+  color: white;
+  font-size: 58px;
+
+}
+
+.pane-generic-school-page-hero-crim .pane-2 {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  margin: 0 auto 0 auto;
+  text-align: justify;
+  width: 72%;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks {
+  width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul {
+  height: 77px;
+  list-style-type: none;
+  padding: 0;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) {
+  margin: 40px auto 0 auto;
+  width: 682px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) {
+  clear: both;
+  margin: 5px auto 0 auto;
+  width: 452px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li {
+  background-color: transparent;
+  border: 1px solid #D9BF75;
+  float: left;
+  height: 77px;
+  margin-right: 4px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) li {
+  width: 220px;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) li {
+  width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li div p {
+  padding-top: 25px;
+  text-align: center;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li div {
+  height: 88px;
+  width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li:nth-of-type(1) div {
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li:nth-of-type(3) div {
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul li a {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) li:nth-of-type(1) {
+
+}
+
+#mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) li:nth-of-type(1) {
+
+}
+
+/* End Criminal justice school hero */
+
+/* School of arts and sciences hero */
+
+.pane-generic-school-page-hero-arts {
+  background-attachment: fixed;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  padding-top: 0;
+  width: 100%;
+}
+
+.pane-generic-school-page-hero-arts .pane-1 {
+  margin: 0 auto 82px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.pane-generic-school-page-hero-arts .pane-1 h2 {
+  color: white;
+  font-size: 58px;
+
+}
+
+.pane-generic-school-page-hero-arts .pane-2 {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  margin: 0 auto 0 auto;
+  text-align: justify;
+  width: 72%;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks {
+  width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul {
+  height: 77px;
+  list-style-type: none;
+  padding: 0;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) {
+  margin: 40px auto 0 auto;
+  width: 682px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) {
+  clear: both;
+  margin: 5px auto 0 auto;
+  width: 452px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li {
+  background-color: transparent;
+  border: 1px solid #D9BF75;
+  float: left;
+  height: 77px;
+  margin-right: 4px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) li {
+  width: 220px;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) li {
+  width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li div p {
+  padding-top: 25px;
+  text-align: center;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li div {
+  height: 88px;
+  width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li:nth-of-type(1) div {
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li:nth-of-type(3) div {
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul li a {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) li:nth-of-type(1) {
+
+}
+
+#mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) li:nth-of-type(1) {
+
+}
+
+/* End School of arts and sciences hero */
+
+/* School of business hero */
+
+.pane-generic-school-page-hero-biz {
+  background-attachment: fixed;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  padding-top: 0;
+  width: 100%;
+}
+
+.pane-generic-school-page-hero-biz .pane-1 {
+  margin: 0 auto 40px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.pane-generic-school-page-hero-biz .pane-1 h2 {
+  color: white;
+  font-size: 58px;
+
+}
+
+.pane-generic-school-page-hero-biz .pane-2 {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  margin: 0 auto 0 auto;
+  text-align: justify;
+  width: 72%;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks {
+  width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul {
+  height: 77px;
+  list-style-type: none;
+  padding: 0;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) {
+  margin: 40px auto 0 auto;
+  width: 682px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) {
+  clear: both;
+  margin: 5px auto 0 auto;
+  width: 452px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li {
+  background-color: transparent;
+  border: 1px solid #D9BF75;
+  float: left;
+  height: 77px;
+  margin-right: 4px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) li {
+  width: 220px;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) li {
+  width: 220px;
+
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li div p {
+  padding-top: 25px;
+  text-align: center;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li div {
+  height: 88px;
+  width: 100%;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li:nth-of-type(1) div {
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li:nth-of-type(3) div {
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul li a {
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) li:nth-of-type(1) {
+
+}
+
+#mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) li:nth-of-type(1) {
+
+}
+
+/* End School of business hero */
+
