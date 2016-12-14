@@ -49,9 +49,10 @@
 <html<?php print $html_attributes;?><?php print $rdf_namespaces;?>>
 <!--<![endif]-->
 <head>
-  <link rel="profile" href="<?php print $grddl_profile; ?>" />
   <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta content="width=device-width,initial-scale=1" name="viewport" >
+  <link rel="profile" href="<?php print $grddl_profile; ?>" />
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <!-- HTML5 element support for IE6-8 -->
@@ -77,6 +78,6 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-  <script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
+<script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
 </body>
 </html>
