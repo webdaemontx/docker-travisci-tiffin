@@ -199,10 +199,7 @@ div.pane-board-members .img-responsive {
 /* Homepage social media */
 
 #social_media_home {
-  background-attachment: fixed;
-  background-image: url('../images/image-homepage-socialmedia.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/image-homepage-socialmedia.jpg') no-repeat fixed center;
   background-size: 3400px 690px;
   background-size: cover;
   height: 224px;
@@ -229,19 +226,16 @@ div.pane-board-members .img-responsive {
 }
 
 #social_media_home ul li:nth-of-type(1) {
-  background-image: url('../images/fb.png');
-  background-repeat: no-repeat;
+  background: url('../images/fb.png') no-repeat;
 }
 
 #social_media_home ul li:nth-of-type(2) {
-  background-image: url('../images/instagram.png');
-  background-repeat: no-repeat;
+  background: url('../images/instagram.png') no-repeat;
   height: 97px;
 }
 
 #social_media_home ul li:nth-of-type(3) {
-  background-image: url('../images/twitter.png');
-  background-repeat: no-repeat;
+  background: url('../images/twitter.png') no-repeat;
   height: 96px;
 }
 
@@ -254,8 +248,7 @@ div.pane-board-members .img-responsive {
     height: 580px;
     height: 80% !important;
         */
-  background-image: url('../images/image-hero-top-one.jpg');
-  background-repeat: no-repeat;
+  background: url('../images/image-hero-top-one.jpg') no-repeat;
   background-size: 1200px 574px;
   background-size: cover;
   height: 77vh;
@@ -332,8 +325,7 @@ div.pane-board-members .img-responsive {
 }
 
 #mini-panel-homepage_top_hero select.form-select {
-  background: url('../images/down-triangle.png') no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, .75) url('../images/down-triangle.png') no-repeat right;
   background-position-x: 360px;
   clear: none;
   color: #365543;
@@ -370,10 +362,7 @@ div.views-field-field-news-front-slider-image img.img-responsive {
 }
 
 div.view-homepage-news-slidehow {
-  background-attachment: fixed;
-  background-image: url('../images/slideshow-campus-para.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/slideshow-campus-para.jpg') no-repeat fixed center;
   background-size: 1600px 915px;
   background-size: cover;
   height: 540px;
@@ -509,19 +498,14 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 /* Get to know TU */
 
 .pane-get-to-know-tu {
-  background-attachment: fixed;
-  background-image: url('../images/get-to-know-campus-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/get-to-know-campus-background.jpg') no-repeat fixed center;
   background-size: cover;
   height: 550px;
 
 }
 
 .pane-get-to-know-tu div#watchtour {
-  background-image: url('../images/watch-tour.png');
-  background-position: 0 53px;
-  background-repeat: no-repeat;
+  background: url('../images/watch-tour.png') no-repeat 0 53px;
   color: white;
   font-size: 40px;
   font-weight: 100;
@@ -532,9 +516,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 }
 
 .pane-get-to-know-tu div#playtour {
-  background-image: url('../images/watch-tour.png');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/watch-tour.png') no-repeat center;
   height: 181px;
   width: 100%;
 }
@@ -556,19 +538,14 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 /* TU Drone */
 
 .pane-tu-drone-vid {
-  background-attachment: fixed;
-  background-image: url('../images/image-drone-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/image-drone-background.jpg') no-repeat fixed center;
   background-size: cover;
   height: 550px;
 
 }
 
 .pane-tu-drone-vid div#watchtour {
-  background-image: url(../images/drone-click.png);
-  background-position: 0 53px;
-  background-repeat: no-repeat;
+  background: url('../images/drone-click.png') no-repeat 0 53px;
   color: white;
   font-size: 40px;
   font-weight: 100;
@@ -579,9 +556,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 }
 
 .pane-tu-drone-vid div#playtour {
-  background-image: url(../images/icon-opaque-play-video.png);
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/icon-opaque-play-video.png') no-repeat center;
   height: 181px;
   width: 100%;
 }
@@ -609,16 +584,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Visit TU Landing Hero */
 
 #experienceTU {
-  background-color: rgba(52, 85, 67, 0.50);
-  background-image: url(../images/travel-tour-tiffin.png);
-  background-position: 380px 89px;
-  background-repeat: no-repeat;
+  background: rgba(52, 85, 67, 0.50) url('../images/travel-tour-tiffin.png') no-repeat 380px 89px;
   background-size: 29%;
   color: white;
   height: 275px;
-  margin: 0 auto;
-  margin-bottom: 86px;
-  margin-top: 50px;
+  margin: 50px auto 86px;
   padding-left: 20px;
   padding-top: 15px;
   width: 556px;
@@ -648,8 +618,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 #experienceTU div#bookyourvisitclick {
-  background-image: url(../images/book-your-visit-click.png);
-  background-repeat: no-repeat;
+  background: url(../images/book-your-visit-click.png) no-repeat;
   height: 71px;
   width: 345px;
 
@@ -657,8 +626,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 #visittulandingbottom {
 
-  background-image: url(../images/visit-landing-hero-bottom.png);
-  background-repeat: no-repeat;
+  background: url(../images/visit-landing-hero-bottom.png) no-repeat;
   height: 260px;
   width: 100%;
 }
@@ -703,10 +671,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 #mini-panel-visit_tu_landing_hero {
-  background-attachment: fixed;
-  background-image: url('../images/visit-landing-hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/visit-landing-hero.jpg') no-repeat fixed center;
   background-size: cover;
   height: 707px;
 }
@@ -716,10 +681,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Visit TU */
 
 #mini-panel-visit_tu_hero {
-  background-attachment: fixed;
-  background-image: url('../images/image-visit-tu-top-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/image-visit-tu-top-background.jpg') no-repeat fixed center;
   background-size: cover;
   height: 550px;
 }
@@ -835,19 +797,16 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 #mini-panel-visit_tu_hero ul#visitclicks li:nth-of-type(1) {
-  background-image: url('../images/icon-visit-individual.png');
-  background-position: center 40px;
+  background: url('../images/icon-visit-individual.png') center 40px;
 }
 
 #mini-panel-visit_tu_hero ul#visitclicks li:nth-of-type(2) {
-  background-image: url('../images/icon-visit-group.png');
-  background-position: center 52px;
+  background: url('../images/icon-visit-group.png') center 52px;
   background-size: 70%;
 }
 
 #mini-panel-visit_tu_hero ul#visitclicks li:nth-of-type(3) {
-  background-image: url('../images/icon-visit-open-house.png');
-  background-position: center 50px;
+  background: url('../images/icon-visit-open-house.png') center 50px;
 }
 
 #mini-panel-visit_tu_hero ul#visitclicks li a div p {
@@ -859,10 +818,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Generic school hero */
 
 .pane-generic-school-page-hero {
-  background-attachment: fixed;
-  background-image: url('../images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
@@ -966,10 +922,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Criminal justice school hero */
 
 .pane-generic-school-page-hero-crim {
-  background-attachment: fixed;
-  background-image: url('../images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
@@ -1073,10 +1026,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* School of arts and sciences hero */
 
 .pane-generic-school-page-hero-arts {
-  background-attachment: fixed;
-  background-image: url('../images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
@@ -1180,10 +1130,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* School of business hero */
 
 .pane-generic-school-page-hero-biz {
-  background-attachment: fixed;
-  background-image: url('../images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
@@ -1289,11 +1236,9 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 .pane-generic-school-social-media #mini-panel-generic_school_social_media #social_media_home {
 
-  background-attachment: local; /* Old browsers */
+  /* Old browsers */
 
-  background-color: #305146;
-  background-image: url('../images/schools-social-media.jpg');
-  background-repeat: no-repeat;
+  background: #305146 url('../images/schools-social-media.jpg') no-repeat local;
   background-size: 1200px 226px;
   height: 222px;
 }
@@ -1303,10 +1248,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Life at TU */
 
 .pane-life-at-tu-hero-top {
-  background-attachment: fixed;
-  background-image: url('../images/image-lifeattu-hero-landing.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/image-lifeattu-hero-landing.jpg') no-repeat fixed center;
   background-size: cover;
   height: 700px;
   padding-top: 30px;
@@ -1522,10 +1464,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Online Admissions */
 
 .pane-online-admissions-hero {
-  background-attachment: fixed;
-  background-image: url('../images/image-online-programs-hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/image-online-programs-hero.jpg') no-repeat fixed center;
   background-size: cover;
   height: 360px;
   padding-top: 30px;
@@ -1575,8 +1514,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-online-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-position: 4% center;
+  background: url('../images/icon-1.png') 4% center;
   background-size: 11.5%;
   padding-left: 5px;
 }
@@ -1596,10 +1534,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Undergraduate Admissions Top */
 
 .pane-undergraduate-admissions-hero {
-  background-attachment: fixed;
-  background-image: url('../images/image-undergrad-admissions-background-new.jpg');
-  background-position: 0 -230px;
-  background-repeat: no-repeat;
+  background: url('../images/image-undergrad-admissions-background-new.jpg') no-repeat fixed 0 -230px;
   background-size: cover;
   height: 360px;
   padding-top: 30px;
@@ -1623,9 +1558,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-undergraduate-admissions-hero ul li {
-  background: rgba(255, 255, 255, .85);
-  background-position: 7% center;
-  background-repeat: no-repeat;
+  background: rgba(255, 255, 255, .85) no-repeat 7% center;
   height: 88px;
   margin-right: 1%;
   padding-left: 10px;
@@ -1660,8 +1593,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-undergraduate-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-position: 4% center;
+  background: url('../images/icon-1.png') 4% center;
   background-size: 11.5%;
   padding-left: 5px;
 }
@@ -1744,8 +1676,7 @@ ul#click-on-programs {
 }
 
 .pane-undergraduate-admissions-panel-pane-1 h2.pane-title {
-  background: url(../images/arrow-down.png) no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75) url(../images/arrow-down.png) no-repeat right;
   background-position-x: 140px !important;
   background-size: 27px;
   color: #11361E;
@@ -1758,29 +1689,25 @@ ul#click-on-programs {
 }
 
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title {
-  background: url(../images/arrow-down.png) no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75) url(../images/arrow-down.png) no-repeat right;
   background-position-x: 171px !important;
   background-size: 27px;
   color: #11361E;
   font-size: 29px;
   margin: 31px auto 30px auto;
-  text-align: center;
   text-align: left;
   width: 200px !important;
 
 }
 
 .pane-schools h2 {
-  background: url(../images/arrow-down.png) no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75) url(../images/arrow-down.png) no-repeat right;
   background-position-x: 321px;
   background-size: 27px;
   color: #11361E;
   font-size: 29px;
   font-weight: bold;
   margin: 31px auto 30px auto;
-  text-align: center;
   text-align: left;
   width: 362px;
 }
@@ -1845,8 +1772,7 @@ ul#click-on-programs {
 }
 
 #edit-field-program-location-tid {
-  background: url('../images/down-triangle.png') no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75) url('../images/down-triangle.png') no-repeat right;
   background-position-x: 360px;
   border-radius: 0;
   clear: none;
@@ -1864,10 +1790,7 @@ ul#click-on-programs {
 /* Graduate Admissions */
 
 .pane-graduate-admissions-hero {
-  background-attachment: fixed;
-  background-image: url('../images/new-graduate-admissions-top-hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/new-graduate-admissions-top-hero.jpg') no-repeat fixed center;
   background-size: cover;
   height: 360px;
   padding-top: 30px;
@@ -1891,9 +1814,7 @@ ul#click-on-programs {
 }
 
 .pane-graduate-admissions-hero ul li {
-  background-color: white;
-  background-position: 7% center;
-  background-repeat: no-repeat;
+  background: white no-repeat 7% center;
   height: 88px;
   margin-right: 1%;
   opacity: 0.85;
@@ -1918,8 +1839,7 @@ ul#click-on-programs {
 }
 
 .pane-graduate-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-position: 4% center;
+  background: url('../images/icon-1.png') 4% center;
   background-size: 11.5%;
   padding-left: 5px;
 }
@@ -1943,9 +1863,7 @@ ul#click-on-programs {
 }
 
 #mini-panel-you_and_tu #you-and-tu h2 {
-  background-image: url('../images/icon-u-tu.png');
-  background-position: top center;
-  background-repeat: no-repeat;
+  background: url('../images/icon-u-tu.png') no-repeat top center;
   height: 38px;
   margin-bottom: 0;
   width: 100%;
@@ -1993,8 +1911,7 @@ ul#click-on-programs {
 }
 
 #mini-panel-you_and_tu #you-and-tu ul li div {
-  background-position: top center;
-  background-repeat: no-repeat;
+  background: no-repeat top center;
   height: 130px;
   width: 100%;
 }
@@ -2011,8 +1928,7 @@ ul#click-on-programs {
 }
 
 #mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(1) div {
-  background-image: url('../images/icon-paper-plane.png');
-  background-position: center;
+  background: url('../images/icon-paper-plane.png') center;
 }
 
 #mini-panel-you_and_tu #you-and-tu ul li:nth-of-type(2) div {
@@ -2201,8 +2117,7 @@ div.flex-caption {
   font-size: 100%;
 
   height: 34px;
-  padding: 9px 10px 9px 32px;
-  padding-left: 10px;
+  padding: 9px 10px;
   transition: all .5s;
   -moz-transition: all .5s;
   -webkit-transition: all .5s;
@@ -2255,11 +2170,7 @@ body.page-admissions .pane-1 {
 /* About TU Top */
 
 .pane-about-tu-hero-top {
-  background-attachment: fixed;
-  background-color: transparent;
-  background-image: url('../images/image-abouttu-hero-landing.jpg');
-  background-position: 0 -150px;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-abouttu-hero-landing.jpg') no-repeat fixed 0 -150px;
   background-size: cover;
   height: 383px;
 }
@@ -2332,14 +2243,9 @@ body.page-admissions .pane-1 {
 /* About Tiffin Ohio */
 
 .pane-about-tiffin-ohio {
-  background-attachment: fixed;
-  background-color: transparent;
-  background-image: url('../images/image-discover-city-of-tiffin.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-discover-city-of-tiffin.jpg') no-repeat fixed center;
   background-size: cover;
   height: 465px;
-
 }
 
 .pane-about-tiffin-ohio p {
@@ -2395,10 +2301,7 @@ body.page-admissions .pane-1 {
 /* Discover Tiffin Ohio */
 
 .pane-discover-tiffin-ohio {
-  background-color: transparent;
-  background-image: url('../images/image-discover-city-of-tiffin.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-discover-city-of-tiffin.jpg') no-repeat center;
   background-size: cover;
   height: 465px;
 }
@@ -2827,10 +2730,7 @@ body.page-academics h1 {
 }
 
 body.page-academics {
-  background-color: transparent;
-  background-image: url('../images/image-academics-hero-landing.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-academics-hero-landing.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -2843,10 +2743,7 @@ body.page-academics main {
 /* Apply now landing page */
 
 body.page-apply-now {
-  background-color: transparent;
-  background-image: url('../images/image-apply-now-hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-apply-now-hero.jpg') no-repeat center;
   background-size: cover;
 }
 
@@ -2925,17 +2822,13 @@ ul#icons-apply-now-landing-page-first li {
 }
 
 ul#icons-apply-now-landing-page-first li:nth-of-type(1) {
-  background-image: url('../images/icon-undergrad-man.png');
-  background-position: 140px 9px;
-  background-repeat: no-repeat;
+  background: url('../images/icon-undergrad-man.png') no-repeat 140px 9px;
   clear: none;
   margin: 0 10px 10px 0;
 }
 
 ul#icons-apply-now-landing-page-first li:nth-of-type(2) {
-  background-image: url('../images/icon-undergrad-woman.png');
-  background-position: 140px 9px;
-  background-repeat: no-repeat;
+  background: url('../images/icon-undergrad-woman.png') no-repeat 140px 9px;
   clear: right;
   margin: 0 0 10px 0;
 }
@@ -2958,8 +2851,7 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
 }
 
 ul#icons-apply-now-landing-page-mid li:nth-of-type(1) {
-  background-image: url('../images/icon-transfer.png');
-  background-position: 70px 16px;
+  background: url('../images/icon-transfer.png') 70px 16px;
   background-size: 40%;
   clear: left;
   float: left;
@@ -2970,8 +2862,7 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(1) div p {
 }
 
 ul#icons-apply-now-landing-page-mid li:nth-of-type(2) {
-  background-image: url('../images/icon-hat-credit-plus.png');
-  background-position: 40px 22px;
+  background: url('../images/icon-hat-credit-plus.png') 40px 22px;
   clear: none;
   float: left;
 }
@@ -2982,31 +2873,27 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(2) div p {
 }
 
 ul#icons-apply-now-landing-page-mid li:nth-of-type(3) {
-  background-image: url('../images/icon-laptop-online.png');
-  background-position: 49px 23px;
+  background: url('../images/icon-laptop-online.png') 49px 23px;
   background-size: 57%;
   clear: none;
   float: left;
 }
 
 ul#icons-apply-now-landing-page-mid li:nth-of-type(4) {
-  background-image: url('../images/icon-globe-international.png');
-  background-position: 62px 8px;
+  background: url('../images/icon-globe-international.png') 62px 8px;
   clear: right;
   float: left;
   margin-right: 0 !important;
 }
 
 ul#icons-apply-now-landing-page-last li:nth-of-type(1) {
-  background-image: url('../images/icon-ohio-off-campus.png');
-  background-position: 63px 6px;
+  background: url('../images/icon-ohio-off-campus.png') 63px 6px;
   clear: none;
   float: left;
 }
 
 ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
-  background-image: url('../images/icon-shield-veterans.png');
-  background-position: 74px 14px;
+  background: url('../images/icon-shield-veterans.png') 74px 14px;
   clear: right;
   float: left;
   margin-right: 0 !important;
@@ -3023,7 +2910,6 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
 
 #admissions-sub-title {
   clear: both;
-  clear: both;
   color: white;
   font-size: 23px;
   margin: -19px auto 20px auto;
@@ -3031,11 +2917,7 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
 }
 
 body.page-admissions {
-  background-attachment: fixed;
-  background-color: transparent;
-  background-image: url('../images/image-admissions-hero-landing.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-admissions-hero-landing.jpg') no-repeat fixed center;
   background-size: cover;
 }
 
@@ -3106,23 +2988,19 @@ ul#icons-admissions-landing-page-first li {
 }
 
 ul#icons-admissions-landing-page-first li:nth-of-type(1) {
-  background-image: url('../images/icon-undergrad-man.png');
-  background-position: 120px 30px;
-  background-repeat: no-repeat;
+  background: url('../images/icon-undergrad-man.png') no-repeat 120px 30px;
   clear: none;
   margin: 0 10px 10px 0;
 }
 
 ul#icons-admissions-landing-page-first li:nth-of-type(2) {
-  background-image: url('../images/icon-undergrad-woman.png');
-  background-position: 120px 30px;
-  background-repeat: no-repeat;
+  background: url('../images/icon-undergrad-woman.png') no-repeat 120px 30px;
   clear: right;
   margin: 0 0 10px 0;
 }
 
 ul#icons-admissions-landing-page-last li {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, .85);
   background-color: white;
   height: 150px;
   margin: 0 10px 10px 0;
@@ -3139,43 +3017,37 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 
 ul#icons-admissions-landing-page-last li:nth-of-type(1) {
-  background-image: url('../images/icon-transfer.png');
-  background-position: 100px 0;
+  background: url('../images/icon-transfer.png') 100px 0;
   clear: left;
   float: left;
 }
 
 ul#icons-admissions-landing-page-last li:nth-of-type(2) {
-  background-image: url('../images/icon-laptop-online.png');
-  background-position: 87px 11px;
+  background: url('../images/icon-laptop-online.png') 87px 11px;
   clear: none;
   float: left;
 }
 
 ul#icons-admissions-landing-page-last li:nth-of-type(3) {
-  background-image: url('../images/icon-hat-credit-plus.png');
-  background-position: 80px 10px;
+  background: url('../images/icon-hat-credit-plus.png') 80px 10px;
   clear: right;
   float: left;
 }
 
 ul#icons-admissions-landing-page-last li:nth-of-type(4) {
-  background-image: url('../images/icon-globe-international.png');
-  background-position: 110px 8px;
+  background: url('../images/icon-globe-international.png') 110px 8px;
   clear: none;
   float: left;
 }
 
 ul#icons-admissions-landing-page-last li:nth-of-type(5) {
-  background-image: url('../images/icon-ohio-off-campus.png');
-  background-position: 110px 10px;
+  background: url('../images/icon-ohio-off-campus.png') 110px 10px;
   clear: none;
   float: left;
 }
 
 ul#icons-admissions-landing-page-last li:nth-of-type(6) {
-  background-image: url('../images/icon-shield-veterans.png');
-  background-position: 116px 10px;
+  background: url('../images/icon-shield-veterans.png') 116px 10px;
   clear: right;
   float: left;
 }
@@ -3280,10 +3152,7 @@ div.views-field-field-testimonials-image {
 }
 
 .pane-international-admissions-hero {
-  background-attachment: fixed;
-  background-image: url('../images/image-online-programs-hero.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../images/image-online-programs-hero.jpg') no-repeat fixed center;
   background-size: cover;
   height: 360px;
   padding-top: 30px;
@@ -3334,8 +3203,7 @@ div.views-field-field-testimonials-image {
 }
 
 .pane-international-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-position: 4% center;
+  background: url('../images/icon-1.png') 4% center;
   background-size: 11.5%;
   padding-left: 5px;
 }
@@ -3384,10 +3252,7 @@ div.views-field-field-testimonials-image {
 }
 
 .pane-ccp-admissions-hero {
-  background-attachment: fixed;
-  background-image: url('../images/college-credit-plus-background.jpg');
-  background-position: top center;
-  background-repeat: no-repeat;
+  background: url('../images/college-credit-plus-background.jpg') no-repeat fixed top center;
   background-size: cover;
   height: 410px;
   padding-top: 30px;
@@ -3465,8 +3330,7 @@ div.views-field-field-testimonials-image {
 }
 
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-position: 4% center;
+  background: url('../images/icon-1.png') 4% center;
   background-size: 11.5%;
   padding-left: 5px;
 }
@@ -3504,9 +3368,7 @@ div.views-field-field-testimonials-image {
 /* CCP meet your */
 
 #mini-panel-ccp_meet_your {
-  background-image: url('../images/image-meet-your-background.jpg');
-  background-position: top left;
-  background-repeat: no-repeat;
+  background: url('../images/image-meet-your-background.jpg') no-repeat top left;
   background-size: 120%;
   height: 375px;
   margin-top: 0 !important;
@@ -3536,8 +3398,7 @@ div.views-field-field-testimonials-image {
 }
 
 #meetyour div {
-  background-image: url('../images/megan-miller.png');
-  background-repeat: no-repeat;
+  background: url('../images/megan-miller.png') no-repeat;
   background-size: 100%;
   clear: none;
   float: left;
@@ -4163,15 +4024,13 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title,
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title,
 .pane-undergraduate-admissions-panel-pane-2 h2.pane-title {
-  background: url('../images/arrow-down.png') no-repeat right;
-  background-color: transparent;
+  background: transparent url('../images/arrow-down.png') no-repeat right;
   background-position-x: 179px !important;
   background-size: 27px;
   color: #365543;
   font-size: 29px;
   margin: 31px auto 30px auto;
   text-align: center;
-  width: 210px;
   width: 210px !important;
 }
 
@@ -4332,8 +4191,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title,
 .pane-schools h2 {
-  background: url(../images/arrow-down.png) no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75) url(../images/arrow-down.png) no-repeat right;
   background-size: 27px;
   color: #11361E;
   font-size: 29px;
@@ -4415,8 +4273,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 #edit-field-program-location-tid {
-  background: url('../images/down-triangle.png') no-repeat right;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75) url('../images/down-triangle.png') no-repeat right;
   background-position-x: 360px;
   border-radius: 0;
   clear: none;
@@ -4572,11 +4429,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-giving-hero-top,
 .pane-advancement-hero-top,
 .pane-alumni-hero-top {
-  background-attachment: fixed;
-  background-color: transparent;
-  background-image: url('../images/image-generic-page-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-generic-page-background.jpg') no-repeat fixed center;
   background-size: cover;
 
 }
@@ -5114,11 +4967,7 @@ body.node-type-program .pane-node-field-degree-type {
 .pane-giving-hero-top,
 .pane-advancement-hero-top,
 .pane-alumni-hero-top {
-  background-attachment: fixed;
-  background-color: transparent;
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent url('../images/image-generic-page-background.jpg') no-repeat fixed center;
   background-size: cover;
 
 }
@@ -5395,19 +5244,18 @@ width: 100%;
 }
 
 .pane-off-campus-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('http://tiffin.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/icon-1.png');
-  background-position: 4% center;
+  background: url('../images/icon-1.png') 4% center;
   background-size: 11.5%;
   padding-left: 5px;
 }
 
 .pane-off-campus-admissions-hero ul li:nth-of-type(2) {
-  background-image: url('http://tiffin.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/icon-2.png');
+  background-image: url('../images/icon-2.png');
   background-size: 15%;
 }
 
 .pane-off-campus-admissions-hero ul li:nth-of-type(3) {
-  background-image: url('http://tiffin.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/icon-3.png');
+  background-image: url('../images/icon-3.png');
   background-size: 15%;
 }
 
@@ -5864,10 +5712,7 @@ width: 100%;
 /* Criminal justice school hero */
 
 .pane-generic-school-page-hero-crim {
-  background-attachment: fixed;
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
@@ -5971,10 +5816,7 @@ width: 100%;
 /* School of arts and sciences hero */
 
 .pane-generic-school-page-hero-arts {
-  background-attachment: fixed;
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
@@ -6078,10 +5920,7 @@ width: 100%;
 /* School of business hero */
 
 .pane-generic-school-page-hero-biz {
-  background-attachment: fixed;
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
-  background-position: 0;
-  background-repeat: no-repeat;
+  background: url('../images/image-generic-school.jpg') no-repeat fixed 0;
   background-size: cover;
   height: 700px;
   padding-top: 0;
