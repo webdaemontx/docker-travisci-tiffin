@@ -4,10 +4,25 @@ body {
   font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
   padding-top: 0;
-  /*
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    */
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .search-info {
@@ -23,9 +38,6 @@ a:hover {
 }
 
 a:visited {
-  /* 9c7508
-    color: #C09212 !important;
-    */
   color: #9c7508;
 }
 
@@ -2170,22 +2182,31 @@ body.page-admissions .pane-1 {
 /* About TU Top */
 
 .pane-about-tu-hero-top {
-  background: transparent url('../images/image-abouttu-hero-landing.jpg') no-repeat fixed 0 -150px;
+  position: relative;
+  background: transparent url('../images/image-about-header.jpg') no-repeat fixed 0 -150px;
   background-size: cover;
-  height: 383px;
+  height: 700px;
 }
 
 .pane-about-tu-hero-top h1 {
   color: white;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
   text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
 }
 
 .pane-about-tu-hero-top #abouttutop {
   background: rgba(218, 192, 115, .90);
   background-color: #dbc073;
-  height: 194px;
-  margin-top: 114px;
+  bottom: 0;
+  /*margin-top: 114px;*/
+  position: absolute;
+  width: 100%;
 }
 
 .pane-about-tu-hero-top #abouttutop ul {
@@ -2197,10 +2218,11 @@ body.page-admissions .pane-1 {
 
 .pane-about-tu-hero-top #abouttutop ul li {
   background-position: center;
-  height: 96px;
-  margin-top: 60px;
+  /*height: 96px;*/
+  /*margin-top: 60px;*/
   text-align: center;
   width: 33%;
+  padding: 10px 0;
 }
 
 .pane-about-tu-hero-top #abouttutop ul li a {
@@ -2213,8 +2235,9 @@ body.page-admissions .pane-1 {
 }
 
 .pane-about-tu-hero-top #abouttutop ul li div p {
-  line-height: 40px;
-  padding: 20px;
+  line-height: 125px;
+  padding: 0 5px;
+  /*padding: 20px;*/
 }
 
 .pane-about-tu-hero-top #abouttutop ul li div.hvr-bounce-to-bottom::before {
@@ -5191,10 +5214,7 @@ width: 100%;
 /* Off-campus Admissions */
 
 .pane-off-campus-admissions-hero {
-  background-attachment: fixed;
-  background-image: url('/sites/default/files/off-campus_1.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('/sites/default/files/off-campus_1.jpg') no-repeat fixed center;
   background-size: cover;
   height: 360px;
   padding-top: 30px;
@@ -5218,9 +5238,7 @@ width: 100%;
 }
 
 .pane-off-campus-admissions-hero ul li {
-  background: rgba(255, 255, 255, .85);
-  background-position: 7% center;
-  background-repeat: no-repeat;
+  background: rgba(255, 255, 255, .85) no-repeat 7% center;
   height: 88px;
   margin-right: 1%;
   padding-left: 10px;
@@ -6021,3 +6039,31 @@ width: 100%;
 
 /* End School of business hero */
 
+.pane-about-tu-hero-top #abouttutop {
+  background: rgba(129, 185, 170, .5) !important;
+}
+
+#mini-panel-presidents_widget {
+  /*background-color: #e8ffea;*/
+  background: transparent url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-background-tiffin-pres_3.jpg') no-repeat fixed;
+  background-size: cover;
+
+}
+
+#preswidge {
+  color: #ffffff;
+  font-weight: 100;
+  width: 60%;
+  padding: 60px 0 120px 0;
+  margin: 0 auto;
+  /* background-color: #e8ffea;  */
+}
+
+#preswidge h2 {
+  color: #ffffff;
+  font-siZe: 34px;
+  font-weight: 100;
+  background-color: rgba(218, 192, 115, .10);
+  padding: 5px 2px 0 7px;
+  margin-bottom: 18px;
+}
