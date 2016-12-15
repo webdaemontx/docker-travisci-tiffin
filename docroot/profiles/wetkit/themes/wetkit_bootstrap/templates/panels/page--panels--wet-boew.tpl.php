@@ -103,7 +103,7 @@
       <div class="row">
         <div id="wb-sttl" class="col-md-8">
 
-            <!-- Moved the logo down from here, JT. --!>
+            <!-- Moved the logo down from here, JT. -->
 
         </div>
       </div>
@@ -115,20 +115,13 @@
       <div class="row">
 
 
-
-<div id="tiffin_logo">
-    <a href="<?php print url('<front>'); ?>">
-          <?php if ($site_name || $site_slogan || $logo): ?>
-          <?php if ($logo && $logo_svg): ?>
-            <object id="header-logo" data='<?php print $logo_svg; ?>' role="img" tabindex="-1" type="image/svg+xml">
-              <img alt="<?php print t('Tiffin University'); ?>" src="<?php print $logo; ?>"  />
-            </object>
-          <?php elseif ($logo): ?>
-            <img alt="<?php print t('Tiffin University'); ?>" src="<?php print $logo; ?>"  />
-          <?php endif; ?>
-        <?php endif; ?>
-    </a>
-</div>
+        <div id="tiffin_logo">
+          <a href="<?php print url('<front>'); ?>">
+            <?php if ($logo): ?>
+              <img alt="<?php print t('Tiffin University'); ?>" src="<?php print $logo; ?>"/>
+            <?php endif; ?>
+          </a>
+        </div>
 
 
 
