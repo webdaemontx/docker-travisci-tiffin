@@ -4701,6 +4701,14 @@ width: 100%;
   cursor: default;
 }
 
+/* JP: TU-347 */
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #365543;
+}
+
 .menu-name-menu-wet-mid-footer {
   height: 210px !important;
 }
