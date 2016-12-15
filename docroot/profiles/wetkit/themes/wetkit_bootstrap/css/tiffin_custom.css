@@ -4941,7 +4941,8 @@ body.node-type-program .pane-node-field-degree-type {
   width: 33%;
   float: left;
   clear: none;
-  text-align: center;
+  /* JP: TU-184 */
+  /*text-align: center;*/
   margin-bottom: 10px
 }
 
@@ -4968,7 +4969,7 @@ body.node-type-program .pane-node-field-degree-type {
 .pane-giving-hero-top,
 .pane-advancement-hero-top,
 .pane-alumni-hero-top {
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg');
+  background-image: url('../images/image-generic-page-background.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
   background-attachment: fixed;
@@ -5269,7 +5270,7 @@ width: 100%;
 /* Criminal justice school hero */
 
 .pane-generic-school-page-hero-crim {
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
+  background-image: url('../images/image-generic-school.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px;
@@ -5376,7 +5377,7 @@ width: 100%;
 /* School of arts and sciences hero */
 
 .pane-generic-school-page-hero-arts {
-  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg');
+  background-image: url('../images/image-generic-school.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px;
