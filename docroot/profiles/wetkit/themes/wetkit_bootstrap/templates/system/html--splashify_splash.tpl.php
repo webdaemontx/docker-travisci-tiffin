@@ -51,12 +51,13 @@
 <head>
   <link rel="profile" href="<?php print $grddl_profile; ?>" />
   <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta content="width=device-width,initial-scale=1" name="viewport" >
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <!-- jQuery needs to be loaded first for IE6-8 -->
   <!--[if lt IE 9]>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
   <?php print $styles; ?>
   <?php print $scripts; ?>
@@ -77,5 +78,6 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+<script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
 </body>
 </html>
