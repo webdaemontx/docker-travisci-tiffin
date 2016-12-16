@@ -2694,8 +2694,7 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
 #footer {
   background-color: #365543 !important;
   margin-top: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding: 40px 0 87px;
 }
 
 #footer a, #footer h3 a {
@@ -2740,7 +2739,8 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
 }
 
 .footer-logo {
-  display: none;
+  display: block;
+  margin-top: 10px;
 }
 
 #footer-address {
@@ -2748,7 +2748,7 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
   clear: none;
   width: 230px;
   color: white;
-  margin: 29px 0 0 30px;
+  margin: 0 30px;
 }
 
 .menu-name-menu-wet-mid-footer .footer-logo {
@@ -4929,30 +4929,43 @@ body.node-type-program .pane-node-field-degree-type {
 
 }
 
+/* JP: TU-184 */
+
 #footer ul {
-  list-style-type: none;
-  width: 50% !important;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 15px 0px 0px 10% !important;
+  list-style: none;
 }
 
 #footer ul li {
-  width: 33%;
-  float: left;
-  clear: none;
-  /* JP: TU-184 */
-  /*text-align: center;*/
-  margin-bottom: 10px
+
 }
 
-#footer ul li:nth-of-type(7) {
-  width: 33%;
+#footer ul li a {
+  font-size: 20px;
 }
 
-#footer ul li:nth-of-type(8) {
-  width: 66%;
-}
+/*#footer ul {*/
+/*list-style-type: none;*/
+/*width: 50% !important;*/
+/*display: flex;*/
+/*flex-wrap: wrap;*/
+/*margin: 15px 0px 0px 10% !important;*/
+/*}*/
+
+/*#footer ul li {*/
+/*width: 33%;*/
+/*float: left;*/
+/*clear: none;*/
+/*!*text-align: center;*!*/
+/*margin-bottom: 10px*/
+/*}*/
+
+/*#footer ul li:nth-of-type(7) {*/
+/*width: 33%;*/
+/*}*/
+
+/*#footer ul li:nth-of-type(8) {*/
+/*width: 66%;*/
+/*}*/
 
 #footer ul li a {
   text-decoration: none;
@@ -6036,4 +6049,24 @@ width: 100%;
   #ccpEN ul li a {
     font-size: 17px !important;
   }
+}
+
+/* Utilities*/
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
