@@ -201,15 +201,21 @@ $success_body .= "<br>*These calculations do not include other forms of aid, suc
     '#markup' => $success_body,
   );
 
-  //$from = 'webmaster@tiffin.edu';
 
 $params = array(
     'subject' => 'Tiffin University Net Price Calculation',
     'body' => $success_body,
-  );
+    'headers' => array(
+      'From' => 'webmaster@tiffin.edu',
+      'MIME-Version' => '1.0',
+      'Content-Type' => 'text/html; charset=UTF-8; format=flowed',
+      'Content-Transfer-Encoding' => '8Bit',
+      'X-Mailer' => 'Drupal',)
+    );
 
   // Send out the e-mail.
-  drupal_mail('tiffin_npc', 'npc_calculator', $email, language_default(), $params);
+
+  $success_email = drupal_mail('tiffin_npc', 'npc_calculator', $email, language_default(), $params);
   drupal_set_message('Sent a copy of this report to ' . $email);
 
   return $form;
