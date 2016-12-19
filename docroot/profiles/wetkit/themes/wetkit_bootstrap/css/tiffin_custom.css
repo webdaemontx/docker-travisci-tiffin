@@ -4126,7 +4126,7 @@ nav#wb-sec div.menu-block-wrapper li.leaf a:visited {
 nav#wb-sec div.menu-block-wrapper li a.active-trail,
 nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail,
 nav#wb-sec div.menu-block-wrapper li h3 a.active-trail {
-  color: #ffffff !important;
+  color: #D9BF75 !important;
 }
 
 nav#wb-sec div.menu-block-wrapper .expanded ul li {
@@ -6029,6 +6029,21 @@ width: 100%;
   #ccpEN ul li a {
     font-size: 17px !important;
   }
+}
+
+.social-header {
+  background-color: #385443;
+  color: #d9bf75;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.social-header span {
+  color: #fff;
 }
 
 .pane-social-feed {
