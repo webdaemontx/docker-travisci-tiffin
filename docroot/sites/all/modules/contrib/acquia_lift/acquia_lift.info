@@ -1,0 +1,15 @@
+name = Acquia Lift
+description = Provides integration to the Acquia Lift service for personalization and visitor data collection.
+configure = admin/config/services/acquia_lift
+
+package = Acquia
+core = 7.x
+
+files[] = tests/acquia_lift.test
+
+; Information added by Drupal.org packaging script on 2016-11-22
+version = "7.x-3.0-beta1"
+core = "7.x"
+project = "acquia_lift"
+datestamp = "1479820460"
+
