@@ -53,6 +53,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1" name="viewport" >
   <?php print $head; ?>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <title><?php print $head_title; ?></title>
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
