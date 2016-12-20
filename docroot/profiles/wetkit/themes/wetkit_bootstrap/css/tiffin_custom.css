@@ -72,6 +72,12 @@ main {
   height: 77px;
 }
 
+@media screen and (max-width: 600px) {
+  .sticky-bottom {
+    display: none !important;
+  }
+}
+
 /* End mobile nav */
 
 /* Brought in from block CSS */
@@ -193,7 +199,7 @@ div.pane-board-members .img-responsive {
   background-image: url('../images/image-homepage-socialmedia.jpg');
   background-size: 3400px 690px;
   height: 224px;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -259,6 +265,7 @@ div.pane-board-members .img-responsive {
   background-color: rgba(255, 255, 255, 0.70);
   padding-left: 19px;
   padding-top: 11px;
+  padding-right: 19px;
   margin: 10% 10% 0 10%;
 }
 
@@ -366,7 +373,7 @@ div.view-homepage-news-slidehow {
   background-image: url('../images/slideshow-campus-para.jpg');
   background-size: 1600px 915px;
   height: 540px;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -414,6 +421,12 @@ div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a 
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a {
+    font-size: 16px;
+  }
 }
 
 div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
@@ -504,7 +517,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 .pane-get-to-know-tu {
   height: 550px;
   background-image: url('../images/get-to-know-campus-background.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -551,7 +564,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 .pane-tu-drone-vid {
   height: 550px;
   background-image: url('../images/image-drone-background.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -698,7 +711,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 #mini-panel-visit_tu_landing_hero {
   height: 707px;
   background-image: url('../images/visit-landing-hero.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -711,7 +724,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 #mini-panel-visit_tu_hero {
   height: 550px;
   background-image: url('../images/image-visit-tu-top-background.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -858,7 +871,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -965,7 +978,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -1072,7 +1085,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -1179,7 +1192,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -1302,7 +1315,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -1521,7 +1534,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -1595,7 +1608,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0 -230px;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -1860,7 +1873,7 @@ ul#click-on-programs {
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -2236,7 +2249,7 @@ body.page-admissions .pane-1 {
   background-image: url('../images/image-abouttu-hero-landing.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: 0 -150px;
   height: 383px;
@@ -2313,7 +2326,7 @@ body.page-admissions .pane-1 {
   background-image: url('../images/image-discover-city-of-tiffin.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
   height: 465px;
@@ -2750,7 +2763,7 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
   clear: none;
   width: 230px;
   color: white;
-  margin: 0;
+  margin: 0 0 30px;
 }
 
 .menu-name-menu-wet-mid-footer .footer-logo {
@@ -3016,7 +3029,7 @@ body.page-admissions {
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 
 body.page-admissions h1 {
@@ -3266,7 +3279,7 @@ div.views-field-field-testimonials-image {
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -3370,7 +3383,7 @@ div.views-field-field-testimonials-image {
   background-position: top center;
   height: 410px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -3553,7 +3566,7 @@ div.views-field-field-testimonials-image {
   }
 
   #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 h2 {
-    font-size: 36px !important;
+    font-size: 28px !important;
     margin-bottom: 20px;
   }
 
@@ -3584,6 +3597,7 @@ div.views-field-field-testimonials-image {
     margin-right: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    margin-bottom: 16px;
   }
 
   #mini-panel-homepage_submenu ul:nth-of-type(1) {
@@ -3682,7 +3696,7 @@ div.views-field-field-testimonials-image {
   }
 
   #mini-panel-you_and_tu #you-and-tu ul li h3 {
-    font-size: 29px;
+    font-size: 18px;
   }
 
   #mini-panel-you_and_tu #you-and-tu ul {
@@ -3697,6 +3711,20 @@ div.views-field-field-testimonials-image {
     columns: 1;
     -webkit-columns: 1;
     -moz-columns: 1;
+  }
+
+  .masonry-processed {
+    height: auto !important;
+  }
+
+  .masonry-item {
+    position: static !important;
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .pane-social-feed {
+    padding: 10px !important;
   }
 
 }
@@ -4433,7 +4461,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-image: url('../images/image-generic-page-background.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
 
@@ -4934,6 +4962,7 @@ body.node-type-program .pane-node-field-degree-type {
 
 #footer ul {
   list-style: none;
+  padding: 0;
 }
 
 #footer ul li {
@@ -4962,7 +4991,7 @@ body.node-type-program .pane-node-field-degree-type {
   background-image: url('../images/image-generic-page-background.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
 
@@ -5192,7 +5221,7 @@ width: 100%;
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -5266,7 +5295,7 @@ width: 100%;
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -5373,7 +5402,7 @@ width: 100%;
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -5480,7 +5509,7 @@ width: 100%;
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -5588,11 +5617,11 @@ width: 100%;
   }
 
   #wb-glb-mn ul.pnl-btn li:nth-of-type(1) {
-    width: 30% !important;
+    width: 50% !important;
   }
 
   #wb-glb-mn ul.pnl-btn li:nth-of-type(2) {
-    width: 70% !important;
+    width: 50% !important;
     border: 0 !important;
   }
 
@@ -5844,7 +5873,8 @@ width: 100%;
 @media (max-width: 575px) {
 
   div.view-homepage-news-slidehow {
-    height: 410px;
+    height: auto;
+    padding-bottom: 20px;
   }
 }
 

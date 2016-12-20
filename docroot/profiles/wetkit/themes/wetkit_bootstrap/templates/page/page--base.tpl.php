@@ -179,7 +179,7 @@
     <?php print render($page['sidebar_second']); ?>
   </aside>
 <?php endif; ?>
-<footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
+<footer role="contentinfo" id="wb-info" class="wb-navcurr">
     <div class="<?php print $container_class; ?>">
       <nav role="navigation" class="row">
       <h2><?php print t('About this site'); ?></h2>
