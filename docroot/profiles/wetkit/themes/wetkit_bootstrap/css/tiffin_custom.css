@@ -6031,6 +6031,21 @@ width: 100%;
   }
 }
 
+.social-header {
+  background-color: #385443;
+  color: #d9bf75;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.social-header span {
+  color: #fff;
+}
+
 .pane-social-feed {
   background: #385443;
   padding: 40px;
