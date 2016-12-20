@@ -4242,7 +4242,7 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 .pane-bean-schools-bean-block ul {
   margin: 0 auto;
   padding: 0;
-  width: 250px;
+  width: 420px;
   list-style-type: none;
   font-size: 21px;
   color: #11361E;
@@ -6029,6 +6029,21 @@ width: 100%;
   #ccpEN ul li a {
     font-size: 17px !important;
   }
+}
+
+.social-header {
+  background-color: #385443;
+  color: #d9bf75;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.social-header span {
+  color: #fff;
 }
 
 .pane-social-feed {
