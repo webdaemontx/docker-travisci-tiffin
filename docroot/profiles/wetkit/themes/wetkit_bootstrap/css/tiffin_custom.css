@@ -4210,11 +4210,11 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 .page-academics-undergrad h2 {
-  width: 526px;
+  width: 425px;
 }
 
 .page-academics-graduate h2 {
-  width: 422px;
+  width: 425px;
 }
 
 @media (max-width: 550px) {
@@ -4294,7 +4294,7 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 .pane-bean-schools-bean-block ul {
   margin: 0 auto;
   padding: 0;
-  width: 420px;
+  width: 425px;
   list-style-type: none;
   font-size: 21px;
   color: #11361E;
