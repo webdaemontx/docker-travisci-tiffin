@@ -30,8 +30,35 @@ main {
   padding-bottom: 0 !important;
 }
 
+#wb-bc li:before {
+  color: #385443;
+  content: '/';
+  font-size: inherit;
+  font-family: 'Roboto', sans-serif;
+}
+#wb-bc .contextual-links-region {
+  background-color: #d9bf75;
+  text-align: center;
+}
+
+
 .breadcrumb {
-  /*display: none;*/
+  padding: 10px;
+  background: none;
+  display: inline-block;
+  line-height: 1;
+}
+
+.breadcrumb li {
+
+}
+
+.breadcrumb li.last {
+  font-weight: 900;
+}
+
+.breadcrumb a {
+  text-decoration: none;
 }
 
 .flexslider {
