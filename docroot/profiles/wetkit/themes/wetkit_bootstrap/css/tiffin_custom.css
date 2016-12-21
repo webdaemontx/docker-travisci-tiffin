@@ -36,11 +36,11 @@ main {
   font-size: inherit;
   font-family: 'Roboto', sans-serif;
 }
+
 #wb-bc .contextual-links-region {
   background-color: #d9bf75;
   text-align: center;
 }
-
 
 .breadcrumb {
   padding: 10px;
@@ -2840,23 +2840,24 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
 
 /* Academics page */
 
-body.page-academics h1 {
-  text-align: center;
-  color: #365543;
-  text-decoration: underline;
-}
+/*body.page-academics h1 {*/
+/*color: #fff;*/
+/*font-size: 41px;*/
+/*text-align: center;*/
+/*text-shadow: 1px 1px 0 #385443;*/
+/*}*/
 
-body.page-academics {
-  background-image: url('../images/image-academics-hero-landing.jpg');
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center;
-}
+/*body.page-academics {*/
+/*background-image: url('../images/image-academics-hero-landing.jpg');*/
+/*background-repeat: no-repeat;*/
+/*background-color: transparent;*/
+/*background-size: cover;*/
+/*background-position: center;*/
+/*}*/
 
-body.page-academics main {
-  background-color: transparent;
-}
+/*body.page-academics main {*/
+/*background-color: transparent;*/
+/*}*/
 
 /* End academics page */
 
@@ -4282,8 +4283,6 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 .pane-bean-schools-bean-block h2 {
-  background-position-x: 304px;
-  width: 332px;
   text-align: left;
   font-weight: bold;
   margin: 50px auto 20px auto;
@@ -6129,4 +6128,48 @@ width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Page Hero */
+.page-hero {
+  padding: 100px 0;
+  position: relative;
+  background: no-repeat 50% center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
+
+.page-hero::before {
+  background-color: rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.page-hero h1,
+.page-hero h2 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.undergraduate-hero,
+.graduate-hero,
+.academics-hero {
+  background-image: url('../images/image-academics-hero-landing.jpg');
+}
+
+@media screen and (min-width: 600px) {
+  .page-hero {
+    padding: 200px 0;
+  }
+  .page-hero h1,
+  .page-hero h2 {
+    font-size: 41px;
+  }
 }
