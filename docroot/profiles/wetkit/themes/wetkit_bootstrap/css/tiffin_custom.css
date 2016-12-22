@@ -2290,8 +2290,8 @@ body.page-admissions .pane-1 {
 
 .pane-about-tu-hero-top #abouttutop {
   height: 194px;
-  background-color: #dbc073;
-  background: rgba(218, 192, 115, .90);
+  /*background-color: #dbc073;*/
+  /*background: rgba(218, 192, 115, .90);*/
   position: absolute;
   bottom: 0;
   left: 0;
