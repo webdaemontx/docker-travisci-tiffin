@@ -6237,3 +6237,7 @@ width: 100%;
   height: auto;
   bottom: 0;
 }
+
+.media.media-element-container {
+  margin-bottom: 0;
+}
