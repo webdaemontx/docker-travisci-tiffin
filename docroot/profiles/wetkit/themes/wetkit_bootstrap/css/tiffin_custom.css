@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   padding-top: 0;
   overflow-x: hidden;
 }
@@ -4210,11 +4210,11 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 .page-academics-undergrad h2 {
-  width: 425px;
+  /*width: 425px;*/
 }
 
 .page-academics-graduate h2 {
-  width: 425px;
+  /*width: 425px;*/
 }
 
 @media (max-width: 550px) {
@@ -6132,7 +6132,7 @@ width: 100%;
 
 /* Page Hero */
 .page-hero {
-  padding: 100px 0;
+  padding: 24px 0 150px;
   position: relative;
   background: no-repeat 50% center;
   -webkit-background-size: cover;
@@ -6152,10 +6152,12 @@ width: 100%;
 
 .page-hero h1,
 .page-hero h2 {
-  position: relative;
+  color: #fff;
   font-size: 24px;
   font-weight: 900;
-  color: #fff;
+  position: relative;
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .undergraduate-hero,
@@ -6166,10 +6168,72 @@ width: 100%;
 
 @media screen and (min-width: 600px) {
   .page-hero {
-    padding: 200px 0;
+    padding-bottom: 250px;
   }
+
   .page-hero h1,
   .page-hero h2 {
-    font-size: 41px;
+    font-size: 48px;
   }
+}
+
+/* President's Welcome */
+.president {
+  padding: 24px 0 0;
+  color: #fff;
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-background-tiffin-pres_3.jpg');
+}
+
+.president h2,
+.president h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.president h2 {
+  margin-bottom: 0;
+}
+
+.president h3 {
+  font-size: 28px;
+  font-weight: 300;
+  color: #d9bf75;
+  margin: 10px 0 24px;
+}
+
+.president-details {
+  margin-top: 60px;
+}
+
+.president .media {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.president .media h4 {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.president .media p {
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+.president .media-left,
+.president .media > .pull-left {
+  padding-right: 24px;
+}
+
+.president-year {
+  font-size: 48px;
+  color: #d9bf75;
+}
+
+.president-pic {
+  width: 458px;
+  height: auto;
+  bottom: 0;
 }
