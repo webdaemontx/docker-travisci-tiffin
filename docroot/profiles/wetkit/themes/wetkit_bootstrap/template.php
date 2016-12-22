@@ -8,7 +8,7 @@ function wetkit_bootstrap_qt_quicktabs(&$variables) {
   $element = $variables['element'];
   //dpm($element['#options']['attributes']['class']);
   $element['#options']['attributes']['class'] .= ' program-nav-items';
-  dpm($element['#options']['attributes']['class']);
+  //dpm($element['#options']['attributes']['class']);
   $output = '<div class="item-list container">';
   $output .= '<div ' . drupal_attributes($element['#options']['attributes']) . '>';
   $output .= drupal_render($element['tabs']);
