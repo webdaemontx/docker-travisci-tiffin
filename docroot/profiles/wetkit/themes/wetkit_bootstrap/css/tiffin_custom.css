@@ -4283,7 +4283,7 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 .pane-bean-schools-bean-block h2 {
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   margin: 50px auto 20px auto;
 }
@@ -4311,8 +4311,8 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .views-exposed-form label {
-  font-weight: 100 !important;
-  color: #a58024 !important
+  font-weight: 400;
+  color: #a58024
 }
 
 .view-id-undergraduate_admissions .view-filters {
