@@ -2292,7 +2292,11 @@ body.page-admissions .pane-1 {
   height: 194px;
   background-color: #dbc073;
   background: rgba(218, 192, 115, .90);
-  margin-top: 114px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*margin-top: 114px;*/
 }
 
 .pane-about-tu-hero-top #abouttutop ul {
@@ -4358,7 +4362,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-schools h2 {
   color: #11361E;
   text-align: center;
-  background: url(../images/arrow-down.png) no-repeat right;
+  background: url('../images/arrow-down.png') no-repeat right;
   background-color: rgba(255, 255, 255, 0.75);
   margin: 31px auto 30px auto;
   background-size: 27px;
@@ -6166,6 +6170,10 @@ width: 100%;
   background-image: url('../images/image-academics-hero-landing.jpg');
 }
 
+.about-hero {
+  background-image: url('../images/about-hero.jpg');
+}
+
 @media screen and (min-width: 600px) {
   .page-hero {
     padding-bottom: 250px;
@@ -6174,6 +6182,10 @@ width: 100%;
   .page-hero h1,
   .page-hero h2 {
     font-size: 48px;
+  }
+
+  .about-hero {
+    padding-bottom: 660px;
   }
 }
 
@@ -6240,4 +6252,17 @@ width: 100%;
 
 .media.media-element-container {
   margin-bottom: 0;
+}
+
+.outlined-buttons {
+  display: block;
+  border: 1px solid #dbc073;
+  color: #fff;
+  font-size: 24px;
+  padding: 25px 11px 22px 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .3s ease-in-out;
+  width: 100%;
 }
