@@ -6151,6 +6151,26 @@ width: 100%;
   left: 0;
 }
 
+.page-hero-90::before {
+  background-color: rgba(56, 84, 67, 0.9);
+}
+
+.page-hero-80::before {
+  background-color: rgba(56, 84, 67, 0.8);
+}
+
+.page-hero-60::before {
+  background-color: rgba(56, 84, 67, 0.6);
+}
+
+.page-hero-40::before {
+  background-color: rgba(56, 84, 67, 0.4);
+}
+
+.page-hero-20::before {
+  background-color: rgba(56, 84, 67, 0.2);
+}
+
 .page-hero h1,
 .page-hero h2 {
   color: #fff;
@@ -6505,24 +6525,24 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 }
 
 /*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs {*/
-  /*padding: 0;*/
-  /*margin: 0 0 5px;*/
+/*padding: 0;*/
+/*margin: 0 0 5px;*/
 /*}*/
 
 /*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs li {*/
-  /*display: block;*/
-  /*float: left;*/
-  /*padding: 10px 15px;*/
+/*display: block;*/
+/*float: left;*/
+/*padding: 10px 15px;*/
 /*}*/
 
 /*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs li a {*/
-  /*font-size: 21px;*/
-  /*line-height: 1.6;*/
-  /*text-decoration: none;*/
+/*font-size: 21px;*/
+/*line-height: 1.6;*/
+/*text-decoration: none;*/
 /*}*/
 
 /*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs li.active a {*/
-  /*color: #fff;*/
+/*color: #fff;*/
 /*}*/
 
 .quicktabs-wrapper .view-content {
