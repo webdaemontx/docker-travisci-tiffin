@@ -6432,10 +6432,12 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 
 .closeTabsModal {
   border: 0 solid #365543;
+  height: 40px;
   width: 40px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 5px;
+  text-align: center;
+  top: 7px;
 }
 
 .closeTabsModal a {
@@ -6548,6 +6550,7 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 .quicktabs-wrapper .view-content {
   background-color: #f2f2f2;
   padding: 15px;
+  min-height: 500px;
 }
 /*
 * Created by lfreeman on 12/27/16.
