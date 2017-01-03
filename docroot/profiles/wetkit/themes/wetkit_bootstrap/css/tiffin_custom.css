@@ -6549,3 +6549,53 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
   background-color: #f2f2f2;
   padding: 15px;
 }
+/*
+* Created by lfreeman on 12/27/16.
+*styling code for http://tiffin.prod.acquia-sites.com/international/admissreq/
+*/
+#ug-app-instructions-tbl {
+  background-color: orange;
+}
+/*ul.nav.nav-tabs {
+  background: #365543;
+  color: #C09212;
+}*/
+#myTabs ul#my-tabs-horz-list {
+  background: #365543;
+}
+
+#myTabs .nav-tabs>li>a {
+  color: #C09212;
+}
+
+#ug-scholarship-tbl th{
+  background-color: #9e9898;
+  text-align: center;
+}
+#grad-scholarship-tbl th{
+  background-color: #9e9898;
+  text-align: center;
+}
+#ug-scholarship-tbl td{
+  padding: 1%;
+}
+#grad-scholarship-tbl td{
+  padding: 1%;
+}
+#est-tuition-fee-tbl th{
+  background-color: #9e9898;
+  text-align: center;
+}
+#est-tuition-fee-tbl td{
+  padding: 1%;
+}
+.ug-bachelor-applicant-tbl td{
+  padding: 10px !important;
+}
+.grad-master-applicant-tbl td{
+  padding: 10px !important;
+}
+
+#myTabs {
+  background-color: #cfcece;
+}
