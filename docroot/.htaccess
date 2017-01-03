@@ -146,4 +146,5 @@ DirectoryIndex index.php index.html index.htm
 <IfModule mod_headers.c>
   # Disable content sniffing, since it's an attack vector.
   Header always set X-Content-Type-Options nosniff
+  Header set X-UA-Compatible "IE=edge"
 </IfModule>

@@ -1,7 +1,5 @@
-@import 'https://fonts.googleapis.com/css?family=Muli';
-
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Lato', sans-serif;
   padding-top: 0;
   overflow-x: hidden;
 }
@@ -32,8 +30,35 @@ main {
   padding-bottom: 0 !important;
 }
 
+#wb-bc li:before {
+  color: #385443;
+  content: '/';
+  font-size: inherit;
+  font-family: 'Roboto', sans-serif;
+}
+
+#wb-bc .contextual-links-region {
+  background-color: #d9bf75;
+  text-align: center;
+}
+
 .breadcrumb {
-  /*display: none;*/
+  padding: 10px;
+  background: none;
+  display: inline-block;
+  line-height: 1;
+}
+
+.breadcrumb li {
+
+}
+
+.breadcrumb li.last {
+  font-weight: 900;
+}
+
+.breadcrumb a {
+  text-decoration: none;
 }
 
 .flexslider {
@@ -72,6 +97,12 @@ main {
   z-index: 3;
   width: 100%;
   height: 77px;
+}
+
+@media screen and (max-width: 600px) {
+  .sticky-bottom {
+    display: none !important;
+  }
 }
 
 /* End mobile nav */
@@ -195,7 +226,7 @@ div.pane-board-members .img-responsive {
   background-image: url('../images/image-homepage-socialmedia.jpg');
   background-size: 3400px 690px;
   height: 224px;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -261,6 +292,7 @@ div.pane-board-members .img-responsive {
   background-color: rgba(255, 255, 255, 0.70);
   padding-left: 19px;
   padding-top: 11px;
+  padding-right: 19px;
   margin: 10% 10% 0 10%;
 }
 
@@ -368,7 +400,7 @@ div.view-homepage-news-slidehow {
   background-image: url('../images/slideshow-campus-para.jpg');
   background-size: 1600px 915px;
   height: 540px;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -416,6 +448,12 @@ div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a 
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title a {
+    font-size: 16px;
+  }
 }
 
 div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
@@ -506,7 +544,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 .pane-get-to-know-tu {
   height: 550px;
   background-image: url('../images/get-to-know-campus-background.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -522,7 +560,6 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
   width: 356px;
   background-position: 0 53px;
   font-size: 40px;
-  font-weight: 100;
   color: white;
 }
 
@@ -553,7 +590,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 .pane-tu-drone-vid {
   height: 550px;
   background-image: url('../images/image-drone-background.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -569,7 +606,6 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
   width: 356px;
   background-position: 0 53px;
   font-size: 40px;
-  font-weight: 100;
   color: white;
 }
 
@@ -629,7 +665,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 #exptudate {
   font-size: 32px;
-  font-weight: 100;
 }
 
 #experienceTU p:nth-of-type(1) {
@@ -661,7 +696,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 #visittulandingbottom p {
   color: #365543;
   font-size: 25px;
-  font-weight: 100;
   margin: 0 auto;
   width: 650px;
   text-align: center;
@@ -700,7 +734,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 #mini-panel-visit_tu_landing_hero {
   height: 707px;
   background-image: url('../images/visit-landing-hero.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -713,7 +747,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 #mini-panel-visit_tu_hero {
   height: 550px;
   background-image: url('../images/image-visit-tu-top-background.jpg');
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -860,7 +894,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -881,7 +915,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   width: 72%;
   color: white;
   background-color: transparent;
-  font-weight: 100;
   font-size: 18px;
   letter-spacing: .5px;
   text-align: justify;
@@ -967,7 +1000,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -984,14 +1017,18 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-generic-school-page-hero-crim .pane-2 {
+  position: relative;
   margin: 0 auto;
   width: 72%;
   color: white;
   background-color: transparent;
-  font-weight: 100;
   font-size: 18px;
   letter-spacing: .5px;
   text-align: justify;
+}
+
+.pane-generic-school-page-hero-crim .pane-3 {
+  position: relative;
 }
 
 #mini-panel-generic_school_page_hero_crim .heroclicks {
@@ -1067,16 +1104,16 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 /* School of arts and sciences hero */
 
-.pane-generic-school-page-hero-arts {
-  background-image: url('../images/image-generic-school.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0;
-  height: 700px;
-  width: 100%;
-  background-attachment: fixed;
-  padding-top: 0;
-}
+/*.pane-generic-school-page-hero-arts {*/
+/*background-image: url('../images/image-generic-school.jpg');*/
+/*background-repeat: no-repeat;*/
+/*background-size: cover;*/
+/*background-position: 0;*/
+/*height: 700px;*/
+/*width: 100%;*/
+/*!*background-attachment: fixed;*!*/
+/*padding-top: 0;*/
+/*}*/
 
 .pane-generic-school-page-hero-arts .pane-1 {
   margin: 0 auto 82px auto;
@@ -1091,14 +1128,18 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-generic-school-page-hero-arts .pane-2 {
+  position: relative;
   margin: 0 auto 0 auto;
   width: 72%;
   color: white;
   background-color: transparent;
-  font-weight: 100;
   font-size: 18px;
   letter-spacing: .5px;
   text-align: justify;
+}
+
+.pane-generic-school-page-hero-arts .pane-3 {
+  position: relative;
 }
 
 #mini-panel-generic_school_page_hero_arts .heroclicks {
@@ -1174,39 +1215,38 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 /* School of business hero */
 
-.pane-generic-school-page-hero-biz {
-  background-image: url('../images/image-generic-school.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0;
-  height: 700px;
-  width: 100%;
-  background-attachment: fixed;
-  padding-top: 0;
-}
+/*.pane-generic-school-page-hero-biz {*/
+/*background-image: url('../images/image-generic-school.jpg');*/
+/*background-repeat: no-repeat;*/
+/*background-size: cover;*/
+/*background-position: 0;*/
+/*height: 700px;*/
+/*width: 100%;*/
+/*!*background-attachment: fixed;*!*/
+/*padding-top: 0;*/
+/*}*/
 
-.pane-generic-school-page-hero-biz .pane-1 {
-  margin: 0 auto 40px auto;
-  width: 100%;
-  text-align: center;
-}
+/*.pane-generic-school-page-hero-biz .pane-1 {*/
+/*margin: 0 auto 40px auto;*/
+/*width: 100%;*/
+/*text-align: center;*/
+/*}*/
 
-.pane-generic-school-page-hero-biz .pane-1 h2 {
-  color: white;
-  font-size: 58px;
+/*.pane-generic-school-page-hero-biz .pane-1 h2 {*/
+/*color: white;*/
+/*font-size: 58px;*/
 
-}
+/*}*/
 
-.pane-generic-school-page-hero-biz .pane-2 {
-  margin: 0 auto 0 auto;
-  width: 72%;
-  color: white;
-  background-color: transparent;
-  font-weight: 100;
-  font-size: 18px;
-  letter-spacing: .5px;
-  text-align: justify;
-}
+/*.pane-generic-school-page-hero-biz .pane-2 {*/
+/*margin: 0 auto 0 auto;*/
+/*width: 72%;*/
+/*color: white;*/
+/*background-color: transparent;*/
+/*font-size: 18px;*/
+/*letter-spacing: .5px;*/
+/*text-align: justify;*/
+/*}*/
 
 #mini-panel-generic_school_page_hero_biz .heroclicks {
   width: 100%;
@@ -1304,7 +1344,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -1523,7 +1563,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -1597,7 +1637,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0 -230px;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -1862,7 +1902,7 @@ ul#click-on-programs {
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -2238,7 +2278,7 @@ body.page-admissions .pane-1 {
   background-image: url('../images/image-abouttu-hero-landing.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: 0 -150px;
   height: 383px;
@@ -2252,60 +2292,60 @@ body.page-admissions .pane-1 {
 
 .pane-about-tu-hero-top #abouttutop {
   height: 194px;
-  background-color: #dbc073;
-  background: rgba(218, 192, 115, .90);
-  margin-top: 114px;
+  /*background-color: #dbc073;*/
+  /*background: rgba(218, 192, 115, .90);*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*margin-top: 114px;*/
 }
 
 .pane-about-tu-hero-top #abouttutop ul {
   list-style-type: none;
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
+  margin-bottom: 0;
 }
 
-.pane-about-tu-hero-top #abouttutop ul li {
-  width: 33%;
-  background-position: center;
-  height: 96px;
-  margin-top: 60px;
-  text-align: center;
-}
+/*.pane-about-tu-hero-top #abouttutop ul li {*/
+/*width: 33%;*/
+/*background-position: center;*/
+/*height: 96px;*/
+/*margin-top: 60px;*/
+/*text-align: center;*/
+/*}*/
 
 .pane-about-tu-hero-top #abouttutop ul li a {
-  color: white;
-  font-size: 40px;
   text-decoration: none;
 }
 
-.pane-about-tu-hero-top #abouttutop ul li div {
-}
+/*.pane-about-tu-hero-top #abouttutop ul li div {*/
+/*}*/
 
-.pane-about-tu-hero-top #abouttutop ul li div p {
-  line-height: 40px;
-  padding: 20px;
-}
+/*.pane-about-tu-hero-top #abouttutop ul li div p {*/
+/*line-height: 40px;*/
+/*padding: 20px;*/
+/*}*/
 
-.pane-about-tu-hero-top #abouttutop ul li div.hvr-bounce-to-bottom::before {
-  background: #365543 !important;
-}
+/*.pane-about-tu-hero-top #abouttutop ul li div.hvr-bounce-to-bottom::before {*/
+/*background: #365543 !important;*/
+/*}*/
 
-.pane-about-tu-hero-top #abouttutop ul li:nth-of-type(1) {
-  /*background-image: url('../images/.png');*/
-  background-repeat: no-repeat;
-}
+/*.pane-about-tu-hero-top #abouttutop ul li:nth-of-type(1) {*/
+/*!*background-image: url('../images/.png');*!*/
+/*background-repeat: no-repeat;*/
+/*}*/
 
-.pane-about-tu-hero-top #abouttutopul li:nth-of-type(2) {
-  /*background-image: url('../images/.png');*/
-  height: 97px;
-  background-repeat: no-repeat;
-}
+/*.pane-about-tu-hero-top #abouttutopul li:nth-of-type(2) {*/
+/*!*background-image: url('../images/.png');*!*/
+/*height: 97px;*/
+/*background-repeat: no-repeat;*/
+/*}*/
 
-.pane-about-tu-hero-top #abouttutop ul li:nth-of-type(3) {
-  /*background-image: url('../images/.png');*/
-  height: 96px;
-  background-repeat: no-repeat;
-}
+/*.pane-about-tu-hero-top #abouttutop ul li:nth-of-type(3) {*/
+/*!*background-image: url('../images/.png');*!*/
+/*height: 96px;*/
+/*background-repeat: no-repeat;*/
+/*}*/
 
 /* End about tu top */
 
@@ -2315,7 +2355,7 @@ body.page-admissions .pane-1 {
   background-image: url('../images/image-discover-city-of-tiffin.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
   height: 465px;
@@ -2752,7 +2792,7 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
   clear: none;
   width: 230px;
   color: white;
-  margin: 0;
+  margin: 0 0 30px;
 }
 
 .menu-name-menu-wet-mid-footer .footer-logo {
@@ -2802,23 +2842,24 @@ body.page-apply-now .pane-join-the-tu-family-white-backgro {
 
 /* Academics page */
 
-body.page-academics h1 {
-  text-align: center;
-  color: #365543;
-  text-decoration: underline;
-}
+/*body.page-academics h1 {*/
+/*color: #fff;*/
+/*font-size: 41px;*/
+/*text-align: center;*/
+/*text-shadow: 1px 1px 0 #385443;*/
+/*}*/
 
-body.page-academics {
-  background-image: url('../images/image-academics-hero-landing.jpg');
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: cover;
-  background-position: center;
-}
+/*body.page-academics {*/
+/*background-image: url('../images/image-academics-hero-landing.jpg');*/
+/*background-repeat: no-repeat;*/
+/*background-color: transparent;*/
+/*background-size: cover;*/
+/*background-position: center;*/
+/*}*/
 
-body.page-academics main {
-  background-color: transparent;
-}
+/*body.page-academics main {*/
+/*background-color: transparent;*/
+/*}*/
 
 /* End academics page */
 
@@ -3018,7 +3059,7 @@ body.page-admissions {
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 
 body.page-admissions h1 {
@@ -3268,7 +3309,7 @@ div.views-field-field-testimonials-image {
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -3372,7 +3413,7 @@ div.views-field-field-testimonials-image {
   background-position: top center;
   height: 410px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -3555,7 +3596,7 @@ div.views-field-field-testimonials-image {
   }
 
   #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 h2 {
-    font-size: 36px !important;
+    font-size: 28px !important;
     margin-bottom: 20px;
   }
 
@@ -3586,6 +3627,7 @@ div.views-field-field-testimonials-image {
     margin-right: 20px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    margin-bottom: 16px;
   }
 
   #mini-panel-homepage_submenu ul:nth-of-type(1) {
@@ -3684,7 +3726,7 @@ div.views-field-field-testimonials-image {
   }
 
   #mini-panel-you_and_tu #you-and-tu ul li h3 {
-    font-size: 29px;
+    font-size: 18px;
   }
 
   #mini-panel-you_and_tu #you-and-tu ul {
@@ -3699,6 +3741,20 @@ div.views-field-field-testimonials-image {
     columns: 1;
     -webkit-columns: 1;
     -moz-columns: 1;
+  }
+
+  .masonry-processed {
+    height: auto !important;
+  }
+
+  .masonry-item {
+    position: static !important;
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .pane-social-feed {
+    padding: 10px !important;
   }
 
 }
@@ -4156,11 +4212,11 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 .page-academics-undergrad h2 {
-  width: 526px;
+  /*width: 425px;*/
 }
 
 .page-academics-graduate h2 {
-  width: 422px;
+  /*width: 425px;*/
 }
 
 @media (max-width: 550px) {
@@ -4229,9 +4285,7 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 .pane-bean-schools-bean-block h2 {
-  background-position-x: 304px;
-  width: 332px;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
   margin: 50px auto 20px auto;
 }
@@ -4242,7 +4296,7 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 .pane-bean-schools-bean-block ul {
   margin: 0 auto;
   padding: 0;
-  width: 420px;
+  width: 425px;
   list-style-type: none;
   font-size: 21px;
   color: #11361E;
@@ -4259,8 +4313,8 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .views-exposed-form label {
-  font-weight: 100 !important;
-  color: #a58024 !important
+  font-weight: 400;
+  color: #a58024
 }
 
 .view-id-undergraduate_admissions .view-filters {
@@ -4306,7 +4360,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-schools h2 {
   color: #11361E;
   text-align: center;
-  background: url(../images/arrow-down.png) no-repeat right;
+  background: url('../images/arrow-down.png') no-repeat right;
   background-color: rgba(255, 255, 255, 0.75);
   margin: 31px auto 30px auto;
   background-size: 27px;
@@ -4405,9 +4459,9 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-size: 52px !important;
 }
 
-.pane-about-tu-hero-top {
-  background-position: 0 -150px !important;
-}
+/*.pane-about-tu-hero-top {*/
+/*background-position: 0 -150px !important;*/
+/*}*/
 
 .view-testimonials-slider .views-field-body {
   background: rgba(76, 76, 76, .5);
@@ -4435,7 +4489,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-image: url('../images/image-generic-page-background.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
 
@@ -4517,7 +4571,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   color: white;
   margin: 0 auto;
   width: 80%;
-  font-weight: 100;
   font-size: 18px;
   background-color: rgba(42, 72, 68, 0.5);
   padding: 10px;
@@ -4862,7 +4915,6 @@ nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
   border: 0 transparent;
   border-radius: 0;
   font-size: 30px;
-  font-weight: 100;
 }
 
 .pane-online-admissions-hero {
@@ -4908,15 +4960,15 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 .pane-generic-school-page-hero-biz {
-  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-test-criminal-justice-quatro.jpg') !important;
-  margin-top: -50px;
+  /*background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-test-criminal-justice-quatro.jpg') !important;*/
+  /*margin-top: -50px;*/
 }
 
 /* image-school-business-background.jpg */
-.pane-generic-school-page-hero-crim {
-  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-business-test.jpg') !important;
-  margin-top: -50px;
-}
+/*.pane-generic-school-page-hero-crim {*/
+/*background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-business-test.jpg') !important;*/
+/*!*margin-top: -50px;*!*/
+/*}*/
 
 /* image-criminal-justice-background.jpg */
 
@@ -4936,6 +4988,7 @@ body.node-type-program .pane-node-field-degree-type {
 
 #footer ul {
   list-style: none;
+  padding: 0;
 }
 
 #footer ul li {
@@ -4964,7 +5017,7 @@ body.node-type-program .pane-node-field-degree-type {
   background-image: url('../images/image-generic-page-background.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
 
@@ -5046,7 +5099,6 @@ body.node-type-program .pane-node-field-degree-type {
   color: white;
   margin: 0 auto;
   width: 80%;
-  font-weight: 100;
   font-size: 18px;
   background-color: rgba(42, 72, 68, 0.5);
   padding: 10px;
@@ -5194,7 +5246,7 @@ width: 100%;
   background-position: center;
   height: 360px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 30px;
 }
 
@@ -5268,7 +5320,7 @@ width: 100%;
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -5289,7 +5341,6 @@ width: 100%;
   width: 72%;
   color: white;
   background-color: transparent;
-  font-weight: 100;
   font-size: 18px;
   letter-spacing: .5px;
   text-align: justify;
@@ -5375,7 +5426,7 @@ width: 100%;
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -5396,7 +5447,6 @@ width: 100%;
   width: 72%;
   color: white;
   background-color: transparent;
-  font-weight: 100;
   font-size: 18px;
   letter-spacing: .5px;
   text-align: justify;
@@ -5482,7 +5532,7 @@ width: 100%;
   background-position: 0;
   height: 700px;
   width: 100%;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   padding-top: 0;
 }
 
@@ -5499,14 +5549,19 @@ width: 100%;
 }
 
 .pane-generic-school-page-hero-biz .pane-2 {
-  margin: 0 auto 0 auto;
+  position: relative;
+  margin: 0 auto;
   width: 72%;
-  color: white;
+  color: #fff;
   background-color: transparent;
-  font-weight: 100;
   font-size: 18px;
   letter-spacing: .5px;
   text-align: justify;
+  z-index: 99;
+}
+
+.pane-generic-school-page-hero-biz .pane-3 {
+  position: relative;
 }
 
 #mini-panel-generic_school_page_hero_biz .heroclicks {
@@ -5590,11 +5645,11 @@ width: 100%;
   }
 
   #wb-glb-mn ul.pnl-btn li:nth-of-type(1) {
-    width: 30% !important;
+    width: 50% !important;
   }
 
   #wb-glb-mn ul.pnl-btn li:nth-of-type(2) {
-    width: 70% !important;
+    width: 50% !important;
     border: 0 !important;
   }
 
@@ -5772,7 +5827,6 @@ width: 100%;
   .view-testimonials-slider .views-field-body {
     font-size: 16px;
     top: 15% !important;
-    font-weight: 100;
   }
 
   .view-testimonials-slider .view-header h3 {
@@ -5846,7 +5900,8 @@ width: 100%;
 @media (max-width: 575px) {
 
   div.view-homepage-news-slidehow {
-    height: 410px;
+    height: auto;
+    padding-bottom: 20px;
   }
 }
 
@@ -6074,4 +6129,423 @@ width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Page Hero */
+.page-hero {
+  padding: 24px 0 150px;
+  position: relative;
+  background: no-repeat 50% center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+}
+
+.page-hero::before {
+  background-color: rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.page-hero-90::before {
+  background-color: rgba(56, 84, 67, 0.9);
+}
+
+.page-hero-80::before {
+  background-color: rgba(56, 84, 67, 0.8);
+}
+
+.page-hero-60::before {
+  background-color: rgba(56, 84, 67, 0.6);
+}
+
+.page-hero-40::before {
+  background-color: rgba(56, 84, 67, 0.4);
+}
+
+.page-hero-20::before {
+  background-color: rgba(56, 84, 67, 0.2);
+}
+
+.page-hero h1,
+.page-hero h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+  position: relative;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.undergraduate-hero,
+.graduate-hero,
+.academics-hero {
+  background-image: url('../images/image-academics-hero-landing.jpg');
+}
+
+.about-hero {
+  background-image: url('../images/about-hero.jpg');
+}
+
+.business-hero {
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-test-criminal-justice-quatro.jpg');
+}
+
+.artsci-hero {
+  background-image: url('../images/image-generic-school.jpg');
+}
+
+.criminal-hero {
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-business-test.jpg');
+}
+
+@media screen and (min-width: 600px) {
+  .page-hero {
+    padding-bottom: 250px;
+  }
+
+  .page-hero h1,
+  .page-hero h2 {
+    font-size: 48px;
+  }
+
+  .about-hero {
+    padding-bottom: 660px;
+  }
+}
+
+/* President's Welcome */
+.president {
+  padding: 24px 0 0;
+  color: #fff;
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-background-tiffin-pres_3.jpg');
+}
+
+.president h2,
+.president h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.president h2 {
+  margin-bottom: 0;
+}
+
+.president h3 {
+  font-size: 28px;
+  font-weight: 300;
+  color: #d9bf75;
+  margin: 10px 0 24px;
+}
+
+.president-details {
+  margin-top: 60px;
+}
+
+.president .media {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.president .media h4 {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.president .media p {
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+.president .media-left,
+.president .media > .pull-left {
+  padding-right: 24px;
+}
+
+.president-year {
+  font-size: 48px;
+  color: #d9bf75;
+}
+
+.president-pic {
+  width: 458px;
+  height: auto;
+  bottom: 0;
+}
+
+.media.media-element-container {
+  margin-bottom: 0;
+}
+
+/* Outlined Buttons*/
+.outlined-buttons {
+  display: block;
+  border: 1px solid #dbc073;
+  color: #fff;
+  font-size: 24px;
+  padding: 25px 11px 22px 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .3s ease-in-out;
+  width: 100%;
+}
+
+/* Quick Tabs */
+/*#quicktabs-graduates_career_opportunities .quicktabs-tabs,*/
+/*#quicktabs-program_overview .quicktabs-tabs {*/
+/*z-index: 50;*/
+/*position: relative;*/
+/*margin-top: 70px;*/
+/*}*/
+
+/*#quicktabs-graduates_career_opportunities .quicktabs-tabs li a,*/
+/*#quicktabs-program_overview .quicktabs-tabs li a {*/
+/*color: #385443;*/
+/*!*background-color: white !important;*!*/
+/*!*height: 50px;*!*/
+/*font-size: 24px;*/
+/*text-decoration: none;*/
+/*!*padding: 14px 28px 13px 23px;*!*/
+/*}*/
+
+#quicktabs-graduates_career_opportunities .quicktabs-tabs li.active,
+#quicktabs-program_overview .quicktabs-tabs li.active {
+  /* border: 1px solid #D9BF75 !important; */
+  color: white;
+  background-color: #365543;
+}
+
+#quicktabs-graduates_career_opportunities li.active a.hvr-reveal:before,
+#quicktabs-program_overview .quicktabs-tabs li.active a.hvr-reveal:before {
+}
+
+.pane-quicktabs-undergraduate-program-tabs,
+.pane-quicktabs-graduate-program-tabs {
+  margin-top: -170px;
+  padding-bottom: 50px;
+}
+
+.pane-quicktabs-undergraduate-program-tabs div.pane-title,
+.pane-quicktabs-graduate-program-tabs div.pane-title {
+  display: none;
+}
+
+.pane-webform-client-block-1576 {
+  clear: both !important;
+}
+
+body.node-type-program .pane-node-field-degree-type {
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 85px;
+  padding: 11px 33px 9px 31px;
+  left: 68%;
+  color: white;
+  font-size: 21px;
+}
+
+body.node-type-program .pane-testimonials-slider {
+  clear: both;
+  margin-top: 0px;
+  float: left;
+}
+
+body.node-type-program .pane-discover-tiffin-ohio {
+  float: left;
+  height: 465px;
+  width: 100%;
+  clear: both;
+}
+
+body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .item-list > ul.quicktabs-tabs li a,
+body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-list > ul.quicktabs-tabs li a {
+  text-decoration: none;
+  color: white;
+  padding: 25px 11px 22px 10px;
+  width: 50%;
+  font-size: 24px;
+  border: 1px solid #dbc073;
+  text-align: center;
+}
+
+.pane-undergraduate-program {
+  height: 584px;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg');
+  background-size: 100%;
+}
+
+/*ul.quicktabs-tabs {*/
+/*width: 70%;*/
+/*margin: 0px auto 30px auto;*/
+/*}*/
+
+.pane-undergraduate-program .views-field-title a {
+  font-size: 39px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.pane-undergraduate-program .pane-content {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 55px;
+  color: white;
+  font-size: 17px;
+  text-align: justify;
+}
+
+.pane-webform-client-block-1576 {
+  margin: 170 auto 0 auto;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-have-question.png');
+  width: 80%;
+}
+
+.pane-quicktabs-graduate-program-tabs h2.pane-title {
+  display: none;
+}
+
+#quicktabs-tabpage-graduate_program_tabs-0,
+#quicktabs-tabpage-graduate_program_tabs-1,
+#quicktabs-tabpage-graduate_program_tabs-2,
+#quicktabs-tabpage-undergraduate_program_tabs-0,
+#quicktabs-tabpage-undergraduate_program_tabs-1,
+#quicktabs-tabpage-undergraduate_program_tabs-2 {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .8);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 4;
+}
+
+.closeTabsModal {
+  border: 0 solid #365543;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.closeTabsModal a {
+  text-decoration: none;
+  color: #385443 !important;
+  font-size: 26px;
+  /* text-align: center; */
+  cursor: pointer;
+}
+
+.closeTabsModal a div {
+  height: 100%;
+  width: 100%;
+}
+
+/* NEW */
+.quicktabs-tabpage .quicktabs-wrapper {
+  background-color: #fff;
+  color: #365543;
+  left: 50%;
+  margin: auto;
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 0;
+  position: absolute;
+  top: 20%;
+  transform: translate(-50%, -20%);
+  width: 70%;
+  z-index: 5;
+}
+
+.program-nav-items ul.quicktabs-tabs {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.program-nav-items ul.quicktabs-tabs:before,
+.program-nav-items ul.quicktabs-tabs:after {
+  display: table;
+  content: " ";
+}
+
+.item-list.container .quicktabs-tabs:after {
+  clear: both;
+}
+
+.program-nav-items > .item-list ul.quicktabs-tabs li {
+  display: block;
+  width: 33.3333333333%;
+  float: left;
+}
+
+.program-nav-items > .item-list ul.quicktabs-tabs li a {
+  display: block;
+  border: 1px solid #dbc073;
+  color: #fff;
+  font-size: 24px;
+  padding: 25px 11px 22px 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .3s ease-in-out;
+  width: 100%;
+}
+
+.program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs {
+  padding: 0;
+  margin: 0;
+}
+
+.program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li {
+  padding: 10px 15px !important;
+}
+
+.program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li a {
+  color: #385443;
+  border: 0;
+  font-size: 21px;
+  line-height: 1.6;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li.active a {
+  color: #fff;
+}
+
+/*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs {*/
+/*padding: 0;*/
+/*margin: 0 0 5px;*/
+/*}*/
+
+/*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs li {*/
+/*display: block;*/
+/*float: left;*/
+/*padding: 10px 15px;*/
+/*}*/
+
+/*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs li a {*/
+/*font-size: 21px;*/
+/*line-height: 1.6;*/
+/*text-decoration: none;*/
+/*}*/
+
+/*.quicktabs-wrapper > .item-list > ul.quicktabs-tabs li.active a {*/
+/*color: #fff;*/
+/*}*/
+
+.quicktabs-wrapper .view-content {
+  background-color: #f2f2f2;
+  padding: 15px;
 }

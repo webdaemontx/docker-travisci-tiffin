@@ -45,7 +45,7 @@ scripts[] = js/wetkit-bootstrap.modules.js
 scripts[] = js/animatedModal.min.js
 scripts[] = js/animated-menu-line.js
 scripts[] = js/scroll-fun.js
-;scripts[] = js/theme.js
+scripts[] = js/jquery.matchHeight-min.js
 
 
 ; ========================================
