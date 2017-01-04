@@ -6431,6 +6431,7 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 }
 
 .closeTabsModal {
+  background-color: #fff;
   border: 0 solid #365543;
   height: 40px;
   width: 40px;
