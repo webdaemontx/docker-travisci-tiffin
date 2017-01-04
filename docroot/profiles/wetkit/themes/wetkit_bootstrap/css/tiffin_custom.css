@@ -4666,7 +4666,7 @@ width: 100%;
   margin-top: 30px;
   margin-right: 4%;
   color: white;
-  line-height: 27px;
+  line-height: 1;
 }
 
 #mini-panel-floating_all_submenu ul:nth-of-type(1) li a {
@@ -4704,7 +4704,7 @@ width: 100%;
   color: #365543;
   margin-right: 6px;
   font-weight: bold;
-  line-height: 27px;
+  line-height: 1.5;
 }
 
 #mini-panel-floating_all_submenu ul:nth-of-type(2) li a {
