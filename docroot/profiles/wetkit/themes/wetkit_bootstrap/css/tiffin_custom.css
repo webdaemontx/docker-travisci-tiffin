@@ -6093,7 +6093,7 @@ width: 100%;
   padding: 40px;
 }
 
-.pane-social-feed .field-name-field-tweet-user-picture {
+.pane-social-feed .field-name-field-tweet-user-picture img {
   height: 30px;
   width: 30px;
 }
@@ -6542,6 +6542,7 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
   padding: 15px;
   min-height: 500px;
 }
+
 /*
 * Created by lfreeman on 12/27/16.
 *styling code for http://tiffin.prod.acquia-sites.com/international/admissreq/
@@ -6549,6 +6550,7 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 #ug-app-instructions-tbl {
   background-color: orange;
 }
+
 /*ul.nav.nav-tabs {
   background: #365543;
   color: #C09212;
@@ -6557,48 +6559,87 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
   background: #365543;
 }
 
-#myTabs .nav-tabs>li>a {
+#myTabs .nav-tabs > li > a {
   color: #C09212;
 }
 
-#ug-scholarship-tbl th{
+#ug-scholarship-tbl th {
   background-color: #9e9898;
   text-align: center;
 }
-#grad-scholarship-tbl th{
+
+#grad-scholarship-tbl th {
   background-color: #9e9898;
   text-align: center;
 }
-#ug-scholarship-tbl td{
+
+#ug-scholarship-tbl td {
   padding: 1%;
 }
-#grad-scholarship-tbl td{
+
+#grad-scholarship-tbl td {
   padding: 1%;
 }
-#est-tuition-fee-tbl th{
+
+#est-tuition-fee-tbl th {
   background-color: #9e9898;
   text-align: center;
 }
-#est-tuition-fee-tbl td{
+
+#est-tuition-fee-tbl td {
   padding: 1%;
 }
-.ug-bachelor-applicant-tbl td{
+
+.ug-bachelor-applicant-tbl td {
   padding: 10px !important;
 }
-.grad-master-applicant-tbl td{
+
+.grad-master-applicant-tbl td {
   padding: 10px !important;
 }
 
 #myTabs {
   background-color: #EEEEEE;
 }
-.important-note tr td{
+
+.important-note tr td {
   background-color: #fff;
 }
+
 #myTabs .important-note {
   background-color: #fff;
   padding-top: 10px;
 }
+
 #myTabs .important-note-hdg, .green-hdg {
   color: #365543;
+}
+
+/* Social Icons */
+.socialfeed .field-name-field-instagram-picture {
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.socialfeed .field-name-field-instagram-picture::after {
+  color: #385443;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: 'FontAwesome';
+  content: '';
+}
+
+.field-name-field-tweet-user-picture {
+  padding-top: 20px;
+  position: relative;
+}
+
+.field-name-field-tweet-user-picture::after {
+  color: #385443;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: 'FontAwesome';
+  content: '';
 }
