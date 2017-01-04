@@ -6601,5 +6601,15 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 }
 
 #myTabs {
-  background-color: #cfcece;
+  background-color: #EEEEEE;
+}
+.important-note tr td{
+  background-color: #fff;
+}
+#myTabs .important-note {
+  background-color: #fff;
+  padding-top: 10px;
+}
+#myTabs .important-note-hdg, .green-hdg {
+  color: #365543;
 }
