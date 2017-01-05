@@ -68,11 +68,11 @@ main {
 }
 
 .site-breadcrumbs .breadcrumb li.last,
-.site-breadcrumbs.breadcrumb-panel .breadcrumb *  {
+.site-breadcrumbs.breadcrumb-panel *  {
   font-weight: 900;
 }
 
-.site-breadcrumbs.breadcrumb-panel .breadcrumb a {
+.site-breadcrumbs.breadcrumb-panel a {
   font-weight: normal;
 }
 
