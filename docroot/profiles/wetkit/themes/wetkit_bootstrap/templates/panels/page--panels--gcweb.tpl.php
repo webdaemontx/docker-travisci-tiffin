@@ -140,7 +140,7 @@
     </nav>
   <?php endif; ?>
   <?php print render($page['header']); ?>
-  <nav role="navigation" id="wb-bc" property="breadcrumb">
+  <nav class="site-breadcrumbs" role="navigation" property="breadcrumb">
     <div class="<?php print $container_class; ?>">
       <div class="row">
         <?php print render($breadcrumb); ?>
