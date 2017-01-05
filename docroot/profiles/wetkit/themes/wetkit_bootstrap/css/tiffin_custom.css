@@ -67,8 +67,13 @@ main {
   content: '';
 }
 
-.site-breadcrumbs .breadcrumb li.last {
+.site-breadcrumbs .breadcrumb li.last,
+.site-breadcrumbs.breadcrumb-panel .breadcrumb *  {
   font-weight: 900;
+}
+
+.site-breadcrumbs.breadcrumb-panel .breadcrumb a {
+  font-weight: normal;
 }
 
 .site-breadcrumbs .breadcrumb a {
