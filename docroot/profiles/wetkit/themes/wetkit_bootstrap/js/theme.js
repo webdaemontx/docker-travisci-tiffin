@@ -31,3 +31,26 @@ jQuery( document ).ready( function () {
 jQuery( document ).ready( function () {
   setInterval( cleanMenu(), 1000 );
 } );
+
+(function ( $ ) {
+
+  var $window = $( window ),
+    navbar = $( '#navbar' ).outerHeight(),
+    sticky = $( '#mini-panel-homepage_submenu' ).outerHeight();
+
+  // Make Featured image full-screen.
+  function fullscreenFeaturedImage () {
+    var homePageHero = $( '#mini-panel-homepage_top_hero' );
+
+    if ( ! homePageHero ) {
+      return;
+    }
+
+    homePageHero.css( {
+      'height': $window.height() - ( navbar + sticky ) + 'px'
+    } );
+  }
+
+  fullscreenFeaturedImage();
+
+})( jQuery );

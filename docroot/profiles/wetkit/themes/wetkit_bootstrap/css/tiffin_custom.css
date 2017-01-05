@@ -297,7 +297,7 @@ div.pane-board-members .img-responsive {
     height: 580px;
     height: 80% !important;
         */
-  height: 77vh;
+  /*height: 77vh;*/
   width: 100%;
   background-image: url('../images/image-hero-top-one.jpg');
   background-size: 1200px 574px;
@@ -5123,7 +5123,7 @@ width: 100%;
 */
 #mini-panel-homepage_top_hero {
 
-  height: 77vh !important;
+  /*height: 77vh !important;*/
 }
 
 #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
