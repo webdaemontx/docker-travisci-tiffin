@@ -1580,6 +1580,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
   height: 360px;
   width: 100%;
   /*background-attachment: fixed;*/
