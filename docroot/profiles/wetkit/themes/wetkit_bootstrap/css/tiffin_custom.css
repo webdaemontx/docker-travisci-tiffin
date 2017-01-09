@@ -6673,8 +6673,3 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
   font-family: 'FontAwesome';
   content: '';
 }
-
-.masonry-item .img-responsive {
-  width: 100%;
-  height: auto;
-}
