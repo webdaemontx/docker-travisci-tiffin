@@ -6502,8 +6502,12 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 
 .program-nav-items > .item-list ul.quicktabs-tabs li {
   display: block;
-  width: 25%;
+  width: 33.3333333333%;
   float: left;
+}
+
+.program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li {
+  width: 25%;
 }
 
 .program-nav-items > .item-list ul.quicktabs-tabs li a {
