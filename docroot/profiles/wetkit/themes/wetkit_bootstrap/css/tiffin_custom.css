@@ -1651,6 +1651,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* Undergraduate Admissions Top */
 
 .pane-undergraduate-admissions-hero {
+  position: relative;
   background-image: url('../images/image-undergrad-admissions-background-new.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -1670,66 +1671,66 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   padding-top: 0;
 }
 
-.pane-undergraduate-admissions-hero ul {
-  list-style-type: none;
-  width: 85%;
-  margin: 80px auto 0 auto;
-  display: flex;
-}
+/*.pane-undergraduate-admissions-hero ul {*/
+  /*list-style-type: none;*/
+  /*width: 85%;*/
+  /*margin: 80px auto 0 auto;*/
+  /*display: flex;*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li {
-  width: 33%;
-  margin-right: 1%;
-  height: 88px;
-  background: rgba(255, 255, 255, .85);
-  background-repeat: no-repeat;
-  padding-left: 10px;
-  background-position: 7% center;
+/*.pane-undergraduate-admissions-hero ul li {*/
+  /*width: 33%;*/
+  /*margin-right: 1%;*/
+  /*height: 88px;*/
+  /*background: rgba(255, 255, 255, .85);*/
+  /*background-repeat: no-repeat;*/
+  /*padding-left: 10px;*/
+  /*background-position: 7% center;*/
 
-}
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li div p {
-  padding: 20px 25%;
-}
+/*.pane-undergraduate-admissions-hero ul li div p {*/
+  /*padding: 20px 25%;*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li:nth-of-type(1) div {
-}
+/*.pane-undergraduate-admissions-hero ul li:nth-of-type(1) div {*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li:nth-of-type(3) div {
-}
+/*.pane-undergraduate-admissions-hero ul li:nth-of-type(3) div {*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li a {
-  color: #365543;
-  font-size: 31px;
-  text-decoration: none;
-}
+/*.pane-undergraduate-admissions-hero ul li a {*/
+  /*color: #365543;*/
+  /*font-size: 31px;*/
+  /*text-decoration: none;*/
+/*}*/
 
-@media (max-width: 1000px) {
-  .pane-undergraduate-admissions-hero ul li a {
-    font-size: 24px;
-  }
+/*@media (max-width: 1000px) {*/
+  /*.pane-undergraduate-admissions-hero ul li a {*/
+    /*font-size: 24px;*/
+  /*}*/
 
-  .pane-undergraduate-admissions-hero ul li div p {
-    padding: 27px 25%;
-  }
-}
+  /*.pane-undergraduate-admissions-hero ul li div p {*/
+    /*padding: 27px 25%;*/
+  /*}*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-size: 11.5%;
-  background-position: 4% center;
-  padding-left: 5px;
-}
+/*.pane-undergraduate-admissions-hero ul li:nth-of-type(1) {*/
+  /*background-image: url('../images/icon-1.png');*/
+  /*background-size: 11.5%;*/
+  /*background-position: 4% center;*/
+  /*padding-left: 5px;*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li:nth-of-type(2) {
-  background-image: url('../images/icon-2.png');
-  background-size: 15%;
-}
+/*.pane-undergraduate-admissions-hero ul li:nth-of-type(2) {*/
+  /*background-image: url('../images/icon-2.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
-.pane-undergraduate-admissions-hero ul li:nth-of-type(3) {
-  background-image: url('../images/icon-3.png');
-  background-size: 15%;
-}
+/*.pane-undergraduate-admissions-hero ul li:nth-of-type(3) {*/
+  /*background-image: url('../images/icon-3.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
 /* End undergraduate admissions top*/
 
@@ -1916,6 +1917,7 @@ ul#click-on-programs {
 /* Graduate Admissions */
 
 .pane-graduate-admissions-hero {
+  position: relative;
   background-image: url('../images/new-graduate-admissions-top-hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -1935,56 +1937,56 @@ ul#click-on-programs {
   padding-top: 0;
 }
 
-.pane-graduate-admissions-hero ul {
-  list-style-type: none;
-  width: 85%;
-  margin: 80px auto 0 auto;
-  display: flex;
-}
+/*.pane-graduate-admissions-hero ul {*/
+  /*list-style-type: none;*/
+  /*width: 85%;*/
+  /*margin: 80px auto 0 auto;*/
+  /*display: flex;*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li {
-  width: 33%;
-  margin-right: 1%;
-  height: 88px;
-  background-position: 7% center;
-  background-repeat: no-repeat;
-  padding-left: 10px;
-  background-color: white;
-  opacity: 0.85;
-}
+/*.pane-graduate-admissions-hero ul li {*/
+  /*width: 33%;*/
+  /*margin-right: 1%;*/
+  /*height: 88px;*/
+  /*background-position: 7% center;*/
+  /*background-repeat: no-repeat;*/
+  /*padding-left: 10px;*/
+  /*background-color: white;*/
+  /*opacity: 0.85;*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li div p {
-  padding: 20px 0 0 25%;
-}
+/*.pane-graduate-admissions-hero ul li div p {*/
+  /*padding: 20px 0 0 25%;*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li:nth-of-type(1) div {
-}
+/*.pane-graduate-admissions-hero ul li:nth-of-type(1) div {*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li:nth-of-type(3) div {
-}
+/*.pane-graduate-admissions-hero ul li:nth-of-type(3) div {*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li a {
-  color: #365543;
-  font-size: 31px;
-  text-decoration: none;
-}
+/*.pane-graduate-admissions-hero ul li a {*/
+  /*color: #365543;*/
+  /*font-size: 31px;*/
+  /*text-decoration: none;*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-size: 11.5%;
-  background-position: 4% center;
-  padding-left: 5px;
-}
+/*.pane-graduate-admissions-hero ul li:nth-of-type(1) {*/
+  /*background-image: url('../images/icon-1.png');*/
+  /*background-size: 11.5%;*/
+  /*background-position: 4% center;*/
+  /*padding-left: 5px;*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li:nth-of-type(2) {
-  background-image: url('../images/icon-2.png');
-  background-size: 15%;
-}
+/*.pane-graduate-admissions-hero ul li:nth-of-type(2) {*/
+  /*background-image: url('../images/icon-2.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
-.pane-graduate-admissions-hero ul li:nth-of-type(3) {
-  background-image: url('../images/icon-3.png');
-  background-size: 15%;
-}
+/*.pane-graduate-admissions-hero ul li:nth-of-type(3) {*/
+  /*background-image: url('../images/icon-3.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
 /* End graduate admissions */
 
@@ -3316,6 +3318,7 @@ div.views-field-field-testimonials-image {
 }
 
 .pane-international-admissions-hero {
+  position: relative;
   background-image: url('../images/image-online-programs-hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -3335,56 +3338,56 @@ div.views-field-field-testimonials-image {
   padding-top: 0;
 }
 
-.pane-international-admissions-hero ul {
-  list-style-type: none;
-  width: 85%;
-  margin: 80px auto 0 auto;
-  display: flex;
-}
+/*.pane-international-admissions-hero ul {*/
+  /*list-style-type: none;*/
+  /*width: 85%;*/
+  /*margin: 80px auto 0 auto;*/
+  /*display: flex;*/
+/*}*/
 
-.pane-international-admissions-hero ul li {
-  width: 33%;
-  margin-right: 1%;
-  height: 88px;
-  background-position: 7% center;
-  background-repeat: no-repeat;
-  padding-left: 10px;
-  background-color: white;
-  opacity: 0.85;
-}
+/*.pane-international-admissions-hero ul li {*/
+  /*width: 33%;*/
+  /*margin-right: 1%;*/
+  /*height: 88px;*/
+  /*background-position: 7% center;*/
+  /*background-repeat: no-repeat;*/
+  /*padding-left: 10px;*/
+  /*background-color: white;*/
+  /*opacity: 0.85;*/
+/*}*/
 
-.pane-international-admissions-hero ul li div p {
-  padding: 20px 0 0 25%;
-}
+/*.pane-international-admissions-hero ul li div p {*/
+  /*padding: 20px 0 0 25%;*/
+/*}*/
 
-.pane-international-admissions-hero ul li:nth-of-type(1) div {
-}
+/*.pane-international-admissions-hero ul li:nth-of-type(1) div {*/
+/*}*/
 
-.pane-international-admissions-hero ul li:nth-of-type(3) div {
-}
+/*.pane-international-admissions-hero ul li:nth-of-type(3) div {*/
+/*}*/
 
-.pane-international-admissions-hero ul li a {
-  color: #365543;
-  font-size: 31px;
-  text-decoration: none;
-}
+/*.pane-international-admissions-hero ul li a {*/
+  /*color: #365543;*/
+  /*font-size: 31px;*/
+  /*text-decoration: none;*/
+/*}*/
 
-.pane-international-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-size: 11.5%;
-  background-position: 4% center;
-  padding-left: 5px;
-}
+/*.pane-international-admissions-hero ul li:nth-of-type(1) {*/
+  /*background-image: url('../images/icon-1.png');*/
+  /*background-size: 11.5%;*/
+  /*background-position: 4% center;*/
+  /*padding-left: 5px;*/
+/*}*/
 
-.pane-international-admissions-hero ul li:nth-of-type(2) {
-  background-image: url('../images/icon-2.png');
-  background-size: 15%;
-}
+/*.pane-international-admissions-hero ul li:nth-of-type(2) {*/
+  /*background-image: url('../images/icon-2.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
-.pane-international-admissions-hero ul li:nth-of-type(3) {
-  background-image: url('../images/icon-3.png');
-  background-size: 15%;
-}
+/*.pane-international-admissions-hero ul li:nth-of-type(3) {*/
+  /*background-image: url('../images/icon-3.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
 /* End international admissions */
 
@@ -3420,6 +3423,7 @@ div.views-field-field-testimonials-image {
 }
 
 .pane-ccp-admissions-hero {
+  position: relative;
   background-image: url('../images/college-credit-plus-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -5248,6 +5252,7 @@ width: 100%;
 /* Off-campus Admissions */
 
 .pane-off-campus-admissions-hero {
+  position: relative;
   background-image: url('/sites/default/files/off-campus_1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -5267,55 +5272,55 @@ width: 100%;
   padding-top: 0;
 }
 
-.pane-off-campus-admissions-hero ul {
-  list-style-type: none;
-  width: 85%;
-  margin: 80px auto 0 auto;
-  display: flex;
-}
+/*.pane-off-campus-admissions-hero ul {*/
+  /*list-style-type: none;*/
+  /*width: 85%;*/
+  /*margin: 80px auto 0 auto;*/
+  /*display: flex;*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li {
-  width: 33%;
-  margin-right: 1%;
-  height: 88px;
-  padding-left: 10px;
-  background: rgba(255, 255, 255, .85);
-  background-repeat: no-repeat;
-  background-position: 7% center;
-}
+/*.pane-off-campus-admissions-hero ul li {*/
+  /*width: 33%;*/
+  /*margin-right: 1%;*/
+  /*height: 88px;*/
+  /*padding-left: 10px;*/
+  /*background: rgba(255, 255, 255, .85);*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: 7% center;*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li div p {
-  padding: 20px 0 0 25%;
-}
+/*.pane-off-campus-admissions-hero ul li div p {*/
+  /*padding: 20px 0 0 25%;*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li:nth-of-type(1) div {
-}
+/*.pane-off-campus-admissions-hero ul li:nth-of-type(1) div {*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li:nth-of-type(3) div {
-}
+/*.pane-off-campus-admissions-hero ul li:nth-of-type(3) div {*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li a {
-  color: #365543;
-  font-size: 31px;
-  text-decoration: none;
-}
+/*.pane-off-campus-admissions-hero ul li a {*/
+  /*color: #365543;*/
+  /*font-size: 31px;*/
+  /*text-decoration: none;*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li:nth-of-type(1) {
-  background-image: url('../images/icon-1.png');
-  background-size: 11.5%;
-  background-position: 4% center;
-  padding-left: 5px;
-}
+/*.pane-off-campus-admissions-hero ul li:nth-of-type(1) {*/
+  /*background-image: url('../images/icon-1.png');*/
+  /*background-size: 11.5%;*/
+  /*background-position: 4% center;*/
+  /*padding-left: 5px;*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li:nth-of-type(2) {
-  background-image: url('../images/icon-2.png');
-  background-size: 15%;
-}
+/*.pane-off-campus-admissions-hero ul li:nth-of-type(2) {*/
+  /*background-image: url('../images/icon-2.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
-.pane-off-campus-admissions-hero ul li:nth-of-type(3) {
-  background-image: url('../images/icon-3.png');
-  background-size: 15%;
-}
+/*.pane-off-campus-admissions-hero ul li:nth-of-type(3) {*/
+  /*background-image: url('../images/icon-3.png');*/
+  /*background-size: 15%;*/
+/*}*/
 
 /* End off-campus admissions */
 
