@@ -6413,7 +6413,7 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
   padding-left: 15px;
   padding-right: 15px;
   color: white;
-  font-size: 17px;
+  font-size: 20px;
   text-align: justify;
 }
 
@@ -6713,14 +6713,24 @@ body.node-type-program .pane-content > #quicktabs-graduate_program_tabs > .item-
 }
 
 .page-hero-steps > li > a {
+  color: #385443;
   position: relative;
   font-size: 32px;
   margin-right: 5px;
-  background: rgba(255, 255, 255, .85);
+  background-color: rgba(255, 255, 255, .85);
   display: block;
   padding: 20px 0 20px 0;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+.page-hero-steps > li > a:hover,
+.page-hero-steps > li > a:focus {
+  color: #fff;
+  background-color: #385443;
 }
 
 .page-hero-steps > li > a span {
