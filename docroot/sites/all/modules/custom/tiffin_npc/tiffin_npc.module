@@ -201,10 +201,13 @@ $success_body .= "<br>*These calculations do not include other forms of aid, suc
     '#markup' => $success_body,
   );
 
+  $success_plain_body =
+    "Congratulations on completing the Tiffin University Net Price Calculator!\n\r
+Below you will find a summary of the estimated costs for the 2016-2017 academic year and your estimated eligibility for student aid.\n\r";
 
 $params = array(
     'subject' => 'Tiffin University Net Price Calculation',
-    'body' => $success_body,
+    'body' => $success_plain_body,
     'headers' => array(
       'From' => 'webmaster@tiffin.edu',
       'MIME-Version' => '1.0',
@@ -229,6 +232,7 @@ function tiffin_npc_mail($key, &$message, $params) {
     case 'npc_calculator':
       $message['subject'] = $params['subject'];
       $message['body'] = $params['body'];
+      $message['headers']['Content-Type'] = 'text/plain; charset=UTF-8; format=flowed';
       break;
   }
 }
