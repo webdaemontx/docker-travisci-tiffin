@@ -898,7 +898,7 @@ Below you will find a summary of the estimated costs for the 2016-2017 academic 
     );
 
     drupal_mail('tiffin_npc' , 'npc_calculator', $to, language_default(), $params, $from);
-    
+
 /*    $params = array(
       'subject' => 'Tiffin University Net Price Calculation',
       'body' => $success_plain_body,
@@ -914,21 +914,9 @@ Below you will find a summary of the estimated costs for the 2016-2017 academic 
 
     /*drupal_mail('tiffin_npc', 'npc_calculator', $email, language_default(), $params);
     drupal_set_message('Sent a copy of this report to ' . $email);*/
-    return $form;
+    //return $form;
 
-  }
-
-
-
-
-
-
-
-
-
-
-
-
+  //}
 
 
   $redirect = 'forms/netprice/success';
