@@ -215,12 +215,22 @@ $params = array(
 
   // Send out the e-mail.
 
-  dpm($params);
   $success_email = drupal_mail('tiffin_npc', 'npc_calculator', $email, language_default(), $params);
   drupal_set_message('Sent a copy of this report to ' . $email);
-  dpm($email);
   return $form;
 
+}
+
+function tiffin_npc_mail($key, &$message, $params) {
+  //dpm($key);
+  //dpm($message);
+  //dpm($params);
+  switch ($key) {
+    case 'npc_calculator':
+      $message['subject'] = $params['subject'];
+      $message['body'] = $params['body'];
+      break;
+  }
 }
 
 
