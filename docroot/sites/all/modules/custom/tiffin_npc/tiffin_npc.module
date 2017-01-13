@@ -10,7 +10,7 @@
 function tiffin_npc_menu() {
   // Module settings.
   $items['forms/netprice/success'] = array(
-    'title' => t('Net Price Calculator - Form Submitted'),
+    'title' => t('Net Price Calculator - Form SubmittedXYZ'),
     'description' => t('Net Price Calculator Success Page'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('tiffin_npc_success'),
@@ -215,9 +215,10 @@ $params = array(
 
   // Send out the e-mail.
 
+  dpm($params);
   $success_email = drupal_mail('tiffin_npc', 'npc_calculator', $email, language_default(), $params);
   drupal_set_message('Sent a copy of this report to ' . $email);
-
+  dpm($email);
   return $form;
 
 }
@@ -260,17 +261,46 @@ function tiffin_npc_block_view($delta) {
   switch ($delta) {
     case 'tiffin_npc':
       $block['subject'] = t('Net Price Calculator');
-      $block['content'] = drupal_get_form('tiffin_npc_form');
+      $block['content'] = drupal_get_form('tiffin_npc_netprice_form');
       break;
   }
   return $block;
 }
 
+
+function tiffin_npc_form() {
+  return drupal_get_form('tiffin_npc_netprice_form');
+}
 /**
  * Returns the render array for the form.
+ * Adds logic to the form builder to give it two pages.
+ * It checks a value in $form_state['storage']
  */
-function tiffin_npc_form($form, &$form_state) {
+function tiffin_npc_netprice_form($form, &$form_state) {
+  // Display page 2 if $form_state['storage']['page_two'] is set
+  if (isset($form_state['storage']['page_two'])) {
+    return tiffin_npc_netprice_form_page_two();
+  }
 
+  $form['agreement'] = array(
+    '#type' => 'radios',
+    '#title' => t('Agreement'),
+    '#options' => array(
+      'agree' => t('Agree'),
+      'disagree' => t('Disagree'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['next'] = array(
+    '#type' => 'submit',
+    '#value' => 'Next >>',
+  );
+
+  return $form;
+}
+
+function tiffin_npc_netprice_form_page_two() {
   $states_options = array(
     '' => t('--- Select ---'),
     'AL' => t('Alabama'),
@@ -777,8 +807,8 @@ function tiffin_npc_form($form, &$form_state) {
   $form['completed_npc']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Submit'),
-    '#validate' => array('tiffin_npc_form_validate'),
-    '#submit' => array('tiffin_npc_form_submit'),
+    '#validate' => array('tiffin_npc_netprice_form_validate'),
+    '#submit' => array('tiffin_npc_netprice_form_submit'),
   );
   return $form;
 }
@@ -786,7 +816,7 @@ function tiffin_npc_form($form, &$form_state) {
 /**
  * Validates the form.
  */
-function tiffin_npc_form_validate($form, &$form_state) {
+function tiffin_npc_netprice_form_validate($form, &$form_state) {
 /*  $year_of_birth = $form_state['values']['year_of_birth'];
   if ($year_of_birth && ($year_of_birth < 1900 || $year_of_birth > 2000)) {
     form_set_error('year_of_birth', t('Enter a year between 1900 and 2000.'));
@@ -805,63 +835,78 @@ function tiffin_npc_form_validate($form, &$form_state) {
  * @param $form_state
  * @throws \Exception
  */
-function tiffin_npc_form_submit($form, &$form_state) {
-
-  $form_state['rebuild'] = TRUE;
-
-  $uniqid = uniqid_base36(true);
-
-  $fieldarray = array(
-    'calculationGUID' =>  $uniqid,
-    'first' => $form_state['values']['first'],
-    'last' => $form_state['values']['last'],
-    'email' => $form_state['values']['email'],
-    'address' => $form_state['values']['address'],
-    'address_2' => $form_state['values']['address_2'],
-    'city' => $form_state['values']['city'],
-    'state' => $form_state['values']['state'],
-    'zip' => $form_state['values']['zip'],
-    'county' => $form_state['values']['county'],
-    'phone_type' => $form_state['values']['phone_type'],
-    'phone_number' => $form_state['values']['phone_number'],
-    'high_school_grad_year' => $form_state['values']['high_school_grad_year'],
-    'prep_courses_score' => $form_state['values']['prep_courses_score'],
-    'high_school_gpa' => $form_state['values']['high_school_gpa'],
-    'satact' => $form_state['values']['satact'],
-    'sat' => $form_state['values']['sat'],
-    'act' => $form_state['values']['act'],
-    'intended_major' => $form_state['values']['intended_major'],
-    'born_before_1973' => $form_state['values']['born_before_1973'],
-    'married' => $form_state['values']['married'],
-    'in_masters_or_doctorate_program' => $form_state['values']['in_masters_or_doctorate_program'],
-    'active_duty' => $form_state['values']['active_duty'],
-    'veteran' => $form_state['values']['veteran'],
-    'have_dependent_children' => $form_state['values']['have_dependent_children'],
-    'other_dependents' => $form_state['values']['other_dependents'],
-    'parents_deceased' => $form_state['values']['parents_deceased'],
-    'emancipated_or_guardianship' => $form_state['values']['emancipated_or_guardianship'],
-    'unaccompanied_youth' => $form_state['values']['unaccompanied_youth'],
-    'homeless_youth' => $form_state['values']['homeless_youth'],
-    'efc' => $form_state['values']['expected_family_income'],
-    'ohio_residents' => $form_state['values']['ohio_residents'],
-    'extra_curricular_activities' => $form_state['values']['extra_curricular_activities'],
-    'scholarships' => $form_state['values']['scholarships'],
-    'which_activity' => $form_state['values']['which_activity'],
-    'extra_activity' => $form_state['values']['extra_activity'],
-    'create_from_ip' => ip_address(),
-    'create_date' => gmdate('Y-m-d\TH:i:s\Z'),
-  );
-
-  try {
-    db_insert('tiffin_npc_table')->fields($fieldarray)->execute();
+function tiffin_npc_netprice_form_submit($form, &$form_state) {
+  // Handle page 1 submissions
+  if ($form_state['clicked_button']['#id'] == 'edit-next') {
+    if( $form_state['values']['agreement'] == "disagree") {
+    return;
   }
-  catch (PDOException $e) {
-    drupal_set_message(t('Error: %message', array('%message' => $e->getMessage())), 'error');
+
+    $form_state['storage']['page_two'] = TRUE;  // Am setting this to determine
+    // which elements to display
+    // when the page reloads.
+    // Values below in the $form_state['storage'] array are saved
+    // to carry forward to subsequent pages in the form.
+    $form_state['storage']['page_one_values'] = $form_state['values'];
+    $form_state['rebuild'] = TRUE;
   }
+  // handle page 2 submissions
+  else {
+
+    $uniqid = uniqid_base36(TRUE);
+
+    $fieldarray = array(
+      'calculationGUID' => $uniqid,
+      'first' => $form_state['values']['first'],
+      'last' => $form_state['values']['last'],
+      'email' => $form_state['values']['email'],
+      'address' => $form_state['values']['address'],
+      'address_2' => $form_state['values']['address_2'],
+      'city' => $form_state['values']['city'],
+      'state' => $form_state['values']['state'],
+      'zip' => $form_state['values']['zip'],
+      'county' => $form_state['values']['county'],
+      'phone_type' => $form_state['values']['phone_type'],
+      'phone_number' => $form_state['values']['phone_number'],
+      'high_school_grad_year' => $form_state['values']['high_school_grad_year'],
+      'prep_courses_score' => $form_state['values']['prep_courses_score'],
+      'high_school_gpa' => $form_state['values']['high_school_gpa'],
+      'satact' => $form_state['values']['satact'],
+      'sat' => $form_state['values']['sat'],
+      'act' => $form_state['values']['act'],
+      'intended_major' => $form_state['values']['intended_major'],
+      'born_before_1973' => $form_state['values']['born_before_1973'],
+      'married' => $form_state['values']['married'],
+      'in_masters_or_doctorate_program' => $form_state['values']['in_masters_or_doctorate_program'],
+      'active_duty' => $form_state['values']['active_duty'],
+      'veteran' => $form_state['values']['veteran'],
+      'have_dependent_children' => $form_state['values']['have_dependent_children'],
+      'other_dependents' => $form_state['values']['other_dependents'],
+      'parents_deceased' => $form_state['values']['parents_deceased'],
+      'emancipated_or_guardianship' => $form_state['values']['emancipated_or_guardianship'],
+      'unaccompanied_youth' => $form_state['values']['unaccompanied_youth'],
+      'homeless_youth' => $form_state['values']['homeless_youth'],
+      'efc' => $form_state['values']['expected_family_income'],
+      'ohio_residents' => $form_state['values']['ohio_residents'],
+      'extra_curricular_activities' => $form_state['values']['extra_curricular_activities'],
+      'scholarships' => $form_state['values']['scholarships'],
+      'which_activity' => $form_state['values']['which_activity'],
+      'extra_activity' => $form_state['values']['extra_activity'],
+      'create_from_ip' => ip_address(),
+      'create_date' => gmdate('Y-m-d\TH:i:s\Z'),
+    );
+
+    try {
+      db_insert('tiffin_npc_table')->fields($fieldarray)->execute();
+    }
+    catch (PDOException $e) {
+      drupal_set_message(t('Error: %message', array('%message' => $e->getMessage())), 'error');
+    }
 
     $redirect = 'forms/netprice/success';
-    $redirect_options = array('query'=>array('uniqid' => $uniqid));
+    $redirect_options = array('query' => array('uniqid' => $uniqid));
     drupal_goto($redirect, $redirect_options);
+  }
 }
 
 function _get_actsat_score($actsat, $sat, $act, $gpa, $prep) {
