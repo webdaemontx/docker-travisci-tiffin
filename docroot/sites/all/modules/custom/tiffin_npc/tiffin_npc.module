@@ -201,7 +201,8 @@ $success_body .= "<br>*These calculations do not include other forms of aid, suc
     '#markup' => $success_body,
   );
 
-
+return $form;
+}
 
 /**
 function tiffin_npc_menu() {
