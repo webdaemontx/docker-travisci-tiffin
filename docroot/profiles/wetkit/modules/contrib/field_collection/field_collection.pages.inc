@@ -134,7 +134,7 @@ function field_collection_item_add($field_name, $entity_type, $entity_id, $revis
   drupal_set_title($title);
 
   // Make sure the current user has access to create a field collection item.
-  if (!field_collection_item_access('create', $field_collection_item)) {
+  if (!entity_access('create', 'field_collection_item', $field_collection_item)) {
     return MENU_ACCESS_DENIED;
   }
   return drupal_get_form('field_collection_item_form', $field_collection_item);
