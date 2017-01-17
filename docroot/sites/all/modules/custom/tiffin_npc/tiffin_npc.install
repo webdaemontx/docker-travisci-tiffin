@@ -2,11 +2,11 @@
 
 
 function tiffin_npc_install() {
-
+  variable_set('mail_system', array('default-system' => 'DefaultMailSystem', 'tiffin_npc' => 'TiffinMailSystem'));
 }
 
 function tiffin_npc_uninstall() {
-
+  variable_set('mail_system', array('default-system' => 'DefaultMailSystem'));
 }
 
 function tiffin_npc_schema() {

@@ -667,12 +667,18 @@ function workbench_moderation_update_7010() {
     'not null' => TRUE,
     'default' => 0,
   );
+  db_change_field($table, $field, $field_new, $spec);
+  return t("Renamed 'current' column in node_history table");
+}
 
-  if (db_field_exists($table, $field_new)) {
-    return t("No rename needed 'current' column in node_history exists");
+/**
+ * Enable the Drafty module, a new dependency.
+ */
+function workbench_moderation_update_7300() {
+  if (module_enable(array('drafty'))) {
+    drupal_set_message(t('The Drafty module has been enabled.'));
   }
   else {
-    db_change_field($table, $field, $field_new, $spec);
-    return t("Renamed 'current' column in node_history table");
+    throw new DrupalUpdateException('Unable to enable the Drafty module, it is a new dependency that must be downloaded.');
   }
 }
