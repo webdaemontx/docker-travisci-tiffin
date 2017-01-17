@@ -29,7 +29,7 @@ class EntityTranslationFieldCollectionItemHandler extends EntityTranslationDefau
    * {@inheritdoc}
    */
   public function getAccess($op) {
-    return field_collection_item_access($op, $this->entity);
+    return entity_access($op, 'field_collection_item', $this->entity);
   }
 
   /**
