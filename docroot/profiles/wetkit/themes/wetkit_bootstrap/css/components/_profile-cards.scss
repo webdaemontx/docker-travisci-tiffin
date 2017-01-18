@@ -1,0 +1,42 @@
+.profile-grid {
+  h2 {
+    color: $brand-green;
+    margin-bottom: 24px;
+  }
+}
+.profile-card {
+  margin: 0 0 30px;
+  padding: 0;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  img {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    visibility: hidden;
+  }
+}
+
+.profile-details {
+  background-color: rgba($brand-gold, .3);
+  padding: 15px;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  span {
+    display: block;
+  }
+  .profile-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .profile-position {
+    font-size: 14px;
+  }
+}
