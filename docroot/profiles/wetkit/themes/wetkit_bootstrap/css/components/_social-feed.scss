@@ -1,0 +1,36 @@
+/* Social Icons */
+
+.socialfeed .field-name-field-instagram-picture, .masonry-item .facebook-tile {
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.socialfeed .field-name-field-instagram-picture::after, .masonry-item .facebook-tile::after {
+  color: $brand-green;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: 'FontAwesome';
+  content: '';
+}
+
+.socialfeed .field-name-field-instagram-picture::after {
+  content: '';
+}
+
+.masonry-item .facebook-tile::after {
+  content: '';
+}
+
+.field-name-field-tweet-user-picture {
+  padding-top: 20px;
+  position: relative;
+  &::after {
+    color: $brand-green;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: 'FontAwesome';
+    content: '';
+  }
+}

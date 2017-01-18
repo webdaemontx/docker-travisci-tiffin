@@ -1,0 +1,211 @@
+/* Quick Tabs */
+
+#quicktabs-graduates_career_opportunities .quicktabs-tabs li.active, #quicktabs-program_overview .quicktabs-tabs li.active {
+  color: white;
+  background-color: #365543;
+}
+
+#quicktabs-graduates_career_opportunities li.active a.hvr-reveal:before, #quicktabs-program_overview .quicktabs-tabs li.active a.hvr-reveal:before {
+}
+
+.pane-quicktabs-undergraduate-program-tabs, .pane-quicktabs-graduate-program-tabs {
+  margin-top: -170px;
+  padding-bottom: 50px;
+}
+
+.pane-quicktabs-undergraduate-program-tabs div.pane-title, .pane-quicktabs-graduate-program-tabs div.pane-title {
+  display: none;
+}
+
+.pane-webform-client-block-1576 {
+  clear: both !important;
+}
+
+body.node-type-program {
+  .pane-node-field-degree-type {
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 85px;
+    padding: 11px 33px 9px 31px;
+    left: 68%;
+    color: white;
+    font-size: 21px;
+  }
+  .pane-testimonials-slider {
+    clear: both;
+    margin-top: 0;
+    float: left;
+  }
+  .pane-discover-tiffin-ohio {
+    float: left;
+    height: 465px;
+    width: 100%;
+    clear: both;
+  }
+  .pane-content > {
+    #quicktabs-undergraduate_program_tabs > .item-list > ul.quicktabs-tabs li a, #quicktabs-graduate_program_tabs > .item-list > ul.quicktabs-tabs li a {
+      text-decoration: none;
+      color: white;
+      padding: 25px 11px 22px 10px;
+      width: 50%;
+      font-size: 24px;
+      border: 1px solid #dbc073;
+      text-align: center;
+    }
+  }
+}
+
+.pane-undergraduate-program {
+  height: 450px;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg');
+  background-size: 100%;
+  .views-field-title a {
+    font-size: 39px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+  }
+  .pane-content {
+    width: 1170px;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+  }
+}
+
+.pane-webform-client-block-1576 {
+  margin: 170px auto 0 auto;
+  background-image: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-have-question.png');
+  width: 80%;
+}
+
+.pane-quicktabs-graduate-program-tabs h2.pane-title {
+  display: none;
+}
+
+#quicktabs-tabpage-graduate_program_tabs-0, #quicktabs-tabpage-graduate_program_tabs-1, #quicktabs-tabpage-graduate_program_tabs-2, #quicktabs-tabpage-undergraduate_program_tabs-0, #quicktabs-tabpage-undergraduate_program_tabs-1, #quicktabs-tabpage-undergraduate_program_tabs-2 {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 4;
+}
+
+.closeTabsModal {
+  background-color: #fff;
+  border: 0 solid #365543;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 5px;
+  text-align: center;
+  top: 7px;
+  a {
+    text-decoration: none;
+    color: $brand-green !important;
+    font-size: 26px;
+    /* text-align: center; */
+    cursor: pointer;
+    div {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+/* NEW */
+
+.quicktabs-tabpage .quicktabs-wrapper {
+  background-color: #fff;
+  color: #365543;
+  left: 50%;
+  margin: auto;
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 0;
+  position: absolute;
+  top: 20%;
+  transform: translate(-50%, -20%);
+  width: 70%;
+  z-index: 5;
+}
+
+.program-nav-items ul.quicktabs-tabs {
+  margin-right: -15px;
+  margin-left: -15px;
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+}
+
+.item-list.container .quicktabs-tabs:after {
+  clear: both;
+}
+
+@import 'program-list';
+
+.quicktabs-wrapper .view-content {
+  background-color: #f2f2f2;
+  padding: 15px;
+  min-height: 500px;
+}
+
+#myTabs {
+  ul#my-tabs-horz-list {
+    background: #365543;
+  }
+  .nav-tabs > li > a {
+    color: $anchor-color-hover;
+  }
+}
+
+#ug-scholarship-tbl th, #grad-scholarship-tbl th {
+  background-color: #9e9898;
+  text-align: center;
+}
+
+#ug-scholarship-tbl td, #grad-scholarship-tbl td {
+  padding: 1%;
+}
+
+#est-tuition-fee-tbl {
+  th {
+    background-color: #9e9898;
+    text-align: center;
+  }
+  td {
+    padding: 1%;
+  }
+}
+
+.ug-bachelor-applicant-tbl td, .grad-master-applicant-tbl td {
+  padding: 10px !important;
+}
+
+#myTabs {
+  background-color: #eee;
+}
+
+.important-note tr td {
+  background-color: #fff;
+}
+
+#myTabs {
+  .important-note {
+    background-color: #fff;
+    padding-top: 10px;
+  }
+  .important-note-hdg {
+    color: #365543;
+  }
+}

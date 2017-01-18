@@ -1,0 +1,59 @@
+/* President's Welcome */
+
+.president {
+  padding: 24px 0 0;
+  color: #fff;
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-background-tiffin-pres_3.jpg');
+  h2, h3 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 28px;
+    font-weight: 300;
+    color: $brand-gold;
+    margin: 10px 0 24px;
+  }
+}
+
+.president-details {
+  margin-top: 60px;
+}
+
+.president {
+  .media {
+    text-align: left;
+    margin-bottom: 30px;
+    h4 {
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 1.4;
+      margin-bottom: 0;
+    }
+    p {
+      font-weight: 100;
+      line-height: 1.2;
+    }
+  }
+  .media-left, .media > .pull-left {
+    padding-right: 24px;
+  }
+}
+
+.president-year {
+  font-size: 48px;
+  color: $brand-gold;
+}
+
+.president-pic {
+  width: 458px;
+  height: auto;
+  bottom: 0;
+}
+
+.media.media-element-container {
+  margin-bottom: 0;
+}

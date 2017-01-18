@@ -1,0 +1,41 @@
+.program-nav-items > {
+  .item-list ul.quicktabs-tabs li {
+    display: block;
+    width: 33.3333333333%;
+    float: left;
+  }
+  .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li {
+    width: 25%;
+  }
+  .item-list ul.quicktabs-tabs li a {
+    display: block;
+    border: 1px solid #dbc073;
+    color: #fff;
+    font-size: 24px;
+    padding: 25px 11px 22px 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s ease-in-out;
+    width: 100%;
+  }
+  .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 10px 15px !important;
+      a {
+        color: $brand-green;
+        border: 0;
+        font-size: 21px;
+        line-height: 1.6;
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+      }
+      &.active a {
+        color: #fff;
+      }
+    }
+  }
+}

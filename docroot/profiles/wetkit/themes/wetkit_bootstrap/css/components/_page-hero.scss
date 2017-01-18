@@ -1,0 +1,82 @@
+/* Page Hero */
+
+.page-hero {
+  padding: 24px 0 150px;
+  position: relative;
+  background: no-repeat 50% center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  &::before {
+    background-color: rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.page-hero-90::before {
+  background-color: rgba(56, 84, 67, 0.9);
+}
+
+.page-hero-80::before {
+  background-color: rgba(56, 84, 67, 0.8);
+}
+
+.page-hero-60::before {
+  background-color: rgba(56, 84, 67, 0.6);
+}
+
+.page-hero-40::before {
+  background-color: rgba(56, 84, 67, 0.4);
+}
+
+.page-hero-20::before {
+  background-color: rgba(56, 84, 67, 0.2);
+}
+
+.page-hero {
+  h1, h2 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+    position: relative;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+}
+
+.undergraduate-hero, .graduate-hero, .academics-hero {
+  background-image: url('../images/image-academics-hero-landing.jpg');
+}
+
+.about-hero {
+  background-image: url('../images/about-hero.jpg');
+}
+
+.business-hero {
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-test-criminal-justice-quatro.jpg');
+}
+
+.artsci-hero {
+  background-image: url('../images/image-generic-school.jpg');
+}
+
+.criminal-hero {
+  background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-business-test.jpg');
+}
+
+@media screen and (min-width: 600px) {
+  .page-hero {
+    padding-bottom: 250px;
+    h1, h2 {
+      font-size: 48px;
+    }
+  }
+  .about-hero {
+    padding-bottom: 660px;
+  }
+}
