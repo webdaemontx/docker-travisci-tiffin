@@ -1,0 +1,28 @@
+.hero-sub-navigation {
+  text-align: center;
+
+  ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+
+    & > li {
+      display: table-cell;
+      vertical-align: middle;
+
+      & > a {
+        color: $brand-green;
+        display: block;
+        line-height: 1;
+        font-size: 22px;
+        padding: 20px 10px;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: $brand-gold;
+        }
+      }
+    }
+  }
+}
