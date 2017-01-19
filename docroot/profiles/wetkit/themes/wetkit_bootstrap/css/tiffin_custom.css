@@ -1855,20 +1855,6 @@ ul#icons-admissions-landing-page-last li {
   .view-testimonials-slider .flex-control-paging li a.flex-active {
     background: #d9bf75; }
 
-#mini-panel-international_top_nav ul {
-  list-style-type: none;
-  width: 632px;
-  margin: 5px auto 7px auto; }
-  #mini-panel-international_top_nav ul li {
-    float: left;
-    clear: none;
-    text-align: left;
-    padding-right: 25px; }
-    #mini-panel-international_top_nav ul li a {
-      text-decoration: none !important;
-      font-size: 22px;
-      color: #365543 !important; }
-
 .pane-international-admissions-hero {
   position: relative;
   background-image: url("../images/image-online-programs-hero.jpg");
@@ -2804,22 +2790,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   width: 32%; }
 .view-id-staff_listing .img-responsive {
   margin: 0 auto; }
-
-#mini-panel-online_admissions_top_nav ul, #mini-panel-off_campus_admissions_top_nav ul {
-  list-style-type: none;
-  width: 505px;
-  margin: 5px auto 7px auto; }
-
-#mini-panel-online_admissions_top_nav ul li, #mini-panel-off_campus_admissions_top_nav ul li {
-  float: left;
-  clear: none;
-  text-align: left;
-  padding-right: 25px; }
-
-#mini-panel-online_admissions_top_nav ul li a, #mini-panel-off_campus_admissions_top_nav ul li a {
-  text-decoration: none !important;
-  font-size: 22px;
-  color: #365543 !important; }
 
 html, body {
   width: 100%;
