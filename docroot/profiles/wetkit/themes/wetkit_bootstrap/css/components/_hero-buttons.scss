@@ -1,0 +1,31 @@
+.hero-buttons {
+  @include clearfix;
+  list-style: none;
+  margin: 0;
+
+  & > li {
+    background: none;
+    padding: 2px;
+    white-space: nowrap;
+
+    & > a {
+      display: block;
+      border: 1px solid $brand-gold;
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: 2px;
+      padding: 25px 11px 22px 10px;
+      margin-bottom: 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color .3s ease-in-out;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: $brand-green;
+      }
+    }
+  }
+}
