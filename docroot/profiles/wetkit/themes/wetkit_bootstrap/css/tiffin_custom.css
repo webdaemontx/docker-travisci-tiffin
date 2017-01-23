@@ -4077,11 +4077,18 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     font-size: 14px; }
 
 .hero-sub-navigation {
-  text-align: center; }
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0; }
   .hero-sub-navigation ul {
     display: inline-block;
     list-style: none;
-    margin: 0; }
+    margin: 4px 0 0;
+    padding: 0; }
     .hero-sub-navigation ul > li {
       display: table-cell;
       vertical-align: middle; }
@@ -4090,9 +4097,13 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
         display: block;
         line-height: 1;
         font-size: 22px;
-        padding: 20px 10px;
+        padding: 6px 10px;
         text-decoration: none; }
         .hero-sub-navigation ul > li > a:hover, .hero-sub-navigation ul > li > a:focus {
           color: #d9bf75; }
+
+.has-sub-navigation .pane-title,
+.has-sub-navigation h2 {
+  margin-top: 35px; }
 
 /*# sourceMappingURL=tiffin_custom.css.map */
