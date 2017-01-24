@@ -3,7 +3,8 @@
 .page-hero {
   padding: 24px 0 150px;
   position: relative;
-  background: no-repeat 50% center;
+  background-repeat: no-repeat;
+  background-position: 50% center;
   -webkit-background-size: cover;
   background-size: cover;
   text-align: center;
