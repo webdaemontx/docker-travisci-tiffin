@@ -489,42 +489,42 @@ div.view-homepage-news-slidehow {
 
 /* TU Drone */
 
-.pane-tu-drone-vid {
-  height: 550px;
-  background-image: url('../images/image-drone-background.jpg');
-  /*background-attachment: fixed;*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  div {
-    &#watchtour {
-      margin-top: 2%;
-      background-image: url('../images/drone-click.png');
-      margin-left: 60%;
-      background-repeat: no-repeat;
-      height: 161px;
-      width: 356px;
-      background-position: 0 53px;
-      font-size: 40px;
-      color: white;
-    }
-    &#playtour {
-      background-image: url('../images/icon-opaque-play-video.png');
-      background-position: center;
-      height: 181px;
-      width: 100%;
-      background-repeat: no-repeat;
-    }
-    &#watchtourshell {
-      padding-top: 2%;
-      height: 550px;
-      width: 100%;
-    }
-  }
-  a {
-    text-decoration: none;
-  }
-}
+//.pane-tu-drone-vid {
+//  height: 550px;
+//  background-image: url('../images/image-drone-background.jpg');
+//  /*background-attachment: fixed;*/
+//  background-position: center;
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  div {
+//    &#watchtour {
+//      margin-top: 2%;
+//      background-image: url('../images/drone-click.png');
+//      margin-left: 60%;
+//      background-repeat: no-repeat;
+//      height: 161px;
+//      width: 356px;
+//      background-position: 0 53px;
+//      font-size: 40px;
+//      color: white;
+//    }
+//    &#playtour {
+//      background-image: url('../images/icon-opaque-play-video.png');
+//      background-position: center;
+//      height: 181px;
+//      width: 100%;
+//      background-repeat: no-repeat;
+//    }
+//    &#watchtourshell {
+//      padding-top: 2%;
+//      height: 550px;
+//      width: 100%;
+//    }
+//  }
+//  a {
+//    text-decoration: none;
+//  }
+//}
 
 /* End TU drone */
 
@@ -4467,12 +4467,12 @@ body.node-type-program .pane-node-field-degree-type {
       font-size: 14px;
     }
   }
-  .pane-tu-drone-vid div#watchtour {
-    margin-left: 8%;
-  }
-  #tiffinClickMap {
-    display: none;
-  }
+  //.pane-tu-drone-vid div#watchtour {
+  //  margin-left: 8%;
+  //}
+  //#tiffinClickMap {
+  //  display: none;
+  //}
 }
 
 /* responsive life at tu */

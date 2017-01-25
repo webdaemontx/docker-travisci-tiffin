@@ -354,36 +354,6 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 /* End get to know TU */
 /* might want to consolidate CSS at some point */
 /* TU Drone */
-.pane-tu-drone-vid {
-  height: 550px;
-  background-image: url("../images/image-drone-background.jpg");
-  /*background-attachment: fixed;*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .pane-tu-drone-vid div#watchtour {
-    margin-top: 2%;
-    background-image: url("../images/drone-click.png");
-    margin-left: 60%;
-    background-repeat: no-repeat;
-    height: 161px;
-    width: 356px;
-    background-position: 0 53px;
-    font-size: 40px;
-    color: white; }
-  .pane-tu-drone-vid div#playtour {
-    background-image: url("../images/icon-opaque-play-video.png");
-    background-position: center;
-    height: 181px;
-    width: 100%;
-    background-repeat: no-repeat; }
-  .pane-tu-drone-vid div#watchtourshell {
-    padding-top: 2%;
-    height: 550px;
-    width: 100%; }
-  .pane-tu-drone-vid a {
-    text-decoration: none; }
-
 /* End TU drone */
 /* visit tu form */
 div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 main {
@@ -3292,13 +3262,7 @@ body.node-type-program .pane-node-field-degree-type {
     height: 190px; }
 
   .masonry-processed .views-row-odd .views-field-title-1, .masonry-processed .views-row-even .views-field-title-1 {
-    font-size: 14px; }
-
-  .pane-tu-drone-vid div#watchtour {
-    margin-left: 8%; }
-
-  #tiffinClickMap {
-    display: none; } }
+    font-size: 14px; } }
 /* responsive life at tu */
 /* responsive undergrad */
 .pane-financial-aid-virtual-tour {
