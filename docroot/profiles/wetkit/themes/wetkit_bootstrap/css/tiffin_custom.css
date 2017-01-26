@@ -4044,8 +4044,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     margin: 0;
     padding: 0;
     height: auto;
-    width: 100%;
-    visibility: hidden; }
+    width: 100%; }
 
 .profile-details {
   background-color: rgba(217, 191, 117, 0.3);
@@ -4085,5 +4084,18 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     height: 100%; }
   .responsive-embed.widescreen {
     padding-bottom: 56.25%; }
+
+.pane-tu-drone-vid {
+  position: relative;
+  height: 600px; }
+  .pane-tu-drone-vid .video-click {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%); }
+  .pane-tu-drone-vid .fa-play {
+    color: #fff;
+    font-size: 60px; }
 
 /*# sourceMappingURL=tiffin_custom.css.map */
