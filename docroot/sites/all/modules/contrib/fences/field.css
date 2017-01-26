@@ -1,0 +1,37 @@
+/* Field display */
+.inline-sibling,
+.inline-sibling__wrapper .field-label {
+  display: inline;
+  margin-right: 10px;
+}
+
+  /*
+   * The next element (and its first-child element, if the markup is nested)
+   * needs to be inline.
+   */
+  .inline-sibling + *,
+  .inline-sibling + * > :first-child,
+  .inline-sibling + * > :first-child > :first-child,
+  .inline-sibling__wrapper .field-label + *,
+  .inline-sibling__wrapper .field-label + * > :first-child,
+  .inline-sibling__wrapper .field-label + * > :first-child > :first-child {
+    display: inline;
+  }
+
+/* Form display (from core's field.css) */
+form .field-multiple-table {
+  margin: 0;
+}
+form .field-multiple-table th.field-label {
+  padding-left: 0; /*LTR*/
+}
+form .field-multiple-table td.field-multiple-drag {
+  width: 30px;
+  padding-right: 0; /*LTR*/
+}
+form .field-multiple-table td.field-multiple-drag a.tabledrag-handle {
+  padding-right: .5em; /*LTR*/
+}
+form .field-add-more-submit {
+  margin: .5em 0 0;
+}
