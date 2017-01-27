@@ -380,6 +380,12 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
       ),
     );
   }
+/**  *  Implements hook_preprocess_page().
+ *  removes container-fluid from this particular form
+ */
+if (arg(0) == 'node' && is_numeric(arg(1)) && arg(1) == 1561) {
+  $variables['container_class'] = 'container';
+  }
 }
 
 /**
