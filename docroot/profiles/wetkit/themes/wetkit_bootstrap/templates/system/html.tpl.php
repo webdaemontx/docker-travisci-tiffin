@@ -79,11 +79,5 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.6.0/venobox.min.js"></script>
-  <script>
-      $(document).ready(function(){
-          $('.venobox').venobox();
-      });
-  </script>
 </body>
 </html>

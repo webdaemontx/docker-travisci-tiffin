@@ -24,6 +24,7 @@
 .pane-tu-drone-vid {
   position: relative;
   height: 600px;
+  overflow: hidden;
 
   .video-click {
     position: absolute;
@@ -36,5 +37,11 @@
   .fa-play {
     color: #fff;
     font-size: 60px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+
+    &:hover,
+    &:focus {
+      color: $brand-green;
+    }
   }
 }

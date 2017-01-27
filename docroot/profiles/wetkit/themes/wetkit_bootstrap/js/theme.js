@@ -34,6 +34,10 @@ jQuery( document ).ready( function () {
 
 (function ( $ ) {
 
+  $('.venobox').venobox({
+    bgcolor: '#385443'
+  });
+
   var $window = $( window ),
     navbar = $( '#navbar' ).outerHeight(),
     sticky = $( '#mini-panel-homepage_submenu' ).outerHeight();

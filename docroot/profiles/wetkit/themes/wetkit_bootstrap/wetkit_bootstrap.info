@@ -24,6 +24,7 @@ regions[page_bottom] = Page bottom
 stylesheets[all][] = css/wetkit_bootstrap.styles.css
 stylesheets[all][] = css/tiffin_custom.css
 stylesheets[all][] = css/hover-min.css
+stylesheets[all][] = vendor/venobox/venobox.css
 
 
 ; ========================================
@@ -46,6 +47,7 @@ scripts[] = js/animatedModal.min.js
 scripts[] = js/animated-menu-line.js
 scripts[] = js/scroll-fun.js
 scripts[] = js/jquery.matchHeight-min.js
+scripts[] = vendor/venobox/venobox.js
 
 
 ; ========================================

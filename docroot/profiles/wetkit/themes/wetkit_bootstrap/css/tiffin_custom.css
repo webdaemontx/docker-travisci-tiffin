@@ -4087,7 +4087,8 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 .pane-tu-drone-vid {
   position: relative;
-  height: 600px; }
+  height: 600px;
+  overflow: hidden; }
   .pane-tu-drone-vid .video-click {
     position: absolute;
     top: 50%;
@@ -4096,6 +4097,9 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     transform: translate(-50%, -50%); }
   .pane-tu-drone-vid .fa-play {
     color: #fff;
-    font-size: 60px; }
+    font-size: 60px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+    .pane-tu-drone-vid .fa-play:hover, .pane-tu-drone-vid .fa-play:focus {
+      color: #385443; }
 
 /*# sourceMappingURL=tiffin_custom.css.map */
