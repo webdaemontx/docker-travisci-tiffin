@@ -1,6 +1,6 @@
 /* President's Welcome */
 
-.president {
+.page-hero.president {
   padding: 24px 0 0;
   color: #fff;
   background-image: url('http://tiffin.prod.acquia-sites.com/sites/default/files/image-background-tiffin-pres_3.jpg');
@@ -16,6 +16,10 @@
     font-weight: 300;
     color: $brand-gold;
     margin: 10px 0 24px;
+  }
+
+  @media screen and (min-width: 600px) {
+    padding-bottom: 0;
   }
 }
 

@@ -298,8 +298,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a {
 /* Nav */
 #wb-sm {
   height: 85px;
-  padding-top: 15px;
-  padding-left: 40px; }
+  padding-top: 15px; }
 
 #wb-bar {
   background: #365543; }
@@ -1137,8 +1136,7 @@ ul#click-on-programs {
   background-color: #d9bf75; }
 
 #wb-sm .menu {
-  font-size: 24px;
-  margin-right: 1%; }
+  font-size: 24px; }
 
 @media (max-width: 1240px) {
   #wb-sm .menu {
@@ -1152,9 +1150,6 @@ ul#click-on-programs {
   .wb-menu .menu > li.first {
     margin: 0 0 0 74px; }
 
-@media (max-width: 1240px) {
-  .wb-menu .menu > li.first {
-    margin: 0 0 0 24px; } }
 #wb-srch .form-group {
   display: inline; }
 
@@ -1178,6 +1173,8 @@ ul[role=menubar] #opener {
   display: none; }
 
 #tiffin_logo {
+  position: relative;
+  left: 40px;
   float: left;
   clear: none; }
   #tiffin_logo img {
@@ -1197,10 +1194,7 @@ div.flex-caption {
   display: none !important; }
 
 #wb-srch {
-  float: left;
-  clear: none;
   width: 165px;
-  padding-top: 0;
   text-align: left; }
 
 #search-form input {
@@ -3592,20 +3586,23 @@ body.node-type-program .pane-node-field-degree-type {
   transform: translate(-50%, -50%); }
 
 /* President's Welcome */
-.president {
+.page-hero.president {
   padding: 24px 0 0;
   color: #fff;
   background-image: url("http://tiffin.prod.acquia-sites.com/sites/default/files/image-background-tiffin-pres_3.jpg"); }
-  .president h2, .president h3 {
+  .page-hero.president h2, .page-hero.president h3 {
     text-align: center;
     text-transform: uppercase; }
-  .president h2 {
+  .page-hero.president h2 {
     margin-bottom: 0; }
-  .president h3 {
+  .page-hero.president h3 {
     font-size: 28px;
     font-weight: 300;
     color: #d9bf75;
     margin: 10px 0 24px; }
+  @media screen and (min-width: 600px) {
+    .page-hero.president {
+      padding-bottom: 0; } }
 
 .president-details {
   margin-top: 60px; }
@@ -4105,5 +4102,24 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 .vbox-overlay.custom-overlay {
   background: rgba(56, 84, 67, 0.8); }
+
+.main-navigation {
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+  .main-navigation > .menu {
+    display: inline-block;
+    float: none; }
+    .main-navigation > .menu > li {
+      float: none;
+      display: table-cell; }
+      .main-navigation > .menu > li.first {
+        display: none; }
+
+.search-form {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px; }
 
 /*# sourceMappingURL=tiffin_custom.css.map */

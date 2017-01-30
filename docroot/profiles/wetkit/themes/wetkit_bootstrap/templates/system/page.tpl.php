@@ -111,6 +111,7 @@
           <?php } ?>
         </div>
         <section id="wb-srch" class="col-md-4 visible-md visible-lg">
+          <h1>test</h1>
           <h2><?php print t('Search'); ?></h2>
           <?php if ($search_box): ?>
             <?php print $search_box; ?>

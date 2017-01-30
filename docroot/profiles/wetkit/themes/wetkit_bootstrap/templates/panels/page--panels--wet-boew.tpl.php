@@ -109,7 +109,7 @@
       </div>
     </div>
   </div>
-  <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl">
+  <nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" style="position: relative;">
     <div class="pnl-strt <?php print $container_class; ?> visible-md visible-lg nvbar">
       <h2><?php print t('Topics menu'); ?></h2>
       <div class="row">
@@ -125,14 +125,17 @@
 
 
 
-        <?php print render($page['mega_menu']); ?>
-        <?php print render($secondary_nav); ?>
-          <section id="wb-srch" class="col-md-4 visible-md visible-lg">
-              <h2><?php print t('Search'); ?></h2>
-              <?php if ($search_box): ?>
-                  <?php print $search_box; ?>
-              <?php endif; ?>
-          </section>
+        <div class="main-navigation">
+          <?php print render($page['mega_menu']); ?>
+          <?php print render($secondary_nav); ?>
+        </div>
+
+        <section id="wb-srch" class="search-form">
+          <h2><?php print t('Search'); ?></h2>
+          <?php if ($search_box): ?>
+            <?php print $search_box; ?>
+          <?php endif; ?>
+        </section>
       </div>
     </div>
   </nav>

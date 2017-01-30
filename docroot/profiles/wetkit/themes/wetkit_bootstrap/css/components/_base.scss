@@ -413,7 +413,7 @@ div.view-homepage-news-slidehow {
 #wb-sm {
   height: 85px;
   padding-top: 15px;
-  padding-left: 40px;
+  //padding-left: 40px;
 }
 
 #wb-bar {
@@ -1548,7 +1548,7 @@ ul#click-on-programs {
 
 #wb-sm .menu {
   font-size: 24px;
-  margin-right: 1%;
+  //margin-right: 1%;
 }
 
 @media (max-width: 1240px) {
@@ -1572,11 +1572,11 @@ ul#click-on-programs {
   }
 }
 
-@media (max-width: 1240px) {
-  .wb-menu .menu > li.first {
-    margin: 0 0 0 24px;
-  }
-}
+//@media (max-width: 1240px) {
+//  .wb-menu .menu > li.first {
+//    margin: 0 0 0 24px;
+//  }
+//}
 
 #wb-srch .form-group {
   display: inline;
@@ -1610,6 +1610,8 @@ ul[role=menubar] #opener {
 }
 
 #tiffin_logo {
+  position: relative;
+  left: 40px;
   float: left;
   clear: none;
   img {
@@ -1637,10 +1639,7 @@ div.flex-caption {
 }
 
 #wb-srch {
-  float: left;
-  clear: none;
   width: 165px;
-  padding-top: 0;
   text-align: left;
 }
 
