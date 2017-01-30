@@ -1611,12 +1611,15 @@ ul[role=menubar] #opener {
 
 #tiffin_logo {
   position: relative;
-  left: 40px;
   float: left;
   clear: none;
   img {
     width: 140px;
     height: 55px;
+  }
+
+  @media (min-width: 992px) {
+    left: 40px;
   }
 }
 

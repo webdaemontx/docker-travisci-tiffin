@@ -3,6 +3,11 @@
   padding: 0;
   text-align: center;
 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   & > .menu {
     display: inline-block;
     float: none;
@@ -18,9 +23,11 @@
   }
 }
 
-.search-form {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 15px;
+@media (min-width: 992px) {
+  .search-form {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+  }
 }
