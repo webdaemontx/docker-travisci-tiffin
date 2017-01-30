@@ -3525,6 +3525,14 @@ body.node-type-program .pane-node-field-degree-type {
   #finaidandcalc a:nth-of-type(2) div {
     background-image: url("/sites/default/files/icon-xl-financial-aid.png"); }
 
+.page-node-1561 #header_3 {
+  text-align: center;
+  padding-top: 20px; }
+.page-node-1561 #cid_4 {
+  text-align: center; }
+.page-node-1561 di#text_4 {
+  padding: 0 10px 1px 20px; }
+
 .site-breadcrumbs {
   color: #385443;
   background-color: #d9bf75;
