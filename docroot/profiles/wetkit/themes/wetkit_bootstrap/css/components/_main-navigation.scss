@@ -23,10 +23,12 @@
 }
 
 @media (min-width: 992px) {
-  .search-form {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 15px;
+  #navbar {
+    .search-form {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+    }
   }
 }

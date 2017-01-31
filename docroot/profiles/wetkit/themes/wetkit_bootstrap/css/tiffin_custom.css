@@ -1179,9 +1179,10 @@ ul[role=menubar] #opener {
   #tiffin_logo img {
     width: 140px;
     height: 55px; }
-  @media (min-width: 992px) {
-    #tiffin_logo {
-      left: 40px; } }
+
+@media (min-width: 992px) {
+  #navbar #tiffin_logo {
+    left: 40px; } }
 
 #wb-sm {
   background-color: #365543 !important; }
@@ -3530,7 +3531,7 @@ body.node-type-program .pane-node-field-degree-type {
   padding-top: 20px; }
 .page-node-1561 #cid_4 {
   text-align: center; }
-.page-node-1561 di#text_4 {
+.page-node-1561 #text_4 {
   padding: 0 10px 1px 20px; }
 
 .site-breadcrumbs {
@@ -4131,7 +4132,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
         display: none; }
 
 @media (min-width: 992px) {
-  .search-form {
+  #navbar .search-form {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
