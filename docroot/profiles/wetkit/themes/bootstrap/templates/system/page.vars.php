@@ -67,6 +67,9 @@ function bootstrap_preprocess_page(&$variables) {
   else {
     $variables['navbar_classes_array'][] = 'navbar-default';
   }
+  if (arg(0) == 'node' && is_numeric(arg(1)) && arg(1) == 1561) {
+    drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/miscTiffinUpdates.js');
+  }
 }
 
 /**
