@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: 'Lato', sans-serif;
   padding-top: 0;
@@ -2195,18 +2194,16 @@ ul#icons-admissions-landing-page-last li {
     margin-top: 2px; } }
 @media (max-width: 775px) {
   .pane-graduate-admissions-hero, .pane-online-admissions-hero, .pane-undergraduate-admissions-hero {
-    height: 400px; }
+    height: 600px;
+    background-position: 0 0; }
 
   .pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
     display: block;
     margin: 10px auto 0 auto;
     width: 100%;
-    float: left;
     padding: 0; }
 
   .pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
-    width: 100%;
-    float: left;
     clear: both; }
 
   .pane-graduate-admissions-hero ul li:nth-of-type(3), .pane-undergraduate-admissions-hero ul li:nth-of-type(3), .pane-online-admissions-hero ul li:nth-of-type(3), .pane-graduate-admissions-hero ul li:nth-of-type(2), .pane-online-admissions-hero ul li:nth-of-type(2), .pane-undergraduate-admissions-hero ul li:nth-of-type(2) {
@@ -3504,7 +3501,6 @@ body.node-type-program .pane-node-field-degree-type {
 .pane-financial-aid-virtual-tour {
   height: 480px;
   background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/get-to-know-campus-background.jpg");
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -3529,8 +3525,6 @@ body.node-type-program .pane-node-field-degree-type {
 .page-node-1561 #header_3 {
   text-align: center;
   padding-top: 20px; }
-.page-node-1561 #cid_4 {
-  text-align: center; }
 .page-node-1561 #text_4 {
   padding: 0 10px 1px 20px; }
 
@@ -3849,14 +3843,13 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   position: absolute;
   right: 0;
   bottom: 0;
-  font-family: 'FontAwesome';
-  content: ''; }
+  font-family: 'FontAwesome'; }
 
 .socialfeed .field-name-field-instagram-picture::after {
-  content: ''; }
+  content: '\f16d'; }
 
 .masonry-item .facebook-tile::after {
-  content: ''; }
+  content: '\f09a'; }
 
 .field-name-field-tweet-user-picture {
   padding-top: 20px;
@@ -3867,7 +3860,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     right: 0;
     bottom: 0;
     font-family: 'FontAwesome';
-    content: ''; }
+    content: '\f099'; }
 
 /* Page Hero */
 .page-hero {
@@ -4026,9 +4019,11 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
         color: #385443;
         display: block;
         line-height: 1;
-        font-size: 22px;
         padding: 6px 10px;
         text-decoration: none; }
+        @media (min-width: 992px) {
+          .hero-sub-navigation ul > li > a {
+            font-size: 22px; } }
         .hero-sub-navigation ul > li > a:hover, .hero-sub-navigation ul > li > a:focus {
           color: #d9bf75; }
 

@@ -3002,18 +3002,19 @@ ul {
 
 @media (max-width: 775px) {
   .pane-graduate-admissions-hero, .pane-online-admissions-hero, .pane-undergraduate-admissions-hero {
-    height: 400px;
+    height: 600px;
+    background-position: 0 0;
   }
   .pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
     display: block;
     margin: 10px auto 0 auto;
     width: 100%;
-    float: left;
+    //float: left;
     padding: 0;
   }
   .pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
-    width: 100%;
-    float: left;
+    //width: 100%;
+    //float: left;
     clear: both;
   }
   .pane-graduate-admissions-hero ul li:nth-of-type(3), .pane-undergraduate-admissions-hero ul li:nth-of-type(3), .pane-online-admissions-hero ul li:nth-of-type(3), .pane-graduate-admissions-hero ul li:nth-of-type(2), .pane-online-admissions-hero ul li:nth-of-type(2), .pane-undergraduate-admissions-hero ul li:nth-of-type(2) {
@@ -4823,7 +4824,7 @@ body.node-type-program .pane-node-field-degree-type {
 .pane-financial-aid-virtual-tour {
   height: 480px;
   background-image: url('/profiles/wetkit/themes/wetkit_bootstrap/images/get-to-know-campus-background.jpg');
-  background-attachment: fixed;
+  //background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4858,7 +4859,7 @@ body.node-type-program .pane-node-field-degree-type {
     padding-top: 20px;
   }
   #cid_4 {
-    text-align: center;
+    //text-align: center;
   }
   #text_4 {
     padding: 0 10px 1px 20px;

@@ -11,15 +11,15 @@
   right: 0;
   bottom: 0;
   font-family: 'FontAwesome';
-  content: '';
+  //content: '\f16d';
 }
 
 .socialfeed .field-name-field-instagram-picture::after {
-  content: '';
+  content: '\f16d';
 }
 
 .masonry-item .facebook-tile::after {
-  content: '';
+  content: '\f09a';
 }
 
 .field-name-field-tweet-user-picture {
@@ -31,6 +31,6 @@
     right: 0;
     bottom: 0;
     font-family: 'FontAwesome';
-    content: '';
+    content: '\f099';
   }
 }
