@@ -71,19 +71,9 @@
   </h3>
   <?php print render($title_suffix); ?>
   <div class="search-snippet-info">
-    <?php // if ($snippet): ?>
-    <?php
-      if (empty($str = $result['node']->body['und'][0]['value'])){
-        $str = $result['node']->body['en'][0]['value'] . $snippet;
-      }else{
-        $str = $result['node']->body['und'][0]['value'];     
-      }
-    ?>
-      <?php
-      if (strlen($str) > 1000)
-      $str = substr($str, 0, 999) . '...';?>
-      <p class="search-snippet"<?php print $content_attributes; ?>><?php print strip_tags($str); ?></p>
-    <?php // endif; ?>
+    <?php if ($snippet): ?>
+      <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
+    <?php endif; ?>
     <?php if ($info): ?>
       <p class="search-info"><?php print $info; ?></p>
     <?php endif; ?>
