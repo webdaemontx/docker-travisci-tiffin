@@ -61,15 +61,10 @@ function token_page_output_tree() {
   // a dialog.
   $options['dialog'] = FALSE;
 
-  $commands = array();
-  $commands[] = array(
-    'command' => 'tokenDialog',
-    'tree' => theme('token_tree', $options),
-  );
-  return array(
-    '#type' => 'ajax',
-    '#commands' => $commands,
-  );
+  $output = theme('token_tree', $options);
+  print '<html><head>' . drupal_get_css() . drupal_get_js() . '</head>';
+  print '<body class="token-tree">' . $output . '</body></html>';
+  drupal_exit();
 }
 
 /**
@@ -203,9 +198,8 @@ function _token_token_tree_format_row($token, array $token_info, $is_group = FAL
 
   $row = $defaults;
   $row['id'] = _token_clean_css_identifier($token);
-  $row['data']['name']['data'] = $token_info['name'];
-  $row['data']['name']['class'] = array('token-name');
-  $row['data']['description'] = $token_info['description'];
+  $row['data']['name'] = $token_info['name'];
+  $row['data']['description'] = isset($token_info['description']) ? $token_info['description'] : '';
 
   if ($is_group) {
     // This is a token type/group.
@@ -213,6 +207,7 @@ function _token_token_tree_format_row($token, array $token_info, $is_group = FAL
   }
   else {
     // This is a token.
+    $row['data']['token'] = array();
     $row['data']['token']['data'] = $token;
     $row['data']['token']['class'][] = 'token-key';
     if (isset($token_info['value'])) {
