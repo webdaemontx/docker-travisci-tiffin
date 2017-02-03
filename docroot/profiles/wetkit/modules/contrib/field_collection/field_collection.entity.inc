@@ -215,20 +215,9 @@ class FieldCollectionItemEntity extends Entity {
    *
    * @param object $entity
    *   Host entity.
-   * @param string $host_entity_type
-   *   The entity type of the entity the field collection is attached to.
    */
-  public function updateHostEntity($entity, $host_entity_type = NULL) {
+  public function updateHostEntity($entity) {
     $this->fetchHostDetails();
-    // If it isn't possible to retrieve hostEntityType due to the fact that it's
-    // not saved in the DB yet then fill in info about the hostEntity manually.
-    // This happens when creating a new revision of a field collection entity
-    // and it needs to relate to the new revision of the host entity.
-    if (!$this->hostEntityType) {
-      $this->hostEntityType = $host_entity_type;
-      $this->hostEntity = $entity;
-      list($this->hostEntityId, $this->hostEntityRevisionId) = entity_extract_ids($this->hostEntityType, $this->hostEntity);
-    }
     list($recieved_id) = entity_extract_ids($this->hostEntityType, $entity);
 
     if ($this->isInUse()) {
@@ -590,15 +579,6 @@ class FieldCollectionItemEntity extends Entity {
     $export .= addcslashes(parent::export(), '\\\'');
     $export .= "')";
     return $export;
-  }
-
-  /**
-   * Generate an array for rendering the field collection item.
-   */
-  public function view($view_mode = 'full', $langcode = NULL, $page = NULL) {
-    // Allow modules to change the view mode.
-    $view_mode = key(entity_view_mode_prepare($this->entityType, array($this->item_id => $this), $view_mode, $langcode));
-    return parent::view($view_mode, $langcode, $page);
   }
 
   /**
