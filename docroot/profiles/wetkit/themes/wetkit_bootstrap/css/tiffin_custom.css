@@ -2755,23 +2755,21 @@ html, body {
   color: #365543;
   font-size: 41px; }
 
-.pane-undergraduate-admissions-panel-pane-3, .pane-undergraduate-admissions-panel-pane-4, .pane-undergraduate-admissions-panel-pane-5, .pane-undergraduate-admissions-panel-pane-6 {
+div[class*="pane-undergraduate-admissions-panel-pane-"] {
   width: 80%;
   margin: 0 auto;
   padding-bottom: 60px; }
-
-.pane-undergraduate-admissions-panel-pane-3 .view-content a, .pane-undergraduate-admissions-panel-pane-4 .view-content a, .pane-undergraduate-admissions-panel-pane-5 .view-content a, .pane-undergraduate-admissions-panel-pane-6 .view-content a {
-  font-size: 21px;
-  color: #11361E;
-  text-decoration: none; }
-
-.pane-undergraduate-admissions-panel-pane-3 h2, .pane-undergraduate-admissions-panel-pane-4 h2, .pane-undergraduate-admissions-panel-pane-5 h2, .pane-undergraduate-admissions-panel-pane-6 h2 {
-  color: #11361E;
-  background-color: rgba(255, 255, 255, 0.75);
-  margin: 31px auto 30px auto;
-  background-size: 27px;
-  font-size: 29px;
-  text-align: left; }
+  div[class*="pane-undergraduate-admissions-panel-pane-"] .view-content a {
+    font-size: 21px;
+    color: #11361E;
+    text-decoration: none; }
+  div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
+    color: #11361E;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 31px auto 30px auto;
+    background-size: 27px;
+    font-size: 29px;
+    text-align: left; }
 
 .pane-undergraduate-admissions-panel-pane-3 h2 {
   background-position-x: 171px !important;
@@ -2789,7 +2787,15 @@ html, body {
   background-position-x: 171px !important;
   width: 530px !important; }
 
-.page-international ol.breadcrumb, .page-academics ol.breadcrumb, .page-about ol.breadcrumb, .page-campuslife ol.breadcrumb, .page-admissions ol.breadcrumb, .page-ccp ol.breadcrumb, .node-type-program ol.breadcrumb, .page-degreecomp ol.breadcrumb, .page-undergrad-welcome ol.breadcrumb {
+.page-international ol.breadcrumb,
+.page-academics ol.breadcrumb,
+.page-about ol.breadcrumb,
+.page-campuslife ol.breadcrumb,
+.page-admissions ol.breadcrumb,
+.page-ccp ol.breadcrumb,
+.node-type-program ol.breadcrumb,
+.page-degreecomp ol.breadcrumb,
+.page-undergrad-welcome ol.breadcrumb {
   display: none; }
 
 #mb-pnl .sec-pnl {
