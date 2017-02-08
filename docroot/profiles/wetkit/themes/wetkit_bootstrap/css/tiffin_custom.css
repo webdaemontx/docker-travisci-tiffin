@@ -5271,106 +5271,167 @@ body.node-type-program .pane-node-field-degree-type {
   padding: 0 10px 1px 20px;
 }
 
+/* line 1, components/_events-landing.scss */
 .view-id-events-landing .img-responsive, .pane-cabinet-members .img-responsive, .pane-board-members .img-responsive {
-  margin: 10px auto 18px auto; }
+  margin: 10px auto 18px auto;
+}
 
+/* line 6, components/_events-landing.scss */
 .view-id-events-landing .masonry-item .views-field-field-events-landing-title, .view-id-events-landing .masonry-item .views-field-title {
-  text-align: center; }
+  text-align: center;
+}
 
+/* line 11, components/_events-landing.scss */
 .pane-cabinet-members .masonry-item .views-field-title, .pane-board-members .masonry-item .views-field-title, .pane-cabinet-members .masonry-item .field-name-field-board-position .field-item, .pane-board-members .masonry-item .field-name-field-board-position .field-item {
-  text-align: center; }
+  text-align: center;
+}
 
+/* line 16, components/_events-landing.scss */
 .masonry-processed .views-row-even {
   border: 1px solid #95d0ad;
-  text-align: center; }
-  .masonry-processed .views-row-even .field {
-    color: #365543; }
-  .masonry-processed .views-row-even .views-field-title {
-    font-style: italic;
-    font-weight: bold;
-    color: #5daf6c;
-    text-align: center; }
-    .masonry-processed .views-row-even .views-field-title a {
-      color: #365543; }
-  .masonry-processed .views-row-even .views-field-title-1 {
-    color: #365543; }
-  .masonry-processed .views-row-even .views-field-field-quick-news-description {
-    color: #365543;
-    margin-top: 20px; }
+  text-align: center;
+}
+/* line 19, components/_events-landing.scss */
+.masonry-processed .views-row-even .field {
+  color: #365543;
+}
+/* line 22, components/_events-landing.scss */
+.masonry-processed .views-row-even .views-field-title {
+  font-style: italic;
+  font-weight: bold;
+  color: #5daf6c;
+  text-align: center;
+}
+/* line 27, components/_events-landing.scss */
+.masonry-processed .views-row-even .views-field-title a {
+  color: #365543;
+}
+/* line 31, components/_events-landing.scss */
+.masonry-processed .views-row-even .views-field-title-1 {
+  color: #365543;
+}
+/* line 34, components/_events-landing.scss */
+.masonry-processed .views-row-even .views-field-field-quick-news-description {
+  color: #365543;
+  margin-top: 20px;
+}
+/* line 39, components/_events-landing.scss */
 .masonry-processed .views-row-odd {
   border: 1px solid #dbc073;
-  text-align: center; }
-  .masonry-processed .views-row-odd .field {
-    color: #887235; }
-  .masonry-processed .views-row-odd .views-field-title {
-    color: #dbc073;
-    font-weight: bold;
-    font-style: italic; }
+  text-align: center;
+}
+/* line 42, components/_events-landing.scss */
+.masonry-processed .views-row-odd .field {
+  color: #887235;
+}
+/* line 45, components/_events-landing.scss */
+.masonry-processed .views-row-odd .views-field-title {
+  color: #dbc073;
+  font-weight: bold;
+  font-style: italic;
+}
 
+/* line 53, components/_events-landing.scss */
 .pane-events-landing-panel-pane-3 .masonry-processed .views-row-odd .views-field-title a, .pane-events-landing-panel-pane-2 .masonry-processed .views-row-odd .views-field-title a, .pane-events-landing-panel-pane-1 .masonry-processed .views-row-odd .views-field-title a {
   text-align: center;
-  color: #887235; }
+  color: #887235;
+}
 
+/* line 58, components/_events-landing.scss */
 .masonry-processed {
-  margin-bottom: 70px; }
-  .masonry-processed .views-row-odd .views-field-title a, .masonry-processed .views-row-odd .views-field-title-1 {
-    color: #887235; }
-  .masonry-processed .views-row-odd .views-field-field-quick-news-description {
-    color: #887235;
-    margin-top: 20px; }
+  margin-bottom: 70px;
+}
+/* line 60, components/_events-landing.scss */
+.masonry-processed .views-row-odd .views-field-title a, .masonry-processed .views-row-odd .views-field-title-1 {
+  color: #887235;
+}
+/* line 63, components/_events-landing.scss */
+.masonry-processed .views-row-odd .views-field-field-quick-news-description {
+  color: #887235;
+  margin-top: 20px;
+}
 
+/* line 71, components/_events-landing.scss */
 .pane-events-landing-panel-pane-3 h2.pane-title, .pane-events-landing-panel-pane-2 h2.pane-title, .pane-events-landing-panel-pane-1 h2.pane-title, .pane-news h2.pane-title, .pane-cabinet-members h2.pane-title, .pane-board-members h2.pane-title {
   text-align: center;
   font-size: 39px;
   color: #365543;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+}
 
+/* line 78, components/_events-landing.scss */
 .pane-events-landing-panel-pane-3, .pane-events-landing-panel-pane-2, .pane-events-landing-panel-pane-1, .pane-cabinet-members {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
+/* line 83, components/_events-landing.scss */
 .node-type-news-page .field-name-field-news-front-slider-image {
-  display: none; }
+  display: none;
+}
 
 @media (max-width: 1080px) {
+  /* line 88, components/_events-landing.scss */
   .pane-undergraduate-program .views-field-title a {
-    font-size: 26px; }
+    font-size: 26px;
+  }
 
+  /* line 91, components/_events-landing.scss */
   .pane-life-at-tu-hero-top ul li p {
     margin: 42px 0 0 48% !important;
     font-size: 25px !important;
     text-align: center !important;
     width: 100px !important;
-    line-height: 26px; } }
+    line-height: 26px;
+  }
+}
 @media (max-width: 760px) {
+  /* line 101, components/_events-landing.scss */
   .pane-life-at-tu-hero-top {
-    height: 1320px !important; }
-    .pane-life-at-tu-hero-top ul {
-      display: block;
-      width: 90% !important;
-      margin: 0 auto 0 auto !important; }
-      .pane-life-at-tu-hero-top ul li {
-        width: 100% !important;
-        clear: both !important;
-        float: left !important; }
-        .pane-life-at-tu-hero-top ul li p {
-          margin: 64px 0 0 33% !important;
-          width: 200px !important; }
+    height: 1320px !important;
+  }
+  /* line 102, components/_events-landing.scss */
+  .pane-life-at-tu-hero-top ul {
+    display: block;
+    width: 90% !important;
+    margin: 0 auto 0 auto !important;
+  }
+  /* line 106, components/_events-landing.scss */
+  .pane-life-at-tu-hero-top ul li {
+    width: 100% !important;
+    clear: both !important;
+    float: left !important;
+  }
+  /* line 110, components/_events-landing.scss */
+  .pane-life-at-tu-hero-top ul li p {
+    margin: 64px 0 0 33% !important;
+    width: 200px !important;
+  }
 
+  /* line 118, components/_events-landing.scss */
   .pane-dragon-perks ul {
-    display: block; }
-    .pane-dragon-perks ul li {
-      width: 100% !important;
-      height: 196px; } }
+    display: block;
+  }
+  /* line 119, components/_events-landing.scss */
+  .pane-dragon-perks ul li {
+    width: 100% !important;
+    height: 196px;
+  }
+}
 @media (max-width: 675px) {
+  /* line 128, components/_events-landing.scss */
   .pane-discover-tiffin-ohio p {
     margin-top: 160px;
     font-size: 32px;
-    height: 57px; }
+    height: 57px;
+  }
 
+  /* line 133, components/_events-landing.scss */
   body.node-type-program .pane-discover-tiffin-ohio {
-    height: 315px; }
+    height: 315px;
+  }
 
+  /* line 137, components/_events-landing.scss */
   .view-life-at-tu-events-landing .masonry-processed .masonry-item {
     width: 49% !important;
     position: relative !important;
@@ -5378,13 +5439,20 @@ body.node-type-program .pane-node-field-degree-type {
     clear: none;
     left: 0 !important;
     top: 0 !important;
-    height: 230px; }
+    height: 230px;
+  }
+  /* line 146, components/_events-landing.scss */
   .view-life-at-tu-events-landing .img-responsive {
     max-width: 150px;
-    height: 150px; }
+    height: 150px;
+  }
 
+  /* line 152, components/_events-landing.scss */
   .masonry-processed .views-row-odd .views-field-title-1, .masonry-processed .views-row-even .views-field-title-1 {
-    font-size: 14px; } }
+    font-size: 14px;
+  }
+}
+/* line 1, components/_breadcrumbs.scss */
 .site-breadcrumbs {
   color: #385443;
   background-color: #d9bf75;
