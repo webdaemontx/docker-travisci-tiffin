@@ -152,4 +152,37 @@
     .views-row-odd .views-field-title-1, .views-row-even .views-field-title-1 {
       font-size: 14px;
     }
-  }}
+  }
+}
+
+.view-events-landing {
+  .views-row {
+    @include clearfix;
+    padding: 20px 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .field-name-field-image {
+    float: left;
+    padding-right: 20px;
+
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  .views-field-title {
+    font-size: 21px;
+
+    a {
+      color: $brand-green;
+      text-decoration: none;
+    }
+  }
+
+  .field-name-field-event-date {
+    font-size: 14px;
+  }
+}
+
