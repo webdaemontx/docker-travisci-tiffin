@@ -101,7 +101,7 @@
     </div>
     <div class="<?php print $container_class; ?>">
       <div class="row">
-        <div id="wb-sttl" class="col-md-8">
+        <div id="wb-sttl" class="col-md-8 hide">
           <?php if ($site_name || $logo) { ?>
             <a href="<?php print $site_name_url; ?>">
               <?php if ($logo): ?>

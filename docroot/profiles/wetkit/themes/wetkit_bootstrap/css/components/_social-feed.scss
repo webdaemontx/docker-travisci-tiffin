@@ -1,36 +1,38 @@
 /* Social Icons */
 
-.socialfeed .field-name-field-instagram-picture, .masonry-item .facebook-tile {
-  padding-bottom: 40px;
-  position: relative;
-}
+.view-social-feed {
+  .field-name-field-instagram-picture,
+  .masonry-item .facebook-tile,
+  .field-name-field-tweet-user-picture {
+    padding-bottom: 40px;
+    position: relative;
 
-.socialfeed .field-name-field-instagram-picture::after, .masonry-item .facebook-tile::after {
-  color: $brand-green;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-family: 'FontAwesome';
-  //content: '\f16d';
-}
+    &::after {
+      color: $brand-green;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-family: 'FontAwesome';
+      //content: '\f16d';
+    }
+  }
 
-.socialfeed .field-name-field-instagram-picture::after {
-  content: '\f16d';
-}
+  // Instagram
+  .field-name-field-instagram-picture {
+    &::after {
+      content: '\f16d';
+    }
+  }
 
-.masonry-item .facebook-tile::after {
-  content: '\f09a';
-}
+  // Facebook
+  .masonry-item .facebook-tile::after {
+    content: '\f09a';
+  }
 
-.field-name-field-tweet-user-picture {
-  padding-top: 20px;
-  position: relative;
-  &::after {
-    color: $brand-green;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-family: 'FontAwesome';
-    content: '\f099';
+  // Twitter
+  .field-name-field-tweet-user-picture {
+    &::after {
+      content: '\f099';
+    }
   }
 }

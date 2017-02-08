@@ -4000,33 +4000,25 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   color: #365543; }
 
 /* Social Icons */
-.socialfeed .field-name-field-instagram-picture, .masonry-item .facebook-tile {
+.view-social-feed .field-name-field-instagram-picture,
+.view-social-feed .masonry-item .facebook-tile,
+.view-social-feed .field-name-field-tweet-user-picture {
   padding-bottom: 40px;
   position: relative; }
-
-.socialfeed .field-name-field-instagram-picture::after, .masonry-item .facebook-tile::after {
-  color: #385443;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-family: 'FontAwesome'; }
-
-.socialfeed .field-name-field-instagram-picture::after {
-  content: '\f16d'; }
-
-.masonry-item .facebook-tile::after {
-  content: '\f09a'; }
-
-.field-name-field-tweet-user-picture {
-  padding-top: 20px;
-  position: relative; }
-  .field-name-field-tweet-user-picture::after {
+  .view-social-feed .field-name-field-instagram-picture::after,
+  .view-social-feed .masonry-item .facebook-tile::after,
+  .view-social-feed .field-name-field-tweet-user-picture::after {
     color: #385443;
     position: absolute;
     right: 0;
     bottom: 0;
-    font-family: 'FontAwesome';
-    content: '\f099'; }
+    font-family: 'FontAwesome'; }
+.view-social-feed .field-name-field-instagram-picture::after {
+  content: '\f16d'; }
+.view-social-feed .masonry-item .facebook-tile::after {
+  content: '\f09a'; }
+.view-social-feed .field-name-field-tweet-user-picture::after {
+  content: '\f099'; }
 
 /* Page Hero */
 .page-hero {
