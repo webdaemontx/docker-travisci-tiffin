@@ -1,6 +1,22 @@
+# Ignore configuration files that may contain sensitive information.
+docroot/sites/*/settings*.php
+docroot/sites/default/settings.php
+
+
 # Ignore paths that contain user-generated content.
+acquia-files
 docroot/files
 docroot/sites/*/files
 docroot/sites/*/private
-acquia-files
-docroot/sites/default/settings.php
+
+.DS_Store
+.ftpquota
+
+# Phpstorm
+.idea
+
+# Local SCSS/Compass configurations
+docroot/profiles/wetkit/themes/wetkit_bootstrap/config.rb
+
+
+
