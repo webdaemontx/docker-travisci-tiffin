@@ -3811,7 +3811,6 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
   }
 }
 
-
 .pane-undergraduate-admissions-panel-pane-3 h2 {
   background-position-x: 171px !important;
   width: 200px !important;
@@ -4437,6 +4436,10 @@ body.node-type-program .pane-node-field-degree-type {
         &.hvr-underline-reveal {
           background-color: transparent !important;
           text-align: right;
+
+          &:before {
+            background: none !important;
+          }
         }
       }
     }
@@ -4525,53 +4528,53 @@ body.node-type-program .pane-node-field-degree-type {
 /* responsive life at tu */
 /* responsive undergrad */
 
-.pane-financial-aid-virtual-tour {
-  height: 560px;
-}
+//.pane-financial-aid-virtual-tour {
+//  height: 560px;
+//}
 
-#finaidandcalc div {
-  height: 437px;
-  -webkit-background-size: contain;
-  background-size: contain;
-}
+//#finaidandcalc div {
+//  height: 437px;
+//  -webkit-background-size: contain;
+//  background-size: contain;
+//}
+//
+//@media (max-width: 1110px) {
+//  //.pane-financial-aid-virtual-tour {
+//  //  height: auto;
+//  //}
+//  #finaidandcalc {
+//    //width: 85%;
+//    div {
+//      height: 426px;
+//    }
+//  }
+//}
 
-@media (max-width: 1110px) {
-  .pane-financial-aid-virtual-tour {
-    height: 570px;
-  }
-  #finaidandcalc {
-    width: 85%;
-    div {
-      height: 426px;
-    }
-  }
-}
+//@media (max-width: 725px) {
+//  .pane-financial-aid-virtual-tour {
+//    height: 1040px !important;
+//  }
+//  #finaidandcalc {
+//    div {
+//      width: 75%;
+//      margin: 0 auto !important;
+//      float: none !important;
+//      height: 437px;
+//    }
+//    a:nth-of-type(2) div {
+//      //margin-top: 20px !important;
+//    }
+//  }
+//}
 
-@media (max-width: 725px) {
-  .pane-financial-aid-virtual-tour {
-    height: 1040px !important;
-  }
-  #finaidandcalc {
-    div {
-      width: 75%;
-      margin: 0 auto !important;
-      float: none !important;
-      height: 437px;
-    }
-    a:nth-of-type(2) div {
-      margin-top: 20px !important;
-    }
-  }
-}
-
-@media (max-width: 550px) {
-  .pane-financial-aid-virtual-tour {
-    height: 680px;
-  }
-  #finaidandcalc div {
-    height: 256px;
-  }
-}
+//@media (max-width: 550px) {
+//  //.pane-financial-aid-virtual-tour {
+//  //  height: auto;
+//  //}
+//  #finaidandcalc div {
+//    height: 256px;
+//  }
+//}
 
 /* responsive undergrad */
 @media (max-width: 1400px) {
@@ -4863,33 +4866,56 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 .pane-financial-aid-virtual-tour {
-  height: 480px;
+  //height: 480px;
   background-image: url('/profiles/wetkit/themes/wetkit_bootstrap/images/get-to-know-campus-background.jpg');
   //background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 100px 0;
 }
 
 #finaidandcalc {
-  width: 55%;
-  margin: 95px auto;
-  div {
-    width: 45%;
-    height: 277px;
-    float: left;
-    clear: none;
-    background: no-repeat center center;
-    -webkit-background-size: contain;
-    background-size: contain;
-  }
-  a {
-    &:nth-of-type(1) div {
-      background-image: url('/sites/default/files/icon-xl-virtual-tour.png');
-      margin-right: 60px;
+  @include clearfix;
+  //width: 55%;
+  text-align: center;
+  //margin: 95px auto;
+
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+
+      & > a {
+        display: block;
+        padding: 10px 24px;
+      }
+
+      img {
+        width: 278px;
+        height: auto;
+      }
     }
-    &:nth-of-type(2) div {
-      background-image: url('/sites/default/files/icon-xl-financial-aid.png');
+  }
+
+  @media (min-width: 670px) {
+    & > ul {
+      display: inline-block;
+
+      & > li {
+        display: table-cell;
+        vertical-align: middle;
+
+        & > a {
+
+        }
+
+        img {
+
+        }
+      }
     }
   }
 }

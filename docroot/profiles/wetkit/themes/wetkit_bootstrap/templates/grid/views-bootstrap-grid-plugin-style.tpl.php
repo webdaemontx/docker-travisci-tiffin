@@ -14,30 +14,34 @@
 ?>
 
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
-  <?php if ($options['alignment'] == 'horizontal'): ?>
+ <div class="container">
+   <?php if ($options['alignment'] == 'horizontal'): ?>
 
-    <?php foreach ($items as $row): ?>
-      <div class="row">
-        <?php foreach ($row['content'] as $column): ?>
-          <div class="profile-col col col-lg-<?php print $column_type ?>">
-            <?php print $column['content'] ?>
-          </div>
-        <?php endforeach ?>
-      </div>
-    <?php endforeach ?>
+     <?php foreach ($items as $row): ?>
+       <div class="row">
+         <?php foreach ($row['content'] as $column): ?>
+           <div class="col-xs-6 col-lg-<?php print $column_type ?>">
+             <div class="profile-card">
+               <?php print $column['content'] ?>
+             </div>
+           </div>
+         <?php endforeach ?>
+       </div>
+     <?php endforeach ?>
 
-  <?php else: ?>
+   <?php else: ?>
 
-    <div class="row">
-      <?php foreach ($items as $column): ?>
-        <div class="col col-lg-<?php print $column_type ?>">
-          <?php foreach ($column['content'] as $row): ?>
-            <?php print $row['content'] ?>
-          <?php endforeach ?>
-        </div>
-      <?php endforeach ?>
-    </div>
+     <div class="row">
+       <?php foreach ($items as $column): ?>
+         <div class="col col-lg-<?php print $column_type ?>">
+           <?php foreach ($column['content'] as $row): ?>
+             <?php print $row['content'] ?>
+           <?php endforeach ?>
+         </div>
+       <?php endforeach ?>
+     </div>
 
-  <?php endif ?>
+   <?php endif ?>
+ </div>
 </div>
 
