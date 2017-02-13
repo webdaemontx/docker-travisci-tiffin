@@ -261,14 +261,14 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
       'identifier' => 'menu-academics_china-program:node/651',
     ),
     'module' => 'menu',
-    'hidden' => 0,
+    'hidden' => 1,
     'external' => 0,
-    'has_children' => 1,
+    'has_children' => 0,
     'expanded' => 0,
     'weight' => 1,
-    'customized' => 0,
+    'customized' => 1,
     'language' => 'und',
-    'menu_links_customized' => 0,
+    'menu_links_customized' => 1,
   );
   // Exported menu link: menu-academics_disability-services:node/121.
   $menu_links['menu-academics_disability-services:node/121'] = array(
@@ -390,20 +390,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 0,
   );
-  // Exported menu link: menu-admissions_apply-now:home.
-  $menu_links['menu-admissions_apply-now:home'] = array(
+  // Exported menu link: menu-admissions_apply-now:apply-now.
+  $menu_links['menu-admissions_apply-now:apply-now'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'apply-now',
+    'router_path' => 'apply-now',
     'link_title' => 'Apply Now',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_apply-now:home',
+      'identifier' => 'menu-admissions_apply-now:apply-now',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -416,20 +418,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_financial-aid:home.
-  $menu_links['menu-admissions_financial-aid:home'] = array(
+  // Exported menu link: menu-admissions_financial-aid:node/481.
+  $menu_links['menu-admissions_financial-aid:node/481'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/481',
+    'router_path' => 'node/%',
     'link_title' => 'Financial Aid',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_financial-aid:home',
+      'identifier' => 'menu-admissions_financial-aid:node/481',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -442,20 +446,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_graduate:home.
-  $menu_links['menu-admissions_graduate:home'] = array(
+  // Exported menu link: menu-admissions_graduate:academics/graduate.
+  $menu_links['menu-admissions_graduate:academics/graduate'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'academics/graduate',
+    'router_path' => 'academics/graduate',
     'link_title' => 'Graduate',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_graduate:home',
+      'identifier' => 'menu-admissions_graduate:academics/graduate',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -468,20 +474,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_international:home.
-  $menu_links['menu-admissions_international:home'] = array(
+  // Exported menu link: menu-admissions_international:international.
+  $menu_links['menu-admissions_international:international'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'international',
+    'router_path' => 'international',
     'link_title' => 'International',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_international:home',
+      'identifier' => 'menu-admissions_international:international',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -494,20 +502,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_online-and-off-campus-bachelor-degree-programs:home.
-  $menu_links['menu-admissions_online-and-off-campus-bachelor-degree-programs:home'] = array(
+  // Exported menu link: menu-admissions_online-and-off-campus-bachelor-degree-programs:degreecomp/welcome.
+  $menu_links['menu-admissions_online-and-off-campus-bachelor-degree-programs:degreecomp/welcome'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'degreecomp/welcome',
+    'router_path' => 'degreecomp/welcome',
     'link_title' => 'Online and Off-Campus Bachelor Degree Programs',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_online-and-off-campus-bachelor-degree-programs:home',
+      'identifier' => 'menu-admissions_online-and-off-campus-bachelor-degree-programs:degreecomp/welcome',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -520,20 +530,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_transfer:home.
-  $menu_links['menu-admissions_transfer:home'] = array(
+  // Exported menu link: menu-admissions_transfer:node/1151.
+  $menu_links['menu-admissions_transfer:node/1151'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'node/1151',
+    'router_path' => 'node/%',
     'link_title' => 'Transfer',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_transfer:home',
+      'identifier' => 'menu-admissions_transfer:node/1151',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -546,20 +558,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_undergraduate:home.
-  $menu_links['menu-admissions_undergraduate:home'] = array(
+  // Exported menu link: menu-admissions_undergraduate:academics/undergrad.
+  $menu_links['menu-admissions_undergraduate:academics/undergrad'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'academics/undergrad',
+    'router_path' => 'academics/undergrad',
     'link_title' => 'Undergraduate',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_undergraduate:home',
+      'identifier' => 'menu-admissions_undergraduate:academics/undergrad',
       'external' => 0,
     ),
     'module' => 'menu',
@@ -572,20 +586,22 @@ function tiffin_sidebar_menus_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
-  // Exported menu link: menu-admissions_visit-tiffin-university:home.
-  $menu_links['menu-admissions_visit-tiffin-university:home'] = array(
+  // Exported menu link: menu-admissions_visit-tiffin-university:visit.
+  $menu_links['menu-admissions_visit-tiffin-university:visit'] = array(
     'menu_name' => 'menu-admissions',
-    'link_path' => 'home',
-    'router_path' => 'home',
+    'link_path' => 'visit',
+    'router_path' => 'visit',
     'link_title' => 'Visit Tiffin University',
     'options' => array(
+      'minipanel' => '',
       'attributes' => array(),
       'item_attributes' => array(
+        'seo_title' => '',
         'id' => '',
         'class' => '',
         'style' => '',
       ),
-      'identifier' => 'menu-admissions_visit-tiffin-university:home',
+      'identifier' => 'menu-admissions_visit-tiffin-university:visit',
       'external' => 0,
     ),
     'module' => 'menu',
