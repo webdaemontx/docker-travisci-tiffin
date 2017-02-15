@@ -2694,7 +2694,20 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     border-color: transparent !important; }
 
 .btn-default {
-  color: #385443; }
+  color: #385443;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out; }
+  .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover {
+    color: #fff;
+    background-color: #d9bf75; }
+
+.form-actions {
+  margin-bottom: 24px;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   color: #fff;

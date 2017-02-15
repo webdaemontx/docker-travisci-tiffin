@@ -3681,10 +3681,34 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 .btn-default {
   color: $brand-green;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+  &.active,
+  &.focus,
+  &:active,
+  &:focus,
+  &:hover {
+    color: #fff;
+    background-color: $brand-gold;
+  }
+}
+
+.form-actions {
+  margin-bottom: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .btn-primary {
-  &.active, &.focus, &:active, &:focus, &:hover {
+  &.active,
+  &.focus,
+  &:active,
+  &:focus,
+  &:hover {
     color: #fff;
     background-color: $brand-gold;
   }
