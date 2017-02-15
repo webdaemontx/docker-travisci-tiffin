@@ -2200,7 +2200,6 @@ ul#icons-admissions-landing-page-last li {
   .pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
     display: block;
     margin: 10px auto 0 auto;
-    width: 100%;
     padding: 0; }
 
   .pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
@@ -2398,7 +2397,10 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   color: #365543; }
 
 .pane-bean-schools-bean-block {
-  margin-bottom: 20px; }
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px; }
   .pane-bean-schools-bean-block h2 {
     text-align: center;
     font-weight: bold;
@@ -2406,11 +2408,14 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   .pane-bean-schools-bean-block ul {
     margin: 0 auto;
     padding: 0;
-    width: 425px;
+    width: 100%;
     list-style-type: none;
     font-size: 21px;
     color: #11361E;
     text-decoration: none; }
+    @media screen and (min-width: 800px) {
+      .pane-bean-schools-bean-block ul {
+        width: 425px; } }
     .pane-bean-schools-bean-block ul a {
       color: #11361E;
       text-decoration: none; }
@@ -2752,8 +2757,10 @@ html, body {
   color: white !important; }
 
 .pane-bean-schools-bean-block h2 {
-  color: #365543;
-  font-size: 41px; }
+  color: #365543; }
+  @media screen and (min-width: 800px) {
+    .pane-bean-schools-bean-block h2 {
+      font-size: 41px; } }
 
 div[class*="pane-undergraduate-admissions-panel-pane-"] {
   width: 80%;
@@ -4012,6 +4019,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     width: 100%;
     top: 0;
     left: 0; }
+
+.pane-title {
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
 
 .page-hero-90::before {
   background-color: rgba(56, 84, 67, 0.9); }
