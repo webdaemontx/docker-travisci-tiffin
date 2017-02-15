@@ -1331,8 +1331,9 @@ ul#click-on-programs {
 /* Undergraduate Admissions Midview*/
 
 .pane-undergraduate-admissions-panel-pane-1, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane {
-  width: 80%;
+  max-width: 1170px;
   margin: 0 auto;
+  padding: 15px;
 }
 
 .pane-undergraduate-admissions-panel-pane-1 .views-exposed-form .views-exposed-widget, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form .views-exposed-widget {
@@ -1436,7 +1437,7 @@ ul#click-on-programs {
 
 #edit-field-program-location-tid {
   border-radius: 0;
-  float: left;
+  //float: left;
   clear: none;
   height: 47px;
   width: 390px;
@@ -3450,14 +3451,19 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   float: left;
   clear: none;
   height: 47px;
-  width: 390px;
+  width: 100%;
   background: url('../images/down-triangle.png') no-repeat right;
   background-color: rgba(255, 255, 255, 0.75);
-  background-position-x: 360px;
+  background-position-x: 95%;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   color: #365543;
+
+  @media screen and (min-width: 800px) {
+    background-position-x: 360px;
+    width: 390px;
+  }
 }
 
 .pane-about-tiffin-ohio h3 {
