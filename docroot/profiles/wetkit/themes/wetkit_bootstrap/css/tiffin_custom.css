@@ -963,8 +963,9 @@ ul#click-on-programs {
 /*#click-on-programs li:nth-child(1) a*/
 /* Undergraduate Admissions Midview*/
 .pane-undergraduate-admissions-panel-pane-1, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane {
-  width: 80%;
-  margin: 0 auto; }
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 15px; }
 
 .pane-undergraduate-admissions-panel-pane-1 .views-exposed-form .views-exposed-widget, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane .views-exposed-form .views-exposed-widget {
   padding: 0 !important; }
@@ -1050,7 +1051,6 @@ ul#click-on-programs {
 
 #edit-field-program-location-tid {
   border-radius: 0;
-  float: left;
   clear: none;
   height: 47px;
   width: 390px;
@@ -2200,7 +2200,6 @@ ul#icons-admissions-landing-page-last li {
   .pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
     display: block;
     margin: 10px auto 0 auto;
-    width: 100%;
     padding: 0; }
 
   .pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
@@ -2398,7 +2397,10 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   color: #365543; }
 
 .pane-bean-schools-bean-block {
-  margin-bottom: 20px; }
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px; }
   .pane-bean-schools-bean-block h2 {
     text-align: center;
     font-weight: bold;
@@ -2406,11 +2408,14 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   .pane-bean-schools-bean-block ul {
     margin: 0 auto;
     padding: 0;
-    width: 425px;
+    width: 100%;
     list-style-type: none;
     font-size: 21px;
     color: #11361E;
     text-decoration: none; }
+    @media screen and (min-width: 800px) {
+      .pane-bean-schools-bean-block ul {
+        width: 425px; } }
     .pane-bean-schools-bean-block ul a {
       color: #11361E;
       text-decoration: none; }
@@ -2531,14 +2536,18 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   float: left;
   clear: none;
   height: 47px;
-  width: 390px;
+  width: 100%;
   background: url("../images/down-triangle.png") no-repeat right;
   background-color: rgba(255, 255, 255, 0.75);
-  background-position-x: 360px;
+  background-position-x: 95%;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   color: #365543; }
+  @media screen and (min-width: 800px) {
+    #edit-field-program-location-tid {
+      background-position-x: 360px;
+      width: 390px; } }
 
 .pane-about-tiffin-ohio h3 {
   font-size: 52px !important; }
@@ -2685,7 +2694,20 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     border-color: transparent !important; }
 
 .btn-default {
-  color: #385443; }
+  color: #385443;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out; }
+  .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover {
+    color: #fff;
+    background-color: #d9bf75; }
+
+.form-actions {
+  margin-bottom: 24px;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   color: #fff;
@@ -2752,8 +2774,10 @@ html, body {
   color: white !important; }
 
 .pane-bean-schools-bean-block h2 {
-  color: #365543;
-  font-size: 41px; }
+  color: #365543; }
+  @media screen and (min-width: 800px) {
+    .pane-bean-schools-bean-block h2 {
+      font-size: 41px; } }
 
 div[class*="pane-undergraduate-admissions-panel-pane-"] {
   width: 80%;
@@ -4012,6 +4036,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     width: 100%;
     top: 0;
     left: 0; }
+
+.pane-title {
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
 
 .page-hero-90::before {
   background-color: rgba(56, 84, 67, 0.9); }
