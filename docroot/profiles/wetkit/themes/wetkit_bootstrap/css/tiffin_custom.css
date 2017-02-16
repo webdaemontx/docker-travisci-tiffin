@@ -4293,5 +4293,65 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     top: 50%;
     transform: translateY(-50%);
     right: 15px; } }
+.modal-nav a {
+  display: block;
+  border: 1px solid #dbc073;
+  color: #fff;
+  font-size: 24px;
+  padding: 25px 11px 22px 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .3s ease-in-out;
+  width: 100%; }
+  .modal-nav a:hover, .modal-nav a:focus {
+    background-color: #d9bf75;
+    cursor: pointer; }
+.modal-nav.ccp-nav a {
+  color: #385443;
+  font-size: 20px; }
+
+.tiffin-modal .modal-header {
+  border: 0; }
+.tiffin-modal .modal-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: 900; }
+.tiffin-modal .modal-content {
+  background: #fff;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  color: #385443; }
+.tiffin-modal .lead {
+  font-size: 18px; }
+.tiffin-modal .nav-tabs,
+.tiffin-modal .nav-tabs > li.active > a,
+.tiffin-modal .nav-tabs > li.active > a:focus,
+.tiffin-modal .nav-tabs > li.active > a:hover {
+  border: 0; }
+.tiffin-modal .nav-tabs > li {
+  margin-top: -2px; }
+.tiffin-modal .nav-tabs > li > a {
+  border: 0;
+  border-radius: 0;
+  color: #385443; }
+.tiffin-modal .nav-tabs > li.active > a,
+.tiffin-modal .nav-tabs > li.active > a:focus,
+.tiffin-modal .nav-tabs > li.active > a:hover {
+  background-color: #385443;
+  color: #fff; }
+.tiffin-modal .tab-content > .tab-pane {
+  background-color: #f2f2f2;
+  padding: 15px; }
+.tiffin-modal .nav > li > a:focus,
+.tiffin-modal .nav > li > a:hover {
+  background-color: #f2f2f2; }
+.tiffin-modal .nav-tabs > li > a:hover {
+  border: 0; }
+
+.example-header {
+  background-color: #fff;
+  padding: 300px 0; }
 
 /*# sourceMappingURL=tiffin_custom.css.map */

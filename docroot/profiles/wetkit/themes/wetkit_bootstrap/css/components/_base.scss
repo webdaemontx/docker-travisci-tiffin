@@ -3674,7 +3674,8 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 .list-group-item.active {
   border-color: transparent !important;
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     border-color: transparent !important;
   }
 }

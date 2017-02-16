@@ -1,0 +1,101 @@
+//#ccpEN{height: 260px; width: 80%; margin: 80px auto 0px auto;}
+//#ccpEN h2{
+//  color: #345542;
+//  font-size: 39px;
+//  text-align: left;
+//  margin-left: 20%;}
+//#ccpEN ul{list-style-type: none; margin-top: 30px; padding: 0px; width: 100%;}
+//#ccpEN ul li{border: 1px solid #d9bf74; float: left; clear: none; width: 24%; text-align: center; margin-right: 5px;}
+//#ccpEN ul li a{color: #345741; text-decoration: none; font-size: 31px;}
+//#ccpEN ul li:nth-of-type(1){}
+//#ccpEN ul li:nth-of-type(2){}
+//#ccpEN ul li:nth-of-type(3){}
+//#ccpEN ul li:nth-of-type(4){}
+//#ccpEN ul li div{width: 100%; height: 100%;}
+
+$green: #385443;
+$yellow: #d9bf75;
+.modal-nav {
+  a {
+    display: block;
+    border: 1px solid #dbc073;
+    color: #fff;
+    font-size: 24px;
+    padding: 25px 11px 22px 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s ease-in-out;
+    width: 100%;
+    &:hover,
+    &:focus {
+      background-color: $yellow;
+      cursor: pointer;
+    }
+  }
+
+  &.ccp-nav {
+    a {
+      color: $green;
+      font-size: 20px;
+    }
+  }
+}
+
+.tiffin-modal {
+  .modal-header {
+    border: 0;
+  }
+  .modal-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+  }
+  .modal-content {
+    background: #fff;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    color: $green;
+  }
+  .lead {
+    font-size: 18px;
+  }
+  .nav-tabs,
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+    border: 0;
+  }
+  .nav-tabs > li {
+    margin-top: -2px;
+  }
+  .nav-tabs > li > a {
+    border: 0;
+    border-radius: 0;
+    color: $green;
+  }
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:focus,
+  .nav-tabs > li.active > a:hover {
+    background-color: $green;
+    color: #fff;
+  }
+  .tab-content > .tab-pane {
+    background-color: #f2f2f2;
+    padding: 15px;
+  }
+  .nav > li > a:focus,
+  .nav > li > a:hover {
+    background-color: #f2f2f2;
+  }
+  .nav-tabs > li > a:hover {
+    border: 0;
+  }
+}
+
+// Styles just for example
+.example-header {
+  background-color: #fff;
+  padding: 300px 0;
+}
