@@ -1,4 +1,4 @@
-<?php
+.<?php
 /**
  * @file
  * menu.theme.inc
