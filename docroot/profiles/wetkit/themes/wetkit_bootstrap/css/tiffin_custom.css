@@ -4293,6 +4293,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     top: 50%;
     transform: translateY(-50%);
     right: 15px; } }
+.ccp-container {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+
 .modal-nav a {
   display: block;
   border: 1px solid #dbc073;
