@@ -1,12 +1,16 @@
 .program-nav-items > {
   .item-list ul.quicktabs-tabs li {
     display: block;
-    width: 33.3333333333%;
-    float: left;
   }
+
   .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li {
-    width: 25%;
+    width: 100%;
+
+    @media screen and (min-width: 800px) {
+      width: 25%;
+    }
   }
+
   .item-list ul.quicktabs-tabs li a {
     display: block;
     border: 1px solid #dbc073;
@@ -19,11 +23,14 @@
     transition: background-color .3s ease-in-out;
     width: 100%;
   }
+
   .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs {
     padding: 0;
     margin: 0;
+
     li {
       padding: 10px 15px !important;
+
       a {
         color: $brand-green;
         border: 0;
@@ -33,9 +40,17 @@
         padding: 0;
         margin: 0;
       }
+
       &.active a {
         color: #fff;
       }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .item-list ul.quicktabs-tabs li {
+      width: 33.3333333333%;
+      float: left;
     }
   }
 }

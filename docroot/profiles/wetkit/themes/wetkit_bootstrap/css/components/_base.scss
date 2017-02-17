@@ -4762,17 +4762,17 @@ body.node-type-program .pane-node-field-degree-type {
     }
     height: 490px;
   }
-  .pane-undergraduate-program {
-    background-size: 320%;
-    height: 760px;
-  }
-  body.node-type-program ul.quicktabs-tabs li {
-    clear: none;
-    float: left;
-    height: 95px !important;
-  }
+  //.pane-undergraduate-program {
+  //  background-size: 320%;
+  //  height: 760px;
+  //}
+  //body.node-type-program ul.quicktabs-tabs li {
+  //  clear: none;
+  //  float: left;
+  //  height: 95px !important;
+  //}
   .pane-quicktabs-undergraduate-program-tabs {
-    margin-top: -350px !important;
+    //margin-top: -350px !important;
     padding: 0;
   }
   .pane-undergraduate-program .views-field-title a {
@@ -4785,8 +4785,8 @@ body.node-type-program .pane-node-field-degree-type {
     padding-top: 10px;
   }
   body.node-type-program ul.quicktabs-tabs {
-    margin: 0 0 30px 34px;
-    width: 80%;
+    margin: 0 auto;
+    //width: 80%;
     padding: 0;
   }
   .view-testimonials-slider {
@@ -4856,9 +4856,9 @@ body.node-type-program .pane-node-field-degree-type {
 @media (max-width: 555px) {
   body.node-type-program ul.quicktabs-tabs {
     li {
-      clear: none;
-      float: left;
-      height: 73px !important;
+      //clear: none;
+      //float: left;
+      //height: 73px !important;
       a {
         font-size: 17px !important;
       }

@@ -3410,17 +3410,7 @@ body.node-type-program .pane-node-field-degree-type {
       width: 100%;
       display: block; }
 
-  .pane-undergraduate-program {
-    background-size: 320%;
-    height: 760px; }
-
-  body.node-type-program ul.quicktabs-tabs li {
-    clear: none;
-    float: left;
-    height: 95px !important; }
-
   .pane-quicktabs-undergraduate-program-tabs {
-    margin-top: -350px !important;
     padding: 0; }
 
   .pane-undergraduate-program .views-field-title a {
@@ -3433,8 +3423,7 @@ body.node-type-program .pane-node-field-degree-type {
     padding-top: 10px; }
 
   body.node-type-program ul.quicktabs-tabs {
-    margin: 0 0 30px 34px;
-    width: 80%;
+    margin: 0 auto;
     padding: 0; }
 
   .view-testimonials-slider .views-field-body {
@@ -3483,12 +3472,8 @@ body.node-type-program .pane-node-field-degree-type {
 @media (max-width: 555px) {
   body.node-type-program ul.quicktabs-tabs {
     width: 100%; }
-    body.node-type-program ul.quicktabs-tabs li {
-      clear: none;
-      float: left;
-      height: 73px !important; }
-      body.node-type-program ul.quicktabs-tabs li a {
-        font-size: 17px !important; } }
+    body.node-type-program ul.quicktabs-tabs li a {
+      font-size: 17px !important; } }
 @media (max-width: 950px) {
   #ccpEN ul li a {
     font-size: 24px !important; } }
@@ -3809,8 +3794,11 @@ body.node-type-program .pane-node-field-degree-type {
   background-color: #365543; }
 
 .pane-quicktabs-undergraduate-program-tabs, .pane-quicktabs-graduate-program-tabs {
-  margin-top: -170px;
+  margin-top: -275px;
   padding-bottom: 50px; }
+  @media screen and (min-width: 800px) {
+    .pane-quicktabs-undergraduate-program-tabs, .pane-quicktabs-graduate-program-tabs {
+      margin-top: -165px; } }
 
 .pane-quicktabs-undergraduate-program-tabs div.pane-title, .pane-quicktabs-graduate-program-tabs div.pane-title {
   display: none; }
@@ -3845,16 +3833,20 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   text-align: center; }
 
 .pane-undergraduate-program {
-  height: 450px;
-  background-image: url("http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg");
-  background-size: 100%; }
+  background: url("http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg") no-repeat 0 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 40px 0 300px; }
+  @media screen and (min-width: 800px) {
+    .pane-undergraduate-program {
+      padding-bottom: 200px; } }
   .pane-undergraduate-program .views-field-title a {
     font-size: 39px;
     text-decoration: none;
     font-weight: bold;
     color: white; }
   .pane-undergraduate-program .pane-content {
-    width: 1170px;
+    max-width: 1170px;
     margin: 0 auto;
     padding-top: 55px;
     padding-left: 15px;
@@ -3914,8 +3906,11 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   position: absolute;
   top: 20%;
   transform: translate(-50%, -20%);
-  width: 70%;
+  width: 95%;
   z-index: 5; }
+  @media screen and (min-width: 800px) {
+    .quicktabs-tabpage .quicktabs-wrapper {
+      width: 70%; } }
 
 .program-nav-items ul.quicktabs-tabs {
   margin-right: -15px;
@@ -3928,11 +3923,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   clear: both; }
 
 .program-nav-items > .item-list ul.quicktabs-tabs li {
-  display: block;
-  width: 33.3333333333%;
-  float: left; }
+  display: block; }
 .program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li {
-  width: 25%; }
+  width: 100%; }
+  @media screen and (min-width: 800px) {
+    .program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li {
+      width: 25%; } }
 .program-nav-items > .item-list ul.quicktabs-tabs li a {
   display: block;
   border: 1px solid #dbc073;
@@ -3959,6 +3955,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
       margin: 0; }
     .program-nav-items > .quicktabs_main > .quicktabs-tabpage > .item-list > .quicktabs-wrapper > .item-list > .quicktabs-tabs li.active a {
       color: #fff; }
+@media screen and (min-width: 800px) {
+  .program-nav-items > .item-list ul.quicktabs-tabs li {
+    width: 33.3333333333%;
+    float: left; } }
 
 .quicktabs-wrapper .view-content {
   background-color: #f2f2f2;
