@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tiffin Cabinet  and Staff feature.
+ */
+
+include_once 'tiffin_cabinet_and_staff.features.inc';
