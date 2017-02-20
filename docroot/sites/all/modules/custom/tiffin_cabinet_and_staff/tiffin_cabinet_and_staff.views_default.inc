@@ -31,14 +31,8 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
-  $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['masonry_column_width_units'] = '%';
-  $handler->display->display_options['style_options']['masonry_gutter_width'] = '10';
-  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_animated'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_fit_width'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_rtl'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '4';
   $handler->display->display_options['row_plugin'] = 'panels_fields';
   $handler->display->display_options['row_options']['layout'] = 'onecol';
   $handler->display->display_options['row_options']['regions'] = array(
@@ -123,6 +117,65 @@ function tiffin_cabinet_and_staff_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Primary Image */
+  $handler->display->display_options['fields']['field_featured_image']['id'] = 'field_featured_image';
+  $handler->display->display_options['fields']['field_featured_image']['table'] = 'field_data_field_featured_image';
+  $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
+  $handler->display->display_options['fields']['field_featured_image']['label'] = '';
+  $handler->display->display_options['fields']['field_featured_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_featured_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_featured_image']['field_api_classes'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Position */
+  $handler->display->display_options['fields']['field_board_position']['id'] = 'field_board_position';
+  $handler->display->display_options['fields']['field_board_position']['table'] = 'field_data_field_board_position';
+  $handler->display->display_options['fields']['field_board_position']['field'] = 'field_board_position';
+  $handler->display->display_options['fields']['field_board_position']['label'] = '';
+  $handler->display->display_options['fields']['field_board_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_board_position']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_board_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_board_position']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_board_position']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_board_position']['field_api_classes'] = TRUE;
+  /* Field: Content: Company Name */
+  $handler->display->display_options['fields']['field_board_company_name']['id'] = 'field_board_company_name';
+  $handler->display->display_options['fields']['field_board_company_name']['table'] = 'field_data_field_board_company_name';
+  $handler->display->display_options['fields']['field_board_company_name']['field'] = 'field_board_company_name';
+  $handler->display->display_options['fields']['field_board_company_name']['label'] = '';
+  $handler->display->display_options['fields']['field_board_company_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_board_company_name']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_board_company_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_board_company_name']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_board_company_name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_board_company_name']['field_api_classes'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="profile-details" data-mh="profile-details">
+ <span class="profile-name">[title]</span>
+<span class="profile-position">[field_board_position]</span>
+<span class="profile-company">[field_board_company_name]</span>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'about/board-members';
   $translatables['board_members'] = array(
     t('Master'),
@@ -134,6 +187,11 @@ function tiffin_cabinet_and_staff_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Page'),
+    t('<div class="profile-details" data-mh="profile-details">
+ <span class="profile-name">[title]</span>
+<span class="profile-position">[field_board_position]</span>
+<span class="profile-company">[field_board_company_name]</span>
+</div>'),
   );
   $export['board_members'] = $view;
 
