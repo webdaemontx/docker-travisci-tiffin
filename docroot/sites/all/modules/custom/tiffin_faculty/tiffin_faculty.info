@@ -87,6 +87,7 @@ features[variable][] = pathauto_node_faculty_pattern
 features[variable][] = pathauto_taxonomy_term_department_pattern
 features[variable][] = xmlsitemap_settings_node_faculty
 features[variable][] = xmlsitemap_settings_taxonomy_term_faculty_type
+features[views_view][] = faculty
 features[views_view][] = faculty_listings
 features[views_view][] = life_at_tu_faculty
 features[views_view][] = the_faculty_for_program_pages

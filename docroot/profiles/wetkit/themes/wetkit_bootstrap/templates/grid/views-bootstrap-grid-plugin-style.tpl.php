@@ -16,11 +16,11 @@
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
  <div class="container">
    <?php if ($options['alignment'] == 'horizontal'): ?>
-     <?php if((count($items[0]['content'])) <= 3): ?>
+     <?php if((count($items[0]['content'])) <= 4): ?>
        <?php foreach ($items as $row): ?>
          <div class="row">
            <?php foreach ($row['content'] as $column): ?>
-             <div class="col-xs-12 col-xl-4">
+             <div class="col-xs-6 col-lg-3">
                <div class="profile-card">
                  <?php print $column['content'] ?>
                </div>
