@@ -886,19 +886,17 @@ function tiffin_npc_netprice_form_submit($form, &$form_state) {
 
     $success_plain_body =
       "Congratulations on completing the Tiffin University Net Price Calculator!\n\r
-Below you will find a summary of the estimated costs for the 2016-2017 academic year and your estimated eligibility for student aid.\n\r";
+Below you will find a summary of the estimated costs for the 2017-2018 academic year and your estimated eligibility for student aid.\n\r";
 
     $to = $form_state['values']['email'];
     $from = 'webmaster@tiffin.edu';
-    $subject = 'Tiffin University Net Price Calculation';
-    $body = "This is test text from the Net Price Calculator Module";
+    //$subject = 'Tiffin University Net Price Calculation';
+    //$body = "This is test text from the Net Price Calculator Module";
 
-    $params = array(
+/*    $params = array(
       'subject' => $subject,
       'body' => $body,
-    );
-
-    drupal_mail('tiffin_npc' , 'npc_calculator', $to, language_default(), $params, $from);
+    );*/
 
 /*    $params = array(
       'subject' => 'Tiffin University Net Price Calculation',
@@ -910,6 +908,22 @@ Below you will find a summary of the estimated costs for the 2016-2017 academic 
         'Content-Transfer-Encoding' => '8Bit',
         'X-Mailer' => 'Drupal',)
     );*/
+
+    $message['headers']['MIME-Version'] = '1.0';
+    $message['headers']['Content-Type'] = 'multipart/mixed;';
+    $message['headers']['Content-Type'] = 'text/html;';
+    $message['subject'] = t('This is a test email');
+
+    $message['body'][] = t("This is a test email")."<p></p><p>".t("This should be a new paragraph.")."</p><p></p><p>".t("And a third paragraph.")."</p>";
+
+
+    //$message['params'] = $params;
+
+
+    dpm($message);
+
+    drupal_mail('tiffin_npc' , 'npc_calculator', $to, language_default(), $message, $from);
+
 
     // Send out the e-mail.
 
@@ -1111,6 +1125,8 @@ class TiffinMailSystem implements MailSystemInterface {
    *   The formatted $message.
    */
   public function format(array $message) {
+    dpm($message);
+    exit;
     $message['body'] = implode("\n\n", $message['body']);
     return $message;
   }
@@ -1148,9 +1164,10 @@ class TiffinMailSystem implements MailSystemInterface {
   }
 }
 
-function tiffin_npc_mail($key, &$message, $params) {
+/*function tiffin_npc_mail($key, &$message, $params) {
   //dpm($key);
-  //dpm($message);
+  dpm($message);
+  exit;
   //dpm($params);
   switch ($key) {
     case 'npc_calculator':
@@ -1158,4 +1175,4 @@ function tiffin_npc_mail($key, &$message, $params) {
       $message['body'] = $params['body'];
       break;
   }
-}
+}*/
