@@ -1116,21 +1116,16 @@ class TiffinMailSystem implements MailSystemInterface {
 }
 
 function tiffin_npc_mail($key, $body, $recipient) {
+  $message['subject'] = 'Tiffin University Net Price Calculation';
+  $message['headers']['MIME-Version'] = '1.0';
+  $message['headers']['Content-Type'] = 'multipart/mixed;';
+  $message['headers']['Content-Type'] = 'text/html;';
+  $message['from'] = 'webmaster@tiffin.edu';
+  $message['to'] = $recipient;
+  //$message['body'][] = t("This is a test email")."<p></p><p>".t("This should be a new paragraph.")."</p><p></p><p>".t("And a third paragraph.")."</p>";
+  $message['body'][] = t($body);
+  dpm($recipient);
+  dpm($message);
 
-  dpm($body);
-
-  switch ($key) {
-    case 'npc_calculator':
-      $message['subject'] = 'Tiffin University Net Price Calculation';
-      $message['headers']['MIME-Version'] = '1.0';
-      $message['headers']['Content-Type'] = 'multipart/mixed;';
-      $message['headers']['Content-Type'] = 'text/html;';
-      $message['from'] = 'webmaster@tiffin.edu';
-      $message['to'] = $recipient;
-      //$message['body'][] = t("This is a test email")."<p></p><p>".t("This should be a new paragraph.")."</p><p></p><p>".t("And a third paragraph.")."</p>";
-      $message['body'][] = t($body);
-
-      drupal_mail('tiffin_npc', 'npc_calculator', $recipient, language_default(), $message);
-      break;
-  }
+  drupal_mail('tiffin_npc', 'npc_calculator', $recipient, language_default(), $message);
 }
