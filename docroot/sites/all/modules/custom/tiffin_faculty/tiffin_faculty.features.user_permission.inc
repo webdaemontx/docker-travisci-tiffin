@@ -15,6 +15,7 @@ function tiffin_faculty_user_default_permissions() {
     'name' => 'create faculty content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -24,6 +25,7 @@ function tiffin_faculty_user_default_permissions() {
     'name' => 'delete any faculty content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -33,6 +35,7 @@ function tiffin_faculty_user_default_permissions() {
     'name' => 'delete own faculty content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -42,6 +45,7 @@ function tiffin_faculty_user_default_permissions() {
     'name' => 'edit any faculty content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -51,6 +55,7 @@ function tiffin_faculty_user_default_permissions() {
     'name' => 'edit own faculty content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );

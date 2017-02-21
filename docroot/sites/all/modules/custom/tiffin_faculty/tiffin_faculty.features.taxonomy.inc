@@ -19,5 +19,15 @@ function tiffin_faculty_taxonomy_default_vocabularies() {
       'language' => 'und',
       'i18n_mode' => 0,
     ),
+    'faculty_type' => array(
+      'name' => 'Faculty Type',
+      'machine_name' => 'faculty_type',
+      'description' => 'A list of the different types of faculty, professor, counselor...',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
+    ),
   );
 }
