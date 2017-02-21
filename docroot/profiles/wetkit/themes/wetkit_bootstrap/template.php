@@ -112,7 +112,7 @@ drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/animated-menu-
 ));
 
 
-function wetkit_bootstrap_form_alter(&$form, &$form_state, $form_id) {
+/*function wetkit_bootstrap_form_alter(&$form, &$form_state, $form_id) {
 
   $selected_date = $_REQUEST['desired_date'];
   $selected_time = $_REQUEST['desired_time'];
@@ -124,4 +124,4 @@ function wetkit_bootstrap_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['personal_information']['desired_visit_time']['#default_value']= $selected_time;
       break;
   }
-}
+}*/
