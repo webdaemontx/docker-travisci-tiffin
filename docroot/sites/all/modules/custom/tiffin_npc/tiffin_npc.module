@@ -92,7 +92,7 @@ function tiffin_npc_success() {
 
   $success_body =
     "<p><strong>Congratulations on completing the Tiffin University Net Price Calculator!</strong><br>
-Below you will find a summary of the estimated costs for the 2016-2017 academic year and your estimated eligibility for student aid.</p>
+Below you will find a summary of the estimated costs for the 2017-2018 academic year and your estimated eligibility for student aid.</p>
 
 <hr><table width='80%'><tr><td width='50%'>
 <strong>Student Information</strong><br>
@@ -132,9 +132,9 @@ Estimated AGI: $" . number_format(0) . "<br>
 EFC: $" . number_format($efc) . "<br>
 Dependent Children: " . ucfirst($have_dependent_children) . "<br><br>
 </td></tr></table><hr><table width='80%'><tr><td width='50%'>
-<strong>Estimated cost for the 2016-2017 Academic Year</strong>
+<strong>Estimated cost for the 2017-2018 Academic Year</strong>
 <br><br>
-<b>Tuition and Fees (2016-2017)</b><br>
+<b>Tuition and Fees (2017-2018)</b><br>
 Tuition....................................................$22,800<br>
 Room (double).......................................$5,300<br>
 Board (unlimited meals)..........................$4,900<br>
@@ -570,7 +570,7 @@ function tiffin_npc_netprice_form_page_two() {
 
   $form['dependency_status']['in_masters_or_doctorate_program'] = array(
     '#type' => 'radios',
-    '#title' => t('At the beginning of the 2016-2017 school year, will you be working on a master\'s or doctorate program (such as an M.A., M.B.A., M.D., J.D., Ph.D., EdD., graduate certificate, etc.)?'),
+    '#title' => t('At the beginning of the 2017-2018 school year, will you be working on a master\'s or doctorate program (such as an M.A., M.B.A., M.D., J.D., Ph.D., EdD., graduate certificate, etc.)?'),
     '#options' => array(
       'yes' => t('Yes'),
       'no' => t('No'),
