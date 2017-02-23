@@ -742,7 +742,6 @@ function template_preprocess_views_view_grid(&$vars) {
       $row_classes[] =  'row-' . ($row_number + 1);
     }
     if ($row_class_special) {
-      $row_classes[] =  'row-' . (($row_number + 1) % 2 ? 'odd' : 'even');
       if ($row_number == 0) {
         $row_classes[] =  'row-first';
       }
@@ -884,7 +883,7 @@ function template_preprocess_views_view_rss(&$vars) {
   else {
     $title = $view->get_title();
   }
-  $vars['title'] = $title;
+  $vars['title'] = check_plain($title);
 
   // Figure out which display which has a path we're using for this feed. If there isn't
   // one, use the global $base_url
@@ -928,7 +927,7 @@ function template_preprocess_views_view_row_rss(&$vars) {
   $options  = &$vars['options'];
   $item     = &$vars['row'];
 
-  $vars['title'] = $item->title;
+  $vars['title'] = check_plain($item->title);
   $vars['link'] = check_url($item->link);
   $vars['description'] = check_plain($item->description);
   $vars['item_elements'] = empty($item->elements) ? '' : format_xml_elements($item->elements);

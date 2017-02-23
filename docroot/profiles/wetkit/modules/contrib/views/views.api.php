@@ -1165,12 +1165,9 @@ function hook_views_ajax_data_alter(&$commands, $view) {
  * This hook should fire whenever a view is enabled, disabled, created,
  * updated, or deleted.
  *
- * @param string $cid
- *   The cache identifier that is being cleared.
- *
  * @see views_invalidate_cache()
  */
-function hook_views_invalidate_cache($cid) {
+function hook_views_invalidate_cache() {
   cache_clear_all('views:*', 'cache_mymodule', TRUE);
 }
 

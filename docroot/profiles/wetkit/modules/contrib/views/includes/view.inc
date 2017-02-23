@@ -1847,8 +1847,8 @@ class view extends views_db_object {
 
     $this->save_locale_strings();
 
-    // Clear the relevant caches.
-    views_invalidate_cache('ctools_export:views_view:' . $this->name);
+    // Clear caches.
+    views_invalidate_cache();
 
     // Notify modules that this view has been saved.
     module_invoke_all('views_view_save', $this);
@@ -1889,7 +1889,7 @@ class view extends views_db_object {
 
     if ($clear) {
       // Clear caches.
-      views_invalidate_cache('ctools_export:views_view:' . $this->name);
+      views_invalidate_cache();
     }
 
     // Notify modules that this view has been deleted.
