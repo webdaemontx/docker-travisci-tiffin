@@ -20,7 +20,7 @@
        <?php foreach ($items as $row): ?>
          <div class="row">
            <?php foreach ($row['content'] as $column): ?>
-             <div class="col-xs-6 col-lg-3">
+             <div class="col-sm-6 col-md-4">
                <div class="profile-card">
                  <?php print $column['content'] ?>
                </div>
