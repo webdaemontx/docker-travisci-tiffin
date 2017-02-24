@@ -6287,23 +6287,11 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   font-size: 1em;
   color: #fff;
 }
-/* line 48, components/_profile-cards.scss */
-.profile-details .profile-email .glyphicon-envelope:before {
-  position: relative;
-  right: 5px;
-  top: 2px;
-}
-/* line 54, components/_profile-cards.scss */
+/* line 49, components/_profile-cards.scss */
 .profile-details .profile-phone {
   font-family: "Bitstream Vera Sans", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Lucida, Arial, Geneva, sans-serif;
   font-size: 1em;
   color: #fff;
-}
-/* line 58, components/_profile-cards.scss */
-.profile-details .profile-phone .glyphicon-envelope:before {
-  position: relative;
-  right: 5px;
-  top: 2px;
 }
 
 /* line 3, components/_override.scss */
