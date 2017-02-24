@@ -55,7 +55,7 @@ function tiffin_faculty_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'faculty_220x293',
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -91,6 +91,10 @@ function tiffin_faculty_defaultconfig_views_default_views() {
 <span class="profile-position">[field_faculty_title]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -229,7 +233,7 @@ function tiffin_faculty_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'faculty_220x293',
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   /* Field: Content: Title */

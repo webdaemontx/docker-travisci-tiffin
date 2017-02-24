@@ -421,6 +421,85 @@ function tiffin_faculty_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-faculty-field_last_name'.
+  $field_instances['node-faculty-field_last_name'] = array(
+    'bundle' => 'faculty',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'tweet' => 'tweet',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'tweet' => array(
+              'weight' => 0,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-faculty-field_program_reference'.
   $field_instances['node-faculty-field_program_reference'] = array(
     'bundle' => 'faculty',

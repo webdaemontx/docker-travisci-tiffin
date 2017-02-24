@@ -44,7 +44,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'faculty_220x293',
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -80,6 +80,10 @@ function tiffin_faculty_views_default_views() {
 <span class="profile-position">[field_faculty_title]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -218,7 +222,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'faculty_220x293',
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -492,133 +496,6 @@ function tiffin_faculty_views_default_views() {
   $export['faculty'] = $view;
 
   $view = new view();
-  $view->name = 'faculty_listings';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'node';
-  $view->human_name = 'Faculty Listings';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Trustees';
-  $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
-  $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['masonry_column_width_units'] = '%';
-  $handler->display->display_options['style_options']['masonry_gutter_width'] = '10';
-  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_animated'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_fit_width'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_rtl'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
-  $handler->display->display_options['row_plugin'] = 'panels_fields';
-  $handler->display->display_options['row_options']['layout'] = 'onecol';
-  $handler->display->display_options['row_options']['regions'] = array(
-    'title' => 'left',
-  );
-  /* Field: Content: Primary Image */
-  $handler->display->display_options['fields']['field_featured_image']['id'] = 'field_featured_image';
-  $handler->display->display_options['fields']['field_featured_image']['table'] = 'field_data_field_featured_image';
-  $handler->display->display_options['fields']['field_featured_image']['field'] = 'field_featured_image';
-  $handler->display->display_options['fields']['field_featured_image']['label'] = '';
-  $handler->display->display_options['fields']['field_featured_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_featured_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_featured_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_featured_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_featured_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_featured_image']['field_api_classes'] = TRUE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Position */
-  $handler->display->display_options['fields']['field_board_position']['id'] = 'field_board_position';
-  $handler->display->display_options['fields']['field_board_position']['table'] = 'field_data_field_board_position';
-  $handler->display->display_options['fields']['field_board_position']['field'] = 'field_board_position';
-  $handler->display->display_options['fields']['field_board_position']['label'] = '';
-  $handler->display->display_options['fields']['field_board_position']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_board_position']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_board_position']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_board_position']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_board_position']['field_api_classes'] = TRUE;
-  /* Field: Content: Company Name */
-  $handler->display->display_options['fields']['field_board_company_name']['id'] = 'field_board_company_name';
-  $handler->display->display_options['fields']['field_board_company_name']['table'] = 'field_data_field_board_company_name';
-  $handler->display->display_options['fields']['field_board_company_name']['field'] = 'field_board_company_name';
-  $handler->display->display_options['fields']['field_board_company_name']['label'] = '';
-  $handler->display->display_options['fields']['field_board_company_name']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_board_company_name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_board_company_name']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_board_company_name']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_board_company_name']['field_api_classes'] = TRUE;
-  /* Field: Content: Member Type */
-  $handler->display->display_options['fields']['field_member_type']['id'] = 'field_member_type';
-  $handler->display->display_options['fields']['field_member_type']['table'] = 'field_data_field_member_type';
-  $handler->display->display_options['fields']['field_member_type']['field'] = 'field_member_type';
-  $handler->display->display_options['fields']['field_member_type']['label'] = '';
-  $handler->display->display_options['fields']['field_member_type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_member_type']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_member_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_member_type']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_member_type']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_member_type']['field_api_classes'] = TRUE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'faculty' => 'faculty',
-  );
-  /* Filter criterion: Content: Member Type (field_member_type) */
-  $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
-  $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
-  $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
-  $handler->display->display_options['filters']['field_member_type_value']['value'] = array(
-    'board' => 'board',
-  );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'about/board-members';
-  $translatables['faculty_listings'] = array(
-    t('Master'),
-    t('Trustees'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Page'),
-  );
-  $export['faculty_listings'] = $view;
-
-  $view = new view();
   $view->name = 'life_at_tu_faculty';
   $view->description = '';
   $view->tag = 'default';
@@ -738,17 +615,10 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['masonry_column_width'] = '32%';
-  $handler->display->display_options['style_options']['masonry_column_width_units'] = '%';
-  $handler->display->display_options['style_options']['masonry_gutter_width'] = '10';
-  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_animated'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'title' => 'title',
@@ -765,7 +635,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => 'faculty_220x293',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -773,6 +643,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -782,6 +653,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['label'] = '';
+  $handler->display->display_options['fields']['field_faculty_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_faculty_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_faculty_title']['type'] = 'wetkit_bean_linked';
   $handler->display->display_options['fields']['field_faculty_title']['settings'] = array(
@@ -789,6 +661,20 @@ function tiffin_faculty_views_default_views() {
     'wetkit_bean_link' => '',
     'wetkit_bean_class' => '',
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="profile-details" data-mh="profile-details">
+ <span class="profile-name">[title]</span>
+<span class="profile-position">[field_faculty_title]</span>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -938,39 +824,6 @@ function tiffin_faculty_views_default_views() {
   /* Display: Faculty for Program Pages pane */
   $handler = $view->new_display('panel_pane', 'Faculty for Program Pages pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Display the faculty associated with the selected Program';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Faculty Title */
-  $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
-  $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
-  $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
-  $handler->display->display_options['fields']['field_faculty_title']['label'] = '';
-  $handler->display->display_options['fields']['field_faculty_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_faculty_title']['type'] = 'wetkit_bean_linked';
-  $handler->display->display_options['fields']['field_faculty_title']['settings'] = array(
-    'wetkit_bean_style' => 'div',
-    'wetkit_bean_link' => '',
-    'wetkit_bean_class' => '',
-  );
   $handler->display->display_options['pane_title'] = 'Faculty for Program Pages pane';
   $handler->display->display_options['inherit_panels_path'] = '1';
   $translatables['the_faculty_for_program_pages'] = array(
@@ -983,6 +836,10 @@ function tiffin_faculty_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Content entity referenced from field_program_reference'),
+    t('<div class="profile-details" data-mh="profile-details">
+ <span class="profile-name">[title]</span>
+<span class="profile-position">[field_faculty_title]</span>
+</div>'),
     t('All'),
     t('Block'),
     t('Page'),
