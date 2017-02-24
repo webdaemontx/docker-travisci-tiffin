@@ -1151,7 +1151,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 /* line 1109, components/_base.scss */
 .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(1) p {
-  margin: 54px 28%;
+  margin: 69px 28%;
   font-size: 32px;
   text-align: center;
   width: 70%;
@@ -1162,7 +1162,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 /* line 1118, components/_base.scss */
 .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(2) p {
-  margin: 65px 28%;
+  margin: 69px 30%;
   font-size: 32px;
   text-align: center;
   width: 60%;
@@ -1195,7 +1195,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 /* line 1148, components/_base.scss */
 .pane-life-at-tu-hero-top ul:nth-of-type(2) li:nth-of-type(2) p {
-  margin: 66px 31%;
+  margin: 68px 31%;
   font-size: 32px;
   text-align: center;
   width: 70%;
@@ -1206,7 +1206,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 /* line 1157, components/_base.scss */
 .pane-life-at-tu-hero-top ul:nth-of-type(2) li:nth-of-type(3) p {
-  margin: 18px 28%;
+  margin: 50px 30%;
   font-size: 32px;
   text-align: center;
   width: 67%;
@@ -6280,6 +6280,30 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 /* line 41, components/_profile-cards.scss */
 .profile-details .profile-position {
   font-size: 14px;
+}
+/* line 44, components/_profile-cards.scss */
+.profile-details .profile-email {
+  font-family: "Bitstream Vera Sans", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Lucida, Arial, Geneva, sans-serif;
+  font-size: 1em;
+  color: #fff;
+}
+/* line 48, components/_profile-cards.scss */
+.profile-details .profile-email .glyphicon-envelope:before {
+  position: relative;
+  right: 5px;
+  top: 2px;
+}
+/* line 54, components/_profile-cards.scss */
+.profile-details .profile-phone {
+  font-family: "Bitstream Vera Sans", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Lucida, Arial, Geneva, sans-serif;
+  font-size: 1em;
+  color: #fff;
+}
+/* line 58, components/_profile-cards.scss */
+.profile-details .profile-phone .glyphicon-envelope:before {
+  position: relative;
+  right: 5px;
+  top: 2px;
 }
 
 /* line 3, components/_override.scss */
