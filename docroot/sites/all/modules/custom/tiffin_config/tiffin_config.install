@@ -104,7 +104,7 @@ function tiffin_config_update_7308($sandbox) {
   }
 }
 
-/**git
+/**
  *
  * Set the DS region block values.
  */
@@ -127,3 +127,14 @@ function tiffin_config_set_ds_region_blocks() {
   variable_set('ds_extras_region_blocks', $settings );
 }
 */
+
+/** Enable the Job Scheduler, Calendar, Feeds, Feeds Admin UI, Date iCal modules  */
+function tiffin_config_update_7309($sandbox) {
+  $modules = array("job_scheduler", "calendar", "feeds", "feeds_ui", "feeds_import", "date_ical");
+  foreach($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+      drupal_set_message("Enabled " . $module);
+    }
+  }
+}
