@@ -3509,19 +3509,22 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 /*
  * Commented these lines out as they are duplicated ~ line 4037 with a class
- * definition of .pane-giving-hero-top
+ * definition of .pane-giving-hero-top.
+ * Updated by Sean on 2-24-2017
  *
 */
+
 /*
 .pane-giving-hero-top {
   height: 395px;
   background-position: 0 20px !important;
 }
-*/
 
 .pane-advancement-hero-top, .pane-alumni-hero-top {
   background-position: 0 20px !important;
-}
+}*/
+
+/* END duplicate comment from 2-24-2017 */
 
 .pane-giving-hero-top .hvr-bounce-to-bottom::before, .pane-advancement-hero-top .hvr-bounce-to-bottom::before, .pane-alumni-hero-top .hvr-bounce-to-bottom::before {
   background: #365543 !important;
@@ -4045,9 +4048,9 @@ body.node-type-program .pane-node-field-degree-type {
   /*background-position: 0 0px !important;*/
 }
 
-.pane-advancement-hero-top, .pane-alumni-hero-top {
+/*.pane-advancement-hero-top, .pane-alumni-hero-top {
   background-position: 0 20px !important;
-}
+}*/
 
 .pane-giving-hero-top .hvr-bounce-to-bottom::before, .pane-advancement-hero-top .hvr-bounce-to-bottom::before, .pane-alumni-hero-top .hvr-bounce-to-bottom::before {
   background: #365543 !important;
