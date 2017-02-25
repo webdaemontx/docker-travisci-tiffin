@@ -467,6 +467,10 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_faculty_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_faculty_title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_faculty_title']['field_api_classes'] = TRUE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -502,6 +506,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   /* Display: Meet the Staff */
   $handler = $view->new_display('panel_pane', 'Meet the Staff', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'International Admissions Staff';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -582,6 +587,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
 <span class="profile-position">[field_faculty_title]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -766,12 +772,8 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_animated'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '4';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_staff_photo']['id'] = 'field_staff_photo';
@@ -784,7 +786,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_staff_photo']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_staff_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_staff_photo']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_staff_photo']['field_api_classes'] = TRUE;
@@ -793,6 +795,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_staff_name']['table'] = 'field_data_field_staff_name';
   $handler->display->display_options['fields']['field_staff_name']['field'] = 'field_staff_name';
   $handler->display->display_options['fields']['field_staff_name']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_staff_name']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_staff_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_name']['element_wrapper_type'] = 'div';
@@ -803,6 +806,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'strong';
@@ -812,23 +816,34 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_staff_email']['id'] = 'field_staff_email';
   $handler->display->display_options['fields']['field_staff_email']['table'] = 'field_data_field_staff_email';
   $handler->display->display_options['fields']['field_staff_email']['field'] = 'field_staff_email';
-  $handler->display->display_options['fields']['field_staff_email']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_staff_email']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_staff_email']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_email']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_staff_email']['field_api_classes'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_email']['type'] = 'email_plain';
   /* Field: Field: Phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['label'] = 'Phone:';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'strong';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_phone']['type'] = 'telephone_link';
   $handler->display->display_options['fields']['field_phone']['settings'] = array(
     'title' => '',
   );
-  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="profile-details" data-mh="profile-details">
+ <span class="profile-name">[field_staff_name]</span>
+<span class="profile-position">[title]</span>
+<span class="profile-email">[field_staff_email]</span>
+<span class="profile-phone">[field_phone]</span>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -863,8 +878,13 @@ function tiffin_cabinet_and_staff_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Email'),
     t('Phone:'),
+    t('<div class="profile-details" data-mh="profile-details">
+ <span class="profile-name">[field_staff_name]</span>
+<span class="profile-position">[title]</span>
+<span class="profile-email">[field_staff_email]</span>
+<span class="profile-phone">[field_phone]</span>
+</div>'),
   );
   $export['staff_listing'] = $view;
 

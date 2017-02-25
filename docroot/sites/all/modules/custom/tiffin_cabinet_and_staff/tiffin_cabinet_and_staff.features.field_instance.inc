@@ -563,12 +563,13 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_featured_image',
     'label' => 'Primary Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 5041,
       'entity_translation_sync' => 0,
       'file_directory' => 'images/trustees',
       'file_extensions' => 'png gif jpg jpeg',
@@ -595,6 +596,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
           'upload' => 'upload',
         ),
       ),
