@@ -3507,11 +3507,17 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-alumni-hero-top {
   height: 565px;
 }
-
+/*
+ * Commented these lines out as they are duplicated ~ line 4037 with a class
+ * definition of .pane-giving-hero-top
+ *
+*/
+/*
 .pane-giving-hero-top {
   height: 395px;
   background-position: 0 20px !important;
 }
+*/
 
 .pane-advancement-hero-top, .pane-alumni-hero-top {
   background-position: 0 20px !important;
@@ -4036,7 +4042,7 @@ body.node-type-program .pane-node-field-degree-type {
 
 .pane-giving-hero-top {
   height: 395px;
-  background-position: 0 20px !important;
+  /*background-position: 0 0px !important;*/
 }
 
 .pane-advancement-hero-top, .pane-alumni-hero-top {

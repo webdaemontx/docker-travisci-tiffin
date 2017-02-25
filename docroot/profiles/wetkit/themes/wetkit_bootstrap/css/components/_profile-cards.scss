@@ -23,7 +23,7 @@
 }
 
 .profile-details {
-  background-color: rgba($brand-gold, .3);
+  background-color: rgba($brand-gold, .7);
   padding: 15px;
   color: #fff;
   position: absolute;
@@ -32,7 +32,7 @@
   left: 0;
   right: 0;
   span {
-    display: inline-block;
+    display: block;
   }
   .profile-name {
     font-size: 18px;
@@ -42,12 +42,10 @@
     font-size: 14px;
   }
   .profile-email {
-    font-family: "Bitstream Vera Sans", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Lucida, Arial, Geneva, sans-serif;
     font-size: 1em;
     color: #fff;
   }
   .profile-phone {
-    font-family: "Bitstream Vera Sans", Helvetica, "Lucida Grande", "Lucida Sans Unicode", Lucida, Arial, Geneva, sans-serif;
     font-size: 1em;
     color: #fff;
   }
