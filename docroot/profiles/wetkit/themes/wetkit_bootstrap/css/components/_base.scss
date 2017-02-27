@@ -1567,6 +1567,11 @@ ul#click-on-programs {
   }
   .menu > li {
     padding: 10px 12px 10px 10px;
+
+    @media (max-width: 1025px) {
+      padding: 10px 0 10px 8px;
+    }
+
     &.first {
       margin: 0 0 0 74px;
     }
@@ -3636,7 +3641,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       padding-top: 0;
     }
   }
-  margin-left: -15px;
 }
 
 @media (max-width: 500px) {
