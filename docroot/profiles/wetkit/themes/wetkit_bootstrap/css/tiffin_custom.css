@@ -2864,14 +2864,6 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
 nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
   color: #d9bf75 !important; }
 
-.pane-the-faculty-for-program-pages {
-  width: 80%;
-  margin: 0 auto; }
-  .pane-the-faculty-for-program-pages .img-responsive {
-    margin: 0 auto;
-    max-height: 293px;
-    max-width: 220px; }
-
 .btn-primary {
   color: #d9bf75;
   background-color: #365543;
