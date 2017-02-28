@@ -67,7 +67,12 @@ function academics_panelizer_defaults() {
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array();
-  $display->panel_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+    ),
+  );
   $display->cache = array();
   $display->title = '';
   $display->uuid = 'ade44df2-8832-44ed-a175-9f0c2845188d';
@@ -75,6 +80,90 @@ function academics_panelizer_defaults() {
   $display->storage_id = 'taxonomy_term:schools:default';
   $display->content = array();
   $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-220d2c70-ffc3-4139-9b12-b56623b57303';
+  $pane->panel = 'center';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'generic_school_page_hero';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'panelizer',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '220d2c70-ffc3-4139-9b12-b56623b57303';
+  $display->content['new-220d2c70-ffc3-4139-9b12-b56623b57303'] = $pane;
+  $display->panels['center'][0] = 'new-220d2c70-ffc3-4139-9b12-b56623b57303';
+  $pane = new stdClass();
+  $pane->pid = 'new-83a850f8-9b3c-4eb4-b02e-eb24ceaa47e6';
+  $pane->panel = 'center';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'generic_school_social_media';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '83a850f8-9b3c-4eb4-b02e-eb24ceaa47e6';
+  $display->content['new-83a850f8-9b3c-4eb4-b02e-eb24ceaa47e6'] = $pane;
+  $display->panels['center'][1] = 'new-83a850f8-9b3c-4eb4-b02e-eb24ceaa47e6';
+  $pane = new stdClass();
+  $pane->pid = 'new-cd26a4eb-580c-4ae8-992c-c3181754f4ba';
+  $pane->panel = 'center';
+  $pane->type = 'views';
+  $pane->subtype = 'testimonials_slider';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '5',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'default',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'cd26a4eb-580c-4ae8-992c-c3181754f4ba';
+  $display->content['new-cd26a4eb-580c-4ae8-992c-c3181754f4ba'] = $pane;
+  $display->panels['center'][2] = 'new-cd26a4eb-580c-4ae8-992c-c3181754f4ba';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;

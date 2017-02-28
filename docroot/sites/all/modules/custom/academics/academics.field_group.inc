@@ -11,7 +11,7 @@ function academics_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_4year_course_sequence|node|program|form';
   $field_group->group_name = 'group_4year_course_sequence';
@@ -43,7 +43,7 @@ function academics_field_group_info() {
   $field_groups['group_4year_course_sequence|node|program|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_admission_tabs|node|program|form';
   $field_group->group_name = 'group_admission_tabs';
@@ -75,6 +75,36 @@ function academics_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_career_opportunities|node|program|form';
+  $field_group->group_name = 'group_career_opportunities';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'program';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_graduate_html';
+  $field_group->data = array(
+    'label' => 'Career Opportunities - (Undergraduate Program) Page Tab',
+    'weight' => '26',
+    'children' => array(
+      0 => 'field_tu_graduates',
+      1 => 'field_undergraduate_careers',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Career Opportunities - (Undergraduate Program) Page Tab',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-career-opportunities field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups['group_career_opportunities|node|program|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_curriculum_tab|node|program|form';
   $field_group->group_name = 'group_curriculum_tab';
   $field_group->entity_type = 'node';
@@ -83,15 +113,14 @@ function academics_field_group_info() {
   $field_group->parent_name = 'group_header_tabs';
   $field_group->data = array(
     'label' => 'Curriculum',
-    'weight' => '17',
+    'weight' => '37',
     'children' => array(
       0 => 'field_curriculum_comp_lang_req',
       1 => 'field_curriculum_core_courses',
       2 => 'field_curriculum_internship',
       3 => 'field_curriculum_prerequisites',
       4 => 'field_curriculum_program_content',
-      5 => 'field_curriculum_summary',
-      6 => 'field_curriculum_thesis',
+      5 => 'field_curriculum_thesis',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -117,19 +146,25 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Program Tabs',
-    'weight' => '12',
+    'weight' => '14',
     'children' => array(
       0 => 'group_header_tabs',
+      1 => 'group_career_opportunities',
+      2 => 'group_undergrad_overview',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Program Tabs',
+      'formatter' => 'open',
       'instance_settings' => array(
-        'required_fields' => 1,
-        'classes' => 'group-program-tabs-html field-group-tab',
         'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'required_fields' => 1,
+        'id' => '',
       ),
-      'formatter' => 'closed',
     ),
   );
   $field_groups['group_graduate_html|node|program|form'] = $field_group;
@@ -145,17 +180,23 @@ function academics_field_group_info() {
   $field_group->parent_name = 'group_graduate_html';
   $field_group->data = array(
     'label' => 'Program Tabs',
-    'weight' => '10',
+    'weight' => '27',
     'children' => array(
       0 => 'group_curriculum_tab',
       1 => 'group_tuition_fees',
     ),
-    'format_type' => 'htabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'label' => 'Program Tabs',
+      'formatter' => 'open',
       'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+        'required_fields' => 1,
         'id' => '',
-        'classes' => 'group-graduate-tabs field-group-htabs',
       ),
     ),
   );
@@ -172,7 +213,7 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Header',
-    'weight' => '10',
+    'weight' => '12',
     'children' => array(
       0 => 'field_poster',
       1 => 'field_program_summary',
@@ -219,7 +260,7 @@ function academics_field_group_info() {
   $field_groups['group_related_majors_minors_tab|node|program|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sample_courses_tab|node|program|form';
   $field_group->group_name = 'group_sample_courses_tab';
@@ -247,7 +288,7 @@ function academics_field_group_info() {
   $field_groups['group_sample_courses_tab|node|program|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_tuition_fees|node|program|form';
   $field_group->group_name = 'group_tuition_fees';
@@ -278,6 +319,38 @@ function academics_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_undergrad_overview|node|program|form';
+  $field_group->group_name = 'group_undergrad_overview';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'program';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_graduate_html';
+  $field_group->data = array(
+    'label' => 'Overview - Program Page Tab',
+    'weight' => '25',
+    'children' => array(
+      0 => 'field_curriculum_summary',
+      1 => 'field_undergrad_sample_courses',
+      2 => 'field_format',
+      3 => 'field_concentration',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Overview - Program Page Tab',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-undergrad-overview field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups['group_undergrad_overview|node|program|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_undergraduate_html|node|program|form';
   $field_group->group_name = 'group_undergraduate_html';
   $field_group->entity_type = 'node';
@@ -286,17 +359,22 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Undergraduate',
-    'weight' => '11',
+    'weight' => '13',
     'children' => array(
       0 => 'group_undergraduate_tabs',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'formatter' => 'open',
       'instance_settings' => array(
         'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
         'classes' => '',
         'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -313,17 +391,21 @@ function academics_field_group_info() {
   $field_group->parent_name = 'group_undergraduate_html';
   $field_group->data = array(
     'label' => 'Undergraduate Tabs',
-    'weight' => '13',
+    'weight' => '57',
     'children' => array(
-      0 => 'group_4year_course_sequence',
-      1 => 'group_related_majors_minors_tab',
-      2 => 'group_sample_courses_tab',
+      0 => 'group_related_majors_minors_tab',
     ),
-    'format_type' => 'htabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'formatter' => 'open',
       'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
         'classes' => '',
+        'required_fields' => 1,
         'id' => '',
       ),
     ),
@@ -333,9 +415,11 @@ function academics_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Admission');
+  t('Career Opportunities - (Undergraduate Program) Page Tab');
   t('Curriculum');
   t('Four Year Course Sequence');
   t('Header');
+  t('Overview - Program Page Tab');
   t('Program Tabs');
   t('Related Majors & Minors');
   t('Sample Courses');

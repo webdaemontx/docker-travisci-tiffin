@@ -19,6 +19,16 @@ function academics_taxonomy_default_vocabularies() {
       'language' => 'und',
       'i18n_mode' => 0,
     ),
+    'program_location' => array(
+      'name' => 'Program Location',
+      'machine_name' => 'program_location',
+      'description' => 'A short list of the Locations a program is offered',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 0,
+    ),
     'program_type' => array(
       'name' => 'Program Type',
       'machine_name' => 'program_type',
