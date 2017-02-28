@@ -21,9 +21,9 @@ regions[page_bottom] = Page bottom
 ; ========================================
 ; Stylesheets
 ; ========================================
+stylesheets[all][] = css/hover-min.css
 stylesheets[all][] = css/wetkit_bootstrap.styles.css
 stylesheets[all][] = css/tiffin_custom.css
-stylesheets[all][] = css/hover-min.css
 stylesheets[all][] = vendor/venobox/venobox.css
 
 

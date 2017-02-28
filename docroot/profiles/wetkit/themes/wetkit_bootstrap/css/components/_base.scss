@@ -145,6 +145,17 @@ div.pane-board-members {
 
 /* Sidebar menus */
 
+#wb-sec h2.pane-title {
+  height: inherit;
+  width: inherit;
+  position: relative;
+  background: $brand-green;
+  padding: 10px 5px 10px 5px;
+  font-size: 22px;
+  color: #fff;
+  font-weight: normal;
+}
+
 .pane-menu-about-tu .active-trail {
   a.list-group-item {
     font-style: italic;
@@ -413,7 +424,46 @@ div.view-homepage-news-slidehow {
 #wb-sm {
   height: 85px;
   padding-top: 15px;
-  //padding-left: 40px;
+  .menu > li > a {
+    border-left: none;
+    color: #fff;
+  }
+  .menu > li:last-child > a {
+    border-right: none;
+  }
+  .menu > li > a:hover {
+    background: transparent;
+    color: #fff;
+  }
+  .menu > li > a.wb-navcurr {
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    color: #fff;
+  }
+}
+
+.hvr-underline-reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  height: 2px;
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out
+}
+
+.hvr-underline-reveal:active:before, .hvr-underline-reveal:focus:before, .hvr-underline-reveal:hover:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0)
 }
 
 #wb-bar {
@@ -1597,7 +1647,7 @@ ul[role=menubar] {
   clear: none;
 }
 
-.list-inline {
+header #navbar .list-inline {
   li a {
     &:hover, &:focus {
       color: white !important;
