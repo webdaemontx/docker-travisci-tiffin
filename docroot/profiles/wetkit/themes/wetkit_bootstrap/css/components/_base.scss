@@ -440,6 +440,10 @@ div.view-homepage-news-slidehow {
     background: transparent;
     color: #fff;
   }
+  .menu > li.active > a {
+    background: transparent;
+    color: #fff;
+  }
 }
 
 .hvr-underline-reveal:before {
@@ -1612,9 +1616,9 @@ ul#click-on-programs {
   .menu > li a {
     padding: 0;
   }
-  .hvr-underline-reveal::before {
+/*  .hvr-underline-reveal:before {
     background: white !important;
-  }
+  }*/
   .menu > li {
     padding: 10px 12px 10px 10px;
 
