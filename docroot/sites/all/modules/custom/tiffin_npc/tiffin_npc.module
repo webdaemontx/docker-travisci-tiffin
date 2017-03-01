@@ -81,7 +81,7 @@ function tiffin_npc_success() {
 
   $pell_grant = _get_pell_grant($efc);
 
-  $tuition = 36000;
+  $tuition = 36600;
 
   $total_finaid = $scholarship[1] + $pell_grant[0] + 3500 + 2000 + $ocog[0] + $ocog[1];
 
