@@ -81,7 +81,7 @@ function tiffin_npc_success() {
 
   $pell_grant = _get_pell_grant($efc);
 
-  $tuition = 35000;
+  $tuition = 36000;
 
   $total_finaid = $scholarship[1] + $pell_grant[0] + 3500 + 2000 + $ocog[0] + $ocog[1];
 
@@ -136,13 +136,13 @@ Dependent Children: " . ucfirst($have_dependent_children) . "<br><br>
 <br><br>
 <b>Tuition and Fees (2017-2018)</b><br>
 Tuition....................................................$22,800<br>
-Room (double).......................................$5,300<br>
+Room (double) with Air Cond.........................$5,900<br>
 Board (unlimited meals)..........................$4,900<br>
 Books (estimate).....................................$2,000<br>
-Total Cost...............................................$35,000<br>
+Total Cost...............................................$36,600<br>
 </p></td>
 <td width='50%' valign='top'><strong>Summary of Costs</strong><br><br>
-Total Cost..............................................$35,000<br>
+Total Cost..............................................$36,600<br>
 <u>Financial Aid..........................................$" . number_format($finaidcost) . "</u><br>
 Total Out-of-Pocket Costs........................$" . number_format($outofpocket) . "<br>
 </td></tr></table><hr><br>
