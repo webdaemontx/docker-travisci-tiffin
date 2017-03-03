@@ -14,7 +14,7 @@
 ?>
 
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
- <div class="container">
+<!-- <div class="container">-->
    <?php if ($options['alignment'] == 'horizontal'): ?>
      <?php if((count($items[0]['content'])) <= 4): ?>
        <?php foreach ($items as $row): ?>
@@ -56,6 +56,6 @@
      </div>
 
    <?php endif ?>
- </div>
+<!-- </div>-->
 </div>
 

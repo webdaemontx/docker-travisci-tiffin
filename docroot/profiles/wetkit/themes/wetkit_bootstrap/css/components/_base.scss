@@ -1616,9 +1616,9 @@ ul#click-on-programs {
   .menu > li a {
     padding: 0;
   }
-/*  .hvr-underline-reveal:before {
-    background: white !important;
-  }*/
+  /*  .hvr-underline-reveal:before {
+      background: white !important;
+    }*/
   .menu > li {
     padding: 10px 12px 10px 10px;
 
@@ -1768,26 +1768,33 @@ body.page-admissions .pane-1 {
   /*background-attachment: fixed;*/
   background-size: cover;
   background-position: 0 -150px;
-  height: 383px;
+  //height: 383px;
+
   h1 {
     width: 100%;
     text-align: center;
     color: white;
   }
+
   #abouttutop {
-    height: 194px;
+    //height: 194px;
     /*background-color: #dbc073;*/
     /*background: rgba(218, 192, 115, .90);*/
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /*margin-top: 114px;*/
+    //position: absolute;
+    //bottom: 0;
+    //left: 0;
+    //right: 0;
+    margin-top: 114px;
     ul {
       list-style-type: none;
       margin-bottom: 0;
+      padding: 0;
+
       li a {
         text-decoration: none;
+        p {
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -1800,7 +1807,9 @@ body.page-admissions .pane-1 {
   /*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
-  height: 465px;
+
+  padding: 10px 0 60px;
+  //height: 465px;
   p {
     text-decoration: none;
     color: white;
@@ -1810,6 +1819,7 @@ body.page-admissions .pane-1 {
     list-style-type: none;
     width: 100%;
     clear: both;
+
     li {
       list-style-type: none;
       width: 100%;
@@ -1830,12 +1840,12 @@ body.page-admissions .pane-1 {
   h3 {
     margin-top: 80px;
     border: 1px solid #dbc073;
-    height: 66px;
+    //height: 66px;
     padding-top: 3px;
     padding-left: 12px;
     padding-right: 10px;
     color: white;
-    font-size: 54px;
+    //font-size: 54px;
     float: left;
     clear: both;
     margin-bottom: 30px;
@@ -1843,8 +1853,11 @@ body.page-admissions .pane-1 {
 }
 
 #about-tiffin {
-  width: 462px;
   margin: 0 auto 0 auto;
+
+  @media screen and (min-width: 600px) {
+    width: 462px;
+  }
 }
 
 .pane-discover-tiffin-ohio {
@@ -3526,7 +3539,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-about-tiffin-ohio h3 {
-  font-size: 52px !important;
+  font-size: 32px;
+
+  @media screen and (min-width: 600px) {
+    font-size: 52px;
+  }
 }
 
 .view-testimonials-slider .views-field-body {
@@ -3566,6 +3583,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-alumni-hero-top {
   height: 565px;
 }
+
 /*
  * Commented these lines out as they are duplicated ~ line 4037 with a class
  * definition of .pane-giving-hero-top.
@@ -4249,7 +4267,7 @@ body.node-type-program .pane-node-field-degree-type {
   margin-bottom: 30px;
 }
 
-.pane-faculty-panel-pane-3, .pane-faculty-panel-pane-2, .pane-faculty-panel-pane-1, .pane-cabinet-members {
+.pane-faculty-panel-pane-3, .pane-faculty-panel-pane-2, .pane-faculty-panel-pane-1 {
   width: 80%;
   margin: 0 auto;
 }
