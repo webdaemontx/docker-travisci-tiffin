@@ -168,18 +168,22 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
   $success_body .= "<strong>Grants</strong><br>";
   if ($pell_grant[0] > 0) {
     $success_body .= "Pell Grant................................................$" . number_format($pell_grant[0]) . "<br>";
-  } elseif ($ocog >0) {
+  }
+  if ($ocog >0) {
     $success_body .= "Ohio College Opportunity Grant............................$" . number_format($ocog) . "<br>";
     $success_body .= "(Estimate based on Ohio funding and eligibility)" . "<br>";
-  } else {
-    $success_body .= "Pell Grant................................................$0<br><br>";
-    $success_body .= "Ohio College Opportunity Grant............................$0<br><br>";
   }
-
-
+  if ($pell_grant[0] <= 0) {
+    $success_body .= "Pell Grant................................................$0<br>";
+  }
+  if ($ocog <=0) {
+    $success_body .= "Ohio College Opportunity Grant............................$0<br>";
+  }
+  // Add an additional break for spacing between the Grants and Federal Loans
+  $success_body .= "<br>";
 
   $success_body .= "<strong>Federal Loans</strong><br>
-Federal Direct Stafford Subsidized  Loan.........................$3,500<br>";
+Federal Direct Stafford Subsidized Loan.........................$3,500<br>";
 
   if ($born_before_1973 == 'yes' || $in_masters_or_doctorate_program == 'yes' || $married == 'yes' || $have_dependent_children == 'yes' || $parents_deceased == 'yes' || $veteran == 'yes' || $active_duty == 'yes' || $other_dependents == 'yes' || $emancipated_or_guardianship == 'yes' || $unaccompanied_youth == 'yes' || $homeless_youth == 'yes') {
 
@@ -202,11 +206,10 @@ if ($scholarship[1] > 0) {
   $success_body .= "*Scholarships which are based on estimated information cannot be guaranteed.<br>";
 }
 
-$success_body .= "<br>*These calculations do not include other forms of aid, such as other Federal Grants (SEOG), athletic or activity based scholarships, or scholarships from other sources. You may wish to search for other sources of aid by visiting <a href='http://www.fastweb.org' target='_blank'>http://www.fastweb.org</a> or <a href='http://www.chegg.com/scholarships' target='_blank'>http://www.chegg.com/scholarships</a> which offer free scholarship searches.<br><br>
-<h4>Your &quot;Estimated Net Price&quot; is calculated based on the information you provided. This Net Price Calculator gives estimates of your cost of attendance and net price. These estimates do not represent a final determination or actual award of financial assistance or the final net price. Any estimates calculated will not be guaranteed by the Secretary of Education, the State, or the school. The school has the final authority on determining the financial aid award.</h4>
-<p>While all care has been taken to produce estimates that are accurate based on the information provided to us by the student or user, cost of attendance and financial aid availability is subject to change without notice. Any future changes made by the federal government, state agencies, or institution could   result in a different award. Also, any outside/private scholarship or financial   assistance may reduce your aid award.</p>
-<p>Students must complete the Free Application for Federal Student Aid (FAFSA) in order to determine their eligibility for, and receive an actual financial aid award that includes federal grant, loan, and work-study assistance. For information on applying for federal student aid, go to <strong><a href='http://www.fafsa.ed.gov' target='_blank'>www.fafsa.ed.gov</a></strong>.</p>
-<p>If you have any Remaining Cost, the loan amount is suggested as an option for   meeting this portion of your costs. Our ten month payment plan is also available as a resource. The amount shown represents the maximum amount which you would be entitled to borrow. Actual borrowing will be your choice and is subject to credit approval.</p>
+$success_body .= "<br><h4>*These calculations do not include other forms of aid, such as other Federal Grants (SEOG), athletic or activity based scholarships, or scholarships from other sources. You may wish to search for other sources of aid by visiting <a href='http://www.fastweb.org' target='_blank'>http://www.fastweb.org</a> or <a href='http://www.chegg.com/scholarships' target='_blank'>http://www.chegg.com/scholarships</a> which offer free scholarship searches.</h4><br><br>
+<p>Your &quot;Estimated Net Price&quot; is calculated based on the information you provided. This Net Price Calculator gives estimates of your cost of attendance and net price. These estimates do not represent a final determination or actual award of financial assistance or the final net price. Any estimates calculated will not be guaranteed by the Secretary of Education, the State, or the school. The school has the final authority on determining the financial aid award.</p>
+<p>While all care has been taken to produce estimates that are accurate based on the information provided to us by the student or user, cost of attendance and financial aid availability is subject to change without notice. Any future changes made by the federal government, state agencies, or institution could result in a different award. Also, any outside/private scholarship or financial assistance may reduce your aid award.</p>
+<p>Students must complete the Free Application for Federal Student Aid (FAFSA) in order to determine their eligibility for, and receive an actual financial aid award that includes federal grant, loan, and work-study assistance. For information on applying for federal student aid, go to <strong><a href='www.fasfa.ed.gov' target='_blank'>www.fafsa.ed.gov</a></strong></p>
 </td></tr></table></center>";
 
   $form['description'] = array(
