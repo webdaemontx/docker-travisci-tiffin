@@ -172,7 +172,8 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
     $success_body .= "Ohio College Opportunity Grant............................$" . number_format($ocog) . "<br>";
     $success_body .= "(Estimate based on Ohio funding and eligibility)" . "<br>";
   } else {
-    $success_body .= "<br><br>";
+    $success_body .= "Pell Grant................................................$0<br><br>";
+    $success_body .= "Ohio College Opportunity Grant............................$0<br><br>";
   }
 
 
@@ -1063,7 +1064,6 @@ function _get_ohio_community_grant($efc, $ohio_resident) {
      $multiplier = intval($efc) / 100;
      $pell = $base_pell - (100 * intval($multiplier));
    }
-
    return array($pell, $staffordloan);
   }
 
