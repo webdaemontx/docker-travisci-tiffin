@@ -71,6 +71,9 @@ function tiffin_npc_success() {
   $scholarships = $result['scholarships'];
   $which_activity = $result['which_activity'];
   $extra_activity = $result['extra_activity'];
+  $this_year = date('Y');
+  $next_year = (date( 'Y') + 1);
+
 
   // returns a double value from 0 to ~75 that determines scholarship eligibility
   $actsat_value = _get_actsat_score($sat_act, $sat, $act, $high_school_gpa, $prep_courses_score);
@@ -130,14 +133,15 @@ Sport/Activity 2:  ucfirst($extra_activity) <br><br>";
   $success_body .= "<strong>Student Financials</strong><br>
 Estimated AGI: $" . number_format(0) . "<br>
 EFC: $" . number_format($efc) . "<br>
-Dependent Children: " . ucfirst($have_dependent_children) . "<br><br>
+Dependent Children: " . ucfirst($have_dependent_children) . "<br>
+Ohio Resident:" . ucfirst($ohio_residents) . "<br><br>
 </td></tr></table><hr><table width='80%'><tr><td width='50%'>
-<strong>Estimated cost for the 2017-2018 Academic Year</strong>
+<strong>Estimated cost for the $this_year-$next_year Academic Year</strong>
 <br><br>
-<b>Tuition and Fees (2017-2018)</b><br>
-Tuition....................................................$22,800<br>
+<b>Tuition and Fees ($this_year-$next_year)</b><br>
+Tuition....................................................$23,700<br>
 Room (double) with Air Cond.........................$5,900<br>
-Board (unlimited meals)..........................$4,900<br>
+Board (unlimited meals)..........................$5,000<br>
 Books (estimate).....................................$2,000<br>
 Total Cost...............................................$36,600<br>
 </p></td>
@@ -163,8 +167,15 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
 
   $success_body .= "<strong>Grants</strong><br>";
   if ($pell_grant[0] > 0) {
-    $success_body .= "Pell Grant................................................$" . number_format($pell_grant[0]) . "<br><br>";
+    $success_body .= "Pell Grant................................................$" . number_format($pell_grant[0]) . "<br>";
+  } elseif ($ocog >0) {
+    $success_body .= "Ohio College Opportunity Grant............................$" . number_format($ocog) . "<br>";
+    $success_body .= "(Estimate based on Ohio funding and eligibility)" . "<br>";
+  } else {
+    $success_body .= "<br><br>";
   }
+
+
 
   $success_body .= "<strong>Federal Loans</strong><br>
 Federal Direct Stafford Subsidized  Loan.........................$3,500<br>";
@@ -548,9 +559,10 @@ function tiffin_npc_netprice_form_page_two() {
     '#collapsed' => FALSE,
   );
 
+  $born_before = (date('Y') - 23);
   $form['dependency_status']['born_before_1973'] = array(
     '#type' => 'radios',
-    '#title' => t('Were you born before January 1, 1993?'),
+    '#title' => t("Were you born before January 1, $born_before?"),
     '#options' => array(
       'yes' => t('Yes'),
       'no' => t('No'),
@@ -588,6 +600,7 @@ function tiffin_npc_netprice_form_page_two() {
     '#required' => TRUE,
   );
 
+  $veteran_date = (date('Y') + 1);
   $form['dependency_status']['veteran'] = array(
     '#type' => 'radios',
     '#title' => t('Are you a veteran of the U.S. Armed Forces?'),
@@ -596,9 +609,9 @@ function tiffin_npc_netprice_form_page_two() {
       'no' => t('No'),
     ),
     '#required' => TRUE,
-    '#description' => t('<p><strong>Answer No</strong> (you are not a veteran) if you (1) have never engaged in active duty in the U.S. armed forces, (2) are currently a Reserve Officers\' Training Corps (ROTC) student or a cadet or midshipman at a service academy, (3) are a National Guard or Reserves enlistee activated only for state or training purposes, or (4) were engaged in active duty in the U.S. armed forces but released under dishonorable conditions. Also answer No if you are currently serving in the U.S. armed forces and will continue to serve through June 30, 2017.</p>
+    '#description' => t('<p><strong>Answer No</strong> (you are not a veteran) if you (1) have never engaged in active duty in the U.S. armed forces, (2) are currently a Reserve Officers\' Training Corps (ROTC) student or a cadet or midshipman at a service academy, (3) are a National Guard or Reserves enlistee activated only for state or training purposes, or (4) were engaged in active duty in the U.S. armed forces but released under dishonorable conditions. Also answer No if you are currently serving in the U.S. armed forces and will continue to serve through June 30,' .  $veteran_date . '.</p>
 
-<p><strong>Answer Yes</strong> (you are a veteran) if you (1) have engaged in active duty in the U.S. armed forces or are a National Guard or Reserves enlistee who was called to active duty for other than state or training purposes, or were a cadet or midshipman at one of the service academies and (2) were released under a condition other than dishonorable. Also answer Yes if you are not a veteran now but will be one by June 30, 2017.</p>'),
+<p><strong>Answer Yes</strong> (you are a veteran) if you (1) have engaged in active duty in the U.S. armed forces or are a National Guard or Reserves enlistee who was called to active duty for other than state or training purposes, or were a cadet or midshipman at one of the service academies and (2) were released under a condition other than dishonorable. Also answer Yes if you are not a veteran now but will be one by June 30, '. $veteran_date .'.</p>'),
   );
 
   $form['dependency_status']['have_dependent_children'] = array(
@@ -737,6 +750,7 @@ function tiffin_npc_netprice_form_page_two() {
       'cross_country' => t('Cross Country'),
       'dance' => t('Dance'),
       'equestrian' => t('Equestrian'),
+      'eSports' => t('eSports'),
       'football' => t('Football'),
       'golf' => t('Golf'),
       'lacrosse' => t('Lacrosse'),
@@ -766,6 +780,7 @@ function tiffin_npc_netprice_form_page_two() {
       'cross_country' => t('Cross Country'),
       'dance' => t('Dance'),
       'equestrian' => t('Equestrian'),
+      'eSports' => t('eSports'),
       'football' => t('Football'),
       'golf' => t('Golf'),
       'lacrosse' => t('Lacrosse'),
@@ -917,21 +932,21 @@ function _get_actsat_score($actsat, $sat, $act, $gpa, $prep) {
 function _get_scholarships($actsat_score) {
   switch ($actsat_score) {
     case doubleval($actsat_score) >= 73:
-      $scholarship = "Trustees Scholarship";
+      $scholarship = "Trustee Scholarship";
       $scholarship_value = 13000;
       break;
     case doubleval($actsat_score) >= 58 && doubleval($actsat_score) <= 72.9:
-      $scholarship = "Presidents Scholarship";
-      $scholarship_value = 11000;
+      $scholarship = "President Scholarship";
+      $scholarship_value = 12000;
       break;
     case doubleval($actsat_score) >= 55 && doubleval($actsat_score) <= 57.9:
-      $scholarship = "Deans Grant";
+      $scholarship = "Dean Grant";
       $scholarship_value = 9000;
       break;
-    case doubleval($actsat_score) >= 50 && doubleval($actsat_score) <= 54.9:
+/*    case doubleval($actsat_score) >= 50 && doubleval($actsat_score) <= 54.9:
       $scholarship = "Achievement Grant";
       $scholarship_value = 5000;
-      break;
+      break;*/
     case doubleval($actsat_score) >= 0 && doubleval($actsat_score) <= 49.9:
       $scholarship = "Nothing";
       $scholarship_value = 0000;
