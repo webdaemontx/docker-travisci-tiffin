@@ -140,6 +140,8 @@
     </div>
   </nav>
   <?php print render($page['header']); ?>
+    <?php $no_breadcrumbs = array("Visit Tiffin University"); ?>
+    <?php if (!(in_array($title, $no_breadcrumbs))): ?>
   <nav class="site-breadcrumbs" role="navigation" property="breadcrumb">
     <div class="<?php print $container_class; ?>">
       <div class="row">
@@ -147,6 +149,7 @@
       </div>
     </div>
   </nav>
+    <?php endif; ?>
 </header>
 <main role="<?php print $wxt_role_main; ?>" class="<?php print $container_class; ?>">
   <div class="row">
