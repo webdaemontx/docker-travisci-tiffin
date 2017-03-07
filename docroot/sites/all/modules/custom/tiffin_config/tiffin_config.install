@@ -138,3 +138,16 @@ function tiffin_config_update_7309($sandbox) {
     }
   }
 }
+
+/**
+ * Disable the Masonry module
+ */
+function tiffin_config_update_7310($sandbox) {
+  $modules = array("masonry", "masonry_panels", "masonry_views");
+  foreach($modules as $module) {
+    if( module_exists($module)) {
+      module_disable(array($module));
+      drupal_uninstall_modules(array($module));
+    }
+  }
+}
