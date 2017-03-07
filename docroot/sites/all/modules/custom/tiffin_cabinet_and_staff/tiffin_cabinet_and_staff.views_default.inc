@@ -818,9 +818,12 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_staff_email']['field'] = 'field_staff_email';
   $handler->display->display_options['fields']['field_staff_email']['label'] = '';
   $handler->display->display_options['fields']['field_staff_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_email']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_staff_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_email']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_staff_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_staff_email']['type'] = 'email_plain';
+  $handler->display->display_options['fields']['field_staff_email']['field_api_classes'] = TRUE;
   /* Field: Field: Phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
@@ -828,10 +831,12 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['label'] = 'Phone:';
   $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'strong';
   $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_phone']['settings'] = array(
     'title' => '',
   );
+  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';

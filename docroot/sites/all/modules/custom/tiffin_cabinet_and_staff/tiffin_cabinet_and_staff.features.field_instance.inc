@@ -750,6 +750,207 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-staff-field_featured_categories'.
+  $field_instances['node-staff-field_featured_categories'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_featured_categories',
+    'label' => 'Categories',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-staff-field_first_name'.
+  $field_instances['node-staff-field_first_name'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'tweet' => 'tweet',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'tweet' => array(
+              'weight' => 0,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-staff-field_last_name'.
+  $field_instances['node-staff-field_last_name'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'tweet' => 'tweet',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'tweet' => array(
+              'weight' => 0,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-staff-field_phone'.
   $field_instances['node-staff-field_phone'] = array(
     'bundle' => 'staff',
@@ -791,7 +992,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -870,7 +1071,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 15,
     ),
   );
 
@@ -949,7 +1150,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 14,
     ),
   );
 
@@ -996,7 +1197,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -1075,7 +1276,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 13,
     ),
   );
 
@@ -1210,7 +1411,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -1289,7 +1490,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 16,
     ),
   );
 
@@ -1346,6 +1547,7 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Bio/Summary');
   t('Body');
+  t('Categories');
   t('College Degrees');
   t('Company Address');
   t('Company Name');
