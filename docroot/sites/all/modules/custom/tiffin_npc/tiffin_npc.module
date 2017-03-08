@@ -80,13 +80,13 @@ function tiffin_npc_success() {
 
   $scholarship = _get_scholarships($actsat_value);
 
-  $ocog = _get_ohio_community_grant($efc, $ohio_residents);
+  $ocog = _get_ocog($efc, $ohio_residents);
 
   $pell_grant = _get_pell_grant($efc);
 
   $tuition = 36600;
 
-  $total_finaid = $scholarship[1] + $pell_grant[0] + 3500 + 2000 + $ocog[0] + $ocog[1];
+  $total_finaid = $scholarship[1] + $pell_grant[0] + 3500 + 2000 + $ocog;
 
   $finaidcost = $scholarship[1] + $pell_grant[0] + 5500;
 
@@ -947,10 +947,6 @@ function _get_scholarships($actsat_score) {
       $scholarship = "Dean Grant";
       $scholarship_value = 9000;
       break;
-/*    case doubleval($actsat_score) >= 50 && doubleval($actsat_score) <= 54.9:
-      $scholarship = "Achievement Grant";
-      $scholarship_value = 5000;
-      break;*/
     case doubleval($actsat_score) >= 0 && doubleval($actsat_score) <= 49.9:
       $scholarship = "Nothing";
       $scholarship_value = 0000;
@@ -959,94 +955,20 @@ function _get_scholarships($actsat_score) {
   return array($scholarship, $scholarship_value);
 }
 
-/* @return $ohiochoicegrant
- * @return $ocog -> Ohio Community Grant
+/* @return $ocog -> Ohio College Opportunity Grant
  *
  */
-function _get_ohio_community_grant($efc, $ohio_resident) {
-  if ($ohio_resident == 'Yes') {
-    $ohiochoicegrant = 660;
-  }
-  switch ($efc) {
-    case intval($efc) >= 2191 && intval($efc) <= 3850:
+function _get_ocog($efc, $ohio_resident) {
+  if ($ohio_resident == 'yes') {
+    if ( ($efc >=0) && ($efc <=2190)) {
+      $ocog = 2832;
+    } else {
       $ocog = 0;
-      break;
-    case intval($efc) >= 2101 && intval($efc) <= 2190:
-      $ocog = 600;
-      break;
-    case intval($efc) >= 2001 && intval($efc) <= 2100:
-      $ocog = 798;
-      break;
-    case intval($efc) >= 1901 && intval($efc) <= 2000:
-      $ocog = 1002;
-      break;
-    case intval($efc) >= 1801 && intval($efc) <= 1900:
-      $ocog = 1200;
-      break;
-    case intval($efc) >= 1701 && intval($efc) <= 1800:
-      $ocog = 1398;
-      break;
-    case intval($efc) >= 1601 && intval($efc) <= 1700:
-      $ocog = 1602;
-      break;
-    case intval($efc) >= 1501 && intval($efc) <= 1600:
-      $ocog = 1800;
-      break;
-    case intval($efc) >= 1401 && intval($efc) <= 1500:
-      $ocog = 1998;
-      break;
-    case intval($efc) >= 1301 && intval($efc) <= 1400:
-      $ocog = 2202;
-      break;
-    case intval($efc) >= 1201 && intval($efc) <= 1300:
-      $ocog = 2400;
-      break;
-    case intval($efc) >= 1101 && intval($efc) <= 1200:
-      $ocog = 2598;
-      break;
-    case intval($efc) >= 1001 && intval($efc) <= 1100:
-      $ocog = 2802;
-      break;
-    case intval($efc) >= 901 && intval($efc) <= 1000:
-      $ocog = 3000;
-      break;
-    case intval($efc) >= 801 && intval($efc) <= 900:
-      $ocog = 3198;
-      break;
-    case intval($efc) >= 701 && intval($efc) <= 800:
-      $ocog = 3402;
-      break;
-    case intval($efc) >= 601 && intval($efc) <= 700:
-      $ocog = 3600;
-      break;
-    case intval($efc) >= 501 && intval($efc) <= 600:
-      $ocog = 3798;
-      break;
-    case intval($efc) >= 401 && intval($efc) <= 500:
-      $ocog = 4002;
-      break;
-    case intval($efc) >= 301 && intval($efc) <= 400:
-      $ocog = 4200;
-      break;
-    case intval($efc) >= 201 && intval($efc) <= 300:
-      $ocog = 4398;
-      break;
-    case intval($efc) >= 101 && intval($efc) <= 200:
-      $ocog = 4602;
-      break;
-    case intval($efc) >= 1 && intval($efc) <= 100:
-      $ocog = 4800;
-      break;
-    case intval($efc) == 0:
-      $ocog = 4992;
-      break;
+    }
+  } else {
+    $ocog = 0;
   }
-  if (isset($ohiochoicegrant) && $ohiochoicegrant > 0) {
-    return array($ohiochoicegrant, $ocog);
-  }
-  else {
-    return $ocog;
-  }
+  return $ocog;
 }
 
   /* @return $pell -> Pell Grant amount
