@@ -1,0 +1,37 @@
+services:
+
+# Drupal 7 wrappers
+  appointments.drupal7:
+    class: \Drupal\service_container\Legacy\Drupal7
+  appointments.variable:
+    class: \Drupal\service_container\Variable
+    arguments: ['@appointments.drupal7']
+  appointments.account:
+    class: \Drupal\appointments\Session\Account
+    arguments: ['@appointments.drupal7', '@appointments.variable']
+
+# Logger
+  appointments.logger:
+    class: \Drupal\service_container\Logger\WatchdogLogger
+    arguments: ['@appointments.drupal7']
+  appointments.logger.factory:
+    class: Drupal\service_container\Logger\LoggerChannelFactory
+    calls:
+      - [addLogger, ['@appointments.logger']]
+  appointments.channel.appointments:
+    class: Drupal\service_container\Logger\LoggerChannel
+    factory: appointments.logger.factory:get
+    arguments: ['appointments']
+
+# Managers
+  appointments.calendar_manager:
+    class: \Drupal\appointments\CalendarManager
+    arguments: ['@appointments.variable', '@appointments.channel.appointments']
+  appointments.email_manager:
+    class: \Drupal\appointments\EmailManager
+    arguments: ['@appointments.variable', '@appointments.channel.appointments']
+  appointments.appointments_manager:
+    class: \Drupal\appointments\AppointmentsManager
+    arguments: ['@appointments.calendar_manager', '@appointments.email_manager', '@appointments.variable', '@appointments.channel.appointments']
+  appointments.appointments_type_manager:
+    class: \Drupal\appointments\AppointmentsTypeManager

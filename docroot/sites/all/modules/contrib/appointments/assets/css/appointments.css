@@ -1,0 +1,260 @@
+.appointments-wizard {
+    overflow: hidden;
+    position: relative;
+}
+
+div[class^="appointments-wizard__panel"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 300ms ease-in-out 0s,
+    transform 300ms ease-in-out 0s;
+}
+
+.appointments-wizard > .is-hidden {
+    z-index: 0;
+    opacity: 0;
+}
+
+.appointments-wizard > .is-visible {
+    z-index: 10;
+    opacity: 1;
+}
+
+.appointments-wizard > .is-shifted--left {
+    transform: translateX(-300px);
+}
+
+.appointments-wizard > .is-shifted--right {
+    transform: translateX(300px);
+}
+
+.appointments-wizard .is-available {
+    background-color: #00ff00;
+}
+
+.appointments-wizard .is-not-available {
+    background-color: #DDD;
+    color: #bfbfbf;
+}
+
+.appointments-wizard__step-title {
+    margin-bottom: 30px !important;
+    border-bottom: 1px solid #bbb;
+}
+
+.appointments-wizard__step-nav {
+    border-top: 1px solid #bbb;
+    margin-top: 40px;
+}
+
+.appointments-wizard__step-nav > a {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.appointments-wizard__header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.appointments-wizard__header time {
+    display: block;
+    font-size: 38px;
+}
+
+.appointments-wizard__inner-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+}
+
+.appointments-wizard__panel--day table {
+    width: 320px;
+    margin: 20px auto;
+}
+
+.appointments-wizard__panel--day td {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.appointments-wizard__inner-wrapper #edit-book {
+    margin-top: 20px;
+}
+
+.appointments-wizard__panel--day .is-available {
+    cursor: pointer;
+}
+
+.appointments-wizard__panel--day .is-available:hover {
+    background-color: #e4fae4;
+}
+
+.appointments-wizard__panel--day .is-not-available {
+    cursor: not-allowed;
+}
+
+.appointments-wizard__panel--form input[type="text"],
+.appointments-wizard__panel--form textarea {
+    width: 100%;
+}
+
+.appointments-wizard__panel--form input[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #00ff00;
+    background-image: none;
+}
+
+.appointments-wizard__inner-wrapper .form-item {
+    position: relative;
+}
+
+.appointments-wizard__inner-wrapper label.error {
+    display: none!important;
+}
+
+.appointments-wizard__inner-wrapper label.error + label {
+    color: #eb4b5c;
+}
+
+.appointments-wizard__inner-wrapper label[style*=none].error + label {
+    color: #333!important;
+}
+
+
+.appointments-wizard__inner-wrapper .form-control.error {
+    border-color: #eb4b5c;
+    border-width: 2px;
+}
+
+.appointments-wizard__inner-wrapper .privacy-text-title {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+
+.appointments-wizard__inner-wrapper .privacy-text {
+    width: 100%;
+    height: 9em;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Fullcalendar specific overrides */
+.fc-bgevent {
+    cursor: pointer;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number {
+    position: absolute;
+    z-index: 9;
+    box-sizing: border-box;
+    width: 25px;
+}
+
+.fc-row table {
+    height: 100%;
+    margin: 0;
+}
+
+.fc-row .fc-content-skeleton{
+    height: 100%;
+    padding-bottom: 1px;
+}
+
+.fc-row .fc-content-skeleton tbody td{
+    overflow: hidden;
+}
+
+.fc-day-grid-event {
+    cursor: pointer;
+}
+
+.fc-row .fc-content-skeleton tbody tr{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 3px 2px;
+}
+
+/* COLORE CELLE */
+.fc-content-skeleton tr:nth-child(1) > td.fc-event-container a{
+    background: #00ff00;
+    border-color: #00ff00;
+}
+/* COLORE CELLE HOVER*/
+.fc-content-skeleton tr:nth-child(1) > td.fc-event-container a:hover{
+    background: #090;
+    border-color: #090;
+}
+
+.appointments-wizard__panel--day .is-available:hover {
+    background-color: #090;
+}
+
+a.fc-day-grid-event{
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-radius: 0;
+    margin: 4px 2px 0px 2px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number:nth-child(2) {
+    margin-left: 14.28571%;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number:nth-child(3) {
+    margin-left: 28.5714%;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number:nth-child(4) {
+    margin-left: 42.8571%;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number:nth-child(5) {
+    margin-left: 57.1428%;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number:nth-child(6) {
+    margin-left: 71.4285%;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number:nth-child(7) {
+    margin-left: 85.7142%;
+}
+
+.fc-day-grid-event .fc-content{
+    color: transparent
+}
+
+.fc-view{
+    padding: 0 5px;
+}
+
+.fc-day-number.fc-today{
+    font-weight: bold;
+}
+
+.fc-unthemed .fc-today{
+    background: #ddd;
+}
+
+.fc-scroller{
+    overflow: hidden!important;
+}

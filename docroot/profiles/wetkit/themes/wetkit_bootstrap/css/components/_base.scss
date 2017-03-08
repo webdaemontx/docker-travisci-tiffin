@@ -435,6 +435,10 @@ div.view-homepage-news-slidehow {
     background: transparent;
     color: #fff;
   }
+  .menu > li > a:active {
+    background: transparent;
+    color: #fff;
+  }
   .menu > li > a.wb-navcurr {
     border-bottom: 1px solid #ffffff;
     background: transparent;
@@ -1616,9 +1620,9 @@ ul#click-on-programs {
   .menu > li a {
     padding: 0;
   }
-  /*  .hvr-underline-reveal:before {
-      background: white !important;
-    }*/
+  .hvr-underline-reveal:before {
+    background: white !important;
+  }
   .menu > li {
     padding: 10px 12px 10px 10px;
 

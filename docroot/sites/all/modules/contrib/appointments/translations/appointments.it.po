@@ -1,0 +1,439 @@
+# $Id$
+#
+# Italian translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  appointments.tokens.inc: n/a
+#  appointments.module: n/a
+#  src/Views/AppointmentViewsController.php: n/a
+#  includes/appointments_status_field.inc: n/a
+#  appointments.info: n/a
+#  includes/appointments.node.inc: n/a
+#  includes/appointments.views_default.inc: n/a
+#  appointments.install: n/a
+#  assets/js/appointments_backend.js: n/a
+#  assets/js/appointments_frontend.js: n/a
+#  includes/appointments.admin.inc: n/a
+#  includes/appointments_action_field.inc: n/a
+#  includes/appointments.ajax.inc: n/a
+#  src/EmailManager.php: n/a
+#  src/Configuration/DefaultRoomConfigurations.php: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-10-13 13:51+0200\n"
+"PO-Revision-Date: 2016-10-13 13:51+0200\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Italian <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: appointments.tokens.inc:10
+msgid "Start date"
+msgstr "Data di inizio"
+
+#: appointments.tokens.inc:11
+msgid "The appointment start date"
+msgstr "Data di inizio dell'appuntamento"
+
+#: appointments.tokens.inc:15
+msgid "End date"
+msgstr "Data di fine"
+
+#: appointments.tokens.inc:16
+msgid "The appointment end date"
+msgstr "Data di fine dell'appuntamento"
+
+#: appointments.module:179;180
+msgid "Manage appointments"
+msgstr "Gestisci gli appuntamenti"
+
+#: appointments.module:192;55 src/Views/AppointmentViewsController.php:25
+msgid "Appointment"
+msgstr "Appuntamento"
+
+#: appointments.module:212
+msgid "Default"
+msgstr "Predefinito"
+
+#: appointments.module:224
+msgid "Appointment Type"
+msgstr "Tipo di appuntamento"
+
+#: appointments.module:307
+msgid "Repeat for @months months"
+msgstr "Ripeti per @months mesi"
+
+#: appointments.module:310
+msgid "Repeat throughout the year"
+msgstr "Ripeti per tutto l'anno"
+
+#: appointments.module:410
+msgid "- Any -"
+msgstr "- Qualsiasi -"
+
+#: appointments.module:411 includes/appointments_status_field.inc:16
+msgid "Pending"
+msgstr "In attesa di conferma"
+
+#: appointments.module:412 includes/appointments_status_field.inc:18
+msgid "Confirmed"
+msgstr "Confermato"
+
+#: appointments.module:413 includes/appointments_status_field.inc:20
+msgid "Rejected"
+msgstr "Rifiutato"
+
+#: appointments.module:414 includes/appointments_status_field.inc:22
+msgid "Deleted"
+msgstr "Eliminato"
+
+#: appointments.module:12;21;30 appointments.info:0 includes/appointments.node.inc:205 includes/appointments.views_default.inc:203
+msgid "Appointments"
+msgstr "Appuntamenti"
+
+#: appointments.module:13
+msgid "Manage Appointments configuration"
+msgstr "Gestisci la configurazione del modulo Appointments"
+
+#: appointments.module:35
+msgid "Availability"
+msgstr "Disponibilità"
+
+#: appointments.module:45
+msgid "Configure"
+msgstr "Configura"
+
+#: appointments.install:9;10
+msgid "Standard appointment type"
+msgstr "Tipo di appuntamento standard"
+
+#: appointments.info:0
+msgid "Provides an interface to add appointments to nodes."
+msgstr "Fornisce un'interfaccia per aggiungere un calendario appuntamenti ai nodi."
+
+#: appointments.info:0
+msgid "Other"
+msgstr "Altro"
+
+#: assets/js/appointments_backend.js:0
+msgid "Slot definition for @day"
+msgstr "Definizione degli slot per @day"
+
+#: assets/js/appointments_frontend.js:0
+msgid "Please enter only alphanumeric characters."
+msgstr "Per favore inserisci solo caratteri alfanumerici."
+
+#: includes/appointments.admin.inc:8
+msgid "Content type with appointments attached to."
+msgstr "Content type al quale attaccare il calendario prenotazioni."
+
+#: includes/appointments.admin.inc:17
+msgid "Privacy text for anonymous users"
+msgstr "Testo informativa sulla privacy per utenti non loggati"
+
+#: includes/appointments.admin.inc:23
+msgid "User field containig user's proper name."
+msgstr "Campo del profilo utente contenente il nome dell'utente"
+
+#: includes/appointments.admin.inc:26;35
+msgid "- Select -"
+msgstr "- Seleziona -"
+
+#: includes/appointments.admin.inc:32
+msgid "User field containig user's surname."
+msgstr "Campo del profilo utente contenente il cognome dell'utente"
+
+#: includes/appointments.admin.inc:71
+msgid "Are you sure you want to confirm this appointment?"
+msgstr "Sei sicuro di voler confermare questo appuntamento?"
+
+#: includes/appointments.admin.inc:73;108;139
+msgid "This action cannot be undone."
+msgstr "L'operazione non è reversibile."
+
+#: includes/appointments.admin.inc:74 includes/appointments_action_field.inc:20
+msgid "Confirm"
+msgstr "Conferma"
+
+#: includes/appointments.admin.inc:75;110;141
+msgid "Cancel"
+msgstr "Annulla"
+
+#: includes/appointments.admin.inc:91
+msgid "The appointment as been confirmed"
+msgstr "L'appuntamento è stato confermato"
+
+#: includes/appointments.admin.inc:106
+msgid "Are you sure you want to reject this appointment?"
+msgstr "Sei sicuro di voler rifiutare questo appuntamento?"
+
+#: includes/appointments.admin.inc:109 includes/appointments_action_field.inc:21
+msgid "Reject"
+msgstr "Rifiuta"
+
+#: includes/appointments.admin.inc:126
+msgid "The appointment as been rejected"
+msgstr "L'appuntamento è stato rifiutato"
+
+#: includes/appointments.admin.inc:137
+msgid "Are you sure you want to delete this appointment?"
+msgstr "Sei sicuro di voler cancellare questo appuntamento?"
+
+#: includes/appointments.admin.inc:140 includes/appointments_action_field.inc:22
+msgid "Delete"
+msgstr "Elimina"
+
+#: includes/appointments.admin.inc:157
+msgid "The appointment as been deleted"
+msgstr "L'appuntamento è stato cancellato"
+
+#: includes/appointments.admin.inc:90;125;156
+msgid "appointment"
+msgstr "appuntamento"
+
+#: includes/appointments.admin.inc:90
+msgid "An appointment as been confirmed"
+msgstr "Un appuntamento è stato confermato"
+
+#: includes/appointments.admin.inc:125
+msgid "An appointment as been rejected"
+msgstr "Un appuntamento è stato rifiutato"
+
+#: includes/appointments.admin.inc:156
+msgid "An appointment as been deleted"
+msgstr "Un appuntamento è stato cancellato"
+
+#: includes/appointments.ajax.inc:28
+msgid "(slots: @slots)"
+msgstr "(slots: @slots)"
+
+#: includes/appointments.ajax.inc:209
+msgid "Send request"
+msgstr "Invia la richiesta"
+
+#: includes/appointments.ajax.inc:263
+msgid "Your appointment has been successful requested"
+msgstr "Il suo appuntamento è stato richiesto con successo"
+
+#: includes/appointments.node.inc:24
+msgid "Available slots"
+msgstr "Slot disponibili"
+
+#: includes/appointments.node.inc:25
+msgid "The number of slots available for every hour in this office. ATTENTION: this can be only changed if the availability calendar has not been populated yet."
+msgstr ""
+"Numero di slot disponibili per ogni ora in questo ufficio. ATTENZIONE: "
+"questo valore può essere cambiato solo se non sono ancora state "
+"inserite disponiblità di orario."
+
+#: includes/appointments.node.inc:33
+msgid "First bookable slot"
+msgstr "Primo slot prenotabile"
+
+#: includes/appointments.node.inc:40
+msgid "Latest bookable slot"
+msgstr "Ultimo slot prenotabile"
+
+#: includes/appointments.node.inc:47
+msgid "Create appointments with status Confirmed"
+msgstr "Crea gli appuntamenti con stato Confermato"
+
+#: includes/appointments.node.inc:54
+msgid "Email configuration"
+msgstr "Configurazione email"
+
+#: includes/appointments.node.inc:66
+msgid "Email pending subject"
+msgstr "Oggetto della mail in attesa di conferma"
+
+#: includes/appointments.node.inc:73
+msgid "Email pending body"
+msgstr "Corpo della mail in attesa di conferma"
+
+#: includes/appointments.node.inc:80
+msgid "Email confirmed subject"
+msgstr "Oggetto della mail di conferma"
+
+#: includes/appointments.node.inc:87
+msgid "Email confirmed body"
+msgstr "Corpo della mail di conferma"
+
+#: includes/appointments.node.inc:94
+msgid "Email rejected subject"
+msgstr "Oggetto della mail di rifiuto"
+
+#: includes/appointments.node.inc:101
+msgid "Email rejected body"
+msgstr "Corpo della mail di rifiuto"
+
+#: includes/appointments.node.inc:108
+msgid "Room manager email"
+msgstr "Email del responsabile dell'ufficio"
+
+#: includes/appointments.node.inc:121
+msgid "Save configuration"
+msgstr "Salva configurazione"
+
+#: includes/appointments.node.inc:136
+msgid "Slots has to be numeric."
+msgstr "Il campo Slot disponibili deve essere numerico."
+
+#: includes/appointments.node.inc:141
+msgid "Opening time must be in hh:mm format, for example: 09:00."
+msgstr ""
+"Il campo Orario di apertura deve essere nel formato hh:mm, ad esempio "
+"09:00."
+
+#: includes/appointments.node.inc:146
+msgid "Closing time must be in hh:mm format, for example: 18:00."
+msgstr ""
+"Il campo Orario di chiusura deve essere nel formato hh:mm, ad esempio "
+"18:00."
+
+#: includes/appointments.node.inc:174
+msgid "The configuration options have been saved."
+msgstr "Le opzioni di configurazione sono state salvate."
+
+#: includes/appointments.node.inc:208
+msgid "Appointment for @date"
+msgstr "Appuntamento per @date"
+
+#: includes/appointments.views_default.inc:202
+msgid "Master"
+msgstr "Principale"
+
+#: includes/appointments.views_default.inc:204
+msgid "more"
+msgstr "altro"
+
+#: includes/appointments.views_default.inc:205
+msgid "Apply"
+msgstr "Applica"
+
+#: includes/appointments.views_default.inc:206
+msgid "Reset"
+msgstr "Ripristina"
+
+#: includes/appointments.views_default.inc:207
+msgid "Sort by"
+msgstr "Ordina per"
+
+#: includes/appointments.views_default.inc:208
+msgid "Asc"
+msgstr "Asc"
+
+#: includes/appointments.views_default.inc:209
+msgid "Desc"
+msgstr "Disc"
+
+#: includes/appointments.views_default.inc:210
+msgid "Items per page"
+msgstr "Voci per pagina"
+
+#: includes/appointments.views_default.inc:211
+msgid "- All -"
+msgstr "- Tutto -"
+
+#: includes/appointments.views_default.inc:212
+msgid "Offset"
+msgstr "Scostamento"
+
+#: includes/appointments.views_default.inc:213
+msgid "« first"
+msgstr "« prima"
+
+#: includes/appointments.views_default.inc:214
+msgid "‹ previous"
+msgstr "‹ precedente"
+
+#: includes/appointments.views_default.inc:215
+msgid "next ›"
+msgstr "seguente ›"
+
+#: includes/appointments.views_default.inc:216
+msgid "last »"
+msgstr "ultima »"
+
+#: includes/appointments.views_default.inc:217
+msgid "Appointment ID"
+msgstr ""
+
+#: includes/appointments.views_default.inc:218
+msgid "."
+msgstr "."
+
+#: includes/appointments.views_default.inc:219
+msgid "Name"
+msgstr "Nome"
+
+#: includes/appointments.views_default.inc:220
+msgid "Surname"
+msgstr "Cognome"
+
+#: includes/appointments.views_default.inc:221
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/appointments.views_default.inc:222
+msgid "Phone"
+msgstr "Telefono"
+
+#: includes/appointments.views_default.inc:223
+msgid "Note"
+msgstr "Note"
+
+#: includes/appointments.views_default.inc:224
+msgid "Start"
+msgstr "Inizio"
+
+#: includes/appointments.views_default.inc:225
+msgid "End"
+msgstr "Fine"
+
+#: includes/appointments.views_default.inc:226
+msgid "Status"
+msgstr "Stato"
+
+#: includes/appointments.views_default.inc:227
+msgid "Actions"
+msgstr "Azioni"
+
+#: includes/appointments.views_default.inc:228
+msgid "Tutti"
+msgstr ""
+
+#: src/EmailManager.php:88
+msgid "A new request has been inserted: requested date: [appointment:start_date:custom:d/m/y H:i]"
+msgstr ""
+"Una nuova richiesta è stata inserita: data richiesta: "
+"[appointment:start_date:custom:d/m/y H:i]"
+
+#: src/Configuration/DefaultRoomConfigurations.php:16
+msgid "Thanks for the request"
+msgstr "Grazie per la richiesta"
+
+#: src/Configuration/DefaultRoomConfigurations.php:16;16;16
+msgid "Insert body here."
+msgstr "Inserisci il corpo della mail qua."
+
+#: src/Configuration/DefaultRoomConfigurations.php:16
+msgid "Your booking has been confirmed"
+msgstr "Il tuo appuntamento è stato confermato"
+
+#: src/Configuration/DefaultRoomConfigurations.php:16
+msgid "Your booking has been rejected"
+msgstr "Il tuo appuntamento è stato rifiutato"
+
+#: src/Views/AppointmentViewsController.php:23
+msgid "Appointment actions"
+msgstr "Azioni sull'appuntamento"
+
+#: src/Views/AppointmentViewsController.php:24
+msgid "Appointment actions."
+msgstr "Azioni sull'appuntamento."
+

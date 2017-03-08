@@ -1,0 +1,488 @@
+<?php
+
+use Drupal\appointments\Entity\Appointment;
+
+/**
+ * Implements hook_menu().
+ */
+function appointments_menu() {
+  $items = [];
+
+  $items['admin/config/system/appointments'] = [
+    'title' => 'Appointments',
+    'description' => 'Manage Appointments configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['appointments_config'],
+    'access arguments' => ['manage appointments'],
+    'file' => 'includes/appointments.admin.inc',
+  ];
+
+  $items['node/%node/appointments_management'] = [
+    'title' => 'Appointments',
+    'page callback' => 'appointments_node_appointments',
+    'page arguments' => [1],
+    'access callback' => 'appointments_node_configuration_access',
+    'access arguments' => [1],
+    'file' => 'includes/appointments.node.inc',
+    'type' => MENU_LOCAL_TASK,
+  ];
+  $items['node/%node/appointments_management/list'] = [
+    'title' => 'Appointments',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -8,
+  ];
+  $items['node/%node/appointments_management/availability'] = [
+    'title' => 'Availability',
+    'page callback' => 'appointments_node_availability',
+    'page arguments' => [1],
+    'access callback' => 'appointments_node_configuration_access',
+    'access arguments' => [1],
+    'file' => 'includes/appointments.node.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => -5,
+  ];
+  $items['node/%node/appointments_management/configure'] = [
+    'title' => 'Configure',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['appointments_node_config', 1],
+    'access callback' => 'appointments_node_configuration_access',
+    'access arguments' => [1],
+    'file' => 'includes/appointments.node.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => -5,
+  ];
+  $items['node/%node/appointments_management/appointment/%appointment'] = [
+    'title' => 'Appointment',
+    'page callback' => 'appointments_node_appointment',
+    'page arguments' => [1, 4],
+    'access arguments' => ['manage appointments'],
+    'file' => 'includes/appointments.node.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  $items['node/%node/appointments_management/availability/add/%'] = [
+    'page callback' => 'appointments_node_availability_add',
+    'page arguments' => [1, 5],
+    'access callback' => 'appointments_node_configuration_access',
+    'access arguments' => [1],
+    'file' => 'includes/appointments.ajax.inc',
+    'type' => MENU_CALLBACK,
+  ];
+  $items['node/%node/appointments_management/availability/get'] = [
+    'page callback' => 'appointments_calendar_backend',
+    'page arguments' => [1],
+    'access callback' => 'appointments_node_configuration_access',
+    'access arguments' => [1],
+    'file' => 'includes/appointments.ajax.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  // Calendar.
+  $items['node/%node/appointments_calendar'] = [
+    'page callback' => 'appointments_calendar',
+    'page arguments' => [1],
+    'access callback' => TRUE,
+    'file' => 'includes/appointments.ajax.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  // Hours.
+  $items['node/%node/appointments_calendar/%'] = [
+    'page callback' => 'appointments_hours',
+    'page arguments' => [1, 3],
+    'access callback' => TRUE,
+    'file' => 'includes/appointments.ajax.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  // Booking form.
+  $items['node/%node/appointments_calendar/%/form'] = [
+    'page callback' => 'appointments_form',
+    'page arguments' => [1, 3],
+    'access callback' => TRUE,
+    'file' => 'includes/appointments.ajax.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  $items['node/%node/appointments_calendar/%/form/captcha'] = [
+    'page callback' => 'appointments_form_captcha',
+    'page arguments' => [1, 3],
+    'access callback' => TRUE,
+    'file' => 'includes/appointments.ajax.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  // Confirm appointment.
+  $items['appointment/%appointment/confirm'] = [
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['appointments_confirm', 1],
+    'access arguments' => ['manage appointments'],
+    'file' => 'includes/appointments.admin.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  // Reject appointment.
+  $items['appointment/%appointment/reject'] = [
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['appointments_reject', 1],
+    'access arguments' => ['manage appointments'],
+    'file' => 'includes/appointments.admin.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  // Delete appointment.
+  $items['appointment/%appointment/delete'] = [
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['appointments_delete', 1],
+    'access arguments' => ['manage appointments'],
+    'file' => 'includes/appointments.admin.inc',
+    'type' => MENU_CALLBACK,
+  ];
+
+  return $items;
+}
+
+/**
+ * Loads an appointment object from the database.
+ *
+ * @param $aid
+ *   The appointment ID.
+ *
+ * @return
+ *   A fully-populated appointment object, or FALSE if the appointment is
+ *   not found.
+ */
+function appointment_load($aid) {
+  return \Drupal::service('appointments.appointments_manager')->load($aid);
+}
+
+/**
+ * Implements hook_admin_paths().
+ */
+function appointments_admin_paths() {
+  $paths = array(
+    'node/*/appointments_management' => TRUE,
+    'node/*/appointments_management/list' => TRUE,
+    'node/*/appointments_management/availability' => TRUE,
+    'node/*/appointments_management/configure' => TRUE,
+    'node/*/appointments_management/appointment/*' => TRUE,
+  );
+  return $paths;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function appointments_permission() {
+  return [
+    'manage appointments' => [
+      'description' => t('Manage appointments'),
+      'title' => t('Manage appointments'),
+      'restrict access' => TRUE,
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_info().
+ */
+function appointments_entity_info() {
+  $return = [
+    'appointment' => [
+      'label' => t('Appointment'),
+      'entity class' => '\Drupal\appointments\Entity\Appointment',
+      'controller class' => 'EntityAPIController',
+      'base table' => 'appointment',
+      'fieldable' => TRUE,
+      'entity keys' => [
+        'id' => 'aid',
+        'bundle' => 'type',
+      ],
+      'bundle keys' => [
+        'bundle' => 'type',
+      ],
+      'bundles' => [
+        'standard' => [
+          'label' => 'Standard',
+        ],
+      ],
+      'load hook' => 'appointment_load',
+      'view modes' => [
+        'full' => [
+          'label' => t('Default'),
+          'custom settings' => FALSE,
+        ],
+      ],
+      'label callback' => 'entity_class_label',
+      'uri callback' => 'entity_class_uri',
+      'access callback' => 'appointment_access',
+      'views controller class' => '\Drupal\appointments\Views\AppointmentViewsController',
+      'module' => 'appointments',
+    ],
+  ];
+  $return['appointment_type'] = [
+    'label' => t('Appointment Type'),
+    'entity class' => '\Drupal\appointments\Entity\AppointmentType',
+    'controller class' => 'EntityAPIControllerExportable',
+    'base table' => 'appointment_type',
+    'fieldable' => FALSE,
+    'bundle of' => 'appointment',
+    'exportable' => TRUE,
+    'entity keys' => [
+      'id' => 'id',
+      'name' => 'type',
+      'label' => 'label',
+    ],
+    'module' => 'appointments',
+    'access callback' => 'appointment_type_access',
+  ];
+
+  return $return;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function appointments_node_view($node, $view_mode, $langcode) {
+  if ($node->type === variable_get('appointments_content_type') && 'full' === $view_mode) {
+    $node->content['appointments'] = [
+      '#theme' => 'appointments_frontend_calendar',
+      '#node' => $node,
+      '#weight' => 1000,
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function appointments_theme($existing, $type, $theme, $path) {
+  return [
+    'appointments_frontend_calendar' => [
+      'variables' => ['node' => NULL],
+      'template' => 'templates/appointments-frontend-calendar',
+    ],
+    'appointments_frontend_hours' => [
+      'variables' => ['hours' => NULL, 'day' => NULL],
+      'template' => 'templates/appointments-frontend-hours',
+    ],
+    'appointments_frontend_form' => [
+      'render element' => 'form',
+      'template' => 'templates/appointments-frontend-form',
+    ],
+    'appointment' => array(
+      'render element' => 'elements',
+      'template' => 'templates/appointment',
+    ),
+    'appointments_backend_calendar' => [
+      'variables' => ['node' => NULL],
+      'template' => 'templates/appointments-backend-calendar',
+    ],
+    'appointments_room_manager_email' => [
+      'template' => 'templates/appointments-room-manager-email',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function appointments_preprocess_appointments_frontend_calendar(&$variables) {
+  $node = $variables['node'];
+
+  drupal_add_js(
+    [
+      'appointments' => [
+        'nid' => $node->nid,
+        'lang' => strtolower(variable_get('site_default_country', 'en')),
+        'first_day_week' => variable_get('date_first_day', 0),
+      ],
+    ], 'setting'
+  );
+  libraries_load('momentjs');
+  libraries_load('fullcalendar');
+  libraries_load('jquery.validate');
+  drupal_add_library('appointments', 'appointments_frontend_calendar');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function appointments_preprocess_appointments_backend_calendar(&$variables) {
+  $node = $variables['node'];
+
+  $calendar_manager = \Drupal::service('appointments.calendar_manager');
+  $variables['hours'] = $calendar_manager->listDayHours($node->nid);
+  $repeat_interval = $calendar_manager->getRepeatInterval();
+  if ($repeat_interval) {
+    $variables['repeat_checkbox_label'] = t('Repeat for @months months', ['@months' => $repeat_interval]);
+  }
+  else {
+    $variables['repeat_checkbox_label'] = t('Repeat throughout the year');
+  }
+
+  drupal_add_js(
+    [
+      'appointments' => [
+        'nid' => $node->nid,
+        'lang' => strtolower(variable_get('site_default_country', 'en')),
+        'first_day_week' => variable_get('date_first_day', 0),
+      ],
+    ], 'setting'
+  );
+  libraries_load('momentjs');
+  libraries_load('fullcalendar');
+  drupal_add_library('appointments', 'appointments_backend_calendar');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function appointments_preprocess_appointments_frontend_form(&$variables) {
+  $form = $variables['form'];
+  $variables['day'] = new \DateTime($form['day']['#value']);
+  $variables['start'] = $form['start']['#value'];
+  $variables['end'] = $form['end']['#value'];
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function appointments_libraries_info() {
+  $libraries['jquery.validate'] = [
+    'name' => 'jQuery validation plugin',
+    'vendor url' => 'https://jqueryvalidation.org',
+    'download url' => 'http://jqueryvalidation.org/files/jquery-validation-1.15.0.zip',
+    'version' => '1.15.0',
+    'files' => [
+      'js' => ['dist/jquery.validate.min.js'],
+    ],
+  ];
+
+  $libraries['momentjs'] = [
+    'name' => 'Moment.js',
+    'vendor url' => 'http://momentjs.com',
+    'download url' => 'http://momentjs.com/downloads/moment.min.js',
+    'version' => '2.17.1',
+    'files' => [
+      'js' => ['moment.min.js'],
+    ],
+  ];
+
+  $libraries['fullcalendar'] = [
+    'name' => 'Fullcalendar',
+    'vendor url' => 'http://fullcalendar.io',
+    'download url' => 'https://github.com/arshaw/fullcalendar/releases/download/v3.1.0/fullcalendar-3.1.0.zip',
+    'version' => '3.1.0',
+    'files' => [
+      'js' => ['fullcalendar.min.js'],
+      'css' => ['fullcalendar.min.css'],
+    ],
+  ];
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_library().
+ */
+function appointments_library() {
+  $libraries['appointments_frontend_calendar'] = [
+    'title' => 'Appointments frontend calendar',
+    'version' => '1.0.0',
+    'js' => [
+      drupal_get_path('module', 'appointments') . '/assets/js/appointments_frontend.js' => [],
+    ],
+    'css' => [
+      drupal_get_path('module', 'appointments') . '/assets/css/appointments.css' => [
+        'type' => 'file',
+        'media' => 'screen',
+      ],
+    ],
+  ];
+
+  $libraries['appointments_backend_calendar'] = [
+    'title' => 'Appointments backend calendar',
+    'version' => '1.0.0',
+    'js' => [
+      drupal_get_path('module', 'appointments') . '/assets/js/appointments_backend.js' => [],
+    ],
+    'dependencies' => [
+      ['system', 'ui.dialog'],
+    ],
+  ];
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function appointments_views_api() {
+  return [
+    'api' => 3,
+    'path' => drupal_get_path('module', 'appointments') . '/includes',
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function appointments_form_alter(&$form, &$form_state, $form_id) {
+  // Convert textfield to select.
+  if ('views_exposed_form' === $form_id && 'appointments' === $form_state['view']->name) {
+    $form['status']['#type'] = 'select';
+    $form['status']['#options'] = [
+      '' => t('- Any -'),
+      Appointment::PENDING => t('Pending'),
+      Appointment::CONFIRMED => t('Confirmed'),
+      Appointment::REJECTED => t('Rejected'),
+      Appointment::DELETED => t('Deleted'),
+    ];
+    $form['status']['#default_value'] = Appointment::PENDING;
+    $form['status']['#size'] = 1;
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function appointments_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['body'];
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function appointments_node_delete($node) {
+  \Drupal::service('appointments.calendar_manager')
+    ->clearAvailability($node->nid);
+}
+
+// Access callbacks.
+
+/**
+ * Access callback for node/%node/appointments_node_configure
+ */
+function appointments_node_configuration_access($node) {
+  if ($node->type === variable_get('appointments_content_type') && user_access('manage appointments')) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Access callback for appointment.
+ */
+function appointment_access($op, $task, $account = NULL, $entity_type = NULL) {
+  return user_access('manage appointments');
+}
+
+/**
+ * Access callback for appointment Type.
+ */
+function appointment_type_access($op, $entity = NULL) {
+  return user_access('manage appointments');
+}
