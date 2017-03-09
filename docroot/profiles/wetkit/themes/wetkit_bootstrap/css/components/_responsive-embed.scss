@@ -23,7 +23,6 @@
 
 .pane-tu-drone-vid {
   position: relative;
-  height: 600px;
   overflow: hidden;
 
   .video-click {
@@ -35,13 +34,22 @@
   }
 
   .fa-play {
-    color: #fff;
-    font-size: 60px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+    display: none;
+  }
 
-    &:hover,
-    &:focus {
-      color: $brand-green;
+  @media screen and (min-width: 600px) {
+    height: 600px;
+
+    .fa-play {
+      display: block;
+      color: #fff;
+      font-size: 60px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+
+      &:hover,
+      &:focus {
+        color: $brand-green;
+      }
     }
   }
 }
