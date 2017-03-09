@@ -199,7 +199,7 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
 
   // Begin the Loans section
   $success_body .= "<strong>Federal Loans</strong><br>";
-  $success_body .= "Federal Direct Stafford Subsidized Loan.........................$" . number_format($unsubsidized_stafford_loan) . "<br>";
+  $success_body .= "Federal Direct Stafford Subsidized Loan.........................$" . number_format($subsidized_stafford_loan) . "<br>";
 
   $success_body .= "Federal Direct Stafford Unubsidized Loan........................$" . number_format($unsubsidized_stafford_loan) . "<br>";
 
