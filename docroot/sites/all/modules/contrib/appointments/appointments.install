@@ -1,0 +1,437 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function appointments_install() {
+  $appointment_type = entity_create('appointment_type', [
+    'type' => 'standard',
+    'label' => t('Standard appointment type'),
+    'description' => t('Standard appointment type'),
+    'module' => 'appointments',
+    'custom' => 1,
+    'modified' => 1,
+    'locked' => 0,
+  ]);
+
+  // Here we need to directly call this because the service container is
+  // not yet available.
+  entity_save('appointment_type', $appointment_type);
+
+  db_insert('date_formats')
+    ->fields(array(
+      'format' => 'l, F d, Y',
+      'type' => 'custom',
+      'locked' => 1,
+    ))
+    ->execute();
+
+  db_insert('date_format_type')
+    ->fields(array(
+      'type' => 'appointments_date',
+      'title' => 'Appointments date format',
+      'locked' => 1,
+    ))
+    ->execute();
+
+  variable_set('date_format_appointments_date', 'l, F d, Y');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function appointments_uninstall() {
+  db_delete('date_formats')
+    ->condition('format', 'l, F d, Y')
+    ->execute();
+
+  db_delete('date_format_type')
+    ->condition('type', 'appointments_date')
+    ->execute();
+
+  variable_del('date_format_appointments_date');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function appointments_schema() {
+  $schema = array();
+
+  $machine_name = 'availability_event';
+
+  $schema['bat_event_' . $machine_name . '_day_state'] = array(
+    'description' => 'Holds the state of each unit for a given day',
+    'fields' => bat_event_generate_day_schema_fields(),
+    'indexes' => array(
+      'unit_id' => array('unit_id'),
+      'year' => array('year'),
+      'month' => array('month'),
+    ),
+    'unique keys' => array(
+      'month_key' => array('unit_id', 'year', 'month'),
+    ),
+    'foreign keys' => array(
+      'unit_id' => array(
+        'table' => 'bat_units',
+        'columns' => array('unit_id' => 'unit_id'),
+      ),
+    ),
+  );
+
+  $schema['bat_event_' . $machine_name . '_day_event'] = array(
+    'description' => 'Holds the event that determined the state of a unit',
+    'fields' => bat_event_generate_day_schema_fields(),
+    'indexes' => array(
+      'unit_id' => array('unit_id'),
+      'year' => array('year'),
+      'month' => array('month'),
+    ),
+    'unique keys' => array(
+      'month_key' => array('unit_id', 'year', 'month'),
+    ),
+    'foreign keys' => array(
+      'unit_id' => array(
+        'table' => 'bat_units',
+        'columns' => array('unit_id' => 'unit_id'),
+      ),
+    ),
+  );
+
+  $schema['bat_event_' . $machine_name . '_hour_state'] = array(
+    'description' => 'Holds the state of the unit',
+    'fields' => bat_event_generate_hour_schema_fields(),
+    'indexes' => array(
+      'unit_id' => array('unit_id'),
+      'year' => array('year'),
+      'month' => array('month'),
+    ),
+    'unique keys' => array(
+      'day_key' => array('unit_id', 'year', 'month', 'day'),
+    ),
+    'foreign keys' => array(
+      'unit_id' => array(
+        'table' => 'bat_units',
+        'columns' => array('unit_id' => 'unit_id'),
+      ),
+    ),
+  );
+
+  $schema['bat_event_' . $machine_name . '_hour_event'] = array(
+    'description' => 'Holds the event that determined the state of a unit',
+    'fields' => bat_event_generate_hour_schema_fields(),
+    'indexes' => array(
+      'unit_id' => array('unit_id'),
+      'year' => array('year'),
+      'month' => array('month'),
+    ),
+    'unique keys' => array(
+      'day_key' => array('unit_id', 'year', 'month', 'day'),
+    ),
+    'foreign keys' => array(
+      'unit_id' => array(
+        'table' => 'bat_units',
+        'columns' => array('unit_id' => 'unit_id'),
+      ),
+    ),
+  );
+
+  $schema['bat_event_' . $machine_name . '_minute_state'] = array(
+    'description' => 'Holds the state of the unit',
+    'fields' => bat_event_generate_minute_schema_fields(),
+    'indexes' => array(
+      'unit_id' => array('unit_id'),
+      'year' => array('year'),
+      'month' => array('month'),
+    ),
+    'unique keys' => array(
+      'day_key' => array('unit_id', 'year', 'month', 'day', 'hour'),
+    ),
+    'foreign keys' => array(
+      'unit_id' => array(
+        'table' => 'bat_units',
+        'columns' => array('unit_id' => 'unit_id'),
+      ),
+    ),
+  );
+
+  $schema['bat_event_' . $machine_name . '_minute_event'] = array(
+    'description' => 'Holds the event that determined the state of a unit',
+    'fields' => bat_event_generate_minute_schema_fields(),
+    'indexes' => array(
+      'unit_id' => array('unit_id'),
+      'year' => array('year'),
+      'month' => array('month'),
+    ),
+    'unique keys' => array(
+      'day_key' => array('unit_id', 'year', 'month', 'day', 'hour'),
+    ),
+    'foreign keys' => array(
+      'unit_id' => array(
+        'table' => 'bat_units',
+        'columns' => array('unit_id' => 'unit_id'),
+      ),
+    ),
+  );
+
+  $schema['appointment'] = array(
+    'description' => 'The base table for appointments.',
+    'fields' => array(
+      'aid' => array(
+        'description' => 'The primary identifier for the appointment.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'The type (bundle) of this appointment.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'name' => array(
+        'description' => 'User name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'surname' => array(
+        'description' => 'User surname.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'phone' => array(
+        'description' => 'User phone.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'email' => array(
+        'description' => 'User email.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'note' => array(
+        'description' => 'Appointment note.',
+        'type' => 'text',
+      ),
+      'nid' => array(
+        'description' => 'ID of a Drupal.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'slot' => array(
+        'description' => 'ID of a slot.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'start' => array(
+        'description' => 'The Unix timestamp when the appointment start.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'end' => array(
+        'description' => 'The Unix timestamp when the appointment end.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'status' => array(
+        'description' => 'Appointment status. 0 = pending, 1 = confirmed, 2 = rejected, 3 = deleted.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+    ),
+    'primary key' => array('aid'),
+  );
+
+  $schema['appointment_type'] = array(
+    'description' => 'Stores information about all defined appointment types.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique appointment type ID.',
+      ),
+      'type' => array(
+        'description' => 'The machine-readable name of this type.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'The human-readable name of this type.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'A brief description of this type.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'medium',
+        'translatable' => TRUE,
+      ),
+      'status' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        // Set the default to ENTITY_CUSTOM without using the constant as it is
+        // not safe to use it at this point.
+        'default' => 0x01,
+        'size' => 'tiny',
+        'description' => 'The exportable status of the entity.',
+      ),
+      'module' => array(
+        'description' => 'The name of the providing module if the entity has been defined in code.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'type' => array('type'),
+    ),
+  );
+
+  return $schema;
+}
+
+function bat_event_generate_day_schema_fields() {
+  $fields = array(
+    'unit_id' => array(
+      'description' => 'Identifier for a unit.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ),
+    'year' => array(
+      'description' => 'The calendar year for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+    'month' => array(
+      'description' => 'The month for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+  );
+
+  for ($i = 1; $i <= 31; $i++) {
+    $fields['d' . $i] = array(
+      'description' => 'D' . $i,
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    );
+  }
+
+  return $fields;
+}
+
+function bat_event_generate_hour_schema_fields() {
+  $fields = array(
+    'unit_id' => array(
+      'description' => 'Identifier for a unit.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ),
+    'year' => array(
+      'description' => 'The calendar year for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+    'month' => array(
+      'description' => 'The month for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+    'day' => array(
+      'description' => 'The day for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+  );
+
+  for ($i = 0; $i <= 23; $i++) {
+    $fields['h' . $i] = array(
+      'description' => 'H' . $i,
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    );
+  }
+
+  return $fields;
+}
+
+function bat_event_generate_minute_schema_fields() {
+  $fields = array(
+    'unit_id' => array(
+      'description' => 'Identifier for a unit.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ),
+    'year' => array(
+      'description' => 'The calendar year for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+    'month' => array(
+      'description' => 'The month for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+    'day' => array(
+      'description' => 'The day for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+    'hour' => array(
+      'description' => 'The hour for which this availability row is relevant',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    ),
+  );
+
+  for ($i = 0; $i <= 59; $i++) {
+    // PHP has no clean way to get the minutes without leading zeros so setting table
+    // fields names to contain the leading zeros to save strangeness in code elsewhere
+    if ($i <= 9) {
+      $m = '0' . $i;
+    }
+    else {
+      $m = $i;
+    }
+
+    $fields['m' . $m] = array(
+      'description' => 'M' . $m,
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => '0',
+    );
+  }
+
+  return $fields;
+}
