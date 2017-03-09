@@ -8,7 +8,7 @@
 /**
  * The FullCalendar plugin URI.
  */
-define('FULLCALENDAR_DOWNLOAD_URI', 'https://github.com/fullcalendar/fullcalendar/releases/download/v1.6.7/fullcalendar-1.6.7.zip');
+define('FULLCALENDAR_DOWNLOAD_URI', 'http://arshaw.com/fullcalendar/downloads/fullcalendar-1.5.3.zip');
 
 /**
  * Implements hook_drush_command().
@@ -33,7 +33,7 @@ function fullcalendar_drush_command() {
 function fullcalendar_drush_help($section) {
   switch ($section) {
     case 'drush:fullcalendar-plugin':
-      return dt("Downloads the FullCalendar plugin from github.com, default location is sites/all/libraries.");
+      return dt("Downloads the FullCalendar plugin from arshaw.com, default location is sites/all/libraries.");
   }
 }
 

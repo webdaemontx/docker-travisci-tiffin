@@ -1,7 +1,0 @@
-{
-    "require": {
-        "roomify/bat": "^1.1",
-        "sensiolabs/security-checker": "^4.0",
-        "symfony/console": "2.7"
-    }
-}

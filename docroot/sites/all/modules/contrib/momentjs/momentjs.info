@@ -1,6 +1,0 @@
-name = Moment.js
-description = Integrate Moment.js and Moment Timezone libraries into Drupal.
-package = Libraries
-core = 7.x
-
-dependencies[] = libraries
