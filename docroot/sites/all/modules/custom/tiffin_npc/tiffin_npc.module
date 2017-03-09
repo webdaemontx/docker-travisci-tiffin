@@ -84,13 +84,24 @@ function tiffin_npc_success() {
 
   $pell_grant = _get_pell_grant($efc);
 
+  $work_study = _get_work_study($efc);
+
+  $unsubsidized_stafford_loan = _get_unsubsidized_stafford_loan($born_before_1973, $in_masters_or_doctorate_program, $married, $have_dependent_children, $parents_deceased, $veteran, $active_duty,
+    $other_dependents, $emancipated_or_guardianship, $unaccompanied_youth,
+    $homeless_youth);
+
+  $subsidized_stafford_loan = 3500;
+
   $tuition = 36600;
 
-  $total_finaid = $scholarship[1] + $pell_grant[0] + 3500 + 2000 + $ocog;
+  $total_finaid = $scholarship[1] + $pell_grant[0] + $work_study +
+    $subsidized_stafford_loan + $unsubsidized_stafford_loan + $ocog;
 
-  $finaidcost = $scholarship[1] + $pell_grant[0] + 5500;
+  //$finaidcost = $scholarship[1] + $pell_grant[0] + 5500;
+  $finaidcost = $scholarship[1] + $pell_grant[0];
 
-  $outofpocket = $tuition - $scholarship[1] - $pell_grant[0] - 5500;
+  //$outofpocket = $tuition - $scholarship[1] - $pell_grant[0] - 5500;
+  $outofpocket = $tuition - $total_finaid;
 
 
   $success_body =
@@ -99,16 +110,16 @@ Below you will find a summary of the estimated costs for the 2017-2018 academic 
 
 <hr><table width='80%'><tr><td width='50%'>
 <strong>Student Information</strong><br>
-First Name: " . ucfirst($first) . "<br>
-Last Name: " . ucfirst($last) . "<br>
+First Name: " . drupal_ucfirst($first) . "<br>
+Last Name: " . drupal_ucfirst($last) . "<br>
 Email Address: " . $email . "<br>
-Street Address Line 1: " . ucfirst($address) . "<br>
-Street Address Line 2: " . ucfirst($address_2) . "<br>
-City: " . ucfirst($city) . "<br>
+Street Address Line 1: " . drupal_ucfirst($address) . "<br>
+Street Address Line 2: " . drupal_ucfirst($address_2) . "<br>
+City: " . drupal_ucfirst($city) . "<br>
 State: " . $state . "<br>
 Zip: " . $zip . "<br>
-County: " . ucfirst($county) . "<br>
-Phone Type: " . ucfirst($phone_type) . "<br>
+County: " . drupal_ucfirst($county) . "<br>
+Phone Type: " . drupal_ucfirst($phone_type) . "<br>
 Phone Number: " . $phone_number . "<br><br>
 </td><td width='50%'>
 <strong>Student Academics</strong><br>
@@ -123,18 +134,18 @@ H.S. GPA: " . $high_school_gpa . "<br>";
     $success_body .= 'ACT: ' . $act . '<br>';
   }
 
-  $success_body .= 'Intended Major: ' . ucfirst($intended_major) . '<br><br>';
+  $success_body .= 'Intended Major: ' . drupal_ucfirst($intended_major) . '<br><br>';
 
   $success_body .= "<strong>Student Activities</strong><br>
 Contact with Coach/Director:  $scholarships  <br>
-Sport/Activity 1:  ucfirst($which_activity) <br>
-Sport/Activity 2:  ucfirst($extra_activity) <br><br>";
+Sport/Activity 1:  drupal_ucfirst($which_activity) <br>
+Sport/Activity 2:  drupal_ucfirst($extra_activity) <br><br>";
 
   $success_body .= "<strong>Student Financials</strong><br>
 Estimated AGI: $" . number_format(0) . "<br>
 EFC: $" . number_format($efc) . "<br>
-Dependent Children: " . ucfirst($have_dependent_children) . "<br>
-Ohio Resident:" . ucfirst($ohio_residents) . "<br><br>
+Dependent Children: " . drupal_ucfirst($have_dependent_children) . "<br>
+Ohio Resident:" . drupal_ucfirst($ohio_residents) . "<br><br>
 </td></tr></table><hr><table width='80%'><tr><td width='50%'>
 <strong>Estimated cost for the $this_year-$next_year Academic Year</strong>
 <br><br>
@@ -147,24 +158,28 @@ Total Cost...............................................$36,600<br>
 </p></td>
 <td width='50%' valign='top'><strong>Summary of Costs</strong><br><br>
 Total Cost..............................................$36,600<br>
-<u>Financial Aid..........................................$" . number_format($finaidcost) . "</u><br>
+<u>Financial Aid..........................................$" . number_format($total_finaid) . "</u><br>
 Total Out-of-Pocket Costs........................$" . number_format($outofpocket) . "<br>
 </td></tr></table><hr><br>
 <h3>Your estimated financial aid:</h3>
 <br><br>";
 
+  // Print the Scholarship Value
   if ($scholarship[1] != 0) {
     $success_body .= "<strong>Institutional Grants and Scholarships</strong><br>" .
       $scholarship[0] . "...................$" . number_format($scholarship[1]) . "<br><br>";
   }
+  // Print the Federal Work Study value
   $success_body .= "<strong>Work-Study</strong><br>";
-  if ($efc >= 0 && $efc <= 5273) {
-    $success_body .= "Federal Work-Study...............................$1,000<br>(This can be earned in a paycheck through an on campus job.)<br><br>";
-  }
-  else {
-    $success_body .= "Federal Work-Study...............................$0<br><br>";
-  }
+  $success_body .= "Federal Work-Study...............................$" .
+    number_format($work_study) . "<br>";
 
+  if($work_study > 0) {
+    $success_body .= "(This can be earned in a paycheck through an on campus job.)<br><br>";
+  } else {
+    $success_body .= "<br>";
+  }
+  // Begin the Grants section
   $success_body .= "<strong>Grants</strong><br>";
   if ($pell_grant[0] > 0) {
     $success_body .= "Pell Grant................................................$" . number_format($pell_grant[0]) . "<br>";
@@ -182,15 +197,11 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
   // Add an additional break for spacing between the Grants and Federal Loans
   $success_body .= "<br>";
 
-  $success_body .= "<strong>Federal Loans</strong><br>
-Federal Direct Stafford Subsidized Loan.........................$3,500<br>";
+  // Begin the Loans section
+  $success_body .= "<strong>Federal Loans</strong><br>";
+  $success_body .= "Federal Direct Stafford Subsidized Loan.........................$" . number_format($unsubsidized_stafford_loan) . "<br>";
 
-  if ($born_before_1973 == 'yes' || $in_masters_or_doctorate_program == 'yes' || $married == 'yes' || $have_dependent_children == 'yes' || $parents_deceased == 'yes' || $veteran == 'yes' || $active_duty == 'yes' || $other_dependents == 'yes' || $emancipated_or_guardianship == 'yes' || $unaccompanied_youth == 'yes' || $homeless_youth == 'yes') {
-
-  $success_body .= "Federal Direct Stafford Unubsidized Loan........................$6,000<br><br>";
-} else {
-  $success_body .= "Federal Direct Stafford Unubsidized Loan........................$2,000<br><br>";
-}
+  $success_body .= "Federal Direct Stafford Unubsidized Loan........................$" . number_format($unsubsidized_stafford_loan) . "<br>";
 
 $success_body .= "<h3>Your Estimated Out-of-Pocket Costs...$" . number_format($outofpocket) . " *</h3><br><br><hr><br>";
 
@@ -219,8 +230,6 @@ $success_body .= "<br><h4>*These calculations do not include other forms of aid,
   $to = $email;
 
   drupal_mail('tiffin_npc', 'npc_calculator', $to->mail, language_default(), array('recipient' => $to, 'success_body' => $success_body));
-
-  //tiffin_npc_mail('tiffin_npc', $success_body, $to);
 
 return $form;
 }
@@ -990,6 +999,38 @@ function _get_ocog($efc, $ohio_resident) {
      $pell = $base_pell - (100 * intval($multiplier));
    }
    return array($pell, $staffordloan);
+  }
+
+  /* If the Expected Family Contribution is less than $5273 then the student
+   *   is eligible for a $1000 work study opportunity.
+   *
+   * @return int $work_study -> Work Study amount
+   */
+  function _get_work_study($efc) {
+    if ($efc >= 0 && $efc <= 5273) {
+      $work_study = 1000;
+    } else {
+      $work_study = 0;
+    }
+    return intval($work_study);
+  }
+
+  /* If a range of criteria matches, the Unsubsidized Stafford Loan value is
+  much greater.
+  *
+   * @return int $unsubsidized_stafford_loan
+   */
+  function  _get_unsubsidized_stafford_loan($born_before_1973, $in_masters_or_doctorate_program,
+                                            $married, $have_dependent_children, $parents_deceased, $veteran, $active_duty,
+                                            $other_dependents, $emancipated_or_guardianship, $unaccompanied_youth,
+                                            $homeless_youth) {
+    if ($born_before_1973 == 'yes' || $in_masters_or_doctorate_program == 'yes' || $married == 'yes' || $have_dependent_children == 'yes' || $parents_deceased == 'yes' || $veteran == 'yes' || $active_duty == 'yes' || $other_dependents == 'yes' || $emancipated_or_guardianship == 'yes' || $unaccompanied_youth == 'yes' || $homeless_youth == 'yes') {
+
+      $unsubsidized_stafford_loan = 6000;
+    } else {
+      $unsubsidized_stafford_loan = 2000;
+    }
+   return $unsubsidized_stafford_loan;
   }
 
 /* Create a unique string as the record id for submissions
