@@ -41,7 +41,7 @@
 
 
 <?php if ($rows): ?>
-  <div class="profile-grid container view-content">
+  <div class="profile-grid view-content">
     <?php print $rows; ?>
   </div>
 <?php elseif ($empty): ?>

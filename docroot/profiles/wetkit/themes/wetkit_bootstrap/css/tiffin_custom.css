@@ -3350,7 +3350,7 @@ body.node-type-program .pane-node-field-degree-type {
     padding: 0; }
     .pane-dragon-perks ul li {
       width: 100% !important;
-      height: 196px; } }
+      height: 250px; } }
 @media (max-width: 675px) {
   .pane-discover-tiffin-ohio p {
     margin-top: 160px;
@@ -4250,7 +4250,8 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
     top: 50%;
     left: 50%;
     text-align: center;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    color: transparent; }
   .pane-tu-drone-vid .fa-play {
     display: none; }
   @media screen and (min-width: 600px) {
@@ -4259,8 +4260,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
       .pane-tu-drone-vid .fa-play {
         display: block;
         color: #fff;
-        font-size: 60px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+        font-size: 60px; }
         .pane-tu-drone-vid .fa-play:hover, .pane-tu-drone-vid .fa-play:focus {
           color: #385443; } }
 
