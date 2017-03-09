@@ -12,70 +12,77 @@
   text-align: center;
 }
 
-.masonry-processed {
-  .views-row-even {
-    border: 1px solid #95d0ad;
-    text-align: center;
-    .field {
-      color: #365543;
-    }
-    .views-field-title {
-      font-style: italic;
-      font-weight: bold;
-      color: #5daf6c;
-      text-align: center;
-      a {
-        color: #365543;
-      }
-    }
-    .views-field-title-1 {
-      color: #365543;
-    }
-    .views-field-field-quick-news-description {
-      color: #365543;
-      margin-top: 20px;
-    }
-  }
-  .views-row-odd {
-    border: 1px solid #dbc073;
-    text-align: center;
-    .field {
-      color: #887235;
-    }
-    .views-field-title {
-      color: #dbc073;
-      font-weight: bold;
-      font-style: italic;
-    }
-  }
-}
+//.masonry-processed {
+//  .views-row-even {
+//    border: 1px solid #95d0ad;
+//    text-align: center;
+//    .field {
+//      color: #365543;
+//    }
+//    .views-field-title {
+//      font-style: italic;
+//      font-weight: bold;
+//      color: #5daf6c;
+//      text-align: center;
+//      a {
+//        color: #365543;
+//      }
+//    }
+//    .views-field-title-1 {
+//      color: #365543;
+//    }
+//    .views-field-field-quick-news-description {
+//      color: #365543;
+//      margin-top: 20px;
+//    }
+//  }
+//  .views-row-odd {
+//    border: 1px solid #dbc073;
+//    text-align: center;
+//    .field {
+//      color: #887235;
+//    }
+//    .views-field-title {
+//      color: #dbc073;
+//      font-weight: bold;
+//      font-style: italic;
+//    }
+//  }
+//}
 
 .pane-events-landing-panel-pane-3 .masonry-processed .views-row-odd .views-field-title a, .pane-events-landing-panel-pane-2 .masonry-processed .views-row-odd .views-field-title a, .pane-events-landing-panel-pane-1 .masonry-processed .views-row-odd .views-field-title a {
   text-align: center;
   color: #887235;
 }
 
-.masonry-processed {
-  .views-row-odd {
-    .views-field-title a, .views-field-title-1 {
-      color: #887235;
-    }
-    .views-field-field-quick-news-description {
-      color: #887235;
-      margin-top: 20px;
-    }
-  }
-  margin-bottom: 70px;
-}
+//.masonry-processed {
+//  .views-row-odd {
+//    .views-field-title a, .views-field-title-1 {
+//      color: #887235;
+//    }
+//    .views-field-field-quick-news-description {
+//      color: #887235;
+//      margin-top: 20px;
+//    }
+//  }
+//  margin-bottom: 70px;
+//}
 
-.pane-events-landing-panel-pane-3 h2.pane-title, .pane-events-landing-panel-pane-2 h2.pane-title, .pane-events-landing-panel-pane-1 h2.pane-title, .pane-news h2.pane-title, .pane-cabinet-members h2.pane-title, .pane-board-members h2.pane-title {
+.pane-events-landing-panel-pane-3 h2.pane-title,
+.pane-events-landing-panel-pane-2 h2.pane-title,
+.pane-events-landing-panel-pane-1 h2.pane-title,
+.pane-news h2.pane-title,
+.pane-cabinet-members h2.pane-title,
+.pane-board-members h2.pane-title {
   text-align: center;
   font-size: 39px;
   color: #365543;
   margin-bottom: 30px;
 }
 
-.pane-events-landing-panel-pane-3, .pane-events-landing-panel-pane-2, .pane-events-landing-panel-pane-1 {
+.pane-events-landing-panel-pane-3,
+.pane-events-landing-panel-pane-2,
+.pane-events-landing-panel-pane-1 {
   width: 80%;
   margin: 0 auto;
 }
@@ -84,76 +91,76 @@
   display: none;
 }
 
-@media (max-width: 1080px) {
-  .pane-undergraduate-program .views-field-title a {
-    font-size: 26px;
-  }
-  .pane-life-at-tu-hero-top ul li p {
-    margin: 42px 0 0 48% !important;
-    font-size: 25px !important;
-    text-align: center !important;
-    width: 100px !important;
-    line-height: 26px;
-  }
-}
+//@media (max-width: 1080px) {
+//  .pane-undergraduate-program .views-field-title a {
+//    font-size: 26px;
+//  }
+//  .pane-life-at-tu-hero-top ul li p {
+//    margin: 42px 0 0 48% !important;
+//    font-size: 25px !important;
+//    text-align: center !important;
+//    width: 100px !important;
+//    line-height: 26px;
+//  }
+//}
 
-@media (max-width: 760px) {
-  .pane-life-at-tu-hero-top {
-    ul {
-      display: block;
-      width: 90% !important;
-      margin: 0 auto 0 auto !important;
-      li {
-        width: 100% !important;
-        clear: both !important;
-        float: left !important;
-        p {
-          margin: 64px 0 0 33% !important;
-          width: 200px !important;
-        }
-      }
-    }
-    height: 1320px !important;
-  }
-  .pane-dragon-perks ul {
-    li {
-      width: 100% !important;
-      height: 196px;
-    }
-    display: block;
-  }
-}
+//@media (max-width: 760px) {
+//  .pane-life-at-tu-hero-top {
+//    ul {
+//      display: block;
+//      width: 90% !important;
+//      margin: 0 auto 0 auto !important;
+//      li {
+//        width: 100% !important;
+//        clear: both !important;
+//        float: left !important;
+//        p {
+//          margin: 64px 0 0 33% !important;
+//          width: 200px !important;
+//        }
+//      }
+//    }
+//    height: 1320px !important;
+//  }
+//  .pane-dragon-perks ul {
+//    li {
+//      width: 100% !important;
+//      height: 196px;
+//    }
+//    display: block;
+//  }
+//}
 
-@media (max-width: 675px) {
-  .pane-discover-tiffin-ohio p {
-    margin-top: 160px;
-    font-size: 32px;
-    height: 57px;
-  }
-  body.node-type-program .pane-discover-tiffin-ohio {
-    height: 315px;
-  }
-  .view-life-at-tu-events-landing {
-    .masonry-processed .masonry-item {
-      width: 49% !important;
-      position: relative !important;
-      float: left !important;
-      clear: none;
-      left: 0 !important;
-      top: 0 !important;
-      height: 230px;
-    }
-    .img-responsive {
-      max-width: 150px;
-      height: 150px;
-    }
-  }
-  .masonry-processed {
-    .views-row-odd .views-field-title-1, .views-row-even .views-field-title-1 {
-      font-size: 14px;
-    }
-  }
-}
+//@media (max-width: 675px) {
+//  .pane-discover-tiffin-ohio p {
+//    margin-top: 160px;
+//    font-size: 32px;
+//    height: 57px;
+//  }
+//  body.node-type-program .pane-discover-tiffin-ohio {
+//    height: 315px;
+//  }
+//  .view-life-at-tu-events-landing {
+//    .masonry-processed .masonry-item {
+//      width: 49% !important;
+//      position: relative !important;
+//      float: left !important;
+//      clear: none;
+//      left: 0 !important;
+//      top: 0 !important;
+//      height: 230px;
+//    }
+//    .img-responsive {
+//      max-width: 150px;
+//      height: 150px;
+//    }
+//  }
+//  .masonry-processed {
+//    .views-row-odd .views-field-title-1, .views-row-even .views-field-title-1 {
+//      font-size: 14px;
+//    }
+//  }
+//}
 
 .view-events-landing {
   .views-row {
