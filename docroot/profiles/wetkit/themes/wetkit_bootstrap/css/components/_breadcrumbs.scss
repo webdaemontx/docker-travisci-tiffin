@@ -8,6 +8,14 @@
     background: none;
     display: inline-block;
     line-height: 1;
+    a {
+      &:hover {
+        color: $brand-green;
+      }
+      &:visited {
+        color: $brand-green;
+      }
+    }
     li {
       &::before {
         color: $brand-green;
