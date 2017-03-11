@@ -6259,6 +6259,34 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
   background-color: #385443;
 }
 
+/* Form Element Overrides */
+/* line 9, components/_override.scss */
+fieldset#edit-academic-scholarship {
+  padding: 1em;
+  font: 80%/1 sans-serif;
+  border: 1px solid #385443;
+}
+/* line 13, components/_override.scss */
+fieldset#edit-academic-scholarship label {
+  float: left;
+  width: 25%;
+  margin-right: 0.5em;
+  padding-top: 0.2em;
+  text-align: right;
+  font-weight: bold;
+}
+/* line 21, components/_override.scss */
+fieldset#edit-academic-scholarship input {
+  margin: 0 0 1% 1%;
+}
+/* line 24, components/_override.scss */
+fieldset#edit-academic-scholarship legend {
+  padding: 0.2em 0.5em;
+  color: #385443;
+  font-size: 90%;
+  text-align: right;
+}
+
 /* line 1, components/_responsive-embed.scss */
 .responsive-embed {
   position: relative;

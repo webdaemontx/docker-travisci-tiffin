@@ -4,3 +4,27 @@
 .list-group-item.active:focus, .list-group-item.active:hover {
   background-color: $brand-green;
 }
+
+/* Form Element Overrides */
+fieldset#edit-academic-scholarship {
+  padding: 1em;
+  font: 80%/1 sans-serif;
+  border: 1px solid $brand-green;
+  label {
+    float: left;
+    width: 25%;
+    margin-right: 0.5em;
+    padding-top: 0.2em;
+    text-align: right;
+    font-weight: bold;
+  }
+  input {
+    margin: 0 0 1% 1%;
+  }
+  legend {
+    padding: 0.2em 0.5em;
+    color: $brand-green;
+    font-size: 90%;
+    text-align: right;
+  }
+}
