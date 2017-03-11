@@ -1719,6 +1719,7 @@ ul#click-on-programs {
 /* line 1633, components/_base.scss */
 .wb-menu .menu > li {
   padding: 10px 12px 10px 10px;
+  white-space: nowrap;
 }
 @media (max-width: 1025px) {
   /* line 1633, components/_base.scss */
@@ -1726,106 +1727,106 @@ ul#click-on-programs {
     padding: 10px 0 10px 8px;
   }
 }
-/* line 1640, components/_base.scss */
+/* line 1641, components/_base.scss */
 .wb-menu .menu > li.first {
   margin: 0 0 0 74px;
 }
 
-/* line 1652, components/_base.scss */
+/* line 1653, components/_base.scss */
 #wb-srch .form-group {
   display: inline;
 }
 
-/* line 1656, components/_base.scss */
+/* line 1657, components/_base.scss */
 .wb-menu .menu > li a.first {
   padding: 0 0 0 41px;
 }
 
-/* line 1660, components/_base.scss */
+/* line 1661, components/_base.scss */
 ul[role=menubar] {
   float: left;
   clear: none;
 }
 
-/* line 1666, components/_base.scss */
+/* line 1667, components/_base.scss */
 header #navbar .list-inline li a {
   background-color: #365543 !important;
   border-left: 0 !important;
   color: white !important;
 }
-/* line 1667, components/_base.scss */
+/* line 1668, components/_base.scss */
 header #navbar .list-inline li a:hover, header #navbar .list-inline li a:focus {
   color: white !important;
 }
-/* line 1674, components/_base.scss */
+/* line 1675, components/_base.scss */
 header #navbar .list-inline > li:last-child > a {
   border-right: 0 !important;
 }
 
-/* line 1679, components/_base.scss */
+/* line 1680, components/_base.scss */
 ul[role=menubar] #opener {
   display: none;
 }
 
-/* line 1683, components/_base.scss */
+/* line 1684, components/_base.scss */
 #tiffin_logo {
   position: relative;
   float: left;
   clear: none;
 }
-/* line 1687, components/_base.scss */
+/* line 1688, components/_base.scss */
 #tiffin_logo img {
   width: 140px;
   height: 55px;
 }
 
 @media (min-width: 992px) {
-  /* line 1693, components/_base.scss */
+  /* line 1694, components/_base.scss */
   #navbar #tiffin_logo {
     left: 40px;
   }
 }
 
-/* line 1699, components/_base.scss */
+/* line 1700, components/_base.scss */
 #wb-sm {
   background-color: #365543 !important;
 }
 
-/* line 1703, components/_base.scss */
+/* line 1704, components/_base.scss */
 button#wb-srch-sub {
   display: none;
 }
 
 @media (min-width: 992px) {
-  /* line 1708, components/_base.scss */
+  /* line 1709, components/_base.scss */
   #wb-bnr {
     display: none !important;
   }
 }
-/* line 1713, components/_base.scss */
+/* line 1714, components/_base.scss */
 div.flex-caption {
   display: none !important;
 }
 
-/* line 1717, components/_base.scss */
+/* line 1718, components/_base.scss */
 #wb-srch {
   width: 165px;
   text-align: left;
 }
 
-/* line 1722, components/_base.scss */
+/* line 1723, components/_base.scss */
 #search-form input {
   outline: none;
 }
-/* line 1724, components/_base.scss */
+/* line 1725, components/_base.scss */
 #search-form input::-webkit-search-decoration, #search-form input::-webkit-search-cancel-button {
   display: none;
 }
-/* line 1727, components/_base.scss */
+/* line 1728, components/_base.scss */
 #search-form input:-moz-placeholder, #search-form input::-webkit-input-placeholder {
   color: #999;
 }
-/* line 1730, components/_base.scss */
+/* line 1731, components/_base.scss */
 #search-form input[type=search] {
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
@@ -1845,11 +1846,11 @@ div.flex-caption {
   color: transparent;
   cursor: pointer;
 }
-/* line 1748, components/_base.scss */
+/* line 1749, components/_base.scss */
 #search-form input[type=search]:hover {
   background-color: #fff;
 }
-/* line 1751, components/_base.scss */
+/* line 1752, components/_base.scss */
 #search-form input[type=search]:focus {
   width: 180px;
   padding-left: 32px;
@@ -1860,22 +1861,22 @@ div.flex-caption {
   -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
 }
-/* line 1762, components/_base.scss */
+/* line 1763, components/_base.scss */
 #search-form input:-moz-placeholder, #search-form input::-webkit-input-placeholder {
   color: transparent;
 }
 
-/* line 1767, components/_base.scss */
+/* line 1768, components/_base.scss */
 .glyphicon-chevron-down::before {
   content: "";
 }
 
-/* line 1771, components/_base.scss */
+/* line 1772, components/_base.scss */
 body.page-admissions .pane-1 {
   clear: both;
 }
 
-/* line 1775, components/_base.scss */
+/* line 1776, components/_base.scss */
 .pane-about-tu-hero-top {
   background-image: url("../images/image-abouttu-hero-landing.jpg");
   background-repeat: no-repeat;
@@ -1884,34 +1885,34 @@ body.page-admissions .pane-1 {
   background-size: cover;
   background-position: 0 -150px;
 }
-/* line 1784, components/_base.scss */
+/* line 1785, components/_base.scss */
 .pane-about-tu-hero-top h1 {
   width: 100%;
   text-align: center;
   color: white;
 }
-/* line 1790, components/_base.scss */
+/* line 1791, components/_base.scss */
 .pane-about-tu-hero-top #abouttutop {
   /*background-color: #dbc073;*/
   /*background: rgba(218, 192, 115, .90);*/
   margin-top: 114px;
 }
-/* line 1799, components/_base.scss */
+/* line 1800, components/_base.scss */
 .pane-about-tu-hero-top #abouttutop ul {
   list-style-type: none;
   margin-bottom: 0;
   padding: 0;
 }
-/* line 1804, components/_base.scss */
+/* line 1805, components/_base.scss */
 .pane-about-tu-hero-top #abouttutop ul li a {
   text-decoration: none;
 }
-/* line 1806, components/_base.scss */
+/* line 1807, components/_base.scss */
 .pane-about-tu-hero-top #abouttutop ul li a p {
   margin-bottom: 10px;
 }
 
-/* line 1814, components/_base.scss */
+/* line 1815, components/_base.scss */
 .pane-about-tiffin-ohio {
   background-image: url("../images/image-discover-city-of-tiffin.jpg");
   background-repeat: no-repeat;
@@ -1921,36 +1922,36 @@ body.page-admissions .pane-1 {
   background-position: center;
   padding: 10px 0 60px;
 }
-/* line 1824, components/_base.scss */
+/* line 1825, components/_base.scss */
 .pane-about-tiffin-ohio p {
   text-decoration: none;
   color: white;
   font-size: 20px;
 }
-/* line 1829, components/_base.scss */
+/* line 1830, components/_base.scss */
 .pane-about-tiffin-ohio ul {
   list-style-type: none;
   width: 100%;
   clear: both;
 }
-/* line 1834, components/_base.scss */
+/* line 1835, components/_base.scss */
 .pane-about-tiffin-ohio ul li {
   list-style-type: none;
   width: 100%;
   clear: both;
   display: flex;
 }
-/* line 1840, components/_base.scss */
+/* line 1841, components/_base.scss */
 .pane-about-tiffin-ohio ul li p:nth-of-type(1) {
   width: 40%;
   text-align: right;
   padding-right: 10px;
 }
-/* line 1845, components/_base.scss */
+/* line 1846, components/_base.scss */
 .pane-about-tiffin-ohio ul li p:nth-of-type(2) {
   width: 60%;
 }
-/* line 1851, components/_base.scss */
+/* line 1852, components/_base.scss */
 .pane-about-tiffin-ohio h3 {
   margin-top: 80px;
   border: 1px solid #dbc073;
@@ -1963,18 +1964,18 @@ body.page-admissions .pane-1 {
   margin-bottom: 30px;
 }
 
-/* line 1866, components/_base.scss */
+/* line 1867, components/_base.scss */
 #about-tiffin {
   margin: 0 auto 0 auto;
 }
 @media screen and (min-width: 600px) {
-  /* line 1866, components/_base.scss */
+  /* line 1867, components/_base.scss */
   #about-tiffin {
     width: 462px;
   }
 }
 
-/* line 1874, components/_base.scss */
+/* line 1875, components/_base.scss */
 .pane-discover-tiffin-ohio {
   background-image: url("../images/image-discover-city-of-tiffin.jpg");
   background-repeat: no-repeat;
@@ -1983,11 +1984,11 @@ body.page-admissions .pane-1 {
   background-position: center;
   height: 465px;
 }
-/* line 1881, components/_base.scss */
+/* line 1882, components/_base.scss */
 .pane-discover-tiffin-ohio a {
   text-decoration: none;
 }
-/* line 1884, components/_base.scss */
+/* line 1885, components/_base.scss */
 .pane-discover-tiffin-ohio p {
   margin-top: 200px;
   border: 1px solid #dbc073;
@@ -1998,25 +1999,25 @@ body.page-admissions .pane-1 {
   font-size: 54px;
 }
 
-/* line 1895, components/_base.scss */
+/* line 1896, components/_base.scss */
 #discover-tiffin {
   width: 642px;
   margin: 0 auto 0 auto;
 }
 
-/* line 1901, components/_base.scss */
+/* line 1902, components/_base.scss */
 body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics .pane-join-the-tu-family-white-backgro, body.page-apply-now .pane-join-the-tu-family-white-backgro {
   padding-top: 130px;
   clear: both;
 }
 
-/* line 1907, components/_base.scss */
+/* line 1908, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro {
   height: 235px;
   background-color: white;
   clear: both;
 }
-/* line 1908, components/_base.scss */
+/* line 1909, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro h3 {
   margin-top: 10px;
   width: 100%;
@@ -2024,17 +2025,17 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   color: #d9bf75;
   font-size: 37px;
 }
-/* line 1914, components/_base.scss */
+/* line 1915, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro h3 span {
   color: #365543;
 }
-/* line 1921, components/_base.scss */
+/* line 1922, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul {
   list-style-type: none;
   width: 1150px;
   margin: 0 auto 0 auto;
 }
-/* line 1925, components/_base.scss */
+/* line 1926, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li {
   list-style-type: none;
   margin-left: 30px;
@@ -2043,7 +2044,7 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   clear: none;
   text-align: center;
 }
-/* line 1932, components/_base.scss */
+/* line 1933, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2) {
   margin: 46px 0 0 23px;
   text-decoration: none;
@@ -2052,11 +2053,11 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   float: left;
   clear: none;
 }
-/* line 1940, components/_base.scss */
+/* line 1941, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) {
   margin-left: 0;
 }
-/* line 1942, components/_base.scss */
+/* line 1943, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div {
   height: 114px;
   width: 114px;
@@ -2065,7 +2066,7 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   float: left;
   clear: none;
 }
-/* line 1951, components/_base.scss */
+/* line 1952, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div, #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div {
   height: 114px;
   width: 114px;
@@ -2074,21 +2075,21 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   float: left;
   clear: none;
 }
-/* line 1959, components/_base.scss */
+/* line 1960, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div {
   background-image: url("../images/icon-join-apply-now.png");
 }
-/* line 1962, components/_base.scss */
+/* line 1963, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div {
   background-image: url("../images/icon-join-visit-campus.png");
 }
-/* line 1965, components/_base.scss */
+/* line 1966, components/_base.scss */
 #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div {
   background-image: url("../images/icon-join-request-info.png");
 }
 
 @media screen and (max-width: 928px) {
-  /* line 1973, components/_base.scss */
+  /* line 1974, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul {
     display: flex;
     list-style-type: none;
@@ -2097,19 +2098,19 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   }
 }
 @media screen and (max-width: 1152px) {
-  /* line 1982, components/_base.scss */
+  /* line 1983, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul {
     width: 850px;
   }
 }
 @media screen and (max-width: 860px) {
-  /* line 1988, components/_base.scss */
+  /* line 1989, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul {
     width: 100%;
   }
 }
 @media screen and (max-width: 717px) {
-  /* line 1994, components/_base.scss */
+  /* line 1995, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li {
     list-style-type: none;
     margin-left: 30px;
@@ -2119,46 +2120,46 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   }
 }
 @media screen and (max-width: 1152px) and (min-width: 717px) {
-  /* line 2004, components/_base.scss */
+  /* line 2005, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li {
     width: 250px;
   }
 }
 @media screen and (max-width: 1152px) {
-  /* line 2010, components/_base.scss */
+  /* line 2011, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2) {
     margin: 16px 0 0 37px;
   }
 }
 @media screen and (max-width: 928px) {
-  /* line 2016, components/_base.scss */
+  /* line 2017, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2) {
     margin: 6px 0 0 23px;
   }
 }
 @media screen and (max-width: 780px) {
-  /* line 2022, components/_base.scss */
+  /* line 2023, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2) {
     margin: 6px 0 0 23px;
     font-size: 21px;
   }
 }
 @media screen and (max-width: 1152px) {
-  /* line 2030, components/_base.scss */
+  /* line 2031, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div, #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div, #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div {
     margin: 0 auto 0 auto;
     float: none;
   }
 }
-/* line 2037, components/_base.scss */
+/* line 2038, components/_base.scss */
 #mini-panel-homepage_submenu {
   display: flex;
 }
-/* line 2042, components/_base.scss */
+/* line 2043, components/_base.scss */
 #mini-panel-homepage_submenu a {
   text-decoration: none;
 }
-/* line 2045, components/_base.scss */
+/* line 2046, components/_base.scss */
 #mini-panel-homepage_submenu ul {
   float: left;
   clear: none;
@@ -2166,16 +2167,16 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   height: 87px;
   margin-bottom: 0;
 }
-/* line 2051, components/_base.scss */
+/* line 2052, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(2) {
   height: 77px;
 }
-/* line 2054, components/_base.scss */
+/* line 2055, components/_base.scss */
 #mini-panel-homepage_submenu ul li {
   float: left;
   clear: none;
 }
-/* line 2058, components/_base.scss */
+/* line 2059, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(1) {
   background-color: #365543;
   width: 70%;
@@ -2183,18 +2184,18 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   padding-left: 5%;
   display: flex;
 }
-/* line 2064, components/_base.scss */
+/* line 2065, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(1) li {
   margin-top: 30px;
   margin-right: 4%;
   color: white;
   line-height: 1;
 }
-/* line 2069, components/_base.scss */
+/* line 2070, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(1) li a {
   color: white;
 }
-/* line 2074, components/_base.scss */
+/* line 2075, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(2) {
   background-color: #ffffff;
   width: 30%;
@@ -2202,20 +2203,20 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   padding-left: 30px;
   line-height: 1.5;
 }
-/* line 2080, components/_base.scss */
+/* line 2081, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(2) li {
   margin-top: 23px;
   color: #365543;
   margin-right: 6px;
   font-weight: bold;
 }
-/* line 2085, components/_base.scss */
+/* line 2086, components/_base.scss */
 #mini-panel-homepage_submenu ul:nth-of-type(2) li a {
   color: #365543;
 }
 
 @media (max-width: 500px) {
-  /* line 2094, components/_base.scss */
+  /* line 2095, components/_base.scss */
   #mini-panel-homepage_submenu ul {
     height: 120px;
     font-size: 17px;
@@ -2223,27 +2224,27 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   }
 }
 @media screen and (max-width: 928px) {
-  /* line 2102, components/_base.scss */
+  /* line 2103, components/_base.scss */
   #mini-panel-homepage_submenu ul:nth-of-type(1) {
     width: 100%;
   }
 }
 @media screen and (max-width: 1154px) {
-  /* line 2108, components/_base.scss */
+  /* line 2109, components/_base.scss */
   #mini-panel-homepage_submenu ul:nth-of-type(1) {
     padding-left: 10%;
   }
 }
 @media screen and (max-width: 928px) {
-  /* line 2114, components/_base.scss */
+  /* line 2115, components/_base.scss */
   #mini-panel-homepage_submenu {
     background-color: #d8be7a;
   }
-  /* line 2116, components/_base.scss */
+  /* line 2117, components/_base.scss */
   #mini-panel-homepage_submenu div {
     width: 100%;
   }
-  /* line 2119, components/_base.scss */
+  /* line 2120, components/_base.scss */
   #mini-panel-homepage_submenu ul:nth-of-type(2) {
     background-color: #d8be7a;
     width: 300px;
@@ -2251,54 +2252,54 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
     text-align: center;
   }
 }
-/* line 2128, components/_base.scss */
+/* line 2129, components/_base.scss */
 #footer {
   background-color: #365543 !important;
   margin-top: 0 !important;
   padding: 40px 0 87px;
 }
-/* line 2132, components/_base.scss */
+/* line 2133, components/_base.scss */
 #footer a, #footer h3 a {
   color: white !important;
 }
 
-/* line 2137, components/_base.scss */
+/* line 2138, components/_base.scss */
 .region-footer section.col-sm-3 {
   display: none;
 }
 
-/* line 2141, components/_base.scss */
+/* line 2142, components/_base.scss */
 #footer div.menu-block-wrapper ul {
   width: 580px;
   font-size: 20px;
 }
 
 @media (max-width: 1150px) {
-  /* line 2147, components/_base.scss */
+  /* line 2148, components/_base.scss */
   #footer div.menu-block-wrapper ul {
     margin-left: 20px;
   }
 }
 @media (max-width: 1070px) {
-  /* line 2155, components/_base.scss */
+  /* line 2156, components/_base.scss */
   #footer div.menu-block-wrapper ul {
     width: 380px;
     font-size: 19px;
   }
-  /* line 2158, components/_base.scss */
+  /* line 2159, components/_base.scss */
   #footer div.menu-block-wrapper ul div {
     margin: 0 !important;
   }
 }
 @media (max-width: 850px) {
-  /* line 2165, components/_base.scss */
+  /* line 2166, components/_base.scss */
   #footer div.menu-block-wrapper ul {
     width: 260px;
     font-size: 15px;
     margin-top: 20px;
   }
 }
-/* line 2172, components/_base.scss */
+/* line 2173, components/_base.scss */
 .footer-logo {
   display: block;
   margin-top: 10px;
@@ -2306,7 +2307,7 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   margin-bottom: 30px;
 }
 
-/* line 2179, components/_base.scss */
+/* line 2180, components/_base.scss */
 #footer-address {
   float: left;
   clear: none;
@@ -2315,51 +2316,51 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
   margin: 0 0 30px;
 }
 
-/* line 2187, components/_base.scss */
+/* line 2188, components/_base.scss */
 .menu-name-menu-wet-mid-footer {
   height: 140px;
 }
-/* line 2188, components/_base.scss */
+/* line 2189, components/_base.scss */
 .menu-name-menu-wet-mid-footer .footer-logo {
   display: block;
   padding-top: 42px;
   padding-left: 50px;
 }
-/* line 2194, components/_base.scss */
+/* line 2195, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul {
   margin: 36px 0 0 10%;
   float: left;
   clear: none;
 }
-/* line 2199, components/_base.scss */
+/* line 2200, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul div.span-2:nth-of-type(1) {
   width: 190px;
   margin-left: 93px;
 }
-/* line 2203, components/_base.scss */
+/* line 2204, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul div:nth-of-type(2) {
   width: 160px;
   margin-right: 100px;
 }
-/* line 2207, components/_base.scss */
+/* line 2208, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul div:nth-of-type(3) {
   width: 240px;
 }
-/* line 2210, components/_base.scss */
+/* line 2211, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul div:nth-of-type(4) {
   width: 170px;
 }
-/* line 2213, components/_base.scss */
+/* line 2214, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul div:nth-of-type(5) {
   width: 108px;
 }
-/* line 2216, components/_base.scss */
+/* line 2217, components/_base.scss */
 .menu-name-menu-wet-mid-footer ul div.span-2 {
   float: left;
   clear: none;
 }
 
-/* line 2224, components/_base.scss */
+/* line 2225, components/_base.scss */
 body.page-apply-now {
   background-image: url("../images/image-apply-now-hero.jpg");
   background-repeat: no-repeat;
@@ -2367,22 +2368,22 @@ body.page-apply-now {
   background-size: cover;
   background-position: center;
 }
-/* line 2230, components/_base.scss */
+/* line 2231, components/_base.scss */
 body.page-apply-now h1 {
   text-align: center;
   color: white;
   text-decoration: underline;
 }
-/* line 2235, components/_base.scss */
+/* line 2236, components/_base.scss */
 body.page-apply-now main {
   background-color: transparent;
 }
 
-/* line 2241, components/_base.scss */
+/* line 2242, components/_base.scss */
 ul#icons-apply-now-landing-page-first {
   width: 950px;
 }
-/* line 2243, components/_base.scss */
+/* line 2244, components/_base.scss */
 ul#icons-apply-now-landing-page-first div p {
   color: #365543;
   text-align: center;
@@ -2391,15 +2392,15 @@ ul#icons-apply-now-landing-page-first div p {
   font-size: 38px;
   text-decoration: none;
 }
-/* line 2252, components/_base.scss */
+/* line 2253, components/_base.scss */
 ul#icons-apply-now-landing-page-mid {
   width: 950px;
 }
-/* line 2255, components/_base.scss */
+/* line 2256, components/_base.scss */
 ul#icons-apply-now-landing-page-last {
   width: 490px;
 }
-/* line 2258, components/_base.scss */
+/* line 2259, components/_base.scss */
 ul#icons-apply-now-landing-page-mid div p, ul#icons-apply-now-landing-page-last div p {
   color: #365543;
   text-align: center;
@@ -2407,36 +2408,36 @@ ul#icons-apply-now-landing-page-mid div p, ul#icons-apply-now-landing-page-last 
   width: 100%;
   font-size: 30px;
 }
-/* line 2265, components/_base.scss */
+/* line 2266, components/_base.scss */
 ul#icons-apply-now-landing-page-first, ul#icons-apply-now-landing-page-mid, ul#icons-apply-now-landing-page-last {
   clear: both;
   list-style-type: none !important;
   margin: 0 auto;
 }
-/* line 2270, components/_base.scss */
+/* line 2271, components/_base.scss */
 ul#icons-apply-now-landing-page-first a, ul#icons-apply-now-landing-page-mid a, ul#icons-apply-now-landing-page-last a {
   text-decoration: none;
 }
-/* line 2273, components/_base.scss */
+/* line 2274, components/_base.scss */
 ul#icons-apply-now-landing-page-first a div {
   width: 450px;
   height: 260px;
   display: flex;
 }
-/* line 2278, components/_base.scss */
+/* line 2279, components/_base.scss */
 ul#icons-apply-now-landing-page-mid a div, ul#icons-apply-now-landing-page-last a div {
   width: 220px;
   height: 150px;
   display: flex;
 }
-/* line 2283, components/_base.scss */
+/* line 2284, components/_base.scss */
 ul#icons-apply-now-landing-page-first li {
   width: 450px;
   height: 260px;
   float: left;
   background: white;
 }
-/* line 2288, components/_base.scss */
+/* line 2289, components/_base.scss */
 ul#icons-apply-now-landing-page-first li:nth-of-type(1) {
   clear: none;
   margin: 0 10px 10px 0;
@@ -2444,7 +2445,7 @@ ul#icons-apply-now-landing-page-first li:nth-of-type(1) {
   background-repeat: no-repeat;
   background-position: 140px 9px;
 }
-/* line 2295, components/_base.scss */
+/* line 2296, components/_base.scss */
 ul#icons-apply-now-landing-page-first li:nth-of-type(2) {
   clear: right;
   margin: 0 0 10px 0;
@@ -2452,22 +2453,22 @@ ul#icons-apply-now-landing-page-first li:nth-of-type(2) {
   background-repeat: no-repeat;
   background-position: 140px 9px;
 }
-/* line 2303, components/_base.scss */
+/* line 2304, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li, ul#icons-apply-now-landing-page-last li {
   width: 220px;
   height: 150px;
   margin: 0 10px 10px 0;
   background: rgba(255, 255, 255, 0.9);
 }
-/* line 2310, components/_base.scss */
+/* line 2311, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(1), ul#icons-apply-now-landing-page-mid li:nth-of-type(2), ul#icons-apply-now-landing-page-mid li:nth-of-type(3), ul#icons-apply-now-landing-page-mid li:nth-of-type(4) {
   background-repeat: no-repeat;
 }
-/* line 2315, components/_base.scss */
+/* line 2316, components/_base.scss */
 ul#icons-apply-now-landing-page-last li:nth-of-type(1), ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
   background-repeat: no-repeat;
 }
-/* line 2320, components/_base.scss */
+/* line 2321, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(1) {
   float: left;
   clear: left;
@@ -2475,23 +2476,23 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(1) {
   background-position: 70px 16px;
   background-size: 40%;
 }
-/* line 2326, components/_base.scss */
+/* line 2327, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(1) div p {
   margin-top: 100px;
 }
-/* line 2330, components/_base.scss */
+/* line 2331, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(2) {
   float: left;
   clear: none;
   background-image: url("../images/icon-hat-credit-plus.png");
   background-position: 40px 22px;
 }
-/* line 2335, components/_base.scss */
+/* line 2336, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(2) div p {
   margin-top: 110px;
   font-size: 22px;
 }
-/* line 2340, components/_base.scss */
+/* line 2341, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(3) {
   float: left;
   clear: none;
@@ -2499,7 +2500,7 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(3) {
   background-position: 49px 23px;
   background-size: 57%;
 }
-/* line 2347, components/_base.scss */
+/* line 2348, components/_base.scss */
 ul#icons-apply-now-landing-page-mid li:nth-of-type(4) {
   float: left;
   clear: right;
@@ -2507,14 +2508,14 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(4) {
   background-position: 62px 8px;
   margin-right: 0 !important;
 }
-/* line 2356, components/_base.scss */
+/* line 2357, components/_base.scss */
 ul#icons-apply-now-landing-page-last li:nth-of-type(1) {
   float: left;
   clear: none;
   background-image: url("../images/icon-ohio-off-campus.png");
   background-position: 63px 6px;
 }
-/* line 2362, components/_base.scss */
+/* line 2363, components/_base.scss */
 ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
   float: left;
   clear: right;
@@ -2522,13 +2523,13 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
   background-position: 74px 14px;
   margin-right: 0 !important;
 }
-/* line 2368, components/_base.scss */
+/* line 2369, components/_base.scss */
 ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
   margin-top: 110px;
   font-size: 22px;
 }
 
-/* line 2376, components/_base.scss */
+/* line 2377, components/_base.scss */
 #admissions-sub-title {
   clear: both;
   width: 188px;
@@ -2538,7 +2539,7 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
   font-size: 23px;
 }
 
-/* line 2385, components/_base.scss */
+/* line 2386, components/_base.scss */
 body.page-admissions {
   background-image: url("../images/image-admissions-hero-landing.jpg");
   background-repeat: no-repeat;
@@ -2546,22 +2547,22 @@ body.page-admissions {
   background-size: cover;
   background-position: center;
 }
-/* line 2391, components/_base.scss */
+/* line 2392, components/_base.scss */
 body.page-admissions h1 {
   text-align: center;
   color: white;
   text-decoration: underline;
 }
-/* line 2396, components/_base.scss */
+/* line 2397, components/_base.scss */
 body.page-admissions main {
   background-color: transparent;
 }
 
-/* line 2402, components/_base.scss */
+/* line 2403, components/_base.scss */
 ul#icons-admissions-landing-page-first {
   width: 870px;
 }
-/* line 2404, components/_base.scss */
+/* line 2405, components/_base.scss */
 ul#icons-admissions-landing-page-first div p {
   color: #365543;
   text-align: center;
@@ -2570,11 +2571,11 @@ ul#icons-admissions-landing-page-first div p {
   font-size: 38px;
   text-decoration: none;
 }
-/* line 2413, components/_base.scss */
+/* line 2414, components/_base.scss */
 ul#icons-admissions-landing-page-last {
   width: 1000px;
 }
-/* line 2415, components/_base.scss */
+/* line 2416, components/_base.scss */
 ul#icons-admissions-landing-page-last div p {
   color: #365543;
   text-align: center;
@@ -2582,36 +2583,36 @@ ul#icons-admissions-landing-page-last div p {
   width: 100%;
   font-size: 30px;
 }
-/* line 2423, components/_base.scss */
+/* line 2424, components/_base.scss */
 ul#icons-admissions-landing-page-first, ul#icons-admissions-landing-page-last {
   clear: both;
   list-style-type: none !important;
   margin: 0 auto 0 auto;
 }
-/* line 2428, components/_base.scss */
+/* line 2429, components/_base.scss */
 ul#icons-admissions-landing-page-first a, ul#icons-admissions-landing-page-last a {
   text-decoration: none;
 }
-/* line 2431, components/_base.scss */
+/* line 2432, components/_base.scss */
 ul#icons-admissions-landing-page-first a div {
   width: 410px;
   height: 320px;
   display: flex;
 }
-/* line 2436, components/_base.scss */
+/* line 2437, components/_base.scss */
 ul#icons-admissions-landing-page-last a div {
   width: 310px;
   height: 150px;
   display: flex;
 }
-/* line 2441, components/_base.scss */
+/* line 2442, components/_base.scss */
 ul#icons-admissions-landing-page-first li {
   width: 410px;
   height: 320px;
   float: left;
   background: rgba(255, 255, 255, 0.85);
 }
-/* line 2446, components/_base.scss */
+/* line 2447, components/_base.scss */
 ul#icons-admissions-landing-page-first li:nth-of-type(1) {
   clear: none;
   margin: 0 10px 10px 0;
@@ -2619,7 +2620,7 @@ ul#icons-admissions-landing-page-first li:nth-of-type(1) {
   background-repeat: no-repeat;
   background-position: 120px 30px;
 }
-/* line 2453, components/_base.scss */
+/* line 2454, components/_base.scss */
 ul#icons-admissions-landing-page-first li:nth-of-type(2) {
   clear: right;
   margin: 0 0 10px 0;
@@ -2627,7 +2628,7 @@ ul#icons-admissions-landing-page-first li:nth-of-type(2) {
   background-repeat: no-repeat;
   background-position: 120px 30px;
 }
-/* line 2461, components/_base.scss */
+/* line 2462, components/_base.scss */
 ul#icons-admissions-landing-page-last li {
   width: 310px;
   height: 150px;
@@ -2635,46 +2636,46 @@ ul#icons-admissions-landing-page-last li {
   background-color: white;
   background: rgba(255, 255, 255, 0.85);
 }
-/* line 2467, components/_base.scss */
+/* line 2468, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(1), ul#icons-admissions-landing-page-last li:nth-of-type(2), ul#icons-admissions-landing-page-last li:nth-of-type(3), ul#icons-admissions-landing-page-last li:nth-of-type(4), ul#icons-admissions-landing-page-last li:nth-of-type(5), ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   background-repeat: no-repeat;
 }
-/* line 2470, components/_base.scss */
+/* line 2471, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(1) {
   float: left;
   clear: left;
   background-image: url("../images/icon-transfer.png");
   background-position: 100px 0;
 }
-/* line 2476, components/_base.scss */
+/* line 2477, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(2) {
   float: left;
   clear: none;
   background-image: url("../images/icon-laptop-online.png");
   background-position: 87px 11px;
 }
-/* line 2482, components/_base.scss */
+/* line 2483, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(3) {
   float: left;
   clear: right;
   background-image: url("../images/icon-hat-credit-plus.png");
   background-position: 80px 10px;
 }
-/* line 2488, components/_base.scss */
+/* line 2489, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(4) {
   float: left;
   clear: none;
   background-image: url("../images/icon-globe-international.png");
   background-position: 110px 8px;
 }
-/* line 2494, components/_base.scss */
+/* line 2495, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(5) {
   float: left;
   clear: none;
   background-image: url("../images/icon-ohio-off-campus.png");
   background-position: 110px 10px;
 }
-/* line 2500, components/_base.scss */
+/* line 2501, components/_base.scss */
 ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   float: left;
   clear: right;
@@ -2682,16 +2683,16 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   background-position: 116px 10px;
 }
 
-/* line 2509, components/_base.scss */
+/* line 2510, components/_base.scss */
 .pane-testimonials-slider {
   clear: both;
 }
 
-/* line 2513, components/_base.scss */
+/* line 2514, components/_base.scss */
 .view-testimonials-slider {
   position: relative;
 }
-/* line 2515, components/_base.scss */
+/* line 2516, components/_base.scss */
 .view-testimonials-slider .view-header {
   position: absolute;
   top: 20px;
@@ -2701,26 +2702,26 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   width: 100%;
   text-align: center;
 }
-/* line 2516, components/_base.scss */
+/* line 2517, components/_base.scss */
 .view-testimonials-slider .view-header h3 {
   font-size: 50px;
   font-weight: normal;
 }
-/* line 2528, components/_base.scss */
+/* line 2529, components/_base.scss */
 .view-testimonials-slider .view-content {
   top: 0;
 }
-/* line 2533, components/_base.scss */
+/* line 2534, components/_base.scss */
 .view-testimonials-slider .flexslider {
   border: none !important;
 }
 
-/* line 2539, components/_base.scss */
+/* line 2540, components/_base.scss */
 .view-testimonials-slider .flex-control-nav {
   bottom: 10px;
   z-index: 5;
 }
-/* line 2543, components/_base.scss */
+/* line 2544, components/_base.scss */
 .view-testimonials-slider .views-field-body {
   background: rgba(76, 76, 76, 0.5);
   position: absolute;
@@ -2732,16 +2733,16 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   color: #ffffff;
   padding: 5px 25px 15px 25px;
 }
-/* line 2554, components/_base.scss */
+/* line 2555, components/_base.scss */
 .view-testimonials-slider .flex-control-paging li a {
   background: #979557;
 }
-/* line 2555, components/_base.scss */
+/* line 2556, components/_base.scss */
 .view-testimonials-slider .flex-control-paging li a.flex-active {
   background: #d9bf75;
 }
 
-/* line 2579, components/_base.scss */
+/* line 2580, components/_base.scss */
 .pane-international-admissions-hero {
   position: relative;
   background-image: url("../images/image-online-programs-hero.jpg");
@@ -2753,7 +2754,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   /*background-attachment: fixed;*/
   padding-top: 30px;
 }
-/* line 2589, components/_base.scss */
+/* line 2590, components/_base.scss */
 .pane-international-admissions-hero h2 {
   text-align: center;
   color: #365543;
@@ -2764,7 +2765,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 
 /* CCP Admissions */
-/* line 2601, components/_base.scss */
+/* line 2602, components/_base.scss */
 .pane-ccp-admissions-hero {
   position: relative;
   background-image: url("../images/college-credit-plus-background.jpg");
@@ -2776,36 +2777,36 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   /*background-attachment: fixed;*/
   padding-top: 30px;
 }
-/* line 2602, components/_base.scss */
+/* line 2603, components/_base.scss */
 .pane-ccp-admissions-hero div.tiptop {
   background-color: rgba(255, 255, 255, 0.7);
   height: 42px;
 }
-/* line 2605, components/_base.scss */
+/* line 2606, components/_base.scss */
 .pane-ccp-admissions-hero div.tiptop ul {
   list-style-type: none;
   width: 562px;
   padding: 5px 0 7px 0;
   margin: -117px auto 0 auto;
 }
-/* line 2610, components/_base.scss */
+/* line 2611, components/_base.scss */
 .pane-ccp-admissions-hero div.tiptop ul li {
   float: left;
   clear: none;
   text-align: left;
   padding-right: 25px;
 }
-/* line 2615, components/_base.scss */
+/* line 2616, components/_base.scss */
 .pane-ccp-admissions-hero div.tiptop ul li:nth-of-type(4) {
   padding-right: 0;
 }
-/* line 2618, components/_base.scss */
+/* line 2619, components/_base.scss */
 .pane-ccp-admissions-hero div.tiptop ul li a {
   text-decoration: none !important;
   font-size: 22px;
   color: #365543 !important;
 }
-/* line 2635, components/_base.scss */
+/* line 2636, components/_base.scss */
 .pane-ccp-admissions-hero h2 {
   text-align: center;
   color: #365543;
@@ -2814,27 +2815,27 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   margin-top: 30px;
   padding-top: 0;
 }
-/* line 2643, components/_base.scss */
+/* line 2644, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks {
   width: 100%;
 }
-/* line 2645, components/_base.scss */
+/* line 2646, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul {
   list-style-type: none;
   height: 88px;
 }
-/* line 2648, components/_base.scss */
+/* line 2649, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) {
   margin: 50px auto 0 auto;
   width: 724px;
 }
-/* line 2652, components/_base.scss */
+/* line 2653, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(2) {
   margin: 5px auto 0 auto;
   clear: both;
   width: 524px;
 }
-/* line 2657, components/_base.scss */
+/* line 2658, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul li {
   margin-right: 1%;
   height: 88px;
@@ -2845,54 +2846,54 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   float: left;
   opacity: 0.85;
 }
-/* line 2667, components/_base.scss */
+/* line 2668, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li, .pane-ccp-admissions-hero .midclicks ul:nth-of-type(2) li {
   width: 220px;
 }
-/* line 2671, components/_base.scss */
+/* line 2672, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul li div {
   width: 100%;
   height: 88px;
 }
-/* line 2672, components/_base.scss */
+/* line 2673, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul li div p {
   padding: 30px 0 0 25%;
 }
-/* line 2680, components/_base.scss */
+/* line 2681, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul li a {
   color: #365543;
   font-size: 22px;
   text-decoration: none;
 }
-/* line 2687, components/_base.scss */
+/* line 2688, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(1) {
   background-image: url("../images/icon-1.png");
   background-size: 11.5%;
   background-position: 4% center;
   padding-left: 5px;
 }
-/* line 2693, components/_base.scss */
+/* line 2694, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(2) {
   background-image: url("../images/icon-2.png");
   background-size: 15%;
 }
-/* line 2697, components/_base.scss */
+/* line 2698, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(3) {
   background-image: url("../images/icon-3.png");
   background-size: 15%;
   clear: right;
 }
-/* line 2704, components/_base.scss */
+/* line 2705, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(2) li:nth-of-type(1) {
   background-image: url("../images/icon-4.png");
   background-size: 15%;
 }
-/* line 2708, components/_base.scss */
+/* line 2709, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(2) li:nth-of-type(2) {
   background-image: url("../images/icon-5.png");
   background-size: 15%;
 }
-/* line 2713, components/_base.scss */
+/* line 2714, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(2) p, .pane-ccp-admissions-hero .midclicks ul:nth-of-type(2) li:nth-of-type(1) p {
   padding-top: 19px !important;
   line-height: 26px;
@@ -2900,7 +2901,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 
 /* CCP admissions */
 /* CCP meet your */
-/* line 2725, components/_base.scss */
+/* line 2726, components/_base.scss */
 #mini-panel-ccp_meet_your {
   background-image: url("../images/image-meet-your-background.jpg");
   background-repeat: no-repeat;
@@ -2913,17 +2914,17 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 
 @media (max-width: 775px) {
-  /* line 2737, components/_base.scss */
+  /* line 2738, components/_base.scss */
   #mini-panel-ccp_meet_your {
     background-size: 210%;
   }
 }
-/* line 2742, components/_base.scss */
+/* line 2743, components/_base.scss */
 #meetyour {
   width: 600px;
   margin: 0 auto;
 }
-/* line 2745, components/_base.scss */
+/* line 2746, components/_base.scss */
 #meetyour h2 {
   color: #365543;
   width: 700px;
@@ -2933,7 +2934,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   font-size: 38px;
   font-weight: normal;
 }
-/* line 2754, components/_base.scss */
+/* line 2755, components/_base.scss */
 #meetyour div {
   width: 268px;
   height: 268px;
@@ -2944,7 +2945,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
   clear: none;
   margin-left: 60px;
 }
-/* line 2764, components/_base.scss */
+/* line 2765, components/_base.scss */
 #meetyour ul {
   width: 220px;
   list-style-type: none;
@@ -2958,46 +2959,46 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 /* End CCP meet your */
 /* homepage responsive phones */
 @media (max-width: 575px) {
-  /* line 2780, components/_base.scss */
+  /* line 2781, components/_base.scss */
   body {
     moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
   }
 
-  /* line 2787, components/_base.scss */
+  /* line 2788, components/_base.scss */
   #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 2790, components/_base.scss */
+  /* line 2791, components/_base.scss */
   #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 h2 {
     font-size: 28px !important;
     margin-bottom: 20px;
   }
-  /* line 2796, components/_base.scss */
+  /* line 2797, components/_base.scss */
   #mini-panel-homepage_top_hero div#edit-submitted-degree-type div label {
     font-size: 31px !important;
   }
-  /* line 2798, components/_base.scss */
+  /* line 2799, components/_base.scss */
   #mini-panel-homepage_top_hero div#edit-submitted-degree-type div label input {
     margin-right: 12px;
     height: 20px;
   }
-  /* line 2803, components/_base.scss */
+  /* line 2804, components/_base.scss */
   #mini-panel-homepage_top_hero div#edit-submitted-degree-type div:nth-of-type(1) {
     width: 100% !important;
   }
-  /* line 2806, components/_base.scss */
+  /* line 2807, components/_base.scss */
   #mini-panel-homepage_top_hero div#edit-submitted-degree-type div:nth-of-type(2) {
     width: 100% !important;
     margin-bottom: 14px;
   }
-  /* line 2811, components/_base.scss */
+  /* line 2812, components/_base.scss */
   #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
     height: 330px !important;
   }
-  /* line 2815, components/_base.scss */
+  /* line 2816, components/_base.scss */
   #mini-panel-homepage_top_hero select.form-select {
     width: 100% !important;
     margin-right: 20px;
@@ -3006,19 +3007,19 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     margin-bottom: 16px;
   }
 
-  /* line 2824, components/_base.scss */
+  /* line 2825, components/_base.scss */
   #mini-panel-homepage_submenu ul:nth-of-type(1) {
     padding-left: 5% !important;
     display: block !important;
     height: 170px !important;
   }
-  /* line 2828, components/_base.scss */
+  /* line 2829, components/_base.scss */
   #mini-panel-homepage_submenu ul:nth-of-type(1) li {
     width: 100% !important;
     clear: both !important;
     margin-top: 10px !important;
   }
-  /* line 2834, components/_base.scss */
+  /* line 2835, components/_base.scss */
   #mini-panel-homepage_submenu ul:nth-of-type(2) {
     width: 100% !important;
     text-align: center;
@@ -3026,38 +3027,38 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     padding-left: 7% !important;
   }
 
-  /* line 2842, components/_base.scss */
+  /* line 2843, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro h3 {
     width: 100% !important;
     font-size: 30px !important;
     text-align: center;
   }
-  /* line 2847, components/_base.scss */
+  /* line 2848, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul {
     padding: 0 10px 0 10px;
   }
-  /* line 2849, components/_base.scss */
+  /* line 2850, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li {
     text-align: center;
   }
-  /* line 2851, components/_base.scss */
+  /* line 2852, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li div {
     height: 90px !important;
     width: 90px !important;
     background-size: 90px 90px !important;
   }
-  /* line 2856, components/_base.scss */
+  /* line 2857, components/_base.scss */
   #mini-panel-join_the_tu_family_white_backgro ul li a:nth-of-type(2) {
     margin: 0;
     text-align: center;
   }
 
-  /* line 2863, components/_base.scss */
+  /* line 2864, components/_base.scss */
   div#flexslider-1 {
     width: 100%;
   }
 
-  /* line 2868, components/_base.scss */
+  /* line 2869, components/_base.scss */
   .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title {
     top: inherit !important;
     position: relative !important;
@@ -3066,7 +3067,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     clear: both;
     min-width: 100% !important;
   }
-  /* line 2876, components/_base.scss */
+  /* line 2877, components/_base.scss */
   .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
     width: 50% !important;
     position: relative !important;
@@ -3075,7 +3076,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     margin: 0 auto 0 auto;
     text-align: center !important;
   }
-  /* line 2885, components/_base.scss */
+  /* line 2886, components/_base.scss */
   .view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav {
     width: 50% !important;
     position: relative !important;
@@ -3084,7 +3085,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     margin: 0 auto 0 auto;
     text-align: center !important;
   }
-  /* line 2893, components/_base.scss */
+  /* line 2894, components/_base.scss */
   .view-homepage-news-slidehow #flexslider-1 .views-field-field-quick-news-description {
     width: 50% !important;
     position: relative !important;
@@ -3096,91 +3097,91 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     width: 100%;
   }
 
-  /* line 2904, components/_base.scss */
+  /* line 2905, components/_base.scss */
   .views-field-field-news-front-slider-image img.img-responsive {
     max-width: 284px;
   }
 
-  /* line 2907, components/_base.scss */
+  /* line 2908, components/_base.scss */
   div#flexslider-1 ul.slides li.flex-active-slide {
     width: 100% !important;
     height: 100% !important;
   }
 
-  /* line 2911, components/_base.scss */
+  /* line 2912, components/_base.scss */
   .view-homepage-news-slidehow {
     height: 340px;
   }
 
-  /* line 2914, components/_base.scss */
+  /* line 2915, components/_base.scss */
   #mini-panel-you_and_tu #you-and-tu ul {
     padding: 0;
   }
-  /* line 2916, components/_base.scss */
+  /* line 2917, components/_base.scss */
   #mini-panel-you_and_tu #you-and-tu ul li div {
     background-size: 70%;
   }
-  /* line 2919, components/_base.scss */
+  /* line 2920, components/_base.scss */
   #mini-panel-you_and_tu #you-and-tu ul li h3 {
     font-size: 18px;
   }
-  /* line 2922, components/_base.scss */
+  /* line 2923, components/_base.scss */
   #mini-panel-you_and_tu #you-and-tu ul li div {
     background-position: center center;
   }
 
-  /* line 2928, components/_base.scss */
+  /* line 2929, components/_base.scss */
   .view-undergraduate-admissions .view-content {
     columns: 1;
     -webkit-columns: 1;
     -moz-columns: 1;
   }
 
-  /* line 2933, components/_base.scss */
+  /* line 2934, components/_base.scss */
   .masonry-processed {
     height: auto !important;
   }
 
-  /* line 2936, components/_base.scss */
+  /* line 2937, components/_base.scss */
   .masonry-item {
     position: static !important;
     width: 100% !important;
     margin-bottom: 16px !important;
   }
 
-  /* line 2941, components/_base.scss */
+  /* line 2942, components/_base.scss */
   .pane-social-feed {
     padding: 10px !important;
   }
 }
 @media (max-width: 415px) {
-  /* line 2947, components/_base.scss */
+  /* line 2948, components/_base.scss */
   .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
     width: 69% !important;
   }
 
-  /* line 2950, components/_base.scss */
+  /* line 2951, components/_base.scss */
   #social_media_home {
     margin: 0 !important;
     padding: 0 !important;
   }
-  /* line 2953, components/_base.scss */
+  /* line 2954, components/_base.scss */
   #social_media_home ul {
     margin: 0 !important;
     padding: 0 !important;
     width: 100%;
   }
-  /* line 2957, components/_base.scss */
+  /* line 2958, components/_base.scss */
   #social_media_home ul li {
     background-size: 70%;
   }
-  /* line 2959, components/_base.scss */
+  /* line 2960, components/_base.scss */
   #social_media_home ul li:nth-of-type(1) {
     background-size: 38%;
   }
 }
 @media (max-width: 376px) {
-  /* line 2970, components/_base.scss */
+  /* line 2971, components/_base.scss */
   .view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
     width: 75% !important;
   }
@@ -3188,106 +3189,106 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 /* end homepage responsive phones */
 /* Admissions landing responsive */
 @media (max-width: 1000px) {
-  /* line 2981, components/_base.scss */
+  /* line 2982, components/_base.scss */
   ul#icons-admissions-landing-page-first li {
     width: 100%;
     background-position: center 43px !important;
   }
-  /* line 2985, components/_base.scss */
+  /* line 2986, components/_base.scss */
   ul#icons-apply-now-landing-page-first li {
     background-position: center 15px !important;
     width: 100%;
   }
-  /* line 2989, components/_base.scss */
+  /* line 2990, components/_base.scss */
   ul#icons-admissions-landing-page-first, ul#icons-apply-now-landing-page-first {
     width: 80%;
     padding: 0;
   }
-  /* line 2993, components/_base.scss */
+  /* line 2994, components/_base.scss */
   ul#icons-admissions-landing-page-first a div, ul#icons-apply-now-landing-page-first a div, ul#icons-apply-now-landing-page-mid a div, ul#icons-apply-now-landing-page-last a div {
     width: 100%;
   }
-  /* line 2996, components/_base.scss */
+  /* line 2997, components/_base.scss */
   ul#icons-admissions-landing-page-last li, ul#icons-apply-now-landing-page-mid li, ul#icons-apply-now-landing-page-last li {
     width: 49%;
     background-position: center center !important;
     float: left;
     clear: none;
   }
-  /* line 3002, components/_base.scss */
+  /* line 3003, components/_base.scss */
   ul#icons-admissions-landing-page-last li:nth-child(2), ul#icons-apply-now-landing-page-mid li:nth-child(2), ul#icons-apply-now-landing-page-last li:nth-child(2), ul#icons-admissions-landing-page-last li:nth-child(4), ul#icons-apply-now-landing-page-mid li:nth-child(4), ul#icons-admissions-landing-page-last li:nth-child(6) {
     margin-right: 0;
   }
-  /* line 3006, components/_base.scss */
+  /* line 3007, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(2) {
     background-size: 46% !important;
   }
-  /* line 3009, components/_base.scss */
+  /* line 3010, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(3) {
     background-size: 46% !important;
     background-position: center 7px !important;
   }
-  /* line 3013, components/_base.scss */
+  /* line 3014, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(4) {
     background-position: center 7px !important;
   }
-  /* line 3016, components/_base.scss */
+  /* line 3017, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(2) {
     background-position: center 14px !important;
   }
-  /* line 3020, components/_base.scss */
+  /* line 3021, components/_base.scss */
   ul#icons-admissions-landing-page-last li:nth-child(2), ul#icons-apply-now-landing-page-last li:nth-child(2), ul#icons-admissions-landing-page-last li:nth-child(4), ul#icons-apply-now-landing-page-last li:nth-child(4), ul#icons-admissions-landing-page-last li:nth-child(6), ul#icons-apply-now-landing-page-last li:nth-child(6) {
     background-position: center 19px !important;
   }
-  /* line 3023, components/_base.scss */
+  /* line 3024, components/_base.scss */
   ul#icons-admissions-landing-page-last li:nth-child(3), ul#icons-apply-now-landing-page-last li:nth-child(3) {
     background-position: center 26px !important;
   }
-  /* line 3026, components/_base.scss */
+  /* line 3027, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(1) {
     background-position: center 0 !important;
     background-size: 35% !important;
   }
-  /* line 3030, components/_base.scss */
+  /* line 3031, components/_base.scss */
   ul#icons-admissions-landing-page-last li:nth-child(5), ul#icons-apply-now-landing-page-last li:nth-child(5), ul#icons-admissions-landing-page-last li:nth-child(1), ul#icons-apply-now-landing-page-last li:nth-child(1) {
     background-position: center 2px !important;
   }
-  /* line 3033, components/_base.scss */
+  /* line 3034, components/_base.scss */
   ul#icons-admissions-landing-page-last, ul#icons-apply-now-landing-page-mid, ul#icons-apply-now-landing-page-last {
     width: 82%;
     padding: 0;
   }
-  /* line 3037, components/_base.scss */
+  /* line 3038, components/_base.scss */
   ul#icons-admissions-landing-page-last a div {
     width: 100%;
   }
-  /* line 3041, components/_base.scss */
+  /* line 3042, components/_base.scss */
   ul#icons-apply-now-landing-page-last a div {
     width: 100%;
   }
-  /* line 3044, components/_base.scss */
+  /* line 3045, components/_base.scss */
   ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
     font-size: 26px;
   }
-  /* line 3048, components/_base.scss */
+  /* line 3049, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-of-type(2) div p {
     font-size: 26px;
   }
 }
 @media (max-width: 660px) {
-  /* line 3056, components/_base.scss */
+  /* line 3057, components/_base.scss */
   ul#icons-admissions-landing-page-last li, ul#icons-apply-now-landing-page-mid li, ul#icons-apply-now-landing-page-last li {
     width: 100% !important;
   }
-  /* line 3060, components/_base.scss */
+  /* line 3061, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(2), ul#icons-apply-now-landing-page-mid li:nth-child(3) {
     background-size: 38% !important;
   }
-  /* line 3063, components/_base.scss */
+  /* line 3064, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(1) {
     background-size: 28%;
   }
-  /* line 3066, components/_base.scss */
+  /* line 3067, components/_base.scss */
   ul#icons-apply-now-landing-page-mid li:nth-child(2) {
     background-position: center 25px !important;
   }
@@ -3295,56 +3296,56 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 /* End admissions landing responsive */
 /* Program pages responsive */
 @media (max-width: 1000px) {
-  /* line 3077, components/_base.scss */
+  /* line 3078, components/_base.scss */
   .pane-graduate-admissions-hero ul li p, .pane-online-admissions-hero ul li p {
     font-size: 24px !important;
     margin-top: 10px;
   }
 
-  /* line 3081, components/_base.scss */
+  /* line 3082, components/_base.scss */
   .pane-undergraduate-admissions-hero ul li p {
     font-size: 24px !important;
     margin-top: 2px;
   }
 }
 @media (max-width: 775px) {
-  /* line 3088, components/_base.scss */
+  /* line 3089, components/_base.scss */
   .pane-graduate-admissions-hero, .pane-online-admissions-hero, .pane-undergraduate-admissions-hero {
     height: 600px;
     background-position: 0 0;
   }
 
-  /* line 3092, components/_base.scss */
+  /* line 3093, components/_base.scss */
   .pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
     display: block;
     margin: 10px auto 0 auto;
     padding: 0;
   }
 
-  /* line 3099, components/_base.scss */
+  /* line 3100, components/_base.scss */
   .pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
     clear: both;
   }
 
-  /* line 3104, components/_base.scss */
+  /* line 3105, components/_base.scss */
   .pane-graduate-admissions-hero ul li:nth-of-type(3), .pane-undergraduate-admissions-hero ul li:nth-of-type(3), .pane-online-admissions-hero ul li:nth-of-type(3), .pane-graduate-admissions-hero ul li:nth-of-type(2), .pane-online-admissions-hero ul li:nth-of-type(2), .pane-undergraduate-admissions-hero ul li:nth-of-type(2) {
     background-size: 10%;
   }
 
-  /* line 3107, components/_base.scss */
+  /* line 3108, components/_base.scss */
   .pane-graduate-admissions-hero ul li:nth-of-type(1), .pane-online-admissions-hero ul li:nth-of-type(1), .pane-undergraduate-admissions-hero ul li:nth-of-type(1) {
     background-size: 7.5%;
     background-position: 6% center;
   }
 }
 @media (max-width: 500px) {
-  /* line 3114, components/_base.scss */
+  /* line 3115, components/_base.scss */
   .pane-graduate-admissions-hero h2, .pane-online-admissions-hero h2, .pane-undergraduate-admissions-hero h2 {
     font-size: 30px;
   }
 }
 @media (max-width: 376px) {
-  /* line 3120, components/_base.scss */
+  /* line 3121, components/_base.scss */
   .pane-graduate-admissions-hero ul li p {
     font-size: 20px !important;
     margin-top: 13px;
@@ -3353,53 +3354,53 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 /* Program page responsive */
 /* IE 10 Fixes */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 3131, components/_base.scss */
+  /* line 3132, components/_base.scss */
   .pane-life-at-tu-hero-top ul li {
     width: 32%;
     margin-bottom: 20px;
   }
 
-  /* line 3135, components/_base.scss */
+  /* line 3136, components/_base.scss */
   .pane-dragon-perks ul {
     display: block;
   }
-  /* line 3137, components/_base.scss */
+  /* line 3138, components/_base.scss */
   .pane-dragon-perks ul li {
     width: 22%;
     float: left;
     clear: none;
   }
 
-  /* line 3144, components/_base.scss */
+  /* line 3145, components/_base.scss */
   .pane-life-at-tu-hero-top ul:nth-of-type(2) li:nth-of-type(1) p {
     width: 220px;
   }
-  /* line 3147, components/_base.scss */
+  /* line 3148, components/_base.scss */
   .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(3) p {
     width: 235px;
   }
 
-  /* line 3151, components/_base.scss */
+  /* line 3152, components/_base.scss */
   .pane-about-tu-hero-top #abouttutop ul {
     display: block;
   }
-  /* line 3153, components/_base.scss */
+  /* line 3154, components/_base.scss */
   .pane-about-tu-hero-top #abouttutop ul li {
     float: left;
     clear: none;
   }
 
-  /* line 3158, components/_base.scss */
+  /* line 3159, components/_base.scss */
   .pane-about-tiffin-ohio ul {
     width: 600px;
   }
-  /* line 3160, components/_base.scss */
+  /* line 3161, components/_base.scss */
   .pane-about-tiffin-ohio ul li p {
     float: left;
     clear: none;
   }
 
-  /* line 3165, components/_base.scss */
+  /* line 3166, components/_base.scss */
   #search-form input[type=search] {
     border: 0;
     -webkit-border-radius: 10em;
@@ -3412,21 +3413,21 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
     cursor: pointer;
   }
 
-  /* line 3176, components/_base.scss */
+  /* line 3177, components/_base.scss */
   .panel-separator {
     height: 0 !important;
   }
 
-  /* line 3179, components/_base.scss */
+  /* line 3180, components/_base.scss */
   .pane-homepage-social-media, #mini-panel-homepage_social_media {
     clear: both;
   }
 
-  /* line 3182, components/_base.scss */
+  /* line 3183, components/_base.scss */
   .pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
     display: block;
   }
-  /* line 3184, components/_base.scss */
+  /* line 3185, components/_base.scss */
   .pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
     float: left !important;
     clear: none !important;
@@ -3435,31 +3436,31 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 /* End IE 10 fixes */
 /* Left-Nav CSS Tweak from Justin 10/7/2016 */
-/* line 3198, components/_base.scss */
+/* line 3199, components/_base.scss */
 .menu-block-wrapper .nav li {
   font-size: 14px;
   font-weight: 400;
   margin: 0 0 7px 0;
 }
-/* line 3203, components/_base.scss */
+/* line 3204, components/_base.scss */
 .menu-block-wrapper .nav h3 {
   padding: 0 !important;
 }
-/* line 3208, components/_base.scss */
+/* line 3209, components/_base.scss */
 .menu-block-wrapper .nav > li > h3 a:hover, .menu-block-wrapper .nav > li > h3 a:focus {
   background-color: #f8f8f8;
   color: #385443;
   border-width: 8px;
 }
-/* line 3214, components/_base.scss */
+/* line 3215, components/_base.scss */
 .menu-block-wrapper .nav > .active-trail h3 a {
   background-color: #385443;
 }
-/* line 3216, components/_base.scss */
+/* line 3217, components/_base.scss */
 .menu-block-wrapper .nav > .active-trail h3 a:hover, .menu-block-wrapper .nav > .active-trail h3 a:focus {
   background-color: #384A43;
 }
-/* line 3222, components/_base.scss */
+/* line 3223, components/_base.scss */
 .menu-block-wrapper > .nav > li > h3 a {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3491,24 +3492,24 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 
 /************** Brought in from block: needs to get merged in with above ********************/
-/* line 3257, components/_base.scss */
+/* line 3258, components/_base.scss */
 nav#wb-sec div.menu-block-wrapper li.leaf a {
   color: #365543 !important;
 }
-/* line 3259, components/_base.scss */
+/* line 3260, components/_base.scss */
 nav#wb-sec div.menu-block-wrapper li.leaf a:visited {
   color: #365543 !important;
 }
-/* line 3263, components/_base.scss */
+/* line 3264, components/_base.scss */
 nav#wb-sec div.menu-block-wrapper li a.active-trail, nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail, nav#wb-sec div.menu-block-wrapper li h3 a.active-trail {
   color: #d9bf75 !important;
 }
-/* line 3267, components/_base.scss */
+/* line 3268, components/_base.scss */
 nav#wb-sec div.menu-block-wrapper .expanded ul li {
   padding-top: 10px !important;
 }
 
-/* line 3272, components/_base.scss */
+/* line 3273, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-panel-pane-2 h2.pane-title {
   background-color: transparent;
   width: 210px;
@@ -3522,14 +3523,14 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   width: 210px !important;
 }
 
-/* line 3285, components/_base.scss */
+/* line 3286, components/_base.scss */
 .page-academics-graduate h2 {
   margin: 30px auto 0 auto;
   font-size: 41px;
   color: #365543;
 }
 
-/* line 3291, components/_base.scss */
+/* line 3292, components/_base.scss */
 .page-academics-undergrad h2 {
   margin: 30px auto 0 auto;
   font-size: 41px;
@@ -3537,32 +3538,32 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   /*width: 425px;*/
 }
 
-/* line 3298, components/_base.scss */
+/* line 3299, components/_base.scss */
 .page-academics-graduate h2 {
   /*width: 425px;*/
 }
 
 @media (max-width: 550px) {
-  /* line 3303, components/_base.scss */
+  /* line 3304, components/_base.scss */
   .page-academics-graduate h2, .page-academics-undergrad h2 {
     width: 300px;
     font-size: 20px;
   }
 }
-/* line 3309, components/_base.scss */
+/* line 3310, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane .view-id-undergraduate_admissions .view-content .views-row a, .pane-undergraduate-admissions-panel-pane-2 .view-id-undergraduate_admissions .view-content .views-row a, .pane-undergraduate-admissions-panel-pane-1 .view-id-undergraduate_admissions .view-content .views-row a {
   font-size: 21px;
   text-decoration: none;
   color: #11361E;
 }
 
-/* line 3315, components/_base.scss */
+/* line 3316, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 3320, components/_base.scss */
+/* line 3321, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-2 {
   width: 80%;
   margin: 0 auto;
@@ -3572,35 +3573,35 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
 }
 
 @media (min-width: 992px) {
-  /* line 3329, components/_base.scss */
+  /* line 3330, components/_base.scss */
   .pane-undergraduate-admissions-panel-pane-2 .glyphicon, .pane-undergraduate-admissions-panel-pane-1 .glyphicon {
     display: block !important;
   }
 }
 @media (max-width: 500px) {
-  /* line 3335, components/_base.scss */
+  /* line 3336, components/_base.scss */
   .pane-undergraduate-admissions-panel-pane-2 .glyphicon, .pane-undergraduate-admissions-panel-pane-1 .glyphicon {
     display: none !important;
   }
 
-  /* line 3338, components/_base.scss */
+  /* line 3339, components/_base.scss */
   .pane-undergraduate-admissions-panel-pane-2 .form-autocomplete .form-control, .pane-undergraduate-admissions-panel-pane-1 .form-autocomplete .form-control {
     width: 300px;
   }
 
-  /* line 3341, components/_base.scss */
+  /* line 3342, components/_base.scss */
   .pane-undergraduate-admissions-panel-pane-2 .input-group-addon, .pane-undergraduate-admissions-panel-pane-1 .input-group-addon {
     display: none !important;
   }
 }
-/* line 3346, components/_base.scss */
+/* line 3347, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-1 {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 17px;
   margin-top: 40px;
 }
 
-/* line 3352, components/_base.scss */
+/* line 3353, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-2 h2.pane-title, .pane-undergraduate-admissions-panel-pane-1 h2.pane-title {
   margin-top: 0 !important;
   background-color: transparent;
@@ -3608,20 +3609,20 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   color: #365543;
 }
 
-/* line 3359, components/_base.scss */
+/* line 3360, components/_base.scss */
 .pane-bean-schools-bean-block {
   max-width: 100%;
   margin-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 3365, components/_base.scss */
+/* line 3366, components/_base.scss */
 .pane-bean-schools-bean-block h2 {
   text-align: center;
   font-weight: bold;
   margin: 50px auto 20px auto;
 }
-/* line 3374, components/_base.scss */
+/* line 3375, components/_base.scss */
 .pane-bean-schools-bean-block ul {
   margin: 0 auto;
   padding: 0;
@@ -3632,39 +3633,39 @@ nav#wb-sec div.menu-block-wrapper .expanded ul li {
   text-decoration: none;
 }
 @media screen and (min-width: 800px) {
-  /* line 3374, components/_base.scss */
+  /* line 3375, components/_base.scss */
   .pane-bean-schools-bean-block ul {
     width: 425px;
   }
 }
-/* line 3387, components/_base.scss */
+/* line 3388, components/_base.scss */
 .pane-bean-schools-bean-block ul a {
   color: #11361E;
   text-decoration: none;
 }
 
-/* line 3394, components/_base.scss */
+/* line 3395, components/_base.scss */
 div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 main {
   width: 90%;
 }
 
-/* line 3398, components/_base.scss */
+/* line 3399, components/_base.scss */
 .views-exposed-form label {
   font-weight: 400;
   color: #a58024;
 }
 
-/* line 3403, components/_base.scss */
+/* line 3404, components/_base.scss */
 .view-id-undergraduate_admissions .view-filters {
   width: 390px !important;
 }
 
-/* line 3407, components/_base.scss */
+/* line 3408, components/_base.scss */
 .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(2) p {
   padding-top: 33px !important;
 }
 
-/* line 3411, components/_base.scss */
+/* line 3412, components/_base.scss */
 .views-field-field-testimonials-blurb {
   position: absolute;
   top: 40% !important;
@@ -3673,33 +3674,33 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-size: 22px;
 }
 
-/* line 3419, components/_base.scss */
+/* line 3420, components/_base.scss */
 .menu-block-wrapper .nav > .active-trail h3 a {
   background-color: #385443 !important;
   color: #D9C072 !important;
 }
 
-/* line 3424, components/_base.scss */
+/* line 3425, components/_base.scss */
 .pane-about-tiffin-ohio p {
   font-size: 17px;
 }
 
-/* line 3428, components/_base.scss */
+/* line 3429, components/_base.scss */
 .pane-schools h2 {
   background-position-x: 318px;
   width: 345px;
 }
 
-/* line 3433, components/_base.scss */
+/* line 3434, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane {
   width: 80%;
   margin: 0 auto;
 }
-/* line 3436, components/_base.scss */
+/* line 3437, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane .views-exposed-form .views-exposed-widget {
   padding: 0 !important;
 }
-/* line 3439, components/_base.scss */
+/* line 3440, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title {
   color: #11361E;
   text-align: center;
@@ -3710,7 +3711,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-size: 29px;
 }
 
-/* line 3450, components/_base.scss */
+/* line 3451, components/_base.scss */
 .pane-schools h2 {
   color: #11361E;
   text-align: center;
@@ -3721,14 +3722,14 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-size: 29px;
 }
 
-/* line 3460, components/_base.scss */
+/* line 3461, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title {
   background-position-x: 133px;
   width: 160px;
   text-align: left;
 }
 
-/* line 3466, components/_base.scss */
+/* line 3467, components/_base.scss */
 .pane-schools h2 {
   background-position-x: 304px;
   width: 332px;
@@ -3736,24 +3737,24 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-weight: bold;
 }
 
-/* line 3473, components/_base.scss */
+/* line 3474, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane .pane-schools .view-content {
   text-align: center;
 }
 
-/* line 3477, components/_base.scss */
+/* line 3478, components/_base.scss */
 .view-id-graduate_admissions .view-content .views-row, .view-id-schools .view-content .views-row {
   margin-bottom: 16px;
   text-align: left;
   line-height: 20px;
 }
 
-/* line 3483, components/_base.scss */
+/* line 3484, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane .views-exposed-form .views-exposed-widget .btn {
   margin-top: 28px !important;
 }
 
-/* line 3487, components/_base.scss */
+/* line 3488, components/_base.scss */
 .view-graduate-admissions .view-content {
   margin-top: 27px;
   columns: 3;
@@ -3761,41 +3762,41 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   -moz-columns: 3;
 }
 
-/* line 3494, components/_base.scss */
+/* line 3495, components/_base.scss */
 .pane-schools {
   width: 280px;
   margin: 0 auto 50px auto;
   line-height: 26px;
 }
 
-/* line 3500, components/_base.scss */
+/* line 3501, components/_base.scss */
 .pane-undergraduate-admissions-graduate-program-list-panel-pane .view-content a, .pane-schools a {
   font-size: 21px;
   color: #11361E;
   text-decoration: none;
 }
 
-/* line 3506, components/_base.scss */
+/* line 3507, components/_base.scss */
 .view-id-graduate_admissions .view-filters {
   width: 510px;
   margin: 0 auto 0 auto;
 }
 
-/* line 3512, components/_base.scss */
+/* line 3513, components/_base.scss */
 .views-exposed-form-graduate-admissions-graduate-program-list-panel-pane .views-exposed-form .views-exposed-widget {
   padding: 0 !important;
 }
-/* line 3515, components/_base.scss */
+/* line 3516, components/_base.scss */
 .views-exposed-form-graduate-admissions-graduate-program-list-panel-pane .views-exposed-widget .form-submit {
   margin-top: 0 !important;
 }
 
-/* line 3520, components/_base.scss */
+/* line 3521, components/_base.scss */
 #edit-field-program-location-tid-wrapper .label {
   display: none !important;
 }
 
-/* line 3524, components/_base.scss */
+/* line 3525, components/_base.scss */
 #edit-submit-graduate-admissions {
   font-size: 24px;
   border-radius: 0;
@@ -3804,7 +3805,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   border: 0 solid transparent !important;
 }
 
-/* line 3532, components/_base.scss */
+/* line 3533, components/_base.scss */
 #edit-field-program-location-tid {
   border-radius: 0;
   float: left;
@@ -3820,25 +3821,25 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   color: #365543;
 }
 @media screen and (min-width: 800px) {
-  /* line 3532, components/_base.scss */
+  /* line 3533, components/_base.scss */
   #edit-field-program-location-tid {
     background-position-x: 360px;
     width: 390px;
   }
 }
 
-/* line 3552, components/_base.scss */
+/* line 3553, components/_base.scss */
 .pane-about-tiffin-ohio h3 {
   font-size: 32px;
 }
 @media screen and (min-width: 600px) {
-  /* line 3552, components/_base.scss */
+  /* line 3553, components/_base.scss */
   .pane-about-tiffin-ohio h3 {
     font-size: 52px;
   }
 }
 
-/* line 3560, components/_base.scss */
+/* line 3561, components/_base.scss */
 .view-testimonials-slider .views-field-body {
   background: rgba(76, 76, 76, 0.5);
   position: absolute;
@@ -3851,14 +3852,14 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   padding: 5px 25px 15px 25px;
 }
 
-/* line 3572, components/_base.scss */
+/* line 3573, components/_base.scss */
 .pane-giving-hero-top h1, .pane-advancement-hero-top h1, .pane-alumni-hero-top h1 {
   width: 100%;
   text-align: center;
   color: white;
 }
 
-/* line 3578, components/_base.scss */
+/* line 3579, components/_base.scss */
 .pane-giving-hero-top, .pane-advancement-hero-top, .pane-alumni-hero-top {
   background-image: url("../images/image-generic-page-background.jpg");
   background-repeat: no-repeat;
@@ -3867,17 +3868,17 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
 }
 
-/* line 3586, components/_base.scss */
+/* line 3587, components/_base.scss */
 .pane-giving-hero-top {
   height: 695px;
 }
 
-/* line 3590, components/_base.scss */
+/* line 3591, components/_base.scss */
 .pane-advancement-hero-top {
   height: 355px;
 }
 
-/* line 3594, components/_base.scss */
+/* line 3595, components/_base.scss */
 .pane-alumni-hero-top {
   height: 565px;
 }
@@ -3898,27 +3899,27 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0 20px !important;
 }*/
 /* END duplicate comment from 2-24-2017 */
-/* line 3617, components/_base.scss */
+/* line 3618, components/_base.scss */
 .pane-giving-hero-top .hvr-bounce-to-bottom::before, .pane-advancement-hero-top .hvr-bounce-to-bottom::before, .pane-alumni-hero-top .hvr-bounce-to-bottom::before {
   background: #365543 !important;
 }
 
-/* line 3621, components/_base.scss */
+/* line 3622, components/_base.scss */
 .pane-giving-hero-top #abouttutop, .pane-advancement-hero-top #abouttutop, .pane-alumni-hero-top #abouttutop {
   margin-top: 20px;
 }
 
-/* line 3625, components/_base.scss */
+/* line 3626, components/_base.scss */
 .pane-giving-hero-top #abouttutop ul, .pane-advancement-hero-top #abouttutop ul, .pane-alumni-hero-top #abouttutop ul {
   margin: 40px auto 0 auto;
 }
 
-/* line 3632, components/_base.scss */
+/* line 3633, components/_base.scss */
 .pane-giving-hero-top #abouttutop ul li:nth-of-type(1), .pane-advancement-hero-top #abouttutop ul li:nth-of-type(1), .pane-alumni-hero-top #abouttutop ul li:nth-of-type(1) {
   background-repeat: no-repeat;
 }
 
-/* line 3652, components/_base.scss */
+/* line 3653, components/_base.scss */
 .pane-giving-hero-top #introblurbs, .pane-advancement-hero-top #introblurbs, .pane-alumni-hero-top #introblurbs {
   color: white;
   margin: 0 auto;
@@ -3928,7 +3929,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   padding: 10px;
 }
 
-/* line 3661, components/_base.scss */
+/* line 3662, components/_base.scss */
 .pane-giving-hero-top #abouttutop ul li div p, .pane-advancement-hero-top #abouttutop ul li div p, .pane-alumni-hero-top #abouttutop ul li div p {
   padding-top: 25px;
   text-align: center;
@@ -3936,15 +3937,15 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 /************** End brought in from block ********************/
 /* FLOATING SITE submenu needs to merge with Custom CSS */
-/* line 3670, components/_base.scss */
+/* line 3671, components/_base.scss */
 #mini-panel-floating_all_submenu {
   display: flex;
 }
-/* line 3675, components/_base.scss */
+/* line 3676, components/_base.scss */
 #mini-panel-floating_all_submenu a {
   text-decoration: none;
 }
-/* line 3678, components/_base.scss */
+/* line 3679, components/_base.scss */
 #mini-panel-floating_all_submenu ul {
   float: left;
   clear: none;
@@ -3952,16 +3953,16 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   height: 87px;
   margin-bottom: 0;
 }
-/* line 3684, components/_base.scss */
+/* line 3685, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(2) {
   height: 77px;
 }
-/* line 3687, components/_base.scss */
+/* line 3688, components/_base.scss */
 #mini-panel-floating_all_submenu ul li {
   float: left;
   clear: none;
 }
-/* line 3691, components/_base.scss */
+/* line 3692, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(1) {
   background-color: #365543;
   width: 70%;
@@ -3969,18 +3970,18 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   padding-left: 5%;
   display: flex;
 }
-/* line 3697, components/_base.scss */
+/* line 3698, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(1) li {
   margin-top: 30px;
   margin-right: 4%;
   color: white;
   line-height: 1;
 }
-/* line 3702, components/_base.scss */
+/* line 3703, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(1) li a {
   color: white;
 }
-/* line 3707, components/_base.scss */
+/* line 3708, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(2) {
   background-color: #ffffff;
   width: 30%;
@@ -3990,7 +3991,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   padding-top: 20px;
   padding-top: 0;
 }
-/* line 3714, components/_base.scss */
+/* line 3715, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(2) li {
   margin-top: 23px;
   color: #365543;
@@ -3998,13 +3999,13 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-weight: bold;
   line-height: 1.5;
 }
-/* line 3720, components/_base.scss */
+/* line 3721, components/_base.scss */
 #mini-panel-floating_all_submenu ul:nth-of-type(2) li a {
   color: #365543;
 }
 
 @media (max-width: 500px) {
-  /* line 3730, components/_base.scss */
+  /* line 3731, components/_base.scss */
   #mini-panel-floating_all_submenu ul {
     height: 120px;
     font-size: 17px;
@@ -4012,28 +4013,28 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   }
 }
 @media screen and (max-width: 928px) {
-  /* line 3738, components/_base.scss */
+  /* line 3739, components/_base.scss */
   #mini-panel-floating_all_submenu ul:nth-of-type(1) {
     width: 100%;
   }
 }
 @media screen and (max-width: 1154px) {
-  /* line 3744, components/_base.scss */
+  /* line 3745, components/_base.scss */
   #mini-panel-floating_all_submenu ul:nth-of-type(1) {
     font-size: 20px;
     padding-left: 10%;
   }
 }
 @media screen and (max-width: 928px) {
-  /* line 3751, components/_base.scss */
+  /* line 3752, components/_base.scss */
   #mini-panel-floating_all_submenu {
     background-color: #d8be7a;
   }
-  /* line 3753, components/_base.scss */
+  /* line 3754, components/_base.scss */
   #mini-panel-floating_all_submenu div {
     width: 100%;
   }
-  /* line 3756, components/_base.scss */
+  /* line 3757, components/_base.scss */
   #mini-panel-floating_all_submenu ul:nth-of-type(2) {
     background-color: #d8be7a;
     width: 300px;
@@ -4044,16 +4045,16 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* End SITE submenu */
 /* Extras */
 /* End Extras */
-/* line 3771, components/_base.scss */
+/* line 3772, components/_base.scss */
 .list-group-item.active {
   border-color: transparent !important;
 }
-/* line 3773, components/_base.scss */
+/* line 3774, components/_base.scss */
 .list-group-item.active:focus, .list-group-item.active:hover {
   border-color: transparent !important;
 }
 
-/* line 3779, components/_base.scss */
+/* line 3780, components/_base.scss */
 .btn-default {
   color: #385443;
   -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
@@ -4062,36 +4063,36 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   -o-transition: background-color .3s ease-in-out, color .3s ease-in-out;
   transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
-/* line 3787, components/_base.scss */
+/* line 3788, components/_base.scss */
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover {
   color: #fff;
   background-color: #d9bf75;
 }
 
-/* line 3797, components/_base.scss */
+/* line 3798, components/_base.scss */
 .form-actions {
   margin-bottom: 24px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-/* line 3804, components/_base.scss */
+/* line 3805, components/_base.scss */
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   color: #fff;
   background-color: #d9bf75;
 }
 
-/* line 3814, components/_base.scss */
+/* line 3815, components/_base.scss */
 .open > .btn-primary.dropdown-toggle {
   color: #fff;
   background-color: #d9bf75;
 }
 
-/* line 3821, components/_base.scss */
+/* line 3822, components/_base.scss */
 .pagination > li > a, .pagination > li > span {
   color: #365543;
 }
-/* line 3826, components/_base.scss */
+/* line 3827, components/_base.scss */
 .pagination > .active > a {
   z-index: 2;
   color: #fff;
@@ -4099,7 +4100,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   border-color: #365543;
   cursor: default;
 }
-/* line 3832, components/_base.scss */
+/* line 3833, components/_base.scss */
 .pagination > .active > a:focus, .pagination > .active > a:hover {
   z-index: 2;
   color: #fff;
@@ -4107,7 +4108,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   border-color: #365543;
   cursor: default;
 }
-/* line 3840, components/_base.scss */
+/* line 3841, components/_base.scss */
 .pagination > .active > span {
   z-index: 2;
   color: #fff;
@@ -4115,7 +4116,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   border-color: #365543;
   cursor: default;
 }
-/* line 3846, components/_base.scss */
+/* line 3847, components/_base.scss */
 .pagination > .active > span:focus, .pagination > .active > span:hover {
   z-index: 2;
   color: #fff;
@@ -4123,36 +4124,36 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   border-color: #365543;
   cursor: default;
 }
-/* line 3857, components/_base.scss */
+/* line 3858, components/_base.scss */
 .pagination > li > a:focus, .pagination > li > a:hover {
   color: #365543;
 }
-/* line 3862, components/_base.scss */
+/* line 3863, components/_base.scss */
 .pagination > li > span:focus, .pagination > li > span:hover {
   color: #365543;
 }
 
 /* JP: TU-347 */
-/* line 3871, components/_base.scss */
+/* line 3872, components/_base.scss */
 .menu-name-menu-wet-mid-footer {
   height: 210px !important;
 }
 
-/* line 3875, components/_base.scss */
+/* line 3876, components/_base.scss */
 .view-social-feed .masonry-item {
   width: 32%;
 }
 
-/* line 3880, components/_base.scss */
+/* line 3881, components/_base.scss */
 .view-id-staff_listing .masonry-item {
   width: 32%;
 }
-/* line 3883, components/_base.scss */
+/* line 3884, components/_base.scss */
 .view-id-staff_listing .img-responsive {
   margin: 0 auto;
 }
 
-/* line 3907, components/_base.scss */
+/* line 3908, components/_base.scss */
 html, body {
   width: 100%;
   height: 100%;
@@ -4161,40 +4162,40 @@ html, body {
   overflow-x: hidden;
 }
 
-/* line 3915, components/_base.scss */
+/* line 3916, components/_base.scss */
 .pane-advancement-hero-top .hvr-bounce-to-bottom::before {
   background-color: #d9bf75 !important;
 }
 
-/* line 3919, components/_base.scss */
+/* line 3920, components/_base.scss */
 .pane-international-admissions-hero h2 {
   color: white !important;
 }
 
-/* line 3923, components/_base.scss */
+/* line 3924, components/_base.scss */
 .pane-bean-schools-bean-block h2 {
   color: #365543;
 }
 @media screen and (min-width: 800px) {
-  /* line 3923, components/_base.scss */
+  /* line 3924, components/_base.scss */
   .pane-bean-schools-bean-block h2 {
     font-size: 41px;
   }
 }
 
-/* line 3931, components/_base.scss */
+/* line 3932, components/_base.scss */
 div[class*="pane-undergraduate-admissions-panel-pane-"] {
   width: 80%;
   margin: 0 auto;
   padding-bottom: 60px;
 }
-/* line 3938, components/_base.scss */
+/* line 3939, components/_base.scss */
 div[class*="pane-undergraduate-admissions-panel-pane-"] .view-content a {
   font-size: 21px;
   color: #11361E;
   text-decoration: none;
 }
-/* line 3945, components/_base.scss */
+/* line 3946, components/_base.scss */
 div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
   color: #11361E;
   background-color: rgba(255, 255, 255, 0.75);
@@ -4204,67 +4205,67 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
   text-align: left;
 }
 
-/* line 3955, components/_base.scss */
+/* line 3956, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-3 h2 {
   background-position-x: 171px !important;
   width: 200px !important;
 }
 
-/* line 3960, components/_base.scss */
+/* line 3961, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-4 h2 {
   background-position-x: 171px !important;
   width: 456px !important;
 }
 
-/* line 3965, components/_base.scss */
+/* line 3966, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-5 h2 {
   background-position-x: 171px !important;
   width: 370px !important;
 }
 
-/* line 3970, components/_base.scss */
+/* line 3971, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-6 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 3975, components/_base.scss */
+/* line 3976, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-8 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 3980, components/_base.scss */
+/* line 3981, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-9 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 3985, components/_base.scss */
+/* line 3986, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-10 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 3990, components/_base.scss */
+/* line 3991, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-11 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 3995, components/_base.scss */
+/* line 3996, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-12 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 4000, components/_base.scss */
+/* line 4001, components/_base.scss */
 .pane-undergraduate-admissions-panel-pane-13 h2 {
   background-position-x: 171px !important;
   width: 530px !important;
 }
 
-/* line 4005, components/_base.scss */
+/* line 4006, components/_base.scss */
 .page-international ol.breadcrumb,
 .page-about ol.breadcrumb,
 .page-campuslife ol.breadcrumb,
@@ -4276,21 +4277,21 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
   display: none;
 }
 
-/* line 4016, components/_base.scss */
+/* line 4017, components/_base.scss */
 #mb-pnl .sec-pnl {
   background: #365543 !important;
 }
-/* line 4017, components/_base.scss */
+/* line 4018, components/_base.scss */
 #mb-pnl .sec-pnl a, #mb-pnl .sec-pnl summary {
   color: #d9bf75;
 }
 
-/* line 4023, components/_base.scss */
+/* line 4024, components/_base.scss */
 nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
   color: #d9bf75 !important;
 }
 
-/* line 4037, components/_base.scss */
+/* line 4038, components/_base.scss */
 .btn-primary {
   color: #d9bf75;
   background-color: #365543;
@@ -4299,31 +4300,31 @@ nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
   font-size: 30px;
 }
 
-/* line 4045, components/_base.scss */
+/* line 4046, components/_base.scss */
 .pane-online-admissions-hero {
   background-image: url("/sites/default/files/image-online-tiffin-background_0.jpg") !important;
 }
-/* line 4047, components/_base.scss */
+/* line 4048, components/_base.scss */
 .pane-online-admissions-hero h2 {
   color: white !important;
 }
 
-/* line 4052, components/_base.scss */
+/* line 4053, components/_base.scss */
 body.node-type-program .pane-node-field-degree-type {
   top: 85px !important;
 }
 
-/* line 4056, components/_base.scss */
+/* line 4057, components/_base.scss */
 .pane-webform-client-block-1576 {
   width: 100% !important;
 }
-/* line 4058, components/_base.scss */
+/* line 4059, components/_base.scss */
 .pane-webform-client-block-1576 .pane-content {
   width: 70%;
   margin: 0 auto;
   padding: 50px 0 60px 0;
 }
-/* line 4063, components/_base.scss */
+/* line 4064, components/_base.scss */
 .pane-webform-client-block-1576 .pane-title {
   text-align: center;
   font-size: 27px;
@@ -4331,7 +4332,7 @@ body.node-type-program .pane-node-field-degree-type {
   padding-top: 30px;
 }
 
-/* line 4071, components/_base.scss */
+/* line 4072, components/_base.scss */
 .pane-schools h2 {
   color: #11361E;
   background-color: rgba(255, 255, 255, 0.75);
@@ -4345,7 +4346,7 @@ body.node-type-program .pane-node-field-degree-type {
   padding-top: 30px;
 }
 
-/* line 4084, components/_base.scss */
+/* line 4085, components/_base.scss */
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title {
   color: #11361E;
   background-color: rgba(255, 255, 255, 0.75);
@@ -4358,26 +4359,26 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 /* JP: TU-184 */
-/* line 4097, components/_base.scss */
+/* line 4098, components/_base.scss */
 #footer ul {
   list-style: none;
   padding: 0;
 }
-/* line 4100, components/_base.scss */
+/* line 4101, components/_base.scss */
 #footer ul li a {
   font-size: 20px;
   line-height: 1.2;
   text-decoration: none;
 }
 
-/* line 4107, components/_base.scss */
+/* line 4108, components/_base.scss */
 .pane-giving-hero-top h1, .pane-advancement-hero-top h1, .pane-alumni-hero-top h1 {
   width: 100%;
   text-align: center;
   color: white;
 }
 
-/* line 4113, components/_base.scss */
+/* line 4114, components/_base.scss */
 .pane-giving-hero-top, .pane-advancement-hero-top, .pane-alumni-hero-top {
   background-image: url("../images/image-generic-page-background.jpg");
   background-repeat: no-repeat;
@@ -4386,22 +4387,22 @@ body.node-type-program .pane-node-field-degree-type {
   background-position: center;
 }
 
-/* line 4121, components/_base.scss */
+/* line 4122, components/_base.scss */
 .pane-giving-hero-top {
   height: 695px;
 }
 
-/* line 4125, components/_base.scss */
+/* line 4126, components/_base.scss */
 .pane-advancement-hero-top {
   height: 355px;
 }
 
-/* line 4129, components/_base.scss */
+/* line 4130, components/_base.scss */
 .pane-alumni-hero-top {
   height: 565px;
 }
 
-/* line 4133, components/_base.scss */
+/* line 4134, components/_base.scss */
 .pane-giving-hero-top {
   height: 395px;
   /*background-position: 0 0px !important;*/
@@ -4410,23 +4411,23 @@ body.node-type-program .pane-node-field-degree-type {
 /*.pane-advancement-hero-top, .pane-alumni-hero-top {
   background-position: 0 20px !important;
 }*/
-/* line 4142, components/_base.scss */
+/* line 4143, components/_base.scss */
 .pane-giving-hero-top .hvr-bounce-to-bottom::before, .pane-advancement-hero-top .hvr-bounce-to-bottom::before, .pane-alumni-hero-top .hvr-bounce-to-bottom::before {
   background: #365543 !important;
 }
 
-/* line 4146, components/_base.scss */
+/* line 4147, components/_base.scss */
 .pane-giving-hero-top #abouttutop, .pane-advancement-hero-top #abouttutop, .pane-alumni-hero-top #abouttutop {
   margin-top: 20px;
 }
 
-/* line 4157, components/_base.scss */
+/* line 4158, components/_base.scss */
 .pane-giving-hero-top #abouttutop ul li:nth-of-type(1), .pane-advancement-hero-top #abouttutop ul li:nth-of-type(1), .pane-alumni-hero-top #abouttutop ul li:nth-of-type(1) {
   /*background-image: url(../images/.png);*/
   background-repeat: no-repeat;
 }
 
-/* line 4178, components/_base.scss */
+/* line 4179, components/_base.scss */
 .pane-giving-hero-top #introblurbs, .pane-advancement-hero-top #introblurbs, .pane-alumni-hero-top #introblurbs {
   color: white;
   margin: 0 auto;
@@ -4436,108 +4437,108 @@ body.node-type-program .pane-node-field-degree-type {
   padding: 10px;
 }
 
-/* line 4187, components/_base.scss */
+/* line 4188, components/_base.scss */
 .pane-giving-hero-top #abouttutop ul li div p, .pane-advancement-hero-top #abouttutop ul li div p, .pane-alumni-hero-top #abouttutop ul li div p {
   padding-top: 25px;
   text-align: center;
 }
 
-/* line 4192, components/_base.scss */
+/* line 4193, components/_base.scss */
 #mini-panel-homepage_top_hero {
   /*height: 77vh !important;*/
 }
-/* line 4194, components/_base.scss */
+/* line 4195, components/_base.scss */
 #mini-panel-homepage_top_hero div.pane-webform-client-block-1061 {
   margin: 10% 10% 0 10%;
   height: 192px;
 }
 
-/* line 4200, components/_base.scss */
+/* line 4201, components/_base.scss */
 .pane-cabinet-members .masonry-item, .pane-board-members .masonry-item {
   padding-bottom: 2% !important;
 }
 
-/* line 4204, components/_base.scss */
+/* line 4205, components/_base.scss */
 .view-id-faculty .img-responsive, .pane-cabinet-members .img-responsive, .pane-board-members .img-responsive {
   margin: 10px auto 18px auto;
 }
 
-/* line 4209, components/_base.scss */
+/* line 4210, components/_base.scss */
 .view-id-faculty .masonry-item .views-field-field-faculty-title, .view-id-faculty .masonry-item .views-field-title {
   text-align: center;
 }
 
-/* line 4214, components/_base.scss */
+/* line 4215, components/_base.scss */
 .pane-cabinet-members .masonry-item .views-field-title, .pane-board-members .masonry-item .views-field-title, .pane-cabinet-members .masonry-item .field-name-field-board-position .field-item, .pane-board-members .masonry-item .field-name-field-board-position .field-item {
   text-align: center;
 }
 
-/* line 4219, components/_base.scss */
+/* line 4220, components/_base.scss */
 .masonry-processed .views-row-even {
   border: 1px solid #95d0ad;
   text-align: center;
 }
-/* line 4222, components/_base.scss */
+/* line 4223, components/_base.scss */
 .masonry-processed .views-row-even .field {
   color: #365543;
 }
-/* line 4225, components/_base.scss */
+/* line 4226, components/_base.scss */
 .masonry-processed .views-row-even .views-field-title {
   font-style: italic;
   font-weight: bold;
   color: #5daf6c;
   text-align: center;
 }
-/* line 4230, components/_base.scss */
+/* line 4231, components/_base.scss */
 .masonry-processed .views-row-even .views-field-title a {
   color: #365543;
 }
-/* line 4234, components/_base.scss */
+/* line 4235, components/_base.scss */
 .masonry-processed .views-row-even .views-field-title-1 {
   color: #365543;
 }
-/* line 4237, components/_base.scss */
+/* line 4238, components/_base.scss */
 .masonry-processed .views-row-even .views-field-field-quick-news-description {
   color: #365543;
   margin-top: 20px;
 }
-/* line 4242, components/_base.scss */
+/* line 4243, components/_base.scss */
 .masonry-processed .views-row-odd {
   border: 1px solid #dbc073;
   text-align: center;
 }
-/* line 4245, components/_base.scss */
+/* line 4246, components/_base.scss */
 .masonry-processed .views-row-odd .field {
   color: #887235;
 }
-/* line 4248, components/_base.scss */
+/* line 4249, components/_base.scss */
 .masonry-processed .views-row-odd .views-field-title {
   color: #dbc073;
   font-weight: bold;
   font-style: italic;
 }
 
-/* line 4256, components/_base.scss */
+/* line 4257, components/_base.scss */
 .pane-faculty-panel-pane-3 .masonry-processed .views-row-odd .views-field-title a, .pane-faculty-panel-pane-2 .masonry-processed .views-row-odd .views-field-title a, .pane-faculty-panel-pane-1 .masonry-processed .views-row-odd .views-field-title a {
   text-align: center;
   color: #887235;
 }
 
-/* line 4261, components/_base.scss */
+/* line 4262, components/_base.scss */
 .masonry-processed {
   margin-bottom: 70px;
 }
-/* line 4263, components/_base.scss */
+/* line 4264, components/_base.scss */
 .masonry-processed .views-row-odd .views-field-title a, .masonry-processed .views-row-odd .views-field-title-1 {
   color: #887235;
 }
-/* line 4266, components/_base.scss */
+/* line 4267, components/_base.scss */
 .masonry-processed .views-row-odd .views-field-field-quick-news-description {
   color: #887235;
   margin-top: 20px;
 }
 
-/* line 4274, components/_base.scss */
+/* line 4275, components/_base.scss */
 .pane-faculty-panel-pane-3 h2.pane-title, .pane-faculty-panel-pane-2 h2.pane-title, .pane-faculty-panel-pane-1 h2.pane-title, .pane-news h2.pane-title, .pane-cabinet-members h2.pane-title, .pane-board-members h2.pane-title {
   text-align: center;
   font-size: 39px;
@@ -4545,19 +4546,19 @@ body.node-type-program .pane-node-field-degree-type {
   margin-bottom: 30px;
 }
 
-/* line 4281, components/_base.scss */
+/* line 4282, components/_base.scss */
 .pane-faculty-panel-pane-3, .pane-faculty-panel-pane-2, .pane-faculty-panel-pane-1 {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 4286, components/_base.scss */
+/* line 4287, components/_base.scss */
 .node-type-news-page .field-name-field-news-front-slider-image {
   display: none;
 }
 
 /* Off-campus Admissions */
-/* line 4292, components/_base.scss */
+/* line 4293, components/_base.scss */
 .pane-off-campus-admissions-hero {
   position: relative;
   background-image: url("/sites/default/files/off-campus_1.jpg");
@@ -4569,7 +4570,7 @@ body.node-type-program .pane-node-field-degree-type {
   /*background-attachment: fixed;*/
   padding-top: 30px;
 }
-/* line 4302, components/_base.scss */
+/* line 4303, components/_base.scss */
 .pane-off-campus-admissions-hero h2 {
   text-align: center;
   color: #ffffff;
@@ -4580,7 +4581,7 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 /* Criminal justice school hero */
-/* line 4314, components/_base.scss */
+/* line 4315, components/_base.scss */
 .pane-generic-school-page-hero-crim {
   background-image: url("../images/image-generic-school.jpg");
   background-repeat: no-repeat;
@@ -4591,18 +4592,18 @@ body.node-type-program .pane-node-field-degree-type {
   /*background-attachment: fixed;*/
   padding-top: 0;
 }
-/* line 4323, components/_base.scss */
+/* line 4324, components/_base.scss */
 .pane-generic-school-page-hero-crim .pane-1 {
   margin: 0 auto 150px auto;
   width: 100%;
   text-align: center;
 }
-/* line 4327, components/_base.scss */
+/* line 4328, components/_base.scss */
 .pane-generic-school-page-hero-crim .pane-1 h2 {
   color: white;
   font-size: 58px;
 }
-/* line 4332, components/_base.scss */
+/* line 4333, components/_base.scss */
 .pane-generic-school-page-hero-crim .pane-2 {
   margin: 0 auto 0 auto;
   width: 72%;
@@ -4613,28 +4614,28 @@ body.node-type-program .pane-node-field-degree-type {
   text-align: justify;
 }
 
-/* line 4343, components/_base.scss */
+/* line 4344, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks {
   width: 100%;
 }
-/* line 4345, components/_base.scss */
+/* line 4346, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul {
   list-style-type: none;
   height: 77px;
   padding: 0;
 }
-/* line 4349, components/_base.scss */
+/* line 4350, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) {
   margin: 40px auto 0 auto;
   width: 682px;
 }
-/* line 4353, components/_base.scss */
+/* line 4354, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) {
   margin: 5px auto 0 auto;
   clear: both;
   width: 452px;
 }
-/* line 4358, components/_base.scss */
+/* line 4359, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul li {
   margin-right: 4px;
   height: 77px;
@@ -4642,21 +4643,21 @@ body.node-type-program .pane-node-field-degree-type {
   float: left;
   border: 1px solid #d9bf75;
 }
-/* line 4365, components/_base.scss */
+/* line 4366, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(1) li, #mini-panel-generic_school_page_hero_crim .heroclicks ul:nth-of-type(2) li {
   width: 220px;
 }
-/* line 4369, components/_base.scss */
+/* line 4370, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul li div {
   width: 100%;
   height: 88px;
 }
-/* line 4370, components/_base.scss */
+/* line 4371, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul li div p {
   padding-top: 25px;
   text-align: center;
 }
-/* line 4379, components/_base.scss */
+/* line 4380, components/_base.scss */
 #mini-panel-generic_school_page_hero_crim .heroclicks ul li a {
   color: #fff;
   font-size: 22px;
@@ -4666,7 +4667,7 @@ body.node-type-program .pane-node-field-degree-type {
 
 /* End Criminal justice school hero */
 /* School of arts and sciences hero */
-/* line 4395, components/_base.scss */
+/* line 4396, components/_base.scss */
 .pane-generic-school-page-hero-arts {
   background-image: url("../images/image-generic-school.jpg");
   background-repeat: no-repeat;
@@ -4677,18 +4678,18 @@ body.node-type-program .pane-node-field-degree-type {
   /*background-attachment: fixed;*/
   padding-top: 0;
 }
-/* line 4404, components/_base.scss */
+/* line 4405, components/_base.scss */
 .pane-generic-school-page-hero-arts .pane-1 {
   margin: 0 auto 82px auto;
   width: 100%;
   text-align: center;
 }
-/* line 4408, components/_base.scss */
+/* line 4409, components/_base.scss */
 .pane-generic-school-page-hero-arts .pane-1 h2 {
   color: white;
   font-size: 58px;
 }
-/* line 4413, components/_base.scss */
+/* line 4414, components/_base.scss */
 .pane-generic-school-page-hero-arts .pane-2 {
   margin: 0 auto 0 auto;
   width: 72%;
@@ -4699,28 +4700,28 @@ body.node-type-program .pane-node-field-degree-type {
   text-align: justify;
 }
 
-/* line 4424, components/_base.scss */
+/* line 4425, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks {
   width: 100%;
 }
-/* line 4426, components/_base.scss */
+/* line 4427, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul {
   list-style-type: none;
   height: 77px;
   padding: 0;
 }
-/* line 4430, components/_base.scss */
+/* line 4431, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) {
   margin: 40px auto 0 auto;
   width: 682px;
 }
-/* line 4434, components/_base.scss */
+/* line 4435, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) {
   margin: 5px auto 0 auto;
   clear: both;
   width: 452px;
 }
-/* line 4439, components/_base.scss */
+/* line 4440, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul li {
   margin-right: 4px;
   height: 77px;
@@ -4728,21 +4729,21 @@ body.node-type-program .pane-node-field-degree-type {
   float: left;
   border: 1px solid #d9bf75;
 }
-/* line 4446, components/_base.scss */
+/* line 4447, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(1) li, #mini-panel-generic_school_page_hero_arts .heroclicks ul:nth-of-type(2) li {
   width: 220px;
 }
-/* line 4450, components/_base.scss */
+/* line 4451, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul li div {
   width: 100%;
   height: 88px;
 }
-/* line 4451, components/_base.scss */
+/* line 4452, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul li div p {
   padding-top: 25px;
   text-align: center;
 }
-/* line 4460, components/_base.scss */
+/* line 4461, components/_base.scss */
 #mini-panel-generic_school_page_hero_arts .heroclicks ul li a {
   color: #fff;
   font-size: 22px;
@@ -4752,7 +4753,7 @@ body.node-type-program .pane-node-field-degree-type {
 
 /* End School of arts and sciences hero */
 /* School of business hero */
-/* line 4476, components/_base.scss */
+/* line 4477, components/_base.scss */
 .pane-generic-school-page-hero-biz {
   background-image: url("../images/image-generic-school.jpg");
   background-repeat: no-repeat;
@@ -4763,18 +4764,18 @@ body.node-type-program .pane-node-field-degree-type {
   /*background-attachment: fixed;*/
   padding-top: 0;
 }
-/* line 4485, components/_base.scss */
+/* line 4486, components/_base.scss */
 .pane-generic-school-page-hero-biz .pane-1 {
   margin: 0 auto 40px auto;
   width: 100%;
   text-align: center;
 }
-/* line 4489, components/_base.scss */
+/* line 4490, components/_base.scss */
 .pane-generic-school-page-hero-biz .pane-1 h2 {
   color: white;
   font-size: 58px;
 }
-/* line 4494, components/_base.scss */
+/* line 4495, components/_base.scss */
 .pane-generic-school-page-hero-biz .pane-2 {
   position: relative;
   margin: 0 auto;
@@ -4786,33 +4787,33 @@ body.node-type-program .pane-node-field-degree-type {
   text-align: justify;
   z-index: 99;
 }
-/* line 4505, components/_base.scss */
+/* line 4506, components/_base.scss */
 .pane-generic-school-page-hero-biz .pane-3 {
   position: relative;
 }
 
-/* line 4510, components/_base.scss */
+/* line 4511, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks {
   width: 100%;
 }
-/* line 4512, components/_base.scss */
+/* line 4513, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul {
   list-style-type: none;
   height: 77px;
   padding: 0;
 }
-/* line 4516, components/_base.scss */
+/* line 4517, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) {
   margin: 40px auto 0 auto;
   width: 682px;
 }
-/* line 4520, components/_base.scss */
+/* line 4521, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) {
   margin: 5px auto 0 auto;
   clear: both;
   width: 452px;
 }
-/* line 4525, components/_base.scss */
+/* line 4526, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul li {
   margin-right: 4px;
   height: 77px;
@@ -4820,21 +4821,21 @@ body.node-type-program .pane-node-field-degree-type {
   float: left;
   border: 1px solid #d9bf75;
 }
-/* line 4532, components/_base.scss */
+/* line 4533, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(1) li, #mini-panel-generic_school_page_hero_biz .heroclicks ul:nth-of-type(2) li {
   width: 220px;
 }
-/* line 4536, components/_base.scss */
+/* line 4537, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul li div {
   width: 100%;
   height: 88px;
 }
-/* line 4537, components/_base.scss */
+/* line 4538, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul li div p {
   padding-top: 25px;
   text-align: center;
 }
-/* line 4547, components/_base.scss */
+/* line 4548, components/_base.scss */
 #mini-panel-generic_school_page_hero_biz .heroclicks ul li a {
   color: #fff;
   font-size: 22px;
@@ -4843,48 +4844,48 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 /* End School of business hero */
-/* line 4561, components/_base.scss */
+/* line 4562, components/_base.scss */
 .logoMobile {
   display: none;
 }
 
 @media (max-width: 990px) {
-  /* line 4566, components/_base.scss */
+  /* line 4567, components/_base.scss */
   .logoMobile {
     display: block;
   }
 
-  /* line 4570, components/_base.scss */
+  /* line 4571, components/_base.scss */
   #wb-glb-mn ul.pnl-btn li:nth-of-type(1) {
     width: 50% !important;
   }
-  /* line 4573, components/_base.scss */
+  /* line 4574, components/_base.scss */
   #wb-glb-mn ul.pnl-btn li:nth-of-type(2) {
     width: 50% !important;
     border: 0 !important;
   }
-  /* line 4577, components/_base.scss */
+  /* line 4578, components/_base.scss */
   #wb-glb-mn ul.pnl-btn li:nth-of-type(2) a:nth-of-type(1) {
     background-color: transparent !important;
   }
-  /* line 4580, components/_base.scss */
+  /* line 4581, components/_base.scss */
   #wb-glb-mn ul.pnl-btn li:nth-of-type(2) a.hvr-underline-reveal {
     background-color: transparent !important;
     text-align: right;
   }
-  /* line 4584, components/_base.scss */
+  /* line 4585, components/_base.scss */
   #wb-glb-mn ul.pnl-btn li:nth-of-type(2) a.hvr-underline-reveal:before {
     background: none !important;
   }
 }
 /* responsive life at tu */
 @media (max-width: 1080px) {
-  /* line 4596, components/_base.scss */
+  /* line 4597, components/_base.scss */
   .pane-undergraduate-program .views-field-title a {
     font-size: 26px;
   }
 
-  /* line 4599, components/_base.scss */
+  /* line 4600, components/_base.scss */
   .pane-life-at-tu-hero-top ul li p {
     margin: 42px 0 0 48% !important;
     font-size: 25px !important;
@@ -4894,55 +4895,55 @@ body.node-type-program .pane-node-field-degree-type {
   }
 }
 @media (max-width: 760px) {
-  /* line 4609, components/_base.scss */
+  /* line 4610, components/_base.scss */
   .pane-life-at-tu-hero-top {
     height: 1320px !important;
   }
-  /* line 4610, components/_base.scss */
+  /* line 4611, components/_base.scss */
   .pane-life-at-tu-hero-top ul {
     display: block;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  /* line 4615, components/_base.scss */
+  /* line 4616, components/_base.scss */
   .pane-life-at-tu-hero-top ul li {
     width: 100% !important;
     clear: both !important;
     float: left !important;
   }
-  /* line 4619, components/_base.scss */
+  /* line 4620, components/_base.scss */
   .pane-life-at-tu-hero-top ul li p {
     margin: 64px 0 0 33% !important;
     width: 200px !important;
   }
 
-  /* line 4627, components/_base.scss */
+  /* line 4628, components/_base.scss */
   .pane-dragon-perks ul {
     display: block;
     margin: 0;
     padding: 0;
   }
-  /* line 4632, components/_base.scss */
+  /* line 4633, components/_base.scss */
   .pane-dragon-perks ul li {
     width: 100% !important;
     height: 250px;
   }
 }
 @media (max-width: 675px) {
-  /* line 4640, components/_base.scss */
+  /* line 4641, components/_base.scss */
   .pane-discover-tiffin-ohio p {
     margin-top: 160px;
     font-size: 32px;
     height: 57px;
   }
 
-  /* line 4645, components/_base.scss */
+  /* line 4646, components/_base.scss */
   body.node-type-program .pane-discover-tiffin-ohio {
     height: 315px;
   }
 
-  /* line 4649, components/_base.scss */
+  /* line 4650, components/_base.scss */
   .view-life-at-tu-faculty .masonry-processed .masonry-item {
     width: 49% !important;
     position: relative !important;
@@ -4952,13 +4953,13 @@ body.node-type-program .pane-node-field-degree-type {
     top: 0 !important;
     height: 230px;
   }
-  /* line 4658, components/_base.scss */
+  /* line 4659, components/_base.scss */
   .view-life-at-tu-faculty .img-responsive {
     max-width: 133px;
     height: 190px;
   }
 
-  /* line 4664, components/_base.scss */
+  /* line 4665, components/_base.scss */
   .masonry-processed .views-row-odd .views-field-title-1, .masonry-processed .views-row-even .views-field-title-1 {
     font-size: 14px;
   }
@@ -4967,24 +4968,24 @@ body.node-type-program .pane-node-field-degree-type {
 /* responsive undergrad */
 /* responsive undergrad */
 @media (max-width: 1400px) {
-  /* line 4730, components/_base.scss */
+  /* line 4731, components/_base.scss */
   .view-testimonials-slider .views-field-body {
     font-size: 18px;
     top: 15% !important;
   }
-  /* line 4734, components/_base.scss */
+  /* line 4735, components/_base.scss */
   .view-testimonials-slider .view-header h3 {
     margin-top: -7px;
     font-size: 36px;
   }
 }
 @media (max-width: 1060px) {
-  /* line 4743, components/_base.scss */
+  /* line 4744, components/_base.scss */
   .view-testimonials-slider .views-field-body {
     font-size: 16px;
     top: 15% !important;
   }
-  /* line 4747, components/_base.scss */
+  /* line 4748, components/_base.scss */
   .view-testimonials-slider .view-header h3 {
     margin-top: -15px;
     font-size: 36px;
@@ -4992,29 +4993,29 @@ body.node-type-program .pane-node-field-degree-type {
   }
 }
 @media (max-width: 890px) {
-  /* line 4757, components/_base.scss */
+  /* line 4758, components/_base.scss */
   .view-testimonials-slider .views-field-body {
     font-size: 14px;
   }
-  /* line 4761, components/_base.scss */
+  /* line 4762, components/_base.scss */
   .view-testimonials-slider div.media-element-container div.file-image-jpe img, .view-testimonials-slider div.media-element-container div.file-image-jpeg img {
     width: 30% !important;
     height: 30% !important;
   }
 }
 @media (max-width: 940px) {
-  /* line 4771, components/_base.scss */
+  /* line 4772, components/_base.scss */
   div.view-homepage-news-slidehow {
     height: 640px;
   }
-  /* line 4775, components/_base.scss */
+  /* line 4776, components/_base.scss */
   div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-quick-news-description {
     position: static;
     margin: 0 auto 0 auto;
     top: 0;
     left: 0;
   }
-  /* line 4781, components/_base.scss */
+  /* line 4782, components/_base.scss */
   div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-news-front-slider-image {
     position: static;
     margin: 0 auto 0 auto;
@@ -5022,11 +5023,11 @@ body.node-type-program .pane-node-field-degree-type {
     left: 0;
     width: 65%;
   }
-  /* line 4788, components/_base.scss */
+  /* line 4789, components/_base.scss */
   div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-field-quick-news-description {
     width: 54%;
   }
-  /* line 4792, components/_base.scss */
+  /* line 4793, components/_base.scss */
   div.view-homepage-news-slidehow #flexslider-1 ol.flex-control-nav {
     position: static;
     top: 0;
@@ -5035,57 +5036,57 @@ body.node-type-program .pane-node-field-degree-type {
     width: 120px;
     margin: 20px auto 0 auto;
   }
-  /* line 4802, components/_base.scss */
+  /* line 4803, components/_base.scss */
   div.views-field-field-news-front-slider-image img.img-responsive {
     margin: 0 auto 0 auto;
   }
 
-  /* line 4806, components/_base.scss */
+  /* line 4807, components/_base.scss */
   .view-homepage-news-slidehow div#flexslider-1 {
     width: 100%;
   }
 
-  /* line 4809, components/_base.scss */
+  /* line 4810, components/_base.scss */
   .flexslider .slides > li {
     padding-top: 40px;
   }
 
-  /* line 4812, components/_base.scss */
+  /* line 4813, components/_base.scss */
   div.view-homepage-news-slidehow #flexslider-1 ul.slides li .views-field-title {
     position: static;
   }
 }
 @media (max-width: 575px) {
-  /* line 4818, components/_base.scss */
+  /* line 4819, components/_base.scss */
   div.view-homepage-news-slidehow {
     height: auto;
     padding-bottom: 20px;
   }
 }
 @media (max-width: 845px) {
-  /* line 4825, components/_base.scss */
+  /* line 4826, components/_base.scss */
   .pane-undergraduate-program .pane-content {
     font-size: 14px;
   }
 
-  /* line 4828, components/_base.scss */
+  /* line 4829, components/_base.scss */
   #admissions-counselor ul li {
     width: 48%;
   }
 }
 @media (max-width: 650px) {
-  /* line 4834, components/_base.scss */
+  /* line 4835, components/_base.scss */
   #admissions-counselor ul li {
     width: 70%;
   }
 }
 @media (max-width: 780px) {
-  /* line 4840, components/_base.scss */
+  /* line 4841, components/_base.scss */
   #mini-panel-ccp_meet_your {
     background-size: 260%;
   }
 
-  /* line 4843, components/_base.scss */
+  /* line 4844, components/_base.scss */
   .pane-ccp-admissions-hero .midclicks ul li {
     width: 100% !important;
     clear: both !important;
@@ -5093,7 +5094,7 @@ body.node-type-program .pane-node-field-degree-type {
     height: 85px;
   }
 
-  /* line 4849, components/_base.scss */
+  /* line 4850, components/_base.scss */
   .pane-international-admissions-hero ul li {
     width: 100% !important;
     clear: both !important;
@@ -5101,80 +5102,80 @@ body.node-type-program .pane-node-field-degree-type {
     height: 85px;
   }
 
-  /* line 4857, components/_base.scss */
+  /* line 4858, components/_base.scss */
   .pane-ccp-admissions-hero .midclicks ul {
     width: 100%;
     display: block;
   }
 
-  /* line 4861, components/_base.scss */
+  /* line 4862, components/_base.scss */
   .pane-international-admissions-hero {
     height: 490px;
   }
-  /* line 4862, components/_base.scss */
+  /* line 4863, components/_base.scss */
   .pane-international-admissions-hero ul {
     width: 100%;
     display: block;
   }
 
-  /* line 4877, components/_base.scss */
+  /* line 4878, components/_base.scss */
   .pane-quicktabs-undergraduate-program-tabs {
     padding: 0;
   }
 
-  /* line 4881, components/_base.scss */
+  /* line 4882, components/_base.scss */
   .pane-undergraduate-program .views-field-title a {
     font-size: 29px !important;
   }
 
-  /* line 4884, components/_base.scss */
+  /* line 4885, components/_base.scss */
   body.node-type-program .pane-node-field-degree-type {
     display: none;
   }
 
-  /* line 4887, components/_base.scss */
+  /* line 4888, components/_base.scss */
   .pane-undergraduate-program .pane-content {
     padding-top: 10px;
   }
 
-  /* line 4890, components/_base.scss */
+  /* line 4891, components/_base.scss */
   body.node-type-program ul.quicktabs-tabs {
     margin: 0 auto;
     padding: 0;
   }
 
-  /* line 4896, components/_base.scss */
+  /* line 4897, components/_base.scss */
   .view-testimonials-slider .views-field-body {
     font-size: 14px !important;
   }
-  /* line 4900, components/_base.scss */
+  /* line 4901, components/_base.scss */
   .view-testimonials-slider div.media-element-container div.file-image-jpe img, .view-testimonials-slider div.media-element-container div.file-image-jpeg img {
     display: none;
   }
 
-  /* line 4905, components/_base.scss */
+  /* line 4906, components/_base.scss */
   .views-field-field-testimonials-image {
     display: none;
   }
 
-  /* line 4908, components/_base.scss */
+  /* line 4909, components/_base.scss */
   body.node-type-program .pane-testimonials-slider {
     height: 227px;
   }
 
-  /* line 4911, components/_base.scss */
+  /* line 4912, components/_base.scss */
   .flex-control-nav {
     display: none;
   }
 
-  /* line 4915, components/_base.scss */
+  /* line 4916, components/_base.scss */
   .view-testimonials-slider .views-field-body {
     width: 100% !important;
     margin-top: 10px;
     font-size: 22px;
     position: static;
   }
-  /* line 4921, components/_base.scss */
+  /* line 4922, components/_base.scss */
   .view-testimonials-slider h3 {
     color: #365543;
     margin-top: 20px;
@@ -5185,64 +5186,64 @@ body.node-type-program .pane-node-field-degree-type {
       display: none;
   }
   */
-  /* line 4931, components/_base.scss */
+  /* line 4932, components/_base.scss */
   .pane-ccp-admissions-hero {
     height: 780px;
   }
-  /* line 4932, components/_base.scss */
+  /* line 4933, components/_base.scss */
   .pane-ccp-admissions-hero h2 {
     font-size: 32px;
   }
-  /* line 4937, components/_base.scss */
+  /* line 4938, components/_base.scss */
   .pane-ccp-admissions-hero .midclicks ul li {
     background-size: 10% !important;
   }
-  /* line 4941, components/_base.scss */
+  /* line 4942, components/_base.scss */
   .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(1) {
     background-size: 5% !important;
   }
-  /* line 4944, components/_base.scss */
+  /* line 4945, components/_base.scss */
   .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(2), .pane-ccp-admissions-hero .midclicks ul:nth-of-type(1) li:nth-of-type(3) {
     background-size: 7% !important;
     background-position: 5% center;
   }
-  /* line 4950, components/_base.scss */
+  /* line 4951, components/_base.scss */
   .pane-ccp-admissions-hero div.tiptop {
     display: none;
   }
-  /* line 4951, components/_base.scss */
+  /* line 4952, components/_base.scss */
   .pane-ccp-admissions-hero div.tiptop ul {
     display: none;
   }
 }
 @media (max-width: 555px) {
-  /* line 4960, components/_base.scss */
+  /* line 4961, components/_base.scss */
   body.node-type-program ul.quicktabs-tabs {
     width: 100%;
   }
-  /* line 4965, components/_base.scss */
+  /* line 4966, components/_base.scss */
   body.node-type-program ul.quicktabs-tabs li a {
     font-size: 17px !important;
   }
 }
 @media (max-width: 950px) {
-  /* line 4974, components/_base.scss */
+  /* line 4975, components/_base.scss */
   #ccpEN ul li a {
     font-size: 24px !important;
   }
 }
 @media (max-width: 730px) {
-  /* line 4980, components/_base.scss */
+  /* line 4981, components/_base.scss */
   #ccpEN ul li {
     margin-right: 2px;
   }
-  /* line 4982, components/_base.scss */
+  /* line 4983, components/_base.scss */
   #ccpEN ul li a {
     font-size: 17px !important;
   }
 }
 /* Outlined Buttons*/
-/* line 4990, components/_base.scss */
+/* line 4991, components/_base.scss */
 .outlined-buttons {
   display: block;
   border: 1px solid #dbc073;
@@ -5260,17 +5261,17 @@ body.node-type-program .pane-node-field-degree-type {
 * Created by lfreeman on 12/27/16.
 *styling code for http://tiffin.prod.acquia-sites.com/international/admissreq/
 */
-/* line 5008, components/_base.scss */
+/* line 5009, components/_base.scss */
 #ug-app-instructions-tbl {
   background-color: orange;
 }
 
-/* line 5012, components/_base.scss */
+/* line 5013, components/_base.scss */
 .green-hdg {
   color: #365543;
 }
 
-/* line 5016, components/_base.scss */
+/* line 5017, components/_base.scss */
 .pane-financial-aid-virtual-tour {
   background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/get-to-know-campus-background.jpg");
   background-position: center;
@@ -5279,7 +5280,7 @@ body.node-type-program .pane-node-field-degree-type {
   padding: 100px 0;
 }
 
-/* line 5026, components/_base.scss */
+/* line 5027, components/_base.scss */
 #finaidandcalc {
   text-align: center;
 }
@@ -5292,40 +5293,40 @@ body.node-type-program .pane-node-field-degree-type {
 #finaidandcalc::after {
   clear: both;
 }
-/* line 5032, components/_base.scss */
+/* line 5033, components/_base.scss */
 #finaidandcalc > ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 5039, components/_base.scss */
+/* line 5040, components/_base.scss */
 #finaidandcalc > ul > li > a {
   display: block;
   padding: 10px 24px;
 }
-/* line 5044, components/_base.scss */
+/* line 5045, components/_base.scss */
 #finaidandcalc > ul > li img {
   width: 278px;
   height: auto;
 }
 @media (min-width: 670px) {
-  /* line 5052, components/_base.scss */
+  /* line 5053, components/_base.scss */
   #finaidandcalc > ul {
     display: inline-block;
   }
-  /* line 5055, components/_base.scss */
+  /* line 5056, components/_base.scss */
   #finaidandcalc > ul > li {
     display: table-cell;
     vertical-align: middle;
   }
 }
 
-/* line 5072, components/_base.scss */
+/* line 5073, components/_base.scss */
 .page-node-1561 #header_3 {
   text-align: center;
   padding-top: 20px;
 }
-/* line 5076, components/_base.scss */
+/* line 5077, components/_base.scss */
 .page-node-1561 #text_4 {
   padding: 0 10px 1px 20px;
 }

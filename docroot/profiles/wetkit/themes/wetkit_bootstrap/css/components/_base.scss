@@ -1632,6 +1632,7 @@ ul#click-on-programs {
   }
   .menu > li {
     padding: 10px 12px 10px 10px;
+    white-space: nowrap;
 
     @media (max-width: 1025px) {
       padding: 10px 0 10px 8px;
