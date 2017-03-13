@@ -1,5 +1,0 @@
-name = Tiffin Visit Schedule
-description = This module allows site visitors to schedule tours of the Tiffin campus based on availability
-core = 7.x
-package = Tiffin
-version = 7.x-1.0
