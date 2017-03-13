@@ -14,32 +14,38 @@
 ?>
 
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
-  <?php if ($options['alignment'] == 'horizontal'): ?>
+  <div class="container">
+    <?php if ($options['alignment'] == 'horizontal'): ?>
 
-    <?php $num_rows = count($rows); ?>
-    <?php $lg_col_size = intval (12 / $num_rows); ?>
+      <?php $num_rows = count($rows); ?>
+      <?php $lg_col_size = intval (12 / $num_rows); ?>
 
-    <?php foreach ($items as $row): ?>
-      <div class="row">
-        <?php foreach ($row['content'] as $column): ?>
-          <div class="col col-lg-<?php print $lg_col_size ?>">
-            <?php print $column['content'] ?>
-          </div>
-        <?php endforeach ?>
-      </div>
-    <?php endforeach ?>
-
-  <?php else: ?>
-
-    <div class="row">
-      <?php foreach ($items as $column): ?>
-        <div class="col col-lg-<?php print $column_type ?>">
-          <?php foreach ($column['content'] as $row): ?>
-            <?php print $row['content'] ?>
+      <?php foreach ($items as $row): ?>
+        <div class="row">
+          <?php foreach ($row['content'] as $column): ?>
+            <div class="col col-lg-<?php print $lg_col_size ?>">
+              <div class="profile-card">
+                <?php print $column['content'] ?>
+              </div>
+            </div>
           <?php endforeach ?>
         </div>
       <?php endforeach ?>
-    </div>
 
-  <?php endif ?>
+    <?php else: ?>
+
+      <div class="row">
+        <?php foreach ($items as $column): ?>
+          <div class="col col-lg-<?php print $column_type ?>">
+            <?php foreach ($column['content'] as $row): ?>
+              <div class="profile-card">
+                <?php print $row['content'] ?>
+              </div>
+            <?php endforeach ?>
+          </div>
+        <?php endforeach ?>
+      </div>
+
+    <?php endif ?>
+  </div>
 </div>
