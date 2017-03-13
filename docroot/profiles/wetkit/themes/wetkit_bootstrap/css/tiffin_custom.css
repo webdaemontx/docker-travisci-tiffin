@@ -6273,7 +6273,7 @@ fieldset#edit-academic-scholarship label {
   width: 25%;
   margin-right: 0.5em;
   padding-top: 0.2em;
-  text-align: right;
+  text-align: left;
   font-weight: bold;
 }
 /* line 21, components/_override.scss */
@@ -6282,10 +6282,10 @@ fieldset#edit-academic-scholarship input {
 }
 /* line 24, components/_override.scss */
 fieldset#edit-academic-scholarship legend {
-  padding: 0.2em 0.5em;
+  padding: 0.3em 0.5em;
   color: #385443;
   font-size: 90%;
-  text-align: right;
+  text-align: left;
 }
 
 /* line 1, components/_responsive-embed.scss */
