@@ -1249,7 +1249,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       div {
         position: relative;
         width: 100%;
-        height: 200px;
+        height: 210px;
         float: left;
       }
 
@@ -4626,7 +4626,7 @@ body.node-type-program .pane-node-field-degree-type {
         clear: both !important;
         float: left !important;
         p {
-          margin: 64px 0 0 33% !important;
+          margin: 64px 0 0 40% !important;
           width: 200px !important;
         }
       }
@@ -4915,7 +4915,7 @@ body.node-type-program .pane-node-field-degree-type {
     display: none;
   }
   body.node-type-program .pane-testimonials-slider {
-    height: 227px;
+    min-height: 227px;
   }
   .flex-control-nav {
     display: none;

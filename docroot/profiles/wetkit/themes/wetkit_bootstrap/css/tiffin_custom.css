@@ -1285,7 +1285,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-dragon-perks ul li div {
 	position: relative;
 	width: 100%;
-	height: 200px;
+	height: 210px;
 	float: left;
 }
 
@@ -4662,7 +4662,7 @@ body.node-type-program .pane-node-field-degree-type {
 		float: left !important;
 	}
 	.pane-life-at-tu-hero-top ul li p {
-		margin: 64px 0 0 33% !important;
+		margin: 64px 0 0 40% !important;
 		width: 200px !important;
 	}
 	.pane-dragon-perks ul {
@@ -4857,7 +4857,7 @@ body.node-type-program .pane-node-field-degree-type {
 		display: none;
 	}
 	body.node-type-program .pane-testimonials-slider {
-		height: 227px;
+		min-height: 227px;
 	}
 	.flex-control-nav {
 		display: none;
