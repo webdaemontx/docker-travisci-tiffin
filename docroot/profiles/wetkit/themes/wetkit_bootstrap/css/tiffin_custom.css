@@ -33,7 +33,6 @@ main {
 	margin: 0;
 }
 
-/* mobile nav */
 .btn-default {
 	border-color: transparent;
 }
@@ -72,8 +71,6 @@ main {
 	}
 }
 
-/* End mobile nav */
-/* Brought in from block CSS */
 .carousel-s2 .field-item img.img-responsive {
 	max-height: 375px;
 	max-width: 464px;
@@ -109,7 +106,6 @@ body.page-admissions .hvr-underline-from-center:before, body.page-apply-now .hvr
 }
 
 .expanded ul {
-	background-color: white;
 	background-color: #eaeaea;
 	padding-bottom: 2.5px;
 }
@@ -120,8 +116,6 @@ body.page-admissions .hvr-underline-from-center:before, body.page-apply-now .hvr
 	padding-bottom: 11px;
 }
 
-/* End brought it from block CSS */
-/* About TU board members */
 div.pane-board-members {
 	width: 80%;
 	margin: 0 auto;
@@ -138,8 +132,6 @@ div.pane-board-members .img-responsive {
 	margin: 0 auto;
 }
 
-/* End About TU board members */
-/* Sidebar menus */
 #wb-sec h2.pane-title {
 	height: inherit;
 	width: inherit;
@@ -173,16 +165,9 @@ div.pane-board-members .img-responsive {
 	border: 0 !important;
 }
 
-/* End sidebar menus */
-/* Homepage social media */
 #social_media_home {
-	background-image: url("../images/image-homepage-socialmedia.jpg");
-	-webkit-background-size: 3400px 690px;
-	        background-size: 3400px 690px;
 	height: 224px;
-	/*background-attachment: fixed;*/
-	background-position: center;
-	background-repeat: no-repeat;
+	background: url("../images/image-homepage-socialmedia.jpg") no-repeat center;
 	-webkit-background-size: cover;
 	        background-size: cover;
 }
@@ -227,13 +212,9 @@ div.pane-board-members .img-responsive {
 	background-repeat: no-repeat;
 }
 
-/* End homepage social media */
-/* Homepage hero */
 #mini-panel-homepage_top_hero {
 	width: 100%;
 	background-image: url("../images/image-hero-top-one.jpg");
-	-webkit-background-size: 1200px 574px;
-	        background-size: 1200px 574px;
 	-webkit-background-size: cover;
 	        background-size: cover;
 	background-repeat: no-repeat;
@@ -308,11 +289,9 @@ div.pane-board-members .img-responsive {
 	background: url("../images/down-triangle.png") no-repeat right;
 	background-color: rgba(255, 255, 255, 0.75);
 	background-position-x: 360px;
-	appearance: none;
-	-moz-appearance: none;
-	/* Firefox */
 	-webkit-appearance: none;
-	/* Safari and Chrome */
+	   -moz-appearance: none;
+	        appearance: none;
 	color: #365543;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -325,8 +304,6 @@ div.pane-board-members .img-responsive {
 	clear: none;
 }
 
-/* End homepage hero */
-/* Homepage Slider */
 .flex-direction-nav {
 	display: none;
 }
@@ -338,8 +315,6 @@ div.views-field-field-news-front-slider-image img.img-responsive {
 
 div.view-homepage-news-slidehow {
 	background-image: url("../images/slideshow-campus-para.jpg");
-	-webkit-background-size: 1600px 915px;
-	        background-size: 1600px 915px;
 	height: 540px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -429,8 +404,6 @@ div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
 	}
 }
 
-/* Homepage Slider */
-/* Nav */
 #wb-sm {
 	height: 85px;
 	padding-top: 15px;
@@ -476,28 +449,27 @@ div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
 	background: transparent;
 	height: 2px;
 	-webkit-transform: translateY(2px);
-	-ms-transform: translateY(2px);
-	 -o-transform: translateY(2px);
-	    transform: translateY(2px);
-	-webkit-transition-property: transform;
+	    -ms-transform: translateY(2px);
+	     -o-transform: translateY(2px);
+	        transform: translateY(2px);
 	-webkit-transition-property: -webkit-transform;
 	transition-property: -webkit-transform;
 	-o-transition-property: -o-transform;
 	transition-property: transform;
 	transition-property: transform, -webkit-transform, -o-transform;
 	-webkit-transition-duration: .3s;
-	-o-transition-duration: .3s;
-	   transition-duration: .3s;
+	     -o-transition-duration: .3s;
+	        transition-duration: .3s;
 	-webkit-transition-timing-function: ease-out;
-	-o-transition-timing-function: ease-out;
-	   transition-timing-function: ease-out;
+	     -o-transition-timing-function: ease-out;
+	        transition-timing-function: ease-out;
 }
 
 .hvr-underline-reveal:active:before, .hvr-underline-reveal:focus:before, .hvr-underline-reveal:hover:before {
 	-webkit-transform: translateY(0);
-	-ms-transform: translateY(0);
-	 -o-transform: translateY(0);
-	    transform: translateY(0);
+	    -ms-transform: translateY(0);
+	     -o-transform: translateY(0);
+	        transform: translateY(0);
 }
 
 #wb-bar {
@@ -509,8 +481,6 @@ div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
 	margin: 0 auto 0 auto;
 }
 
-/* End Nav */
-/* Generic program page */
 #mini-panel-generic_program_page_hero ul {
 	list-style-type: none;
 }
@@ -523,12 +493,9 @@ div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
 	border: 1px solid #d9bf75;
 }
 
-/* End generic program page */
-/* Get to know TU */
 .pane-get-to-know-tu {
 	height: 550px;
 	background-image: url("../images/get-to-know-campus-background.jpg");
-	/*background-attachment: fixed;*/
 	background-position: center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -565,17 +532,10 @@ div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
 	text-decoration: none;
 }
 
-/* End get to know TU */
-/* might want to consolidate CSS at some point */
-/* TU Drone */
-/* End TU drone */
-/* visit tu form */
 div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 main {
 	width: 90%;
 }
 
-/* end visit tu form */
-/* Visit TU Landing Hero */
 #experienceTU {
 	width: 556px;
 	height: 275px;
@@ -631,19 +591,15 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	padding-top: 20px;
 }
 
-#mini-panel-visit_tu_landing_hero {
+#mini-panel-visit_tu_landing_hero div.visittop {
+	background-color: rgba(255, 255, 255, 0.7);
+	height: 42px;
 	height: 707px;
 	background-image: url("../images/visit-landing-hero.jpg");
-	/*background-attachment: fixed;*/
 	background-position: center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	        background-size: cover;
-}
-
-#mini-panel-visit_tu_landing_hero div.visittop {
-	background-color: rgba(255, 255, 255, 0.7);
-	height: 42px;
 }
 
 #mini-panel-visit_tu_landing_hero div.visittop ul {
@@ -670,8 +626,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	color: #365543 !important;
 }
 
-/* End visit TU Landing Hero */
-/* Visit TU */
 #mini-panel-visit_tu_hero {
 	height: 550px;
 	background-image: url("../images/image-visit-tu-top-background.jpg");
@@ -806,8 +760,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	}
 }
 
-/* End Visit TU */
-/* Generic school hero */
 .pane-generic-school-page-hero {
 	background-image: url("../images/image-generic-school.jpg");
 	background-repeat: no-repeat;
@@ -816,7 +768,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	background-position: 0;
 	height: 700px;
 	width: 100%;
-	/*background-attachment: fixed;*/
 	padding-top: 0;
 }
 
@@ -891,8 +842,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	letter-spacing: 2px;
 }
 
-/* End generic hero */
-/* Criminal justice school hero */
 .pane-generic-school-page-hero-crim {
 	background-image: url("../images/image-generic-school.jpg");
 	background-repeat: no-repeat;
@@ -901,7 +850,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	background-position: 0;
 	height: 700px;
 	width: 100%;
-	/*background-attachment: fixed;*/
 	padding-top: 0;
 }
 
@@ -988,7 +936,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-generic-school-page-hero-arts .pane-1 h2 {
-	color: white;
+	color: #fff;
 	font-size: 58px;
 }
 
@@ -996,7 +944,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	position: relative;
 	margin: 0 auto 0 auto;
 	width: 72%;
-	color: white;
+	color: #fff;
 	background-color: transparent;
 	font-size: 18px;
 	letter-spacing: .5px;
@@ -1107,9 +1055,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	letter-spacing: 2px;
 }
 
-/* End School of business hero */
-/* http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg */
-/* Generic School Social Media */
 .pane-generic-school-social-media #mini-panel-generic_school_social_media #social_media_home {
 	background-color: #305146;
 	/* Old browsers */
@@ -1121,8 +1066,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	background-attachment: local;
 }
 
-/* End generic school social media */
-/* Life at TU */
 .pane-life-at-tu-hero-top {
 	background-image: url("../images/image-lifeattu-hero-landing.jpg");
 	background-repeat: no-repeat;
@@ -1131,7 +1074,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	background-position: center;
 	height: 700px;
 	width: 100%;
-	/*background-attachment: fixed;*/
 	padding-top: 30px;
 }
 
@@ -1253,7 +1195,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-dragon-perks {
-	background-color: white;
+	background-color: #fff;
 	padding-bottom: 50px;
 }
 
@@ -1336,8 +1278,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	background-image: url("../images/icon-small-classes.png");
 }
 
-/* End life at TU */
-/* Online Admissions */
 .pane-online-admissions-hero {
 	background-image: url("../images/image-online-programs-hero.jpg");
 	background-repeat: no-repeat;
@@ -1347,7 +1287,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	position: relative;
 	height: 360px;
 	width: 100%;
-	/*background-attachment: fixed;*/
 	padding-top: 30px;
 }
 
@@ -1391,7 +1330,6 @@ ul#click-on-programs {
 	padding: 0;
 }
 
-/*#click-on-programs*/
 #click-on-programs li {
 	padding-top: 10px;
 	bottom: 0;
@@ -1430,9 +1368,6 @@ ul#click-on-programs {
 	transition: all 0.25s ease 0s;
 }
 
-/*#click-on-programs li:nth-child(1)*/
-/*#click-on-programs li:nth-child(1) a*/
-/* Undergraduate Admissions Midview*/
 .pane-undergraduate-admissions-panel-pane-1, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane {
 	max-width: 1170px;
 	margin: 0 auto;
@@ -1457,7 +1392,7 @@ ul#click-on-programs {
 }
 
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title {
-	color: #11361E;
+	color: #11361e;
 	background: url("../images/arrow-down.png") no-repeat right;
 	background-color: rgba(255, 255, 255, 0.75);
 	margin: 31px auto 30px auto;
@@ -1470,7 +1405,7 @@ ul#click-on-programs {
 }
 
 .pane-schools h2 {
-	color: #11361E;
+	color: #11361e;
 	background: url("../images/arrow-down.png") no-repeat right;
 	background-color: rgba(255, 255, 255, 0.75);
 	margin: 31px auto 30px auto;
@@ -1554,8 +1489,6 @@ ul#click-on-programs {
 	color: #365543;
 }
 
-/* End undergraduate Admissions Midview*/
-/* Graduate Admissions */
 .pane-graduate-admissions-hero {
 	position: relative;
 	background-image: url("../images/new-graduate-admissions-top-hero.jpg");
@@ -1565,7 +1498,6 @@ ul#click-on-programs {
 	background-position: center;
 	height: 360px;
 	width: 100%;
-	/*background-attachment: fixed;*/
 	padding-top: 30px;
 }
 
@@ -1707,11 +1639,11 @@ ul[role=menubar] {
 header #navbar .list-inline li a {
 	background-color: #365543 !important;
 	border-left: 0 !important;
-	color: white !important;
+	color: #fff !important;
 }
 
 header #navbar .list-inline li a:hover, header #navbar .list-inline li a:focus {
-	color: white !important;
+	color: #fff !important;
 }
 
 header #navbar .list-inline > li:last-child > a {
@@ -1779,7 +1711,7 @@ div.flex-caption {
 	-webkit-box-sizing: content-box;
 	font-family: inherit;
 	font-size: 100%;
-	background: #546D5E url(../images/search-mag.png) no-repeat 9px center;
+	background: #546d5e url(../images/search-mag.png) no-repeat 9px center;
 	border: 0;
 	border-radius: 10em;
 	-webkit-transition: all .5s;
@@ -1803,7 +1735,7 @@ div.flex-caption {
 	background-color: #fff;
 	cursor: auto;
 	-webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
-	box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+	        box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
 }
 
 #search-form input:-moz-placeholder, #search-form input::-webkit-input-placeholder {
@@ -1822,7 +1754,6 @@ body.page-admissions .pane-1 {
 	background-image: url("../images/image-abouttu-hero-landing.jpg");
 	background-repeat: no-repeat;
 	background-color: transparent;
-	/*background-attachment: fixed;*/
 	-webkit-background-size: cover;
 	        background-size: cover;
 	background-position: 0 -150px;
@@ -1858,7 +1789,6 @@ body.page-admissions .pane-1 {
 	background-image: url("../images/image-discover-city-of-tiffin.jpg");
 	background-repeat: no-repeat;
 	background-color: transparent;
-	/*background-attachment: fixed;*/
 	-webkit-background-size: cover;
 	        background-size: cover;
 	background-position: center;
@@ -2039,7 +1969,7 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
 		display: flex;
 		list-style-type: none;
 		width: 100%;
-		margin: 0 auto 0 auto;
+		margin: 0 auto;
 	}
 }
 
@@ -2092,7 +2022,7 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
 
 @media screen and (max-width: 1152px) {
 	#mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(1) div, #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(2) div, #mini-panel-join_the_tu_family_white_backgro ul li:nth-of-type(3) div {
-		margin: 0 auto 0 auto;
+		margin: 0 auto;
 		float: none;
 	}
 }
@@ -2139,16 +2069,16 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
 #mini-panel-homepage_submenu ul:nth-of-type(1) li {
 	margin-top: 30px;
 	margin-right: 4%;
-	color: white;
+	color: #fff;
 	line-height: 1;
 }
 
 #mini-panel-homepage_submenu ul:nth-of-type(1) li a {
-	color: white;
+	color: #fff;
 }
 
 #mini-panel-homepage_submenu ul:nth-of-type(2) {
-	background-color: #ffffff;
+	background-color: #fff;
 	width: 30%;
 	font-size: 20px;
 	padding-left: 30px;
@@ -2207,7 +2137,8 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
 	padding: 40px 0 87px;
 }
 
-#footer a, #footer h3 a {
+#footer a,
+#footer h3 a {
 	color: white !important;
 }
 

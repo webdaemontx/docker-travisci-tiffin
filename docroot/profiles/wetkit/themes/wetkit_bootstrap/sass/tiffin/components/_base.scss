@@ -34,8 +34,6 @@ main {
   margin: 0;
 }
 
-/* mobile nav */
-
 .btn-default {
   border-color: transparent;
 }
@@ -74,10 +72,6 @@ main {
   }
 }
 
-/* End mobile nav */
-
-/* Brought in from block CSS */
-
 .carousel-s2 .field-item img.img-responsive {
   max-height: 375px;
   max-width: 464px;
@@ -88,6 +82,7 @@ main {
     &.menu-mlid-5246 {
       display: none;
     }
+
     &.menu-mlid-1826 {
       margin-left: 26px !important;
     }
@@ -103,6 +98,7 @@ body {
     background: #365543 !important;
     height: 7px !important;
   }
+
   &.page-admissions .hvr-underline-from-center:before, &.page-apply-now .hvr-underline-from-center:before, &.page-campuslife .hvr-underline-from-center:before {
     background: $brand-gold !important;
     height: 7px !important;
@@ -115,37 +111,31 @@ body {
 }
 
 .expanded ul {
-  background-color: white;
+  background-color: #eaeaea;
+  padding-bottom: 2.5px;
+
   li {
     padding-left: 30px;
     padding-top: 3px;
     padding-bottom: 11px;
   }
-  background-color: #eaeaea;
-  padding-bottom: 2.5px;
 }
-
-/* End brought it from block CSS */
-
-/* About TU board members */
 
 div.pane-board-members {
   width: 80%;
   margin: 0 auto;
+
   .masonry-item {
     text-align: center;
     padding-top: 2%;
     padding-bottom: 5%;
     background-color: #ffffff;
   }
+
   .img-responsive {
     margin: 0 auto;
   }
 }
-
-/* End About TU board members */
-
-/* Sidebar menus */
 
 #wb-sec h2.pane-title {
   height: inherit;
@@ -159,13 +149,16 @@ div.pane-board-members {
 }
 
 .pane-menu-about-tu .active-trail {
+  background-color: #C09212;
+  color: #fff;
+
   a.list-group-item {
     font-style: italic;
   }
-  background-color: #C09212;
-  color: #fff;
+
   h3 {
     border: 0 !important;
+
     a {
       color: white !important;
       font-style: italic;
@@ -177,22 +170,17 @@ div.pane-board-members {
   border: 0 !important;
 }
 
-/* End sidebar menus */
-
-/* Homepage social media */
-
 #social_media_home {
-  background-image: url('../images/image-homepage-socialmedia.jpg');
-  background-size: 3400px 690px;
   height: 224px;
-  /*background-attachment: fixed;*/
-  background-position: center;
-  background-repeat: no-repeat;
+  ///*background-attachment: fixed;*/
+  background: url('../images/image-homepage-socialmedia.jpg') no-repeat center;
   background-size: cover;
+
   ul {
     list-style-type: none;
     display: flex;
     width: 100%;
+
     li {
       float: left;
       clear: none;
@@ -200,19 +188,23 @@ div.pane-board-members {
       background-position: center;
       height: 96px;
       margin-top: 70px;
+
       div {
         width: 100%;
         height: 96px;
       }
+
       &:nth-of-type(1) {
         background-image: url('../images/fb.png');
         background-repeat: no-repeat;
       }
+
       &:nth-of-type(2) {
         background-image: url('../images/instagram.png');
         height: 97px;
         background-repeat: no-repeat;
       }
+
       &:nth-of-type(3) {
         background-image: url('../images/twitter.png');
         height: 96px;
@@ -222,16 +214,12 @@ div.pane-board-members {
   }
 }
 
-/* End homepage social media */
-
-/* Homepage hero */
-
 #mini-panel-homepage_top_hero {
   width: 100%;
   background-image: url('../images/image-hero-top-one.jpg');
-  background-size: 1200px 574px;
   background-size: cover;
   background-repeat: no-repeat;
+
   div {
     &.pane-webform-client-block-1061 {
       Width: 532px;
@@ -241,9 +229,11 @@ div.pane-board-members {
       padding-top: 11px;
       padding-right: 19px;
       margin: 10% 10% 0 10%;
+
       .form-group {
         margin-bottom: 0;
       }
+
       h2 {
         margin: 10px;
         padding: 0;
@@ -252,9 +242,11 @@ div.pane-board-members {
         font-weight: bold;
       }
     }
+
     &.webform-component-radios {
       margin-bottom: 15px;
     }
+
     &#edit-submitted-degree-type div {
       label {
         font-size: 34px;
@@ -266,6 +258,7 @@ div.pane-board-members {
           position: relative;
         }
       }
+
       &:nth-of-type(1) {
         width: 60%;
         float: left;
@@ -275,6 +268,7 @@ div.pane-board-members {
         label {
         }
       }
+
       &:nth-of-type(2) {
         width: 40%;
         float: left;
@@ -286,12 +280,14 @@ div.pane-board-members {
       }
     }
   }
+
   button.btn-primary {
     font-size: 24px;
     border-radius: 0;
     background-color: rgba(54, 85, 67, 0.85);
     border: 0 !important;
   }
+
   select.form-select {
     float: left;
     clear: none;
@@ -301,10 +297,6 @@ div.pane-board-members {
     background-color: rgba(255, 255, 255, 0.75);
     background-position-x: 360px;
     appearance: none;
-    -moz-appearance: none;
-    /* Firefox */
-    -webkit-appearance: none;
-    /* Safari and Chrome */
     color: #365543;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -317,10 +309,6 @@ div.pane-board-members {
   }
 }
 
-/* End homepage hero */
-
-/* Homepage Slider */
-
 .flex-direction-nav {
   display: none;
 }
@@ -330,9 +318,10 @@ div {
     max-height: 375px;
     max-width: 464px;
   }
+
   &.view-homepage-news-slidehow {
     background-image: url('../images/slideshow-campus-para.jpg');
-    background-size: 1600px 915px;
+    //background-size: 1600px 915px;
     height: 540px;
     background-position: center;
     background-repeat: no-repeat;
@@ -345,14 +334,17 @@ div {
     margin: 0 auto;
     width: 870px !important;
   }
+
   div#flexslider-1 {
     width: 900px;
     margin: 0 auto;
     background-color: transparent;
     border: 0;
+
     a {
       outline: 0;
     }
+
     ul.slides li.flex-active-slide {
       position: relative;
       height: 460px;
@@ -373,6 +365,7 @@ div.view-homepage-news-slidehow {
         height: 44px;
         min-width: 320px;
         opacity: 1 !important;
+
         a {
           color: white;
           text-decoration: none;
@@ -380,21 +373,25 @@ div.view-homepage-news-slidehow {
           font-size: 22px;
         }
       }
+
       .views-field-field-news-front-slider-image {
         width: 464px;
         position: absolute;
         top: 74px;
         left: 20px;
       }
+
       .views-field-field-quick-news-description {
         position: absolute;
         top: 200px;
         left: 508px;
+
         p {
           color: white;
         }
       }
     }
+
     ol.flex-control-nav {
       position: absolute;
       top: 470px;
@@ -402,14 +399,17 @@ div.view-homepage-news-slidehow {
       left: 26%;
     }
   }
+
   .flex-direction-nav a {
     height: 46px !important;
   }
+
   .flex-control-paging li a {
+    background: #979557;
+
     &.flex-active {
       background: $brand-gold;
     }
-    background: #979557;
   }
 }
 
@@ -419,33 +419,35 @@ div.view-homepage-news-slidehow {
   }
 }
 
-/* Homepage Slider */
-
-/* Nav */
-
 #wb-sm {
   height: 85px;
   padding-top: 15px;
+
   .menu > li > a {
     border-left: none;
     color: #fff;
   }
+
   .menu > li:last-child > a {
     border-right: none;
   }
+
   .menu > li > a:hover {
     background: transparent;
     color: #fff;
   }
+
   .menu > li > a:active {
     background: transparent;
     color: #fff;
   }
+
   .menu > li > a.wb-navcurr {
     border-bottom: 1px solid #ffffff;
     background: transparent;
     color: #fff;
   }
+
   .menu > li.active > a {
     background: transparent;
     color: #fff;
@@ -461,18 +463,13 @@ div.view-homepage-news-slidehow {
   bottom: 0;
   background: transparent;
   height: 2px;
-  -webkit-transform: translateY(2px);
   transform: translateY(2px);
-  -webkit-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: .3s;
   transition-duration: .3s;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out
 }
 
 .hvr-underline-reveal:active:before, .hvr-underline-reveal:focus:before, .hvr-underline-reveal:hover:before {
-  -webkit-transform: translateY(0);
   transform: translateY(0)
 }
 
@@ -485,14 +482,13 @@ div.view-homepage-news-slidehow {
   margin: 0 auto 0 auto;
 }
 
-/* End Nav */
-
-/* Generic program page */
-
 #mini-panel-generic_program_page_hero ul {
   list-style-type: none;
+
   &:nth-of-type(1), &:nth-of-type(2) {
+
   }
+
   li {
     float: left;
     clear: none;
@@ -502,17 +498,14 @@ div.view-homepage-news-slidehow {
   }
 }
 
-/* End generic program page */
-
-/* Get to know TU */
-
 .pane-get-to-know-tu {
   height: 550px;
   background-image: url('../images/get-to-know-campus-background.jpg');
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   div {
     &#watchtour {
       margin-top: 2%;
@@ -525,6 +518,7 @@ div.view-homepage-news-slidehow {
       font-size: 40px;
       color: white;
     }
+
     &#playtour {
       background-image: url('../images/icon-opaque-play-video.png');
       background-position: center;
@@ -532,71 +526,22 @@ div.view-homepage-news-slidehow {
       width: 100%;
       background-repeat: no-repeat;
     }
+
     &#watchtourshell {
       padding-top: 2%;
       height: 550px;
       width: 100%;
     }
   }
+
   a {
     text-decoration: none;
   }
 }
 
-/* End get to know TU */
-
-/* might want to consolidate CSS at some point */
-
-/* TU Drone */
-
-//.pane-tu-drone-vid {
-//  height: 550px;
-//  background-image: url('../images/image-drone-background.jpg');
-//  /*background-attachment: fixed;*/
-//  background-position: center;
-//  background-repeat: no-repeat;
-//  background-size: cover;
-//  div {
-//    &#watchtour {
-//      margin-top: 2%;
-//      background-image: url('../images/drone-click.png');
-//      margin-left: 60%;
-//      background-repeat: no-repeat;
-//      height: 161px;
-//      width: 356px;
-//      background-position: 0 53px;
-//      font-size: 40px;
-//      color: white;
-//    }
-//    &#playtour {
-//      background-image: url('../images/icon-opaque-play-video.png');
-//      background-position: center;
-//      height: 181px;
-//      width: 100%;
-//      background-repeat: no-repeat;
-//    }
-//    &#watchtourshell {
-//      padding-top: 2%;
-//      height: 550px;
-//      width: 100%;
-//    }
-//  }
-//  a {
-//    text-decoration: none;
-//  }
-//}
-
-/* End TU drone */
-
-/* visit tu form */
-
 div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 main {
   width: 90%;
 }
-
-/* end visit tu form */
-
-/* Visit TU Landing Hero */
 
 #experienceTU {
   width: 556px;
@@ -610,6 +555,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-repeat: no-repeat;
   background-position: 380px 89px;
   background-size: 29%;
+
   h1 {
     margin-top: 0;
     font-weight: 200;
@@ -629,6 +575,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       padding: 12px;
       margin-bottom: 0;
     }
+
     &:nth-of-type(2) {
     }
   }
@@ -645,6 +592,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-repeat: no-repeat;
   height: 260px;
   width: 100%;
+
   p {
     color: #365543;
     font-size: 25px;
@@ -659,19 +607,29 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   div.visittop {
     background-color: rgba(255, 255, 255, 0.7);
     height: 42px;
+    height: 707px;
+    background-image: url('../images/visit-landing-hero.jpg');
+    ///*background-attachment: fixed;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     ul {
       list-style-type: none;
       width: 812px;
       padding: 5px 0 7px 0;
       margin: 0 auto;
+
       li {
         float: left;
         clear: none;
         text-align: left;
         padding-right: 25px;
+
         &:nth-of-type(5) {
           padding-right: 0;
         }
+
         a {
           text-decoration: none !important;
           font-size: 22px;
@@ -680,17 +638,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       }
     }
   }
-  height: 707px;
-  background-image: url('../images/visit-landing-hero.jpg');
-  /*background-attachment: fixed;*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-
-/* End visit TU Landing Hero */
-
-/* Visit TU */
 
 #mini-panel-visit_tu_hero {
   height: 550px;
@@ -699,22 +647,27 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   div.visittop {
     background-color: rgba(255, 255, 255, 0.7);
     height: 42px;
+
     ul {
       list-style-type: none;
       width: 812px;
       padding: 5px 0 7px 0;
       margin: 0 auto;
+
       li {
         float: left;
         clear: none;
         text-align: left;
         padding-right: 25px;
+
         &:nth-of-type(5) {
           padding-right: 0;
         }
+
         a {
           text-decoration: none !important;
           font-size: 22px;
@@ -723,6 +676,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       }
     }
   }
+
   h2 {
     color: white;
     text-align: center;
@@ -730,6 +684,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     font-size: 33px;
     margin-bottom: 80px;
   }
+
   ul#visitclicks {
     list-style-type: none;
     width: 814px;
@@ -745,30 +700,36 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       background-repeat: no-repeat;
       margin-right: 8px;
       background-size: 50%;
+
       a {
+        color: #365543;
+        font-size: 27px;
+        text-decoration: none;
+        text-align: center;
+
         div {
           width: 100%;
           height: 250px;
           float: left;
         }
-        color: #365543;
-        font-size: 27px;
-        text-decoration: none;
-        text-align: center;
       }
+
       &:nth-of-type(1) {
         background-image: url('../images/icon-visit-individual.png');
         background-position: center 40px;
       }
+
       &:nth-of-type(2) {
         background-image: url('../images/icon-visit-group.png');
         background-position: center 52px;
         background-size: 70%;
       }
+
       &:nth-of-type(3) {
         background-image: url('../images/icon-visit-open-house.png');
         background-position: center 50px;
       }
+
       a div p {
         margin-top: 187px;
       }
@@ -778,29 +739,36 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 @media (max-width: 770px) {
   #mini-panel-visit_tu_hero ul#visitclicks {
+    list-style-type: none;
+    width: 250px;
+    margin: 0 auto;
+    padding: 0;
+
     li {
       float: left !important;
       clear: both !important;
       margin-bottom: 10px;
     }
-    list-style-type: none;
-    width: 250px;
-    margin: 0 auto;
-    padding: 0;
   }
+
   .pane-get-to-know-tu {
     clear: both;
   }
+
   #mini-panel-visit_tu_hero {
     height: 1100px;
   }
+
   .pane-get-to-know-tu div#watchtour {
     margin: 0 auto;
   }
+
   #mini-panel-visit_tu_hero div.visittop {
     height: 170px !important;
+
     ul {
       width: 192px;
+
       li {
         float: left;
         clear: both;
@@ -809,10 +777,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   }
 }
 
-/* End Visit TU */
-
-/* Generic school hero */
-
 .pane-generic-school-page-hero {
   background-image: url('../images/image-generic-school.jpg');
   background-repeat: no-repeat;
@@ -820,17 +784,20 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   padding-top: 0;
+
   .pane-1 {
     margin: 0 auto 150px auto;
     width: 100%;
     text-align: center;
+
     h2 {
       color: white;
       font-size: 58px;
     }
   }
+
   .pane-2 {
     margin: 0 auto;
     width: 72%;
@@ -844,19 +811,23 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 #mini-panel-generic_school_page_hero .heroclicks {
   width: 100%;
+
   ul {
     list-style-type: none;
     height: 77px;
     padding: 0;
+
     &:nth-of-type(1) {
       margin: 40px auto 0 auto;
       width: 682px;
     }
+
     &:nth-of-type(2) {
       margin: 5px auto 0 auto;
       clear: both;
       width: 452px;
     }
+
     li {
       margin-right: 4px;
       height: 77px;
@@ -864,19 +835,24 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       float: left;
       border: 1px solid $brand-gold;
     }
+
     &:nth-of-type(1) li, &:nth-of-type(2) li {
       width: 220px;
     }
+
     li {
       div {
+        width: 100%;
+        height: 88px;
+
         p {
           padding-top: 25px;
           text-align: center;
         }
-        width: 100%;
-        height: 88px;
       }
+
       &:nth-of-type(1) div, &:nth-of-type(3) div {
+
       }
       a {
         color: #fff;
@@ -885,14 +861,12 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         letter-spacing: 2px;
       }
     }
+
     &:nth-of-type(1) li:nth-of-type(1), &:nth-of-type(2) li:nth-of-type(1) {
+
     }
   }
 }
-
-/* End generic hero */
-
-/* Criminal justice school hero */
 
 .pane-generic-school-page-hero-crim {
   background-image: url('../images/image-generic-school.jpg');
@@ -901,17 +875,20 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: 0;
   height: 700px;
   width: 100%;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   padding-top: 0;
+
   .pane-1 {
     margin: 0 auto 150px auto;
     width: 100%;
     text-align: center;
+
     h2 {
       color: white;
       font-size: 58px;
     }
   }
+
   .pane-2 {
     position: relative;
     margin: 0 auto;
@@ -922,6 +899,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     letter-spacing: .5px;
     text-align: justify;
   }
+
   .pane-3 {
     position: relative;
   }
@@ -929,19 +907,23 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 #mini-panel-generic_school_page_hero_crim .heroclicks {
   width: 100%;
+
   ul {
     list-style-type: none;
     height: 77px;
     padding: 0;
+
     &:nth-of-type(1) {
       margin: 40px auto 0 auto;
       width: 682px;
     }
+
     &:nth-of-type(2) {
       margin: 5px auto 0 auto;
       clear: both;
       width: 452px;
     }
+
     li {
       margin-right: 4px;
       height: 77px;
@@ -949,19 +931,24 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       float: left;
       border: 1px solid $brand-gold;
     }
+
     &:nth-of-type(1) li, &:nth-of-type(2) li {
       width: 220px;
     }
+
     li {
       div {
+        width: 100%;
+        height: 88px;
+
         p {
           padding-top: 25px;
           text-align: center;
         }
-        width: 100%;
-        height: 88px;
       }
+
       &:nth-of-type(1) div, &:nth-of-type(3) div {
+
       }
       a {
         color: #fff;
@@ -970,7 +957,9 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         letter-spacing: 2px;
       }
     }
+
     &:nth-of-type(1) li:nth-of-type(1), &:nth-of-type(2) li:nth-of-type(1) {
+
     }
   }
 }
@@ -980,21 +969,24 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     margin: 0 auto 82px auto;
     width: 100%;
     text-align: center;
+
     h2 {
-      color: white;
+      color: #fff;
       font-size: 58px;
     }
   }
+
   .pane-2 {
     position: relative;
     margin: 0 auto 0 auto;
     width: 72%;
-    color: white;
+    color: #fff;
     background-color: transparent;
     font-size: 18px;
     letter-spacing: .5px;
     text-align: justify;
   }
+
   .pane-3 {
     position: relative;
   }
@@ -1002,19 +994,23 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 #mini-panel-generic_school_page_hero_arts .heroclicks {
   width: 100%;
+
   ul {
     list-style-type: none;
     height: 77px;
     padding: 0;
+
     &:nth-of-type(1) {
       margin: 40px auto 0 auto;
       width: 682px;
     }
+
     &:nth-of-type(2) {
       margin: 5px auto 0 auto;
       clear: both;
       width: 452px;
     }
+
     li {
       margin-right: 4px;
       height: 77px;
@@ -1022,20 +1018,26 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       float: left;
       border: 1px solid $brand-gold;
     }
+
     &:nth-of-type(1) li, &:nth-of-type(2) li {
       width: 220px;
     }
+
     li {
       div {
+        width: 100%;
+        height: 88px;
+
         p {
           padding-top: 25px;
           text-align: center;
         }
-        width: 100%;
-        height: 88px;
       }
+
       &:nth-of-type(1) div, &:nth-of-type(3) div {
+
       }
+
       a {
         color: #fff;
         font-size: 22px;
@@ -1043,26 +1045,32 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         letter-spacing: 2px;
       }
     }
+
     &:nth-of-type(1) li:nth-of-type(1), &:nth-of-type(2) li:nth-of-type(1) {
+
     }
   }
 }
 
 #mini-panel-generic_school_page_hero_biz .heroclicks {
   width: 100%;
+
   ul {
     list-style-type: none;
     height: 77px;
     padding: 0;
+
     &:nth-of-type(1) {
       margin: 40px auto 0 auto;
       width: 682px;
     }
+
     &:nth-of-type(2) {
       margin: 5px auto 0 auto;
       clear: both;
       width: 452px;
     }
+
     li {
       margin-right: 4px;
       height: 77px;
@@ -1070,20 +1078,26 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       float: left;
       border: 1px solid $brand-gold;
     }
+
     &:nth-of-type(1) li, &:nth-of-type(2) li {
       width: 220px;
     }
+
     li {
       div {
+        width: 100%;
+        height: 88px;
+
         p {
           padding-top: 25px;
           text-align: center;
         }
-        width: 100%;
-        height: 88px;
       }
+
       &:nth-of-type(1) div, &:nth-of-type(3) div {
+
       }
+
       a {
         color: #fff;
         font-size: 22px;
@@ -1091,15 +1105,12 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         letter-spacing: 2px;
       }
     }
+
     &:nth-of-type(1) li:nth-of-type(1), &:nth-of-type(2) li:nth-of-type(1) {
+
     }
   }
 }
-
-/* End School of business hero */
-/* http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-school.jpg */
-
-/* Generic School Social Media */
 
 .pane-generic-school-social-media #mini-panel-generic_school_social_media #social_media_home {
   background-color: #305146;
@@ -1111,10 +1122,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-attachment: local;
 }
 
-/* End generic school social media */
-
-/* Life at TU */
-
 .pane-life-at-tu-hero-top {
   background-image: url('../images/image-lifeattu-hero-landing.jpg');
   background-repeat: no-repeat;
@@ -1122,8 +1129,9 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   background-position: center;
   height: 700px;
   width: 100%;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   padding-top: 30px;
+
   h2 {
     text-align: center;
     color: #365543;
@@ -1132,9 +1140,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     margin-top: 0;
     padding-top: 0;
   }
+
   ul {
     display: flex;
     list-style-type: none;
+
     li {
       width: 33%;
       margin-right: 1%;
@@ -1145,27 +1155,33 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       background-position: 7% center;
       float: left;
       clear: none;
+
       div {
         width: 100%;
         height: 200px;
         float: left;
       }
+
       p {
         margin: 100px;
         font-weight: bold;
         line-height: 36px;
       }
+
       a {
         color: #365543;
         font-size: 31px;
         text-decoration: none;
       }
     }
+
     &:nth-of-type(1) {
       margin-top: 40px;
+
       li {
         &:nth-of-type(1) {
           background-image: url('../images/icon-student-bag.png');
+
           p {
             margin: 69px 28%;
             font-size: 32px;
@@ -1173,8 +1189,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
             width: 70%;
           }
         }
+
         &:nth-of-type(2) {
           background-image: url('../images/icon-student-activity.png');
+
           p {
             margin: 69px 30%;
             font-size: 32px;
@@ -1182,8 +1200,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
             width: 60%;
           }
         }
+
         &:nth-of-type(3) {
           background-image: url('../images/icon-1st-yr.png');
+
           p {
             margin: 70px 28%;
             font-size: 32px;
@@ -1193,9 +1213,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         }
       }
     }
+
     &:nth-of-type(2) li {
       &:nth-of-type(1) {
         background-image: url('../images/icon-housing.png');
+
         p {
           margin: 68px 28%;
           font-size: 32px;
@@ -1203,8 +1225,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
           width: 68%;
         }
       }
+
       &:nth-of-type(2) {
         background-image: url('../images/icon-security-guard.png');
+
         p {
           margin: 68px 31%;
           font-size: 32px;
@@ -1212,8 +1236,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
           width: 70%;
         }
       }
+
       &:nth-of-type(3) {
         background-image: url('../images/icon-student-conduct.png');
+
         p {
           margin: 50px 30%;
           font-size: 32px;
@@ -1226,8 +1252,9 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-dragon-perks {
-  background-color: white;
+  background-color: #fff;
   padding-bottom: 50px;
+
   h2 {
     text-align: center;
     color: $brand-gold;
@@ -1236,9 +1263,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     margin-top: 20px;
     padding-top: 0;
   }
+
   ul {
     display: flex;
     list-style-type: none;
+
     li {
       width: 25%;
       margin-right: 1%;
@@ -1269,6 +1298,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         text-decoration: none;
       }
     }
+
     &:nth-of-type(1) li {
       &:nth-of-type(1) {
         background-image: url('../images/icon-tickets.png');
@@ -1283,6 +1313,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         background-image: url('../images/icon-financial-aid.png');
       }
     }
+
     &:nth-of-type(2) li {
       &:nth-of-type(1) {
         background-image: url('../images/icon-cars-campus.png');
@@ -1300,10 +1331,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   }
 }
 
-/* End life at TU */
-
-/* Online Admissions */
-
 .pane-online-admissions-hero {
   background-image: url('../images/image-online-programs-hero.jpg');
   background-repeat: no-repeat;
@@ -1312,8 +1339,9 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   position: relative;
   height: 360px;
   width: 100%;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   padding-top: 30px;
+
   h2 {
     text-align: center;
     color: #365543;
@@ -1322,8 +1350,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     margin-top: 0;
     padding-top: 0;
   }
+
   ul li {
     &:nth-of-type(1) div, &:nth-of-type(3) div {
+
     }
   }
 }
@@ -1337,6 +1367,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   height: 360px;
   width: 100%;
   padding-top: 30px;
+
   h2 {
     text-align: center;
     color: white;
@@ -1357,8 +1388,6 @@ ul#click-on-programs {
   padding: 0;
 }
 
-/*#click-on-programs*/
-
 #click-on-programs li {
   padding-top: 10px;
   bottom: 0;
@@ -1370,15 +1399,19 @@ ul#click-on-programs {
   top: 0;
   background-color: #365543 !important;
   font: normal normal 200 normal 16px / 27px "Frutiger W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   &:nth-child(1) {
     width: 50px;
   }
+
   &:nth-child(2) {
     width: 116px;
   }
+
   &:nth-child(3) {
     width: 73px;
   }
+
   a {
     color: rgb(255, 255, 255);
     height: 47px;
@@ -1390,12 +1423,6 @@ ul#click-on-programs {
     transition: all 0.25s ease 0s;
   }
 }
-
-/*#click-on-programs li:nth-child(1)*/
-
-/*#click-on-programs li:nth-child(1) a*/
-
-/* Undergraduate Admissions Midview*/
 
 .pane-undergraduate-admissions-panel-pane-1, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane {
   max-width: 1170px;
@@ -1420,7 +1447,7 @@ ul#click-on-programs {
 }
 
 .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title {
-  color: #11361E;
+  color: #11361e;
   background: url('../images/arrow-down.png') no-repeat right;
   background-color: rgba(255, 255, 255, 0.75);
   margin: 31px auto 30px auto;
@@ -1432,7 +1459,7 @@ ul#click-on-programs {
 }
 
 .pane-schools h2 {
-  color: #11361E;
+  color: #11361e;
   background: url('../images/arrow-down.png') no-repeat right;
   background-color: rgba(255, 255, 255, 0.75);
   margin: 31px auto 30px auto;
@@ -1517,10 +1544,6 @@ ul#click-on-programs {
   color: #365543;
 }
 
-/* End undergraduate Admissions Midview*/
-
-/* Graduate Admissions */
-
 .pane-graduate-admissions-hero {
   position: relative;
   background-image: url('../images/new-graduate-admissions-top-hero.jpg');
@@ -1529,8 +1552,9 @@ ul#click-on-programs {
   background-position: center;
   height: 360px;
   width: 100%;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   padding-top: 30px;
+
   h2 {
     text-align: center;
     color: #365543;
@@ -1543,6 +1567,7 @@ ul#click-on-programs {
 
 #mini-panel-you_and_tu {
   height: 380px;
+
   #you-and-tu {
     h2 {
       height: 38px;
@@ -1552,6 +1577,7 @@ ul#click-on-programs {
       background-image: url('../images/icon-u-tu.png');
       margin-bottom: 0;
     }
+
     ul {
       width: 100%;
       height: 140px;
@@ -1559,6 +1585,7 @@ ul#click-on-programs {
       //display: -ms-flex;
       list-style-type: none;
     }
+
     p {
       font-size: 28px;
       width: 100%;
@@ -1566,37 +1593,47 @@ ul#click-on-programs {
       color: #365543;
       text-align: center;
     }
+
     ul li {
+      width: 33%;
+      text-align: center;
+      float: left;
+      clear: none;
+
       a {
         text-decoration: none;
       }
+
       h3 {
         color: $brand-gold;
         font-size: 38px;
         text-decoration: none;
       }
+
       &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3) {
+
       }
+
       div {
         height: 130px;
         width: 100%;
         background-repeat: no-repeat;
         background-position: top center;
+
         h3 {
           padding-top: 130px;
         }
       }
-      width: 33%;
-      text-align: center;
-      float: left;
-      clear: none;
+
       &:nth-of-type(1) div {
         background-image: url('../images/icon-paper-plane.png');
         background-position: center;
       }
+
       &:nth-of-type(2) div {
         background-image: url('../images/icon-campus-life.png');
       }
+
       &:nth-of-type(3) div {
         background-image: url('../images/icon-happy-student.png');
       }
@@ -1629,9 +1666,11 @@ ul#click-on-programs {
   .menu > li a {
     padding: 0;
   }
+
   .hvr-underline-reveal:before {
     background: white !important;
   }
+
   .menu > li {
     padding: 10px 12px 10px 10px;
     white-space: nowrap;
@@ -1667,14 +1706,16 @@ ul[role=menubar] {
 
 header #navbar .list-inline {
   li a {
-    &:hover, &:focus {
-      color: white !important;
-    }
     background-color: #365543 !important;
     border-left: 0 !important;
-    color: white !important;
+    color: #fff !important;
+
+    &:hover,
+    &:focus {
+      color: #fff !important;
+    }
   }
-  > li:last-child > a {
+  & > li:last-child > a {
     border-right: 0 !important;
   }
 }
@@ -1687,6 +1728,7 @@ ul[role=menubar] #opener {
   position: relative;
   float: left;
   clear: none;
+
   img {
     width: 140px;
     height: 55px;
@@ -1724,44 +1766,44 @@ div.flex-caption {
 
 #search-form input {
   outline: none;
+
   &::-webkit-search-decoration, &::-webkit-search-cancel-button {
     display: none;
   }
+
   &:-moz-placeholder, &::-webkit-input-placeholder {
     color: #999;
   }
+
   &[type=search] {
     -webkit-appearance: textfield;
     -webkit-box-sizing: content-box;
     font-family: inherit;
     font-size: 100%;
-    background: #546D5E url(../images/search-mag.png) no-repeat 9px center;
+    background: #546d5e url(../images/search-mag.png) no-repeat 9px center;
     border: 0;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
     border-radius: 10em;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
     transition: all .5s;
     width: 34px;
     height: 34px;
     padding: 9px 10px;
     color: transparent;
     cursor: pointer;
+
     &:hover {
       background-color: #fff;
     }
+
     &:focus {
       width: 180px;
       padding-left: 32px;
       color: #000;
       background-color: #fff;
       cursor: auto;
-      -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
-      -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
       box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
     }
   }
+
   &:-moz-placeholder, &::-webkit-input-placeholder {
     color: transparent;
   }
@@ -1779,7 +1821,7 @@ body.page-admissions .pane-1 {
   background-image: url('../images/image-abouttu-hero-landing.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   background-size: cover;
   background-position: 0 -150px;
   //height: 383px;
@@ -1799,6 +1841,7 @@ body.page-admissions .pane-1 {
     //left: 0;
     //right: 0;
     margin-top: 114px;
+
     ul {
       list-style-type: none;
       margin-bottom: 0;
@@ -1806,6 +1849,7 @@ body.page-admissions .pane-1 {
 
       li a {
         text-decoration: none;
+
         p {
           margin-bottom: 10px;
         }
@@ -1818,17 +1862,18 @@ body.page-admissions .pane-1 {
   background-image: url('../images/image-discover-city-of-tiffin.jpg');
   background-repeat: no-repeat;
   background-color: transparent;
-  /*background-attachment: fixed;*/
+  ///*background-attachment: fixed;*/
   background-size: cover;
   background-position: center;
-
   padding: 10px 0 60px;
   //height: 465px;
+
   p {
     text-decoration: none;
     color: white;
     font-size: 20px;
   }
+
   ul {
     list-style-type: none;
     width: 100%;
@@ -1839,18 +1884,21 @@ body.page-admissions .pane-1 {
       width: 100%;
       clear: both;
       display: flex;
+
       p {
         &:nth-of-type(1) {
           width: 40%;
           text-align: right;
           padding-right: 10px;
         }
+
         &:nth-of-type(2) {
           width: 60%;
         }
       }
     }
   }
+
   h3 {
     margin-top: 80px;
     border: 1px solid #dbc073;
@@ -1881,9 +1929,11 @@ body.page-admissions .pane-1 {
   background-size: cover;
   background-position: center;
   height: 465px;
+
   a {
     text-decoration: none;
   }
+
   p {
     margin-top: 200px;
     border: 1px solid #dbc073;
@@ -1908,23 +1958,27 @@ body {
 }
 
 #mini-panel-join_the_tu_family_white_backgro {
+  height: 235px;
+  background-color: white;
+  clear: both;
+
   h3 {
     margin-top: 10px;
     width: 100%;
     text-align: center;
     color: $brand-gold;
     font-size: 37px;
+
     span {
       color: #365543;
     }
   }
-  height: 235px;
-  background-color: white;
-  clear: both;
+
   ul {
     list-style-type: none;
     width: 1150px;
     margin: 0 auto 0 auto;
+
     li {
       list-style-type: none;
       margin-left: 30px;
@@ -1932,6 +1986,7 @@ body {
       float: left;
       clear: none;
       text-align: center;
+
       a:nth-of-type(2) {
         margin: 46px 0 0 23px;
         text-decoration: none;
@@ -1940,8 +1995,10 @@ body {
         float: left;
         clear: none;
       }
+
       &:nth-of-type(1) {
         margin-left: 0;
+
         div {
           height: 114px;
           width: 114px;
@@ -1951,6 +2008,7 @@ body {
           clear: none;
         }
       }
+
       &:nth-of-type(2) div, &:nth-of-type(3) div {
         height: 114px;
         width: 114px;
@@ -1959,12 +2017,15 @@ body {
         float: left;
         clear: none;
       }
+
       &:nth-of-type(1) div {
         background-image: url('../images/icon-join-apply-now.png');
       }
+
       &:nth-of-type(2) div {
         background-image: url('../images/icon-join-visit-campus.png');
       }
+
       &:nth-of-type(3) div {
         background-image: url('../images/icon-join-request-info.png');
       }
@@ -1977,7 +2038,7 @@ body {
     display: flex;
     list-style-type: none;
     width: 100%;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
   }
 }
 
@@ -2031,7 +2092,7 @@ body {
 @media screen and (max-width: 1152px) {
   #mini-panel-join_the_tu_family_white_backgro ul li {
     &:nth-of-type(1) div, &:nth-of-type(2) div, &:nth-of-type(3) div {
-      margin: 0 auto 0 auto;
+      margin: 0 auto;
       float: none;
     }
   }
@@ -2039,52 +2100,63 @@ body {
 
 #mini-panel-homepage_submenu {
   display: flex;
+
   .pane-content {
 
   }
+
   a {
     text-decoration: none;
   }
+
   ul {
     float: left;
     clear: none;
     list-style-type: none;
     height: 87px;
     margin-bottom: 0;
+
     &:nth-of-type(2) {
       height: 77px;
     }
+
     li {
       float: left;
       clear: none;
     }
+
     &:nth-of-type(1) {
       background-color: #365543;
       width: 70%;
       font-size: 20px;
       padding-left: 5%;
       display: flex;
+
       li {
         margin-top: 30px;
         margin-right: 4%;
-        color: white;
+        color: #fff;
         line-height: 1;
+
         a {
-          color: white;
+          color: #fff;
         }
       }
     }
+
     &:nth-of-type(2) {
-      background-color: #ffffff;
+      background-color: #fff;
       width: 30%;
       font-size: 20px;
       padding-left: 30px;
       line-height: 1.5;
+
       li {
         margin-top: 23px;
         color: #365543;
         margin-right: 6px;
         font-weight: bold;
+
         a {
           color: #365543;
         }
@@ -2116,9 +2188,11 @@ body {
 @media screen and (max-width: 928px) {
   #mini-panel-homepage_submenu {
     background-color: #d8be7a;
+
     div {
       width: 100%;
     }
+
     ul:nth-of-type(2) {
       background-color: #d8be7a;
       width: 300px;
@@ -2132,7 +2206,9 @@ body {
   background-color: #365543 !important;
   margin-top: 0 !important;
   padding: 40px 0 87px;
-  a, h3 a {
+
+  a,
+  h3 a {
     color: white !important;
   }
 }
@@ -2149,7 +2225,9 @@ body {
 @media (max-width: 1150px) {
   #footer div.menu-block-wrapper ul {
     margin-left: 20px;
+
     div {
+
     }
   }
 }
@@ -2158,6 +2236,7 @@ body {
   #footer div.menu-block-wrapper ul {
     width: 380px;
     font-size: 19px;
+
     div {
       margin: 0 !important;
     }
@@ -2188,34 +2267,42 @@ body {
 }
 
 .menu-name-menu-wet-mid-footer {
+  height: 140px;
+
   .footer-logo {
     display: block;
     padding-top: 42px;
     padding-left: 50px;
   }
-  height: 140px;
+
   ul {
     margin: 36px 0 0 10%;
     float: left;
     clear: none;
+
     div {
       &.span-2:nth-of-type(1) {
         width: 190px;
         margin-left: 93px;
       }
+
       &:nth-of-type(2) {
         width: 160px;
         margin-right: 100px;
       }
+
       &:nth-of-type(3) {
         width: 240px;
       }
+
       &:nth-of-type(4) {
         width: 170px;
       }
+
       &:nth-of-type(5) {
         width: 108px;
       }
+
       &.span-2 {
         float: left;
         clear: none;
@@ -2230,11 +2317,13 @@ body.page-apply-now {
   background-color: transparent;
   background-size: cover;
   background-position: center;
+
   h1 {
     text-align: center;
     color: white;
     text-decoration: underline;
   }
+
   main {
     background-color: transparent;
   }
@@ -2243,6 +2332,7 @@ body.page-apply-now {
 ul {
   &#icons-apply-now-landing-page-first {
     width: 950px;
+
     div p {
       color: #365543;
       text-align: center;
@@ -2252,12 +2342,15 @@ ul {
       text-decoration: none;
     }
   }
+
   &#icons-apply-now-landing-page-mid {
     width: 950px;
   }
+
   &#icons-apply-now-landing-page-last {
     width: 490px;
   }
+
   &#icons-apply-now-landing-page-mid div p, &#icons-apply-now-landing-page-last div p {
     color: #365543;
     text-align: center;
@@ -2265,29 +2358,35 @@ ul {
     width: 100%;
     font-size: 30px;
   }
+
   &#icons-apply-now-landing-page-first, &#icons-apply-now-landing-page-mid, &#icons-apply-now-landing-page-last {
     clear: both;
     list-style-type: none !important;
     margin: 0 auto;
   }
+
   &#icons-apply-now-landing-page-first a, &#icons-apply-now-landing-page-mid a, &#icons-apply-now-landing-page-last a {
     text-decoration: none;
   }
+
   &#icons-apply-now-landing-page-first a div {
     width: 450px;
     height: 260px;
     display: flex;
   }
+
   &#icons-apply-now-landing-page-mid a div, &#icons-apply-now-landing-page-last a div {
     width: 220px;
     height: 150px;
     display: flex;
   }
+
   &#icons-apply-now-landing-page-first li {
     width: 450px;
     height: 260px;
     float: left;
     background: rgba(255, 255, 255, 1);
+
     &:nth-of-type(1) {
       clear: none;
       margin: 0 10px 10px 0;
@@ -2295,6 +2394,7 @@ ul {
       background-repeat: no-repeat;
       background-position: 140px 9px;
     }
+
     &:nth-of-type(2) {
       clear: right;
       margin: 0 0 10px 0;
@@ -2303,22 +2403,26 @@ ul {
       background-position: 140px 9px;
     }
   }
+
   &#icons-apply-now-landing-page-mid li, &#icons-apply-now-landing-page-last li {
     width: 220px;
     height: 150px;
     margin: 0 10px 10px 0;
     background: rgba(255, 255, 255, 0.9);
   }
+
   &#icons-apply-now-landing-page-mid li {
     &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       background-repeat: no-repeat;
     }
   }
+
   &#icons-apply-now-landing-page-last li {
     &:nth-of-type(1), &:nth-of-type(2) {
       background-repeat: no-repeat;
     }
   }
+
   &#icons-apply-now-landing-page-mid li {
     &:nth-of-type(1) {
       float: left;
@@ -2326,20 +2430,24 @@ ul {
       background-image: url('../images/icon-transfer.png');
       background-position: 70px 16px;
       background-size: 40%;
+
       div p {
         margin-top: 100px;
       }
     }
+
     &:nth-of-type(2) {
       float: left;
       clear: none;
       background-image: url('../images/icon-hat-credit-plus.png');
       background-position: 40px 22px;
+
       div p {
         margin-top: 110px;
         font-size: 22px;
       }
     }
+
     &:nth-of-type(3) {
       float: left;
       clear: none;
@@ -2347,6 +2455,7 @@ ul {
       background-position: 49px 23px;
       background-size: 57%;
     }
+
     &:nth-of-type(4) {
       float: left;
       clear: right;
@@ -2355,6 +2464,7 @@ ul {
       margin-right: 0 !important;
     }
   }
+
   &#icons-apply-now-landing-page-last li {
     &:nth-of-type(1) {
       float: left;
@@ -2362,12 +2472,14 @@ ul {
       background-image: url('../images/icon-ohio-off-campus.png');
       background-position: 63px 6px;
     }
+
     &:nth-of-type(2) {
       float: left;
       clear: right;
       background-image: url('../images/icon-shield-veterans.png');
       background-position: 74px 14px;
       margin-right: 0 !important;
+
       div p {
         margin-top: 110px;
         font-size: 22px;
@@ -2391,11 +2503,13 @@ body.page-admissions {
   background-color: transparent;
   background-size: cover;
   background-position: center;
+
   h1 {
     text-align: center;
     color: white;
     text-decoration: underline;
   }
+
   main {
     background-color: transparent;
   }
@@ -2404,6 +2518,7 @@ body.page-admissions {
 ul {
   &#icons-admissions-landing-page-first {
     width: 870px;
+
     div p {
       color: #365543;
       text-align: center;
@@ -2413,8 +2528,10 @@ ul {
       text-decoration: none;
     }
   }
+
   &#icons-admissions-landing-page-last {
     width: 1000px;
+
     div p {
       color: #365543;
       text-align: center;
@@ -2423,29 +2540,35 @@ ul {
       font-size: 30px;
     }
   }
+
   &#icons-admissions-landing-page-first, &#icons-admissions-landing-page-last {
     clear: both;
     list-style-type: none !important;
     margin: 0 auto 0 auto;
   }
+
   &#icons-admissions-landing-page-first a, &#icons-admissions-landing-page-last a {
     text-decoration: none;
   }
+
   &#icons-admissions-landing-page-first a div {
     width: 410px;
     height: 320px;
     display: flex;
   }
+
   &#icons-admissions-landing-page-last a div {
     width: 310px;
     height: 150px;
     display: flex;
   }
+
   &#icons-admissions-landing-page-first li {
     width: 410px;
     height: 320px;
     float: left;
     background: rgba(255, 255, 255, 0.85);
+
     &:nth-of-type(1) {
       clear: none;
       margin: 0 10px 10px 0;
@@ -2453,6 +2576,7 @@ ul {
       background-repeat: no-repeat;
       background-position: 120px 30px;
     }
+
     &:nth-of-type(2) {
       clear: right;
       margin: 0 0 10px 0;
@@ -2461,45 +2585,53 @@ ul {
       background-position: 120px 30px;
     }
   }
+
   &#icons-admissions-landing-page-last li {
     width: 310px;
     height: 150px;
     margin: 0 10px 10px 0;
     background-color: white;
     background: rgba(255, 255, 255, 0.85);
+
     &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6) {
       background-repeat: no-repeat;
     }
+
     &:nth-of-type(1) {
       float: left;
       clear: left;
       background-image: url('../images/icon-transfer.png');
       background-position: 100px 0;
     }
+
     &:nth-of-type(2) {
       float: left;
       clear: none;
       background-image: url('../images/icon-laptop-online.png');
       background-position: 87px 11px;
     }
+
     &:nth-of-type(3) {
       float: left;
       clear: right;
       background-image: url('../images/icon-hat-credit-plus.png');
       background-position: 80px 10px;
     }
+
     &:nth-of-type(4) {
       float: left;
       clear: none;
       background-image: url('../images/icon-globe-international.png');
       background-position: 110px 8px;
     }
+
     &:nth-of-type(5) {
       float: left;
       clear: none;
       background-image: url('../images/icon-ohio-off-campus.png');
       background-position: 110px 10px;
     }
+
     &:nth-of-type(6) {
       float: left;
       clear: right;
