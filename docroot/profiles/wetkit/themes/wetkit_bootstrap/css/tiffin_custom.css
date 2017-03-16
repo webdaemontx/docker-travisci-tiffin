@@ -3990,6 +3990,11 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
 	width: 530px !important;
 }
 
+.pane-undergraduate-admissions-panel-pane-16 h2 {
+	background-position-x: 171px !important;
+	width: 170px !important;
+}
+
 .page-international ol.breadcrumb,
 .page-about ol.breadcrumb,
 .page-campuslife ol.breadcrumb,
@@ -5592,6 +5597,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	.page-hero h1, .page-hero h2 {
 		font-size: 48px;
 	}
+}
+
+#all-programs h1 {
+	color: #385443;
 }
 
 .steps-container {
