@@ -94,13 +94,8 @@ function tiffin_npc_success() {
 
   $tuition = 36600;
 
-  $total_finaid = $scholarship[1] + $pell_grant[0] + $work_study +
-    $subsidized_stafford_loan + $unsubsidized_stafford_loan + $ocog;
+  $total_finaid = $scholarship[1] + $pell_grant[0]  + $subsidized_stafford_loan + $unsubsidized_stafford_loan + $ocog;
 
-  //$finaidcost = $scholarship[1] + $pell_grant[0] + 5500;
-  $finaidcost = $scholarship[1] + $pell_grant[0];
-
-  //$outofpocket = $tuition - $scholarship[1] - $pell_grant[0] - 5500;
   $outofpocket = $tuition - $total_finaid;
 
 
@@ -1020,16 +1015,19 @@ function _get_ocog($efc, $ohio_resident) {
   *
    * @return int $unsubsidized_stafford_loan
    */
-  function  _get_unsubsidized_stafford_loan($born_before_1973, $in_masters_or_doctorate_program,
+  function _get_unsubsidized_stafford_loan($born_before_1973,
+                                           $in_masters_or_doctorate_program,
                                             $married, $have_dependent_children, $parents_deceased, $veteran, $active_duty,
                                             $other_dependents, $emancipated_or_guardianship, $unaccompanied_youth,
                                             $homeless_youth) {
     if ($born_before_1973 == 'yes' || $in_masters_or_doctorate_program == 'yes' || $married == 'yes' || $have_dependent_children == 'yes' || $parents_deceased == 'yes' || $veteran == 'yes' || $active_duty == 'yes' || $other_dependents == 'yes' || $emancipated_or_guardianship == 'yes' || $unaccompanied_youth == 'yes' || $homeless_youth == 'yes') {
 
+
       $unsubsidized_stafford_loan = 6000;
     } else {
       $unsubsidized_stafford_loan = 2000;
     }
+
    return $unsubsidized_stafford_loan;
   }
 
