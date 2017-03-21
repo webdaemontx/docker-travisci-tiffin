@@ -1,0 +1,48 @@
+/* =============================================================================
+   Bean
+   ========================================================================== */
+
+.bean-type-list {
+  list-style-type: none;
+  padding-left: 0px;
+  li {
+    margin-bottom: 15px;
+    a {
+      font-weight: bold;
+      .icon {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+div#slide-panel {
+  background: #fffefb;
+  border-left: 1px solid $brand-gold;
+  border-top: 1px solid $brand-gold;
+  border-bottom: 1px solid $brand-gold;
+  height: 200px;
+  .field-name-title-field {
+    text-align: center;
+    background: $brand-gold;
+    color: $brand-green;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  ul {
+    display: block;
+    list-style-type: none;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+    li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+      margin: .5em 0 1em;
+    }
+  }
+}
+

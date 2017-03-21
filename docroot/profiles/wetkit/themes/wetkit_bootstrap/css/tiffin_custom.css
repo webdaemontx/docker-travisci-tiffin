@@ -4949,6 +4949,59 @@ body.node-type-program .pane-node-field-degree-type {
 	padding: 0 10px 1px 20px;
 }
 
+/* =============================================================================
+   Bean
+   ========================================================================== */
+.bean-type-list {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+.bean-type-list li {
+	margin-bottom: 15px;
+}
+
+.bean-type-list li a {
+	font-weight: bold;
+}
+
+.bean-type-list li a .icon {
+	padding-left: 0px;
+}
+
+div#slide-panel {
+	background: #fffefb;
+	border-left: 1px solid #d9bf75;
+	border-top: 1px solid #d9bf75;
+	border-bottom: 1px solid #d9bf75;
+	height: 200px;
+}
+
+div#slide-panel .field-name-title-field {
+	text-align: center;
+	background: #d9bf75;
+	color: #385443;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+div#slide-panel ul {
+	display: block;
+	list-style-type: none;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+div#slide-panel ul li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+	margin: .5em 0 1em;
+}
+
 .view-id-events-landing .img-responsive, .pane-cabinet-members .img-responsive, .pane-board-members .img-responsive {
 	margin: 10px auto 18px auto;
 }
