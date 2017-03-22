@@ -3629,14 +3629,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	padding: 0 0 60px;
 }
 
-.pane-advancement-hero-top {
-	height: 355px;
-}
-
-.pane-alumni-hero-top {
-	height: 565px;
-}
-
 /*
  * Commented these lines out as they are duplicated ~ line 4037 with a class
  * definition of .pane-giving-hero-top.
@@ -4108,18 +4100,6 @@ body.node-type-program .pane-node-field-degree-type {
 	-webkit-background-size: cover;
 	        background-size: cover;
 	background-position: center;
-}
-
-.pane-advancement-hero-top {
-	height: 355px;
-}
-
-.pane-alumni-hero-top {
-	height: 565px;
-}
-
-.pane-giving-hero-top {
-	/*background-position: 0 0px !important;*/
 }
 
 /*.pane-advancement-hero-top, .pane-alumni-hero-top {
