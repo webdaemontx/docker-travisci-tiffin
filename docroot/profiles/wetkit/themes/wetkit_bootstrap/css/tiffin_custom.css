@@ -3448,8 +3448,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	font-size: 22px;
 }
 
+/* LEFT NAVIGATION SIDEBAR - This config is the desired look sitewide. */
+/* Bookmark #1 */
 .menu-block-wrapper .nav > .active-trail h3 a {
-	background-color: #385443 !important;
+	background-color: #52735f !important;
 	color: #D9C072 !important;
 }
 
