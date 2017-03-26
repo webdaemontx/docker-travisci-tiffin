@@ -22,3 +22,5 @@ docroot/profiles/wetkit/themes/wetkit_bootstrap/config.rb
 
 
 docroot/sites/default/
+
+docroot/profiles/wetkit/themes/wetkit_bootstrap/npm_post\.sh
