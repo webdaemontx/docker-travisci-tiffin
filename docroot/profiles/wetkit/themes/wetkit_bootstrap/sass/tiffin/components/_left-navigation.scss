@@ -5,36 +5,52 @@
     a {
       background-color: #fff;
       border: none !important;
+
       &:visited {
         color: $brand-gold;
       }
     }
   }
-}
 
- .list-group-item {
-   background-color: #eaeaea;
-   border: 0;
- }
+  .active-trail {
+    .menu {
+      & > li {
+        padding-top: 10px !important;
+        & > a {
+          padding: 0;
+        }
+      }
+    }
+    .list-group-item {
+      background-color: #eaeaea;
+      border: 0;
 
+      &.active {
+        background-color: $brand-green-light !important;
+        font-style: italic;
 
-
-
-  &.active {
-    background-color: $brand-green-light !important;
+        &:hover,
+        &:focus {
+          color: $brand-gold;
+          border-width: 8px;
+          border-color: #385443;
+        }
+      }
+    }
   }
-   &:first-child {
-     border: 0;
-     border-top-right-radius:0;
-     border-top-left-radius:0;
-   }
-   &:last-child {
-     border: 0;
-     border-bottom-right-radius: 0;
-     border-bottom-left-radius: 0;
-   }
-}
 
+  &:first-child {
+    border: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &:last-child {
+    border: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
 
 .nav > li {
   > a {
@@ -44,7 +60,7 @@
   }
 }
 
-#wb-sec{
+#wb-sec {
   &.list-group-item {
     &:first-child {
       border: none;
@@ -77,7 +93,6 @@
   }
 }
 
-
 #wb-sec h2.pane-title {
   background: $brand-green;
   color: $white;
@@ -101,8 +116,6 @@
 }
 
 .menu-block-wrapper > nav > li {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   border-radius: 0;
   border-style: solid;
   border-width: 0;
@@ -118,11 +131,6 @@
   background-color: #eaeaea;
   border-color: #b5c1d4;
   color: #333;
-  -webkit-transition: background-color 300ms ease-out;
-  -o-transition: background-color 300ms ease-out;
-  transition: background-color 300ms ease-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border: 0;
   border-left: 3px solid #385443;
@@ -133,9 +141,11 @@
 #wb-sec ul.menu.nav.active-trail {
   background-color: $brand-green-light;
   color: $white;
+
   a.list-group-item {
     font-style: italic;
   }
+
   a {
     color: $white;
     font-style: italic;
@@ -149,7 +159,6 @@
     text-decoration: none;
   }
 }
-
 
 .pane-menu-about-tu .active-trail {
   background-color: #C09212;

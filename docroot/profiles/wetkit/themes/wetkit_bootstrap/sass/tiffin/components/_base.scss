@@ -137,8 +137,6 @@ div.pane-board-members {
   }
 }
 
-
-
 #social_media_home {
   height: 224px;
   ///*background-attachment: fixed;*/
@@ -3307,25 +3305,26 @@ ul {
     h3 {
       padding: 0 !important;
     }
-    > {
-      li > h3 a {
+    & > {
+      li > a {
         &:hover, &:focus {
           background-color: #f8f8f8;
           color: $brand-green;
           border-width: 8px;
         }
       }
-      .active-trail h3 a {
+
+      .active-trail a {
         background-color: $brand-green;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           background-color: #384A43;
         }
       }
     }
   }
-  > .nav > li > h3 a {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+  > .nav > li > a {
     border-radius: 0;
     border-style: solid;
     border-width: 0;
@@ -3341,11 +3340,6 @@ ul {
     background-color: #eaeaea;
     border-color: #b5c1d4;
     color: #333;
-    -webkit-transition: background-color 300ms ease-out;
-    -o-transition: background-color 300ms ease-out;
-    transition: background-color 300ms ease-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     border: 0;
     border-left: 3px solid $brand-green;
@@ -4135,8 +4129,6 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
   }
   background: #365543 !important;
 }
-
-
 
 //.pane-the-faculty-for-program-pages {
 //  width: 80%;

@@ -3207,23 +3207,21 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 	padding: 0 !important;
 }
 
-.menu-block-wrapper .nav > li > h3 a:hover, .menu-block-wrapper .nav > li > h3 a:focus {
+.menu-block-wrapper .nav > li > a:hover, .menu-block-wrapper .nav > li > a:focus {
 	background-color: #f8f8f8;
 	color: #385443;
 	border-width: 8px;
 }
 
-.menu-block-wrapper .nav > .active-trail h3 a {
+.menu-block-wrapper .nav > .active-trail a {
 	background-color: #385443;
 }
 
-.menu-block-wrapper .nav > .active-trail h3 a:hover, .menu-block-wrapper .nav > .active-trail h3 a:focus {
+.menu-block-wrapper .nav > .active-trail a:hover, .menu-block-wrapper .nav > .active-trail a:focus {
 	background-color: #384A43;
 }
 
-.menu-block-wrapper > .nav > li > h3 a {
-	-webkit-appearance: none;
-	-moz-appearance: none;
+.menu-block-wrapper > .nav > li > a {
 	border-radius: 0;
 	border-style: solid;
 	border-width: 0;
@@ -3239,9 +3237,6 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 	background-color: #eaeaea;
 	border-color: #b5c1d4;
 	color: #333;
-	-webkit-transition: background-color 300ms ease-out;
-	-o-transition: background-color 300ms ease-out;
-	transition: background-color 300ms ease-out;
 	-webkit-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -5982,52 +5977,37 @@ fieldset#edit-academic-scholarship legend {
 	color: #d9bf75;
 }
 
-a.list-group-item {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	border-radius: 0;
-	border-style: solid;
-	border-width: 0;
-	cursor: pointer;
-	font-weight: 400;
-	line-height: normal;
-	position: relative;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 13px;
-	padding: 14px 16px 15px;
-	width: 100%;
-	background-color: #eaeaea;
-	border-color: #b5c1d4;
-	color: #333;
-	-webkit-transition: background-color 300ms ease-out;
-	-o-transition: background-color 300ms ease-out;
-	transition: background-color 300ms ease-out;
-	-webkit-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	border: 0;
-	border-left: 3px solid #385443;
-	margin: 0;
-	text-align: left;
+#wb-sec .active-trail .menu > li {
+	padding-top: 10px !important;
 }
 
-.list-group-item {
+#wb-sec .active-trail .menu > li > a {
+	padding: 0;
+}
+
+#wb-sec .active-trail .list-group-item {
 	background-color: #eaeaea;
 	border: 0;
 }
 
-.list-group-item.active {
+#wb-sec .active-trail .list-group-item.active {
 	background-color: #52735f !important;
+	font-style: italic;
 }
 
-.list-group-item:first-child {
+#wb-sec .active-trail .list-group-item.active:hover, #wb-sec .active-trail .list-group-item.active:focus {
+	color: #d9bf75;
+	border-width: 8px;
+	border-color: #385443;
+}
+
+#wb-sec:first-child {
 	border: 0;
 	border-top-right-radius: 0;
 	border-top-left-radius: 0;
 }
 
-.list-group-item:last-child {
+#wb-sec:last-child {
 	border: 0;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
@@ -6082,8 +6062,6 @@ a.list-group-item {
 }
 
 .menu-block-wrapper > nav > li {
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	border-radius: 0;
 	border-style: solid;
 	border-width: 0;
@@ -6099,9 +6077,6 @@ a.list-group-item {
 	background-color: #eaeaea;
 	border-color: #b5c1d4;
 	color: #333;
-	-webkit-transition: background-color 300ms ease-out;
-	-o-transition: background-color 300ms ease-out;
-	transition: background-color 300ms ease-out;
 	-webkit-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
