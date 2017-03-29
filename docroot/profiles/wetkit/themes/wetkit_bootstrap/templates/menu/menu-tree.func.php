@@ -25,9 +25,26 @@ function wetkit_bootstrap_menu_tree(&$variables) {
 
 /**
  * Overrides theme_menu_tree().
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *     - tree: An HTML string containing the menu tree's items.
+ *
+ * @return string
+ *   The constructed HTML based on which string is present within the tree
+ *
+ * @see template_preprocess_menu_tree()
+ * @see theme_menu_tree()
+ *
+ * @ingroup theme_functions
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
-  return '<ul class="list-inline menu" role="menubar">' . $variables['tree'] . '</ul>';
+  if (strpos($variables['tree'], "first leaf menu-mlid-5246") == FALSE) {
+    return '<ul class="menu nav">' . $variables['tree'] . '</ul>';
+  }
+  else {
+    return '<ul class="list-inline menu" role="menubar">' . $variables['tree'] . '</ul>';
+  }
 }
 
 /**

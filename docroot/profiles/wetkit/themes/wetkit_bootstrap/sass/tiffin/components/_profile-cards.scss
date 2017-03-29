@@ -4,6 +4,16 @@
     margin-bottom: 24px;
   }
 }
+
+.grid-container {
+  width: 600px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 263px);
+  //grid-template-rows: 400px 400px 400px;
+  grid-auto-flow: column;
+}
+
 .profile-card {
   margin: 0 0 30px;
   padding: 0;

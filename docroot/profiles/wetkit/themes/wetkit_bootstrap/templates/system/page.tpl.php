@@ -79,6 +79,7 @@
       <div class="<?php print $container_class; ?>">
         <div class="row">
           <section id="wb-lng" class="visible-md visible-lg">
+              <p>Right before Menu_Bar variable is printed</p>
             <?php print $menu_bar; ?>
           </section>
           <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">

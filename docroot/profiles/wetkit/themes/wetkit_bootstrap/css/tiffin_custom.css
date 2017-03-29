@@ -132,39 +132,6 @@ div.pane-board-members .img-responsive {
 	margin: 0 auto;
 }
 
-#wb-sec h2.pane-title {
-	height: inherit;
-	width: inherit;
-	position: relative;
-	background: #385443;
-	padding: 10px 5px 10px 5px;
-	font-size: 22px;
-	color: #fff;
-	font-weight: normal;
-}
-
-.pane-menu-about-tu .active-trail {
-	background-color: #C09212;
-	color: #fff;
-}
-
-.pane-menu-about-tu .active-trail a.list-group-item {
-	font-style: italic;
-}
-
-.pane-menu-about-tu .active-trail h3 {
-	border: 0 !important;
-}
-
-.pane-menu-about-tu .active-trail h3 a {
-	color: white !important;
-	font-style: italic;
-}
-
-#wb-sec h3 {
-	border: 0 !important;
-}
-
 #social_media_home {
 	height: 224px;
 	background: url("../images/image-homepage-socialmedia.jpg") no-repeat center;
@@ -3285,22 +3252,26 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 
 /************** Brought in from block: needs to get merged in with above ********************/
-nav#wb-sec div.menu-block-wrapper li.leaf a {
-	color: #365543 !important;
-}
+/*
+ * Moved the block below to _left-navigation.scss
 
-nav#wb-sec div.menu-block-wrapper li.leaf a:visited {
-	color: #365543 !important;
+nav#wb-sec div.menu-block-wrapper {
+  li {
+    &.leaf a {
+      color: #365543 !important;
+      &:visited {
+        color: #365543 !important;
+      }
+    }
+    a.active-trail, &.leaf a.active-trail, h3 a.active-trail {
+      color: $brand-gold !important;
+    }
+  }
+  .expanded ul li {
+    padding-top: 10px !important;
+  }
 }
-
-nav#wb-sec div.menu-block-wrapper li a.active-trail, nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail, nav#wb-sec div.menu-block-wrapper li h3 a.active-trail {
-	color: #d9bf75 !important;
-}
-
-nav#wb-sec div.menu-block-wrapper .expanded ul li {
-	padding-top: 10px !important;
-}
-
+*/
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-panel-pane-2 h2.pane-title {
 	background-color: transparent;
 	width: 210px;
@@ -4006,10 +3977,6 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
 
 #mb-pnl .sec-pnl a, #mb-pnl .sec-pnl summary {
 	color: #d9bf75;
-}
-
-nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
-	color: #d9bf75 !important;
 }
 
 .btn-primary {
@@ -5796,6 +5763,16 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
+.grid-container {
+	width: 600px;
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 10px;
+	-ms-grid-columns: (263px)[4];
+	    grid-template-columns: repeat(4, 263px);
+	grid-auto-flow: column;
+}
+
 .profile-card {
 	margin: 0 0 30px;
 	padding: 0;
@@ -5994,6 +5971,185 @@ fieldset#edit-academic-scholarship legend {
 		        transform: translateY(-50%);
 		right: 15px;
 	}
+}
+
+#wb-sec div.pane-content.nav > li a {
+	background-color: #fff;
+	border: none !important;
+}
+
+#wb-sec div.pane-content.nav > li a:visited {
+	color: #d9bf75;
+}
+
+a.list-group-item {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+	border-style: solid;
+	border-width: 0;
+	cursor: pointer;
+	font-weight: 400;
+	line-height: normal;
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 13px;
+	padding: 14px 16px 15px;
+	width: 100%;
+	background-color: #eaeaea;
+	border-color: #b5c1d4;
+	color: #333;
+	-webkit-transition: background-color 300ms ease-out;
+	-o-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border: 0;
+	border-left: 3px solid #385443;
+	margin: 0;
+	text-align: left;
+}
+
+.list-group-item {
+	background-color: #eaeaea;
+	border: 0;
+}
+
+.list-group-item.active {
+	background-color: #52735f !important;
+}
+
+.list-group-item:first-child {
+	border: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.list-group-item:last-child {
+	border: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.nav > li > a:visited {
+	color: #d9bf75;
+}
+
+#wb-sec.list-group-item:first-child {
+	border: none;
+}
+
+#wb-sec.list-group-item:last-child {
+	border: none;
+}
+
+#wb-sec.list-group-item ul.menu.nav.expanded.ul {
+	background-color: red;
+	list-style: none;
+	padding-bottom: 2.5px;
+	padding-left: 0;
+}
+
+#wb-sec.list-group-item ul.li > a.list-group-item {
+	color: #385443;
+}
+
+#wb-sec h2.pane-title {
+	background: #385443;
+	color: #fff;
+	font-size: 1.5em;
+	font-weight: normal;
+	height: inherit;
+	padding: 10px 5px;
+	position: relative;
+	text-transform: uppercase;
+	width: inherit;
+}
+
+#wb-sec h2.pane-title a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#wb-sec h2.pane-title a:visited {
+	text-decoration: none;
+}
+
+#wb-sec h2.pane-title a:hover {
+	text-decoration: underline;
+}
+
+.menu-block-wrapper > nav > li {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+	border-style: solid;
+	border-width: 0;
+	cursor: pointer;
+	font-weight: 400;
+	line-height: normal;
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 13px;
+	padding: 14px 16px 15px;
+	width: 100%;
+	background-color: #eaeaea;
+	border-color: #b5c1d4;
+	color: #333;
+	-webkit-transition: background-color 300ms ease-out;
+	-o-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	border: 0;
+	border-left: 3px solid #385443;
+	margin: 0;
+	text-align: left;
+}
+
+#wb-sec ul.menu.nav.active-trail {
+	background-color: #52735f;
+	color: #fff;
+}
+
+#wb-sec ul.menu.nav.active-trail a.list-group-item {
+	font-style: italic;
+}
+
+#wb-sec ul.menu.nav.active-trail a {
+	color: #fff;
+	font-style: italic;
+}
+
+#wb-sec h3 {
+	border: 0 !important;
+}
+
+#wb-sec h3 a {
+	color: #d9bf75 !important;
+	text-decoration: none;
+}
+
+.pane-menu-about-tu .active-trail {
+	background-color: #C09212;
+	color: #fff;
+}
+
+.pane-menu-about-tu .active-trail a.list-group-item {
+	font-style: italic;
+}
+
+.pane-menu-about-tu .active-trail h3 {
+	border: 0 !important;
+}
+
+.pane-menu-about-tu .active-trail h3 a {
+	color: white !important;
+	font-style: italic;
 }
 
 .ccp-container {

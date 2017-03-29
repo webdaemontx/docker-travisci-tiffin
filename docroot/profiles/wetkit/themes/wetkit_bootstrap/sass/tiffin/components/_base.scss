@@ -137,38 +137,7 @@ div.pane-board-members {
   }
 }
 
-#wb-sec h2.pane-title {
-  height: inherit;
-  width: inherit;
-  position: relative;
-  background: $brand-green;
-  padding: 10px 5px 10px 5px;
-  font-size: 22px;
-  color: #fff;
-  font-weight: normal;
-}
 
-.pane-menu-about-tu .active-trail {
-  background-color: #C09212;
-  color: #fff;
-
-  a.list-group-item {
-    font-style: italic;
-  }
-
-  h3 {
-    border: 0 !important;
-
-    a {
-      color: white !important;
-      font-style: italic;
-    }
-  }
-}
-
-#wb-sec h3 {
-  border: 0 !important;
-}
 
 #social_media_home {
   height: 224px;
@@ -3386,6 +3355,8 @@ ul {
 }
 
 /************** Brought in from block: needs to get merged in with above ********************/
+/*
+ * Moved the block below to _left-navigation.scss
 
 nav#wb-sec div.menu-block-wrapper {
   li {
@@ -3403,6 +3374,7 @@ nav#wb-sec div.menu-block-wrapper {
     padding-top: 10px !important;
   }
 }
+*/
 
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-panel-pane-2 h2.pane-title {
   background-color: transparent;
@@ -4164,9 +4136,7 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
   background: #365543 !important;
 }
 
-nav#wb-sec div.menu-block-wrapper li.leaf a.active-trail {
-  color: $brand-gold !important;
-}
+
 
 //.pane-the-faculty-for-program-pages {
 //  width: 80%;

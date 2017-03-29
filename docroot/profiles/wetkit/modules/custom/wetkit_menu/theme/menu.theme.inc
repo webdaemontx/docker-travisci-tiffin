@@ -271,7 +271,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
   if ($element['#below']  || ($element['#original_link']['has_children'] && $element['#original_link']['depth'] == 1 && count($element['#below']) == 0)) {
     // Prevent dropdown functions from being added to management menu so it
     // does not affect the navbar module.
-    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+    if (($element['#original_link']['menu_name'] == 'main-menu') && (module_exists('menu'))) {
       $sub_menu = drupal_render($element['#below']);
       if (isset($element['#below']['#below'])) {
         $sub_sub_menu = drupal_render($element['#below']['#below']);
@@ -285,7 +285,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
-      // Set dropdown trigger element to # to prevent inadvertant page loading
+      // Set dropdown trigger element to # to prevent inadvertent page loading
       // when a submenu link is clicked.
       $element['#localized_options']['attributes']['data-target'] = '#';
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
@@ -309,7 +309,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
-      // Set dropdown trigger element to # to prevent inadvertant page loading
+      // Set dropdown trigger element to # to prevent inadvertent page loading
       // when a submenu link is clicked.
       $element['#localized_options']['attributes']['data-target'] = '#';
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
@@ -335,7 +335,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
-      // Set dropdown trigger element to # to prevent inadvertant page loading
+      // Set dropdown trigger element to # to prevent inadvertent page loading
       // when a submenu link is clicked.
       $element['#localized_options']['attributes']['data-target'] = '#';
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
@@ -394,7 +394,7 @@ function wetkit_menu_menu_link_menu_block_section($variables) {
       $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
-      // Set dropdown trigger element to # to prevent inadvertant page loading
+      // Set dropdown trigger element to # to prevent inadvertent page loading
       // when a submenu link is clicked.
       $element['#localized_options']['attributes']['data-target'] = '#';
       $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
@@ -482,6 +482,12 @@ function wetkit_menu_menu_tree__menu_block($variables) {
 
 /**
  * Custom array_depth implementation.
+ *
+ * @param array $array
+ *   Array of values for max_depth with a max of 4
+ *
+ * @return max_depth
+ *   The maximum depth level of submenus for left navigation sidebar
  */
 function _menu_depth(array $array) {
   $max_depth = 4;

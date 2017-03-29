@@ -69,7 +69,7 @@ function wetkit_menu_preprocess_menu_block_wrapper(&$variables) {
     }
   }
 
-  // Force a theme_menu_tree hook based on the menu-link theme
+  // Force a theme_menu_tree hook based on the menu-link theme.
   if (isset($variables['config']['theme']) && $variables['config']['theme'] == 'menu_link__menu_block__wxt_group_list'){
     if (isset($variables['content']['#theme_wrappers'][0])) {
       $key = array_search('menu_tree__menu_block', $variables['content']['#theme_wrappers'][0]);
