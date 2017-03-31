@@ -1,6 +1,6 @@
 # Ignore configuration files that may contain sensitive information.
-docroot/sites/*/settings*.php
-docroot/sites/default/settings.php
+#docroot/sites/*/settings*.php
+#docroot/sites/default/settings.php
 
 
 # Ignore paths that contain user-generated content.
@@ -18,11 +18,6 @@ docroot/sites/*/private
 # Local SCSS/Compass configurations
 docroot/profiles/wetkit/themes/wetkit_bootstrap/config.rb
 
-
-
-
-docroot/sites/default/
-
 docroot/profiles/wetkit/themes/wetkit_bootstrap/npm_post\.sh
 
 docroot/sites/all/modules/contrib/coder/
@@ -30,3 +25,4 @@ docroot/sites/all/modules/contrib/coder/
 docroot/sites/all/modules/contrib/grammar_parser/
 
 docroot/sites/all/modules/contrib/grammar_parser_lib/
+docroot/profiles/wetkit/modules/contrib/jquery_update/replace/jquery/3.2.0/
