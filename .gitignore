@@ -6,8 +6,8 @@
 # Ignore paths that contain user-generated content.
 acquia-files
 docroot/files
-docroot/sites/*/files
-docroot/sites/*/private
+#docroot/sites/*/files
+#docroot/sites/*/private
 
 .DS_Store
 .ftpquota
