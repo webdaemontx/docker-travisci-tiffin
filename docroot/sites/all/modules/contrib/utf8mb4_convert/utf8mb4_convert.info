@@ -1,0 +1,6 @@
+name = MySQL utf8mb4 converter
+description = Converts MySQL dump files to support utf8mb4 for restores.
+version = 7x.01-alpha
+core = 7.x
+package = Development
+configure = admin/config/development/utf8mb4

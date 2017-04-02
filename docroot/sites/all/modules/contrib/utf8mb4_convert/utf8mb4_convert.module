@@ -1,0 +1,68 @@
+<?php
+
+function utf8mb4_convert_menu () {
+  $items = array();
+  $items['admin/config/development/utf8mb4-convert'] = array(
+    'title' => 'MySQL utf8mb4 Conversion Profiles',
+    'description' => 'Converts mysqldump files to support utf8mb4 when used to restore',
+    'page callback' => 'utf8mb4_convert_profile_list',
+    'access arguments' => array('administer utf8mb4 convert'),
+    'weight' => 10,
+    'file' => 'utf8mb4_convert.admin.inc',
+  );
+  $items['admin/config/development/utf8mb4-convert/list'] = array(
+    'title' => 'Profile List',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10
+  );
+  $items['admin/config/development/utf8mb4-convert/create-profile'] = array(
+    'title' => 'Add new profile',
+    'description' => 'Converts mysqldump files to support utf8mb4 when used to restore',
+    'page callback' => 'utf8mb4_convert_create_profile',
+    'access arguments' => array('administer utf8mb4 convert'),
+    'weight' => 10,
+    'file' => 'utf8mb4_convert.admin.inc',
+    'parent' => 'admin/config/development/utf8mb4-convert',
+    'type' => MENU_LOCAL_ACTION,
+  );
+  $items['admin/config/development/utf8mb4-convert/edit-profile/%'] = array(
+    'title' => 'Edit profile',
+    'description' => 'Converts mysqldump files to support utf8mb4 when used to restore',
+    'page callback' => 'utf8mb4_convert_edit_profile',
+    'page arguments' => array(5),
+    'access arguments' => array('administer utf8mb4 convert'),
+    'weight' => 10,
+    'file' => 'utf8mb4_convert.admin.inc',
+    'parent' => 'admin/config/development/utf8mb4-convert',
+  );
+  $items['admin/config/development/utf8mb4-convert/check-server'] = array(
+    'title' => 'Server Status',
+    'description' => 'Check current MySQL server for utf8mb4 compliance',
+    'page callback' => 'utf8mb4_convert_check_db',
+    'access arguments' => array('administer utf8mb4 convert'),
+    'weight' => 10,
+    'file' => 'utf8mb4_convert.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/config/development/utf8mb4-convert/check-server/%'] = array(
+    'title' => 'Server Status',
+    'description' => 'Check current MySQL server for utf8mb4 compliance',
+    'page callback' => 'utf8mb4_convert_check_db',
+    'page arguments' => array(5),
+    'access arguments' => array('administer utf8mb4 convert'),
+    'weight' => 10,
+    'file' => 'utf8mb4_convert.admin.inc',
+    'type' => MENU_CALLBACK,
+    'parent' => 'admin/config/development/utf8mb4-convert/check-server',
+  );
+  return $items;
+}
+
+function utf8mb4_convert_permission() {
+  return array(
+    'administer utf8mb4 convert' => array(
+      'title' => t('Administer utf8mb4 functions'),
+      'description' => t('Create profiles used to convert MySQL dumps to utf8mb4 character encoding with drush.'),
+    )
+  );
+}

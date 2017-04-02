@@ -1,0 +1,33 @@
+<?php
+
+function utf8mb4_convert_schema() {
+  $schema['utf8mb4_convert_profiles'] = array(
+    'description' => 'Stores profiles for utf8mb4 table conversions.',
+    'fields' => array(
+      'id' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+      'name' => array('type' => 'varchar', 'length' => 32, 'not null' => TRUE),
+      'drupal_tables_only' => array('type' => 'int', 'size' => 'tiny', 'not null' => TRUE),
+      'db_ready' => array('type' => 'int', 'size' => 'tiny', 'not null' => TRUE, 'default' => 0),
+      'db_name' => array('type' => 'varchar', 'length' => 60),
+      'db_key' => array('type' => 'varchar', 'length' => 60),
+      'data' => array('type' => 'text', 'not null' => TRUE),
+    ),
+    'unique keys' => array(
+      'name' => array('name'),
+    ),
+    'primary key' => array('id'),
+  );
+  /*$schema['utf8mb4_convert_charset_status'] = array(
+    'description' => 'Tracks table, schema, server, and connection character set compatibility.',
+    'fields' => array(
+      'server' => array('type' => 'varchar', 'length' => 60, 'not null' => TRUE),
+      'type' => array('type' => 'varchar', 'length' => 20, 'not null' => TRUE),
+
+    ),
+  );*/
+  return $schema;
+}
+
+function utf8mb4_convert_uninstall() {
+
+}
