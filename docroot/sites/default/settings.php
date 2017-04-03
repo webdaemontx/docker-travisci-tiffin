@@ -693,6 +693,9 @@ else {
     else {
       ini_set('memory_limit', '198M');
     }
+    if (drupal_is_cli()) {
+      ini_set('memory_limit', '512M');
+    }
   }
 }
 
