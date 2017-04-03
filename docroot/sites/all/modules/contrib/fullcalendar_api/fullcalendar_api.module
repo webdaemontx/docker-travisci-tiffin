@@ -40,7 +40,7 @@ function fullcalendar_api_update($action, $id) {
 
   $entity = entity_load_single($entity_type, $id);
 
-  // Directly assign the date value instead of using entity metadata wrappers 
+  // Directly assign the date value instead of using entity metadata wrappers
   // to support custom field type.
   // @todo this could be a lot more flexible
   $date_value = $entity->{$date_field}[LANGUAGE_NONE][0];
@@ -76,7 +76,7 @@ function fullcalendar_api_update($action, $id) {
 
   $entity->{$date_field}[LANGUAGE_NONE][0] = $date_value;
 
-  // entity_save() will throw an error if it did not successfully save, 
+  // entity_save() will throw an error if it did not successfully save,
   // which will prevent 'success' from being returned.
   entity_save($entity_type, $entity);
   drupal_json_output('success');
@@ -106,7 +106,7 @@ function fullcalendar_api_libraries_info() {
       ),
     ),
     'dependencies' => array(
-      'moment',
+      'momentjs',
     ),
   );
   return $libraries;

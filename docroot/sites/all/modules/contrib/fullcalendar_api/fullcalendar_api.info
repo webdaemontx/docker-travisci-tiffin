@@ -7,11 +7,10 @@ dependencies[] = date_api
 dependencies[] = entity
 dependencies[] = jquery_update
 dependencies[] = libraries
-dependencies[] = moment
+dependencies[] = momentjs
 
 ; Information added by Drupal.org packaging script on 2015-07-10
 version = "7.x-1.0-alpha2+7-dev"
 core = "7.x"
 project = "fullcalendar_api"
 datestamp = "1436542740"
-
