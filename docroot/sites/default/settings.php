@@ -699,11 +699,6 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       $conf['cache_backends'][] = 'includes/cache-install.inc';
       $conf['cache_default_class'] = 'DrupalFakeCache';
       $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
-      // Alter the charset and collation of the databases.
-      $databases['default']['default']['charset'] = 'utf8mb4';
-      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
-      $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
-      $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
       break;
     case 'prod':
       /*if (isset($conf['memcache_servers'])) {
