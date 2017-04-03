@@ -664,12 +664,13 @@ if (file_exists('/var/www/site-php')) {
   // The standard require line goes here.
   require('/var/www/site-php/tiffin/tiffin-settings.inc');
   // Alter the charset and collation of the databases.
-  $databases['default']['default']['charset'] = 'utf8mb4';
-  $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
-  $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
-  $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
+  //$databases['default']['default']['charset'] = 'utf8mb4';
+  //$databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+  //$databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
+  //$databases['[DATABASE_NAME]']['default']['collation'] =
+  // 'utf8mb4_general_ci';
   // Now connect to the default database.
-  acquia_hosting_db_choose_active();
+  //acquia_hosting_db_choose_active();
 }
 
 // Increase memory limit locally.
@@ -682,6 +683,16 @@ if (!isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   }
   if (drupal_is_cli()) {
     ini_set('memory_limit', '512M');
+  }
+}
+else {
+  if ($_ENV['AH_SITE_ENVIRONMENT'] == 'dev') {
+    if ((strpos($_GET['q'], 'admin') === 0) || (strpos($_GET['q'], 'node/add') === 0) || (strpos($_GET['q'], 'node/') === 0 && preg_match('/^node\/[\d]+\/edit/', $_GET['q']) === 1)) {
+      ini_set('memory_limit', '256M');
+    }
+    else {
+      ini_set('memory_limit', '198M');
+    }
   }
 }
 
@@ -699,11 +710,6 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       $conf['cache_backends'][] = 'includes/cache-install.inc';
       $conf['cache_default_class'] = 'DrupalFakeCache';
       $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
-      // Alter the charset and collation of the databases.
-      $databases['default']['default']['charset'] = 'utf8mb4';
-      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
-      $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
-      $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
       break;
     case 'prod':
       /*if (isset($conf['memcache_servers'])) {
