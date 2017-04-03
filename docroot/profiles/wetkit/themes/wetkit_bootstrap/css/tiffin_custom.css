@@ -5759,29 +5759,61 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .grid-container {
-	width: 600px;
 	display: -ms-grid;
 	display: grid;
-	grid-gap: 10px;
-	-ms-grid-columns: (263px)[4];
-	    grid-template-columns: repeat(4, 263px);
-	grid-auto-flow: column;
+	-ms-grid-rows: auto;
+	    grid-template-rows: auto;
+	grid-column-gap: 10px;
+	grid-row-gap: 15px;
+}
+
+@media (max-width: 376px) {
+	.grid-container {
+		width: 300px;
+		-ms-grid-columns: 230px;
+		    grid-template-columns: 230px;
+	}
+}
+
+@media (max-width: 500px) {
+	.grid-container {
+		width: 480px;
+		-ms-grid-columns: 230px 230px;
+		    grid-template-columns: 230px 230px;
+	}
+}
+
+@media screen and (min-width: 750px) {
+	.grid-container {
+		width: 700px;
+		-ms-grid-columns: 230px 230px 230px;
+		    grid-template-columns: 230px 230px 230px;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.grid-container {
+		width: 960px;
+		-ms-grid-columns: 230px 230px 230px 230px;
+		    grid-template-columns: 230px 230px 230px 230px;
+	}
 }
 
 .profile-card {
-	margin: 0 0 30px;
-	padding: 0;
-	position: relative;
+	background-position: center;
 	background-repeat: no-repeat;
-	background-position: center center;
 	-webkit-background-size: cover;
 	        background-size: cover;
+	margin: 0 0 30px;
+	max-width: 220px;
+	padding: 0;
+	position: relative;
 }
 
 .profile-card img {
+	height: auto;
 	margin: 0;
 	padding: 0;
-	height: auto;
 	width: 100%;
 }
 
@@ -5827,12 +5859,27 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	.profile-details {
 		padding: 15px;
 	}
+	.profile-details .grid-container {
+		width: 580px;
+		-ms-grid-columns: (220px)[2];
+		    grid-template-columns: repeat(2, 220px);
+		-ms-grid-rows: 312px 312px 312px 312px;
+		    grid-template-rows: 312px 312px 312px 312px;
+		grid-column-gap: 10px;
+		grid-row-gap: 15px;
+	}
 	.profile-details .profile-name {
 		font-size: 18px;
 	}
 	.profile-details .profile-position {
 		font-size: 14px;
 	}
+}
+
+.programs-faculty {
+	border-radius: 5px;
+	font-size: .8em;
+	padding: 20px;
 }
 
 .list-group-item.active,

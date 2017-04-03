@@ -1,6 +1,6 @@
 <?php
 /**
- * @file views-bootstrap-grid-plugin-style--the-faculty-for-program-pages.tpl.php
+ * @file views-bootstrap-grid-plugin-style--cabinet-members.tpl.php
  * Custom view template to display Bootstrap Grids.
  *
  *
@@ -14,7 +14,7 @@
 ?>
 
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
-  <div class="container wrapper">
+  <div class="container">
     <?php if ($options['alignment'] == 'horizontal'): ?>
 
       <?php $num_rows = count($rows); ?>
@@ -22,9 +22,9 @@
       <?php foreach ($items as $row): ?>
         <div class="row programs-faculty">
           <?php foreach ($row['content'] as $column): ?>
-              <div class="profile-card">
-                <?php print $column['content'] ?>
-              </div>
+            <div class="profile-card">
+              <?php print $column['content'] ?>
+            </div>
           <?php endforeach ?>
         </div>
       <?php endforeach ?>

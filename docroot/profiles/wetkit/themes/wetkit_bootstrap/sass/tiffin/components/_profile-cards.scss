@@ -6,25 +6,42 @@
 }
 
 .grid-container {
-  width: 600px;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(4, 263px);
-  //grid-template-rows: 400px 400px 400px;
-  grid-auto-flow: column;
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+
+  @media (max-width: 376px) {
+    width: 300px;
+    grid-template-columns: 230px;
+  }
+  @media (max-width: 500px) {
+    width: 480px;
+    grid-template-columns: 230px 230px;
+  }
+  @media screen and (min-width: 750px) {
+    width: 700px;
+    grid-template-columns: 230px 230px 230px;
+  }
+  @media screen and (min-width: 1080px) {
+    width: 960px;
+    grid-template-columns: 230px 230px 230px 230px;
+  }
 }
 
 .profile-card {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0 0 30px;
+  max-width: 220px;
   padding: 0;
   position: relative;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+
   img {
+    height: auto;
     margin: 0;
     padding: 0;
-    height: auto;
     width: 100%;
   }
   .profile-cabinet {
@@ -62,6 +79,13 @@
   }
 
   @media screen and (min-width: 600px) {
+    .grid-container {
+      width: 580px;
+      grid-template-columns: repeat(2, 220px);
+      grid-template-rows: 312px 312px 312px 312px;
+      grid-column-gap: 10px;
+      grid-row-gap: 15px;
+    }
     padding: 15px;
 
     .profile-name {
@@ -72,4 +96,10 @@
       font-size: 14px;
     }
   }
+}
+
+.programs-faculty {
+  border-radius: 5px;
+  font-size: .8em;
+  padding: 20px;
 }
