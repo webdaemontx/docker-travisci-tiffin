@@ -5761,41 +5761,43 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 .grid-container {
 	display: -ms-grid;
 	display: grid;
+	grid-gap: 10px 15px;
+	-ms-grid-columns: 230px 230px 230px;
+	    grid-template-columns: 230px 230px 230px;
 	-ms-grid-rows: auto;
 	    grid-template-rows: auto;
-	grid-column-gap: 10px;
-	grid-row-gap: 15px;
+	width: 700px;
 }
 
-@media (max-width: 376px) {
+@media screen and (max-width: 376px) {
 	.grid-container {
-		width: 300px;
 		-ms-grid-columns: 230px;
 		    grid-template-columns: 230px;
+		width: 300px;
 	}
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) and (min-width: 375px) {
 	.grid-container {
-		width: 480px;
 		-ms-grid-columns: 230px 230px;
 		    grid-template-columns: 230px 230px;
+		width: 480px;
 	}
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (max-width: 950px) and (min-width: 750px) {
 	.grid-container {
-		width: 700px;
 		-ms-grid-columns: 230px 230px 230px;
 		    grid-template-columns: 230px 230px 230px;
+		width: 700px;
 	}
 }
 
 @media screen and (min-width: 1080px) {
 	.grid-container {
-		width: 960px;
 		-ms-grid-columns: 230px 230px 230px 230px;
 		    grid-template-columns: 230px 230px 230px 230px;
+		width: 960px;
 	}
 }
 
@@ -5859,15 +5861,6 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	.profile-details {
 		padding: 15px;
 	}
-	.profile-details .grid-container {
-		width: 580px;
-		-ms-grid-columns: (220px)[2];
-		    grid-template-columns: repeat(2, 220px);
-		-ms-grid-rows: 312px 312px 312px 312px;
-		    grid-template-rows: 312px 312px 312px 312px;
-		grid-column-gap: 10px;
-		grid-row-gap: 15px;
-	}
 	.profile-details .profile-name {
 		font-size: 18px;
 	}
@@ -5875,16 +5868,16 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 		font-size: 14px;
 	}
 	.profile-details .profile-email {
-		font-size: .75em;
 		color: #fff;
+		font-size: .75em;
 	}
 	.profile-details .profile-phone {
-		font-size: .75em;
 		color: #fff;
+		font-size: .75em;
 	}
 }
 
-@media (max-width: 665px) {
+@media screen and (max-width: 665px) and (min-width: 200px) {
 	.profile-details .profile-email,
 	.profile-details .profile-phone {
 		font-size: .75em;

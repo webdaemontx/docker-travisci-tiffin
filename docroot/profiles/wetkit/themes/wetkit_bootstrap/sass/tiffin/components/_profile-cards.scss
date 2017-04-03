@@ -7,25 +7,26 @@
 
 .grid-container {
   display: grid;
+  grid-gap: 10px 15px;
+  grid-template-columns: 230px 230px 230px;
   grid-template-rows: auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 15px;
+  width: 700px;
 
-  @media (max-width: 376px) {
-    width: 300px;
+  @media screen and (max-width: 376px) {
     grid-template-columns: 230px;
+    width: 300px;
   }
-  @media (max-width: 500px) {
-    width: 480px;
+  @media screen and (max-width: 500px) and (min-width: 375px) {
     grid-template-columns: 230px 230px;
+    width: 480px;
   }
-  @media screen and (min-width: 750px) {
-    width: 700px;
+  @media screen and (max-width: 950px) and (min-width: 750px) {
     grid-template-columns: 230px 230px 230px;
+    width: 700px;
   }
   @media screen and (min-width: 1080px) {
-    width: 960px;
     grid-template-columns: 230px 230px 230px 230px;
+    width: 960px;
   }
 }
 
@@ -79,33 +80,25 @@
   }
 
   @media screen and (min-width: 600px) {
-    .grid-container {
-      width: 580px;
-      grid-template-columns: repeat(2, 220px);
-      grid-template-rows: 312px 312px 312px 312px;
-      grid-column-gap: 10px;
-      grid-row-gap: 15px;
-    }
     padding: 15px;
 
     .profile-name {
       font-size: 18px;
     }
-
     .profile-position {
       font-size: 14px;
     }
     .profile-email {
-      font-size: .75em;
       color: #fff;
+      font-size: .75em;
     }
     .profile-phone {
-      font-size: .75em;
       color: #fff;
+      font-size: .75em;
     }
   }
 
-  @media (max-width: 665px) {
+  @media screen and (max-width: 665px) and (min-width: 200px) {
     .profile-email,
     .profile-phone {
       font-size: .75em;
