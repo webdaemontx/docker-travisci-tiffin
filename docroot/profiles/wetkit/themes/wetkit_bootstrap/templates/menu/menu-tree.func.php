@@ -39,7 +39,9 @@ function wetkit_bootstrap_menu_tree(&$variables) {
  * @ingroup theme_functions
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
-  if (strpos($variables['tree'], "first leaf menu-mlid-5246") == FALSE) {
+  //dpm($variables['tree']);
+  if (strpos($variables['tree'], "first leaf active menu-mlid-5246") == FALSE) {
+    //dpm(strpos($variables['tree'], "first leaf menu-mlid-5246"));
     return '<ul class="menu nav">' . $variables['tree'] . '</ul>';
   }
   else {
