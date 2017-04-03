@@ -634,13 +634,14 @@ if(!isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['preprocess_css'] = 0;
   $conf['preprocess_js'] = 0;
   $conf['block_cache'] = 0;
-  $conf['cache'] = 0;
+  //$conf['cache'] = 0;
   $conf['site_name'] = 'LOCAL TU Dev Site';
   $conf['anonymous'] = 'Dev Visitor';
   $conf['cache_backends'][] = 'includes/cache-install.inc';
   $conf['cache_default_class'] = 'DrupalFakeCache';
   $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
 }
+
 
 // <DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.
@@ -698,6 +699,12 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       $conf['cache_backends'][] = 'includes/cache-install.inc';
       $conf['cache_default_class'] = 'DrupalFakeCache';
       $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
+      // Alter the charset and collation of the databases.
+      $databases['default']['default']['charset'] = 'utf8mb4';
+      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+      $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
+      $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
+      break;
     case 'prod':
       /*if (isset($conf['memcache_servers'])) {
       $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';

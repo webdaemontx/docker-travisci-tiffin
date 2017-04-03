@@ -6,8 +6,8 @@
 # Ignore paths that contain user-generated content.
 acquia-files
 docroot/files
-#docroot/sites/*/files
-#docroot/sites/*/private
+docroot/sites/*/files
+docroot/sites/*/private
 
 .DS_Store
 .ftpquota
@@ -26,3 +26,5 @@ docroot/sites/all/modules/contrib/grammar_parser/
 
 docroot/sites/all/modules/contrib/grammar_parser_lib/
 docroot/profiles/wetkit/modules/contrib/jquery_update/replace/jquery/3.2.0/
+
+docroot/sites/default/settings\.php
