@@ -39,15 +39,15 @@ function wetkit_bootstrap_menu_tree(&$variables) {
  * @ingroup theme_functions
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
-  //dpm($variables['tree']);
-  if (strpos($variables['tree'], "first leaf active menu-mlid-5246") == FALSE) {
-    //dpm(strpos($variables['tree'], "first leaf menu-mlid-5246"));
+   $which_menu = $variables['#tree']['#theme_wrappers'][0][0];
+  if ($which_menu == "menu_tree__menu_block__ctools_main_menu_1") {
     return '<ul class="menu nav">' . $variables['tree'] . '</ul>';
   }
   else {
     return '<ul class="list-inline menu" role="menubar">' . $variables['tree'] . '</ul>';
   }
 }
+
 
 /**
  * Overrides theme_menu_tree().

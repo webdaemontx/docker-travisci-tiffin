@@ -65,6 +65,7 @@ function wetkit_bootstrap_menu_link(array $variables) {
 function wetkit_bootstrap_menu_link__menu_block__main_menu(&$variables) {
   //dpm($variables);
   $element = $variables['element'];
+  //dpm($element['#original_link']['menu_name']);
   $sub_menu = '';
   $mb_mainlink = (!in_array($element['#href'], array('<nolink>')) ? '<li class="slflnk">' . l($element['#title'] . ' - ' . t('More'), $element['#href'], $element['#localized_options']) . '</li>' : '' );
   $depth = 5;
