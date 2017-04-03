@@ -95,6 +95,21 @@
     .profile-position {
       font-size: 14px;
     }
+    .profile-email {
+      font-size: .75em;
+      color: #fff;
+    }
+    .profile-phone {
+      font-size: .75em;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 665px) {
+    .profile-email,
+    .profile-phone {
+      font-size: .75em;
+    }
   }
 }
 

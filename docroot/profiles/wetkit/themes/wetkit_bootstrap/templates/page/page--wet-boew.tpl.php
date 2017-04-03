@@ -124,6 +124,13 @@
     <div class="pnl-strt <?php print $container_class; ?> visible-md visible-lg nvbar">
       <h2><?php print t('Topics menu'); ?></h2>
       <div class="row">
+          <div id="tiffin_logo">
+              <a href="<?php print url('<front>'); ?>">
+                <?php if ($logo): ?>
+                    <img alt="<?php print t('Tiffin University'); ?>" src="<?php print $logo; ?>"/>
+                <?php endif; ?>
+              </a>
+          </div>
         <div class="main-navigation">
           <?php print render($page['mega_menu']); ?>
           <?php print render($secondary_nav); ?>

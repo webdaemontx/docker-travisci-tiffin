@@ -5874,6 +5874,21 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	.profile-details .profile-position {
 		font-size: 14px;
 	}
+	.profile-details .profile-email {
+		font-size: .75em;
+		color: #fff;
+	}
+	.profile-details .profile-phone {
+		font-size: .75em;
+		color: #fff;
+	}
+}
+
+@media (max-width: 665px) {
+	.profile-details .profile-email,
+	.profile-details .profile-phone {
+		font-size: .75em;
+	}
 }
 
 .programs-faculty {
