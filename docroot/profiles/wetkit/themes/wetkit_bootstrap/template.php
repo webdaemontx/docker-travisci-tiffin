@@ -110,18 +110,3 @@ drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/animated-menu-
     'type' => 'file',
     'group' => JS_THEME,
 ));
-
-
-/*function wetkit_bootstrap_form_alter(&$form, &$form_state, $form_id) {
-
-  $selected_date = $_REQUEST['desired_date'];
-  $selected_time = $_REQUEST['desired_time'];
-
-
-  switch($form_id) {
-    case 'webform_client_form_1336':
-      $form['submitted']['personal_information']['desired_visit_date']['#default_value']= $selected_date;
-      $form['submitted']['personal_information']['desired_visit_time']['#default_value']= $selected_time;
-      break;
-  }
-}*/
