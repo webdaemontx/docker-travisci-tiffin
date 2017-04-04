@@ -121,50 +121,49 @@
 
 .faculty-details {
   background-color: rgba($brand-gold, .7);
-  padding: 5px;
-  color: #fff;
-  position: relative;
   bottom: 75px;
+  color: $white;
   height: 75px;
-  width: 100%;
   left: 0;
+  padding: 5px;
+  position: relative;
   right: 0;
+  width: 100%;
 
   span {
     display: block;
   }
 
   .profile-name {
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 18px;
   }
   .profile-position {
-    font-size: 10px;
+    font-size: 14px;
   }
   .profile-email {
-    color: $white;
-    font-size: 1em;
+    color: #fff;
+    font-size: .75em;
   }
   .profile-phone {
-    color: $white;
-    font-size: 1em;
+    color: #fff;
+    font-size: .75em;
   }
 
   @media screen and (max-width: 665px) and (min-width: 200px) {
-
     .profile-name {
-      font-size: 18px;
+      font-size: 13px;
+      font-weight: bold;
     }
     .profile-position {
-      font-size: 14px;
+      font-size: 10px;
     }
     .profile-email {
-      color: #fff;
-      font-size: .75em;
+      color: $white;
+      font-size: 1em;
     }
     .profile-phone {
-      color: #fff;
-      font-size: .75em;
+      color: $white;
+      font-size: 1em;
     }
   }
 }

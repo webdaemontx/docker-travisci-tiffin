@@ -5896,14 +5896,14 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 .faculty-details {
 	background-color: rgba(217, 191, 117, 0.7);
-	padding: 5px;
-	color: #fff;
-	position: relative;
 	bottom: 75px;
+	color: #fff;
 	height: 75px;
-	width: 100%;
 	left: 0;
+	padding: 5px;
+	position: relative;
 	right: 0;
+	width: 100%;
 }
 
 .faculty-details span {
@@ -5911,38 +5911,38 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .faculty-details .profile-name {
-	font-size: 13px;
-	font-weight: bold;
+	font-size: 18px;
 }
 
 .faculty-details .profile-position {
-	font-size: 10px;
+	font-size: 14px;
 }
 
 .faculty-details .profile-email {
 	color: #fff;
-	font-size: 1em;
+	font-size: .75em;
 }
 
 .faculty-details .profile-phone {
 	color: #fff;
-	font-size: 1em;
+	font-size: .75em;
 }
 
 @media screen and (max-width: 665px) and (min-width: 200px) {
 	.faculty-details .profile-name {
-		font-size: 18px;
+		font-size: 13px;
+		font-weight: bold;
 	}
 	.faculty-details .profile-position {
-		font-size: 14px;
+		font-size: 10px;
 	}
 	.faculty-details .profile-email {
 		color: #fff;
-		font-size: .75em;
+		font-size: 1em;
 	}
 	.faculty-details .profile-phone {
 		color: #fff;
-		font-size: .75em;
+		font-size: 1em;
 	}
 }
 
