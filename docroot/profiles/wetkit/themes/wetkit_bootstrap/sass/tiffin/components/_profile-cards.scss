@@ -1,45 +1,112 @@
-.profile-grid {
+@import '../abstracts/theme-vars';
+
+.profile-grid-container {
   h2 {
     color: $brand-green;
     margin-bottom: 24px;
   }
 }
 
+/*
 .grid-container {
   display: grid;
+  grid-auto-columns: fit-content(220px);
   grid-column-gap: 30px;
   grid-row-gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 3%;
+*/
 
-  @media screen and (max-width: 376px) {
-    grid-row-gap: 15px;
-    grid-template-columns: 1fr;
-    margin: 0 5%;
-    width: 300px;
+.grid-container {
+  align-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 1% 2%;
+  .faculty-container {
+    //align-self: auto;
+    flex: 0 1 220px;
+    max-height: 315px;
+    order: 0;
+    width: 25%;
   }
-  @media screen and (max-width: 500px) and (min-width: 375px) {
-    grid-template-columns: 1fr 1fr;
-    margin: 0 5%;
-    width: 480px;
-  }
-  @media screen and (max-width: 950px) and (min-width: 750px) {
-    grid-column-gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 5%;
-    width: 700px;
-  }
-  @media screen and (min-width: 1080px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 20px 25%;
-    width: 960px;
+
+  .faculty-details {
+    background-color: $brand-gold-transparent-70;
+    bottom: 75px;
+    color: $white;
+    height: 75px;
+    left: 0;
+    padding: 5px;
+    position: relative;
+    right: 0;
+    width: 100%;
+    .profile-card {
+      img {
+        max-height: 293px;
+        max-width: 220px;
+      }
+    }
+
+    span {
+      display: block;
+    }
+
+    .profile-name {
+      font-size: 18px;
+    }
+
+    .profile-position {
+      font-size: 14px;
+    }
+
+    .profile-email {
+      color: $white;
+      font-size: .75em;
+    }
+
+    .profile-phone {
+      color: $white;
+      font-size: .75em;
+    }
+
+    @media screen and (max-width: 665px) and (min-width: 200px) {
+      margin: auto;
+      .profile-name {
+        font-size: 13px;
+        font-weight: bold;
+      }
+      .profile-position {
+        font-size: 10px;
+      }
+      .profile-email {
+        color: $white;
+        font-size: 1em;
+      }
+      .profile-phone {
+        color: $white;
+        font-size: 1em;
+      }
+    }
+
+    @media screen and (max-width: 950px) and (min-width: 750px) {
+      margin-right: auto;
+    }
+    @media screen and (min-width: 1080px) {
+      margin-right: auto;
+    }
   }
 }
+
+
 
 .profile-card {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 0 30px;
   max-width: 220px;
   padding: 0;
   position: relative;
@@ -56,14 +123,14 @@
 }
 
 .profile-details {
-  background-color: rgba($brand-gold, .7);
-  padding: 5px;
-  color: #fff;
-  position: absolute;
-  width: 100%;
+  background-color: $brand-gold-transparent-70;
   bottom: 0;
+  color: $white;
   left: 0;
+  padding: 5px;
+  position: absolute;
   right: 0;
+  width: 100%;
 
   span {
     display: block;
@@ -83,7 +150,6 @@
   .profile-phone {
     color: $white;
     font-size: 1em;
-
   }
 
   @media screen and (min-width: 600px) {
@@ -96,11 +162,11 @@
       font-size: 14px;
     }
     .profile-email {
-      color: #fff;
+      color: $white;
       font-size: .75em;
     }
     .profile-phone {
-      color: #fff;
+      color: $white;
       font-size: .75em;
     }
   }
@@ -119,51 +185,3 @@
   padding: 20px;
 }
 
-.faculty-details {
-  background-color: rgba($brand-gold, .7);
-  bottom: 75px;
-  color: $white;
-  height: 75px;
-  left: 0;
-  padding: 5px;
-  position: relative;
-  right: 0;
-  width: 100%;
-
-  span {
-    display: block;
-  }
-
-  .profile-name {
-    font-size: 18px;
-  }
-  .profile-position {
-    font-size: 14px;
-  }
-  .profile-email {
-    color: #fff;
-    font-size: .75em;
-  }
-  .profile-phone {
-    color: #fff;
-    font-size: .75em;
-  }
-
-  @media screen and (max-width: 665px) and (min-width: 200px) {
-    .profile-name {
-      font-size: 13px;
-      font-weight: bold;
-    }
-    .profile-position {
-      font-size: 10px;
-    }
-    .profile-email {
-      color: $white;
-      font-size: 1em;
-    }
-    .profile-phone {
-      color: $white;
-      font-size: 1em;
-    }
-  }
-}

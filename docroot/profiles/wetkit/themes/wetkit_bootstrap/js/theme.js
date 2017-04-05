@@ -4,7 +4,7 @@ jQuery( '<div id="tiffin_logo"><a href="/" tabindex="-1"><img alt="Tiffin Univer
 jQuery( '<div id="tiffin_logo"><a href="/" tabindex="-1"><img alt="Tiffin University" src="http://tiffin.prod.acquia-sites.com/sites/default/files/tiffin-logo_0.png"></a></div>' ).prependTo( "body.page-news #navbar .wb-menu div.row" );
 
 jQuery( 'ul[role= "menubar"] li.dropdown a' ).css( 'cursor', 'pointer' );
-jQuery( 'ul[role= "menubar"] li.dropdown a' ).removeClass( 'item' );
+//jQuery( 'ul[role= "menubar"] li.dropdown a' ).removeClass( 'item' );
 
 jQuery( '<li><div id="tiffin_logo" class="logoMobile"><a href="/" tabindex="-1"><img alt="Tiffin University" src="http://tiffin.prod.acquia-sites.com/sites/default/files/tiffin-logo_0.png"></a></div></li>' ).prependTo( "#wb-glb-mn ul.pnl-btn" );
 

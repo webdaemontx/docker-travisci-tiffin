@@ -5753,55 +5753,131 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-top: 35px;
 }
 
-.profile-grid h2 {
+.profile-grid-container h2 {
 	color: #385443;
 	margin-bottom: 24px;
 }
 
+/*
 .grid-container {
-	display: -ms-grid;
-	display: grid;
-	grid-column-gap: 30px;
-	grid-row-gap: 15px;
-	-ms-grid-columns: 1fr 1fr 1fr 1fr;
-	    grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-auto-columns: fit-content(220px);
+  grid-column-gap: 30px;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0 3%;
+*/
+.grid-container {
+	-webkit-align-content: center;
+	    -ms-flex-line-pack: center;
+	        align-content: center;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	margin: 0 1% 2%;
 }
 
-@media screen and (max-width: 376px) {
-	.grid-container {
-		grid-row-gap: 15px;
-		-ms-grid-columns: 1fr;
-		    grid-template-columns: 1fr;
-		margin: 0 5%;
-		width: 300px;
+.grid-container .faculty-container {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 1 220px;
+	    -ms-flex: 0 1 220px;
+	        flex: 0 1 220px;
+	max-height: 315px;
+	-webkit-box-ordinal-group: 1;
+	-webkit-order: 0;
+	    -ms-flex-order: 0;
+	        order: 0;
+	width: 25%;
+}
+
+.grid-container .faculty-details {
+	background-color: rgba(217, 191, 117, 0.7);
+	bottom: 75px;
+	color: #fff;
+	height: 75px;
+	left: 0;
+	padding: 5px;
+	position: relative;
+	right: 0;
+	width: 100%;
+}
+
+.grid-container .faculty-details .profile-card img {
+	max-height: 293px;
+	max-width: 220px;
+}
+
+.grid-container .faculty-details span {
+	display: block;
+}
+
+.grid-container .faculty-details .profile-name {
+	font-size: 18px;
+}
+
+.grid-container .faculty-details .profile-position {
+	font-size: 14px;
+}
+
+.grid-container .faculty-details .profile-email {
+	color: #fff;
+	font-size: .75em;
+}
+
+.grid-container .faculty-details .profile-phone {
+	color: #fff;
+	font-size: .75em;
+}
+
+@media screen and (max-width: 665px) and (min-width: 200px) {
+	.grid-container .faculty-details {
+		margin: auto;
 	}
-}
-
-@media screen and (max-width: 500px) and (min-width: 375px) {
-	.grid-container {
-		-ms-grid-columns: 1fr 1fr;
-		    grid-template-columns: 1fr 1fr;
-		margin: 0 5%;
-		width: 480px;
+	.grid-container .faculty-details .profile-name {
+		font-size: 13px;
+		font-weight: bold;
+	}
+	.grid-container .faculty-details .profile-position {
+		font-size: 10px;
+	}
+	.grid-container .faculty-details .profile-email {
+		color: #fff;
+		font-size: 1em;
+	}
+	.grid-container .faculty-details .profile-phone {
+		color: #fff;
+		font-size: 1em;
 	}
 }
 
 @media screen and (max-width: 950px) and (min-width: 750px) {
-	.grid-container {
-		grid-column-gap: 15px;
-		-ms-grid-columns: 1fr 1fr 1fr;
-		    grid-template-columns: 1fr 1fr 1fr;
-		margin: 0 5%;
-		width: 700px;
+	.grid-container .faculty-details {
+		margin-right: auto;
 	}
 }
 
 @media screen and (min-width: 1080px) {
-	.grid-container {
-		-ms-grid-columns: 1fr 1fr 1fr 1fr;
-		    grid-template-columns: 1fr 1fr 1fr 1fr;
-		margin: 20px 25%;
-		width: 960px;
+	.grid-container .faculty-details {
+		margin-right: auto;
 	}
 }
 
@@ -5810,7 +5886,6 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	        background-size: cover;
-	margin: 0 0 30px;
 	max-width: 220px;
 	padding: 0;
 	position: relative;
@@ -5829,13 +5904,13 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 .profile-details {
 	background-color: rgba(217, 191, 117, 0.7);
-	padding: 5px;
-	color: #fff;
-	position: absolute;
-	width: 100%;
 	bottom: 0;
+	color: #fff;
 	left: 0;
+	padding: 5px;
+	position: absolute;
 	right: 0;
+	width: 100%;
 }
 
 .profile-details span {
@@ -5892,58 +5967,6 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	border-radius: 5px;
 	font-size: .8em;
 	padding: 20px;
-}
-
-.faculty-details {
-	background-color: rgba(217, 191, 117, 0.7);
-	bottom: 75px;
-	color: #fff;
-	height: 75px;
-	left: 0;
-	padding: 5px;
-	position: relative;
-	right: 0;
-	width: 100%;
-}
-
-.faculty-details span {
-	display: block;
-}
-
-.faculty-details .profile-name {
-	font-size: 18px;
-}
-
-.faculty-details .profile-position {
-	font-size: 14px;
-}
-
-.faculty-details .profile-email {
-	color: #fff;
-	font-size: .75em;
-}
-
-.faculty-details .profile-phone {
-	color: #fff;
-	font-size: .75em;
-}
-
-@media screen and (max-width: 665px) and (min-width: 200px) {
-	.faculty-details .profile-name {
-		font-size: 13px;
-		font-weight: bold;
-	}
-	.faculty-details .profile-position {
-		font-size: 10px;
-	}
-	.faculty-details .profile-email {
-		color: #fff;
-		font-size: 1em;
-	}
-	.faculty-details .profile-phone {
-		color: #fff;
-		font-size: 1em;
-	}
 }
 
 .list-group-item.active,
