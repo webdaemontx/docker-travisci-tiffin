@@ -39,6 +39,7 @@ function wetkit_bootstrap_menu_tree(&$variables) {
  * @ingroup theme_functions
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
+  dpm($variables);
   $menu_tree = $variables['#tree'];
   $menu_key = key($menu_tree);
   if (is_numeric($menu_key)) {

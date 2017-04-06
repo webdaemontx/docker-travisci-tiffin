@@ -5895,7 +5895,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .profile-card .profile-cabinet {
-	bottom: 29px;
+	bottom: 18px;
 }
 
 .profile-details {
@@ -5934,7 +5934,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 @media screen and (min-width: 600px) {
 	.profile-details {
-		padding: 15px;
+		padding: 6px;
 	}
 	.profile-details .profile-name {
 		font-size: 18px;
