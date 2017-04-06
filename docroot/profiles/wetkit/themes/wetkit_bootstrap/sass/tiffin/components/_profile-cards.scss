@@ -27,11 +27,14 @@
   justify-content: space-between;
   margin: 0 1% 2%;
   .faculty-container {
-    //align-self: auto;
     flex: 0 1 220px;
     max-height: 315px;
     order: 0;
     width: 25%;
+    @media (max-width: 400px) {
+      display: block;
+      margin: auto;
+    }
   }
 
   .faculty-details {
@@ -63,32 +66,14 @@
       font-size: 14px;
     }
 
-    .profile-email {
-      color: $white;
-      font-size: .75em;
-    }
-
-    .profile-phone {
-      color: $white;
-      font-size: .75em;
-    }
-
     @media screen and (max-width: 665px) and (min-width: 200px) {
-      margin: auto;
+      //margin: auto;
       .profile-name {
-        font-size: 13px;
+        font-size: 1em;
         font-weight: bold;
       }
       .profile-position {
-        font-size: 10px;
-      }
-      .profile-email {
-        color: $white;
-        font-size: 1em;
-      }
-      .profile-phone {
-        color: $white;
-        font-size: 1em;
+        font-size: .85em;
       }
     }
 
@@ -163,18 +148,11 @@
     }
     .profile-email {
       color: $white;
-      font-size: .75em;
+      font-size: 1em;
     }
     .profile-phone {
       color: $white;
-      font-size: .75em;
-    }
-  }
-
-  @media screen and (max-width: 665px) and (min-width: 200px) {
-    .profile-email,
-    .profile-phone {
-      font-size: .75em;
+      font-size: 1em;
     }
   }
 }

@@ -15,7 +15,11 @@
   @media screen and (min-width: 800px) {
     margin-top: -165px;
   }
+  @media screen and (max-width: 400px) {
+    padding-bottom: 0;
+  }
 }
+
 
 .pane-quicktabs-undergraduate-program-tabs div.pane-title, .pane-quicktabs-graduate-program-tabs div.pane-title {
   display: none;
@@ -60,7 +64,6 @@ body.node-type-program {
 }
 
 .pane-undergraduate-program {
-  //height: 450px;
   background: url('http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg') no-repeat 0 0;
   -webkit-background-size: cover;
   background-size: cover;
@@ -85,6 +88,10 @@ body.node-type-program {
     color: white;
     font-size: 20px;
     text-align: left;
+    @media screen and (max-width: 400px) {
+      font-size: 14px;
+      padding-top: 0;
+    }
   }
 }
 
