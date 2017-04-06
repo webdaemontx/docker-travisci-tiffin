@@ -299,8 +299,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
           }
         }
       }
-      //$sub_menu = '<ul class="list-group menu list-unstyled">' . drupal_render($element['#below']) . '</ul>';
-      $sub_menu = '<ul class="menu nav wetkit_menu_menu_link_menu_block_sidebar">' . drupal_render($element['#below']) . '</ul>';
+      $sub_menu = '<ul class="list-group menu list-unstyled">' . drupal_render($element['#below']) . '</ul>';
     }
     elseif ((!empty($element['#original_link']['depth'])) && $element['#original_link']['expanded'] && $element['#original_link']['depth'] == 2) {
       unset($element['#below']['#theme_wrappers']);
@@ -332,7 +331,7 @@ function wetkit_menu_menu_link_menu_block_sidebar($variables) {
       $sub_sub_sub_menu = '<ul class="list-group menu list-unstyled active">' . drupal_render($element['#below']) . '</ul>';
       // Generate as standard dropdown.
       $element['#title'] .= $has_chevron;
-      $element['#attributes']['class'][] = 'dropdown bigtime';
+      $element['#attributes']['class'][] = 'dropdown';
       $element['#localized_options']['html'] = TRUE;
 
       // Set dropdown trigger element to # to prevent inadvertent page loading
