@@ -2,6 +2,8 @@ name = WetKit Breadcrumbs
 description = Installs and configures breadcrumbs for the Web Experience Toolkit
 core = 7.x
 package = WetKit
+version = 7.x-4.5
+project = wetkit_breadcrumbs
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = i18n
@@ -9,6 +11,7 @@ dependencies[] = path_breadcrumbs
 dependencies[] = path_breadcrumbs_i18n
 dependencies[] = path_breadcrumbs_ui
 dependencies[] = strongarm
+datestamp = 1464701360
 features[ctools][] = path_breadcrumbs:path_breadcrumbs:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
@@ -29,10 +32,3 @@ features[variable][] = path_breadcrumbs_internal_render_themes
 features[variable][] = path_breadcrumbs_rich_snippets
 features[variable][] = path_breadcrumbs_truncate_title_length
 features[variable][] = path_breadcrumbs_url_cleaning_method
-
-; Information added by Drupal.org packaging script on 2016-05-31
-version = "7.x-4.5"
-core = "7.x"
-project = "wetkit_breadcrumbs"
-datestamp = "1464701360"
-

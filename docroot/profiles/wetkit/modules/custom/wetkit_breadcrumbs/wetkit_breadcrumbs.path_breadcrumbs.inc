@@ -37,7 +37,7 @@ function wetkit_breadcrumbs_path_breadcrumbs_settings_info() {
     ),
     'access' => array(),
   );
-  $path_breadcrumb->weight = 1;
+  $path_breadcrumb->weight = -96;
   $export['wetkit_file_view'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -68,7 +68,7 @@ function wetkit_breadcrumbs_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 2;
+  $path_breadcrumb->weight = -93;
   $export['wetkit_node_edit_view'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -78,40 +78,41 @@ function wetkit_breadcrumbs_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => '%node:title_field',
+      0 => '%site:current-page:path-menu-trail:pb-join:name',
+      1 => '!page_title',
     ),
     'paths' => array(
-      0 => '%node:url',
+      0 => '%site:current-page:path-menu-trail:pb-join:url',
+      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 1,
     'arguments' => array(
       'node' => array(
         'position' => 1,
-        'argument' => 'entity_id:node',
+        'argument' => 'entity_id:menu_link',
         'settings' => array(
-          'identifier' => 'Node: ID',
+          'identifier' => 'Menu link: ID',
         ),
       ),
     ),
     'access' => array(
       'plugins' => array(
         0 => array(
-          'name' => 'node_type',
+          'name' => 'path_visibility',
           'settings' => array(
-            'type' => array(
-              'wetkit_documentation' => 'wetkit_documentation',
-              'wetkit_page' => 'wetkit_page',
-            ),
+            'visibility_setting' => '0',
+            'paths' => 'visit
+visit/*',
           ),
-          'context' => 'node',
+          'context' => 'empty',
           'not' => FALSE,
         ),
       ),
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 3;
+  $path_breadcrumb->weight = -91;
   $export['wetkit_node_view'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -141,7 +142,7 @@ function wetkit_breadcrumbs_path_breadcrumbs_settings_info() {
     ),
     'access' => array(),
   );
-  $path_breadcrumb->weight = 4;
+  $path_breadcrumb->weight = -89;
   $export['wetkit_user_view'] = $path_breadcrumb;
 
   return $export;
