@@ -7,16 +7,6 @@
   }
 }
 
-/*
-.grid-container {
-  display: grid;
-  grid-auto-columns: fit-content(220px);
-  grid-column-gap: 30px;
-  grid-row-gap: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 0 3%;
-*/
-
 .grid-container {
   align-content: center;
   align-items: flex-start;
@@ -24,10 +14,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 1% 2%;
+
   .faculty-container {
     flex: 0 1 220px;
+    justify-content: flex-start;
+    margin: 0 1% 2%;
     max-height: 315px;
     order: 0;
     width: 25%;

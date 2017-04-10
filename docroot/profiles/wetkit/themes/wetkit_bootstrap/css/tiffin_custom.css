@@ -5193,8 +5193,14 @@ div#slide-panel ul li {
 }
 
 /* Quick Tabs */
-#quicktabs-graduates_career_opportunities .quicktabs-tabs li.active, #quicktabs-program_overview .quicktabs-tabs li.active {
-	color: white;
+#quicktabs-graduates_career_opportunities .quicktabs-tabs li.active {
+	color: #fff;
+	background-color: #365543;
+	width: 33%;
+}
+
+#quicktabs-program_overview .quicktabs-tabs li.active {
+	color: #fff;
 	background-color: #365543;
 }
 
@@ -5296,7 +5302,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 .pane-webform-client-block-1576 {
 	margin: 170px auto 0 auto;
-	background-image: url("http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-have-question.png");
+	background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/image-have-question-2-color.png");
 	width: 80%;
 }
 
@@ -5304,7 +5310,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	display: none;
 }
 
-#quicktabs-tabpage-graduate_program_tabs-0, #quicktabs-tabpage-graduate_program_tabs-1, #quicktabs-tabpage-graduate_program_tabs-2, #quicktabs-tabpage-undergraduate_program_tabs-0, #quicktabs-tabpage-undergraduate_program_tabs-1, #quicktabs-tabpage-undergraduate_program_tabs-2 {
+#quicktabs-tabpage-graduate_program_tabs-0,
+#quicktabs-tabpage-graduate_program_tabs-1,
+#quicktabs-tabpage-graduate_program_tabs-2,
+#quicktabs-tabpage-undergraduate_program_tabs-0,
+#quicktabs-tabpage-undergraduate_program_tabs-1,
+#quicktabs-tabpage-undergraduate_program_tabs-2 {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.8);
 	width: 100%;
@@ -5318,22 +5329,20 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .closeTabsModal {
-	background-color: #fff;
 	border: 0 solid #365543;
 	height: 40px;
 	width: 40px;
 	position: absolute;
-	right: 5px;
+	right: -3px;
 	text-align: center;
-	top: 7px;
+	top: 3px;
 }
 
 .closeTabsModal a {
-	text-decoration: none;
 	color: #385443 !important;
-	font-size: 26px;
-	/* text-align: center; */
 	cursor: pointer;
+	font-size: 26px;
+	text-decoration: none;
 }
 
 .closeTabsModal a div {
@@ -5768,15 +5777,6 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
-/*
-.grid-container {
-  display: grid;
-  grid-auto-columns: fit-content(220px);
-  grid-column-gap: 30px;
-  grid-row-gap: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 0 3%;
-*/
 .grid-container {
 	-webkit-align-content: center;
 	    -ms-flex-line-pack: center;
@@ -5799,11 +5799,6 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	-webkit-flex-wrap: wrap;
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	margin: 0 1% 2%;
 }
 
 .grid-container .faculty-container {
@@ -5811,6 +5806,11 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	-webkit-flex: 0 1 220px;
 	    -ms-flex: 0 1 220px;
 	        flex: 0 1 220px;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	margin: 0 1% 2%;
 	max-height: 315px;
 	-webkit-box-ordinal-group: 1;
 	-webkit-order: 0;
