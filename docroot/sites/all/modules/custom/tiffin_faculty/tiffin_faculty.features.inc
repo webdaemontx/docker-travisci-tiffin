@@ -29,21 +29,6 @@ function tiffin_faculty_views_api($module = NULL, $api = NULL) {
 function tiffin_faculty_image_default_styles() {
   $styles = array();
 
-  // Exported image style: counselors_and_staff.
-  $styles['counselors_and_staff'] = array(
-    'label' => 'Counselors and Staff',
-    'effects' => array(
-      6 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 280,
-          'height' => 320,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
   // Exported image style: faculty.
   $styles['faculty'] = array(
     'label' => 'Faculty',

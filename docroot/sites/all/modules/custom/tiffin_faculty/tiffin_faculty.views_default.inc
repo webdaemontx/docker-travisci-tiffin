@@ -108,10 +108,11 @@ function tiffin_faculty_views_default_views() {
 
   /* Display: ArtsSci Faculty */
   $handler = $view->new_display('panel_pane', 'ArtsSci Faculty', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['display_description'] = 'Arts and Science Faculty';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
@@ -157,10 +158,11 @@ function tiffin_faculty_views_default_views() {
 
   /* Display: Business Faculty */
   $handler = $view->new_display('panel_pane', 'Business Faculty', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['display_description'] = 'Business Faculty';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
@@ -196,10 +198,11 @@ function tiffin_faculty_views_default_views() {
 
   /* Display: Criminal Justice Faculty */
   $handler = $view->new_display('panel_pane', 'Criminal Justice Faculty', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['display_description'] = 'Criminal Justice Faculty';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
@@ -509,15 +512,8 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'masonry_views';
-  $handler->display->display_options['style_options']['masonry_column_width'] = '20';
-  $handler->display->display_options['style_options']['masonry_column_width_units'] = '%';
-  $handler->display->display_options['style_options']['masonry_gutter_width'] = '5';
-  $handler->display->display_options['style_options']['masonry_resizable'] = TRUE;
-  $handler->display->display_options['style_options']['masonry_animated'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_fit_width'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_rtl'] = FALSE;
-  $handler->display->display_options['style_options']['masonry_images_first'] = TRUE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '4';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'title' => 'title',
@@ -608,14 +604,16 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'title' => 'title',
   );
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_program_reference_target_id']['id'] = 'field_program_reference_target_id';
   $handler->display->display_options['relationships']['field_program_reference_target_id']['table'] = 'field_data_field_program_reference';
@@ -625,7 +623,10 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['alter']['preserve_tags'] = 'img';
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'image_style' => 'faculty_220x293',
@@ -659,11 +660,15 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="profile-details" data-mh="profile-details">
- <span class="profile-name">[title]</span>
-<span class="profile-position">[field_faculty_title]</span>
-</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  [field_user_picture]
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[title]</span>
+    <span class="profile-position">[field_faculty_title]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
@@ -773,6 +778,10 @@ function tiffin_faculty_views_default_views() {
   /* Display: Faculty for Program Pages pane */
   $handler = $view->new_display('panel_pane', 'Faculty for Program Pages pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Display the faculty associated with the selected Program';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pane_title'] = 'Faculty for Program Pages pane';
   $handler->display->display_options['inherit_panels_path'] = '1';
   $translatables['the_faculty_for_program_pages'] = array(
@@ -785,10 +794,11 @@ function tiffin_faculty_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Content entity referenced from field_program_reference'),
-    t('<div class="profile-details" data-mh="profile-details">
- <span class="profile-name">[title]</span>
-<span class="profile-position">[field_faculty_title]</span>
-</div>'),
+    t('  [field_user_picture]
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[title]</span>
+    <span class="profile-position">[field_faculty_title]</span>
+  </div>'),
     t('All'),
     t('Block'),
     t('Page'),
