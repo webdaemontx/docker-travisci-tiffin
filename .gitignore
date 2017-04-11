@@ -28,3 +28,5 @@ docroot/sites/all/modules/contrib/grammar_parser_lib/
 docroot/profiles/wetkit/modules/contrib/jquery_update/replace/jquery/3.2.0/
 
 docroot/sites/default/settings\.php
+
+docroot/sites/default/settings\.local\.php
