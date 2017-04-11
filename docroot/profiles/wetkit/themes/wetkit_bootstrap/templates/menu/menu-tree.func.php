@@ -39,7 +39,7 @@ function wetkit_bootstrap_menu_tree(&$variables) {
  * @ingroup theme_functions
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
-  return '<ul class="list-inline menu" role="menubar">' . $variables['tree'] . '</ul>';
+  return '<ul class="sidebar-nav menu nav">' . $variables['tree'] . '</ul>';
 }
 
 /**
