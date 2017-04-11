@@ -5848,11 +5848,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .grid-container .faculty-details .profile-name {
-	font-size: 18px;
+	font-size: 17.5px;
 }
 
 .grid-container .faculty-details .profile-position {
 	font-size: 14px;
+	line-height: 1em;
 }
 
 @media screen and (max-width: 665px) and (min-width: 200px) {
@@ -5937,10 +5938,11 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 		padding: 6px;
 	}
 	.profile-details .profile-name {
-		font-size: 18px;
+		font-size: 17.5px;
 	}
 	.profile-details .profile-position {
 		font-size: 14px;
+		line-height: 1em;
 	}
 	.profile-details .profile-email {
 		color: #fff;

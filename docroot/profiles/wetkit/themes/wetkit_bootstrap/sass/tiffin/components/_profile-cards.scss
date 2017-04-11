@@ -50,15 +50,15 @@
     }
 
     .profile-name {
-      font-size: 18px;
+      font-size: 17.5px;
     }
 
     .profile-position {
       font-size: 14px;
+      line-height: 1em;
     }
 
     @media screen and (max-width: 665px) and (min-width: 200px) {
-      //margin: auto;
       .profile-name {
         font-size: 1em;
         font-weight: bold;
@@ -132,10 +132,11 @@
     padding: 6px;
 
     .profile-name {
-      font-size: 18px;
+      font-size: 17.5px;
     }
     .profile-position {
       font-size: 14px;
+      line-height: 1em;
     }
     .profile-email {
       color: $white;
