@@ -633,13 +633,12 @@ if(!isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['theme_debug'] = TRUE;
   $conf['preprocess_css'] = 0;
   $conf['preprocess_js'] = 0;
-  $conf['block_cache'] = 0;
+  //$conf['block_cache'] = 0;
   //$conf['cache'] = 0;
   $conf['site_name'] = 'LOCAL TU Dev Site';
   $conf['anonymous'] = 'Dev Visitor';
-  $conf['cache_backends'][] = 'includes/cache-install.inc';
-  $conf['cache_default_class'] = 'DrupalFakeCache';
-  $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
+  $conf['cron_safe_threshold'] = 10800;
+
 }
 
 

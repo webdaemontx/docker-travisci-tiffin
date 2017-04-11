@@ -203,6 +203,7 @@ class SocialContentFacebook extends SocialContent {
     }
 
     $global_settings = $this->settings['global'];
+    $settings = $this->settings['instance'];
 
     $id_parts = explode('_', $row->id);
     $row->id = $id_parts[1];
@@ -214,10 +215,16 @@ class SocialContentFacebook extends SocialContent {
       return FALSE;
     }
     if (!empty($row->full_picture)) {
+      $validators = array();
+      if (!empty($settings['min_resolution'])) {
+        $validators = array(
+          'file_validate_image_resolution' => array(0, $settings['min_resolution']),
+        );
+      }
       $image_url = $this->getImageUrl($row, $global_settings);
       if ($image_url) {
         $mappings = $this->getFieldMappings();
-        $picture = $this->saveExternalFile($image_url, $mappings['picture']);
+        $picture = $this->saveExternalFile($image_url, $mappings['picture'], $validators);
       }
     }
 

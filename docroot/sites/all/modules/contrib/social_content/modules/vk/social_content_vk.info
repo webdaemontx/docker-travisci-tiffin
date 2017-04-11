@@ -8,9 +8,9 @@ dependencies[] = image
 dependencies[] = text
 files[]= social_content_vk.class.inc
 
-; Information added by Drupal.org packaging script on 2016-07-22
-version = "7.x-2.0-beta8"
+; Information added by Drupal.org packaging script on 2017-03-25
+version = "7.x-2.0-beta9"
 core = "7.x"
 project = "social_content"
-datestamp = "1469220840"
+datestamp = "1490404397"
 
