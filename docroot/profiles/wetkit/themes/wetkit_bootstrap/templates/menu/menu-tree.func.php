@@ -39,6 +39,8 @@ function wetkit_bootstrap_menu_tree(&$variables) {
  * @ingroup theme_functions
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
+  $menu_tree = $variables['#tree'];
+  dpm($menu_tree);
   return '<ul class="sidebar-nav menu nav">' . $variables['tree'] . '</ul>';
 }
 
