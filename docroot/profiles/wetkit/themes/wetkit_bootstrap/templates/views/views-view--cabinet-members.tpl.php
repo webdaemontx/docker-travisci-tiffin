@@ -41,7 +41,7 @@
 
 
 <?php if ($rows): ?>
-  <div class="profile-grid grid-container">
+  <div id="presidents-cabinet" class="grid-container">
     <?php print $rows; ?>
   </div>
 <?php elseif ($empty): ?>

@@ -40,8 +40,15 @@ function wetkit_bootstrap_menu_tree(&$variables) {
  */
 function wetkit_bootstrap_menu_tree__menu_block__main_menu(&$variables) {
   $menu_tree = $variables['#tree'];
-  dpm($menu_tree);
-  return '<ul class="sidebar-nav menu nav">' . $variables['tree'] . '</ul>';
+  reset($menu_tree);
+  $menu_key = key($menu_tree);
+  $menu_theme = $menu_tree[$menu_key]['#theme'][0];
+  if ($menu_theme == "menu_link__menu_block__wxt_sidebar") {
+    return '<ul class="sidebar-nav menu nav">' . $variables['tree'] . '</ul>';
+  }
+  else {
+    return '<ul class="list-inline menu" role="menubar">' . $variables['tree'] . '</ul>';
+  }
 }
 
 /**

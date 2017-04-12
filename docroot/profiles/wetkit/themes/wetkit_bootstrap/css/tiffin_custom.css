@@ -5776,7 +5776,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
-#school-faculty div.faculty-details {
+div#trustees.pane-content #presidents-cabinet div.faculty-details {
+	bottom: 75px !important;
+}
+
+#school-faculty div.faculty-details,
+#presidents-cabinet div.faculty-details {
 	bottom: 92px !important;
 }
 
@@ -5829,6 +5834,30 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	}
 }
 
+.grid-container .cabinet-container {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 1 220px;
+	    -ms-flex: 0 1 220px;
+	        flex: 0 1 220px;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	margin: 0 1% 2%;
+	max-height: 315px;
+	-webkit-box-ordinal-group: 1;
+	-webkit-order: 0;
+	    -ms-flex-order: 0;
+	        order: 0;
+}
+
+@media (max-width: 400px) {
+	.grid-container .cabinet-container {
+		display: block;
+		margin: auto;
+	}
+}
+
 .grid-container .faculty-details {
 	background-color: rgba(217, 191, 117, 0.7);
 	bottom: 75px;
@@ -5857,6 +5886,11 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 .grid-container .faculty-details .profile-position {
 	font-size: 14px;
 	line-height: 1em;
+}
+
+.grid-container .faculty-details .profile-company {
+	font-size: 12px;
+	line-height: .8em;
 }
 
 @media screen and (max-width: 665px) and (min-width: 200px) {
@@ -5900,7 +5934,8 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .profile-card .profile-cabinet {
-	bottom: 18px;
+	bottom: 0;
+	height: 75px;
 }
 
 .profile-details {

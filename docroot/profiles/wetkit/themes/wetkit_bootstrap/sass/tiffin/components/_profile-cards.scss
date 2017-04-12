@@ -7,7 +7,12 @@
   }
 }
 
-#school-faculty div.faculty-details {
+div#trustees.pane-content #presidents-cabinet div.faculty-details {
+  bottom:75px !important;
+}
+
+#school-faculty div.faculty-details,
+#presidents-cabinet div.faculty-details {
   bottom: 92px !important;
 }
 
@@ -26,6 +31,18 @@
     max-height: 315px;
     order: 0;
     width: 25%;
+    @media (max-width: 400px) {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  .cabinet-container {
+    flex: 0 1 220px;
+    justify-content: flex-start;
+    margin: 0 1% 2%;
+    max-height: 315px;
+    order: 0;
     @media (max-width: 400px) {
       display: block;
       margin: auto;
@@ -60,6 +77,11 @@
     .profile-position {
       font-size: 14px;
       line-height: 1em;
+    }
+
+    .profile-company {
+      font-size: 12px;
+      line-height: .8em;
     }
 
     @media screen and (max-width: 665px) and (min-width: 200px) {
@@ -99,7 +121,8 @@
     width: 100%;
   }
   .profile-cabinet {
-    bottom: 18px;
+    bottom: 0;
+    height: 75px;
   }
 }
 

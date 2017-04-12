@@ -951,6 +951,60 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-staff-field_manual_order'.
+  $field_instances['node-staff-field_manual_order'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'List the number in order of display lower the number the more senior the individual. Lowest to highest will display.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 14,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_manual_order',
+    'label' => 'Manual Order',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-staff-field_phone'.
   $field_instances['node-staff-field_phone'] = array(
     'bundle' => 'staff',
@@ -1556,6 +1610,8 @@ function tiffin_cabinet_and_staff_field_default_field_instances() {
   t('First Name');
   t('Hometown');
   t('Last Name');
+  t('List the number in order of display lower the number the more senior the individual. Lowest to highest will display.');
+  t('Manual Order');
   t('Member Type');
   t('Name');
   t('Phone');
