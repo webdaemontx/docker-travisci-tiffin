@@ -281,7 +281,6 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_featured_image]
 <div class="faculty-details" data-mh="faculty-details">
  <span class="profile-name">[title]</span>
-  <span class="profile-position">[field_board_position]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'cabinet-container';
@@ -343,7 +342,6 @@ function tiffin_cabinet_and_staff_views_default_views() {
     t('[field_featured_image]
 <div class="faculty-details" data-mh="faculty-details">
  <span class="profile-name">[title]</span>
-  <span class="profile-position">[field_board_position]</span>
 </div>'),
     t('View panes'),
   );

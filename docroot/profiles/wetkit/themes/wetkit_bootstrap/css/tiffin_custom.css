@@ -5808,6 +5808,7 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	-webkit-flex-wrap: wrap;
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
+	margin-left: 17%;
 }
 
 .grid-container .faculty-container {
