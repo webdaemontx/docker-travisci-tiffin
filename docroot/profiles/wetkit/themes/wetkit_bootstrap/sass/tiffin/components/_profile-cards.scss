@@ -7,6 +7,10 @@
   }
 }
 
+#school-faculty div.faculty-details {
+  bottom: 92px !important;
+}
+
 .grid-container {
   align-content: center;
   align-items: flex-start;
@@ -72,6 +76,7 @@
       margin-right: auto;
     }
     @media screen and (min-width: 1080px) {
+      bottom: 92px;
       margin-right: auto;
     }
   }

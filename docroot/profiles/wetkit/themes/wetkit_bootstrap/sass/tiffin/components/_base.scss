@@ -1,7 +1,9 @@
+@import '../abstracts/theme-vars';
+
 body {
   font-family: 'Lato', sans-serif;
-  padding-top: 0;
   overflow-x: hidden;
+  padding-top: 0;
 }
 
 .search-info {
@@ -55,7 +57,7 @@ main {
 }
 
 .hvr-underline-from-center:before {
-  background: #365543 !important;
+  background: $brand-green-title !important;
 }
 
 .sticky-bottom {
@@ -95,7 +97,7 @@ li.slflnk {
 
 body {
   &.page-academics .hvr-underline-from-center:before {
-    background: #365543 !important;
+    background: $brand-green-title !important;
     height: 7px !important;
   }
 
@@ -129,7 +131,7 @@ div.pane-board-members {
     text-align: center;
     padding-top: 2%;
     padding-bottom: 5%;
-    background-color: #ffffff;
+    background-color: $white;
   }
 
   .img-responsive {
@@ -139,7 +141,6 @@ div.pane-board-members {
 
 #social_media_home {
   height: 224px;
-  ///*background-attachment: fixed;*/
   background: url('../images/image-homepage-socialmedia.jpg') no-repeat center;
   background-size: cover;
 
@@ -264,7 +265,7 @@ div.pane-board-members {
     background-color: rgba(255, 255, 255, 0.75);
     background-position-x: 360px;
     appearance: none;
-    color: #365543;
+    color: $brand-green-title;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     font-size: 27px;
@@ -410,7 +411,7 @@ div.view-homepage-news-slidehow {
   }
 
   .menu > li > a.wb-navcurr {
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid $white;
     background: transparent;
     color: #fff;
   }
@@ -441,7 +442,7 @@ div.view-homepage-news-slidehow {
 }
 
 #wb-bar {
-  background: #365543;
+  background: $brand-green-title;
 }
 
 #wb-lng ul, #wb-glb-mn .pnl-btn {
@@ -561,7 +562,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   width: 100%;
 
   p {
-    color: #365543;
+    color: $brand-green-title;
     font-size: 25px;
     margin: 0 auto;
     width: 650px;
@@ -600,7 +601,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         a {
           text-decoration: none !important;
           font-size: 22px;
-          color: #365543 !important;
+          color: $brand-green-title !important;
         }
       }
     }
@@ -638,7 +639,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         a {
           text-decoration: none !important;
           font-size: 22px;
-          color: #365543 !important;
+          color: $brand-green-title !important;
         }
       }
     }
@@ -669,7 +670,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       background-size: 50%;
 
       a {
-        color: #365543;
+        color: $brand-green-title;
         font-size: 27px;
         text-decoration: none;
         text-align: center;
@@ -1101,7 +1102,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
   h2 {
     text-align: center;
-    color: #365543;
+    color: $brand-green-title;
     text-decoration: none;
     font-size: 41px;
     margin-top: 0;
@@ -1136,7 +1137,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       }
 
       a {
-        color: #365543;
+        color: $brand-green-title;
         font-size: 31px;
         text-decoration: none;
       }
@@ -1311,7 +1312,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
   h2 {
     text-align: center;
-    color: #365543;
+    color: $brand-green-title;
     text-decoration: none;
     font-size: 41px;
     margin-top: 0;
@@ -1364,7 +1365,7 @@ ul#click-on-programs {
   right: 0;
   text-align: center;
   top: 0;
-  background-color: #365543 !important;
+  background-color: $brand-green-title !important;
   font: normal normal 200 normal 16px / 27px "Frutiger W01", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   &:nth-child(1) {
@@ -1508,7 +1509,7 @@ ul#click-on-programs {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  color: #365543;
+  color: $brand-green-title;
 }
 
 .pane-graduate-admissions-hero {
@@ -1524,7 +1525,7 @@ ul#click-on-programs {
 
   h2 {
     text-align: center;
-    color: #365543;
+    color: $brand-green-title;
     text-decoration: none;
     font-size: 41px;
     margin-top: 0;
@@ -1557,7 +1558,7 @@ ul#click-on-programs {
       font-size: 28px;
       width: 100%;
       margin: 0 auto;
-      color: #365543;
+      color: $brand-green-title;
       text-align: center;
     }
 
@@ -1610,7 +1611,7 @@ ul#click-on-programs {
 
 #mb-pnl {
   &.modal-content, .modal-body, .lng-ofr, .srch-pnl, .sm-pnl {
-    background-color: #365543;
+    background-color: $brand-green-title;
   }
 }
 
@@ -1673,7 +1674,7 @@ ul[role=menubar] {
 
 header #navbar .list-inline {
   li a {
-    background-color: #365543 !important;
+    background-color: $brand-green-title !important;
     border-left: 0 !important;
     color: #fff !important;
 
@@ -1709,7 +1710,7 @@ ul[role=menubar] #opener {
 }
 
 #wb-sm {
-  background-color: #365543 !important;
+  background-color: $brand-green-title !important;
 }
 
 button#wb-srch-sub {
@@ -1937,7 +1938,7 @@ body {
     font-size: 37px;
 
     span {
-      color: #365543;
+      color: $brand-green-title;
     }
   }
 
@@ -1957,7 +1958,7 @@ body {
       a:nth-of-type(2) {
         margin: 46px 0 0 23px;
         text-decoration: none;
-        color: #365543;
+        color: $brand-green-title;
         font-size: 28px;
         float: left;
         clear: none;
@@ -2093,7 +2094,7 @@ body {
     }
 
     &:nth-of-type(1) {
-      background-color: #365543;
+      background-color: $brand-green-title;
       width: 70%;
       font-size: 20px;
       padding-left: 5%;
@@ -2120,12 +2121,12 @@ body {
 
       li {
         margin-top: 23px;
-        color: #365543;
+        color: $brand-green-title;
         margin-right: 6px;
         font-weight: bold;
 
         a {
-          color: #365543;
+          color: $brand-green-title;
         }
       }
     }
@@ -2170,7 +2171,7 @@ body {
 }
 
 #footer {
-  background-color: #365543 !important;
+  background-color: $brand-green-title !important;
   margin-top: 0 !important;
   padding: 40px 0 87px;
 
@@ -2301,7 +2302,7 @@ ul {
     width: 950px;
 
     div p {
-      color: #365543;
+      color: $brand-green-title;
       text-align: center;
       margin-top: 200px;
       width: 100%;
@@ -2319,7 +2320,7 @@ ul {
   }
 
   &#icons-apply-now-landing-page-mid div p, &#icons-apply-now-landing-page-last div p {
-    color: #365543;
+    color: $brand-green-title;
     text-align: center;
     margin-top: 107px;
     width: 100%;
@@ -2487,7 +2488,7 @@ ul {
     width: 870px;
 
     div p {
-      color: #365543;
+      color: $brand-green-title;
       text-align: center;
       margin-top: 240px;
       width: 100%;
@@ -2500,7 +2501,7 @@ ul {
     width: 1000px;
 
     div p {
-      color: #365543;
+      color: $brand-green-title;
       text-align: center;
       margin-top: 107px;
       width: 100%;
@@ -2650,7 +2651,7 @@ ul {
     width: 80%;
     font-size: 22px;
     text-align: left;
-    color: #ffffff;
+    color: $white;
     padding: 5px 25px 15px 25px;
   }
   .flex-control-paging li a {
@@ -2673,7 +2674,7 @@ ul {
 //    a {
 //      text-decoration: none !important;
 //      font-size: 22px;
-//      color: #365543 !important;
+//      color: $brand-green-title !important;
 //    }
 //  }
 //}
@@ -2690,7 +2691,7 @@ ul {
   padding-top: 30px;
   h2 {
     text-align: center;
-    color: #365543;
+    color: $brand-green-title;
     text-decoration: none;
     font-size: 41px;
     margin-top: 0;
@@ -2720,7 +2721,7 @@ ul {
         a {
           text-decoration: none !important;
           font-size: 22px;
-          color: #365543 !important;
+          color: $brand-green-title !important;
         }
       }
     }
@@ -2736,7 +2737,7 @@ ul {
   padding-top: 30px;
   h2 {
     text-align: center;
-    color: #365543;
+    color: $brand-green-title;
     text-decoration: none;
     font-size: 41px;
     margin-top: 30px;
@@ -2780,7 +2781,7 @@ ul {
         &:nth-of-type(1) div, &:nth-of-type(3) div {
         }
         a {
-          color: #365543;
+          color: $brand-green-title;
           font-size: 22px;
           text-decoration: none;
         }
@@ -2845,7 +2846,7 @@ ul {
   width: 600px;
   margin: 0 auto;
   h2 {
-    color: #365543;
+    color: $brand-green-title;
     width: 700px;
     text-align: center;
     width: 100%;
@@ -2869,7 +2870,7 @@ ul {
     float: left;
     clear: none;
     margin-top: 87px;
-    color: #365543;
+    color: $brand-green-title;
     padding-left: 19px;
   }
 }
@@ -3355,9 +3356,9 @@ ul {
 nav#wb-sec div.menu-block-wrapper {
   li {
     &.leaf a {
-      color: #365543 !important;
+      color: $brand-green-title !important;
       &:visited {
-        color: #365543 !important;
+        color: $brand-green-title !important;
       }
     }
     a.active-trail, &.leaf a.active-trail, h3 a.active-trail {
@@ -3373,7 +3374,7 @@ nav#wb-sec div.menu-block-wrapper {
 .pane-undergraduate-admissions-graduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-undergraduate-program-list-panel-pane h2.pane-title, .pane-undergraduate-admissions-panel-pane-2 h2.pane-title {
   background-color: transparent;
   width: 210px;
-  color: #365543;
+  color: $brand-green-title;
   text-align: center;
   background: url('../images/arrow-down.png') no-repeat right;
   margin: 31px auto 30px auto;
@@ -3386,13 +3387,13 @@ nav#wb-sec div.menu-block-wrapper {
 .page-academics-graduate h2 {
   margin: 30px auto 0 auto;
   font-size: 41px;
-  color: #365543;
+  color: $brand-green-title;
 }
 
 .page-academics-undergrad h2 {
   margin: 30px auto 0 auto;
   font-size: 41px;
-  color: #365543;
+  color: $brand-green-title;
   /*width: 425px;*/
 }
 
@@ -3454,7 +3455,7 @@ nav#wb-sec div.menu-block-wrapper {
   margin-top: 0 !important;
   background-color: transparent;
   width: 210px;
-  color: #365543;
+  color: $brand-green-title;
 }
 
 .pane-bean-schools-bean-block {
@@ -3644,7 +3645,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  color: #365543;
+  color: $brand-green-title;
 
   @media screen and (min-width: 800px) {
     background-position-x: 360px;
@@ -3668,7 +3669,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   width: 80% !important;
   font-size: 22px;
   text-align: left;
-  color: #ffffff;
+  color: $white;
   padding: 5px 25px 15px 25px;
 }
 
@@ -3719,7 +3720,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 /* END duplicate comment from 2-24-2017 */
 
 .pane-giving-hero-top .hvr-bounce-to-bottom::before, .pane-advancement-hero-top .hvr-bounce-to-bottom::before, .pane-alumni-hero-top .hvr-bounce-to-bottom::before {
-  background: #365543 !important;
+  background: $brand-green-title !important;
 }
 
 .pane-giving-hero-top #abouttutop, .pane-advancement-hero-top #abouttutop, .pane-alumni-hero-top #abouttutop {
@@ -3794,7 +3795,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       clear: none;
     }
     &:nth-of-type(1) {
-      background-color: #365543;
+      background-color: $brand-green-title;
       width: 70%;
       font-size: 20px;
       padding-left: 5%;
@@ -3810,7 +3811,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       }
     }
     &:nth-of-type(2) {
-      background-color: #ffffff;
+      background-color: $white;
       width: 30%;
       font-size: 20px;
       padding-left: 30px;
@@ -3818,12 +3819,12 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       padding-top: 20px;
       li {
         margin-top: 23px;
-        color: #365543;
+        color: $brand-green-title;
         margin-right: 6px;
         font-weight: bold;
         line-height: 1.5;
         a {
-          color: #365543;
+          color: $brand-green-title;
         }
       }
       padding-top: 0;
@@ -3924,35 +3925,35 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pagination > {
   li > {
     a, span {
-      color: #365543;
+      color: $brand-green-title;
     }
   }
   .active > {
     a {
       z-index: 2;
       color: #fff;
-      background-color: #365543;
-      border-color: #365543;
+      background-color: $brand-green-title;
+      border-color: $brand-green-title;
       cursor: default;
       &:focus, &:hover {
         z-index: 2;
         color: #fff;
-        background-color: #365543;
-        border-color: #365543;
+        background-color: $brand-green-title;
+        border-color: $brand-green-title;
         cursor: default;
       }
     }
     span {
       z-index: 2;
       color: #fff;
-      background-color: #365543;
-      border-color: #365543;
+      background-color: $brand-green-title;
+      border-color: $brand-green-title;
       cursor: default;
       &:focus, &:hover {
         z-index: 2;
         color: #fff;
-        background-color: #365543;
-        border-color: #365543;
+        background-color: $brand-green-title;
+        border-color: $brand-green-title;
         cursor: default;
       }
     }
@@ -3960,12 +3961,12 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   li > {
     a {
       &:focus, &:hover {
-        color: #365543;
+        color: $brand-green-title;
       }
     }
     span {
       &:focus, &:hover {
-        color: #365543;
+        color: $brand-green-title;
       }
     }
   }
@@ -4006,7 +4007,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 //#mini-panel-online_admissions_top_nav ul li a, #mini-panel-off_campus_admissions_top_nav ul li a {
 //  text-decoration: none !important;
 //  font-size: 22px;
-//  color: #365543 !important;
+//  color: $brand-green-title !important;
 //}
 
 html, body {
@@ -4026,7 +4027,7 @@ html, body {
 }
 
 .pane-bean-schools-bean-block h2 {
-  color: #365543;
+  color: $brand-green-title;
 
   @media screen and (min-width: 800px) {
     font-size: 41px;
@@ -4127,7 +4128,7 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
   a, summary {
     color: $brand-gold;
   }
-  background: #365543 !important;
+  background: $brand-green-title !important;
 }
 
 //.pane-the-faculty-for-program-pages {
@@ -4142,7 +4143,7 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
 
 .btn-primary {
   color: $brand-gold;
-  background-color: #365543;
+  background-color: $brand-green-title;
   border: 0 transparent;
   border-radius: 0;
   font-size: 30px;
@@ -4248,7 +4249,7 @@ body.node-type-program .pane-node-field-degree-type {
 .pane-giving-hero-top .hvr-bounce-to-bottom::before,
 .pane-advancement-hero-top .hvr-bounce-to-bottom::before,
 .pane-alumni-hero-top .hvr-bounce-to-bottom::before {
-  background: #365543 !important;
+  background: $brand-green-title !important;
 }
 
 .pane-giving-hero-top #abouttutop,
@@ -4330,7 +4331,7 @@ body.node-type-program .pane-node-field-degree-type {
     border: 1px solid #95d0ad;
     text-align: center;
     .field {
-      color: #365543;
+      color: $brand-green-title;
     }
     .views-field-title {
       font-style: italic;
@@ -4338,14 +4339,14 @@ body.node-type-program .pane-node-field-degree-type {
       color: #5daf6c;
       text-align: center;
       a {
-        color: #365543;
+        color: $brand-green-title;
       }
     }
     .views-field-title-1 {
-      color: #365543;
+      color: $brand-green-title;
     }
     .views-field-field-quick-news-description {
-      color: #365543;
+      color: $brand-green-title;
       margin-top: 20px;
     }
   }
@@ -4353,7 +4354,7 @@ body.node-type-program .pane-node-field-degree-type {
     border: 1px solid #dbc073;
     text-align: center;
     .field {
-      color: #887235;
+      color: $brand-gold-dark;
     }
     .views-field-title {
       color: #dbc073;
@@ -4365,32 +4366,32 @@ body.node-type-program .pane-node-field-degree-type {
 
 .pane-faculty-panel-pane-3 .masonry-processed .views-row-odd .views-field-title a, .pane-faculty-panel-pane-2 .masonry-processed .views-row-odd .views-field-title a, .pane-faculty-panel-pane-1 .masonry-processed .views-row-odd .views-field-title a {
   text-align: center;
-  color: #887235;
+  color: $brand-gold-dark;
 }
 
 .masonry-processed {
   .views-row-odd {
     .views-field-title a, .views-field-title-1 {
-      color: #887235;
+      color: $brand-gold-dark;
     }
     .views-field-field-quick-news-description {
-      color: #887235;
+      color: $brand-gold-dark;
       margin-top: 20px;
     }
   }
   margin-bottom: 70px;
 }
 
-.pane-faculty-panel-pane-3 h2.pane-title, .pane-faculty-panel-pane-2 h2.pane-title, .pane-faculty-panel-pane-1 h2.pane-title, .pane-news h2.pane-title, .pane-cabinet-members h2.pane-title, .pane-board-members h2.pane-title {
-  text-align: center;
+.pane-faculty-panel-pane-3 h2.pane-title,
+.pane-faculty-panel-pane-2 h2.pane-title,
+.pane-faculty-panel-pane-1 h2.pane-title,
+.pane-news h2.pane-title,
+.pane-cabinet-members h2.pane-title,
+.pane-board-members h2.pane-title {
+  color: $brand-green;
   font-size: 39px;
-  color: #365543;
   margin-bottom: 30px;
-}
-
-.pane-faculty-panel-pane-3, .pane-faculty-panel-pane-2, .pane-faculty-panel-pane-1 {
-  width: 80%;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .node-type-news-page .field-name-field-news-front-slider-image {
@@ -4407,11 +4408,10 @@ body.node-type-program .pane-node-field-degree-type {
   background-position: center;
   height: 360px;
   width: 100%;
-  /*background-attachment: fixed;*/
   padding-top: 30px;
   h2 {
     text-align: center;
-    color: #ffffff;
+    color: $white;
     text-decoration: none;
     font-size: 41px;
     margin-top: 0;
@@ -4857,7 +4857,7 @@ body.node-type-program .pane-node-field-degree-type {
     .view-header h3 {
       margin-top: -15px;
       font-size: 36px;
-      color: #365543;
+      color: $brand-green-title;
     }
   }
 }
@@ -5029,7 +5029,7 @@ body.node-type-program .pane-node-field-degree-type {
       position: static;
     }
     h3 {
-      color: #365543;
+      color: $brand-green-title;
       margin-top: 20px;
     }
   }
@@ -5120,7 +5120,7 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 .green-hdg {
-  color: #365543;
+  color: $brand-green-title;
 }
 
 .pane-financial-aid-virtual-tour {

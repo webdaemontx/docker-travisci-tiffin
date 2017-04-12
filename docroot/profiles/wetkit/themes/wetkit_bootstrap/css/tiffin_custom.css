@@ -1,7 +1,7 @@
 body {
 	font-family: 'Lato', sans-serif;
-	padding-top: 0;
 	overflow-x: hidden;
+	padding-top: 0;
 }
 
 .search-info {
@@ -125,7 +125,7 @@ div.pane-board-members .masonry-item {
 	text-align: center;
 	padding-top: 2%;
 	padding-bottom: 5%;
-	background-color: #ffffff;
+	background-color: #fff;
 }
 
 div.pane-board-members .img-responsive {
@@ -396,7 +396,7 @@ div.view-homepage-news-slidehow .flex-control-paging li a.flex-active {
 }
 
 #wb-sm .menu > li > a.wb-navcurr {
-	border-bottom: 1px solid #ffffff;
+	border-bottom: 1px solid #fff;
 	background: transparent;
 	color: #fff;
 }
@@ -2578,7 +2578,7 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 	width: 80%;
 	font-size: 22px;
 	text-align: left;
-	color: #ffffff;
+	color: #fff;
 	padding: 5px 25px 15px 25px;
 }
 
@@ -3253,9 +3253,9 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 nav#wb-sec div.menu-block-wrapper {
   li {
     &.leaf a {
-      color: #365543 !important;
+      color: $brand-green-title !important;
       &:visited {
-        color: #365543 !important;
+        color: $brand-green-title !important;
       }
     }
     a.active-trail, &.leaf a.active-trail, h3 a.active-trail {
@@ -3572,7 +3572,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	width: 80% !important;
 	font-size: 22px;
 	text-align: left;
-	color: #ffffff;
+	color: #fff;
 	padding: 5px 25px 15px 25px;
 }
 
@@ -3695,7 +3695,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 #mini-panel-floating_all_submenu ul:nth-of-type(2) {
-	background-color: #ffffff;
+	background-color: #fff;
 	width: 30%;
 	font-size: 20px;
 	padding-left: 30px;
@@ -4185,16 +4185,16 @@ body.node-type-program .pane-node-field-degree-type {
 	margin-top: 20px;
 }
 
-.pane-faculty-panel-pane-3 h2.pane-title, .pane-faculty-panel-pane-2 h2.pane-title, .pane-faculty-panel-pane-1 h2.pane-title, .pane-news h2.pane-title, .pane-cabinet-members h2.pane-title, .pane-board-members h2.pane-title {
-	text-align: center;
+.pane-faculty-panel-pane-3 h2.pane-title,
+.pane-faculty-panel-pane-2 h2.pane-title,
+.pane-faculty-panel-pane-1 h2.pane-title,
+.pane-news h2.pane-title,
+.pane-cabinet-members h2.pane-title,
+.pane-board-members h2.pane-title {
+	color: #385443;
 	font-size: 39px;
-	color: #365543;
 	margin-bottom: 30px;
-}
-
-.pane-faculty-panel-pane-3, .pane-faculty-panel-pane-2, .pane-faculty-panel-pane-1 {
-	width: 80%;
-	margin: 0 auto;
+	text-align: center;
 }
 
 .node-type-news-page .field-name-field-news-front-slider-image {
@@ -4211,13 +4211,12 @@ body.node-type-program .pane-node-field-degree-type {
 	background-position: center;
 	height: 360px;
 	width: 100%;
-	/*background-attachment: fixed;*/
 	padding-top: 30px;
 }
 
 .pane-off-campus-admissions-hero h2 {
 	text-align: center;
-	color: #ffffff;
+	color: #fff;
 	text-decoration: none;
 	font-size: 41px;
 	margin-top: 0;
@@ -5777,6 +5776,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
+#school-faculty div.faculty-details {
+	bottom: 92px !important;
+}
+
 .grid-container {
 	-webkit-align-content: center;
 	    -ms-flex-line-pack: center;
@@ -5874,6 +5877,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 
 @media screen and (min-width: 1080px) {
 	.grid-container .faculty-details {
+		bottom: 92px;
 		margin-right: auto;
 	}
 }
