@@ -39,7 +39,7 @@
   </div>
 <?php endif; ?>
 
-<div id="trustees" class="pane-content">
+<div id="school-faculty" class="pane-content">
   <?php print render($content); ?>
 </div>
 
