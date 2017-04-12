@@ -5262,7 +5262,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .pane-undergraduate-program {
-	background: url("http://tiffindev.prod.acquia-sites.com/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg") no-repeat 0 0;
+	background: url("/profiles/wetkit/themes/wetkit_bootstrap/images/image-generic-page-background.jpg") no-repeat 0 0;
 	-webkit-background-size: cover;
 	background-size: cover;
 	padding: 40px 0 300px;
@@ -5375,13 +5375,14 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .program-nav-items ul.quicktabs-tabs {
-	margin-right: -15px;
 	margin-left: -15px;
+	margin-right: -15px;
+	padding-left: 0;
 }
 
-.program-nav-items ul.quicktabs-tabs:before, .program-nav-items ul.quicktabs-tabs:after {
+.program-nav-items ul.quicktabs-tabs::before, .program-nav-items ul.quicktabs-tabs::after {
+	content: ' ';
 	display: table;
-	content: " ";
 }
 
 .item-list.container .quicktabs-tabs:after {
