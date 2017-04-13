@@ -547,8 +547,9 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['label'] = '';
   $handler->display->display_options['fields']['field_faculty_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_faculty_title']['alter']['max_length'] = '90';
+  $handler->display->display_options['fields']['field_faculty_title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_faculty_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_faculty_title']['type'] = 'wetkit_bean_linked';
   $handler->display->display_options['fields']['field_faculty_title']['settings'] = array(
     'wetkit_bean_style' => 'div',
     'wetkit_bean_link' => '',
@@ -812,6 +813,7 @@ function tiffin_faculty_views_default_views() {
   </div>'),
     t('Faculty Landing Page Pane'),
   );
+
   $export['the_faculty_for_program_pages'] = $view;
 
   return $export;
