@@ -5777,6 +5777,10 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
+#programs-faculty {
+	margin-left: 17%;
+}
+
 div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	bottom: 75px !important;
 }
@@ -5808,7 +5812,6 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	-webkit-flex-wrap: wrap;
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
-	margin-left: 17%;
 }
 
 .grid-container .faculty-container {
