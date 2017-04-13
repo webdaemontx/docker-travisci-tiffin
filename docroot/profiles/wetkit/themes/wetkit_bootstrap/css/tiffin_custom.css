@@ -5777,7 +5777,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
-#programs-faculty {
+#programs-faculty div.grid-container {
 	margin-left: 17%;
 }
 
