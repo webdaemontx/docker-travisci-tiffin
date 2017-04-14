@@ -5777,8 +5777,34 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-bottom: 24px;
 }
 
-#programs-faculty div.grid-container {
-	margin-left: 17%;
+@media screen and (max-width: 1870px) {
+	#programs-faculty div.grid-container {
+		margin: 0 24%;
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	#programs-faculty div.grid-container {
+		margin: 0 16%;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	#programs-faculty div.grid-container {
+		margin: 0 10%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#programs-faculty div.grid-container {
+		margin: 0 4%;
+	}
+}
+
+@media screen and (max-width: 750px) and (min-width: 400px) {
+	#programs-faculty div.grid-container {
+		margin: 0 17%;
+	}
 }
 
 div#trustees.pane-content #presidents-cabinet div.faculty-details {
