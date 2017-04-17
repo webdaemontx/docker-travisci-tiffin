@@ -3103,11 +3103,13 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 		height: 600px;
 		background-position: 0 0;
 	}
+	.page-hero-steps,
 	.pane-graduate-admissions-hero ul, .pane-online-admissions-hero ul, .pane-undergraduate-admissions-hero ul {
 		display: block;
 		margin: 10px auto 0 auto;
 		padding: 0;
 	}
+	.page-hero-steps,
 	.pane-graduate-admissions-hero ul li, .pane-online-admissions-hero ul li, .pane-undergraduate-admissions-hero ul li {
 		clear: both;
 	}
@@ -4683,32 +4685,8 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 @media (max-width: 780px) {
-	#mini-panel-ccp_meet_your {
-		-webkit-background-size: 260% 260%;
-		        background-size: 260%;
-	}
-	.pane-ccp-admissions-hero .midclicks ul li {
-		width: 100% !important;
-		clear: both !important;
-		float: left !important;
-		height: 85px;
-	}
-	.pane-international-admissions-hero ul li {
-		width: 100% !important;
-		clear: both !important;
-		float: left !important;
-		height: 85px;
-	}
-	.pane-ccp-admissions-hero .midclicks ul {
-		width: 100%;
-		display: block;
-	}
 	.pane-international-admissions-hero {
-		height: 490px;
-	}
-	.pane-international-admissions-hero ul {
-		width: 100%;
-		display: block;
+		height: 600px;
 	}
 	.pane-quicktabs-undergraduate-program-tabs {
 		padding: 0;
