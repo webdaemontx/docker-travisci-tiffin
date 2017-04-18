@@ -1713,6 +1713,8 @@ ul[role=menubar] #opener {
   background-color: $brand-green-title !important;
 }
 
+/** Search Form **/
+
 button#wb-srch-sub {
   display: none;
 }
@@ -1732,48 +1734,54 @@ div.flex-caption {
   text-align: left;
 }
 
-#search-form input {
-  outline: none;
-
-  &::-webkit-search-decoration, &::-webkit-search-cancel-button {
-    display: none;
+#search-form {
+  div.input-group {
+    display: block;
   }
+  input {
+    outline: none;
+    width: initial;
 
-  &:-moz-placeholder, &::-webkit-input-placeholder {
-    color: #999;
-  }
-
-  &[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
-    background: #546d5e url(../images/search-mag.png) no-repeat 9px center;
-    border: 0;
-    border-radius: 10em;
-    transition: all .5s;
-    width: 34px;
-    height: 34px;
-    padding: 9px 10px;
-    color: transparent;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #fff;
+    &::-webkit-search-decoration, &::-webkit-search-cancel-button {
+      display: none;
     }
 
-    &:focus {
-      width: 180px;
-      padding-left: 32px;
-      color: #000;
-      background-color: #fff;
-      cursor: auto;
-      box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    &:-moz-placeholder, &::-webkit-input-placeholder {
+      color: #999;
     }
-  }
 
-  &:-moz-placeholder, &::-webkit-input-placeholder {
-    color: transparent;
+    &[type=search] {
+      -webkit-appearance: textfield;
+      -webkit-box-sizing: content-box;
+      font-family: inherit;
+      font-size: 100%;
+      background: #546d5e url(../images/search-mag.png) no-repeat 9px center;
+      border: 0;
+      border-radius: 10em;
+      transition: all .5s;
+      width: 34px;
+      height: 34px;
+      padding: 9px 10px;
+      color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      &:focus {
+        width: 180px;
+        padding-left: 32px;
+        color: #000;
+        background-color: #fff;
+        cursor: auto;
+        box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+      }
+    }
+
+    &:-moz-placeholder, &::-webkit-input-placeholder {
+      color: transparent;
+    }
   }
 }
 
@@ -4131,22 +4139,12 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
   background: $brand-green-title !important;
 }
 
-//.pane-the-faculty-for-program-pages {
-//  width: 80%;
-//  margin: 0 auto;
-//  .img-responsive {
-//    margin: 0 auto;
-//    max-height: 293px;
-//    max-width: 220px;
-//  }
-//}
-
 .btn-primary {
-  color: $brand-gold;
   background-color: $brand-green-title;
   border: 0 transparent;
   border-radius: 0;
-  font-size: 30px;
+  color: $brand-gold;
+  //font-size: 1.2em;
 }
 
 .pane-online-admissions-hero {

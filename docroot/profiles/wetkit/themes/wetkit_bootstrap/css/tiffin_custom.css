@@ -1642,6 +1642,7 @@ ul[role=menubar] #opener {
 	background-color: #365543 !important;
 }
 
+/** Search Form **/
 button#wb-srch-sub {
 	display: none;
 }
@@ -1661,8 +1662,13 @@ div.flex-caption {
 	text-align: left;
 }
 
+#search-form div.input-group {
+	display: block;
+}
+
 #search-form input {
 	outline: none;
+	width: initial;
 }
 
 #search-form input::-webkit-search-decoration, #search-form input::-webkit-search-cancel-button {
@@ -3975,11 +3981,10 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
 }
 
 .btn-primary {
-	color: #d9bf75;
 	background-color: #365543;
 	border: 0 transparent;
 	border-radius: 0;
-	font-size: 30px;
+	color: #d9bf75;
 }
 
 .pane-online-admissions-hero {
@@ -5778,12 +5783,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 #programs-faculty div.grid-container {
-	margin: auto;
+	margin: 0 3%;
 }
 
 @media screen and (max-width: 2048px) and (min-width: 1440px) {
 	#programs-faculty div.grid-container {
-		margin: 0 21%;
+		margin: 0 17%;
 	}
 }
 
