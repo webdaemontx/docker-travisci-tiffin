@@ -2817,6 +2817,109 @@ ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 }
 
 /* End CCP meet your */
+/* Info Page */
+body.page-info {
+	background-image: url("../images/image-generic-school.jpg");
+	background-repeat: no-repeat;
+	background-color: transparent;
+	-webkit-background-size: cover;
+	        background-size: cover;
+	background-position: center;
+}
+
+body.page-info h1 {
+	text-align: center;
+	color: white;
+	text-decoration: underline;
+}
+
+body.page-info main {
+	background-color: transparent;
+}
+
+ul#icons-info-landing-page {
+	width: 1000px;
+	clear: both;
+	list-style-type: none !important;
+	margin: 0 auto 0 auto;
+}
+
+ul#icons-info-landing-page div p {
+	color: #365543;
+	text-align: center;
+	margin-top: 107px;
+	width: 100%;
+	font-size: 30px;
+}
+
+ul#icons-info-landing-page a {
+	text-decoration: none;
+}
+
+ul#icons-info-landing-page a div {
+	width: 310px;
+	height: 150px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+ul#icons-info-landing-page li {
+	width: 310px;
+	height: 150px;
+	margin: 0 10px 10px 0;
+	background-color: white;
+	background: rgba(255, 255, 255, 0.85);
+}
+
+ul#icons-info-landing-page li:nth-of-type(1), ul#icons-info-landing-page li:nth-of-type(2), ul#icons-info-landing-page li:nth-of-type(3), ul#icons-info-landing-page li:nth-of-type(4), ul#icons-info-landing-page li:nth-of-type(5), ul#icons-info-landing-page li:nth-of-type(6) {
+	background-repeat: no-repeat;
+}
+
+ul#icons-info-landing-page li:nth-of-type(1) {
+	float: left;
+	clear: left;
+	background-image: url("../images/icon-undergrad-man.png");
+	background-position: 80px 0;
+}
+
+ul#icons-info-landing-page li:nth-of-type(2) {
+	float: left;
+	clear: none;
+	background-image: url("../images/icon-undergrad-woman.png");
+	background-position: 87px 11px;
+}
+
+ul#icons-info-landing-page li:nth-of-type(3) {
+	float: left;
+	clear: right;
+	background-image: url("../images/icon-hat-credit-plus.png");
+	background-position: 80px 10px;
+}
+
+ul#icons-info-landing-page li:nth-of-type(4) {
+	float: left;
+	clear: none;
+	background-image: url("../images/icon-globe-international.png");
+	background-position: 110px 8px;
+}
+
+ul#icons-info-landing-page li:nth-of-type(5) {
+	float: left;
+	clear: none;
+	background-image: url("../images/icon-ohio-off-campus.png");
+	background-position: 110px 10px;
+}
+
+ul#icons-info-landing-page li:nth-of-type(6) {
+	float: left;
+	clear: right;
+	background-image: url("../images/icon-shield-veterans.png");
+	background-position: 116px 10px;
+}
+
+/* End Info Page */
 /* homepage responsive phones */
 @media (max-width: 575px) {
 	body {
@@ -3720,6 +3823,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 #mini-panel-floating_all_submenu ul:nth-of-type(2) li a {
 	color: #365543;
+	padding: 10px 12px;
 }
 
 @media (max-width: 500px) {
@@ -5071,6 +5175,27 @@ div#slide-panel ul li {
 
 .site-breadcrumbs .breadcrumb a {
 	text-decoration: none;
+}
+
+ol.breadcrumb div::before {
+	color: #385443;
+	content: '/ ';
+	font-family: 'Roboto', sans-serif;
+	font-size: inherit;
+	padding: 0 5px;
+}
+
+ol.breadcrumb div.first::before {
+	content: '';
+}
+
+ol.breadcrumb div.last {
+	font-weight: 900;
+	margin-left: -8px;
+}
+
+ol.breadcrumb div.last::before {
+	content: '';
 }
 
 .social-header {

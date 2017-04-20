@@ -15,17 +15,18 @@
  * @ingroup theme_preprocess
  */
 function wetkit_bootstrap_preprocess_breadcrumb(&$variables) {
+
   // Do not modify breadcrumbs if the Path Breadcrumbs module should be used.
-  if (_bootstrap_use_path_breadcrumbs()) {
-    return;
-  }
+  //if (_bootstrap_use_path_breadcrumbs()) {
+    //return;
+  //}
 
   $breadcrumb = &$variables['breadcrumb'];
 
   // Optionally get rid of the homepage link.
   $show_breadcrumb_home = bootstrap_setting('breadcrumb_home');
   if (!$show_breadcrumb_home) {
-    array_shift($breadcrumb);
+    //array_shift($breadcrumb);
   }
 
   if (bootstrap_setting('breadcrumb_title') && !empty($breadcrumb)) {
@@ -38,6 +39,8 @@ function wetkit_bootstrap_preprocess_breadcrumb(&$variables) {
         'data' => $page_title,
         'class' => array('active'),
       );
+      $breadcrumb[] = $page_title;
     }
   }
+  drupal_set_breadcrumb($breadcrumb);
 }

@@ -8,6 +8,7 @@
     background: none;
     display: inline-block;
     line-height: 1;
+
     a {
       &:hover {
         color: $brand-green;
@@ -43,3 +44,28 @@
     text-decoration: none;
   }
 }
+
+ol.breadcrumb div {
+  &::before  {
+    color: $brand-green;
+    content: '/ ';
+    font-family: 'Roboto', sans-serif;
+    font-size: inherit;
+    padding: 0 5px;
+  }
+}
+
+ol.breadcrumb div.first {
+  &::before {
+    content: '';
+  }
+}
+
+ol.breadcrumb div.last {
+  font-weight: 900;
+  margin-left: -8px;
+  &::before {
+    content: '';
+  }
+}
+

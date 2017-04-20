@@ -125,6 +125,12 @@
           <?php print render($page['mega_menu']); ?>
           <?php print render($secondary_nav); ?>
         </div>
+      <section id="wb-srch" class="search-form">
+          <h2><?php print t('Search'); ?></h2>
+        <?php if ($search_box): ?>
+          <?php print $search_box; ?>
+        <?php endif; ?>
+      </section>
       </div>
     </div>
   </nav>
