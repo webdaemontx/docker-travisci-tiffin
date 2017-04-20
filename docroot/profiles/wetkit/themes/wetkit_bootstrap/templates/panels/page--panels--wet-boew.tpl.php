@@ -114,7 +114,6 @@
       <h2><?php print t('Topics menu'); ?></h2>
       <div class="row">
 
-
         <div id="tiffin_logo">
           <a href="<?php print url('<front>'); ?>">
             <?php if ($logo): ?>
@@ -122,7 +121,6 @@
             <?php endif; ?>
           </a>
         </div>
-
 
 
         <div class="main-navigation">

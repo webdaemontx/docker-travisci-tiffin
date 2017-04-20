@@ -1713,6 +1713,8 @@ ul[role=menubar] #opener {
   background-color: $brand-green-title !important;
 }
 
+/** Search Form **/
+
 button#wb-srch-sub {
   display: none;
 }
@@ -1732,48 +1734,54 @@ div.flex-caption {
   text-align: left;
 }
 
-#search-form input {
-  outline: none;
-
-  &::-webkit-search-decoration, &::-webkit-search-cancel-button {
-    display: none;
+#search-form {
+  div.input-group {
+    display: block;
   }
+  input {
+    outline: none;
+    width: initial;
 
-  &:-moz-placeholder, &::-webkit-input-placeholder {
-    color: #999;
-  }
-
-  &[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
-    background: #546d5e url(../images/search-mag.png) no-repeat 9px center;
-    border: 0;
-    border-radius: 10em;
-    transition: all .5s;
-    width: 34px;
-    height: 34px;
-    padding: 9px 10px;
-    color: transparent;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #fff;
+    &::-webkit-search-decoration, &::-webkit-search-cancel-button {
+      display: none;
     }
 
-    &:focus {
-      width: 180px;
-      padding-left: 32px;
-      color: #000;
-      background-color: #fff;
-      cursor: auto;
-      box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    &:-moz-placeholder, &::-webkit-input-placeholder {
+      color: #999;
     }
-  }
 
-  &:-moz-placeholder, &::-webkit-input-placeholder {
-    color: transparent;
+    &[type=search] {
+      -webkit-appearance: textfield;
+      -webkit-box-sizing: content-box;
+      font-family: inherit;
+      font-size: 100%;
+      background: #546d5e url(../images/search-mag.png) no-repeat 9px center;
+      border: 0;
+      border-radius: 10em;
+      transition: all .5s;
+      width: 34px;
+      height: 34px;
+      padding: 9px 10px;
+      color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      &:focus {
+        width: 180px;
+        padding-left: 32px;
+        color: #000;
+        background-color: #fff;
+        cursor: auto;
+        box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+      }
+    }
+
+    &:-moz-placeholder, &::-webkit-input-placeholder {
+      color: transparent;
+    }
   }
 }
 
@@ -2877,6 +2885,110 @@ ul {
 
 /* End CCP meet your */
 
+/* Info Page */
+
+body.page-info {
+  background-image: url('../images/image-generic-school.jpg');
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+  }
+
+  main {
+    background-color: transparent;
+  }
+}
+
+ul {
+
+  &#icons-info-landing-page {
+    width: 1000px;
+
+    div p {
+      color: $brand-green-title;
+      text-align: center;
+      margin-top: 107px;
+      width: 100%;
+      font-size: 30px;
+    }
+    clear: both;
+    list-style-type: none !important;
+    margin: 0 auto 0 auto;
+  }
+
+  &#icons-info-landing-page a {
+    text-decoration: none;
+  }
+
+  &#icons-info-landing-page a div {
+    width: 310px;
+    height: 150px;
+    display: flex;
+  }
+
+  &#icons-info-landing-page li {
+    width: 310px;
+    height: 150px;
+    margin: 0 10px 10px 0;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.85);
+
+    &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6) {
+      background-repeat: no-repeat;
+    }
+
+    &:nth-of-type(1) {
+      float: left;
+      clear: left;
+      background-image: url('../images/icon-undergrad-man.png');
+      background-position: 80px 0;
+    }
+
+    &:nth-of-type(2) {
+      float: left;
+      clear: none;
+      background-image: url('../images/icon-undergrad-woman.png');
+      background-position: 87px 11px;
+    }
+
+    &:nth-of-type(3) {
+      float: left;
+      clear: right;
+      background-image: url('../images/icon-hat-credit-plus.png');
+      background-position: 80px 10px;
+    }
+
+    &:nth-of-type(4) {
+      float: left;
+      clear: none;
+      background-image: url('../images/icon-globe-international.png');
+      background-position: 110px 8px;
+    }
+
+    &:nth-of-type(5) {
+      float: left;
+      clear: none;
+      background-image: url('../images/icon-ohio-off-campus.png');
+      background-position: 110px 10px;
+    }
+
+    &:nth-of-type(6) {
+      float: left;
+      clear: right;
+      background-image: url('../images/icon-shield-veterans.png');
+      background-position: 116px 10px;
+    }
+  }
+}
+
+/* End Info Page */
+
 /* homepage responsive phones */
 
 @media (max-width: 575px) {
@@ -3827,6 +3939,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         line-height: 1.5;
         a {
           color: $brand-green-title;
+          padding: 10px 12px;
         }
       }
       padding-top: 0;
@@ -4133,22 +4246,12 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
   background: $brand-green-title !important;
 }
 
-//.pane-the-faculty-for-program-pages {
-//  width: 80%;
-//  margin: 0 auto;
-//  .img-responsive {
-//    margin: 0 auto;
-//    max-height: 293px;
-//    max-width: 220px;
-//  }
-//}
-
 .btn-primary {
-  color: $brand-gold;
   background-color: $brand-green-title;
   border: 0 transparent;
   border-radius: 0;
-  font-size: 30px;
+  color: $brand-gold;
+  //font-size: 1.2em;
 }
 
 .pane-online-admissions-hero {
