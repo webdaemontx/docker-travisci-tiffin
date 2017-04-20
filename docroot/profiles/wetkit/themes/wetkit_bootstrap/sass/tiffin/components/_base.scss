@@ -2712,14 +2712,34 @@ ul {
 /* CCP Admissions */
 
 .pane-ccp-admissions-hero {
+  position: relative;
+  background-image: url('../images/college-credit-plus-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 410px;
+  width: 100%;
+  /*background-attachment: fixed;*/
+  padding-top: 30px;
+
   div.tiptop {
     background-color: rgba(255, 255, 255, 0.7);
     height: 42px;
+
+    @media (max-width: 990px) {
+      width: 100%;
+    }
+
     ul {
       list-style-type: none;
       width: 562px;
       padding: 5px 0 7px 0;
       margin: -117px auto 0 auto;
+
+      @media (max-width: 990px) {
+        width: 100%;
+      }
+
       li {
         float: left;
         clear: none;
@@ -2736,15 +2756,7 @@ ul {
       }
     }
   }
-  position: relative;
-  background-image: url('../images/college-credit-plus-background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-  height: 410px;
-  width: 100%;
-  /*background-attachment: fixed;*/
-  padding-top: 30px;
+
   h2 {
     text-align: center;
     color: $brand-green-title;
@@ -2758,15 +2770,31 @@ ul {
     ul {
       list-style-type: none;
       height: 88px;
+
+      @media (max-width: 990px) {
+        padding: 0;
+        height: auto;
+      }
+
       &:nth-of-type(1) {
         margin: 50px auto 0 auto;
         width: 724px;
+
+        @media (max-width: 990px) {
+          width: 100%;
+        }
       }
+
       &:nth-of-type(2) {
         margin: 5px auto 0 auto;
         clear: both;
         width: 524px;
+
+        @media (max-width: 990px) {
+          width: 100%;
+        }
       }
+
       li {
         margin-right: 1%;
         height: 88px;
@@ -2776,17 +2804,29 @@ ul {
         background-color: white;
         float: left;
         opacity: 0.85;
+
+        @media (max-width: 990px) {
+          float: none;
+          height: auto;
+          //margin-right: 0;
+        }
       }
       &:nth-of-type(1) li, &:nth-of-type(2) li {
         width: 220px;
+
+        @media (max-width: 990px) {
+          width: 100%;
+        }
       }
+
       li {
         div {
+          width: 100%;
+          height: 88px;
+
           p {
             padding: 30px 0 0 25%;
           }
-          width: 100%;
-          height: 88px;
         }
         &:nth-of-type(1) div, &:nth-of-type(3) div {
         }
@@ -2855,9 +2895,13 @@ ul {
 #meetyour {
   width: 600px;
   margin: 0 auto;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
+
   h2 {
     color: $brand-green-title;
-    width: 700px;
     text-align: center;
     width: 100%;
     margin-top: 0;
@@ -4186,52 +4230,92 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
 
 .pane-undergraduate-admissions-panel-pane-4 h2 {
   background-position-x: 171px !important;
-  width: 456px !important;
+  width: 456px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-5 h2 {
   background-position-x: 171px !important;
-  width: 370px !important;
+  width: 370px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-6 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-8 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-9 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-10 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-11 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-12 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-13 h2 {
   background-position-x: 171px !important;
-  width: 530px !important;
+  width: 530px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .pane-undergraduate-admissions-panel-pane-16 h2 {
   background-position-x: 171px !important;
-  width: 170px !important;
+  width: 170px;
+
+  @media (max-width: 775px) {
+    width: 100%;
+  }
 }
 
 .page-international ol.breadcrumb,
