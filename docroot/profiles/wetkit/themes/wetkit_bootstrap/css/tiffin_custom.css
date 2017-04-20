@@ -27,6 +27,11 @@ img {
 
 main {
 	padding-bottom: 0 !important;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
 }
 
 .flexslider {
@@ -4002,6 +4007,12 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] .view-content a {
 	text-decoration: none;
 }
 
+@media (max-width: 990px) {
+	div[class*="pane-undergraduate-admissions-panel-pane-"] .view-content a {
+		line-height: 2;
+	}
+}
+
 div[class*="pane-undergraduate-admissions-panel-pane-"] h2 {
 	color: #11361E;
 	background-color: rgba(255, 255, 255, 0.75);
@@ -5762,6 +5773,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	transition: background-color 0.25s ease-out, color 0.25s ease-out;
 }
 
+@media (max-width: 990px) {
+	.page-hero-steps > li > a {
+		font-size: 24px;
+	}
+}
+
 .page-hero-steps > li > a:hover, .page-hero-steps > li > a:focus {
 	color: #fff;
 	background-color: #385443;
@@ -5779,6 +5796,12 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	font-size: 100px;
 	font-weight: 900;
 	-webkit-text-stroke: 2px #a68e4f;
+}
+
+@media (max-width: 990px) {
+	.page-hero-steps > li > a span {
+		font-size: 60px;
+	}
 }
 
 @media (min-width: 1200px) {

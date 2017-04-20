@@ -30,6 +30,8 @@ img {
 
 main {
   padding-bottom: 0 !important;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .flexslider {
@@ -4160,6 +4162,10 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
       font-size: 21px;
       color: #11361E;
       text-decoration: none;
+
+      @media (max-width: 990px) {
+        line-height: 2;
+      }
     }
   }
 

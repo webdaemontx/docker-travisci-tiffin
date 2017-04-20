@@ -22,13 +22,18 @@
       padding: 20px 0 20px 0;
       text-align: center;
       text-decoration: none;
-      -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
-      -o-transition: background-color 0.25s ease-out, color 0.25s ease-out;
       transition: background-color 0.25s ease-out, color 0.25s ease-out;
-      &:hover, &:focus {
+
+      @media (max-width: 990px) {
+        font-size: 24px;
+      }
+
+      &:hover,
+      &:focus {
         color: #fff;
         background-color: $brand-green;
       }
+
       span {
         position: absolute;
         top: 50%;
@@ -39,6 +44,10 @@
         font-size: 100px;
         font-weight: 900;
         -webkit-text-stroke: 2px #a68e4f;
+
+        @media (max-width: 990px) {
+          font-size: 60px;
+        }
       }
     }
   }
