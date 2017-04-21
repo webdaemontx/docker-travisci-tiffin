@@ -251,6 +251,7 @@ div.pane-board-members .img-responsive {
 	border-radius: 0;
 	background-color: rgba(54, 85, 67, 0.85);
 	border: 0 !important;
+	white-space: nowrap;
 }
 
 #mini-panel-homepage_top_hero select.form-select {
