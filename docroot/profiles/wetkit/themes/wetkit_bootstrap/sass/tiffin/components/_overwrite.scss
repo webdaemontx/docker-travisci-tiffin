@@ -8,3 +8,24 @@
 .region-pearson-bottom {
   padding-left: 0;
 }
+
+#ebscohostCustomSearchBox {
+  max-width: 100%;
+
+  @media (max-width: 992px) {
+    min-height: 200px;
+  }
+
+  a {
+    display: block;
+  }
+
+  div {
+    max-width: 100%;
+
+    @media (max-width: 992px) {
+      padding-left: 0 !important;
+      background: none !important;
+    }
+  }
+}

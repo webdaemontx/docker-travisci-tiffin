@@ -24,6 +24,8 @@ a {
 
 img {
   box-shadow: none;
+  max-width: 100%;
+  height: auto !important;
 }
 
 main {
@@ -33,6 +35,7 @@ main {
 .field-items {
   word-wrap: break-word;
   hyphens: auto;
+  max-width: 100%;
 }
 
 .flexslider {

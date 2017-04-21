@@ -23,6 +23,8 @@ a:visited {
 img {
 	-webkit-box-shadow: none;
 	        box-shadow: none;
+	max-width: 100%;
+	height: auto !important;
 }
 
 main {
@@ -35,6 +37,7 @@ main {
 	   -moz-hyphens: auto;
 	    -ms-hyphens: auto;
 	        hyphens: auto;
+	max-width: 100%;
 }
 
 .flexslider {
@@ -6662,5 +6665,30 @@ fieldset#edit-academic-scholarship legend {
 
 .region-pearson-bottom {
 	padding-left: 0;
+}
+
+#ebscohostCustomSearchBox {
+	max-width: 100%;
+}
+
+@media (max-width: 992px) {
+	#ebscohostCustomSearchBox {
+		min-height: 200px;
+	}
+}
+
+#ebscohostCustomSearchBox a {
+	display: block;
+}
+
+#ebscohostCustomSearchBox div {
+	max-width: 100%;
+}
+
+@media (max-width: 992px) {
+	#ebscohostCustomSearchBox div {
+		padding-left: 0 !important;
+		background: none !important;
+	}
 }
 /*# sourceMappingURL=tiffin_custom.css.map */
