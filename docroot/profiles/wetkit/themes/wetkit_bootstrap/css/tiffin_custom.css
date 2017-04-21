@@ -29,6 +29,14 @@ main {
 	padding-bottom: 0 !important;
 }
 
+.field-items {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
+}
+
 .flexslider {
 	margin: 0;
 }
