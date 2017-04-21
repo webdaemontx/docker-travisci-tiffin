@@ -22,16 +22,11 @@ a:visited {
 
 img {
 	-webkit-box-shadow: none;
-	box-shadow: none;
+	        box-shadow: none;
 }
 
 main {
 	padding-bottom: 0 !important;
-	word-wrap: break-word;
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	    -ms-hyphens: auto;
-	        hyphens: auto;
 }
 
 .flexslider {

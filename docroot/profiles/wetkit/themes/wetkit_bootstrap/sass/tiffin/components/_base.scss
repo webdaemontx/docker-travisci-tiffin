@@ -23,16 +23,17 @@ a {
 }
 
 img {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
 }
 
 main {
   padding-bottom: 0 !important;
-  word-wrap: break-word;
-  hyphens: auto;
 }
+
+//.pane-content {
+//  word-wrap: break-word;
+//  hyphens: auto;
+//}
 
 .flexslider {
   margin: 0;
