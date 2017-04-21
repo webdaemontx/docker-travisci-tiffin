@@ -1419,6 +1419,13 @@ ul#click-on-programs {
 	text-decoration: none;
 }
 
+@media (max-width: 990px) {
+	.pane-undergraduate-admissions-undergraduate-program-list-panel-pane .view-content a, .pane-schools a {
+		display: block;
+		margin-bottom: 16px;
+	}
+}
+
 .view-id-undergraduate_admissions .view-filters {
 	width: 510px;
 	margin: 0 auto 0 auto;
@@ -3668,6 +3675,13 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	text-decoration: none;
 }
 
+@media (max-width: 990px) {
+	.pane-undergraduate-admissions-graduate-program-list-panel-pane .view-content a, .pane-schools a {
+		display: block;
+		margin-bottom: 16px;
+	}
+}
+
 .view-id-graduate_admissions .view-filters {
 	width: 510px;
 	margin: 0 auto 0 auto;
@@ -4054,7 +4068,8 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] .view-content a {
 
 @media (max-width: 990px) {
 	div[class*="pane-undergraduate-admissions-panel-pane-"] .view-content a {
-		line-height: 2;
+		display: block;
+		margin-bottom: 16px;
 	}
 }
 

@@ -1474,6 +1474,11 @@ ul#click-on-programs {
   font-size: 21px;
   color: #11361E;
   text-decoration: none;
+
+  @media (max-width: 990px) {
+    display: block;
+    margin-bottom: 16px;
+  }
 }
 
 .view-id-undergraduate_admissions .view-filters {
@@ -3767,6 +3772,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   font-size: 21px;
   color: #11361E;
   text-decoration: none;
+
+  @media (max-width: 990px) {
+    display: block;
+    margin-bottom: 16px;
+  }
 }
 
 .view-id-graduate_admissions .view-filters {
@@ -4210,7 +4220,8 @@ div[class*="pane-undergraduate-admissions-panel-pane-"] {
       text-decoration: none;
 
       @media (max-width: 990px) {
-        line-height: 2;
+        display: block;
+        margin-bottom: 16px;
       }
     }
   }

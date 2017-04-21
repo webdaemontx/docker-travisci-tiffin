@@ -638,7 +638,10 @@ if(!isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['site_name'] = 'LOCAL TU Dev Site';
   $conf['anonymous'] = 'Dev Visitor';
   $conf['cron_safe_threshold'] = 10800;
-
+  $databases['default']['default']['charset'] = 'utf8mb4';
+  $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+  $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
+  $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
 }
 
 
