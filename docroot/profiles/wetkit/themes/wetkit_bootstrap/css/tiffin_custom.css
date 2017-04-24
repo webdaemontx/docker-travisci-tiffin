@@ -6058,6 +6058,18 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	bottom: 92px !important;
 }
 
+@media screen and (max-width: 1080px) {
+	div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
+		margin-left: 5%;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
+		margin-left: 3%;
+	}
+}
+
 .grid-container {
 	-webkit-align-content: center;
 	    -ms-flex-line-pack: center;

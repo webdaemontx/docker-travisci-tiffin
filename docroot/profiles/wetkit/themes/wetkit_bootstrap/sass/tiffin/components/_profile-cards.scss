@@ -23,6 +23,12 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
   bottom: 92px !important;
 }
 
+div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
+  @media screen and (min-width:1080px) {
+    margin-left: 3%;
+  }
+}
+
 .grid-container {
   align-content: center;
   align-items: flex-start;
