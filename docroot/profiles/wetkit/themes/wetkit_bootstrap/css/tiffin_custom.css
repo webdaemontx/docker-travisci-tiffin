@@ -6835,4 +6835,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 		background: none !important;
 	}
 }
+
+@media (max-width: 992px) {
+	#tiffinClickMap {
+		height: 100px !important;
+	}
+}
 /*# sourceMappingURL=tiffin_custom.css.map */
