@@ -6854,4 +6854,8 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 		height: 100px !important;
 	}
 }
+
+.pane-cabinet-members-trustees-pane .col-md-6 {
+	padding-bottom: 11.5px;
+}
 /*# sourceMappingURL=tiffin_custom.css.map */
