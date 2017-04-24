@@ -1179,6 +1179,29 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	width: 67%;
 }
 
+.pane-life-at-tu-faculty-panel-pane-5 {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.pane-life-at-tu-faculty-panel-pane-5 h2.pane-title {
+	font-size: 29px;
+	color: #365543;
+	text-align: center;
+}
+
+.view-life-at-tu-faculty .views-field-field-faculty-title {
+	line-height: 17px;
+}
+
+.view-life-at-tu-faculty .img-responsive {
+	margin: 0 auto;
+}
+
+.view-life-at-tu-faculty .masonry-processed .masonry-item {
+	width: 17% !important;
+}
+
 .pane-dragon-perks {
 	background-color: #fff;
 	padding-bottom: 50px;
