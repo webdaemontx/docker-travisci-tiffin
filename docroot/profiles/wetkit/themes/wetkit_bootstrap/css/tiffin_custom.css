@@ -2453,7 +2453,7 @@ ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
 }
 
 body.page-admissions {
-	background-image: url("../images/image-admissions-hero-landing.jpg");
+	background-image: url("../images/image-apply-now-top-background.png");
 	background-repeat: no-repeat;
 	background-color: transparent;
 	-webkit-background-size: cover;
@@ -2597,8 +2597,8 @@ ul#icons-admissions-landing-page-last li:nth-of-type(5) {
 ul#icons-admissions-landing-page-last li:nth-of-type(6) {
 	float: left;
 	clear: right;
-	background-image: url("../images/icon-shield-veterans.png");
-	background-position: 116px 10px;
+	background-image: url("../images/american_flag.png");
+	background-position: 50% 24px;
 }
 
 .pane-testimonials-slider {
