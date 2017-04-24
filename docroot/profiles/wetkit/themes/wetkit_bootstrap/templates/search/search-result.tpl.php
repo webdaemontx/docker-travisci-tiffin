@@ -80,8 +80,8 @@
       }
     ?>
       <?php
-      if (strlen($str) > 1000)
-      $str = substr($str, 0, 999) . '...';?>
+      if (strlen($str) > 250)
+      $str = substr($str, 0, 250) . '...';?>
       <p class="search-snippet"<?php print $content_attributes; ?>><?php print strip_tags($str); ?></p>
     <?php // endif; ?>
     <?php if ($info): ?>
