@@ -1056,6 +1056,12 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 	padding-top: 30px;
 }
 
+@media (max-width: 760px) {
+	.pane-life-at-tu-hero-top {
+		background-attachment: fixed;
+	}
+}
+
 .pane-life-at-tu-hero-top h2 {
 	text-align: center;
 	color: #365543;
@@ -4790,8 +4796,7 @@ body.node-type-program .pane-node-field-degree-type {
 	}
 	.pane-life-at-tu-hero-top ul li {
 		width: 100% !important;
-		clear: both !important;
-		float: left !important;
+		margin-bottom: 10px;
 	}
 	.pane-life-at-tu-hero-top ul li p {
 		margin: 64px 0 0 40% !important;

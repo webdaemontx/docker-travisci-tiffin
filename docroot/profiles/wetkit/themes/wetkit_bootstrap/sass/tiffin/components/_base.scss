@@ -1107,6 +1107,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
   ///*background-attachment: fixed;*/
   padding-top: 30px;
 
+  @media (max-width: 760px) {
+    background-attachment: fixed;
+  }
+
   h2 {
     text-align: center;
     color: $brand-green-title;
@@ -4928,22 +4932,26 @@ body.node-type-program .pane-node-field-degree-type {
 
 @media (max-width: 760px) {
   .pane-life-at-tu-hero-top {
+    height: 1320px !important;
+
     ul {
       display: block;
       width: 100% !important;
       margin: 0 !important;
       padding: 0 !important;
+
       li {
         width: 100% !important;
-        clear: both !important;
-        float: left !important;
+        margin-bottom: 10px;
+
+        //float: left !important;
+
         p {
           margin: 64px 0 0 40% !important;
           width: 200px !important;
         }
       }
     }
-    height: 1320px !important;
   }
   .pane-dragon-perks ul {
     display: block;
