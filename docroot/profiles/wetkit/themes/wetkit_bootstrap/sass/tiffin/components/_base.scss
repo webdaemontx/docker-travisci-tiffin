@@ -1277,6 +1277,11 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
       background-repeat: no-repeat;
       background-position: center;
 
+      @media (max-width: 992px) {
+        margin-right: 0;
+        padding-left: 0;
+      }
+
       div {
         position: relative;
         width: 100%;
@@ -1298,6 +1303,10 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         color: $brand-gold;
         font-size: 31px;
         text-decoration: none;
+
+        @media (max-width: 992px) {
+          font-size: 22px;
+        }
       }
     }
 
