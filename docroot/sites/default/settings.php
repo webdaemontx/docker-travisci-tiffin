@@ -154,8 +154,8 @@
  *     innodb_file_per_table=true
  *   These settings are available as of MySQL 5.5.14, and are defaults in
  *   MySQL 5.7.7 and up.
- * - The PHP MySQL driver must support the utf8mb4 charset (libmysqlclient
-5.5.3 and up, as well as mysqlnd 5.0.9 and up).
+ * - The PHP MySQL driver must support the utf8mb4 charset
+ * (libmysqlclient 5.5.3 and up, as well as mysqlnd 5.0.9 and up).
  * - The MySQL server must support the utf8mb4 charset (5.5.3 and up).
  *
  * You can optionally set prefixes for some or all database table names
@@ -298,7 +298,7 @@ $drupal_hash_salt = '';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-# $base_url = 'http://www.example.com';  // NO trailing slash!
+ $base_url = 'http://tiffin.dev.dd';
 
 /**
  * PHP settings:
@@ -633,8 +633,6 @@ if(!isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['theme_debug'] = TRUE;
   $conf['preprocess_css'] = 0;
   $conf['preprocess_js'] = 0;
-  //$conf['block_cache'] = 0;
-  //$conf['cache'] = 0;
   $conf['site_name'] = 'LOCAL TU Dev Site';
   $conf['anonymous'] = 'Dev Visitor';
   $conf['cron_safe_threshold'] = 10800;
@@ -664,15 +662,8 @@ if (file_exists('/var/www/site-php')) {
   // Delay the initial database connection.
   $conf['acquia_hosting_settings_autoconnect'] = FALSE;
   // The standard require line goes here.
-  require('/var/www/site-php/tiffin/tiffin-settings.inc');
+  require '/var/www/site-php/tiffin/tiffin-settings.inc';
   // Alter the charset and collation of the databases.
-  //$databases['default']['default']['charset'] = 'utf8mb4';
-  //$databases['default']['default']['collation'] = 'utf8mb4_general_ci';
-  //$databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
-  //$databases['[DATABASE_NAME]']['default']['collation'] =
-  // 'utf8mb4_general_ci';
-  // Now connect to the default database.
-  //acquia_hosting_db_choose_active();
 }
 
 // Increase memory limit locally.
@@ -716,6 +707,7 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       $conf['cache_default_class'] = 'DrupalFakeCache';
       $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
       break;
+
     case 'prod':
       /*if (isset($conf['memcache_servers'])) {
       $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
@@ -742,4 +734,3 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       break;
   }
 }
-
