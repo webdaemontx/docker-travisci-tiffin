@@ -1,0 +1,28 @@
+<?php
+
+/**
+ *
+ */
+function tiffin_search_install() {
+  $modules = array(
+    "acquia_search",
+    "custom_search_i18n",
+    "custom_search_taxonomy",
+  );
+  foreach($modules as $module) {
+    if(module_exists($module)) {
+      module_disable(array($module));
+      drupal_set_message("Disabled " . $module);
+    }
+  }
+}
+
+function tiffin_uninstall_uninstall() {
+
+}
+
+/** Disables the default search configuration set by WetKit */
+function tiffin_search_update_7401($sandbox) {
+
+
+}

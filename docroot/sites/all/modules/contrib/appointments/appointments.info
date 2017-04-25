@@ -2,11 +2,12 @@ name = Appointments
 description = Provides an interface to add appointments to nodes.
 package = Other
 core = 7.x
+php >= 5.6
 configure = admin/config/system/appointments
 
 dependencies[] = service_container
 dependencies[] = service_container_symfony
-dependencies[] = misc:composer_manager (>= 1.8+1-dev)
+dependencies[] = composer_manager
 dependencies[] = jquery_update
 dependencies[] = entity
 dependencies[] = entity_token

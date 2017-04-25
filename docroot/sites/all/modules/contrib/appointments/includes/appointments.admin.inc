@@ -22,7 +22,7 @@ function appointments_config($form, &$form_state) {
   ];
     
   $form['appointments_name_field'] = array(
-    '#title' => t("User field containig user's proper name."),
+    '#title' => t("User field containing user's first name."),
     '#type' => 'select',
     '#required' => FALSE,
     "#empty_option"=>t('- Select -'),
@@ -31,7 +31,7 @@ function appointments_config($form, &$form_state) {
   );
     
   $form['appointments_surname_field'] = array(
-    '#title' => t("User field containig user's surname."),
+    '#title' => t("User field containing user's last name."),
     '#type' => 'select',
     '#required' => FALSE,
     "#empty_option"=>t('- Select -'),
