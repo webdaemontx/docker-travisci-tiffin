@@ -645,6 +645,8 @@ if (file_exists('/var/www/site-php')) {
   // Alter the charset and collation of the databases.
   $databases['default']['default']['charset'] = 'utf8mb4';
   $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+  $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
+  $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
   // Now connect to the default database.
   acquia_hosting_db_choose_active();
 }
