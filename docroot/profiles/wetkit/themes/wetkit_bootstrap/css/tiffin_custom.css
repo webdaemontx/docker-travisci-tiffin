@@ -5452,6 +5452,7 @@ ol.breadcrumb div.last::before {
 }
 
 .president .media h4 {
+	color: #d9bf75;
 	font-weight: 700;
 	font-size: 21px;
 	line-height: 1.4;
@@ -5459,7 +5460,6 @@ ol.breadcrumb div.last::before {
 }
 
 .president .media p {
-	font-weight: 100;
 	line-height: 1.2;
 }
 
