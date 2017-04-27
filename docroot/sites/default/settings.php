@@ -298,6 +298,11 @@ $drupal_hash_salt = '';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
+/*
+if ($_SERVER['HTTP_HOST'] === 'www.tiffin.edu') {
+  $base_url = 'http://www.tiffin.edu';
+}*/
+
 # $base_url = 'http://www.tiffin.edu';  // NO trailing slash!
 
 /**
@@ -640,8 +645,6 @@ if (file_exists('/var/www/site-php')) {
   // Alter the charset and collation of the databases.
   $databases['default']['default']['charset'] = 'utf8mb4';
   $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
-  $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
-  $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
   // Now connect to the default database.
   acquia_hosting_db_choose_active();
 }
@@ -663,17 +666,6 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       break;
 
     case 'prod':
-      /*if (isset($conf['memcache_servers'])) {
-      $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
-      $conf['cache_default_class'] = 'MemCacheDrupal';
-      $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-      }
-      # Add in stampede protection
-      $conf['memcache_stampede_protection'] = TRUE;
-      # Move semaphore out of the database and into memory for performance purposes
-      $conf['lock_inc'] = './sites/all/modules/contrib/memcache/memcache-lock.inc';
-      break;
-      }*/
       $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
       $conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
       $conf['memcache_stampede_protection'] = TRUE;
