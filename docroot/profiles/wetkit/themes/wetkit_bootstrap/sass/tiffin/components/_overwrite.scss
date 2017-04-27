@@ -41,3 +41,9 @@
     padding-bottom: 11.5px;
   }
 }
+
+.webform-progressbar {
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
+}

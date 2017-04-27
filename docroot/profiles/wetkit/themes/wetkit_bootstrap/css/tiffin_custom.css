@@ -6857,4 +6857,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .pane-cabinet-members-trustees-pane .col-md-6 {
 	padding-bottom: 11.5px;
 }
+
+@media screen and (max-width: 1100px) {
+	.webform-progressbar {
+		display: none;
+	}
+}
 /*# sourceMappingURL=tiffin_custom.css.map */
