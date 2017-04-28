@@ -85,6 +85,12 @@ function wetkit_breadcrumbs_configure_form($form, &$form_state) {
     '#description' => t('Title of the link that points to the front page.'),
     '#size' => 30,
   );
+  $form['wetkit_breadcrumbs']['path_breadcrumbs_show_page_title'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Append the current page title for un-managed breadcrumbs'),
+    '#default_value' => variable_get('path_breadcrumbs_show_page_title', 0),
+    '#description' => t('When a page is not managed by Path Breadcrumbs (no variants activated) and the last breadcrumb item is a link, append the current page title (unlinked) to the list of breadcrumbs.'),
+  );
   $form['#submit'][] = 'wetkit_breadcrumbs_configure_form_submit';
 
   return system_settings_form($form);

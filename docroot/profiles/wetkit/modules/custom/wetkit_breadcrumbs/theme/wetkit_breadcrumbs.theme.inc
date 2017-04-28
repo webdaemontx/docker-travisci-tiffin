@@ -28,6 +28,20 @@ function wetkit_breadcrumbs_breadcrumb($variables) {
       array_pop($breadcrumbs);
     }
 
+    $path_breadcrumbs_data = path_breadcrumbs_load_variant(current_path());
+    // Append page title when un-managed by path_breadcrumbs
+    $show_unlinked_page_title = variable_get('path_breadcrumbs_show_page_title', 0);
+    if ($show_unlinked_page_title && !isset($path_breadcrumbs_data->variant)) {
+      // Only append if the last item is a link.
+      $last_breadcrumb = end($breadcrumbs);
+      if (stripos($last_breadcrumb, "href=") !== FALSE) {
+        $page_title = drupal_get_title();
+        // the title could be blank if we are displaying via the menu tree
+        $page_title = (empty($page_title)) ? menu_get_active_title() : $page_title;
+        $breadcrumbs[] = $page_title;
+      }
+    }
+
     // Add options for rich snippets.
     $elem_tag = 'li';
     $elem_property = '';
@@ -114,7 +128,7 @@ function wetkit_breadcrumbs_breadcrumb($variables) {
       }
 
       // Get breadcrumb title from a link like "<a href = "/path">title</a>".
-      $title = trim(strip_tags($breadcrumb));
+      $title = trim(strip_tags($breadcrumb, '<em><abbr>'));
 
       // Wrap title in additional element for microdata support.
       if ($snippet == PATH_BREADCRUMBS_RICH_SNIPPETS_MICRODATA) {
@@ -149,7 +163,6 @@ function wetkit_breadcrumbs_breadcrumb($variables) {
 
     // Show contextual link if it is Path Breadcrumbs variant.
     $prefix = '';
-    $path_breadcrumbs_data = path_breadcrumbs_load_variant(current_path());
     if (user_access('administer path breadcrumbs') && $path_breadcrumbs_data && isset($path_breadcrumbs_data->variant)) {
       $contextual_links = array(
         '#type' => 'contextual_links',
