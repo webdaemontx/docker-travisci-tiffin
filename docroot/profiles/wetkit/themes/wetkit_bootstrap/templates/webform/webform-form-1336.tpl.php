@@ -22,5 +22,5 @@ dpm($a);
 //}
 */
 ?>
-
-<a  href="/visit/schedule/?desired_date=<?php print render($content['desired_date_visit']['#items'][0]['value']); ?>" class="classname">LINK NAME</a>
+<!--
+<a  href="/visit/schedule/?desired_date=<?php /*print render($content['desired_date_visit']['#items'][0]['value']); */?>" class="classname">LINK NAME</a>-->
