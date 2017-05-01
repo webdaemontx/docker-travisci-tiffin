@@ -1114,7 +1114,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(1) {
-	background-image: url("../images/icon-student_services.png");
+	background-image: url("../images/student_services.png");
 }
 
 .pane-life-at-tu-hero-top ul:nth-of-type(1) li:nth-of-type(1) p {
@@ -1173,7 +1173,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 }
 
 .pane-life-at-tu-hero-top ul:nth-of-type(2) li:nth-of-type(3) p {
-	margin: 50px 30%;
+	margin: 68px 30%;
 	font-size: 32px;
 	text-align: center;
 	width: 67%;
@@ -6862,5 +6862,9 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 	.webform-progressbar {
 		display: none;
 	}
+}
+
+#edit-custom-search-types {
+	display: none;
 }
 /*# sourceMappingURL=tiffin_custom.css.map */
