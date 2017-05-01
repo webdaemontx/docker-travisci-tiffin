@@ -630,6 +630,8 @@ if (isset($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR']) && file_exists($_SERVER['D
 }
 // </DDSETTINGS>
 
+if (file_exists(DRUPAL_ROOT . '/' . conf_path() . '/settings.local.php')) {    include DRUPAL_ROOT . '/' . conf_path() . '/settings.local.php';   }
+
 
 // On Acquia Cloud, this include file configures Drupal to use the correct
 // database in each site environment (Dev, Stage, or Prod). To use this
