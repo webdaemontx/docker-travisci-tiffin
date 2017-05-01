@@ -1,0 +1,27 @@
+.icon-grid {
+  padding-bottom: 50px;
+  text-align: center;
+
+  h3,
+  p {
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 31px;
+    line-height: 36px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 22px;
+    }
+  }
+
+  a {
+    color: $brand-gold;
+    text-decoration: none;
+  }
+
+  .icon-grid-inner {
+    padding: 20px;
+  }
+}
