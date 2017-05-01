@@ -136,16 +136,16 @@ function wetkit_wetboew_libraries_info() {
                       'scope' => 'footer',
                       'weight' => 5,
                     ),
-                    'js/ie8-wet-boew.min.js' => array(
-                      'browsers' => array(
-                        'IE' => 'lt IE 9',
-                        '!IE' => FALSE,
-                      ),
-                      'every_page' => TRUE,
-                      'preprocess' => FALSE,
-                      'scope' => 'header',
-                      'weight' => 6,
-                    ),
+//                    'js/ie8-wet-boew.min.js' => array(
+//                      'browsers' => array(
+//                        'IE' => 'lt IE 9',
+//                        '!IE' => FALSE,
+//                      ),
+//                      'every_page' => TRUE,
+//                      'preprocess' => FALSE,
+//                      'scope' => 'header',
+//                      'weight' => 6,
+//                    ),
                     'js/ie8-wet-boew2.min.js' => array(
                       'browsers' => array(
                         'IE' => 'lt IE 9',

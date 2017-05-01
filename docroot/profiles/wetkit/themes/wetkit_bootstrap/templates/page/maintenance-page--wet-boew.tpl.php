@@ -25,7 +25,7 @@
 <div class="col-md-12">
 <section>
 <?php if ($title): ?>
-<h2><?php print $title; ?></h1>
+<h1><?php print $title; ?></h1>
 <?php endif; ?>
 <?php print $messages; ?>
 <?php print $content; ?>

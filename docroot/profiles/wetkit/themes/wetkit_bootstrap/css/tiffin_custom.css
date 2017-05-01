@@ -6729,6 +6729,7 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 
 .icon-grid h3,
 .icon-grid p {
+	color: #d9bf75;
 	font-weight: bold;
 }
 
@@ -6746,6 +6747,13 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 .icon-grid a {
 	color: #d9bf75;
 	text-decoration: none;
+}
+
+.icon-grid img {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 240px;
+	height: auto;
 }
 
 .icon-grid .icon-grid-inner {
