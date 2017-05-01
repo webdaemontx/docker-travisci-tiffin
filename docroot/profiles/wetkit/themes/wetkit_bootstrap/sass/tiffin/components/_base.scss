@@ -1159,7 +1159,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
       li {
         &:nth-of-type(1) {
-          background-image: url('../images/icon-student_services.png');
+          background-image: url('../images/student_services.png');
 
           p {
             margin: 69px 28%;
@@ -1220,7 +1220,7 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
         background-image: url('../images/icon-dining_services.png');
 
         p {
-          margin: 50px 30%;
+          margin: 68px 30%;
           font-size: 32px;
           text-align: center;
           width: 67%;
@@ -1255,7 +1255,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 
 .pane-dragon-perks {
   background-color: #fff;
-  padding-bottom: 50px;
 
   h2 {
     text-align: center;
@@ -1264,81 +1263,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
     font-size: 41px;
     margin-top: 20px;
     padding-top: 0;
-  }
-
-  ul {
-    display: flex;
-    list-style-type: none;
-
-    li {
-      width: 25%;
-      margin-right: 1%;
-      padding-left: 10px;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      @media (max-width: 992px) {
-        margin-right: 0;
-        padding-left: 0;
-      }
-
-      div {
-        position: relative;
-        width: 100%;
-        height: 210px;
-        float: left;
-      }
-
-      p {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        //margin: 154px;
-        font-weight: bold;
-        line-height: 36px;
-        text-align: center;
-      }
-
-      a {
-        color: $brand-gold;
-        font-size: 31px;
-        text-decoration: none;
-
-        @media (max-width: 992px) {
-          font-size: 22px;
-        }
-      }
-    }
-
-    &:nth-of-type(1) li {
-      &:nth-of-type(1) {
-        background-image: url('../images/icon-tickets.png');
-      }
-      &:nth-of-type(2) {
-        background-image: url('../images/icon-movie.png');
-      }
-      &:nth-of-type(3) {
-        background-image: url('../images/icon-compas.png');
-      }
-      &:nth-of-type(4) {
-        background-image: url('../images/icon-financial-aid.png');
-      }
-    }
-
-    &:nth-of-type(2) li {
-      &:nth-of-type(1) {
-        background-image: url('../images/icon-cars-campus.png');
-      }
-      &:nth-of-type(2) {
-        background-image: url('../images/icon-laundry-printing.png');
-      }
-      &:nth-of-type(3) {
-        background-image: url('../images/icon-hands.png');
-      }
-      &:nth-of-type(4) {
-        background-image: url('../images/icon-small-classes.png');
-      }
-    }
   }
 }
 
@@ -2414,17 +2338,17 @@ ul {
     &:nth-of-type(1) {
       clear: none;
       margin: 0 10px 10px 0;
-      background-image: url('../images/icon-undergrad-man.png');
+      background-image: url('../images/tiffin_icons_diploma_final_bachelors.png');
       background-repeat: no-repeat;
-      background-position: 140px 9px;
+      background-position: 50% 9px;
     }
 
     &:nth-of-type(2) {
       clear: right;
       margin: 0 0 10px 0;
-      background-image: url('../images/icon-undergrad-woman.png');
+      background-image: url('../images/tiffin_icons_diploma_final_masters.png');
       background-repeat: no-repeat;
-      background-position: 140px 9px;
+      background-position: 50% 9px;
     }
   }
 
@@ -2596,17 +2520,17 @@ ul {
     &:nth-of-type(1) {
       clear: none;
       margin: 0 10px 10px 0;
-      background-image: url('../images/icon-undergrad-man.png');
+      background-image: url('../images/tiffin_icons_diploma_final_bachelors.png');
       background-repeat: no-repeat;
-      background-position: 120px 30px;
+      background-position: 50% 30px;
     }
 
     &:nth-of-type(2) {
       clear: right;
       margin: 0 0 10px 0;
-      background-image: url('../images/icon-undergrad-woman.png');
+      background-image: url('../images/tiffin_icons_diploma_final_masters.png');
       background-repeat: no-repeat;
-      background-position: 120px 30px;
+      background-position: 50% 30px;
     }
   }
 
@@ -3038,29 +2962,29 @@ ul {
     &:nth-of-type(1) {
       float: left;
       clear: left;
-      background-image: url('../images/icon-undergrad-man.png');
-      background-position: 80px 0;
+      background-image: url('../images/tiffin_icons_diploma_final_bachelors.png');
+      background-position: 50% 0;
     }
 
     &:nth-of-type(2) {
       float: left;
       clear: none;
-      background-image: url('../images/icon-undergrad-woman.png');
-      background-position: 87px 11px;
+      background-image: url('../images/tiffin_icons_diploma_final_masters.png');
+      background-position: 50% 11px;
     }
 
     &:nth-of-type(3) {
       float: left;
       clear: right;
       background-image: url('../images/icon-hat-credit-plus.png');
-      background-position: 80px 10px;
+      background-position: 50% 10px;
     }
 
     &:nth-of-type(4) {
       float: left;
       clear: none;
       background-image: url('../images/icon-globe-international.png');
-      background-position: 110px 8px;
+      background-position: 50% 8px;
     }
 
     &:nth-of-type(5) {
@@ -4985,16 +4909,17 @@ body.node-type-program .pane-node-field-degree-type {
       }
     }
   }
-  .pane-dragon-perks ul {
-    display: block;
-    margin: 0;
-    padding: 0;
 
-    li {
-      width: 100% !important;
-      height: 250px;
-    }
-  }
+  //.pane-dragon-perks ul {
+  //  display: block;
+  //  margin: 0;
+  //  padding: 0;
+  //
+  //  li {
+  //    width: 100% !important;
+  //    height: 250px;
+  //  }
+  //}
 }
 
 @media (max-width: 675px) {
