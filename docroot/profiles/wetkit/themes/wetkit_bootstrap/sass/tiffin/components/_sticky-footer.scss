@@ -1,0 +1,102 @@
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  //height: 87px;
+  background-color: $brand-green;
+  font-size: 20px;
+
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .footer-nav-left,
+  .footer-nav-right {
+    position: relative;
+    height: 87px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+
+    & > nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+
+      & > a {
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+          color: $brand-gold;
+        }
+      }
+    }
+  }
+
+  .footer-nav-left {
+    & > nav {
+      & > a {
+        padding: 0 12px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+  }
+
+  .footer-nav-right {
+    background-color: $white;
+    text-align: center;
+
+    & > nav {
+      & > a {
+        color: $brand-green;
+
+        &:hover,
+        &:focus {
+          &::after {
+            color: $brand-green;
+          }
+        }
+
+        &::after {
+          padding: 0 12px;
+          content: '/';
+        }
+
+        &:last-child {
+          &::after {
+            padding: 0;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  //.row {
+  //  position: absolute;
+  //  top: 50%;
+  //  width: 100%;
+  //  transform: translateY(-50%);
+  //}
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+}
