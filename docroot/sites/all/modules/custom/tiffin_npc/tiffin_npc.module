@@ -221,9 +221,21 @@ $success_body .= "<br><h4>*These calculations do not include other forms of aid,
   $form['description'] = array(
     '#markup' => $success_body,
   );
+$site_env = $_SERVER['SERVER_NAME'];
 
-  $email_recipients = array('schlenkerjm@tiffin.edu', 'depughst@tiffin.edu',
-    'swanagank@tiffin.edu', 'mampheyyo@tiffin.edu', 'bakerj@tiffin.edu', $email);
+  if ($site_env != ('www.tiffin.edu' | 'tiffin.edu')) {
+    $email_recipients = array('sean.hanford@ellucian.com', 'saamjl@tiffin.edu');
+  }
+  else {
+    $email_recipients = array(
+      'schlenkerjm@tiffin.edu',
+      'depughst@tiffin.edu',
+      'swanagank@tiffin.edu',
+      'mampheyyo@tiffin.edu',
+      'bakerj@tiffin.edu',
+      $email,
+    );
+  }
   foreach ($email_recipients as $email_recipient) {
     drupal_mail('tiffin_npc', 'npc_calculator', $to->mail, language_default(), array('recipient' => $email_recipient, 'success_body' => $success_body));
 }
