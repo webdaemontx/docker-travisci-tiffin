@@ -644,19 +644,19 @@ if (file_exists('/var/www/site-php')) {
   $conf['acquia_hosting_settings_autoconnect'] = FALSE;
   // The standard require line goes here.
   require('/var/www/site-php/tiffin/tiffin-settings.inc');
-  // Alter the charset and collation of the databases.
-  $databases['default']['default']['charset'] = 'utf8mb4';
-  $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
-  $databases['[DATABASE_NAME]']['default']['charset'] = 'utf8mb4';
-  $databases['[DATABASE_NAME]']['default']['collation'] = 'utf8mb4_general_ci';
-  // Now connect to the default database.
-  acquia_hosting_db_choose_active();
 }
 
 // Memcache and dev server configuration.
 if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   switch ($_ENV['AH_SITE_ENVIRONMENT']) {
     case 'dev':
+      // Alter the charset and collation of the databases.
+      $databases['default']['default']['charset'] = 'utf8mb4';
+      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+      $databases['tiffindev']['default']['charset'] = 'utf8mb4';
+      $databases['tiffindev']['default']['collation'] = 'utf8mb4_general_ci';
+      // Now connect to the default database.
+      acquia_hosting_db_choose_active();
       $conf['theme_debug'] = TRUE;
       $conf['preprocess_css'] = 0;
       $conf['preprocess_js'] = 0;
@@ -669,7 +669,35 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       $conf['cache_class_cache_page'] = 'DrupalDatabaseCache';
       break;
 
+    case 'test':
+      $databases['default']['default']['charset'] = 'utf8mb4';
+      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+      $databases['tiffinstg']['default']['charset'] = 'utf8mb4';
+      $databases['tiffinstg']['default']['collation'] = 'utf8mb4_general_ci';
+      // Now connect to the default database.
+      acquia_hosting_db_choose_active();
+
+      $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+      $conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
+      $conf['memcache_stampede_protection'] = TRUE;
+      $conf['cache_default_class'] = 'MemCacheDrupal';
+
+      // The 'cache_form' bin must be assigned to non-volatile storage.
+      $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+
+      // Don't bootstrap the database when serving pages from the cache.
+      $conf['page_cache_without_database'] = TRUE;
+      $conf['page_cache_invoke_hooks'] = FALSE;
+      break;
+
     case 'prod':
+      // Alter the charset and collation of the databases.
+      $databases['default']['default']['charset'] = 'utf8mb4';
+      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+      $databases['tiffin']['default']['charset'] = 'utf8mb4';
+      $databases['tiffin']['default']['collation'] = 'utf8mb4_general_ci';
+      // Now connect to the default database.
+      acquia_hosting_db_choose_active();
       $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
       $conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
       $conf['memcache_stampede_protection'] = TRUE;
