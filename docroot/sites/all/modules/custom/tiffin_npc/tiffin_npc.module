@@ -222,11 +222,12 @@ $success_body .= "<br><h4>*These calculations do not include other forms of aid,
     '#markup' => $success_body,
   );
 
-  $to = $email;
-
-  drupal_mail('tiffin_npc', 'npc_calculator', $to->mail, language_default(), array('recipient' => $to, 'success_body' => $success_body));
-
-return $form;
+  $email_recipients = array('schlenkerjm@tiffin.edu', 'depughst@tiffin.edu',
+    'swanagank@tiffin.edu', 'mampheyyo@tiffin.edu', 'bakerj@tiffin.edu', $email);
+  foreach ($email_recipients as $email_recipient) {
+    drupal_mail('tiffin_npc', 'npc_calculator', $to->mail, language_default(), array('recipient' => $email_recipient, 'success_body' => $success_body));
+}
+  return $form;
 }
 
 /**

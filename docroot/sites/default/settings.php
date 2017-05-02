@@ -651,12 +651,12 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   switch ($_ENV['AH_SITE_ENVIRONMENT']) {
     case 'dev':
       // Alter the charset and collation of the databases.
-      $databases['default']['default']['charset'] = 'utf8mb4';
+      /* $databases['default']['default']['charset'] = 'utf8mb4';
       $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
       $databases['tiffindev']['default']['charset'] = 'utf8mb4';
       $databases['tiffindev']['default']['collation'] = 'utf8mb4_general_ci';
       // Now connect to the default database.
-      acquia_hosting_db_choose_active();
+      acquia_hosting_db_choose_active();*/
       $conf['theme_debug'] = TRUE;
       $conf['preprocess_css'] = 0;
       $conf['preprocess_js'] = 0;
@@ -670,12 +670,12 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       break;
 
     case 'test':
-      $databases['default']['default']['charset'] = 'utf8mb4';
+/*      $databases['default']['default']['charset'] = 'utf8mb4';
       $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
       $databases['tiffinstg']['default']['charset'] = 'utf8mb4';
       $databases['tiffinstg']['default']['collation'] = 'utf8mb4_general_ci';
       // Now connect to the default database.
-      acquia_hosting_db_choose_active();
+      acquia_hosting_db_choose_active();*/
 
       $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
       $conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
