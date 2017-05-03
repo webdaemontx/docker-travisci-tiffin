@@ -237,7 +237,7 @@ $site_env = $_SERVER['SERVER_NAME'];
     );
   }
   foreach ($email_recipients as $email_recipient) {
-    drupal_mail('tiffin_npc', 'npc_calculator', $to->mail, language_default(), array('recipient' => $email_recipient, 'success_body' => $success_body));
+    drupal_mail('tiffin_npc', 'npc_calculator', $email_recipient->mail, language_default(), array('recipient' => $email_recipient, 'success_body' => $success_body));
 }
   return $form;
 }
