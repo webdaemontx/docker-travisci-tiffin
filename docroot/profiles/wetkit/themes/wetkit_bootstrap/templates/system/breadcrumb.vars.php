@@ -17,16 +17,17 @@
 function wetkit_bootstrap_preprocess_breadcrumb(&$variables) {
 
   // Do not modify breadcrumbs if the Path Breadcrumbs module should be used.
-  //if (_bootstrap_use_path_breadcrumbs()) {
-    //return;
-  //}
+  // if (_bootstrap_use_path_breadcrumbs()) {
+  // return;
+  // }
 
   $breadcrumb = &$variables['breadcrumb'];
 
   // Optionally get rid of the homepage link.
-  $show_breadcrumb_home = bootstrap_setting('breadcrumb_home');
+  // $show_breadcrumb_home = bootstrap_setting('breadcrumb_home');
+  $show_breadcrumb_home = variable_get('path_breadcrumbs_home_link_enabled');
   if (!$show_breadcrumb_home) {
-    //array_shift($breadcrumb);
+    array_shift($breadcrumb);
   }
 
   if (bootstrap_setting('breadcrumb_title') && !empty($breadcrumb)) {

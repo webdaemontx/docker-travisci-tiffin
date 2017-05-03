@@ -16,7 +16,6 @@
 function wetkit_breadcrumbs_breadcrumb($variables) {
   $breadcrumbs = $variables['breadcrumb'];
   if (!empty($breadcrumbs)) {
-
     // Hide breadcrumb navigation if it contains only one element.
     $hide_single_breadcrumb = variable_get('path_breadcrumbs_hide_single_breadcrumb', 0);
     if ($hide_single_breadcrumb && count($breadcrumbs) == 1) {
@@ -71,7 +70,6 @@ function wetkit_breadcrumbs_breadcrumb($variables) {
       // Add style that will display breadcrumbs wrapped in <div> inline.
       drupal_add_css(drupal_get_path('module', 'path_breadcrumbs') . '/css/path_breadcrumbs.css');
     }
-
     foreach ($breadcrumbs as $key => $breadcrumb) {
 
       // Build classes for the breadcrumbs.
@@ -87,7 +85,9 @@ function wetkit_breadcrumbs_breadcrumb($variables) {
       // For rich snippets support all links should be processed in the same way
       // even if they are provided not by Path Breadcrumbs module. So I have to
       // parse html code and create links again with new properties.
-      preg_match('/href="([^"]+?)"/', $breadcrumb, $matches);
+      if (!is_array($breadcrumb)) {
+        preg_match('/href="([^"]+?)"/', $breadcrumb, $matches);
+      }
 
       // Remove base path from href.
       $href = '';
@@ -128,13 +128,14 @@ function wetkit_breadcrumbs_breadcrumb($variables) {
       }
 
       // Get breadcrumb title from a link like "<a href = "/path">title</a>".
+      if (is_array($breadcrumb)) {
+        $breadcrumb = '';
+      }
       $title = trim(strip_tags($breadcrumb, '<em><abbr>'));
-
       // Wrap title in additional element for microdata support.
       if ($snippet == PATH_BREADCRUMBS_RICH_SNIPPETS_MICRODATA) {
         $title = '<span itemprop="title">' . $title . '</span>';
       }
-
       // Support title attribute.
       if (preg_match('/<a\s.*?title="([^"]+)"[^>]*>/i', $breadcrumb, $attr_matches)) {
         $options['attributes']['title'] = $attr_matches[1];
