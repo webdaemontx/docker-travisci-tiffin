@@ -128,8 +128,8 @@ H.S. GPA: " . $high_school_gpa . "<br>";
 
   $success_body .= "<strong>Student Activities</strong><br>
 Contact with Coach/Director:  $scholarships  <br>
-Sport/Activity 1:  drupal_ucfirst($which_activity) <br>
-Sport/Activity 2:  drupal_ucfirst($extra_activity) <br><br>";
+Sport/Activity 1: " .  drupal_ucfirst($which_activity) . " <br>
+Sport/Activity 2: " .  drupal_ucfirst($extra_activity)  . " <br><br>";
 
   $success_body .= "<strong>Student Financials</strong><br>
 Estimated AGI: $" . number_format(0) . "<br>
@@ -218,9 +218,12 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
     '#markup' => $success_body,
   );
   $site_env = $_SERVER['SERVER_NAME'];
-
-  if ($site_env != ('www.tiffin.edu' | 'tiffin.edu')) {
+  dpm($site_env);
+  if ($site_env != ('www.tiffin.edu' OR 'tiffin.edu')) {
     $email_recipients = array('sean.hanford@ellucian.com', 'saamjl@tiffin.edu');
+  }
+  elseif ($site_env == ('tiffin.dev.dd' OR 'dev.tiffin.edu')) {
+    $email_recipients = array('sean.hanford@gmail.com');
   }
   else {
     $email_recipients = array(
