@@ -736,7 +736,7 @@ function getNumberOfSteps() {
  */
 function tiffin_npc_success() {
 
-  dpm($_SESSION['uniqid']);
+  dpm($_SESSION);
 
   $uniqid = check_plain($_SESSION['uniqid']);
 
