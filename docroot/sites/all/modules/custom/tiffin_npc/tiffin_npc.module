@@ -709,13 +709,16 @@ function tiffin_npc_netprice_form_submit($form, &$form_state) {
 
     try {
       db_insert('tiffin_npc_table')->fields($fieldarray)->execute();
+
+      $_SESSION['uniqid'] = $uniqid;
+      unset($_GET['destination']);
+      unset($form_state['rebuild']);
+      $form_state['redirect'] = array('forms/netprice/success', array('uniqid' => $uniqid));
     }
     catch (PDOException $e) {
       drupal_set_message(t('Error: %message', array('%message' => $e->getMessage())), 'error');
     }
 
-    $_SESSION['uniqid'] = $uniqid;
-    $form_state['redirect'] = 'forms/netprice/success';
     /*$redirect = 'forms/netprice/success';
     $redirect_options = array('query' => array('uniqid' => $uniqid));
     drupal_goto($redirect, $redirect_options);*/
