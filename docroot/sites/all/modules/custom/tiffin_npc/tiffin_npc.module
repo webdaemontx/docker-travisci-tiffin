@@ -1,11 +1,12 @@
 <?php
-/**
-* @file
- * Code for the Tiffin NPC feature.
-*/
 
 /**
- * Implements hook_menu()
+ * @file
+ * Code for the Tiffin NPC feature.
+ */
+
+/**
+ * Implements hook_menu().
  */
 function tiffin_npc_menu() {
   // Module settings.
@@ -21,7 +22,17 @@ function tiffin_npc_menu() {
   return $items;
 }
 
+/**
+ * Builds the display and email results. Inserts the submission to the database.
+ *
+ * @property array $form {
+ *   An associative array of form field submissions.
+ * @type string
+ * }
+ */
 function tiffin_npc_success() {
+
+  $uniqid = NULL;
 
   if (isset($_GET['uniqid'])) {
     $uniqid = check_plain($_GET['uniqid']);
@@ -72,7 +83,7 @@ function tiffin_npc_success() {
   $this_year = date('Y');
   $next_year = (date('Y') + 1);
 
-  // returns a double value from 0 to ~75 that determines scholarship eligibility
+  // Returns a double val from 0 to ~75 that determines scholarship eligibility.
   $actsat_value = _get_actsat_score($sat_act, $sat, $act, $high_school_gpa, $prep_courses_score);
 
   $scholarship = _get_scholarships($actsat_value);
@@ -128,8 +139,8 @@ H.S. GPA: " . $high_school_gpa . "<br>";
 
   $success_body .= "<strong>Student Activities</strong><br>
 Contact with Coach/Director:  $scholarships  <br>
-Sport/Activity 1: " .  drupal_ucfirst($which_activity) . " <br>
-Sport/Activity 2: " .  drupal_ucfirst($extra_activity)  . " <br><br>";
+Sport/Activity 1: " . drupal_ucfirst($which_activity) . " <br>
+Sport/Activity 2: " . drupal_ucfirst($extra_activity) . " <br><br>";
 
   $success_body .= "<strong>Student Financials</strong><br>
 Estimated AGI: $" . number_format(0) . "<br>
@@ -154,12 +165,12 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
 <h3>Your estimated financial aid:</h3>
 <br><br>";
 
-  // Print the Scholarship Value
+  // Print the Scholarship Value.
   if ($scholarship[1] != 0) {
     $success_body .= "<strong>Institutional Grants and Scholarships</strong><br>" .
       $scholarship[0] . "...................$" . number_format($scholarship[1]) . "<br><br>";
   }
-  // Print the Federal Work Study value
+  // Print the Federal Work Study value.
   $success_body .= "<strong>Work-Study</strong><br>";
   $success_body .= "Federal Work-Study...............................$" .
     number_format($work_study) . "<br>";
@@ -170,7 +181,7 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
   else {
     $success_body .= "<br>";
   }
-  // Begin the Grants section
+  // Begin the Grants section.
   $success_body .= "<strong>Grants</strong><br>";
   if ($pell_grant[0] > 0) {
     $success_body .= "Pell Grant................................................$" . number_format($pell_grant[0]) . "<br>";
@@ -185,10 +196,10 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
   if ($ocog <= 0) {
     $success_body .= "Ohio College Opportunity Grant............................$0<br>";
   }
-  // Add an additional break for spacing between the Grants and Federal Loans
+  // Add an additional break for spacing between the Grants and Federal Loans.
   $success_body .= "<br>";
 
-  // Begin the Loans section
+  // Begin the Loans section.
   $success_body .= "<strong>Federal Loans</strong><br>";
   $success_body .= "Federal Direct Stafford Subsidized Loan.........................$" . number_format($subsidized_stafford_loan) . "<br>";
 
@@ -218,11 +229,10 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
     '#markup' => $success_body,
   );
   $site_env = $_SERVER['SERVER_NAME'];
-  dpm($site_env);
-  if ($site_env != ('www.tiffin.edu' OR 'tiffin.edu')) {
+  if ($site_env != ('www.tiffin.edu' or 'tiffin.edu')) {
     $email_recipients = array('sean.hanford@ellucian.com', 'saamjl@tiffin.edu');
   }
-  elseif ($site_env == ('tiffin.dev.dd' OR 'dev.tiffin.edu')) {
+  elseif ($site_env == ('tiffin.dev.dd' or 'dev.tiffin.edu')) {
     $email_recipients = array('sean.hanford@gmail.com');
   }
   else {
@@ -256,6 +266,10 @@ function tiffin_npc_block_info() {
 
 /**
  * Implements hook_block_view().
+ *
+ * @param $delta
+ *
+ * @return array
  */
 function tiffin_npc_block_view($delta) {
   $block = array();
@@ -269,19 +283,23 @@ function tiffin_npc_block_view($delta) {
   return $block;
 }
 
-
 function tiffin_npc_form() {
   return drupal_get_form('tiffin_npc_netprice_form');
 }
+
 /**
- * Returns the render array for the form.
- * Adds logic to the form builder to give it two pages.
- * It checks a value in $form_state['storage']
+ * Returns the render array for the form. Adds logic to the form builder
+ * to give it two pages. It checks a value in $form_state['storage'].
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @return mixed
  */
 function tiffin_npc_netprice_form($form, &$form_state) {
-  // Display page 2 if $form_state['storage']['page_two'] is set
+  // Display page 2 if $form_state['storage']['page_two'] is set.
   if (isset($form_state['storage']['page_two'])) {
-    return tiffin_npc_netprice_form_page_two();
+    return _tiffin_npc_netprice_form_page_two();
   }
 
   $form['agreement'] = array(
@@ -302,7 +320,7 @@ function tiffin_npc_netprice_form($form, &$form_state) {
   return $form;
 }
 
-function tiffin_npc_netprice_form_page_two() {
+function _tiffin_npc_netprice_form_page_two() {
   $states_options = array(
     '' => t('--- Select ---'),
     'AL' => t('Alabama'),
@@ -417,7 +435,6 @@ function tiffin_npc_netprice_form_page_two() {
     '#type' => 'select',
     '#options' => $states_options,
     '#empty_option' => t('-- Select --'),
-    //'#default_value' => $state,
     '#required' => TRUE,
   );
 
@@ -490,7 +507,40 @@ function tiffin_npc_netprice_form_page_two() {
     '#suffix' => '<div><a href="/finaid/prepscore">View Points Table First to Determine Score</a></div><br><br>',
   );
 
-  $gpa_array = array("1.0","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2.0","2.1","2.2","2.3","2.4","2.5","2.6","2.7","2.8","2.9","3.0","3.1","3.2","3.3","3.4","3.5","3.6","3.7","3.8","3.9","4.0");
+  $gpa_array = array(
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6",
+    "1.7",
+    "1.8",
+    "1.9",
+    "2.0",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "3.0",
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8",
+    "3.9",
+    "4.0",
+  );
+
   $form['academic_info']['high_school_gpa'] = array(
     '#type' => 'select',
     '#title' => 'High School Cumulative GPA',
@@ -511,7 +561,35 @@ function tiffin_npc_netprice_form_page_two() {
     '#required' => TRUE,
   );
 
-  $sat_scores = array("510-550", "550-610", "620-660", "670-710", "720-760", "770-810", "820-850", "860-890", "900-930", "940-970", "980-1010", "1020-1040", "1050-1080", "1090-1120", "1130-1160", "1170-1200", "1210-1240", "1250-1280", "1290-1320", "1330-1350", "1360-1390", "1400-1430", "1440-1480", "1490-1530", "1540-1590", "1600");
+  $sat_scores = array(
+    "510-550",
+    "550-610",
+    "620-660",
+    "670-710",
+    "720-760",
+    "770-810",
+    "820-850",
+    "860-890",
+    "900-930",
+    "940-970",
+    "980-1010",
+    "1020-1040",
+    "1050-1080",
+    "1090-1120",
+    "1130-1160",
+    "1170-1200",
+    "1210-1240",
+    "1250-1280",
+    "1290-1320",
+    "1330-1350",
+    "1360-1390",
+    "1400-1430",
+    "1440-1480",
+    "1490-1530",
+    "1540-1590",
+    "1600",
+  );
+
   $form['academic_info']['sat'] = array(
     '#type' => 'select',
     '#title' => 'Composite SAT score',
@@ -565,7 +643,7 @@ function tiffin_npc_netprice_form_page_two() {
   $born_before = (date('Y') - 23);
   $form['dependency_status']['born_before_1973'] = array(
     '#type' => 'radios',
-    '#title' => t("Were you born before January 1, $born_before?"),
+    '#title' => t("Were you born before January 1, ") .$born_before . "?",
     '#options' => array(
       'yes' => t('Yes'),
       'no' => t('No'),
@@ -612,9 +690,9 @@ function tiffin_npc_netprice_form_page_two() {
       'no' => t('No'),
     ),
     '#required' => TRUE,
-    '#description' => t('<p><strong>Answer No</strong> (you are not a veteran) if you (1) have never engaged in active duty in the U.S. armed forces, (2) are currently a Reserve Officers\' Training Corps (ROTC) student or a cadet or midshipman at a service academy, (3) are a National Guard or Reserves enlistee activated only for state or training purposes, or (4) were engaged in active duty in the U.S. armed forces but released under dishonorable conditions. Also answer No if you are currently serving in the U.S. armed forces and will continue to serve through June 30,' .  $veteran_date . '.</p>
+    '#description' => t('<p><strong>Answer No</strong> (you are not a veteran) if you (1) have never engaged in active duty in the U.S. armed forces, (2) are currently a Reserve Officers\' Training Corps (ROTC) student or a cadet or midshipman at a service academy, (3) are a National Guard or Reserves enlistee activated only for state or training purposes, or (4) were engaged in active duty in the U.S. armed forces but released under dishonorable conditions. Also answer No if you are currently serving in the U.S. armed forces and will continue to serve through June 30,' . $veteran_date . '.</p>
 
-<p><strong>Answer Yes</strong> (you are a veteran) if you (1) have engaged in active duty in the U.S. armed forces or are a National Guard or Reserves enlistee who was called to active duty for other than state or training purposes, or were a cadet or midshipman at one of the service academies and (2) were released under a condition other than dishonorable. Also answer Yes if you are not a veteran now but will be one by June 30, '. $veteran_date .'.</p>'),
+<p><strong>Answer Yes</strong> (you are a veteran) if you (1) have engaged in active duty in the U.S. armed forces or are a National Guard or Reserves enlistee who was called to active duty for other than state or training purposes, or were a cadet or midshipman at one of the service academies and (2) were released under a condition other than dishonorable. Also answer Yes if you are not a veteran now but will be one by June 30,' . $veteran_date . ' .</p>'),
   );
 
   $form['dependency_status']['have_dependent_children'] = array(
@@ -817,6 +895,9 @@ function tiffin_npc_netprice_form_page_two() {
 
 /**
  * Validates the form.
+ *
+ * @param $form
+ * @param $form_state
  */
 function tiffin_npc_netprice_form_validate($form, &$form_state) {
 /*  $year_of_birth = $form_state['values']['year_of_birth'];
@@ -830,6 +911,9 @@ function tiffin_npc_netprice_form_validate($form, &$form_state) {
  *
  * This will add a completion message to the screen when the
  * form successfully processes
+ *
+ * @param $form
+ * @param $form_state
  */
 
 /*
