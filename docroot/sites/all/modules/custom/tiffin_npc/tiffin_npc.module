@@ -9,12 +9,17 @@
  * Implements hook_menu().
  */
 function tiffin_npc_menu() {
-  // Module settings.
+  $items['forms/netprice'] = array(
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('tiffin_npc_netprice_form'),
+  );
   $items['forms/netprice/success'] = array(
     'title' => 'Net Price Calculator - Form Submitted',
     'description' => 'Net Price Calculator Success Page',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('tiffin_npc_success'),
+    'page callback' => 'tiffin_npc_success',
+    //'page arguments' => array('tiffin_npc_success'),
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
@@ -23,7 +28,706 @@ function tiffin_npc_menu() {
 }
 
 /**
- * Builds the display and email results. Inserts the submission to the database.
+ * Returns the render array for the form.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @return mixed
+ */
+function tiffin_npc_netprice_form($form, &$form_state) {
+
+  if (isset($form_state['values'])) {
+    $currstep = $form_state['step'] + 1;
+  }
+  else {
+    $currstep = 0;
+  }
+  $form_state['step'] = $currstep;
+  $allsteps = getForm();
+  $currform = $allsteps[$currstep];
+
+  return $currform;
+}
+
+function getForm() {
+  $form = array();
+  $step1 = array();
+  $step1['agreement'] = array(
+    '#type' => 'radios',
+    '#title' => t('Agreement'),
+    '#options' => array(
+      'agree' => t('Agree'),
+      'disagree' => t('Disagree'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step1['next'] = array(
+    '#type' => 'submit',
+    '#value' => 'Next >>',
+  );
+  $form[] = $step1;
+
+  $states_options = array(
+    '' => t('--- Select ---'),
+    'AL' => t('Alabama'),
+    'AK' => t('Alaska'),
+    'AZ' => t('Arizona'),
+    'AR' => t('Arkansas'),
+    'CA' => t('California'),
+    'CO' => t('Colorado'),
+    'CT' => t('Connecticut'),
+    'DE' => t('Delaware'),
+    'DC' => t('District of Columbia'),
+    'FL' => t('Florida'),
+    'GA' => t('Georgia'),
+    'HI' => t('Hawaii'),
+    'ID' => t('Idaho'),
+    'IL' => t('Illinois'),
+    'IN' => t('Indiana'),
+    'IA' => t('Iowa'),
+    'KS' => t('Kansas'),
+    'KY' => t('Kentucky'),
+    'LA' => t('Louisiana'),
+    'ME' => t('Maine'),
+    'MD' => t('Maryland'),
+    'MA' => t('Massachusetts'),
+    'MI' => t('Michigan'),
+    'MN' => t('Minnesota'),
+    'MS' => t('Mississippi'),
+    'MO' => t('Missouri'),
+    'MY' => t('Montana'),
+    'NE' => t('Nebraska'),
+    'NV' => t('Nevada'),
+    'NH' => t('New Hampshire'),
+    'NJ' => t('New Jersey'),
+    'NM' => t('New Mexico'),
+    'NY' => t('New York'),
+    'NC' => t('North Carolina'),
+    'ND' => t('North Dakota'),
+    'OH' => t('Ohio'),
+    'OK' => t('Oklahoma'),
+    'OR' => t('Oregon'),
+    'PA' => t('Pennsylvania'),
+    'RI' => t('Rhode Island'),
+    'SC' => t('South Carolina'),
+    'SD' => t('South Dakota'),
+    'TN' => t('Tennessee'),
+    'TX' => t('Texas'),
+    'UT' => t('Utah'),
+    'VT' => t('Vermont'),
+    'VA' => t('Virginia'),
+    'WA' => t('Washington'),
+    'WV' => t('West Virginia'),
+    'WI' => t('Wisconsin'),
+    'WY' => t('Wyoming'),
+  );
+
+  $step2['personal_info'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Name'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $step2['personal_info']['first'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "First name",
+    '#description' => "Please enter your first name.",
+    '#size' => 20,
+    '#maxlength' => 20,
+  );
+  $step2['personal_info']['last'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "Last name",
+    '#description' => "Please enter your last name.",
+    '#size' => 20,
+    '#maxlength' => 30,
+  );
+  $step2['personal_info']['email'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "Email Address",
+    '#description' => "Please enter your email address.",
+    '#size' => 20,
+    '#maxlength' => 50,
+  );
+  $step2['personal_info']['address'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "Address",
+    '#description' => "Please enter your street address.",
+    '#size' => 20,
+    '#maxlength' => 50,
+  );
+  $step2['personal_info']['address_2'] = array(
+    '#type' => 'textfield',
+    '#title' => '',
+    '#required' => FALSE,
+    '#size' => 20,
+    '#maxlength' => 50,
+  );
+  $step2['personal_info']['city'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "City",
+    '#description' => "Please enter your city.",
+    '#size' => 20,
+    '#maxlength' => 50,
+  );
+  $step2['personal_info']['state'] = array(
+    '#description' => "Your home state",
+    '#type' => 'select',
+    '#options' => $states_options,
+    '#empty_option' => t('-- Select --'),
+    '#required' => TRUE,
+  );
+  $step2['personal_info']['zip'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "Zip Code",
+    '#description' => "Please enter your Zip Code.",
+    '#size' => 10,
+    '#maxlength' => 15,
+  );
+  $step2['personal_info']['county'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "County",
+    '#description' => "Please enter your county.",
+    '#size' => 10,
+    '#maxlength' => 100,
+  );
+  $step2['personal_info']['phone_type'] = array(
+    '#type' => 'select',
+    '#title' => t('Phone Type'),
+    '#description' => "Select your phone number type.",
+    '#options' => array(
+      'home' => t('Home'),
+      'cell' => t('Cell'),
+      'work' => t('Work'),
+    ),
+    '#required' => TRUE,
+  );
+  $step2['personal_info']['phone_number'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Phone Number',
+    '#description' => "Primary phone number.",
+    '#required' => TRUE,
+    '#size' => 15,
+    '#maxlength' => 15,
+  );
+  $step2['academic_info'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Academic Information'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $grad_year_min = (date('Y') - 15);
+  $grad_year_max = (date('Y') + 4);
+  $step2['academic_info']['high_school_grad_year'] = array(
+    '#title' => 'High School Graduation Year',
+    '#type' => 'select',
+    '#options' => drupal_map_assoc(range($grad_year_min, $grad_year_max)),
+    '#required' => TRUE,
+  );
+
+  $prep_course_score_min = 0;
+  $prep_course_score_max = 10;
+  $step2['academic_info']['prep_courses_score'] = array(
+    '#type' => 'select',
+    '#title' => 'College Prep Courses Score',
+    '#options' => drupal_map_assoc(range($prep_course_score_min, $prep_course_score_max)),
+    '#width' => '30%',
+    '#align' => 'center',
+    '#required' => TRUE,
+    '#maxlength' => 3,
+    '#suffix' => '<div><a href="/finaid/prepscore">View Points Table First to Determine Score</a></div><br><br>',
+  );
+
+  $gpa_array = array(
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6",
+    "1.7",
+    "1.8",
+    "1.9",
+    "2.0",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7",
+    "2.8",
+    "2.9",
+    "3.0",
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6",
+    "3.7",
+    "3.8",
+    "3.9",
+    "4.0",
+  );
+
+  $step2['academic_info']['high_school_gpa'] = array(
+    '#type' => 'select',
+    '#title' => 'High School Cumulative GPA',
+    '#options' => drupal_map_assoc($gpa_array),
+    '#width' => '30%',
+    '#align' => 'center',
+    '#required' => TRUE,
+    '#maxlength' => 5,
+  );
+
+  $step2['academic_info']['satact'] = array(
+    '#type' => 'radios',
+    '#title' => t('Did you take ACT or SAT?'),
+    '#options' => array(
+      'sat' => t('SAT'),
+      'act' => t('ACT'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $sat_scores = array(
+    "510-550",
+    "550-610",
+    "620-660",
+    "670-710",
+    "720-760",
+    "770-810",
+    "820-850",
+    "860-890",
+    "900-930",
+    "940-970",
+    "980-1010",
+    "1020-1040",
+    "1050-1080",
+    "1090-1120",
+    "1130-1160",
+    "1170-1200",
+    "1210-1240",
+    "1250-1280",
+    "1290-1320",
+    "1330-1350",
+    "1360-1390",
+    "1400-1430",
+    "1440-1480",
+    "1490-1530",
+    "1540-1590",
+    "1600",
+  );
+
+  $step2['academic_info']['sat'] = array(
+    '#type' => 'select',
+    '#title' => 'Composite SAT score',
+    '#description' => t('combination of verbal and math score only'),
+    '#options' => drupal_map_assoc($sat_scores),
+    '#maxlength' => 10,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="satact"]' => array(
+          'value' => 'sat',
+        ),
+      ),
+    ),
+  );
+
+  $act_min = 11;
+  $act_max = 36;
+  $step2['academic_info']['act'] = array(
+    '#type' => 'select',
+    '#title' => 'Composite ACT score',
+    '#options' => drupal_map_assoc(range($act_min, $act_max)),
+    '#width' => '30%',
+    '#align' => 'center',
+
+    '#maxlength' => 3,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="satact"]' => array(
+          'value' => 'act',
+        ),
+      ),
+    ),
+  );
+
+  $step2['academic_info']['intended_major'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "Intended Major",
+    '#description' => "Please provide your intended major.",
+    '#size' => 10,
+    '#maxlength' => 100,
+  );
+
+  $step2['dependency_status'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Dependency Status'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $born_before = (date('Y') - 23);
+  $step2['dependency_status']['born_before_1973'] = array(
+    '#type' => 'radios',
+    '#title' => t("Were you born before January 1, ") .$born_before . "?",
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['married'] = array(
+    '#type' => 'radios',
+    '#title' => t('As of today, are you married? (Answer "Yes" if you are separated but not divorced.)'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['in_masters_or_doctorate_program'] = array(
+    '#type' => 'radios',
+    '#title' => t('At the beginning of the 2017-2018 school year, will you be working on a master\'s or doctorate program (such as an M.A., M.B.A., M.D., J.D., Ph.D., EdD., graduate certificate, etc.)?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['active_duty'] = array(
+    '#type' => 'radios',
+    '#title' => t('Are you currently serving on active duty in the U.S. armed forces for purposes other than training? (If you are a National Guard of Reserves enlistee, are you on active duty for other than state or training purposes?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $veteran_date = (date('Y') + 1);
+  $step2['dependency_status']['veteran'] = array(
+    '#type' => 'radios',
+    '#title' => t('Are you a veteran of the U.S. Armed Forces?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+    '#description' => t('<p><strong>Answer No</strong> (you are not a veteran) if you (1) have never engaged in active duty in the U.S. armed forces, (2) are currently a Reserve Officers\' Training Corps (ROTC) student or a cadet or midshipman at a service academy, (3) are a National Guard or Reserves enlistee activated only for state or training purposes, or (4) were engaged in active duty in the U.S. armed forces but released under dishonorable conditions. Also answer No if you are currently serving in the U.S. armed forces and will continue to serve through June 30,' . $veteran_date . '.</p>
+
+<p><strong>Answer Yes</strong> (you are a veteran) if you (1) have engaged in active duty in the U.S. armed forces or are a National Guard or Reserves enlistee who was called to active duty for other than state or training purposes, or were a cadet or midshipman at one of the service academies and (2) were released under a condition other than dishonorable. Also answer Yes if you are not a veteran now but will be one by June 30,' . $veteran_date . ' .</p>'),
+  );
+
+  $step2['dependency_status']['have_dependent_children'] = array(
+    '#type' => 'radios',
+    '#title' => t('Do you have children who will receive more than half of their support from you between July 1,' . (date('Y')) . ' and June 30, ' . (date('Y') + 1) . ' ?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['other_dependents'] = array(
+    '#type' => 'radios',
+    '#title' => t('Do you have dependents (other than your children or spouse) who live with you and who receive more than half of their support from you, now and through June 30, ' . (date('Y') + 1) . ' ?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['parents_deceased'] = array(
+    '#type' => 'radios',
+    '#title' => t('At any time since you turned age 13, were both your parents deceased, were you in foster care, or were you a dependent or ward of the court?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['emancipated_or_guardianship'] = array(
+    '#type' => 'radios',
+    '#title' => t('Has it been determined by a court in your state of legal residence that you are an emancipated minor or that you are in a legal guardianship?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['unaccompanied_youth'] = array(
+    '#type' => 'radios',
+    '#title' => t('At any time on or after July 1, ' . (date('Y') - 1) . ', were you determined to be an unaccompanied youth who was homeless, as determined by (a) your high school or district homeless liaison or (b) the director of an emergency shelter or transitional housing program funded by the U.S. Department of Housing and Urban Development?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['homeless_youth'] = array(
+    '#type' => 'radios',
+    '#title' => t('At any time on or after July 1, ' . (date('Y') - 1) . ', did the director of a runaway or homeless youth basic center or transitional living program determine that you were an unaccompanied youth who was homeless or were self-supporting and at risk of being homeless?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['dependency_status']['dependent_student'] = array(
+    '#markup' => t('<p>If you answered <strong>YES</strong> to any of the above questions you are an <strong>independent student</strong>.</p>
+
+<p>If you answered <strong>NO</strong> to all the questions above you are a <strong>dependent student</strong>.</p>
+
+<p><strong><em>A dependent child</em></strong> does not have to live with you, so long as the child receives more than half of his/her support from you. The child may include a biological or adopted child, or a child for whom you are the legal guardian. Note that generally speaking, if the child meets the 50% support test, the child should be claimed as an exemption on your income tax return.</p>'),
+  );
+
+  $step2['efc'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Expected Family Contribution (EFC)'),
+    '#description' => t('To determine your Expected Family Contribution (EFC), you must go to the FinAid quick EFC calculator. ( <a href="http://www.finaid.org/calculators/scripts/quickefc.cgi" target="_blank">Click here to calculate your EFC</a> .) You will need your and your parent\'s most recent federal tax information to complete this section. Once you have calculated your EFC, close that browser window to return to this one.'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $step2['efc']['expected_family_income'] = array(
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => "Your Expected Family Income",
+    '#description' => "Insert your TOTAL EXPECTED FAMILY CONTRIBUTION here",
+    '#size' => 10,
+    '#maxlength' => 15,
+  );
+
+  $step2['efc']['ohio_residents'] = array(
+    '#type' => 'radios',
+    '#title' => t('Have you or your parent(s) continuously lived in Ohio for at least the last 12 months?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['activities'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Activities'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $step2['activities']['extra_curricular_activities'] = array(
+    '#type' => 'radios',
+    '#title' => t('Do you expect to participate in any extra curricular activities?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['activities']['scholarships'] = array(
+    '#type' => 'radios',
+    '#title' => t('Have you been in contact with a coach/director for consideration of an athletic/music scholarship?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['activities']['which_activity'] = array(
+    '#type' => 'select',
+    '#title' => t('Which extra curricular activity?'),
+    '#options' => array(
+      'none' => t('N/A'),
+      'band' => t('Band'),
+      'baseball' => t('Baseball'),
+      'basketball' => t('Basketball'),
+      'cheerleading' => t('Cheerleading'),
+      'choir' => t('Choir'),
+      'cross_country' => t('Cross Country'),
+      'dance' => t('Dance'),
+      'equestrian' => t('Equestrian'),
+      'eSports' => t('eSports'),
+      'football' => t('Football'),
+      'golf' => t('Golf'),
+      'lacrosse' => t('Lacrosse'),
+      'soccer' => t('Soccer'),
+      'softball' => t('Softball'),
+      'tennis' => t('Tennis'),
+      'theatre' => t('Theatre'),
+      'track' => t('Track'),
+      'student_government' => t('Student Government'),
+      'volleyball' => t('Volleyball'),
+      'wrestling' => t('Wrestling'),
+      'other_student_organization' => t('Other Student Organization'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['activities']['extra_activity'] = array(
+    '#type' => 'select',
+    '#title' => t('Additional extra curricular activity?'),
+    '#options' => array(
+      'none' => t('N/A'),
+      'band' => t('Band'),
+      'baseball' => t('Baseball'),
+      'basketball' => t('Basketball'),
+      'cheerleading' => t('Cheerleading'),
+      'choir' => t('Choir'),
+      'cross_country' => t('Cross Country'),
+      'dance' => t('Dance'),
+      'equestrian' => t('Equestrian'),
+      'eSports' => t('eSports'),
+      'football' => t('Football'),
+      'golf' => t('Golf'),
+      'lacrosse' => t('Lacrosse'),
+      'soccer' => t('Soccer'),
+      'softball' => t('Softball'),
+      'tennis' => t('Tennis'),
+      'theatre' => t('Theatre'),
+      'track' => t('Track'),
+      'student_government' => t('Student Government'),
+      'volleyball' => t('Volleyball'),
+      'wrestling' => t('Wrestling'),
+      'other_student_organization' => t('Other Student Organization'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $step2['completed_npc'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('You have completed the Tiffin University Net Price Calculator'),
+    '#description' => t('Please press the submit button <strong>only once</strong>.<br>It may take a moment to process your information.'),
+    '#collapsible' => FALSE,
+  );
+
+  $step2['completed_npc']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#validate' => array('tiffin_npc_netprice_form_validate'),
+    '#submit' => array('tiffin_npc_netprice_form_submit'),
+  );
+
+  $form[] = $step2;
+
+  return $form;
+}
+
+/**
+ * Add a submit handler/function to the form.
+ *
+ * This will add a completion message to the screen when the
+ * form successfully processes.
+ *
+ * @param $form object()
+ * @param $form_state
+ * @throws \Exception
+ */
+function tiffin_npc_netprice_form_submit($form, &$form_state) {
+  $form_state['stored_values'][$form_state['step']] = $form_state['values'];
+  if ($form_state['step'] + 1 != getNumberOfSteps()) {
+    $form_state['rebuild'] = TRUE;
+  }
+  else {
+    $finalformvalues = array();
+    $currstep = 0;
+    foreach (getForm() as $step) {
+      foreach ($step as $key => $value) {
+        if (strcmp($key, "submit") != 0) {
+          $finalformvalues[$key] = $form_state['stored_values'][$currstep][$key];
+        }
+      }
+      $currstep++;
+    }
+
+    $uniqid = uniqid_base36(TRUE);
+
+    $fieldarray = array(
+      'calculationGUID' => $uniqid,
+      'first' => $form_state['values']['first'],
+      'last' => $form_state['values']['last'],
+      'email' => $form_state['values']['email'],
+      'address' => $form_state['values']['address'],
+      'address_2' => $form_state['values']['address_2'],
+      'city' => $form_state['values']['city'],
+      'state' => $form_state['values']['state'],
+      'zip' => $form_state['values']['zip'],
+      'county' => $form_state['values']['county'],
+      'phone_type' => $form_state['values']['phone_type'],
+      'phone_number' => $form_state['values']['phone_number'],
+      'high_school_grad_year' => $form_state['values']['high_school_grad_year'],
+      'prep_courses_score' => $form_state['values']['prep_courses_score'],
+      'high_school_gpa' => $form_state['values']['high_school_gpa'],
+      'satact' => $form_state['values']['satact'],
+      'sat' => $form_state['values']['sat'],
+      'act' => $form_state['values']['act'],
+      'intended_major' => $form_state['values']['intended_major'],
+      'born_before_1973' => $form_state['values']['born_before_1973'],
+      'married' => $form_state['values']['married'],
+      'in_masters_or_doctorate_program' => $form_state['values']['in_masters_or_doctorate_program'],
+      'active_duty' => $form_state['values']['active_duty'],
+      'veteran' => $form_state['values']['veteran'],
+      'have_dependent_children' => $form_state['values']['have_dependent_children'],
+      'other_dependents' => $form_state['values']['other_dependents'],
+      'parents_deceased' => $form_state['values']['parents_deceased'],
+      'emancipated_or_guardianship' => $form_state['values']['emancipated_or_guardianship'],
+      'unaccompanied_youth' => $form_state['values']['unaccompanied_youth'],
+      'homeless_youth' => $form_state['values']['homeless_youth'],
+      'efc' => $form_state['values']['expected_family_income'],
+      'ohio_residents' => $form_state['values']['ohio_residents'],
+      'extra_curricular_activities' => $form_state['values']['extra_curricular_activities'],
+      'scholarships' => $form_state['values']['scholarships'],
+      'which_activity' => $form_state['values']['which_activity'],
+      'extra_activity' => $form_state['values']['extra_activity'],
+      'create_from_ip' => ip_address(),
+      'create_date' => gmdate('Y-m-d\TH:i:s\Z'),
+    );
+
+    try {
+      db_insert('tiffin_npc_table')->fields($fieldarray)->execute();
+    }
+    catch (PDOException $e) {
+      drupal_set_message(t('Error: %message', array('%message' => $e->getMessage())), 'error');
+    }
+
+    $_SESSION['uniqid'] = $uniqid;
+    $form_state['redirect'] = 'forms/netprice/success';
+    /*$redirect = 'forms/netprice/success';
+    $redirect_options = array('query' => array('uniqid' => $uniqid));
+    drupal_goto($redirect, $redirect_options);*/
+  }
+}
+
+function getNumberOfSteps() {
+  return count(getForm());
+}
+
+/**
+ * Builds the display and email results.
  *
  * @property array $form {
  *   An associative array of form field submissions.
@@ -32,12 +736,13 @@ function tiffin_npc_menu() {
  */
 function tiffin_npc_success() {
 
-  $uniqid = NULL;
+  dpm($_SESSION['uniqid']);
 
-  if (isset($_GET['uniqid'])) {
+  $uniqid = check_plain($_SESSION['uniqid']);
+
+/*  if (isset($_GET['uniqid'])) {
     $uniqid = check_plain($_GET['uniqid']);
-  }
-  dpm($uniqid);
+  }*/
 
   $form = array();
   $result = db_select('tiffin_npc_table', 'npc')
@@ -46,8 +751,6 @@ function tiffin_npc_success() {
     ->execute()
     ->fetchAssoc();
 
-  dpm($form);
-  dpm($result);
   $first = $result['first'];
   $last = $result['last'];
   $email = $result['email'];
@@ -294,617 +997,6 @@ function tiffin_npc_form() {
 }
 
 /**
- * Returns the render array for the form. Adds logic to the form builder
- * to give it two pages. It checks a value in $form_state['storage'].
- *
- * @param $form
- * @param $form_state
- *
- * @return mixed
- */
-function tiffin_npc_netprice_form($form, &$form_state) {
-  // Display page 2 if $form_state['storage']['page_two'] is set.
-  dpm($form_state);
-  if (isset($form_state['storage']['page_two'])) {
-    return _tiffin_npc_netprice_form_page_two();
-  }
-
-  $form['agreement'] = array(
-    '#type' => 'radios',
-    '#title' => t('Agreement'),
-    '#options' => array(
-      'agree' => t('Agree'),
-      'disagree' => t('Disagree'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['next'] = array(
-    '#type' => 'submit',
-    '#value' => 'Next >>',
-  );
-
-  return $form;
-}
-
-/**
- * @param array
- * @return mixed
- */
-function _tiffin_npc_netprice_form_page_two() {
-  $states_options = array(
-    '' => t('--- Select ---'),
-    'AL' => t('Alabama'),
-    'AK' => t('Alaska'),
-    'AZ' => t('Arizona'),
-    'AR' => t('Arkansas'),
-    'CA' => t('California'),
-    'CO' => t('Colorado'),
-    'CT' => t('Connecticut'),
-    'DE' => t('Delaware'),
-    'DC' => t('District of Columbia'),
-    'FL' => t('Florida'),
-    'GA' => t('Georgia'),
-    'HI' => t('Hawaii'),
-    'ID' => t('Idaho'),
-    'IL' => t('Illinois'),
-    'IN' => t('Indiana'),
-    'IA' => t('Iowa'),
-    'KS' => t('Kansas'),
-    'KY' => t('Kentucky'),
-    'LA' => t('Louisiana'),
-    'ME' => t('Maine'),
-    'MD' => t('Maryland'),
-    'MA' => t('Massachusetts'),
-    'MI' => t('Michigan'),
-    'MN' => t('Minnesota'),
-    'MS' => t('Mississippi'),
-    'MO' => t('Missouri'),
-    'MY' => t('Montana'),
-    'NE' => t('Nebraska'),
-    'NV' => t('Nevada'),
-    'NH' => t('New Hampshire'),
-    'NJ' => t('New Jersey'),
-    'NM' => t('New Mexico'),
-    'NY' => t('New York'),
-    'NC' => t('North Carolina'),
-    'ND' => t('North Dakota'),
-    'OH' => t('Ohio'),
-    'OK' => t('Oklahoma'),
-    'OR' => t('Oregon'),
-    'PA' => t('Pennsylvania'),
-    'RI' => t('Rhode Island'),
-    'SC' => t('South Carolina'),
-    'SD' => t('South Dakota'),
-    'TN' => t('Tennessee'),
-    'TX' => t('Texas'),
-    'UT' => t('Utah'),
-    'VT' => t('Vermont'),
-    'VA' => t('Virginia'),
-    'WA' => t('Washington'),
-    'WV' => t('West Virginia'),
-    'WI' => t('Wisconsin'),
-    'WY' => t('Wyoming'),
-  );
-
-  $form['personal_info'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Name'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-  $form['personal_info']['first'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "First name",
-    '#description' => "Please enter your first name.",
-    '#size' => 20,
-    '#maxlength' => 20,
-  );
-  $form['personal_info']['last'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "Last name",
-    '#description' => "Please enter your last name.",
-    '#size' => 20,
-    '#maxlength' => 30,
-  );
-  $form['personal_info']['email'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "Email Address",
-    '#description' => "Please enter your email address.",
-    '#size' => 20,
-    '#maxlength' => 50,
-  );
-  $form['personal_info']['address'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "Address",
-    '#description' => "Please enter your street address.",
-    '#size' => 20,
-    '#maxlength' => 50,
-  );
-  $form['personal_info']['address_2'] = array(
-    '#type' => 'textfield',
-    '#title' => '',
-    '#required' => FALSE,
-    '#size' => 20,
-    '#maxlength' => 50,
-  );
-  $form['personal_info']['city'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "City",
-    '#description' => "Please enter your city.",
-    '#size' => 20,
-    '#maxlength' => 50,
-  );
-
-  $form['personal_info']['state'] = array(
-    '#description' => "Your home state",
-    '#type' => 'select',
-    '#options' => $states_options,
-    '#empty_option' => t('-- Select --'),
-    '#required' => TRUE,
-  );
-
-  $form['personal_info']['zip'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "Zip Code",
-    '#description' => "Please enter your Zip Code.",
-    '#size' => 10,
-    '#maxlength' => 15,
-  );
-
-  $form['personal_info']['county'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "County",
-    '#description' => "Please enter your county.",
-    '#size' => 10,
-    '#maxlength' => 100,
-  );
-
-  $form['personal_info']['phone_type'] = array(
-    '#type' => 'select',
-    '#title' => t('Phone Type'),
-    '#description' => "Select your phone number type.",
-    '#options' => array(
-      'home' => t('Home'),
-      'cell' => t('Cell'),
-      'work' => t('Work'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['personal_info']['phone_number'] = array(
-    '#type' => 'textfield',
-    '#title' => 'Phone Number',
-    '#description' => "Primary phone number.",
-    '#required' => TRUE,
-    '#size' => 15,
-    '#maxlength' => 15,
-  );
-
-  $form['academic_info'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Academic Information'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-
-  $grad_year_min = (date('Y') - 15);
-  $grad_year_max = (date('Y') + 4);
-
-  $form['academic_info']['high_school_grad_year'] = array(
-    '#title' => 'High School Graduation Year',
-    '#type' => 'select',
-    '#options' => drupal_map_assoc(range($grad_year_min, $grad_year_max)),
-    '#required' => TRUE,
-  );
-
-  $prep_course_score_min = 0;
-  $prep_course_score_max = 10;
-  $form['academic_info']['prep_courses_score'] = array(
-    '#type' => 'select',
-    '#title' => 'College Prep Courses Score',
-    '#options' => drupal_map_assoc(range($prep_course_score_min, $prep_course_score_max)),
-    '#width' => '30%',
-    '#align' => 'center',
-    '#required' => TRUE,
-    '#maxlength' => 3,
-    '#suffix' => '<div><a href="/finaid/prepscore">View Points Table First to Determine Score</a></div><br><br>',
-  );
-
-  $gpa_array = array(
-    "1.0",
-    "1.1",
-    "1.2",
-    "1.3",
-    "1.4",
-    "1.5",
-    "1.6",
-    "1.7",
-    "1.8",
-    "1.9",
-    "2.0",
-    "2.1",
-    "2.2",
-    "2.3",
-    "2.4",
-    "2.5",
-    "2.6",
-    "2.7",
-    "2.8",
-    "2.9",
-    "3.0",
-    "3.1",
-    "3.2",
-    "3.3",
-    "3.4",
-    "3.5",
-    "3.6",
-    "3.7",
-    "3.8",
-    "3.9",
-    "4.0",
-  );
-
-  $form['academic_info']['high_school_gpa'] = array(
-    '#type' => 'select',
-    '#title' => 'High School Cumulative GPA',
-    '#options' => drupal_map_assoc($gpa_array),
-    '#width' => '30%',
-    '#align' => 'center',
-    '#required' => TRUE,
-    '#maxlength' => 5,
-  );
-
-  $form['academic_info']['satact'] = array(
-    '#type' => 'radios',
-    '#title' => t('Did you take ACT or SAT?'),
-    '#options' => array(
-      'sat' => t('SAT'),
-      'act' => t('ACT'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $sat_scores = array(
-    "510-550",
-    "550-610",
-    "620-660",
-    "670-710",
-    "720-760",
-    "770-810",
-    "820-850",
-    "860-890",
-    "900-930",
-    "940-970",
-    "980-1010",
-    "1020-1040",
-    "1050-1080",
-    "1090-1120",
-    "1130-1160",
-    "1170-1200",
-    "1210-1240",
-    "1250-1280",
-    "1290-1320",
-    "1330-1350",
-    "1360-1390",
-    "1400-1430",
-    "1440-1480",
-    "1490-1530",
-    "1540-1590",
-    "1600",
-  );
-
-  $form['academic_info']['sat'] = array(
-    '#type' => 'select',
-    '#title' => 'Composite SAT score',
-    '#description' => t('combination of verbal and math score only'),
-    '#options' => drupal_map_assoc($sat_scores),
-    '#maxlength' => 10,
-    '#states' => array(
-      'visible' => array(
-        ':input[name="satact"]' => array(
-          'value' => 'sat',
-        ),
-      ),
-    ),
-  );
-
-  $act_min = 11;
-  $act_max = 36;
-  $form['academic_info']['act'] = array(
-    '#type' => 'select',
-    '#title' => 'Composite ACT score',
-    '#options' => drupal_map_assoc(range($act_min, $act_max)),
-    '#width' => '30%',
-    '#align' => 'center',
-
-    '#maxlength' => 3,
-    '#states' => array(
-      'visible' => array(
-        ':input[name="satact"]' => array(
-          'value' => 'act',
-        ),
-      ),
-    ),
-  );
-
-  $form['academic_info']['intended_major'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "Intended Major",
-    '#description' => "Please provide your intended major.",
-    '#size' => 10,
-    '#maxlength' => 100,
-  );
-
-  $form['dependency_status'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Dependency Status'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-
-  $born_before = (date('Y') - 23);
-  $form['dependency_status']['born_before_1973'] = array(
-    '#type' => 'radios',
-    '#title' => t("Were you born before January 1, ") .$born_before . "?",
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['married'] = array(
-    '#type' => 'radios',
-    '#title' => t('As of today, are you married? (Answer "Yes" if you are separated but not divorced.)'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['in_masters_or_doctorate_program'] = array(
-    '#type' => 'radios',
-    '#title' => t('At the beginning of the 2017-2018 school year, will you be working on a master\'s or doctorate program (such as an M.A., M.B.A., M.D., J.D., Ph.D., EdD., graduate certificate, etc.)?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['active_duty'] = array(
-    '#type' => 'radios',
-    '#title' => t('Are you currently serving on active duty in the U.S. armed forces for purposes other than training? (If you are a National Guard of Reserves enlistee, are you on active duty for other than state or training purposes?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $veteran_date = (date('Y') + 1);
-  $form['dependency_status']['veteran'] = array(
-    '#type' => 'radios',
-    '#title' => t('Are you a veteran of the U.S. Armed Forces?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-    '#description' => t('<p><strong>Answer No</strong> (you are not a veteran) if you (1) have never engaged in active duty in the U.S. armed forces, (2) are currently a Reserve Officers\' Training Corps (ROTC) student or a cadet or midshipman at a service academy, (3) are a National Guard or Reserves enlistee activated only for state or training purposes, or (4) were engaged in active duty in the U.S. armed forces but released under dishonorable conditions. Also answer No if you are currently serving in the U.S. armed forces and will continue to serve through June 30,' . $veteran_date . '.</p>
-
-<p><strong>Answer Yes</strong> (you are a veteran) if you (1) have engaged in active duty in the U.S. armed forces or are a National Guard or Reserves enlistee who was called to active duty for other than state or training purposes, or were a cadet or midshipman at one of the service academies and (2) were released under a condition other than dishonorable. Also answer Yes if you are not a veteran now but will be one by June 30,' . $veteran_date . ' .</p>'),
-  );
-
-  $form['dependency_status']['have_dependent_children'] = array(
-    '#type' => 'radios',
-    '#title' => t('Do you have children who will receive more than half of their support from you between July 1,' . (date('Y')) . ' and June 30, ' . (date('Y') + 1) . ' ?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['other_dependents'] = array(
-    '#type' => 'radios',
-    '#title' => t('Do you have dependents (other than your children or spouse) who live with you and who receive more than half of their support from you, now and through June 30, ' . (date('Y') + 1) . ' ?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['parents_deceased'] = array(
-    '#type' => 'radios',
-    '#title' => t('At any time since you turned age 13, were both your parents deceased, were you in foster care, or were you a dependent or ward of the court?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['emancipated_or_guardianship'] = array(
-    '#type' => 'radios',
-    '#title' => t('Has it been determined by a court in your state of legal residence that you are an emancipated minor or that you are in a legal guardianship?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['unaccompanied_youth'] = array(
-    '#type' => 'radios',
-    '#title' => t('At any time on or after July 1, ' . (date('Y') - 1) . ', were you determined to be an unaccompanied youth who was homeless, as determined by (a) your high school or district homeless liaison or (b) the director of an emergency shelter or transitional housing program funded by the U.S. Department of Housing and Urban Development?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['homeless_youth'] = array(
-    '#type' => 'radios',
-    '#title' => t('At any time on or after July 1, ' . (date('Y') - 1) . ', did the director of a runaway or homeless youth basic center or transitional living program determine that you were an unaccompanied youth who was homeless or were self-supporting and at risk of being homeless?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['dependency_status']['dependent_student'] = array(
-    '#markup' => t('<p>If you answered <strong>YES</strong> to any of the above questions you are an <strong>independent student</strong>.</p>
-
-<p>If you answered <strong>NO</strong> to all the questions above you are a <strong>dependent student</strong>.</p>
-
-<p><strong><em>A dependent child</em></strong> does not have to live with you, so long as the child receives more than half of his/her support from you. The child may include a biological or adopted child, or a child for whom you are the legal guardian. Note that generally speaking, if the child meets the 50% support test, the child should be claimed as an exemption on your income tax return.</p>'),
-  );
-
-  $form['efc'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Expected Family Contribution (EFC)'),
-    '#description' => t('To determine your Expected Family Contribution (EFC), you must go to the FinAid quick EFC calculator. ( <a href="http://www.finaid.org/calculators/scripts/quickefc.cgi" target="_blank">Click here to calculate your EFC</a> .) You will need your and your parent\'s most recent federal tax information to complete this section. Once you have calculated your EFC, close that browser window to return to this one.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-
-  $form['efc']['expected_family_income'] = array(
-    '#type' => 'textfield',
-    '#required' => TRUE,
-    '#title' => "Your Expected Family Income",
-    '#description' => "Insert your TOTAL EXPECTED FAMILY CONTRIBUTION here",
-    '#size' => 10,
-    '#maxlength' => 15,
-  );
-
-  $form['efc']['ohio_residents'] = array(
-    '#type' => 'radios',
-    '#title' => t('Have you or your parent(s) continuously lived in Ohio for at least the last 12 months?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['activities'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Activities'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-
-  $form['activities']['extra_curricular_activities'] = array(
-    '#type' => 'radios',
-    '#title' => t('Do you expect to participate in any extra curricular activities?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['activities']['scholarships'] = array(
-    '#type' => 'radios',
-    '#title' => t('Have you been in contact with a coach/director for consideration of an athletic/music scholarship?'),
-    '#options' => array(
-      'yes' => t('Yes'),
-      'no' => t('No'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['activities']['which_activity'] = array(
-    '#type' => 'select',
-    '#title' => t('Which extra curricular activity?'),
-    '#options' => array(
-      'none' => t('N/A'),
-      'band' => t('Band'),
-      'baseball' => t('Baseball'),
-      'basketball' => t('Basketball'),
-      'cheerleading' => t('Cheerleading'),
-      'choir' => t('Choir'),
-      'cross_country' => t('Cross Country'),
-      'dance' => t('Dance'),
-      'equestrian' => t('Equestrian'),
-      'eSports' => t('eSports'),
-      'football' => t('Football'),
-      'golf' => t('Golf'),
-      'lacrosse' => t('Lacrosse'),
-      'soccer' => t('Soccer'),
-      'softball' => t('Softball'),
-      'tennis' => t('Tennis'),
-      'theatre' => t('Theatre'),
-      'track' => t('Track'),
-      'student_government' => t('Student Government'),
-      'volleyball' => t('Volleyball'),
-      'wrestling' => t('Wrestling'),
-      'other_student_organization' => t('Other Student Organization'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['activities']['extra_activity'] = array(
-    '#type' => 'select',
-    '#title' => t('Additional extra curricular activity?'),
-    '#options' => array(
-      'none' => t('N/A'),
-      'band' => t('Band'),
-      'baseball' => t('Baseball'),
-      'basketball' => t('Basketball'),
-      'cheerleading' => t('Cheerleading'),
-      'choir' => t('Choir'),
-      'cross_country' => t('Cross Country'),
-      'dance' => t('Dance'),
-      'equestrian' => t('Equestrian'),
-      'eSports' => t('eSports'),
-      'football' => t('Football'),
-      'golf' => t('Golf'),
-      'lacrosse' => t('Lacrosse'),
-      'soccer' => t('Soccer'),
-      'softball' => t('Softball'),
-      'tennis' => t('Tennis'),
-      'theatre' => t('Theatre'),
-      'track' => t('Track'),
-      'student_government' => t('Student Government'),
-      'volleyball' => t('Volleyball'),
-      'wrestling' => t('Wrestling'),
-      'other_student_organization' => t('Other Student Organization'),
-    ),
-    '#required' => TRUE,
-  );
-
-  $form['completed_npc'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('You have completed the Tiffin University Net Price Calculator'),
-    '#description' => t('Please press the submit button <strong>only once</strong>.<br>It may take a moment to process your information.'),
-    '#collapsible' => FALSE,
-  );
-
-  $form['completed_npc']['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Submit'),
-    '#validate' => array('tiffin_npc_netprice_form_validate'),
-    '#submit' => array('tiffin_npc_netprice_form_submit'),
-  );
-  return $form;
-}
-
-/**
  * Validates the form.
  *
  * @param $form
@@ -915,100 +1007,6 @@ function tiffin_npc_netprice_form_validate($form, &$form_state) {
   if ($year_of_birth && ($year_of_birth < 1900 || $year_of_birth > 2000)) {
   form_set_error('year_of_birth', t('Enter a year between 1900 and 2000.'));
   }*/
-}
-
-/**
- * Add a submit handler/function to the form.
- *
- * This will add a completion message to the screen when the
- * form successfully processes.
- *
- * @param $form
- * @param $form_state
- */
-
-/*
- *
- * @param $form object()
- * @param $form_state
- * @throws \Exception
- */
-/**
- * @param $form
- * @param $form_state
- */
-function tiffin_npc_netprice_form_submit($form, &$form_state) {
-  // Handle page 1 submissions
-  if ($form_state['clicked_button']['#id'] == 'edit-next') {
-    if ($form_state['values']['agreement'] == "disagree") {
-      return;
-    }
-
-    $form_state['storage']['page_two'] = TRUE;
-    // Am setting this to determine
-    // which elements to display
-    // when the page reloads.
-    // Values below in the $form_state['storage'] array are saved
-    // to carry forward to subsequent pages in the form.
-    $form_state['storage']['page_one_values'] = $form_state['values'];
-    $form_state['rebuild'] = TRUE;
-  }
-  // Handle page 2 submissions.
-  else {
-    $uniqid = uniqid_base36(TRUE);
-
-    $fieldarray = array(
-      'calculationGUID' => $uniqid,
-      'first' => $form_state['values']['first'],
-      'last' => $form_state['values']['last'],
-      'email' => $form_state['values']['email'],
-      'address' => $form_state['values']['address'],
-      'address_2' => $form_state['values']['address_2'],
-      'city' => $form_state['values']['city'],
-      'state' => $form_state['values']['state'],
-      'zip' => $form_state['values']['zip'],
-      'county' => $form_state['values']['county'],
-      'phone_type' => $form_state['values']['phone_type'],
-      'phone_number' => $form_state['values']['phone_number'],
-      'high_school_grad_year' => $form_state['values']['high_school_grad_year'],
-      'prep_courses_score' => $form_state['values']['prep_courses_score'],
-      'high_school_gpa' => $form_state['values']['high_school_gpa'],
-      'satact' => $form_state['values']['satact'],
-      'sat' => $form_state['values']['sat'],
-      'act' => $form_state['values']['act'],
-      'intended_major' => $form_state['values']['intended_major'],
-      'born_before_1973' => $form_state['values']['born_before_1973'],
-      'married' => $form_state['values']['married'],
-      'in_masters_or_doctorate_program' => $form_state['values']['in_masters_or_doctorate_program'],
-      'active_duty' => $form_state['values']['active_duty'],
-      'veteran' => $form_state['values']['veteran'],
-      'have_dependent_children' => $form_state['values']['have_dependent_children'],
-      'other_dependents' => $form_state['values']['other_dependents'],
-      'parents_deceased' => $form_state['values']['parents_deceased'],
-      'emancipated_or_guardianship' => $form_state['values']['emancipated_or_guardianship'],
-      'unaccompanied_youth' => $form_state['values']['unaccompanied_youth'],
-      'homeless_youth' => $form_state['values']['homeless_youth'],
-      'efc' => $form_state['values']['expected_family_income'],
-      'ohio_residents' => $form_state['values']['ohio_residents'],
-      'extra_curricular_activities' => $form_state['values']['extra_curricular_activities'],
-      'scholarships' => $form_state['values']['scholarships'],
-      'which_activity' => $form_state['values']['which_activity'],
-      'extra_activity' => $form_state['values']['extra_activity'],
-      'create_from_ip' => ip_address(),
-      'create_date' => gmdate('Y-m-d\TH:i:s\Z'),
-    );
-
-    try {
-      db_insert('tiffin_npc_table')->fields($fieldarray)->execute();
-    }
-    catch (PDOException $e) {
-      drupal_set_message(t('Error: %message', array('%message' => $e->getMessage())), 'error');
-    }
-
-    $redirect = 'forms/netprice/success';
-    $redirect_options = array('query' => array('uniqid' => $uniqid));
-    drupal_goto($redirect, $redirect_options);
-  }
 }
 
 /**
