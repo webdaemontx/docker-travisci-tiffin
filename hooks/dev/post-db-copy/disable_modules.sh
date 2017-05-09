@@ -10,5 +10,5 @@ target_env=$2
 drush_alias=$site'.'$target_env
 
 # Execute the commands.
-drush @$drush_alias dis memcache acquia_purge expire stage_file_proxy -y
-drush @$drush_alias en devel views_ui field_ui -y
+drush @$drush_alias dis memcache acquia_purge expire -y
+drush @$drush_alias en devel views_ui field_ui stage_file_proxy -y
