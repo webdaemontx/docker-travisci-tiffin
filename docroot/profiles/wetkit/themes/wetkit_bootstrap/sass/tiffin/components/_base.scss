@@ -2301,10 +2301,10 @@ ul {
 
   &#icons-apply-now-landing-page-mid div p, &#icons-apply-now-landing-page-last div p {
     color: $brand-green-title;
+    font-size: 22px;
+    margin-top: 109px;
     text-align: center;
-    margin-top: 107px;
     width: 100%;
-    font-size: 30px;
   }
 
   &#icons-apply-now-landing-page-first, &#icons-apply-now-landing-page-mid, &#icons-apply-now-landing-page-last {
@@ -2379,9 +2379,9 @@ ul {
       background-position: 70px 16px;
       background-size: 40%;
 
-      div p {
+/*      div p {
         margin-top: 100px;
-      }
+      }*/
     }
 
     &:nth-of-type(2) {
@@ -3873,22 +3873,6 @@ div.panels-ipe-display-panel-context-node-view-node-view-schedule-a-visit-1336 m
 .pane-giving-hero-top #abouttutop ul li:nth-of-type(1), .pane-advancement-hero-top #abouttutop ul li:nth-of-type(1), .pane-alumni-hero-top #abouttutop ul li:nth-of-type(1) {
   background-repeat: no-repeat;
 }
-
-//.pane-giving-hero-top #abouttutop ul li, .pane-advancement-hero-top #abouttutop ul li, .pane-alumni-hero-top #abouttutop ul li {
-//  width: 220px;
-//  margin-right: 4px;
-//  height: 77px;
-//  background-color: transparent;
-//  float: left;
-//  border: 1px solid $brand-gold;
-//}
-
-//.pane-giving-hero-top #abouttutop ul li a, .pane-advancement-hero-top #abouttutop ul li a, .pane-alumni-hero-top #abouttutop ul li a {
-//  color: #fff;
-//  font-size: 22px;
-//  text-decoration: none;
-//  letter-spacing: 2px;
-//}
 
 .pane-giving-hero-top #introblurbs, .pane-advancement-hero-top #introblurbs, .pane-alumni-hero-top #introblurbs {
   color: white;

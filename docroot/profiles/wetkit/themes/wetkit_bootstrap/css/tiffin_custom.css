@@ -2211,10 +2211,10 @@ ul#icons-apply-now-landing-page-last {
 
 ul#icons-apply-now-landing-page-mid div p, ul#icons-apply-now-landing-page-last div p {
 	color: #365543;
+	font-size: 22px;
+	margin-top: 109px;
 	text-align: center;
-	margin-top: 107px;
 	width: 100%;
-	font-size: 30px;
 }
 
 ul#icons-apply-now-landing-page-first, ul#icons-apply-now-landing-page-mid, ul#icons-apply-now-landing-page-last {
@@ -2290,10 +2290,9 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(1) {
 	background-position: 70px 16px;
 	-webkit-background-size: 40% 40%;
 	        background-size: 40%;
-}
-
-ul#icons-apply-now-landing-page-mid li:nth-of-type(1) div p {
-	margin-top: 100px;
+	/*      div p {
+        margin-top: 100px;
+      }*/
 }
 
 ul#icons-apply-now-landing-page-mid li:nth-of-type(2) {
