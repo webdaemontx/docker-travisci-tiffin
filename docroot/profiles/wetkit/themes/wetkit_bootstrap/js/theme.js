@@ -14,6 +14,7 @@ jQuery( '<li><div id="tiffin_logo" class="logoMobile"><a href="/" tabindex="-1">
 jQuery( '#mini-panel-floating_all_submenu' ).addClass( 'sticky-bottom' );
 
 
+/*
 function cleanMenu () {
 
   jQuery( 'ul[role= "menu"] li:nth-of-type(2)' ).addClass( 'no-sect' );
@@ -34,6 +35,7 @@ jQuery( document ).ready( function () {
 jQuery( document ).ready( function () {
   setInterval( cleanMenu(), 1000 );
 } );
+*/
 
 (function ( $ ) {
 
