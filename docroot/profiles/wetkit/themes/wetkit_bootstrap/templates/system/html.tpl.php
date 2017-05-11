@@ -67,6 +67,8 @@
 
     <!-- START Google Analytics Tag Updated Sept 13 2016 -->
     <script>
+        var cookie = document.cookie.match(new RegExp('_ga=([^;]+)'))[1].split('.');
+        var gaVisitorID = cookie[2]+'.'+cookie[3];
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -74,8 +76,6 @@
         ga('create', 'UA-2207335-1', 'auto', {allowLinker: true});
         ga('require', 'linker');
         ga('linker:autoLink', ['applyyourself.com']);
-        var cookie = document.cookie.match(new RegExp('_ga=([^;]+)'))[1].split('.');
-        var gaVisitorID = cookie[2]+'.'+cookie[3];
         ga('send', 'pageview', {
             'dimension4':gaVisitorID
         });
@@ -86,25 +86,25 @@
   <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <?php print $styles; ?>
-  <?php print $scripts; ?>
+    <?php print $styles; ?>
+    <?php print $scripts; ?>
 </head>
 <body<?php print $body_attributes; ?>>
   <ul id="wb-tphp">
-    <?php if ($wetkit_skip_link_id_1 && $wetkit_skip_link_text_1): ?>
+    <?php if ($wetkit_skip_link_id_1 && $wetkit_skip_link_text_1) : ?>
       <li class="wb-slc">
         <a class="wb-sl" href="#<?php print $wetkit_skip_link_id_1; ?>"><?php print $wetkit_skip_link_text_1; ?></a>
       </li>
     <?php endif; ?>
-    <?php if ($wetkit_skip_link_id_2 && $wetkit_skip_link_text_2): ?>
+    <?php if ($wetkit_skip_link_id_2 && $wetkit_skip_link_text_2) : ?>
       <li class="wb-slc visible-md visible-lg">
         <a class="wb-sl" href="#<?php print $wetkit_skip_link_id_2; ?>"><?php print $wetkit_skip_link_text_2; ?></a>
       </li>
     <?php endif; ?>
   </ul>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
+    <?php print $page_top; ?>
+    <?php print $page; ?>
+    <?php print $page_bottom; ?>
   <script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
 </body>
 </html>
