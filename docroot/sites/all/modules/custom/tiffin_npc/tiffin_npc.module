@@ -217,20 +217,30 @@ Total Out-of-Pocket Costs........................$" . number_format($outofpocket
   $form['description'] = array(
     '#markup' => $success_body,
   );
-  $site_env = $_SERVER['SERVER_NAME'];
+  $site_env = 'local';
+  if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+    switch ($_ENV['AH_SITE_ENVIRONMENT']) {
+      case 'dev':
+      case 'test':
+        $site_env = 'dev or test';
+        $email_recipients = array(
+          'sean.hanford@ellucian.com',
+          'saamjl@tiffin.edu'
+        );
+        break;
 
-  if ($site_env != ('www.tiffin.edu' | 'tiffin.edu')) {
-    $email_recipients = array('sean.hanford@ellucian.com', 'saamjl@tiffin.edu');
-  }
-  else {
-    $email_recipients = array(
-      'schlenkerjm@tiffin.edu',
-      'depughst@tiffin.edu',
-      'swanagank@tiffin.edu',
-      'mampheyyo@tiffin.edu',
-      'bakerj@tiffin.edu',
-      $email,
-    );
+      case 'prod':
+        $site_env = 'prod';
+        $email_recipients = array(
+          'schlenkerjm@tiffin.edu',
+          'depughst@tiffin.edu',
+          'swanagank@tiffin.edu',
+          'mampheyyo@tiffin.edu',
+          'bakerj@tiffin.edu',
+          $email,
+        );
+        break;
+    }
   }
   foreach ($email_recipients as $email_recipient) {
     drupal_mail('tiffin_npc', 'npc_calculator', $email_recipient->mail, language_default(), array('recipient' => $email_recipient, 'success_body' => $success_body));
@@ -1043,7 +1053,7 @@ function uniqid_base36($more_entropy=false) {
 /**
  * Modify the drupal mail system to send HTML emails.
  */
-class TiffinMailSystem implements MailSystemInterface {
+class TiffinNpcMailSystem implements MailSystemInterface {
   /**
    * Concatenate and wrap the e-mail body for plain-text mails.
    *
