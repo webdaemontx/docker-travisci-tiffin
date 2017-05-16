@@ -229,7 +229,7 @@ function _uuid_services_entity_access($op, $args) {
     // to handle the case where an entity type is not defining an access
     // callback. With this logic, it's important that all entity types that
     // needs access control have an access callback defined.
-    if (($info = entity_get_info()) && isset($info[$entity_type]['access callback']) && $entity_type <> 'field_collection_item') {
+    if (($info = entity_get_info()) && isset($info[$entity_type]['access callback'])) {
       return $info[$entity_type]['access callback']($op, $entity, NULL, $entity_type);
     }
     return TRUE;
