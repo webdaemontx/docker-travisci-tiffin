@@ -96,16 +96,16 @@
   /* LTR */
 }
 .menu .expanded {
-  list-style-image: url('../images/menu-expanded.png?1399128626');
+  list-style-image: url('../images/menu-expanded.png?1483989725');
   list-style-type: circle;
 }
 .menu .collapsed {
-  list-style-image: url('../images/menu-collapsed.png?1399128626');
+  list-style-image: url('../images/menu-collapsed.png?1483989725');
   /* LTR */
   list-style-type: disc;
 }
 .menu .leaf {
-  list-style-image: url('../images/menu-leaf.png?1399128626');
+  list-style-image: url('../images/menu-leaf.png?1483989725');
   list-style-type: square;
 }
 .menu .active {

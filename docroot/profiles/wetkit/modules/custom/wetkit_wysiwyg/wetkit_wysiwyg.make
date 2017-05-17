@@ -9,11 +9,8 @@ projects[linkit][version] = 3.5
 projects[linkit][subdir] = contrib
 projects[linkit][patch][2381549] = http://drupal.org/files/issues/linkit_title_and_uuid-2381549-10.patch
 
-projects[wysiwyg][version] = 2.x-dev
+projects[wysiwyg][version] = 2.3
 projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][download][type] = git
-projects[wysiwyg][download][revision] = 37dc07d
-projects[wysiwyg][download][branch] = 7.x-2.x
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
 
 ; Include our Editors

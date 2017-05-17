@@ -151,3 +151,17 @@ function tiffin_config_update_7310($sandbox) {
     }
   }
 }
+
+/**
+ * Disable Unnecessary Modules
+ */
+function tiffin_config_update_7311($sandbox) {
+  $modules = array("registration", "paragraphs", "splashify", "easy_breadcrumbs");
+
+  foreach($modules as $module) {
+    if( module_exists($module)) {
+      module_disable(array($module));
+      drupal_uninstall_modules(array($module));
+    }
+  }
+}

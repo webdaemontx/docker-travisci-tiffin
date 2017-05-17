@@ -18,19 +18,19 @@
 .ui-icon {
   width: 16px;
   height: 16px;
-  background-image: url('../images/ui-icons-222222-256x240.png?1399128626');
+  background-image: url('../images/ui-icons-222222-256x240.png?1483989725');
 }
 
 .ui-widget-content .ui-icon, .ui-widget-header .ui-icon {
-  background-image: url('../images/ui-icons-222222-256x240.png?1399128626');
+  background-image: url('../images/ui-icons-222222-256x240.png?1483989725');
 }
 
 .ui-state-default .ui-icon {
-  background-image: url('../images/ui-icons-888888-256x240.png?1399128626');
+  background-image: url('../images/ui-icons-888888-256x240.png?1483989725');
 }
 
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon, .ui-state-active .ui-icon {
-  background-image: url('../images/ui-icons-454545-256x240.png?1399128626');
+  background-image: url('../images/ui-icons-454545-256x240.png?1483989725');
 }
 
 .ui-state-highlight .ui-icon {

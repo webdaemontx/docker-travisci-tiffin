@@ -6335,6 +6335,12 @@ fieldset#edit-academic-scholarship legend {
 	text-align: left;
 }
 
+.ui-dialog.media-wrapper {
+	background: #fff;
+	padding: .6em;
+	z-index: 9999;
+}
+
 .responsive-embed {
 	position: relative;
 	height: 0;
