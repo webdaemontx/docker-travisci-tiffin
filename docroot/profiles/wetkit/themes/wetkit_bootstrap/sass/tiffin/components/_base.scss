@@ -2152,8 +2152,9 @@ body {
 
 #footer {
   background-color: $brand-green-title !important;
+  margin-bottom: -1px;
   margin-top: 0 !important;
-  padding: 40px 0 87px;
+  padding: 40px 0 25px;
 
   a,
   h3 a {
@@ -2296,7 +2297,7 @@ ul {
   }
 
   &#icons-apply-now-landing-page-last {
-    width: 490px;
+    width: 950px;
   }
 
   &#icons-apply-now-landing-page-mid div p, &#icons-apply-now-landing-page-last div p {
@@ -2366,7 +2367,7 @@ ul {
   }
 
   &#icons-apply-now-landing-page-last li {
-    &:nth-of-type(1), &:nth-of-type(2) {
+    &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       background-repeat: no-repeat;
     }
   }
@@ -2416,21 +2417,50 @@ ul {
   &#icons-apply-now-landing-page-last li {
     &:nth-of-type(1) {
       float: left;
-      clear: none;
+      clear: left;
       background-image: url('../images/icon-ohio-off-campus.png');
       background-position: 63px 6px;
     }
 
     &:nth-of-type(2) {
       float: left;
-      clear: right;
-      background-image: url('../images/icon-shield-veterans.png');
-      background-position: 74px 14px;
-      margin-right: 0 !important;
+      clear: none;
+      background-image: url('../images/icon-nondegree-seeking.png');
+      background-position: 41px 18px;
+      background-size: 60%;
 
       div p {
         margin-top: 110px;
         font-size: 22px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      float: left;
+      clear: none;
+      background-image: url('../images/icon-readmit.png');
+      background-position: 60px 6px;
+      background-size: 47%;
+
+      div p {
+        line-height: 20px;
+        margin-top: 102px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      float: left;
+      clear: right;
+      background-image: url('../images/icon-readmit.png');
+      background-position: 60px 6px;
+      background-size: 47%;
+      margin-right: 0 !important;
+
+      div p {
+        line-height: 20px;
+        margin-left: 8%;
+        margin-top: 102px;
+        width: 85%;
       }
     }
   }

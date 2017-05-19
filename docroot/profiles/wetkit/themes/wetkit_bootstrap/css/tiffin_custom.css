@@ -2069,8 +2069,9 @@ body.page-admissions .pane-join-the-tu-family-white-backgro, body.page-academics
 
 #footer {
 	background-color: #365543 !important;
+	margin-bottom: -1px;
 	margin-top: 0 !important;
-	padding: 40px 0 87px;
+	padding: 40px 0 25px;
 }
 
 #footer a,
@@ -2206,7 +2207,7 @@ ul#icons-apply-now-landing-page-mid {
 }
 
 ul#icons-apply-now-landing-page-last {
-	width: 490px;
+	width: 950px;
 }
 
 ul#icons-apply-now-landing-page-mid div p, ul#icons-apply-now-landing-page-last div p {
@@ -2279,7 +2280,7 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(1), ul#icons-apply-now-landin
 	background-repeat: no-repeat;
 }
 
-ul#icons-apply-now-landing-page-last li:nth-of-type(1), ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
+ul#icons-apply-now-landing-page-last li:nth-of-type(1), ul#icons-apply-now-landing-page-last li:nth-of-type(2), ul#icons-apply-now-landing-page-last li:nth-of-type(3), ul#icons-apply-now-landing-page-last li:nth-of-type(4) {
 	background-repeat: no-repeat;
 }
 
@@ -2326,22 +2327,54 @@ ul#icons-apply-now-landing-page-mid li:nth-of-type(4) {
 
 ul#icons-apply-now-landing-page-last li:nth-of-type(1) {
 	float: left;
-	clear: none;
+	clear: left;
 	background-image: url("../images/icon-ohio-off-campus.png");
 	background-position: 63px 6px;
 }
 
 ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
 	float: left;
-	clear: right;
-	background-image: url("../images/icon-shield-veterans.png");
-	background-position: 74px 14px;
-	margin-right: 0 !important;
+	clear: none;
+	background-image: url("../images/icon-nondegree-seeking.png");
+	background-position: 41px 18px;
+	-webkit-background-size: 60% 60%;
+	        background-size: 60%;
 }
 
 ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
 	margin-top: 110px;
 	font-size: 22px;
+}
+
+ul#icons-apply-now-landing-page-last li:nth-of-type(3) {
+	float: left;
+	clear: none;
+	background-image: url("../images/icon-readmit.png");
+	background-position: 60px 6px;
+	-webkit-background-size: 47% 47%;
+	        background-size: 47%;
+}
+
+ul#icons-apply-now-landing-page-last li:nth-of-type(3) div p {
+	line-height: 20px;
+	margin-top: 102px;
+}
+
+ul#icons-apply-now-landing-page-last li:nth-of-type(4) {
+	float: left;
+	clear: right;
+	background-image: url("../images/icon-readmit.png");
+	background-position: 60px 6px;
+	-webkit-background-size: 47% 47%;
+	        background-size: 47%;
+	margin-right: 0 !important;
+}
+
+ul#icons-apply-now-landing-page-last li:nth-of-type(4) div p {
+	line-height: 20px;
+	margin-left: 8%;
+	margin-top: 102px;
+	width: 85%;
 }
 
 #admissions-sub-title {
