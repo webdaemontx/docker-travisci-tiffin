@@ -3281,7 +3281,7 @@ ul {
     &#icons-admissions-landing-page-last li:nth-child(2), &#icons-apply-now-landing-page-last li:nth-child(2), &#icons-admissions-landing-page-last li:nth-child(4), &#icons-apply-now-landing-page-last li:nth-child(4), &#icons-admissions-landing-page-last li:nth-child(6), &#icons-apply-now-landing-page-last li:nth-child(6) {
       background-position: center 19px !important;
     }
-    &#icons-admissions-landing-page-last li:nth-child(3), &#icons-apply-now-landing-page-last li:nth-child(3) {
+    &#icons-admissions-landing-page-last li:nth-child(3), &#icons-apply-now-landing-page-last li:nth-child(3), &#icons-apply-now-landing-page-last li:nth-child(4) {
       background-position: center 26px !important;
     }
     &#icons-apply-now-landing-page-mid li:nth-child(1) {
@@ -3302,12 +3302,20 @@ ul {
       a div {
         width: 100%;
       }
-      li:nth-of-type(2) div p {
-        font-size: 26px;
+      li:nth-of-type(2) {
+        background-size: 40%;
+      }
+      li:nth-of-type(3), li:nth-of-type(4) {
+        background-size: 26%;
+        div p {
+          line-height: 1.4375;
+          font-size: 22px;
+          margin-top: 112px;
+        }
       }
     }
     &#icons-apply-now-landing-page-mid li:nth-of-type(2) div p {
-      font-size: 26px;
+      font-size: 22px;
     }
   }
 }

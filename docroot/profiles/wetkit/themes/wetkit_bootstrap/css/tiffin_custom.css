@@ -3192,7 +3192,7 @@ ul#icons-info-landing-page li:nth-of-type(6) {
 	ul#icons-admissions-landing-page-last li:nth-child(2), ul#icons-apply-now-landing-page-last li:nth-child(2), ul#icons-admissions-landing-page-last li:nth-child(4), ul#icons-apply-now-landing-page-last li:nth-child(4), ul#icons-admissions-landing-page-last li:nth-child(6), ul#icons-apply-now-landing-page-last li:nth-child(6) {
 		background-position: center 19px !important;
 	}
-	ul#icons-admissions-landing-page-last li:nth-child(3), ul#icons-apply-now-landing-page-last li:nth-child(3) {
+	ul#icons-admissions-landing-page-last li:nth-child(3), ul#icons-apply-now-landing-page-last li:nth-child(3), ul#icons-apply-now-landing-page-last li:nth-child(4) {
 		background-position: center 26px !important;
 	}
 	ul#icons-apply-now-landing-page-mid li:nth-child(1) {
@@ -3213,11 +3213,21 @@ ul#icons-info-landing-page li:nth-of-type(6) {
 	ul#icons-apply-now-landing-page-last a div {
 		width: 100%;
 	}
-	ul#icons-apply-now-landing-page-last li:nth-of-type(2) div p {
-		font-size: 26px;
+	ul#icons-apply-now-landing-page-last li:nth-of-type(2) {
+		-webkit-background-size: 40% 40%;
+		        background-size: 40%;
+	}
+	ul#icons-apply-now-landing-page-last li:nth-of-type(3), ul#icons-apply-now-landing-page-last li:nth-of-type(4) {
+		-webkit-background-size: 26% 26%;
+		        background-size: 26%;
+	}
+	ul#icons-apply-now-landing-page-last li:nth-of-type(3) div p, ul#icons-apply-now-landing-page-last li:nth-of-type(4) div p {
+		line-height: 1.4375;
+		font-size: 22px;
+		margin-top: 112px;
 	}
 	ul#icons-apply-now-landing-page-mid li:nth-of-type(2) div p {
-		font-size: 26px;
+		font-size: 22px;
 	}
 }
 
