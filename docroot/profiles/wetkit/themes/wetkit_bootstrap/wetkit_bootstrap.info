@@ -41,6 +41,7 @@ scripts[] = js/modal.js
 ;scripts[] = bootstrap/js/popover.js
 ;scripts[] = bootstrap/js/scrollspy.js
 ;scripts[] = bootstrap/js/tab.js
+scripts[] = js/tab.js
 ;scripts[] = bootstrap/js/transition.js
 scripts[] = js/wetkit-bootstrap.modules.js
 scripts[] = js/animatedModal.min.js
