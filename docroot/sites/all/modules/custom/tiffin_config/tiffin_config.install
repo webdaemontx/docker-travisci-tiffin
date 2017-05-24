@@ -165,3 +165,16 @@ function tiffin_config_update_7311($sandbox) {
     }
   }
 }
+
+/**
+ * Enable the ShURLy Module(s)
+ */
+function tiffin_config_update_7312($sandbox) {
+    $modules = array("shurly");
+
+    foreach($modules as $module) {
+        if( !module_exists($module)) {
+            module_enable(array($module));
+        }
+    }
+}
