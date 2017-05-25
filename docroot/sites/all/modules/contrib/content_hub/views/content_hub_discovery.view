@@ -1,0 +1,216 @@
+<?php
+/**
+ * @file
+ * Default content_hub Discovery view.
+ */
+
+$view = new view();
+$view->name = 'content_hub_discovery';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'content_hub';
+$view->human_name = 'content_hub_discovery';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'Discovery';
+$handler->display->display_options['use_ajax'] = TRUE;
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'none';
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '25';
+$handler->display->display_options['pager']['options']['offset'] = '0';
+$handler->display->display_options['pager']['options']['id'] = '0';
+$handler->display->display_options['pager']['options']['quantity'] = '3';
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['style_options']['grouping'] = array(
+  0 => array(
+    'field' => 'modified',
+    'rendered' => 1,
+    'rendered_strip' => 0,
+  ),
+);
+$handler->display->display_options['style_options']['row_class'] = 'content-hub-row';
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['row_options']['inline'] = array(
+  'url' => 'url',
+  'modified_1' => 'modified_1',
+);
+$handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;&nbsp;';
+/* Header: Global: View area */
+$handler->display->display_options['header']['view']['id'] = 'view';
+$handler->display->display_options['header']['view']['table'] = 'views';
+$handler->display->display_options['header']['view']['field'] = 'view';
+$handler->display->display_options['header']['view']['view_to_insert'] = 'content_hub_filter:default';
+/* Header: Acquia Content Hub: Filter Form */
+$handler->display->display_options['header']['save_filter_form']['id'] = 'save_filter_form';
+$handler->display->display_options['header']['save_filter_form']['table'] = 'content_hub';
+$handler->display->display_options['header']['save_filter_form']['field'] = 'save_filter_form';
+/* No results behavior: Global: Text area */
+$handler->display->display_options['empty']['area']['id'] = 'area';
+$handler->display->display_options['empty']['area']['table'] = 'views';
+$handler->display->display_options['empty']['area']['field'] = 'area';
+$handler->display->display_options['empty']['area']['empty'] = TRUE;
+$handler->display->display_options['empty']['area']['content'] = '<span class="content-hub-no-result">No content available.</span>';
+$handler->display->display_options['empty']['area']['format'] = 'full_html';
+/* Field: Acquia Content Hub: Uuid */
+$handler->display->display_options['fields']['uuid']['id'] = 'uuid';
+$handler->display->display_options['fields']['uuid']['table'] = 'content_hub';
+$handler->display->display_options['fields']['uuid']['field'] = 'uuid';
+$handler->display->display_options['fields']['uuid']['label'] = '';
+$handler->display->display_options['fields']['uuid']['element_class'] = 'content-hub-inline-field';
+$handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
+/* Field: Acquia Content Hub: Title */
+$handler->display->display_options['fields']['title']['id'] = 'title';
+$handler->display->display_options['fields']['title']['table'] = 'content_hub';
+$handler->display->display_options['fields']['title']['field'] = 'title';
+$handler->display->display_options['fields']['title']['label'] = '';
+$handler->display->display_options['fields']['title']['alter']['path'] = '[url_1]';
+$handler->display->display_options['fields']['title']['element_class'] = 'content-hub-h3';
+$handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+/* Field: Acquia Content Hub: Body */
+$handler->display->display_options['fields']['body']['id'] = 'body';
+$handler->display->display_options['fields']['body']['table'] = 'content_hub';
+$handler->display->display_options['fields']['body']['field'] = 'body';
+$handler->display->display_options['fields']['body']['label'] = '';
+$handler->display->display_options['fields']['body']['alter']['max_length'] = '500';
+$handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+$handler->display->display_options['fields']['body']['element_class'] = 'content-hub-views-fields';
+$handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+/* Field: Acquia Content Hub: source */
+$handler->display->display_options['fields']['url']['id'] = 'url';
+$handler->display->display_options['fields']['url']['table'] = 'content_hub';
+$handler->display->display_options['fields']['url']['field'] = 'url';
+$handler->display->display_options['fields']['url']['label'] = 'Source';
+$handler->display->display_options['fields']['url']['element_label_class'] = 'content-hub-source-field content-hub-label';
+/* Field: Acquia Content Hub: Modified Date */
+$handler->display->display_options['fields']['modified']['id'] = 'modified';
+$handler->display->display_options['fields']['modified']['table'] = 'content_hub';
+$handler->display->display_options['fields']['modified']['field'] = 'modified';
+$handler->display->display_options['fields']['modified']['label'] = '';
+$handler->display->display_options['fields']['modified']['exclude'] = TRUE;
+$handler->display->display_options['fields']['modified']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['modified']['alter']['text'] = '<h3 class="content-hub-group-date">[modified]</h3>';
+$handler->display->display_options['fields']['modified']['element_class'] = 'content-hub-label';
+$handler->display->display_options['fields']['modified']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['modified']['date_format'] = 'custom';
+$handler->display->display_options['fields']['modified']['custom_date_format'] = 'M d, Y';
+$handler->display->display_options['fields']['modified']['second_date_format'] = 'long';
+/* Field: Modified Time */
+$handler->display->display_options['fields']['modified_1']['id'] = 'modified_1';
+$handler->display->display_options['fields']['modified_1']['table'] = 'content_hub';
+$handler->display->display_options['fields']['modified_1']['field'] = 'modified';
+$handler->display->display_options['fields']['modified_1']['ui_name'] = 'Modified Time';
+$handler->display->display_options['fields']['modified_1']['label'] = '';
+$handler->display->display_options['fields']['modified_1']['element_class'] = 'content-hub-label';
+$handler->display->display_options['fields']['modified_1']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['modified_1']['date_format'] = 'custom';
+$handler->display->display_options['fields']['modified_1']['custom_date_format'] = 'M d, Y g:i a';
+$handler->display->display_options['fields']['modified_1']['second_date_format'] = 'long';
+/* Field: Acquia Content Hub: Local Status */
+$handler->display->display_options['fields']['local_status']['id'] = 'local_status';
+$handler->display->display_options['fields']['local_status']['table'] = 'content_hub';
+$handler->display->display_options['fields']['local_status']['field'] = 'local_status';
+$handler->display->display_options['fields']['local_status']['label'] = '';
+$handler->display->display_options['fields']['local_status']['element_class'] = 'content-hub-local-status';
+$handler->display->display_options['fields']['local_status']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['local_status']['hide_empty'] = TRUE;
+/* Sort criterion: Acquia Content Hub: Modified Date */
+$handler->display->display_options['sorts']['modified']['id'] = 'modified';
+$handler->display->display_options['sorts']['modified']['table'] = 'content_hub';
+$handler->display->display_options['sorts']['modified']['field'] = 'modified';
+$handler->display->display_options['sorts']['modified']['order'] = 'RELEVANCE';
+$handler->display->display_options['sorts']['modified']['exposed'] = TRUE;
+$handler->display->display_options['sorts']['modified']['expose']['label'] = 'Date';
+/* Filter criterion: Acquia Content Hub: Search */
+$handler->display->display_options['filters']['search']['id'] = 'search';
+$handler->display->display_options['filters']['search']['table'] = 'content_hub';
+$handler->display->display_options['filters']['search']['field'] = 'search';
+$handler->display->display_options['filters']['search']['group'] = 1;
+$handler->display->display_options['filters']['search']['exposed'] = TRUE;
+$handler->display->display_options['filters']['search']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['search']['expose']['label'] = 'KEYWORD';
+$handler->display->display_options['filters']['search']['expose']['operator'] = 'search_op';
+$handler->display->display_options['filters']['search']['expose']['identifier'] = 'search';
+$handler->display->display_options['filters']['search']['expose']['remember_roles'] = array(
+  2 => 0,
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Acquia Content Hub: Modified Date */
+$handler->display->display_options['filters']['modified']['id'] = 'modified';
+$handler->display->display_options['filters']['modified']['table'] = 'content_hub';
+$handler->display->display_options['filters']['modified']['field'] = 'modified';
+$handler->display->display_options['filters']['modified']['group'] = 1;
+$handler->display->display_options['filters']['modified']['exposed'] = TRUE;
+$handler->display->display_options['filters']['modified']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['modified']['expose']['label'] = 'Date';
+$handler->display->display_options['filters']['modified']['expose']['operator'] = 'modified_op';
+$handler->display->display_options['filters']['modified']['expose']['identifier'] = 'modified';
+$handler->display->display_options['filters']['modified']['expose']['remember_roles'] = array(
+  2 => 0,
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Acquia Content Hub: source */
+$handler->display->display_options['filters']['url']['id'] = 'url';
+$handler->display->display_options['filters']['url']['table'] = 'content_hub';
+$handler->display->display_options['filters']['url']['field'] = 'url';
+$handler->display->display_options['filters']['url']['group'] = 1;
+$handler->display->display_options['filters']['url']['exposed'] = TRUE;
+$handler->display->display_options['filters']['url']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['url']['expose']['label'] = 'source';
+$handler->display->display_options['filters']['url']['expose']['operator'] = 'url_op';
+$handler->display->display_options['filters']['url']['expose']['identifier'] = 'origin';
+$handler->display->display_options['filters']['url']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['url']['expose']['remember_roles'] = array(
+  2 => 0,
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Acquia Content Hub: Tags */
+$handler->display->display_options['filters']['tags']['id'] = 'tags';
+$handler->display->display_options['filters']['tags']['table'] = 'content_hub';
+$handler->display->display_options['filters']['tags']['field'] = 'tags';
+$handler->display->display_options['filters']['tags']['group'] = 1;
+$handler->display->display_options['filters']['tags']['exposed'] = TRUE;
+$handler->display->display_options['filters']['tags']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['tags']['expose']['label'] = 'Tags';
+$handler->display->display_options['filters']['tags']['expose']['operator'] = 'tags_op';
+$handler->display->display_options['filters']['tags']['expose']['identifier'] = 'tags';
+$handler->display->display_options['filters']['tags']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['tags']['expose']['remember_roles'] = array(
+  2 => 0,
+  1 => 0,
+  3 => 0,
+);
+$translatables['content_hub_discovery'] = array(
+  t('Master'),
+  t('Discovery'),
+  t('more'),
+  t('Apply'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Items per page'),
+  t('- All -'),
+  t('Offset'),
+  t('« first'),
+  t('‹ previous'),
+  t('next ›'),
+  t('last »'),
+  t('<span class="content-hub-no-result">No content available.</span>'),
+  t('Source'),
+  t('<h3 class="content-hub-group-date">[modified]</h3>'),
+  t('Date'),
+  t('KEYWORD'),
+  t('source'),
+  t('Tags'),
+);

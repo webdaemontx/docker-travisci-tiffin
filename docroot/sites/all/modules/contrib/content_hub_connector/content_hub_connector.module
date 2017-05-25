@@ -1,0 +1,895 @@
+<?php
+/**
+ * @file
+ * Direct connector to Content Hub Client.
+ */
+
+// This module always ships with its packaged autoloader.
+require_once 'vendor/autoload.php';
+
+module_load_include('inc', 'content_hub_connector', 'content_hub_connector.entity.info');
+
+use Acquia\ContentHubClient\ContentHub;
+use Drupal\content_hub_connector as content_hub_connector;
+use Symfony\Component\HttpFoundation\Request;
+
+/**
+ * Implements hook_init().
+ */
+function content_hub_connector_init() {
+  // Register webhook endpoint if it is pending after an ACSF site duplication.
+  // Only trigger the action once the administrator is logged in.
+  if (variable_get('content_hub_connector_webhook_acsf_pending') && user_access('administer content hub connector') && !drupal_is_cli()) {
+    $webhook_url = url('content-hub/webhook', array(
+      'absolute' => TRUE,
+    ));
+
+    // Load the Subscription.
+    $content_hub_subscription = new content_hub_connector\ContentHubSubscription();
+    if ($content_hub_subscription->registerWebhook($webhook_url)) {
+      variable_del('content_hub_connector_webhook_acsf_pending');
+      watchdog('content_hub_connector', 'Automatic Content Hub webhook registration succeeded.');
+    }
+    else {
+      drupal_set_message(t('Automatic Content Hub webhook registration failed. Please <a href="@url">register your webhook endpoint</a>.', array(
+        '@url' => url('admin/config/services/content-hub/webhooks'),
+      )), 'error');
+    }
+
+  }
+
+  // If the prior request triggered a user notification during shutdown, display
+  // the message to the user.
+  $uid = $GLOBALS['user']->uid;
+  if ($msg = cache_get('content_hub_connector_partial_send_user_' . $uid)) {
+    if (is_object($msg) && is_array($msg->data)) {
+      drupal_set_message($msg->data['msg'], $msg->data['type']);
+    }
+    // We set, rather than delete the cache.
+    // A bad sql query can happen on delete non-existant cache items.
+    cache_set('content_hub_connector_partial_send_user_' . $uid, NULL);
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function content_hub_connector_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#content_hub_connector":
+      return '<p>' . t("Content Hub Connector Help Page") . '</p>';
+
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function content_hub_connector_menu() {
+  $items = array();
+  $items['admin/config/services/content-hub'] = array(
+    'title' => 'Content Hub Connector',
+    'description' => 'Manages the service connection information',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('content_hub_connector_connection_form'),
+    'access arguments' => array('administer content hub connector'),
+    'file' => 'content_hub_connector.admin.inc',
+    'weight' => 1,
+  );
+
+  $items['admin/config/services/content-hub/connection'] = array(
+    'title' => 'Connection',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items['admin/config/services/content-hub/webhooks'] = array(
+    'title' => 'Webhooks',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('content_hub_connector_webhooks_form'),
+    'access arguments' => array('administer content hub connector'),
+    'file' => 'content_hub_connector.webhooks.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+
+  $items['admin/config/services/content-hub/settings'] = array(
+    'title' => 'Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('content_hub_connector_settings_form'),
+    'access arguments' => array('administer content hub connector'),
+    'file' => 'content_hub_connector.settings.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 20,
+  );
+
+  $items['admin/config/services/content-hub/configuration'] = array(
+    'title' => 'Entity Configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('content_hub_connector_entity_config_form'),
+    'access arguments' => array('administer content hub connector'),
+    'file' => 'content_hub_connector.entityconfig.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 20,
+  );
+
+  if (module_exists('metatag') && module_exists('token')) {
+    $items['admin/config/services/content-hub/metatags-settings'] = array(
+      'title' => 'Metatags Settings',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('content_hub_connector_metatags_form'),
+      'access arguments' => array('administer content hub connector'),
+      'file' => 'content_hub_connector.metatags.inc',
+      'type' => MENU_LOCAL_TASK,
+      'weight' => 30,
+    );
+  }
+
+  if (module_exists('workbench_moderation')) {
+    $items['admin/config/services/content-hub/workbench-moderation-settings'] = array(
+      'title' => 'Workbench Moderation Settings',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('content_hub_connector_workbench_moderation_form'),
+      'access arguments' => array('administer content hub connector'),
+      'file' => 'content_hub_connector.workbench_moderation.inc',
+      'type' => MENU_LOCAL_TASK,
+      'weight' => 40,
+    );
+  }
+
+  $items['content-hub/webhook'] = array(
+    'page callback' => 'content_hub_connector_webhook',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    // 'delivery callback' => 'drupal_json_output',.
+    'file' => 'content_hub_connector.webhook.inc',
+  );
+
+  $items['content-hub/%/%'] = array(
+    'page callback' => 'content_hub_connector_entity_cdf',
+    'page arguments' => array(1, 2),
+    'access callback' => 'content_hub_connector_access_entity_cdf',
+    'access arguments' => array(1, 2),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'content_hub_connector_entity_cdf_delivery_callback',
+    'file' => 'content_hub_connector.entity.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Access Callback for accessing the entity's CDF.
+ *
+ * @param string $type
+ *   The entity type.
+ * @param string $uuid
+ *   The entity UUID.
+ *
+ * @return bool
+ *   TRUE if access granted, FALSE otherwise.
+ */
+function content_hub_connector_access_entity_cdf($type, $uuid) {
+  module_load_include('inc', 'content_hub_connector', 'content_hub_connector.webhook');
+
+  // @TODO: Review why we have to do this. The autoloader should have kicked in.
+  // Fallback to our pre-packaged autoloader if our class doesn't exist yet.
+  $autoloader = DRUPAL_ROOT . '/' . drupal_get_path('module', 'content_hub_connector') . '/vendor/autoload.php';
+  if (!class_exists('Acquia\ContentHubClient\ContentHub') && file_exists($autoloader)) {
+    include $autoloader;
+  }
+
+  // Check if request is authorized to access this page.
+  $http_verb = $_SERVER['REQUEST_METHOD'];
+
+  if ($subscription = new \Drupal\content_hub_connector\ContentHubSubscription()) {
+
+    // Get request headers using Symfony, because PHP's getallheaders() isn't
+    // always available.
+    $request = Request::createFromGlobals();
+    $headers = array_map('current', $request->headers->all());
+    $authorization_header = isset($headers['authorization']) ? $headers['authorization'] : '';
+    $content = $request->getContent();
+    $path = $request->getRequestUri();
+
+    // We call getSettings() first to make sure the shared secret is updated
+    // and we are not getting a stale shared secret.
+    $subscription->getSettings();
+
+    // Now obtaining the updated shared secret.
+    $shared_secret = $subscription->getSharedSecret();
+
+    // Verifying signature.
+    $signature = content_hub_connector_get_signature($http_verb, $headers, $content, $path, $shared_secret);
+    $authorization = 'Acquia ContentHub:' . $signature;
+
+    // If authorization matches proceed, otherwise show access denied.
+    if ($authorization === $authorization_header) {
+      // Request Authorized.
+      if ($type === 'bulk_upload') {
+        // If it is bulk upload, verify we are receiving a UUID.
+        if (content_hub_connector\Cdf::isUuid($uuid)) {
+          return TRUE;
+        }
+      }
+      else {
+        // If it is an entity, verify it is an accepted entity.
+        $entities = entity_uuid_load($type, array($uuid));
+        $entity = reset($entities);
+
+        // Check that it is a Content Hub Entity.
+        if (content_hub_connector_is_content_hub_entity($entity, $type) !== FALSE) {
+
+          // If it is a node and it is unpublished then reject.
+          if (empty($entity) || ($type == 'node' && !content_hub_connector_get_publishable($entity))) {
+            return FALSE;
+          }
+
+          // Passed all checks, allow request to proceed.
+          return TRUE;
+        }
+      }
+    }
+  }
+
+  return FALSE;
+}
+
+/**
+ * Delivery Callback function for accessing the entity's CDF.
+ *
+ * @param string|int $var
+ *   The raw blob of data to return. Could be also the access menu, if integer.
+ */
+function content_hub_connector_entity_cdf_delivery_callback($var) {
+  if (is_int($var)) {
+    drupal_deliver_html_page($var);
+  }
+  else {
+    content_hub_raw_json_output($var);
+  }
+}
+
+/**
+ * Outputs raw output as given with the appropriate header.
+ *
+ * @param string $var
+ *   The raw blob of data to return. Expected to be json but
+ *   no validation will happen.
+ */
+function content_hub_raw_json_output($var = NULL) {
+  // We are returning JSON, so tell the browser.
+  drupal_add_http_header('Content-Type', 'application/json');
+
+  if (isset($var)) {
+    echo $var;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function content_hub_connector_permission() {
+  return array(
+    'administer content hub connector' => array(
+      'title' => t('Administer content hub connector'),
+      'description' => t('Administer content hub connector settings to publish content to content hub.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_action_info().
+ */
+function content_hub_connector_action_info() {
+  return array(
+    'content_hub_connector_export_item' => array(
+      'type' => 'entity',
+      'label' => t('Export to Content Hub'),
+      'configurable' => FALSE,
+      'behavior' => array('updates_property'),
+      'triggers' => array('any'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_action_views_bulk_operations_form().
+ */
+function content_hub_connector_export_item_views_bulk_operations_form($options) {
+  $form = array();
+  $form['exclude_dependencies'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Exclude dependencies'),
+    '#default_value' => !empty($options['exclude_dependencies']) ? $options['exclude_dependencies'] : 0,
+  );
+
+  return $form;
+}
+
+/**
+ * Action callback: Export entity to Content Hub with bulk upload functionality.
+ *
+ * Sends a single request for many entities, including their dependencies.
+ *
+ * @param object $entity
+ *   The Drupal entity.
+ * @param array $context
+ *   Context.
+ */
+function content_hub_connector_export_item($entity, array $context) {
+  // Check whether to exclude dependencies.
+  $include_dependencies = isset($context['settings']['exclude_dependencies']) ? !(bool) $context['settings']['exclude_dependencies'] : TRUE;
+  content_hub_connector_entity_action($entity, $context['entity_type'], 'UPDATE', $include_dependencies);
+
+  // Display the number of checked entities in the view that failed to bulk
+  // upload.
+  if ($context['progress']['current'] == $context['progress']['total']) {
+    // We just finished processing the last item.
+    $failed = content_hub_connector_bulk_upload_failures();
+    if ($failed > 0) {
+      drupal_set_message(t('%failed out of %total selected content items were not exported because they did not originate from this site or were not selected in Entity Configuration. Details have been logged.', array(
+        '%failed' => $failed,
+        '%total' => $context['progress']['total'],
+      )), 'warning');
+    }
+  }
+}
+
+/**
+ * Tracks the number of entities that fail to bulk upload.
+ *
+ * @param string $num
+ *   Number of failed entities added to the pool.
+ *
+ * @return string $total
+ *   The total number of entities that failed to bulk upload.
+ */
+function content_hub_connector_bulk_upload_failures($num = NULL) {
+  $total = &drupal_static(__FUNCTION__);
+  if (!isset($total)) {
+    $total = is_int($num) ? $num : 0;
+  }
+  else {
+    $total = is_int($num) ? $total + $num : $total;
+  }
+  return $total;
+}
+
+/**
+ * Returns a cipher class for encrypting and decrypting text.
+ *
+ * @return \Drupal\content_hub_connector\CipherInterface
+ *   The Cipher object to use for encrypting the data.
+ */
+function content_hub_connector_cipher() {
+  $cipher = &drupal_static(__FUNCTION__);
+  if ($cipher === NULL) {
+    $filepath = variable_get('content_hub_connector_encryption_key_file', '');
+    $cipher = new Drupal\content_hub_connector\Cipher($filepath);
+  }
+  return $cipher;
+}
+
+
+/**
+ * Function returns content hub client.
+ *
+ * @param array $config
+ *   Configuration array.
+ *
+ * @return ContentHubClient\ContentHub
+ *   Returns the Content Hub Client
+ */
+function content_hub_connector_client_load($config = array()) {
+  global $language;
+
+  $client = &drupal_static(__FUNCTION__);
+  if (NULL === $client) {
+    // Obtain variables that define a successful connection.
+    $origin = variable_get('content_hub_connector_origin', '');
+    $client_name = variable_get('content_hub_connector_client_name', '');
+    $hostname = variable_get('content_hub_connector_hostname', '');
+    $api = variable_get('content_hub_connector_api_key', '');
+    $secret = variable_get('content_hub_connector_secret_key', '');
+
+    // If any of these variables is empty, then we do NOT have a valid
+    // connection.
+    if (!content_hub_connector\Cdf::isUuid($origin) || empty($client_name) || empty($hostname) || empty($api) || empty($secret)) {
+      return FALSE;
+    }
+
+    // Find out the module version in use.
+    $module_info = system_get_info('module', 'content_hub_connector');
+    $module_version = (isset($module_info['version'])) ? $module_info['version'] : '0.0.0';
+
+    $config = array_merge(array(
+      'base_url' => $hostname,
+      'client-user-agent' => 'AcquiaContentHubConnector/' . $module_version,
+      'adapterConfig' => [
+        'schemaId' => 'Drupal7',
+        'defaultLanguageId' => $language->language,
+      ],
+    ), $config);
+
+    // If using encryption, decrypt the secret key.
+    $encryption = (bool) variable_get('content_hub_connector_encryption_key_file', '');
+    if ($encryption) {
+      $secret = content_hub_connector_cipher()->decrypt($secret);
+    }
+
+    $client = new ContentHub($api, $secret, $origin, $config);
+  }
+  return $client;
+}
+
+/**
+ * Implements hook_content_hub_connector_entity_cdf_alter().
+ */
+function content_hub_connector_content_hub_connector_entity_cdf_alter(&$json, $type, $uuid) {
+  if (empty($json)) {
+    // Create the entity.
+    $content_hub_entity = new content_hub_connector\ContentHubEntity();
+    if ($content_hub_entity->loadDrupalEntity($type, $uuid)) {
+      $content_hub_entity->touchModified();
+      $json = '{ "entities" : [';
+      $json .= $content_hub_entity->getJson();
+      $json .= ']}';
+    }
+  }
+}
+
+/**
+ * Allows other modules to set entity publication status.
+ *
+ * This is very useful to allow other modules such as workbench moderation to
+ * define the publication status.
+ *
+ * @param object $entity
+ *   The Drupal entity.
+ *
+ * @return bool
+ *   TRUE if the entity should be published to Hub, otherwise FALSE.
+ */
+function content_hub_connector_get_publishable($entity) {
+  $publishable = FALSE;
+  if (module_exists('workbench_moderation') && isset($entity->workbench_moderation)) {
+    // Initialize workbench moderation state for entity.
+    $current_wm_state = NULL;
+
+    // Set entity's current node publish status.
+    $current_node_status = $entity->status;
+
+    // Get workbench moderate states that are publishable.
+    $publish_state = array_filter(variable_get('content_hub_workbench_statuses', array('published' => 'published')));
+
+    // Check whether entity publishing managed through workbench moderation and
+    // set current state.
+    if (isset($entity->workbench_moderation['current']->state) && $entity->workbench_moderation['current']->is_current) {
+      $current_wm_state = $entity->workbench_moderation['current']->state;
+    }
+
+    if (in_array($current_wm_state, $publish_state, TRUE)) {
+      $publishable = TRUE;
+    }
+  }
+  elseif (isset($entity->status) && $entity->status == 1) {
+    $publishable = TRUE;
+  }
+
+  // NOTE: A hook is not being added here after discussion with the team.
+  // Workbench moderation integration that has been merged into the CH
+  // product satisfies customer use case. More functionality around this
+  // are shall be later evaluated based on customer need.
+  return $publishable;
+
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function content_hub_connector_entity_insert($entity, $type) {
+  content_hub_connector_entity_action($entity, $type, 'INSERT');
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function content_hub_connector_entity_update($entity, $type) {
+  content_hub_connector_entity_action($entity, $type, 'UPDATE');
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function content_hub_connector_entity_delete($entity, $type) {
+  content_hub_connector_entity_action($entity, $type, 'DELETE');
+}
+
+/**
+ * Executes an action in Content Hub on a selected drupal entity.
+ *
+ * Note that if the entity is a node, then follow the following logic,
+ * as noted on CHMS-99:
+ * - New content that is created as unpublished should not be pushed to the Hub
+ * - New content that is created as published should be pushed to the Hub
+ * - When an existing content is switched from the unpublished state to
+ *   published, it should be added to Content Hub
+ * - When an existing content is switched from the published state to
+ *   unpublished, it should be deleted from Content Hub.
+ * - If the site is workbench moderated, check for ch-publishable states
+ *   and take action accordingly. Refer: CHMS-319, CHMS-1114.
+ *
+ * @param object $entity
+ *   The Drupal Entity object.
+ * @param string $type
+ *   The entity type.
+ * @param string $action
+ *   The action to perform on that entity: 'INSERT', 'UPDATE', 'DELETE'.
+ * @param bool $include_dependencies
+ *   TRUE to include dependencies, FALSE otherwise. Defaults to TRUE.
+ */
+function content_hub_connector_entity_action($entity, $type, $action, $include_dependencies = TRUE) {
+  // Do not take CH related action on an entity if,
+  // - The entity has no UUID. Eg: Custom CH rules do not get a uuid.
+  // - The ContentHubEntitiesTracking class is not available yet.
+  // - Both the above are there, but the entity is already a CH imported entity.
+  // REFER: CHMS-835, CHMS-866.
+  if (!isset($entity->uuid) || !class_exists('\Drupal\content_hub_connector\ContentHubEntitiesTracking')) {
+    return;
+  }
+  elseif (content_hub_connector\ContentHubEntitiesTracking::loadImportedByUuid($entity->uuid)) {
+    return;
+  }
+
+  // Checking if the entity has already been synchronized so not to generate an
+  // endless loop.
+  if (isset($entity->__content_hub_synchronized)) {
+    unset($entity->__content_hub_synchronized);
+    return;
+  }
+
+  // Comparing entity's origin with site's origin.
+  $origin = variable_get('content_hub_connector_origin', '');
+  if (isset($entity->__content_hub_origin) && $entity->__content_hub_origin !== $origin) {
+    unset($entity->__content_hub_origin);
+    return;
+  }
+
+  // Entity has not been sync'ed, then proceed with it.
+  // Is this an entity that does not belong to this site? Has it been
+  // previously imported from Content Hub? Or was this entity type selected in
+  // the Entity Configuration page?
+  if (content_hub_connector_is_content_hub_entity($entity, $type) === FALSE) {
+    // We cannot bulk upload this entity because it does not belong to this
+    // site or it wasn't selected in the Entity Configuration Page.
+    // Add it to the pool of failed entities.
+    if (isset($entity->uuid)) {
+      content_hub_connector_bulk_upload_failures(1);
+      // We can use this pool of failed entities to display a message to the
+      // user about the entities that failed to export.
+      watchdog('content_hub_connector', 'Cannot export %type entity with UUID = %uuid to Content Hub because it was previously imported (did not originate from this site) or it wasn\'t selected in the Entity Configuration Page.', array(
+        '%type' => $type,
+        '%uuid' => $entity->uuid,
+      ), WATCHDOG_WARNING);
+    }
+  }
+  else {
+    // For _workbench moderated sites_, find if content is in _one of the
+    // ch-publishable states_?
+    // For _NON workbench moderated sites_, find if content is _published_?
+    // REFER: CHMS-319.
+    $publishable = content_hub_connector_get_publishable($entity);
+    if ($type == 'node') {
+      switch ($action) {
+        case 'INSERT':
+          if (!$publishable) {
+            // Do not push nodes that are not to be published to Content Hub.
+            return;
+          }
+          break;
+
+        case 'UPDATE':
+          if (!$publishable) {
+            // In workbench moderated situations, DO NOT delete a node when it
+            // transitions from a ch-publishable state to a non-ch-publishable
+            // state. Delete the hub copy when
+            // - content is deleted
+            // - drush command is used to delete hub copy
+            // Refer: CHMS-1114, CHMS-319.
+            if (module_exists('workbench_moderation') && isset($entity->workbench_moderation)) {
+              return;
+            }
+            // In NON workbench situtations, an update from published to
+            // unpublished status should trigger the delete action.
+            $action = 'DELETE';
+          }
+          break;
+
+        case 'DELETE':
+          // Do nothing, proceed with deletion.
+          break;
+      }
+    }
+    unset($publishable);
+
+    // Store entity to be processed later.
+    if ($action !== 'DELETE') {
+      $item = array(
+        'uuid' => $entity->uuid,
+        'type' => $type,
+        'action' => $action,
+        'entity' => $entity,
+      );
+      content_hub_connector_collect_export_entities($item);
+
+      // Register shutdown function.
+      content_hub_connector_set_shutdown_function('content_hub_connector_send_entities', $include_dependencies);
+    }
+    else {
+      $content_hub_entity = new \Drupal\content_hub_connector\ContentHubEntity();
+      $content_hub_entity->loadDrupalEntity($type, $entity);
+      drupal_register_shutdown_function('content_hub_connector_entity_action_send', $action, $content_hub_entity);
+    }
+  }
+}
+
+/**
+ * Registers a shutdown function to send all entities to Content Hub.
+ *
+ * @param bool $include_dependencies
+ *   TRUE if we should include dependencies, FALSE otherwise.
+ */
+function content_hub_connector_set_shutdown_function($function, $include_dependencies) {
+  $condition = &drupal_static(__FUNCTION__);
+  if (!isset($condition)) {
+    drupal_register_shutdown_function($function, $include_dependencies);
+    $condition = TRUE;
+  }
+}
+
+/**
+ * Checks whether the current entity should be transferred to Content Hub.
+ *
+ * @param object $entity
+ *   The Drupal entity.
+ * @param string $type
+ *   The Drupal entity type.
+ *
+ * @return object|bool
+ *   The Drupal entity, if it is a Content Hub entity, FALSE otherwise.
+ */
+function content_hub_connector_is_content_hub_entity($entity, $type) {
+  // First check if this entity was previously imported.
+  // When the content_hub and content_hub_connector modules are enabled at once,
+  // hook_entity_insert() is invoked with the default rule to handle webhooks.
+  // The content_hub_connector classes might not be available at this point.
+  if (class_exists('\Drupal\content_hub_connector\ContentHubEntitiesTracking')) {
+    list($id, $vid, $bundle) = entity_extract_ids($type, $entity);
+    if (content_hub_connector\ContentHubEntitiesTracking::loadImportedByDrupalEntity($type, $id)) {
+      return FALSE;
+    }
+  }
+
+  // @TODO: Check for entities which were imported but not tracked.
+  // This entity was not imported previously, then we will assume it was created
+  // locally.
+  $hubentities = variable_get('content_hub_connector_hubentities_' . $type);
+  if (empty($entity) || !isset($hubentities)) {
+    return FALSE;
+  }
+  $info = entity_get_info($type);
+  $bundle = isset($info['entity keys']['bundle']) ? $info['entity keys']['bundle'] : NULL;
+
+  if (!empty($bundle) && isset($hubentities[$entity->$bundle]) && $hubentities[$entity->$bundle]) {
+    return $entity;
+  }
+  elseif (isset($hubentities[$type]) && $hubentities[$type]) {
+    return $entity;
+  }
+  return FALSE;
+}
+
+/**
+ * Gathers all entities that will be exported.
+ *
+ * @param object|null $entity
+ *   The Entity that will be exported.
+ *
+ * @return array
+ *   The array of entities to export.
+ */
+function content_hub_connector_collect_export_entities($entity = NULL) {
+  $entities = &drupal_static(__FUNCTION__);
+  if (!isset($entities)) {
+    $entities = array();
+  }
+  if (is_array($entity)) {
+    $uuids = array_column($entities, 'uuid');
+    if (!in_array($entity['uuid'], $uuids)) {
+      $entities[] = $entity;
+    }
+  }
+  return $entities;
+}
+
+/**
+ * Sends all collected entities to Content Hub.
+ *
+ * This function collects all entities that have been created/modified through
+ * the entity hooks: hook_entity_insert, hook_entity_update. It also collects
+ * the dependencies of those entities and groups everything together in a
+ * single bulk upload request.
+ * Note that some dependencies are also send even if they were not modified
+ * through this action. However, because some other entities depend on them then
+ * they will be part of the bulk upload.
+ * Runs as a registered shutdown function.
+ *
+ * @param bool $include_dependencies
+ *   TRUE if we should include dependencies, FALSE otherwise.
+ * @param array $exclude_dependencies
+ *   An array of arrays with columns "entity_uuid", "entity_type" which sets
+ *   the dependencies we want to exclude from processing. Useful if we are
+ *   carrying over dependencies.
+ *
+ * @TODO: In order to make this more efficient we will have to start tracking
+ * exported entities at some point.
+ */
+function content_hub_connector_send_entities($include_dependencies = TRUE, $exclude_dependencies = array()) {
+  // Collect all entities that have been modified through entity hooks.
+  $entities = content_hub_connector_collect_export_entities();
+
+  $failed_entities = array();
+
+  // For each of those entities, add them to the bulk upload pool, including
+  // their dependencies.
+  $content_hub_entities = new content_hub_connector\ContentHubEntities();
+  foreach ($entities as $entity) {
+    $content_hub_entity = new \Drupal\content_hub_connector\ContentHubEntity();
+    if ($content_hub_entity->loadDrupalEntity($entity['type'], $entity['entity'])) {
+      $failed = $content_hub_entities->addEntity($content_hub_entity, $include_dependencies, $exclude_dependencies);
+      $failed_entities = array_merge($failed_entities, $failed);
+    }
+  }
+
+  // Send all the collected entities as one bulk upload request.
+  $content_hub_entities->send();
+
+  // Notify the user about the dependencies that failed to upload.
+  if (count($failed_entities) > 0) {
+    $items = array();
+    foreach ($failed_entities as $failed_entity) {
+      $items[] = t('UUID = !uuid, type = !type', array(
+        '!uuid' => $failed_entity->getUuid(),
+        '!type' => $failed_entity->getDrupalEntityType(),
+      ));
+    }
+
+    $msg = t('The following dependencies failed to export to Content Hub (They were not selected in the Entity Configuration Page or did not originate from this site): !list', array(
+      '!list' => theme('item_list', array('items' => $items)),
+    ));
+    watchdog('content_hub_connector', $msg, array(), WATCHDOG_WARNING);
+  }
+}
+
+/**
+ * Sends the request to Content Hub for a single entity.
+ *
+ * @param string $action
+ *   The action to execute for bulk upload: 'INSERT' or 'UPDATE'.
+ * @param \Drupal\content_hub_connector\ContentHubEntity $content_hub_entity
+ *   The Content Hub Entity.
+ */
+function content_hub_connector_entity_action_send($action, \Drupal\content_hub_connector\ContentHubEntity $content_hub_entity) {
+  switch ($action) {
+    case 'INSERT':
+      // @deprecated in favor of bulk upload.
+      if ($exported_entity = content_hub_connector\ContentHubEntitiesTracking::loadExportedByUuid($content_hub_entity->getUuid())) {
+        $exported_entity->setExportStatus(content_hub_connector\ContentHubEntitiesTracking::INITIATED);
+        $exported_entity->setModified($content_hub_entity->getCdf()->getModified());
+      }
+      else {
+        $exported_entity = new content_hub_connector\ContentHubEntitiesTracking(
+          $content_hub_entity->getDrupalEntityType(),
+          $content_hub_entity->getDrupalEntityWrapper()->getIdentifier(),
+          $content_hub_entity->getUuid(),
+          content_hub_connector\ContentHubEntitiesTracking::INITIATED,
+          '',
+          $content_hub_entity->getCdf()->getModified(),
+          $content_hub_entity->getOrigin()
+        );
+      }
+      $exported_entity->save();
+      $content_hub_entity->createRemoteEntity(TRUE);
+      break;
+
+    case 'UPDATE':
+      // @deprecated in favor of bulk upload.
+      if ($exported_entity = content_hub_connector\ContentHubEntitiesTracking::loadExportedByUuid($content_hub_entity->getUuid())) {
+        $exported_entity->setExportStatus(content_hub_connector\ContentHubEntitiesTracking::INITIATED);
+        $exported_entity->setModified($content_hub_entity->getCdf()->getModified());
+      }
+      else {
+        $exported_entity = new content_hub_connector\ContentHubEntitiesTracking(
+          $content_hub_entity->getDrupalEntityType(),
+          $content_hub_entity->getDrupalEntityWrapper()->getIdentifier(),
+          $content_hub_entity->getUuid(),
+          content_hub_connector\ContentHubEntitiesTracking::INITIATED,
+          '',
+          $content_hub_entity->getCdf()->getModified(),
+          $content_hub_entity->getOrigin()
+        );
+      }
+      $exported_entity->save();
+      $content_hub_entity->updateRemoteEntity();
+      break;
+
+    case 'DELETE':
+      $content_hub_entity->deleteRemoteEntity();
+      if (class_exists('\Drupal\content_hub_connector\ContentHubEntitiesTracking')) {
+        if ($exported_entity = content_hub_connector\ContentHubEntitiesTracking::loadExportedByUuid($content_hub_entity->getUuid())) {
+          $exported_entity->delete();
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function content_hub_connector_cron() {
+  if (class_exists('\Drupal\content_hub_connector\ContentHubCache')) {
+    $content_hub_cache = new \Drupal\content_hub_connector\ContentHubCache();
+    $content_hub_cache->purge();
+  }
+  if (class_exists('\Drupal\content_hub_connector\ContentHubSubscription') &&
+    class_exists('\Acquia\ContentHubClient\ContentHub')) {
+    $subscription = new \Drupal\content_hub_connector\ContentHubSubscription();
+    $subscription->updateSharedSecret();
+  }
+}
+
+/**
+ * Implements hook_acsf_registry().
+ */
+function content_hub_connector_acsf_registry() {
+  return array(
+    'events' => array(
+      array(
+        'type' => 'site_duplication_scrub',
+        'class' => 'Drupal\content_hub_connector\ContentHubAcsfDuplication',
+        'weight' => 0,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_workbench_moderation_transition().
+ */
+function content_hub_connector_workbench_moderation_transition($node, $previous_state, $new_state) {
+  // Get workbench moderate states that are publishable.
+  $publishable_states = array_filter(variable_get('content_hub_workbench_statuses', array('published' => 'published')));
+
+  // Do not act on content that was imported from content hub.
+  // Act on content on the origin site.
+  if (!content_hub_connector\ContentHubEntitiesTracking::loadImportedByUuid($node->uuid)) {
+    // If the new state being transitioned to is "publishable", we
+    // sent the 'UPDATE' request to Content Hub, so the latest
+    // publishable copy gets to the hub.
+    // REFER: CHMS-319, CHMS-1114.
+    if (in_array($new_state, $publishable_states, TRUE)) {
+      content_hub_connector_entity_action($node, 'node', 'UPDATE');
+    }
+
+    // NOTE: We pass the second parameter as 'node' because WM transition
+    // only applies to nodes.
+    // This hook gets triggered when workbench_moderation state transition
+    // is triggered from the WM's moderate tab, which is not a real node update,
+    // but still a node state change. At such a time, we just nudge Content Hub
+    // to take action, it automatically checks WM publishable states later in
+    // the process and uploads content to the Hub if it needs to.
+    // REFER: https://backlog.acquia.com/browse/HUB-125.
+  }
+}

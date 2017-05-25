@@ -1,0 +1,1425 @@
+<?php
+/**
+ * @file
+ * Content Hub drupal module to keep entities in sync.
+ */
+
+use Drupal\content_hub_connector as content_hub_connector;
+
+module_load_include('inc', 'content_hub', 'content_hub.rules');
+
+/**
+ * Filter Publish Setting is View Saved Results.
+ */
+define('CONTENT_HUB_REVIEW_RESULTS', 2);
+
+/**
+ * Filter Publish Setting is Always Publish.
+ */
+define('CONTENT_HUB_ALWAYS_PUBLISH', 1);
+
+/**
+ * Filter Publish Setting is Always Import.
+ */
+define('CONTENT_HUB_ALWAYS_IMPORT', 0);
+
+/**
+ * Custom rules namespace for saved filters.
+ */
+define('CONTENT_HUB_RULE_FILTER', 'content_hub_rule_filter');
+
+/**
+ * Implements hook_menu().
+ */
+function content_hub_menu() {
+  $items = array();
+  $items['admin/content/content-hub'] = array(
+    'title' => 'Content Hub',
+    'page callback' => 'content_hub_discovery',
+    'access arguments' => array('administer content hub'),
+    'type' => MENU_LOCAL_TASK | MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/content/content-hub/preview/%'] = array(
+    'page callback' => 'content_hub_entity_preview',
+    'page arguments' => array(4),
+    'access arguments' => array('administer content hub'),
+    'type' => MENU_CALLBACK,
+    'file' => 'content_hub.entity_preview.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function content_hub_permission() {
+  return array(
+    'administer content hub' => array(
+      'title' => t('Administer content hub'),
+      'description' => t('Administer content hub to discover content and manage filters.'),
+    ),
+  );
+}
+
+/**
+ * Get the discovery page.
+ *
+ * @return bool|null|string|void
+ *   Returns the view.
+ */
+function content_hub_discovery() {
+  // Making sure we have a connection defined.
+  $hostname = (bool) variable_get('content_hub_connector_hostname', '');
+  $api = (bool) variable_get('content_hub_connector_api_key', '');
+  $secret = (bool) variable_get('content_hub_connector_secret_key', '');
+  $origin = (bool) variable_get('content_hub_connector_origin', '');
+  if (!($hostname && $api && $secret && $origin)) {
+    drupal_set_message(t('Content Hub Connection Settings have not been defined yet.'), 'warning');
+    drupal_goto('admin/config/services/content-hub');
+  }
+  return views_embed_view('content_hub_discovery');
+}
+
+/**
+ * Implements hook_content_hub_connector_process_webhook_alter().
+ */
+function content_hub_content_hub_connector_process_webhook_alter($webhook) {
+  $content_hub_entity = new content_hub_connector\ContentHubEntity();
+  $assets = $webhook['assets'];
+  // Process every asset that comes in the webhook, other than the
+  // post dependencies.
+  foreach ($assets as $key => $asset) {
+    if (in_array($asset['type'], $content_hub_entity->getPostDependencyEntityTypes())) {
+      unset($assets[$key]);
+    }
+  }
+
+  // Obtain the number of entities that will be processed during this webhook
+  // request. We will send the rest on the queue.
+  $max_entities_webhook_request = variable_get('content_hub_connector_max_entities_webhook_request', 500);
+  $assets_to_process = array_slice($assets, 0, $max_entities_webhook_request);
+  $unprocessed_assets = array_slice($assets, $max_entities_webhook_request);
+
+  // Create a cache to store saved entities from this particular webhook.
+  $cid = 'content_hub_webhook_' . $webhook['uuid'];
+  cache_set($cid, array());
+
+  // Process only the number of entities as stated in the variable
+  // 'content_hub_connector_max_entities_webhook_request'.
+  $time = time();
+  foreach ($assets_to_process as $asset) {
+    $asset['cid'] = $cid;
+    $asset['timestamp'] = $time;
+    rules_invoke_event('content_hub_event_webhook_landing', $asset);
+  }
+
+  // Send all other items to an alter hook for further processing, either
+  // through a queue or any other third party implementation in the same format.
+  foreach ($unprocessed_assets as $key => $asset) {
+    $asset['cid'] = $cid;
+    $asset['timestamp'] = $time;
+    $unprocessed_assets[$key] = $asset;
+  }
+
+  module_invoke_all('content_hub_webhook_get_unprocessed_entities', $unprocessed_assets);
+
+  // Alerting the user that there were items hit the limit.
+  watchdog(
+    'content_hub',
+    '%processed entities processed during the webhook request (Webhook ID = %id). %queued entities not processed.',
+    array(
+      '%processed' => count($assets_to_process),
+      '%id' => $webhook['uuid'],
+      '%queued' => count($unprocessed_assets),
+    ),
+    WATCHDOG_INFO
+  );
+
+}
+
+/**
+ * Gets the update mode of an entity.
+ *
+ * When an entity is set to be in sync with the content hub, a webhook will be
+ * triggered for every update. Each entity can be configured to react
+ * differently to these update for changes. It can either be updated
+ * automatically, require approval by a content administrator, or ignored.
+ *
+ * @param string $entity_type
+ *   Entity type of the entity.
+ * @param int $entity_id
+ *   Entity ID of the entity.
+ *
+ * @return string AUTO_UPDATE_ENABLED|AUTO_UPDATE_DISABLED|LOCAL_CHANGE|FALSE
+ *   Returns auto_update value for this entity.
+ */
+function content_hub_get_entity_settings($entity_type, $entity_id) {
+  if (class_exists('\Drupal\content_hub_connector\ContentHubEntitiesTracking')) {
+    if ($imported = content_hub_connector\ContentHubEntitiesTracking::loadImportedByDrupalEntity($entity_type, $entity_id)) {
+      return $imported->getImportStatus();
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Gets the entity uuid.
+ *
+ * @param string $entity_uuid
+ *   Entity uuid of the entity.
+ *
+ * @return mixed
+ *   Returns entity uuid if entity exists locally otherwise False.
+ */
+function content_hub_entity_exists_locally($entity_uuid) {
+  if ($imported_entity = content_hub_connector\ContentHubEntitiesTracking::loadImportedByUuid($entity_uuid)) {
+    return $imported_entity->getUuid();
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function content_hub_form_node_form_alter(&$form, $form_state) {
+  $node = $form['#node'];
+
+  // Don't display anything if the node doesn't exist.
+  if (empty($node->nid)) {
+    return;
+  }
+  $content_hub_settings = content_hub_get_entity_settings('node', $node->nid);
+  if ($content_hub_settings) {
+    $form['content_hub_settings'] = array(
+      '#type' => 'fieldset',
+      '#access' => user_access('administer content hub'),
+      '#title' => t('Acquia Content Hub settings'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#group' => 'additional_settings',
+      '#attributes' => array(
+        'class' => array('content-hub-node-settings-form'),
+      ),
+      '#attached' => array(
+        'js' => array(drupal_get_path('module', 'content_hub') . '/content_hub-node-form.js'),
+      ),
+      '#weight' => 30,
+      '#tree' => TRUE,
+    );
+
+    $form['content_hub_settings']['label'] = array(
+      '#type' => 'markup',
+      '#markup' => '<div id="content-hub-settings-label">' . t('What do you like to do if there are changes in the original article?') . '</div>',
+    );
+
+    $form['content_hub_settings']['update_mode'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Enable Automatic Updates'),
+      '#default_value' => ($content_hub_settings == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED) ? 1 : 0,
+    );
+
+    $form['content_hub_settings']['label_local_changes'] = array(
+      '#type' => 'markup',
+      '#markup' => '<div id="content-hub-settings-label2"></div>',
+    );
+
+    $form['content_hub_settings']['local_changes'] = array(
+      '#type' => 'hidden',
+      '#title' => t('Has local changes'),
+      '#value' => ($content_hub_settings == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE) ? 1 : 0,
+      '#attributes' => array('class' => array('content-hub-settings-local-changes')),
+    );
+  }
+}
+
+/**
+ * Form submission handler for node form.
+ */
+function content_hub_node_submit($node, $form, &$form_state) {
+  // Get the auto-update checkbox value on submit.
+  if (isset($form_state['values']['content_hub_settings'])) {
+    $node->content_hub_update_mode_original = ($form_state['values']['content_hub_settings']['update_mode'] == 1) ? content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED : content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED;
+    $node->content_hub_local_changes = $form_state['values']['content_hub_settings']['local_changes'];
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function content_hub_views_api() {
+  return array(
+    'api' => 3.0,
+    'path' => drupal_get_path('module', 'content_hub') . '/views',
+    'template path' => drupal_get_path('module', 'content_hub') . '/templates',
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function content_hub_form_views_exposed_form_alter(&$form, &$form_state) {
+  switch ($form['#id']) {
+    case 'views-exposed-form-content-hub-discovery-default':
+      $form['#attached']['css'][] = drupal_get_path('module', 'content_hub') . '/css/content_hub.css';
+      $form['#attached']['js'][] = drupal_get_path('module', 'content_hub') . '/js/content_hub.js';
+      $form['submit']['#value'] = t('Search');
+      $form['submit']['#attributes']['class'][] = 'content-hub-search-button';
+      $form['#action'] = url('admin/content/content-hub/discovery');
+
+      // Set the custom sort-order options.
+      if (isset($form['sort_by']['#options']['modified'])) {
+        $options = array(
+          'DESC' => t('Newest'),
+          'ASC' => t('Oldest'),
+          'RELEVANCE' => t('Relevance'),
+        );
+        $form['sort_order']['#options'] = $options;
+      }
+
+      break;
+
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function content_hub_form_views_form_alter(&$form, &$form_state) {
+  switch ($form['#id']) {
+    case 'views-form-content-hub-discovery-default':
+      $form['actions']['submit']['#attributes']['class'][] = 'element-invisible';
+      drupal_add_library('system', 'ui.core');
+      drupal_add_library('system', 'ui.widget');
+      $library = module_exists('libraries') ? libraries_detect('jquery-ui-selectmenu') : array();
+      if (!empty($library['installed'])) {
+        libraries_load('jquery-ui-selectmenu');
+        $form['#attached']['libraries_load'][] = array('jquery-ui-selectmenu');
+      }
+      else {
+        $form['#attached']['js'][] = array(
+          'data' => drupal_get_path('module', 'content_hub') . '/vendor/libraries/jquery-ui-selectmenu/ui/jquery.ui.selectmenu.js',
+          'type' => 'file',
+          'scope' => 'footer',
+        );
+        $form['#attached']['js'][] = array(
+          'data' => drupal_get_path('module', 'content_hub') . '/vendor/libraries/jquery-ui-selectmenu/ui/jquery.ui.position.js',
+          'type' => 'file',
+          'scope' => 'footer',
+        );
+        $form['#attached']['js'][] = array(
+          'data' => drupal_get_path('module', 'content_hub') . '/vendor/libraries/jquery-ui-selectmenu/ui/jquery.ui.widget.js',
+          'type' => 'file',
+          'scope' => 'header',
+        );
+        $form['#attached']['css'][] = drupal_get_path('module', 'content_hub') . '/vendor/libraries/jquery-ui-selectmenu/themes/base/jquery.ui.selectmenu.css';
+      }
+      $form['#action'] = url('admin/content/content-hub/discovery');
+      break;
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function content_hub_preprocess_views_view(&$vars) {
+  if ($vars['view']->name === 'content_hub_filter') {
+    if ($vars['view']->get_title()) {
+      $vars['title'] = $vars['view']->get_title();
+      $vars['title_prefix'] = array('#markup' => '<h2 id="content-hub-filter-col-title">');
+      $vars['title_suffix'] = array('#markup' => '</h2>');
+      if (!$vars['view']->result) {
+        $vars['header'] = '<p class="content-hub-no-filter">' . t('No Saved filters.') . '</p>';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function content_hub_entity_delete($entity, $type) {
+  // If this is an imported entity, delete its track record.
+  if (isset($entity->uuid) && $imported_entity = content_hub_connector\ContentHubEntitiesTracking::loadImportedByUuid($entity->uuid)) {
+    $imported_entity->delete();
+    $entity->__content_hub_origin = $imported_entity->getOrigin();
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function content_hub_entity_presave($entity, $type) {
+  list($id, $vid, $bundle) = entity_extract_ids($type, $entity);
+  $settings = content_hub_get_entity_settings($type, $id);
+  // Only detect changes on entities that are actively being tracked.
+  $processed = content_hub_processed_entities();
+  // In case of first import, when entity is new, there is neither
+  // a need for entity comparison, nor entity sync. So, will simply
+  // add new entity as being processed.
+  if (isset($entity->is_new) && $entity->is_new && !$settings && isset($entity->uuid)) {
+    content_hub_processed_entities($entity->uuid);
+  }
+  if (!isset($entity->__content_hub_synchronized) && $settings && !in_array($entity->uuid, $processed)) {
+    module_load_include('inc', 'content_hub', 'content_hub.diff');
+
+    // Entity properties that should be ignored for the purpose of detecting
+    // content changes for local change detection.
+    $ignored_properties = array(
+      'changed',
+      'archived',
+      'status',
+      'promote',
+      'sticky',
+      'vid',
+      'vuuid',
+      'revision',
+      'log',
+      'comment',
+    );
+    // Typecast the decimal field to float value. As $entity treats
+    // decimal fields as float, however $entity->original converts
+    // decimal value to strings. For eg. if decimal field value is 100.50,
+    // $entity will strip the extra zeros which results in setting the
+    // field value as 100.5 Where as, $entity->original would show it as
+    // "100.50". This mismatch in field values results into a difference
+    // in the old and new entity. So, to fix this issue, typecasting the
+    // field type "number_decimal" to a float value.
+    if (isset($entity->type)) {
+      foreach (array_keys(field_info_instances($type, $entity->type)) as $k => $field_name) {
+        if (field_info_instance($type, $field_name, $entity->type)['display']['default']['type'] == 'number_decimal' && !empty(reset($entity->original->$field_name))) {
+          foreach (reset($entity->original->$field_name) as $key => $value) {
+            $lang = key($entity->original->$field_name) ? key($entity->original->$field_name) : LANGUAGE_NONE;
+            $entity->original->{$field_name}[$lang][$key]['value'] = (float) $value['value'];
+          }
+        }
+        else {
+          // In case of translation, diff module couldn't compare empty array
+          // with a non-empty array. Here, adding an empty string based on
+          // language key, so that diff can handle it.
+          if (!empty($entity->$field_name) && empty($entity->original->$field_name)) {
+            $lang = key($entity->$field_name) ? key($entity->$field_name) : LANGUAGE_NONE;
+            $entity->original->{$field_name}[$lang] = "";
+          }
+        }
+      }
+    }
+    if (content_hub_diff_entities($entity, $entity->original, $type, $ignored_properties)) {
+      // Checking for workbench moderation.
+      // Only check for differences if workbench moderation is not on.
+      $wb_moderation = (bool) (isset($entity->workbench_moderation['updating_live_revision']) && $entity->workbench_moderation['updating_live_revision']);
+      // Saving in the [content_hub_imported_entities] table.
+      if (!$wb_moderation && $imported_entity = content_hub_connector\ContentHubEntitiesTracking::loadImportedByDrupalEntity($type, $id)) {
+        $auto_update = content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE;
+        $imported_entity->setImportStatus($auto_update);
+        $imported_entity->save();
+        $entity->__content_hub_origin = $imported_entity->getOrigin();
+        if (property_exists($entity, 'hostEntity')) {
+          if ($imported_entity = content_hub_connector\ContentHubEntitiesTracking::loadImportedByDrupalEntity($entity->hostEntityType(), $entity->hostEntityId())) {
+            $auto_update = content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE;
+            $imported_entity->setImportStatus($auto_update);
+            $imported_entity->save();
+          }
+        }
+      }
+      drupal_set_message(t('The selected content has been modified. Any future updates to content in Content Hub will not automatically sync to your site.'), $type = 'status', $repeat = FALSE);
+    }
+    // Cases in which to sync from the hub:
+    // * Update mode is toggled from disable to enable.
+    // * User enabled the auto-update checkbox and wants to blow away
+    // the local changes.
+    // Entity's content_hub_update_mode_original property
+    // (i.e. value of auto-update checkbox) is set in the node form submit.
+    elseif (isset($entity->content_hub_update_mode_original) &&
+      (($entity->content_hub_update_mode_original == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED && $settings == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED) ||
+        (isset($entity->content_hub_local_changes) && ($entity->content_hub_update_mode_original == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED && $entity->content_hub_local_changes == 1)))) {
+      $uuid = $entity->uuid;
+      if (content_hub_connector\Cdf::isUuid($uuid)) {
+        $content_hub_entity = new content_hub_connector\ContentHubEntity();
+        // Set $to_drupal flag to FALSE as dependencies might not exist yet.
+        if ($content_hub_entity->loadRemoteEntity($uuid, FALSE)) {
+          // Enabling auto updates.
+          $auto_update = content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED;
+          $content_hub_entity->setAutoUpdate($auto_update);
+
+          // Saving the drupal entity.
+          // We are giving the extra parameter $entity to consider that as a
+          // base and do a union with the entity coming from the Content Hub.
+          $content_hub_entity->saveDrupalEntity(TRUE, $entity);
+          drupal_set_message(t('The selected content is now synced with Content Hub. Any updates to content in Content Hub will automatically sync to your site.'));
+          $entity = $content_hub_entity->getDrupalEntity();
+          $entity->is_new = 0;
+        }
+      }
+    }
+    // Update the tracking table when, Update mode is toggled from
+    // enable to disable.
+    elseif (isset($entity->content_hub_update_mode_original) && (($entity->content_hub_update_mode_original == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED && $settings == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED))) {
+      // Update the auto_update_state in the tracking
+      // table for imported entities.
+      if ($imported_entity = content_hub_connector\ContentHubEntitiesTracking::loadImportedByDrupalEntity('node', $id)) {
+        $auto_update = $entity->content_hub_update_mode_original == content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED ?
+          content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED :
+          content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED;
+        $imported_entity->setImportStatus($auto_update);
+        $imported_entity->save();
+        drupal_set_message(t('The automatic updates have been disabled. Any future updates to content in Content Hub will not automatically sync to your site.'));
+      }
+    }
+    // Once an entity is processed, add it to the processed entities list.
+    content_hub_processed_entities($entity->uuid);
+  }
+}
+
+/**
+ * Implements hook_form().
+ */
+function content_hub_filter_form($form, &$form_state) {
+  $rule_id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
+  $search_term = content_hub_build_search_term();
+
+  $form['#suffix'] = '<a title="Close filter" id="content-hub-filter-close">X</a>';
+
+  $form['search_term'] = array(
+    '#type' => 'value',
+    '#value' => $search_term,
+  );
+
+  $form['rule_id'] = array(
+    '#type' => 'value',
+    '#value' => $rule_id,
+  );
+
+  if (!empty($search_term)) {
+    $filter_applied = content_hub_get_filters_applied($search_term);
+    if (!empty($filter_applied)) {
+      $form['filters_applied'] = array(
+        '#prefix' => '<div id="content-hub-filters-applied">',
+        '#markup' => t('Filters applied:') . $filter_applied,
+        '#suffix' => '</div>',
+      );
+    }
+
+    if (!empty($rule_id)) {
+      $publish_setting = CONTENT_HUB_REVIEW_RESULTS;
+      $rule = content_hub_get_rule_info($rule_id);
+      if ($rule) {
+        $actions = $rule->actions();
+        foreach ($actions as $action) {
+          if (isset($action->settings['publish_setting'])) {
+            $publish_setting = $action->settings['publish_setting'];
+          }
+        }
+      }
+
+      $form['layout'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<div id="content-hub-filter-heading">',
+        '#markup' => '<h2>' . t('Filter Name') . '</h2>',
+      );
+      $form['filter_name_label'] = array(
+        '#type' => 'markup',
+        '#markup' => $rule->label(),
+        '#prefix' => '<div class="content-hub-filter-name-inner"><span id="content-hub-filter-name-label">',
+        '#suffix' => '</span><a id="content-hub-filter-name-edit-icon"></a></div>',
+      );
+      $form['filter_name_edit'] = array(
+        '#type' => 'textfield',
+        '#default_value' => $rule->label(),
+        '#required' => TRUE,
+        '#maxlength' => 50,
+        '#size' => 50,
+        '#prefix' => '<div id="content-hub-filter-name-edit">',
+        '#suffix' => '</div></div>',
+      );
+      $form['update_filter'] = array(
+        '#type' => 'submit',
+        '#value' => t('Update Filter'),
+        '#prefix' => '<div id="content-hub-filter-col2">',
+        '#ajax' => array(
+          'callback' => 'content_hub_filter_update_form_submit',
+          'progress' => array('type' => 'none'),
+        ),
+      );
+
+      $form['delete_filter'] = array(
+        '#type' => 'submit',
+        '#value' => t('Delete Filter'),
+        '#ajax' => array(
+          'callback' => 'content_hub_filter_delete_form_submit',
+          'progress' => array('type' => 'none'),
+          'event' => 'click',
+        ),
+      );
+
+      $form['filter_publish_setting'] = array(
+        '#type' => 'select',
+        '#title' => t('Publish Setting:'),
+        '#default_value' => $publish_setting,
+        '#options' => content_hub_filter_publish_options(),
+        '#ajax' => array(
+          'callback' => 'content_hub_filter_update_status_form_submit',
+          'event' => 'change',
+          'progress' => array('type' => 'none'),
+        ),
+        '#suffix' => '</div>',
+      );
+
+    }
+    else {
+      $form['layout'] = array(
+        '#type' => 'markup',
+        '#prefix' => '<div id="content-hub-filter-heading">',
+        '#markup' => '<span class="content-hub-filter-icon"></span><h2>' . t('Filter') . '</h2>',
+        '#suffix' => '</div>',
+      );
+
+      $form['save_filter'] = array(
+        '#type' => 'button',
+        '#value' => t('Save Filter'),
+        '#prefix' => '<div id="content-hub-filter-col2">',
+        '#suffix' => '</div>',
+      );
+
+      $form['filter_heading'] = array(
+        '#type' => 'markup',
+        '#markup' => t('Filter Name'),
+        '#prefix' => '<div id=content-hub-filter-popup-form><a id="content-hub-filter-popup-close">X</a>',
+      );
+
+      $form['filter_name'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('filter_name', ''),
+        '#required' => TRUE,
+        '#maxlength' => 50,
+        '#size' => 50,
+        '#prefix' => '<div id="content-hub-filter-name">',
+      );
+
+      $form['filter_length'] = array(
+        '#type' => 'markup',
+        '#markup' => '<span id="filter-length"></span></div>',
+      );
+
+      $form['cancel'] = array(
+        '#type' => 'markup',
+        '#markup' => '<div class="content-hub-filter-actions"><a id="content-hub-filter-popup-cancel">' . t('Cancel') . '</a>',
+      );
+
+      $form['add_filter'] = array(
+        '#type' => 'submit',
+        '#value' => t('Save'),
+        '#ajax' => array(
+          'callback' => 'content_hub_filter_create_form_submit',
+          'progress' => array('type' => 'none'),
+        ),
+        '#suffix' => '</div></div></div>',
+      );
+    }
+  }
+  else {
+    $form['layout'] = array(
+      '#type' => 'markup',
+      '#prefix' => '<div id="content-hub-filter-heading">',
+      '#markup' => '<span class="content-hub-filter-icon"></span><h2>' . t('Filter') . '</h2>',
+      '#suffix' => '</div>',
+    );
+
+    $form['save_filter'] = array(
+      '#type' => 'button',
+      '#value' => t('Save Filter'),
+      '#prefix' => '<div id="content-hub-filter-col2">',
+      '#suffix' => '</div>',
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Form submission handler for deleting the saved filter.
+ *
+ * @see content_hub_filter_form()
+ */
+function content_hub_filter_delete_form_submit($form, &$form_state) {
+  $rule_id = $form_state['values']['rule_id'];
+  $rule = content_hub_get_rule_info($rule_id);
+  if ($rule) {
+    try {
+      $success = $rule->delete();
+    }
+    catch (Exception $exception) {
+      $success = 0;
+    }
+
+    if ($success !== 0) {
+      drupal_set_message(t('You have successfully deleted the filter.'));
+    }
+    else {
+      drupal_set_message(t('Cannot delete the filter.'), 'error');
+    }
+    $path = 'admin/content/content-hub/discovery';
+    content_hub_ajax_redirect($path);
+  }
+}
+
+/**
+ * Form submission handler for updating the status of the saved filter.
+ *
+ * @see content_hub_filter_form()
+ */
+function content_hub_filter_update_status_form_submit($form, &$form_state) {
+  $rule_id = $form_state['values']['rule_id'];
+  $publish_setting = $form_state['values']['filter_publish_setting'];
+  $filter_term = $form_state['values']['search_term'];
+  $url_params = content_hub_parse_filter_criteria($filter_term, $rule_id);
+  $rule = content_hub_get_rule_info($rule_id);
+  if ($rule) {
+    $rule->active = '1';
+    $actions = $rule->actions();
+    foreach ($actions as $action) {
+      if (isset($action->settings['publish_setting'])) {
+        $action->settings['publish_setting'] = $publish_setting;
+      }
+    }
+    try {
+      $success = $rule->save();
+    }
+    catch (Exception $exception) {
+      $success = 0;
+    }
+
+    if ($success !== 0) {
+      $publish_setting_val = content_hub_filter_publish_text($publish_setting);
+      switch ($publish_setting) {
+        case CONTENT_HUB_ALWAYS_IMPORT:
+          drupal_set_message(t('You have successfully updated the publish setting to
+          %publish_setting. All <strong>future content items</strong> in this saved
+          filter will automatically import to your site.',
+            array(
+              '%publish_setting' => $publish_setting_val,
+            )
+          ));
+
+          break;
+
+        case CONTENT_HUB_ALWAYS_PUBLISH:
+          drupal_set_message(t('You have successfully updated the publish setting to
+          %publish_setting. All <strong>future content items</strong> in this saved
+          filter will automatically publish to your site.',
+            array(
+              '%publish_setting' => $publish_setting_val,
+            )
+          ));
+
+          break;
+
+        default:
+          drupal_set_message(t('You have successfully updated the publish setting to
+          %publish_setting. <strong>Future content items</strong> will not be automatically published
+          or imported to your site.',
+            array(
+              '%publish_setting' => $publish_setting_val,
+            )
+          ));
+
+          break;
+      }
+      $path = 'admin/content/content-hub/discovery';
+      $options = array(
+        'query' => $url_params,
+      );
+    }
+    else {
+      drupal_set_message(t('Cannot update the filter.'), 'error');
+      $path = 'admin/content/content-hub/discovery';
+    }
+    content_hub_ajax_redirect($path, $options);
+  }
+}
+
+/**
+ * Form submission handler for updating the saved filter.
+ *
+ * Updates the filter name and term for the saved filter.
+ *
+ * @see content_hub_filter_form()
+ */
+function content_hub_filter_update_form_submit($form, &$form_state) {
+  $rule_id = $form_state['values']['rule_id'];
+  $filter_term = $form_state['values']['search_term'];
+  $url_params = content_hub_parse_filter_criteria($filter_term, $rule_id);
+  $filter_name = $form_state['values']['filter_name_edit'];
+  if (empty($filter_name)) {
+    $filter_name = $filter_term;
+  }
+  $rule = content_hub_get_rule_info($rule_id);
+  if ($rule) {
+    $rule->label = $filter_name;
+    $conditions = $rule->conditions();
+    foreach ($conditions as $conn) {
+      if (array_key_exists('tags', $conn->settings) && isset($conn->settings['tags'])) {
+        $conn->settings['tags'] = $filter_term;
+      }
+    }
+    try {
+      $success = $rule->save();
+    }
+    catch (Exception $exception) {
+      $success = 0;
+    }
+
+    if ($success !== 0) {
+      drupal_set_message(t('You have successfully updated the filter.'));
+      $path = 'admin/content/content-hub/discovery';
+      $options = array(
+        'query' => $url_params,
+      );
+    }
+    else {
+      drupal_set_message(t('Cannot update the filter.'), 'error');
+      $path = 'admin/content/content-hub/discovery';
+    }
+    content_hub_ajax_redirect($path, $options);
+  }
+}
+
+/**
+ * Form submission handler for creating a filter for given search term.
+ *
+ * @see content_hub_filter_form()
+ */
+function content_hub_filter_create_form_submit(&$form, &$form_state) {
+  // Rule namespace for saved filters.
+  $name = CONTENT_HUB_RULE_FILTER;
+  $filter_term = $form_state['values']['search_term'];
+  $filter_name = $form_state['values']['filter_name'];
+  // Set default status as 'View Saved Results'.
+  $publish_status = CONTENT_HUB_REVIEW_RESULTS;
+  if (!empty($filter_term)) {
+    $id = db_query('SELECT MAX(r.id)
+                FROM {rules_config} r WHERE r.name LIKE :name', array(':name' => db_like($name) . '%'))->fetchField();
+
+    $rule_id = content_hub_create_filter_rule($id, $filter_term, $publish_status, $filter_name);
+    $url_params = content_hub_parse_filter_criteria($filter_term, $rule_id);
+    if ($rule_id) {
+      drupal_set_message(t('You have successfully created the filter.'));
+      $path = 'admin/content/content-hub/discovery';
+      $options = array(
+        'query' => $url_params,
+      );
+      content_hub_ajax_redirect($path, $options);
+    }
+    else {
+      drupal_set_message(t('Cannot create the filter.'), 'error');
+    }
+  }
+}
+
+/**
+ * Helper function to create rule for each filter.
+ *
+ * @param int $id
+ *   Max rule id in {rules_config}.
+ * @param string $filter_term
+ *   The filter user wants to save.
+ * @param int $publish_status
+ *   Publishing status.
+ * @param string $filter_name
+ *   The filter name set by user.
+ *
+ * @return bool|null
+ *   Returns Rule Id if success otherwise False.
+ */
+function content_hub_create_filter_rule($id, $filter_term, $publish_status, $filter_name) {
+  global $user;
+  $export = '{ "' . CONTENT_HUB_RULE_FILTER . '" : {
+      "LABEL" : "content_hub_filter",
+      "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
+      "OWNER" : "rules",
+      "REQUIRES" : [ "content_hub" ],
+      "ON" : { "content_hub_event_webhook_landing" : [] },
+      "IF" : [
+        { "content_hub_condition_webhook_landing" : { "webhook" : [ "webhook" ] } },
+        { "content_hub_status_condition_webhook_landing" : { "webhook" : [ "webhook" ], "status" : "no" } }
+      ],
+      "DO" : [
+        { "content_hub_action_webhook_landing" : {
+            "webhook" : [ "webhook" ],
+            "handler" : "override",
+            "publish_setting" : ' . CONTENT_HUB_REVIEW_RESULTS . ',
+            "author" : "0"
+          }
+        }
+      ]
+    }
+  }';
+  $export_rule = drupal_json_decode($export);
+  if (empty($filter_name)) {
+    $filter_name = $export_rule[CONTENT_HUB_RULE_FILTER]['LABEL'];
+  }
+  $export_rule[CONTENT_HUB_RULE_FILTER]['LABEL'] = $filter_name;
+  $export_rule[CONTENT_HUB_RULE_FILTER]['IF'][0]['content_hub_condition_webhook_landing']['tags'] = $filter_term;
+  $export_rule[CONTENT_HUB_RULE_FILTER]['DO'][0]['content_hub_action_webhook_landing']['publish_setting'] = $publish_status;
+  // Using local site user's uuid here, as CDF format prefers UUID instead
+  // of user's uid.
+  $export_rule[CONTENT_HUB_RULE_FILTER]['DO'][0]['content_hub_action_webhook_landing']['author'] = $user->uuid;
+  $export = drupal_json_encode($export_rule);
+  $rules = rules_import($export);
+  try {
+    $success = $rules->save(CONTENT_HUB_RULE_FILTER . '_' . ($id + 1));
+  }
+  catch (Exception $exception) {
+    $success = 0;
+  }
+  rules_clear_cache();
+
+  if ($success === 1) {
+    return substr($rules->name, 24);
+  }
+  return FALSE;
+}
+
+/**
+ * Gets the rule info for given rule's id.
+ *
+ * @param int $rule_id
+ *   Custom rule id of the content_hub_rule_filter.
+ *
+ * @return mixed
+ *   An associative array of rules info for this rule_id, including:
+ *   - name: rule name
+ *   - label: rule label.
+ */
+function content_hub_get_rule_info($rule_id) {
+  $rule_name = CONTENT_HUB_RULE_FILTER . '_' . $rule_id;
+  return rules_config_load($rule_name);
+}
+
+/**
+ * Helper function to create the options for the content publish setting.
+ *
+ * @return array
+ *   Returns options array.
+ */
+function content_hub_filter_publish_options() {
+  $options = array(
+    CONTENT_HUB_REVIEW_RESULTS => t('View Saved Results - View results of the saved search query'),
+    CONTENT_HUB_ALWAYS_PUBLISH => t('Always Publish - Automatically publish all future matched results to your site.'),
+    CONTENT_HUB_ALWAYS_IMPORT => t('Always Import - Automatically import all future matched results from Content Hub to your site.'),
+  );
+
+  return $options;
+}
+
+/**
+ * Helper function to be called after ajax submit to redirect to given path.
+ *
+ * @param string $path
+ *   Redirect path url.
+ * @param array $options
+ *   (optional) An associative array of additional options for the url.
+ */
+function content_hub_ajax_redirect($path, $options = array()) {
+  ctools_include('ajax');
+  ctools_add_js('ajax-responder');
+  $commands[] = ctools_ajax_command_redirect($path, 0, $options);
+  print ajax_render($commands);
+  drupal_exit();
+}
+
+/**
+ * Helper function to publish setting text value for given CONSTANT values.
+ *
+ * @param int $publish_setting
+ *   The Filter publish setting.
+ *
+ * @return null|string
+ *   Returns the publish setting text value.
+ */
+function content_hub_filter_publish_text($publish_setting) {
+  switch ($publish_setting) {
+    case CONTENT_HUB_ALWAYS_IMPORT:
+      return t('Always Import');
+
+    case CONTENT_HUB_ALWAYS_PUBLISH:
+      return t('Always Publish');
+
+    default:
+      return t('View Saved Results');
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function content_hub_form_node_admin_content_alter(&$form, &$form_state, $form_id) {
+  $form['#attached']['css'][] = drupal_get_path('module', 'content_hub') . '/css/content_hub.css';
+  $column_alias = 'content_hub_source';
+  $new_column = array(
+    $column_alias => array(
+      'data' => '',
+      'field' => '',
+    ),
+  );
+
+  // Add another column to the table header.
+  if (isset($form['admin']['nodes'])) {
+    $header = $form['admin']['nodes']['#header'];
+    $new_column[$column_alias]['data'] = t('From Content Hub');
+    $header = content_hub_change_column_position($header, t('operations'), $new_column);
+    $form['admin']['nodes']['#header'] = $header;
+
+    // Loop through the rows in the table and add new column.
+    foreach ($form['admin']['nodes']['#options'] as $nid => &$row) {
+      $uuid = db_query('SELECT uuid FROM {node} WHERE nid = :nid', array('nid' => $nid))->fetchField();
+      // Set source column value.
+      if (content_hub_entity_exists_locally($uuid)) {
+        $source = t('Content Hub');
+      }
+      else {
+        $source = '';
+      }
+      // Add data to the new column.
+      if ($source == 'Content Hub') {
+        $source = t('<span id="content-hub-source-img"></span>');
+      }
+      $new_column[$column_alias]['data'] = $source;
+      // Change position of new column.
+      $row = content_hub_change_column_position($row, t('operations'), $new_column);
+      $rows[] = $row;
+    }
+
+    // Make the new column sortable.
+    $column_name = tablesort_get_order($header)['name'];
+    if ($column_name == 'From Content Hub') {
+      $sort = tablesort_get_sort($header);
+      $form['admin']['nodes']['#options'] = content_hub_tsort_nonsql_sort($rows, $sort, $column_alias);
+    }
+  }
+}
+
+/**
+ * Sort the table rows.
+ *
+ * The sort is performed on the column indicated by the
+ * $column variable in the sort direction indicated by
+ * the $sort variable.
+ *
+ * @param array $rows
+ *   The rows to be sorted.
+ * @param string $sort
+ *   The sort direction, either 'asc' or 'desc'.
+ * @param string $column
+ *   The title of column to be ordered.
+ *
+ * @return array
+ *   An array of rows sorted according to the column mentioned.
+ */
+function content_hub_tsort_nonsql_sort(array $rows, $sort, $column) {
+  foreach ($rows as $row) {
+    $temp_array[] = $row[$column];
+  }
+
+  // The actual sort order depends on whether this is 'asc' or 'desc'.
+  if ($sort == 'asc') {
+    asort($temp_array);
+  }
+  else {
+    arsort($temp_array);
+  }
+
+  foreach ($temp_array as $index => $data) {
+    $new_rows[] = $rows[$index];
+  }
+
+  return $new_rows;
+}
+
+/**
+ * Change new column position.
+ *
+ * @param array $original_columns
+ *   The array of original columns.
+ * @param string $key
+ *   The key before which to insert the new column.
+ * @param array $new_column
+ *   The new column array.
+ *
+ * @return array
+ *   Returns the updated columns array.
+ */
+function content_hub_change_column_position(array $original_columns, $key, array $new_column) {
+  $keys = array_keys($original_columns);
+  $pos = (int) array_search($key, $keys);
+
+  return array_merge(
+    array_slice($original_columns, 0, $pos),
+    $new_column,
+    array_slice($original_columns, $pos)
+  );
+}
+
+/**
+ * Helper function to convert filter string into an array.
+ *
+ * This function builds and returns the query string parameters.
+ * Function is called by saved filters create and update functions
+ * to retrieve the url params.
+ *
+ * @param string $filter_term
+ *   The filter term given by user to filter out the results.
+ * @param string $rule_id
+ *   The custom rule_id of saved filter.
+ *
+ * @return array
+ *   Returns array of filters with filter type as key.
+ */
+function content_hub_parse_filter_criteria($filter_term, $rule_id = '') {
+  $filter_array1 = array();
+  $search = $modified = $from = $to = '';
+  // $filter_term is a comma separated filters list as saved under the
+  // rule conditions.
+  $search_terms = drupal_explode_tags($filter_term);
+  foreach ($search_terms as $search_term) {
+    $check_for_filter = preg_match('/[:]/', $search_term);
+    if ($check_for_filter) {
+      list($filter, $value) = explode(':', $search_term);
+      if ($filter == 'modified') {
+        $modified = str_replace('to', ' to ', $value);
+        $dates = explode('to', $modified);
+        $from = isset($dates[0]) ? trim($dates[0]) : '';
+        $to = isset($dates[1]) ? trim($dates[1]) : '';
+        if (empty($from) || empty($to)) {
+          $modified = str_replace('to', '', $modified);
+        }
+      }
+      else {
+        if (strpos($filter, 'field_') !== FALSE) {
+          $filter = 'tags';
+        }
+        $filter_array1[$filter][] = $value;
+      }
+    }
+    else {
+      $search .= $search_term . ',';
+    }
+  }
+  $search = rtrim($search, ',');
+  // Builds a key value pair of filters, where key is the filter identifier.
+  $filter_array2 = array(
+    'search' => $search,
+    'id' => $rule_id,
+    'modified' => trim($modified),
+    'from' => array(
+      'date' => $from,
+    ),
+    'to' => array(
+      'date' => $to,
+    ),
+  );
+  $filter_array = array_merge($filter_array2, $filter_array1);
+  // Set a query param to identify if request is from content hub ajax form.
+  $filter_array['content_hub_ajax_form'] = 1;
+  return $filter_array;
+}
+
+/**
+ * Helper function to build the search string from query parameters.
+ *
+ * @return string
+ *   Returns the concatenated string of all search terms.
+ */
+function content_hub_build_search_term() {
+  $search_term = '';
+  $query_params = drupal_get_query_parameters();
+  if (!empty($query_params)) {
+    foreach ($query_params as $filter => $value) {
+      switch ($filter) {
+        case 'search':
+          if (!empty($value)) {
+            $search_term .= $value;
+          }
+          break;
+
+        case 'modified':
+          if (!empty($value)) {
+            $search_term .= ',' . $filter . ':' . $query_params['from']['date'] . 'to' . $query_params['to']['date'];
+          }
+          break;
+
+        case 'tags':
+          if (!empty($value)) {
+            foreach ($value as $val) {
+              if (!empty($val)) {
+                $search_term .= ',' . 'field_' . variable_get('content_hub_tag_filter_name', 'tags') . ':' . $val;
+              }
+            }
+          }
+          break;
+
+        case 'origin':
+          if (!empty($value)) {
+            foreach ($value as $val) {
+              if (!empty($val)) {
+                $search_term .= ',' . $filter . ':' . $val;
+              }
+            }
+          }
+          break;
+
+      }
+    }
+  }
+  $search_term = ltrim($search_term, ',');
+  return $search_term;
+}
+
+/**
+ * Helper function to build filters applied pills.
+ *
+ * @param string $search_term
+ *   Comma separated list of all filter terms.
+ *
+ * @return string
+ *   Returns filters applied markup.
+ */
+function content_hub_get_filters_applied($search_term) {
+  $filter_applied = $text = '';
+  if (!empty($search_term)) {
+    $params = content_hub_parse_filter_criteria($search_term);
+    if (!empty($params)) {
+      foreach ($params as $key => $value) {
+        switch ($key) {
+          case 'modified':
+            if (!empty($value)) {
+              if (!empty($params['from']['date']) && !empty($params['to']['date'])) {
+                $pill_text = t('Date:');
+              }
+              elseif (empty($params['to']['date']) && !empty($params['from']['date'])) {
+                $pill_text = t('Date after:');
+              }
+              elseif (empty($params['from']['date']) && !empty($params['to']['date'])) {
+                $pill_text = t('Date before:');
+              }
+              else {
+                $pill_text = '';
+              }
+              $filter_applied .= '<span class="content-hub-selected-filters"><span id="dpill-txt">' . $pill_text . '</span><span id="dpill-val">' . $value . '</span><a id="pill-modified">X</a></span>';
+            }
+            break;
+
+          case 'origin':
+            if (!empty($value)) {
+              foreach ($value as $val) {
+                $sources = content_hub_get_sources();
+                if (isset($sources)) {
+                  foreach ($sources as $row) {
+                    if ($row['uuid'] == $val) {
+                      $text = $row['name'];
+                    }
+                  }
+                  $filter_applied .= '<span class="content-hub-selected-filters">' . t('Source:') . '<span>' . $text . '</span><a id="pill-origin" value="' . $val . '">X</a></span>';
+                }
+              }
+            }
+            break;
+
+          case 'tags':
+            if (!empty($value)) {
+              foreach ($value as $val) {
+                $entity = new content_hub_connector\ContentHubEntity();
+                if ($entity->loadRemoteEntity($val, FALSE)) {
+                  $text = $entity->getCdf()->getAttribute('name')->getValue();
+                  $filter_applied .= '<span class="content-hub-selected-filters">' . t('Tag:') . '<span>' . $text . '</span><a id="pill-tags" value="' . $val . '">X</a></span>';
+                }
+              }
+            }
+            break;
+
+        }
+      }
+    }
+  }
+  return $filter_applied;
+}
+
+/**
+ * Helper function to get clients from Content Hub.
+ *
+ * @return array
+ *   Return clients array.
+ */
+function content_hub_get_sources() {
+  // Load the Subscription.
+  $content_hub_subscription = new content_hub_connector\ContentHubSubscription();
+  return $content_hub_subscription->getClients();
+}
+
+/**
+ * Implements hook_init().
+ */
+function content_hub_init() {
+  // Emptying the GET params when request type is POST as, when filters are
+  // applied using ajax. The views ajax would add the GET and POST params.
+  // However, in case of Saved Filters, the GET params should not be added with
+  // POST params, when the request type is POST.
+  // Reported a support issue on d.o. https://www.drupal.org/node/2563303
+  // as a follow up action.
+  if (isset($_GET['content_hub_ajax_form']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_GET = array(
+      'q' => $_GET['q'],
+    );
+  }
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function content_hub_libraries_info() {
+  $libraries = array();
+  $libraries['jquery-ui-selectmenu'] = array(
+    'name' => 'jQuery UI Selectmenu',
+    'vendor url' => 'https://github.com/fnagel/jquery-ui',
+    'download url' => 'https://github.com/fnagel/jquery-ui/archive/selectmenu_v1.3.0.zip',
+    'version' => '1.3.0',
+    'files' => array(
+      'js' => array(
+        'ui/jquery.ui.selectmenu.js' => array('scope' => 'footer'),
+        'ui/jquery.ui.position.js' => array('scope' => 'footer'),
+        'ui/jquery.ui.widget.js' => array('scope' => 'header'),
+      ),
+      'css' => array('themes/base/jquery.ui.selectmenu.css'),
+    ),
+  );
+  $libraries['jquery-ui-multiselect-widget'] = array(
+    'name' => 'jQuery UI MultiSelect Widget',
+    'vendor url' => 'http://www.erichynds.com/blog/jquery-ui-multiselect-widget',
+    'download url' => 'https://github.com/ehynds/jquery-ui-multiselect-widget/archive/master.zip',
+    'version' => '1.0',
+    'files' => array(
+      'js' => array('src/jquery.multiselect.js' => array('scope' => 'footer'), 'src/jquery.multiselect.filter.js' => array('scope' => 'footer')),
+      'css' => array('jquery.multiselect.css', 'jquery.multiselect.filter.css'),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements a theme wrapper for the preview panel.
+ */
+function content_hub_theme() {
+  return array(
+    'content_hub_preview_panel' => array(
+      'template' => 'content-hub-preview-panel',
+      'path' => drupal_get_path('module', 'content_hub') . '/templates',
+    ),
+  );
+}
+
+/**
+ * Helper function to update target attribute of links.
+ *
+ * This function updates all of the links in the given content to open
+ * the linked documents to the given target.
+ *
+ * @param string $content
+ *   Content of an field.
+ * @param string $target
+ *   The value that specifies where to open the linked document
+ *   (_blank, _parent, etc...). The default value is '_blank'.
+ *
+ * @return string
+ *   Returns the updated content.
+ */
+function content_hub_set_field_links_target($content, $target = '_blank') {
+  if (empty($content)) {
+    return '';
+  }
+
+  // Remove CH inline image code that appears in [[brackets like this]].
+  // @TODO This is temporary. Actual fix would be handled in CHMS-589.
+  $content = preg_replace('/\[(\[{"fid").+\]/', '', $content);
+
+  $doc = new DOMDocument();
+
+  // There are cases when code markup contains HTML tags, which are not
+  // contained inside the DTD. For eg, when a mp4 video file is uploaded
+  // the content will contain tags like source, which is not contained
+  // in the DTD. This will result into DOMDocument warning. Adding
+  // libxml_use_internal_errors to disable standard libxml errors.
+  libxml_use_internal_errors(TRUE);
+  $doc->loadHTML($content);
+  libxml_use_internal_errors(FALSE);
+  // Get all links in the content.
+  $links = $doc->getElementsByTagName('a');
+  foreach ($links as $link) {
+    // Set target attribute of a link to the given target.
+    if (!$link->hasAttribute('target')
+      || $link->getAttribute('target') != $target) {
+      $link->setAttribute('target', $target);
+    }
+  }
+  return $doc->saveHTML();
+}
+
+
+/**
+ * Implements hook_content_hub_connector_drupal_to_cdf_alter().
+ */
+function content_hub_content_hub_connector_drupal_to_cdf_alter($entity_type, $entity) {
+  if (module_exists('media_wysiwyg')) {
+    media_wysiwyg_filter_replace_tokens_in_all_text_fields($entity_type, $entity, 'media_wysiwyg_token_fid_to_uuid');
+  }
+}
+
+/**
+ * Implements hook_content_hub_connector_drupal_from_cdf_alter().
+ */
+function content_hub_content_hub_connector_drupal_from_cdf_alter($entity_type, $entity) {
+  if (module_exists('media_wysiwyg')) {
+    media_wysiwyg_filter_replace_tokens_in_all_text_fields($entity_type, $entity, 'media_wysiwyg_token_uuid_to_fid');
+  }
+}
+
+/**
+ * Maintains a list of all processed entities by the Content Hub module.
+ *
+ * The idea is so that we do not process the same entities for a second time,
+ * which could happen in the case of field collections/paragraphs when their
+ * own save mechanism triggers a save of the parent entities and the parent of
+ * the parents, etc.
+ *
+ * @param string $uuid
+ *   The Entity UUID.
+ *
+ * @return array
+ *   The list of entity UUIDs that have already been processed.
+ */
+function content_hub_processed_entities($uuid = NULL) {
+  $uuids = &drupal_static(__FUNCTION__);
+  if (!isset($uuids)) {
+    $uuids = array();
+  }
+  if (class_exists('\Drupal\content_hub_connector\Cdf')) {
+    if (content_hub_connector\Cdf::isUuid($uuid)) {
+      if (!in_array($uuid, $uuids)) {
+        $uuids[] = $uuid;
+      }
+    }
+  }
+
+  return $uuids;
+}
+
+/**
+ * Implements hook_workbench_moderation_new_state_alter().
+ */
+function content_hub_workbench_moderation_new_state_alter(&$node) {
+  if (content_hub_connector\ContentHubEntitiesTracking::loadImportedByUuid($node->uuid) && (isset($node->__content_hub_synchronized) && $node->__content_hub_synchronized === TRUE)) {
+    $node->workbench_moderation_state_new = variable_get('workbench_moderation_default_state_' . $node->type, workbench_moderation_state_none());
+  }
+}

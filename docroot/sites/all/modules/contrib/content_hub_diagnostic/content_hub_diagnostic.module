@@ -1,0 +1,86 @@
+<?php
+/**
+ * @file
+ * Content Hub Diagnostic Tool.
+ */
+
+define('CONTENT_HUB_DIAGNOSTIC_ACQUIA_CONTENT_HUB', 'Acquia Content Hub');
+define('CONTENT_HUB_DIAGNOSTIC_OK', 1);
+define('CONTENT_HUB_DIAGNOSTIC_WARNING', -1);
+define('CONTENT_HUB_DIAGNOSTIC_ERROR', 0);
+
+module_load_include('inc', 'content_hub_diagnostic', 'content_hub_diagnostic');
+
+/**
+ * Runs all the checks needed by the diagnostic tool.
+ *
+ * @param string $format
+ *   The format of the messages: 'status' or 'drush'.
+ *
+ * @return array
+ *   An array containing all the results.
+ */
+function content_hub_diagnostic_run_checks($format = 'status') {
+  $result = array();
+  $result['php_version'] = content_hub_diagnostic_php_version($format);
+  $result['conflicts'] = content_hub_diagnostic_conflicts($format);
+  $result['modules'] = content_hub_diagnostic_verify_module_list_requirements($format);
+  $result['public_urls'] = content_hub_diagnostic_check_accessibility_public_urls($format);
+
+  // Create a summary check combining all results.
+  $result['summary'] = content_hub_diagnostic_summary_check($result);
+
+  return $result;
+}
+
+/**
+ * Returns a summary result of all checks.
+ *
+ * @param array $results
+ *   The results of checks array.
+ *
+ * @return array
+ *   The summary results.
+ */
+function content_hub_diagnostic_summary_check(array $results) {
+  // Initializing as OK.
+  $success = CONTENT_HUB_DIAGNOSTIC_OK;
+  $msgs = array();
+
+  // Combining all checks.
+  foreach ($results as $check => $result) {
+    switch ($check) {
+      case 'php_version':
+      case 'conflicts':
+      case 'public_urls':
+        if ($result['success'] == CONTENT_HUB_DIAGNOSTIC_WARNING && $success == CONTENT_HUB_DIAGNOSTIC_WARNING) {
+          $success = CONTENT_HUB_DIAGNOSTIC_WARNING;
+        }
+        else {
+          $success = $result['success'] * $success;
+        }
+        if (isset($result['msg'])) {
+          $msgs = array_merge($msgs, $result['msg']);
+        }
+        break;
+
+      case 'modules':
+        foreach ($result as $module => $res) {
+          if ($res['success'] == CONTENT_HUB_DIAGNOSTIC_WARNING && $success == CONTENT_HUB_DIAGNOSTIC_WARNING) {
+            $success = CONTENT_HUB_DIAGNOSTIC_WARNING;
+          }
+          else {
+            $success = $res['success'] * $success;
+          }
+          if (isset($res['msg'])) {
+            $msgs = array_merge($msgs, $res['msg']);
+          }
+        }
+        break;
+    }
+  }
+  return array(
+    'success' => $success,
+    'msg' => $msgs,
+  );
+}

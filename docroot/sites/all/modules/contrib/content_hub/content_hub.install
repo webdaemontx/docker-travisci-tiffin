@@ -1,0 +1,183 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the content_hub module.
+ */
+
+/**
+ * Add source field to the {content_hub_entity_settings} table.
+ */
+function content_hub_update_7000() {
+  db_add_field(
+    'content_hub_entity_settings',
+    'source',
+    array(
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      'default' => 'Content Hub',
+    )
+  );
+}
+
+/**
+ * Migrate content_hub_entity_settings data into content_hub_imported_entities.
+ */
+function content_hub_update_7001() {
+  // Migrate the information from the content_hub_entity_settings to this table.
+  // Only proceed with this if the content_hub module is installed and enabled.
+  if (module_exists('content_hub')) {
+
+    // If Composer Manager is installed, then load it so we have access to the
+    // composer libraries (including the content hub connector classes).
+    if (module_exists('composer_manager')) {
+      drupal_load('module', 'composer_manager');
+      composer_manager_register_autoloader();
+    }
+
+    // We need to load the content_hub_connector. The user might not have
+    // composer_manager installed.
+    drupal_load('module', 'content_hub_connector');
+    content_hub_connector_init();
+
+    // Load rows from old entity table.
+    $rows = db_query('SELECT * FROM {content_hub_entity_settings}')->fetchAll();
+    if ($rows) {
+      foreach ($rows as $row) {
+        // Check if entity already migrated to new entity table.
+        $result1 = db_select('content_hub_imported_entities', 'ch')
+          ->fields('ch')
+          ->condition('entity_uuid', $row->entity_uuid)
+          ->range(0, 1)
+          ->execute()
+          ->rowCount();
+
+        // If entity already exists in the new table, delete it from
+        // the old one. Otherwise, copy the entity into new one.
+        if ($result1) {
+          db_delete('content_hub_entity_settings')
+            ->condition('entity_uuid', $row->entity_uuid)
+            ->execute();
+        }
+        else {
+          // Loading entity from the Content Hub and storing origin.
+          $content_hub_entity = new Drupal\content_hub_connector\ContentHubEntity();
+          if ($content_hub_entity->loadRemoteEntity($row->entity_uuid, FALSE)) {
+            // Obtaining the auto_update flag.
+            if ($row->local_changes) {
+              $auto_update = Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE;
+            }
+            else {
+              $auto_update = ($row->update_mode == 'auto_update') ?
+                Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED :
+                Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED;
+            }
+
+            if ($auto_update == Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE) {
+              // Store data in the content_hub_imported_entities table
+              // Do not reimport this entity because it has local changes!
+              if (!Drupal\content_hub_connector\ContentHubEntitiesTracking::loadByDrupalEntity($row->entity_type, $row->entity_id)) {
+                $import_entity = new Drupal\content_hub_connector\ContentHubEntitiesTracking(
+                  $row->entity_type,
+                  $row->entity_id,
+                  $row->entity_uuid,
+                  $auto_update,
+                  $content_hub_entity->getOrigin()
+                );
+                $import_entity->save();
+              }
+
+              // But we can import its dependencies.
+              $dependencies = $content_hub_entity->getRemoteDependencies(TRUE);
+              foreach ($dependencies as $uuid => $dependency) {
+                if ($dependency->getRelationship() == ContentHubEntityDependency::RELATIONSHIP_INDEPENDENT) {
+                  // Store pre-dependencies in the content_hub_imported_entities
+                  // table by reimporting those dependencies and their
+                  // dependencies.
+                  $dependency->saveDrupalEntity(TRUE);
+                }
+                if ($dependency->getRelationship() == ContentHubEntityDependency::RELATIONSHIP_DEPENDENT) {
+                  // If it is a post-dependency, just save the reference. Do not
+                  // re-import the entity as the local change might be there.
+                  list($id, $vid, $bundle) = entity_extract_ids($dependency->getDrupalEntityType(), $dependency->getDrupalEntity());
+                  if (!Drupal\content_hub_connector\ContentHubEntitiesTracking::loadByDrupalEntity($dependency->getDrupalEntityType(), $id)) {
+                    $import_entity = new Drupal\content_hub_connector\ContentHubEntitiesTracking(
+                      $dependency->getDrupalEntityType(),
+                      $id,
+                      $dependency->getUuid(),
+                      $auto_update,
+                      $dependency->getOrigin()
+                    );
+                    $import_entity->save();
+                  }
+                }
+              }
+            }
+            else {
+              // If the entity does not have local changes, then re-import!
+              // This should automatically trigger the import tracking.
+              $content_hub_entity->setAutoUpdate($auto_update);
+              $content_hub_entity->saveDrupalEntity(TRUE);
+            }
+          }
+          else {
+            // When the entity no longer exists on the remote,
+            // copy the data as it is from old table to new one,
+            // also, setting the origin as default
+            // value to '00000000-0000-0000-0000-000000000000'
+            // as, old table doesn't contain origin info.
+            // Obtaining the auto_update flag.
+            if ($row->local_changes) {
+              $auto_update = Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE;
+            }
+            else {
+              $auto_update = ($row->update_mode == 'auto_update') ?
+                Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED :
+                Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED;
+            }
+
+            // Store data in the content_hub_imported_entities table.
+            if (!Drupal\content_hub_connector\ContentHubEntitiesTracking::loadByDrupalEntity($row->entity_type, $row->entity_id)) {
+              $import_entity = new Drupal\content_hub_connector\ContentHubEntitiesTracking(
+                $row->entity_type,
+                $row->entity_id,
+                $row->entity_uuid,
+                $auto_update,
+                '00000000-0000-0000-0000-000000000000'
+              );
+              $import_entity->save();
+            }
+          }
+          // Check if entity copied correctly.
+          $result2 = db_select('content_hub_imported_entities', 'ch')
+            ->fields('ch')
+            ->condition('entity_uuid', $row->entity_uuid)
+            ->range(0, 1)
+            ->execute()
+            ->rowCount();
+
+          // Now, delete the copied entity from the old table.
+          if ($result2) {
+            db_delete('content_hub_entity_settings')
+              ->condition('entity_uuid', $row->entity_uuid)
+              ->execute();
+          }
+        }
+      }
+      // If old table is empty, drop it.
+      $result3 = db_select('content_hub_entity_settings', 'es')
+        ->fields('es')
+        ->range(0, 1)
+        ->execute()
+        ->rowCount();
+
+      if ($result3 === 0) {
+        db_drop_table('content_hub_entity_settings');
+      }
+    }
+    else {
+      db_drop_table('content_hub_entity_settings');
+    }
+  }
+}

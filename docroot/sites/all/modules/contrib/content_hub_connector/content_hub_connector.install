@@ -1,0 +1,593 @@
+<?php
+/**
+ * @file
+ * Contains install, update, uninstall functions for Content Hub Cache Table.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function content_hub_connector_schema() {
+  $schema = array();
+  $schema['content_hub_entities_cache'] = array(
+    'description' => 'Cache table for Content Hub Entities.',
+    'fields' => array(
+      'uuid' => array(
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The Universally Unique Identifier.',
+      ),
+      'entity_type' => array(
+        'description' => 'The entity type.',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'data' => array(
+        'type' => 'blob',
+        'size' => 'big',
+        'not null' => FALSE,
+        'serialize' => TRUE,
+        'description' => 'Everything else, serialized.',
+      ),
+      'timestamp' => array(
+        'description' => 'The Unix timestamp when this record was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'indexes' => array(
+      'id' => array('uuid'),
+      'content_hub_keys' => array('uuid', 'entity_type'),
+    ),
+    'unique keys' => array(
+      'drupal_keys' => array('uuid', 'entity_type'),
+    ),
+    'primary key' => array('uuid'),
+  );
+  $schema['content_hub_entities_tracking'] = array(
+    'fields' => array(
+      'entity_type' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'entity_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'entity_uuid' => array(
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'status_export' => array(
+        'description' => 'The status of an exported entity.',
+        'type' => 'varchar',
+        'default' => '',
+        'not null' => TRUE,
+        'length' => 36,
+      ),
+      'status_import' => array(
+        'description' => 'The status of an imported entity.',
+        'type' => 'varchar',
+        'length' => 36,
+        'default' => '',
+        'not null' => TRUE,
+      ),
+      'modified' => array(
+        'description' => 'The CDF entity\'s modified field.',
+        'type' => 'varchar',
+        'default' => '',
+        'not null' => TRUE,
+        'length' => 36,
+      ),
+      'origin' => array(
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'origin' => array('origin'),
+    ),
+    'unique keys' => array(
+      'entity' => array('entity_type', 'entity_id'),
+      'entity_uuid' => array('entity_uuid'),
+    ),
+  );
+  return $schema;
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function content_hub_connector_uninstall() {
+  variable_del('content_hub_connector_api_key');
+  variable_del('content_hub_connector_client_name');
+  variable_del('content_hub_connector_encryption_key_file');
+  variable_del('content_hub_connector_excluded_properties');
+  variable_del('content_hub_connector_hostname');
+  variable_del('content_hub_connector_origin');
+  variable_del('content_hub_connector_post_dependency_entity_types');
+  variable_del('content_hub_connector_rewrite_localdomain');
+  variable_del('content_hub_connector_secret_key');
+  variable_del('content_hub_connector_shared_secret');
+  variable_del('content_hub_connector_webhook_url');
+  variable_del('content_hub_connector_webhook_uuid');
+  variable_del('content_hub_connector_unmanaged_files_directory');
+  variable_del('content_hub_connector_user_role');
+  variable_del('content_hub_default_entity_settings_local_changes');
+  variable_del('content_hub_default_entity_settings_update_mode');
+  variable_del('content_hub_tag_filter_name');
+
+  drupal_load('module', 'content_hub_connector');
+  module_load_include('inc', 'content_hub_connector', 'content_hub_connector.entityconfig');
+  $entity_types = _content_hub_connector_get_entity_types();
+  foreach ($entity_types as $type => $bundle) {
+    variable_del('content_hub_connector_hubentities_' . $type);
+  }
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function content_hub_connector_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+  if ($phase === 'install') {
+    // Only check for requirements if the diagnostic tool is enabled.
+    if (module_exists('content_hub_diagnostic')) {
+      $result = content_hub_diagnostic_run_checks();
+      if ($result['summary']['success'] == CONTENT_HUB_DIAGNOSTIC_ERROR) {
+        $success = REQUIREMENT_ERROR;
+        $description = $t('Please fulfill these requirements to proceed with the installation process of %ach: ', array(
+          '%ach' => CONTENT_HUB_DIAGNOSTIC_ACQUIA_CONTENT_HUB,
+        ));
+        $description .= theme('item_list', array('items' => $result['summary']['msg']));
+        $requirements['content_hub_connector'] = array(
+          'title' => $t('Content Hub Connector Installation Requirements'),
+          'description' => $description,
+          'severity' => $success,
+        );
+      }
+    }
+  }
+  elseif ($phase === 'runtime') {
+    // To ease the installation of this module, we pre-package the dependencies
+    // that would normally come through composer and provide a custom autoloader
+    // that is used if the site doesn't use composer. Indicate what path is used
+    // to load those libraries.
+    if (class_exists('Acquia\ContentHubClient\ContentHub')) {
+      $packaged_class_path = DRUPAL_ROOT . '/' . drupal_get_path('module', 'content_hub_connector') . '/vendor/acquia/content-hub-php/src/ContentHub.php';
+      $reflector = new ReflectionClass('Acquia\ContentHubClient\ContentHub');
+      if (realpath($reflector->getFileName()) === realpath($packaged_class_path)) {
+        $description = $t('Using pre-packaged autoloader. The PHP client is located at %path.', array('%path' => dirname(dirname($reflector->getFileName()))));
+      }
+      else {
+        $description = $t('Using system autoloader. The PHP client is located at %path.', array('%path' => dirname(dirname($reflector->getFileName()))));
+      }
+      $requirements['content_hub_connector'] = array(
+        'title' => $t('Content Hub libraries'),
+        'value' => 'Loaded',
+        'description' => $description,
+      );
+    }
+    else {
+      // This should in theory never happen if we packaged the libraries.
+      $requirements['content_hub_connector'] = array(
+        'title' => $t('Content Hub libraries'),
+        'value' => 'Not found',
+        // @todo improve message before this code gets released on drupal.org:
+        // we should say something about using a composer module like
+        // composer_manager since drupal.org will not pre-package the composer
+        // libraries for us.
+        'description' => $t('Something unexpected happened. Please contact Acquia support.'),
+        'severity' => REQUIREMENT_ERROR,
+      );
+    }
+  }
+  return $requirements;
+}
+
+/**
+ * Update to rename connection variables.
+ */
+function content_hub_connector_update_7000() {
+  // Updating variables.
+  $api = variable_get('content_hub_connector_apiKey', '');
+  variable_set('content_hub_connector_api_key', $api);
+  variable_del('content_hub_connector_apiKey');
+
+  $secret = variable_get('content_hub_connector_secretKey', '');
+  variable_set('content_hub_connector_secret_key', $secret);
+  variable_del('content_hub_connector_secretKey');
+}
+
+/**
+ * Adds a new table to track imported entities in the site.
+ *
+ * An entity is defined as "imported entity" to any entity that exists in the
+ * site whose origin is different than the content_hub_connector_origin
+ * variable.
+ */
+function content_hub_connector_update_7001() {
+  $schema['content_hub_imported_entities'] = array(
+    'fields' => array(
+      'entity_type' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'entity_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'entity_uuid' => array(
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'auto_update' => array(
+        'type' => 'varchar',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => 'ENABLED',
+      ),
+      'origin' => array(
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'origin' => array('origin'),
+    ),
+    'unique keys' => array(
+      'entity' => array('entity_type', 'entity_id'),
+      'entity_uuid' => array('entity_uuid'),
+    ),
+  );
+  db_create_table('content_hub_imported_entities', $schema['content_hub_imported_entities']);
+
+  // Migrate the information from the content_hub_entity_settings to this table.
+  // Only proceed with this if the content_hub module is installed and enabled.
+  if (module_exists('content_hub')) {
+
+    // If Composer Manager is installed, then load it so we have access to the
+    // composer libraries (including the content hub connector classes).
+    if (module_exists('composer_manager')) {
+      drupal_load('module', 'composer_manager');
+      composer_manager_register_autoloader();
+    }
+
+    // We need to load the content_hub_connector. The user might not have
+    // composer_manager installed.
+    drupal_load('module', 'content_hub_connector');
+    content_hub_connector_init();
+
+    // Now add the origin info to all entities already stored in the table.
+    // This condition might take a while depending on how many entities have
+    // been already imported to the local site.
+    $rows = db_query('SELECT * FROM {content_hub_entity_settings}')->fetchAll();
+    foreach ($rows as $row) {
+      // Loading entity from the Content Hub and storing origin.
+      $content_hub_entity = new Drupal\content_hub_connector\ContentHubEntity();
+      if ($content_hub_entity->loadRemoteEntity($row->entity_uuid, FALSE)) {
+        // Obtaining the auto_update flag.
+        if ($row->local_changes) {
+          $auto_update = Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE;
+        }
+        else {
+          $auto_update = ($row->update_mode == 'auto_update') ?
+            Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_ENABLED :
+            Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_DISABLED;
+        }
+
+        if ($auto_update == Drupal\content_hub_connector\ContentHubEntitiesTracking::AUTO_UPDATE_LOCAL_CHANGE) {
+          // Store data in the content_hub_imported_entities table
+          // Do not reimport this entity because it has local changes!
+          if (!Drupal\content_hub_connector\ContentHubEntitiesTracking::loadImportedByDrupalEntity($row->entity_type, $row->entity_id)) {
+            $import_entity = new Drupal\content_hub_connector\ContentHubEntitiesTracking(
+              $row->entity_type,
+              $row->entity_id,
+              $row->entity_uuid,
+              $auto_update,
+              $content_hub_entity->getOrigin()
+            );
+            $import_entity->save();
+          }
+
+          // But we can import its dependencies.
+          $dependencies = $content_hub_entity->getRemoteDependencies(TRUE);
+          foreach ($dependencies as $uuid => $dependency) {
+            if ($dependency->getRelationship() == ContentHubEntityDependency::RELATIONSHIP_INDEPENDENT) {
+              // Store pre-dependencies in the content_hub_imported_entities
+              // table by reimporting those dependencies and their dependencies.
+              $dependency->saveDrupalEntity(TRUE);
+            }
+            if ($dependency->getRelationship() == ContentHubEntityDependency::RELATIONSHIP_DEPENDENT) {
+              // If it is a post-dependency, just save the reference. Do not re-
+              // import the entity as the local change might be there.
+              list($id, $vid, $bundle) = entity_extract_ids($dependency->getDrupalEntityType(), $dependency->getDrupalEntity());
+              if (!Drupal\content_hub_connector\ContentHubEntitiesTracking::loadByDrupalEntity($dependency->getDrupalEntityType(), $id)) {
+                $import_entity = new Drupal\content_hub_connector\ContentHubEntitiesTracking(
+                  $dependency->getDrupalEntityType(),
+                  $id,
+                  $dependency->getUuid(),
+                  $auto_update,
+                  $dependency->getOrigin()
+                );
+                $import_entity->save();
+              }
+            }
+          }
+        }
+        else {
+          // If the entity does not have local changes, then re-import!
+          // This should automatically trigger the import tracking.
+          $content_hub_entity->setAutoUpdate($auto_update);
+          $content_hub_entity->saveDrupalEntity(TRUE);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Sets the default variable for metatags configuration.
+ */
+function content_hub_connector_update_7002() {
+  $metatags_config = array(
+    'transfer_tokens' => array(
+      '[site:name]',
+    ),
+    'fields_always_evaluate' => array(
+      'canonical',
+    ),
+    'fields_exclude' => array(
+      'robots',
+      'generator',
+    ),
+  );
+  variable_set('content_hub_connector_metatags', $metatags_config);
+}
+
+/**
+ * Delete the default variables for metatags configuration.
+ */
+function content_hub_connector_update_7003() {
+  $metatags_config = variable_get('content_hub_connector_metatags');
+  if (!empty($metatags_config)) {
+    unset($metatags_config['transfer_tokens']);
+    unset($metatags_config['fields_always_evaluate']);
+    unset($metatags_config['fields_exclude']);
+    variable_set('content_hub_connector_metatags', $metatags_config);
+  }
+}
+
+/**
+ * Fixes entities that might have been imported wrongly.
+ *
+ * Fixes a problem with previous version of Content Hub, which might have
+ * stored eck entities with key fields in Content Hub.
+ */
+function content_hub_connector_update_7004() {
+  if (module_exists('eck')) {
+    _load_content_hub_connector();
+
+    $types = array(
+      'node',
+      'taxonomy_term',
+      'file',
+      'paragraphs_item',
+      'field_collection_item',
+    );
+    $imported = db_query('SELECT entity_id, entity_type, entity_uuid, auto_update from {content_hub_imported_entities}')->fetchAll();
+    foreach ($imported as $key => $imp) {
+      if ($info = entity_get_info($imp->entity_type)) {
+        $entity = entity_uuid_load($imp->entity_type, array($imp->entity_uuid));
+        $entity_id = key($entity);
+        if ($imp->entity_id != $entity_id || !in_array($imp->entity_type, $types)) {
+          db_update('content_hub_imported_entities')
+            ->fields(array(
+              'entity_id' => $entity_id,
+            ))
+            ->condition('entity_uuid', $imp->entity_uuid, '=')
+            ->execute();
+
+          // Now that imported entities has been corrected, delete all other
+          // references to the same uuid.
+          $ids = db_select($info['base table'], 'e')
+            ->fields('e')
+            ->condition($info['entity keys']['id'], $entity_id, '!=')
+            ->condition('uuid', $imp->entity_uuid, '=')
+            ->execute()
+            ->fetchAll();
+
+          foreach ($ids as $id) {
+            if (entity_delete($imp->entity_type, $id->id)) {
+              watchdog('content_hub_connector', 'Update 7004: Deleting entity with entity_type = @etype and entity_id =  @id [uuid = @uuid].', array(
+                '@etype' => $imp->entity_type,
+                '@id' => $id,
+                '@uuid' => $imp->entity_uuid,
+              ), WATCHDOG_ERROR);
+            }
+          }
+
+          // In case the previous entity_delete was not able to delete
+          // the entity, we will need to explicitly delete it.
+          db_delete($info['base table'])
+            ->condition('uuid', $imp->entity_uuid, '=')
+            ->condition($info['entity keys']['id'], $entity_id, '!=')
+            ->execute();
+
+          // Now that the information should be clear, we need to trigger a
+          // re-import of the same entity, if auto-update is ENABLED.
+          if ($imp->auto_update == 'ENABLED') {
+            $content_hub_entity = new \Drupal\content_hub_connector\ContentHubEntity();
+            if ($content_hub_entity->loadRemoteEntity($imp->entity_uuid, FALSE)) {
+              $content_hub_entity->saveDrupalEntity(TRUE);
+            }
+          }
+        }
+      }
+    }
+
+    // Now that the clean-up is completed, re-import the node to make sure that
+    // it will have correct references to the entities fixed before.
+    foreach ($imported as $key => $imp) {
+      if ($imp->entity_type == 'node' && $imp->auto_update == 'ENABLED') {
+
+        // Trigger a reimport of the node, so it corrects its references to
+        // the inline_entities and others.
+        $content_hub_entity = new \Drupal\content_hub_connector\ContentHubEntity();
+        if ($content_hub_entity->loadRemoteEntity($imp->entity_uuid, FALSE)) {
+          $content_hub_entity->saveDrupalEntity(TRUE);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Disables field collections that are defined as translatable.
+ *
+ * Field Collection does not properly support field translations according to
+ * http://cgit.drupalcode.org/field_collection/tree/README.txt#n30.
+ * This update disables those field collections from the entity configuration
+ * so that they won't be transferred to the Content Hub.
+ */
+function content_hub_connector_update_7005() {
+  _load_content_hub_connector();
+  $fc_entities = variable_get('content_hub_connector_hubentities_field_collection_item', array());
+  foreach ($fc_entities as $fc_entity) {
+    // Only check for those field collections that have been enabled.
+    if ((bool) $fc_entity) {
+      $readme = l(t('View more details'), 'http://cgit.drupalcode.org/field_collection/tree/README.txt#n30', array(
+        'attributes' => array(
+          'target' => '_blank',
+        ),
+      ));
+      // First check that the field is not translatable.
+      if ($info = field_info_field($fc_entity)) {
+        if ((bool) $info['translatable']) {
+          drupal_set_message(t('The field collection %entity is configured as "translatable". This is not supported by Field Collection and might have undesirable effects on your website. !link. It has been unchecked from the Content Hub Entity Configuration.', array(
+            '%entity' => $fc_entity,
+            '!link' => $readme,
+          )), 'warning');
+          $fc_entities[$fc_entity] = 0;
+          continue;
+        }
+        // Now check that each field contained in this field collection is also
+        // not translatable.
+        $properties = isset($property_info['bundles'][$fc_entity]['properties']) ? $property_info['bundles'][$fc_entity]['properties'] : FALSE;
+        if ($properties) {
+          foreach ($properties as $name => $property) {
+            if ($property['translatable']) {
+              drupal_set_message(t('This property %property for field collection bundle %entity is configured as "translatable". This is not supported by Field Collection and might have undesirable effects on your website. !link. It has been unchecked from the Content Hub Entity Configuration.', array(
+                '%property' => '"' . $property['label'] . ' (' . $name . ')"',
+                '%entity' => $fc_entity,
+                '!link' => $readme,
+              )), 'warning');
+              $fc_entities[$fc_entity] = 0;
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Now save the entity configuration for field collections.
+  variable_set('content_hub_connector_hubentities_field_collection_item', $fc_entities);
+}
+
+/**
+ * Updates the Content Hub Imported Entities table to contain exported entities.
+ *
+ * The renamed table is called 'content_hub_entities_tracking' and contains
+ * information about all exported and imported entities from this origin (site).
+ */
+function content_hub_connector_update_7006() {
+  define('CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE', 'content_hub_entities_tracking');
+  // Change Table name.
+  db_rename_table('content_hub_imported_entities', CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE);
+
+  // Add a field to store 'EXPORT' status.
+  db_add_field(CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE, 'status_export', array(
+    'description' => 'The status of an exported entity.',
+    'type' => 'varchar',
+    'default' => '',
+    'not null' => TRUE,
+    'length' => 36,
+  ));
+
+  // Change field name from 'auto_update' to 'status_import'.
+  db_change_field(CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE, 'auto_update', 'status_import', array(
+    'type' => 'varchar',
+    'length' => 36,
+    'default' => '',
+    'not null' => TRUE,
+  ));
+
+  // Add a field to store the 'modified' date flag from the CDF.
+  db_add_field(CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE, 'modified', array(
+    'description' => 'The CDF entity\'s modified field.',
+    'type' => 'varchar',
+    'default' => '',
+    'not null' => TRUE,
+    'length' => 36,
+  ));
+
+  // Now update the data in the status_import field.
+  db_update(CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE)
+    ->fields(array(
+      'status_import' => 'AUTO_UPDATE_ENABLED',
+    ))
+    ->condition('status_import', 'ENABLED', '=')
+    ->execute();
+  db_update(CONTENT_HUB_CONNECTOR_ENTITY_TRACKING_TABLE)
+    ->fields(array(
+      'status_import' => 'AUTO_UPDATE_DISABLED',
+    ))
+    ->condition('status_import', 'DISABLED', '=')
+    ->execute();
+
+}
+
+
+/**
+ * Loads Content Hub Connector classes.
+ *
+ * Some update hooks rely on functionality in Content Hub Connector Classes.
+ * These classes are not available until *after* the module is installed.
+ * So they are need to be loaded via this function *during* install time.
+ */
+function _load_content_hub_connector() {
+  // If Composer Manager is installed, then load it so we have access to the
+  // composer libraries (including the content hub connector classes).
+  if (module_exists('composer_manager')) {
+    drupal_load('module', 'composer_manager');
+    composer_manager_register_autoloader();
+  }
+
+  // We need to load the content_hub_connector. The user might not have
+  // composer_manager installed.
+  drupal_load('module', 'content_hub_connector');
+  content_hub_connector_init();
+}
