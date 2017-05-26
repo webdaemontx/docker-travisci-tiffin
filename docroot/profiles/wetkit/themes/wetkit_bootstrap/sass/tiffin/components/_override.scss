@@ -5,6 +5,11 @@
   background-color: $brand-green;
 }
 
+// Added this for the Navigation (in general) overriding theme.css ~ lines 5454-5455
+.nav > li > a:visited {
+  color: $brand-gold;
+}
+
 // Added this for the left-side nav overrides theme.min.css ~ lines 4894-4903
 
 

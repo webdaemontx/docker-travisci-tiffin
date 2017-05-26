@@ -6354,6 +6354,10 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	background-color: #385443;
 }
 
+.nav > li > a:visited {
+	color: #d9bf75;
+}
+
 /* Form Element Overrides */
 fieldset#edit-academic-scholarship {
 	padding: 1em;
