@@ -194,3 +194,29 @@ function tiffin_config_update_7313($sandbox) {
         }
     }
 }
+
+/**
+ * Enable CKEditor Module.
+ *
+ */
+function tiffin_config_update_7314($sandbox) {
+    $modules = array("ckeditor");
+    foreach($modules as $module) {
+        if( !module_exists($module)) {
+            module_enable(array($module));
+        }
+    }
+}
+
+/**
+ * Disable CKEditor Module.
+ *
+ */
+function tiffin_config_update_7315($sandbox) {
+    $modules = array("ckeditor");
+    foreach($modules as $module) {
+        if( module_exists($module)) {
+            module_disable(array($module));
+        }
+    }
+}
