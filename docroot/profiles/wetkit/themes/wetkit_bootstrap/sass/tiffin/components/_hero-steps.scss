@@ -1,28 +1,36 @@
+@import '../abstracts/theme-vars';
+
 .steps-container {
+  -webkit-transform: translate(-50%, -50%);
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 100%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  width: 100%;
+
+  @media (max-width: 1200px) {
+    padding-top: 100px;
+  }
 }
 
 .page-hero-steps {
   list-style: none;
   margin: 0;
+
   & > li {
     padding: 0 0 5px;
+
     & > a {
+      background-color: $white-transparent-85;
       color: $brand-green;
-      position: relative;
+      display: block;
       font-size: 32px;
       margin-right: 5px;
-      background-color: rgba(255, 255, 255, 0.85);
-      display: block;
-      padding: 20px 0 20px 0;
+      padding: 20px 0;
+      position: relative;
       text-align: center;
       text-decoration: none;
-      transition: background-color 0.25s ease-out, color 0.25s ease-out;
+      transition: background-color .25s ease-out, color .25s ease-out;
 
       @media (max-width: 990px) {
         font-size: 24px;
@@ -30,20 +38,21 @@
 
       &:hover,
       &:focus {
-        color: #fff;
         background-color: $brand-green;
+        color: $white;
+
       }
 
       span {
-        position: absolute;
-        top: 50%;
+        -webkit-text-stroke: 2px #a68e4f;
         -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        left: 20px;
         color: $brand-gold;
         font-size: 100px;
         font-weight: 900;
-        -webkit-text-stroke: 2px #a68e4f;
+        left: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
 
         @media (max-width: 990px) {
           font-size: 60px;
@@ -56,6 +65,7 @@
 @media (min-width: 1200px) {
   .page-hero-steps > li {
     padding-bottom: 0;
+
     &:last-child a {
       margin-right: 0;
     }

@@ -55,41 +55,7 @@
     <?php print $head; ?>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700,700i,900" rel="stylesheet">
   <title><?php print $head_title; ?></title>
-    <!-- START Google Tag Manager -->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WB8PR5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>
-        (function(w,d,s,l,i)
-        {
-            w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),
-                dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-        })
-        (window,document,'script','dataLayer','GTM-WB8PR5');
-    </script>
-    <!-- END Google Tag Manager -->
-
-    <!-- START Google Analytics Tag Updated Sept 13 2016 -->
-    <script>
-        var cookie = document.cookie.match(new RegExp('_ga=([^;]+)'))[1].split('.');
-        var gaVisitorID = cookie[2]+'.'+cookie[3];
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-2207335-1', 'auto', {allowLinker: true});
-        ga('require', 'linker');
-        ga('linker:autoLink', ['applyyourself.com']);
-        ga('send', 'pageview', {
-            'dimension4':gaVisitorID
-        });
-    </script>
-    <!-- END Google Analytics Tag -->
-
-    <!-- HTML5 element support for IE6-8 -->
+        <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -98,6 +64,40 @@
 </head>
 
 <body<?php print $body_attributes; ?>>
+
+<!-- START Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WB8PR5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>
+    (function(w,d,s,l,i)
+    {
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })
+    (window,document,'script','dataLayer','GTM-WB8PR5');
+</script>
+<!-- END Google Tag Manager -->
+
+<!-- START Google Analytics Tag Updated Sept 13 2016 -->
+<script>
+    var cookie = document.cookie.match(new RegExp('_ga=([^;]+)'))[1].split('.');
+    var gaVisitorID = cookie[2]+'.'+cookie[3];
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-2207335-1', 'auto', {allowLinker: true});
+    ga('require', 'linker');
+    ga('linker:autoLink', ['applyyourself.com']);
+    ga('send', 'pageview', {
+        'dimension4':gaVisitorID
+    });
+</script>
+<!-- END Google Analytics Tag -->
 <?php if (current_path() == 'academics') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'landing-academics' -->
     <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=landing-academics;gid=6131;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
