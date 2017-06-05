@@ -32,13 +32,14 @@ stylesheets[all][] = vendor/venobox/venobox.css
 ; ========================================
 ;scripts[] = bootstrap/js/affix.js
 ;scripts[] = bootstrap/js/alert.js
+scripts[] = js/bootstrap-anchor/js/bootstrap-anchor.min.js
 ;scripts[] = bootstrap/js/button.js
 ;scripts[] = bootstrap/js/carousel.js
 ;scripts[] = bootstrap/js/collapse.js
 ;scripts[] = bootstrap/js/dropdown.js
 scripts[] = js/modal.js
 ;scripts[] = bootstrap/js/tooltip.js
-;scripts[] = bootstrap/js/popover.js
+scripts[] = js/popover.js
 ;scripts[] = bootstrap/js/scrollspy.js
 ;scripts[] = bootstrap/js/tab.js
 scripts[] = js/tab.js
