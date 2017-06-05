@@ -56,13 +56,20 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700,700i,900" rel="stylesheet">
   <title><?php print $head_title; ?></title>
     <!-- START Google Tag Manager -->
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WB8PR5"
-                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WB8PR5');</script>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WB8PR5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+        (function(w,d,s,l,i)
+        {
+            w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+        })
+        (window,document,'script','dataLayer','GTM-WB8PR5');
+    </script>
     <!-- END Google Tag Manager -->
 
     <!-- START Google Analytics Tag Updated Sept 13 2016 -->
@@ -89,8 +96,43 @@
     <?php print $styles; ?>
     <?php print $scripts; ?>
 </head>
+
 <body<?php print $body_attributes; ?>>
-  <ul id="wb-tphp">
+<?php if (current_path() == 'academics') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'landing-academics' -->
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=landing-academics;gid=6131;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } else if (current_path() == 'graduate/welcome') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'welcome' -->
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=welcome;gid=6132;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php }  else if (current_path() == 'apply') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'how-to' -->
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=how-to;gid=6133;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } else if (current_path() == 'visit/schedule') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'schedule-visit' -->
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=schedule-visit;gid=6136;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } else if (current_path() == 'node/1336/done') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'campus-visit' -->
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=campus-visit;gid=6137;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } else if (current_path() == 'apply/online') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'online-app' -->
+    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=online-app;gid=6138;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } else if (current_path() == 'node/2986/done') { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'online-app-thanks' -->
+    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=online-app-thanks;gid=6139;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } else if (drupal_is_front_page()) { ?>
+    <!-- Tiffin University JavaScript Conversion; Goal ID: 'main-edu' -->
+    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=main-edu;gid=6142;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } ?>
+
+<ul id="wb-tphp">
     <?php if ($wetkit_skip_link_id_1 && $wetkit_skip_link_text_1) : ?>
       <li class="wb-slc">
         <a class="wb-sl" href="#<?php print $wetkit_skip_link_id_1; ?>"><?php print $wetkit_skip_link_text_1; ?></a>
