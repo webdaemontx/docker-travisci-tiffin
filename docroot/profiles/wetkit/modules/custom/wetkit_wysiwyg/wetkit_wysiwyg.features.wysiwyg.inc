@@ -15,9 +15,6 @@ function wetkit_wysiwyg_wysiwyg_default_profiles() {
     'format' => 'wetkit_html_text',
     'editor' => 'markitup',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 0,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
@@ -43,6 +40,7 @@ function wetkit_wysiwyg_wysiwyg_default_profiles() {
       'css_path' => '',
       'css_classes' => '',
     ),
+    'name' => 'formatwetkit_html_text',
   );
 
   // Exported profile: wetkit_wysiwyg_text
@@ -50,10 +48,6 @@ function wetkit_wysiwyg_wysiwyg_default_profiles() {
     'format' => 'wetkit_wysiwyg_text',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 0,
-      'add_to_summaries' => 1,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
@@ -124,6 +118,7 @@ badge=span.badge',
       'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,
     ),
+    'name' => 'formatwetkit_wysiwyg_text',
   );
 
   return $profiles;

@@ -69,7 +69,7 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
     $variables['logo_svg'] = $library_path . '/assets/logo.svg';
 
     // GCWeb or GC Intranet.
-    if ($wxt_active == 'gcweb' || $wxt_active == 'gc_intranet' ) {
+    if ($wxt_active == 'gcweb' || $wxt_active == 'gc_intranet') {
       $variables['logo'] = $library_path . '/assets/sig-blk-' . $language->language . '.png';
       $variables['logo_svg'] = $library_path . '/assets/sig-blk-' . $language->language . '.svg';
     }
@@ -88,7 +88,7 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
 
   // Default GCWeb misc.
   if ($wxt_active == 'gcweb') {
-    $variables['logo_bottom'] = $library_path . '/assets/wmms-blk' . '.png';
+    $variables['logo_bottom'] = $library_path . '/assets/wmms-blk.png';
     $variables['logo_bottom_svg'] = $library_path . '/assets/wmms-blk' . '.svg';
   }
 
@@ -104,7 +104,7 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
   }
 
   // Fluid container.
-  if(bootstrap_setting('fluid_container') == 1) {
+  if (bootstrap_setting('fluid_container') == 1) {
     $variables['container_class'] = 'container-fluid';
   }
   else {
@@ -135,7 +135,7 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
   if (bootstrap_setting('navbar_position') !== '') {
     $variables['navbar_classes_array'][] = 'navbar-' . bootstrap_setting('navbar_position');
   }
-  elseif(bootstrap_setting('fluid_container') == 1) {
+  elseif (bootstrap_setting('fluid_container') == 1) {
     $variables['navbar_classes_array'][] = 'container-fluid';
   }
   else {
@@ -159,7 +159,7 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
       '#cache' => array(
         'keys' => array('wetkit_bootstrap', 'menu', 'mega_menu', $menu_name),
         'expire' => CACHE_TEMPORARY,
-        'granularity' => DRUPAL_CACHE_PER_ROLE
+        'granularity' => DRUPAL_CACHE_PER_ROLE,
       ),
       '#menu_name' => $menu_name,
     );
@@ -219,7 +219,7 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
     }
   }
 
-  // Fix for role main use in panels
+  // Fix for role main use in panels.
   $variables['wxt_role_main'] = $wxt_role_main;
 
   // Header Navigation + Language Switcher.
@@ -248,10 +248,10 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
     if ($wxt_active == 'gcweb') {
       $variables['menu_bar'] = '<ul class="list-inline margin-bottom-none">' . $language_link_markup . '</ul>';
     }
-    else if ($wxt_active == 'gcwu_fegc') {
+    elseif ($wxt_active == 'gcwu_fegc') {
       $variables['menu_bar'] = '<ul id="gc-bar" class="list-inline">' . preg_replace("/<h([1-6]{1})>.*?<\/h\\1>/si", '', $nav_bar_markup) . $language_link_markup . '</ul>';
     }
-    else if ($wxt_active == 'gc_intranet') {
+    elseif ($wxt_active == 'gc_intranet') {
       $variables['menu_bar'] = '<ul id="gc-bar" class="list-inline">' . $language_link_markup . '</ul>';
     }
     else {
@@ -268,9 +268,13 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
     $custom_search = array(
       '#pre_render' => array('_wetkit_custom_search_prerender'),
       '#cache' => array(
-        'keys' => array('wetkit_bootstrap', 'custom_search', $custom_search_form_name),
+        'keys' => array(
+          'wetkit_bootstrap',
+          'custom_search',
+          $custom_search_form_name,
+        ),
         'expire' => CACHE_TEMPORARY,
-        'granularity' => DRUPAL_CACHE_PER_USER
+        'granularity' => DRUPAL_CACHE_PER_USER,
       ),
       '#custom_search_form_name' => $custom_search_form_name,
       '#wxt_active' => $wxt_active,
@@ -333,19 +337,19 @@ function wetkit_bootstrap_preprocess_page(&$variables) {
   $variables['page']['menu_terms_bar'] = $terms_bar_markup;
 
   // Mid Footer Region.
-  if (module_exists('menu_block')) {
-    $menu_name = 'mid_footer_menu';
-    $data = array(
-      '#pre_render' => array('_wetkit_menu_tree_build_prerender'),
-      '#cache' => array(
-        'keys' => array('wetkit_bootstrap', 'menu', 'footer', $menu_name),
-        'expire' => CACHE_TEMPORARY,
-        'granularity' => DRUPAL_CACHE_PER_ROLE
-      ),
-      '#menu_name' => $menu_name,
-    );
-    $variables['page']['footer']['minipanel'] = $data;
-  }
+  /*  if (module_exists('menu_block')) {
+  $menu_name = 'mid_footer_menu';
+  $data = array(
+  '#pre_render' => array('_wetkit_menu_tree_build_prerender'),
+  '#cache' => array(
+  'keys' => array('wetkit_bootstrap', 'menu', 'footer', $menu_name),
+  'expire' => CACHE_TEMPORARY,
+  'granularity' => DRUPAL_CACHE_PER_ROLE,
+  ),
+  '#menu_name' => $menu_name,
+  );
+  $variables['page']['footer']['minipanel'] = $data;
+  }*/
 
   // Unset powered by block.
   unset($variables['page']['footer']['system_powered-by']);

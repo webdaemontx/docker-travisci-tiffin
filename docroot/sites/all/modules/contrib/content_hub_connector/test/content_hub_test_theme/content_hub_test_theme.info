@@ -1,0 +1,5 @@
+name = Content Hub Test theme
+description = Theme for testing Content Hub module.
+core = 7.x
+engine = phptemplate
+hidden = TRUE

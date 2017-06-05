@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Test module for Content Hub functionality.
+ */
+
+/**
+ * Implements hook_system_theme_info().
+ *
+ * @see http://drupal.org/node/953336
+ */
+function content_hub_test_system_theme_info() {
+  if (variable_get('content_hub_connector_test_enable_theme', TRUE)) {
+    $path = drupal_get_path('module', 'content_hub_connector');
+    $themes['content_hub_test_theme'] = $path . '/test/content_hub_test_theme/content_hub_test_theme.info';
+    return $themes;
+  }
+}
+
+/**
+ * Implements hook_admin_paths().
+ */
+function content_hub_test_admin_paths() {
+  if (variable_get('content_hub_connector_test_enable_admin_paths', TRUE)) {
+    $paths = array(
+      'node/*' => TRUE,
+    );
+    return $paths;
+  }
+}
+
+/**
+ * Implements hook_field_access().
+ */
+function content_hub_test_field_access($op, $field, $entity_type, $entity, $account) {
+  return variable_get("content_hub_connector_test_{$op}_{$field['field_name']}", TRUE);
+}

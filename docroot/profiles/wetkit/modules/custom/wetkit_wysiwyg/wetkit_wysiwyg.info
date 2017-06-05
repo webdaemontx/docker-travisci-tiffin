@@ -28,9 +28,9 @@ features[variable][] = media__wysiwyg_upload_directory
 features[wysiwyg][] = wetkit_html_text
 features[wysiwyg][] = wetkit_wysiwyg_text
 
-; Information added by Drupal.org packaging script on 2016-02-09
-version = "7.x-4.6"
+; Information added by Drupal.org packaging script on 2017-02-08
+version = "7.x-4.8"
 core = "7.x"
 project = "wetkit_wysiwyg"
-datestamp = "1455028748"
+datestamp = "1486564998"
 

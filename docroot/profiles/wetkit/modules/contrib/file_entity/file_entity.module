@@ -197,13 +197,6 @@ function file_entity_menu() {
   if (module_exists('plupload') && module_exists('multiform')) {
     $items['file/add']['page arguments'] = array('file_entity_add_upload_multiple');
   }
-  // Autocomplete path for getting a list of file upload directories.
-  $items['file/add/path/autocomplete'] = array(
-    'title' => 'Autocomplete for upload paths',
-    'page callback' => 'file_entity_upload_path_autocomplete',
-    'access callback' => 'file_entity_upload_path_access',
-    'type' => MENU_CALLBACK,
-  );
   $items['file/add/upload'] = array(
     'title' => 'Upload',
     'type' => MENU_DEFAULT_LOCAL_TASK,
@@ -450,9 +443,6 @@ function file_entity_permission() {
     'administer files' => array(
       'title' => t('Administer files'),
       'restrict access' => TRUE,
-    ),
-    'choose file destination' => array(
-      'title' => t('Select destination for each uploaded file'),
     ),
     'create files' => array(
       'title' => t('Add and upload new files'),
@@ -1804,7 +1794,7 @@ function file_entity_query_file_access_alter(QueryAlterableInterface $query) {
  * access conditions are added for field values belonging to files only.
  */
 function file_entity_query_entity_field_access_alter(QueryAlterableInterface $query) {
-  //_file_entity_query_file_entity_access_alter($query, 'entity');
+  _file_entity_query_file_entity_access_alter($query, 'entity');
 }
 
 /**
@@ -1832,6 +1822,12 @@ function _file_entity_query_file_entity_access_alter($query, $type) {
 
   $tables = $query->getTables();
   $base_table = $query->getMetaData('base_table');
+  // Do not use the base table for general entity queries unless this is
+  // querying the file_managed table directly.
+  if ($base_table && $type == 'entity' && $base_table != 'file_managed') {
+    $base_table = '';
+  }
+
   // If no base table is specified explicitly, search for one.
   if (!$base_table) {
     $fallback = '';
@@ -1863,6 +1859,10 @@ function _file_entity_query_file_entity_access_alter($query, $type) {
               $fallback = $table;
             }
           }
+          elseif (isset($schema['fields']['entity_id']) && isset($schema['fields']['entity_type']) && isset($schema['fields']['deleted']) && isset($schema['fields']['delta'])) {
+            // The table is a field data table, use it as fallback.
+            $base_table = $table;
+          }
         }
       }
     }
@@ -1873,6 +1873,11 @@ function _file_entity_query_file_entity_access_alter($query, $type) {
         $base_table = $fallback;
       }
       else {
+        // Ignore this query as it was a general field query and no
+        // relationships were found to the file_managed table.
+        if ($type == 'entity') {
+          return;
+        }
         throw new Exception(t('Query tagged for file access but there is no fid. Add foreign keys to file_managed.fid in schema to fix.'));
       }
     }
@@ -1935,33 +1940,36 @@ function _file_entity_query_file_entity_access_alter($query, $type) {
         }
       }
 
-      if ($subquery_conditions->count()) {
+      // If there is no subquery conditions, the query is likely for file usage.
+      // Or user can only access public files.
+      // If there are subquery conditions then add them to the subquery.
+      if ($subquery_conditions->count() >= 1) {
         $subquery->condition($subquery_conditions);
+      }
 
-        $field = 'fid';
-        // Now handle entities.
-        if ($type == 'entity') {
-          // Set a common alias for entities.
-          $base_alias = $falias;
-          $field = 'entity_id';
-        }
-        $subquery->where("$falias.$field = fm_access.fid");
+      $field = 'fid';
+      // Now handle entities.
+      if ($type == 'entity') {
+        // Set a common alias for entities.
+        $base_alias = $falias;
+        $field = ($falias == 'file_managed' ? 'fid' : 'entity_id');
+      }
+      $subquery->where("$falias.$field = fm_access.fid");
 
-        // For an entity query, attach the subquery to entity conditions.
-        if ($type == 'entity') {
-          $file_conditions->exists($subquery);
-        }
-        // Otherwise attach it to the node query itself.
-        elseif ($table == 'file_managed') {
-          // Fix for https://drupal.org/node/2073085
-          $db_or = db_or();
-          $db_or->exists($subquery);
-          $db_or->isNull($falias . '.' . $field);
-          $query->condition($db_or);
-        }
-        else {
-          $query->exists($subquery);
-        }
+      // For an entity query, attach the subquery to entity conditions.
+      if ($type == 'entity') {
+        $file_conditions->exists($subquery);
+      }
+      // Otherwise attach it to the node query itself.
+      elseif ($table == 'file_managed') {
+        // Fix for https://drupal.org/node/2073085
+        $db_or = db_or();
+        $db_or->exists($subquery);
+        $db_or->isNull($falias . '.' . $field);
+        $query->condition($db_or);
+      }
+      else {
+        $query->exists($subquery);
       }
     }
   }
@@ -1969,14 +1977,19 @@ function _file_entity_query_file_entity_access_alter($query, $type) {
   if ($type == 'entity' && $file_conditions->count()) {
     // All the file access conditions are only for field values belonging to
     // files.
-    $file_conditions->condition("$base_alias.entity_type", 'file');
-    $or = db_or();
-    $or->condition($file_conditions);
-    // If the field value belongs to a non-file entity type then this function
-    // does not do anything with it.
-    $or->condition("$base_alias.entity_type", 'file', '<>');
-    // Add the compiled set of rules to the query.
-    $query->condition($or);
+    if ($base_alias !== 'file_managed') {
+      $file_conditions->condition("$base_alias.entity_type", 'file');
+      $or = db_or();
+      $or->condition($file_conditions);
+      // If the field value belongs to a non-file entity type then this function
+      // does not do anything with it.
+      $or->condition("$base_alias.entity_type", 'file', '<>');
+      // Add the compiled set of rules to the query.
+      $query->condition($or);
+    }
+    else {
+      $query->condition($file_conditions);
+    }
   }
 }
 
@@ -2112,7 +2125,6 @@ function file_entity_file_default_types() {
     'label' => t('Document'),
     'description' => t('A <em>Document</em> file is written information.'),
     'mimetypes' => array(
-      'text/html',
       'text/plain',
       'application/msword',
       'application/vnd.ms-excel',
@@ -2466,96 +2478,6 @@ function file_entity_match_mimetypes($needle, $haystack) {
 }
 
 /**
- * Returns a list of possible directories where files can be uploaded.
- *
- * This is an autocomplete function.
- *
- * @see file_entity_menu()
- * @see file_entity_add_upload_step_upload()
- *
- * @param string $typed
- *   The string used for searching.
-*
- * @return string
- *   A list of directories in JSON format.
- */
-function file_entity_upload_path_autocomplete($typed = "") {
-  // Don't do anything if the user hasn't entered any data yet.
-  if (!strlen($typed)) {
-    drupal_json_output(array());
-    return;
-  }
-  // Get the location of the file system based on the scheme we're using.
-  $default_scheme = file_default_scheme();
-  $wrapper = file_stream_wrapper_get_instance_by_scheme($default_scheme);
-  $directory = $wrapper->getDirectoryPath();
-
-  // Retrieve array of matched directory paths.
-  $paths = file_entity_dir_match($typed, $directory);
-
-  // Return the result to the form in JSON.
-  drupal_json_output($paths);
-}
-
-/**
- * Returns an array of directories that match part of a search query.
- *
- * @param $query
- *   String that will be searched on.
- * @param $directory
- *   A directory path.
- *
- * @return string
- *  An array of matches.
- */
-function file_entity_dir_match($query, $directory) {
-  // Initialize an empty list for the possible paths.
-  $paths = array();
-  // Define an iterator to traverse the file system tree.
-  $iterator = new RecursiveIteratorIterator(
-    new RecursiveDirectoryIterator(
-      $directory,
-      RecursiveDirectoryIterator::SKIP_DOTS
-    ),
-    RecursiveIteratorIterator::SELF_FIRST
-  );
-  // Traverse it.
-  while ($iterator->valid()) {
-    // Only act on directories, not files.
-    if ($iterator->isDir()) {
-      // Get the subdirectory name ensuring windows paths are supported as well.
-      $dir_name = str_replace('\\', '/', $iterator->getSubPathName());
-      // Get the number of typed characters.
-      $chars = strlen($query);
-      // If the current directory is at least as long as the number of typed
-      // characters, and the typed characters match the beginning of the
-      // current directory, add the current directory to the list.
-      if ((strlen($dir_name) >= $chars) && (substr($dir_name, 0, $chars) === $query)) {
-        $paths[$dir_name] = check_plain($dir_name);
-      }
-    }
-    // Move to the next item in the iteration.
-    $iterator->next();
-  }
-  return $paths;
-}
-
-/**
- * Determines if the current user has access to work with file upload paths.
- *
- * Proper access entails being able to view the possible upload paths and
- * selecting one of them as a target when uploading one or more files.
- *
- * @return boolean
- *   TRUE if access to work with file upload paths is allowed. FALSE otherwise.
- */
-function file_entity_upload_path_access() {
-  return user_access('choose file destination') ||
-         user_access('bypass file access') ||
-         user_access('administer files');
-}
-
-/**
  * A wrapper function for the PHP function fnmatch().
  *
  * We include this, because Windows servers do not implement fnmatch() until
@@ -2580,6 +2502,9 @@ function file_entity_download_uri($file) {
 }
 
 function file_entity_file_get_mimetype_type($file) {
+  if (is_array($file)) {
+    $file = (object) $file;
+  }
   list($type, $subtype) = explode('/', $file->filemime, 2);
   return $type;
 }
@@ -2701,3 +2626,4 @@ function file_entity_features_pipe_file_type_alter(&$pipe, $data, $export) {
     $pipe['variable'][] = "pathauto_file_{$file_type}_pattern";
   }
 }
+

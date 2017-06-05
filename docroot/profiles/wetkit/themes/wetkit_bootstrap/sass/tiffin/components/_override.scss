@@ -5,6 +5,11 @@
   background-color: $brand-green;
 }
 
+// Added this for the Navigation (in general) overriding theme.css ~ lines 5454-5455
+.nav > li > a:visited {
+  color: $brand-gold;
+}
+
 // Added this for the left-side nav overrides theme.min.css ~ lines 4894-4903
 
 
@@ -30,4 +35,11 @@ fieldset#edit-academic-scholarship {
     font-size: 90%;
     text-align: left;
   }
+}
+
+// Overriding the Wetkit Ember ember-media.css definition for the Media Browser pop-up
+.ui-dialog.media-wrapper {
+  background: $white;
+  padding: .6em;
+  z-index: 9999;
 }

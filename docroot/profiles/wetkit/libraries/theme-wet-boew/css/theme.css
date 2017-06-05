@@ -3260,7 +3260,7 @@ tbody.collapse.in {
         cursor: not-allowed; }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: #eeeeee;
-    border-color: #295376; }
+  }
   .nav .nav-divider {
     height: 1px;
     margin: 10.5px 0;

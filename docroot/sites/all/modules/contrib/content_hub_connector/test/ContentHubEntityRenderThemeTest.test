@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Tests for content_hub_connector.module.
+ */
+
+/**
+ * Tests the functionality of the Acquia Content Hub module.
+ *
+ * Class ContentHubEntityRenderThemeTest.
+ */
+class ContentHubEntityRenderThemeTest extends DrupalWebTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $profile = 'testing';
+
+  /**
+   * A user that has permission to administer and access statistics.
+   *
+   * @var object|FALSE
+   *
+   * A fully loaded user object, or FALSE if user creation failed.
+   */
+  protected $privilegedUser;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Acquia Content Hub Render Theme',
+      'description' => 'Tests entity render.',
+      'group' => 'Acquia Content Hub',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    $modules = array(
+      'content_hub_connector',
+      'content_hub',
+      'content_hub_test',
+    );
+    parent::setUp($modules);
+
+    // Create and log in our privileged user.
+    $this->privilegedUser = $this->drupalCreateUser(array(
+      'administer site configuration',
+      'access administration pages',
+      'view the administration theme',
+      'administer themes',
+    ));
+
+    theme_enable(array('content_hub_test_theme', 'bartik'));
+    variable_set('theme_default', 'content_hub_test_theme');
+    variable_set('admin_theme', 'bartik');
+
+    $this->drupalLogin($this->privilegedUser);
+
+  }
+
+  /**
+   * Test CDF render theme.
+   */
+  public function testContentHubCdfRender() {
+
+    $this->assertIdentical(variable_get('admin_theme', NULL), 'bartik', 'Bartik is administration theme');
+    $node = $this->drupalCreateNode(
+      array(
+        'type' => 'page',
+      )
+    );
+
+    $this->assertEqual($this->drupalSettings['ajaxPageState']['theme'], 'content_hub_test_theme', 'Default theme is used for an user login.');
+
+    $this->drupalGet('node/' . $node->nid);
+    $this->assertNoText('Content hub test theme', 'Switch theme context to admin theme.');
+
+    $this->assertEqual($this->drupalSettings['ajaxPageState']['theme'], 'bartik', 'Admin theme is used for node/*.');
+
+    $cdf = new \Drupal\content_hub_connector\Cdf('node', $node->uuid);
+    $rend = $cdf->renderNodeViewMode($node, 'teaser');
+    $this->assertTrue(stristr($rend, 'Content hub test theme'), 'CDF rendered using site default theme.');
+
+    $this->assertEqual($this->drupalSettings['ajaxPageState']['theme'], 'bartik', 'Admin theme is switched back.');
+  }
+
+}

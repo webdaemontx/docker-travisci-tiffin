@@ -1,0 +1,16 @@
+name = Acquia Content Hub Connector
+description = Module connects to the client library and performs CRUD operations.
+core = 7.x
+php = 5.5
+package = Content Hub
+
+dependencies[] = uuid
+dependencies[] = entity
+dependencies[] = media
+dependencies[] = diff
+
+files[] = test/ContentHubEntityRenderThemeTest.test
+files[] = test/ContentHubEntityRenderUserRoleTest.test
+
+; Information added by custom packaging script #67 on 2017-05-10
+version = "1.29.0"

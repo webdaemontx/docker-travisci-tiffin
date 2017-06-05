@@ -1,0 +1,11 @@
+name = CKEditor Bootstrap Tabs
+description = Important: This module requires CKeditor or WYSIWYG CKEditor.
+core = 7.x
+package = User interface
+
+; Information added by Drupal.org packaging script on 2017-03-15
+version = "7.x-1.0"
+core = "7.x"
+project = "ckeditor_bootstrap_tabs"
+datestamp = "1489573986"
+

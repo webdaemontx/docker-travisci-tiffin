@@ -1,0 +1,24 @@
+name = Acquia Content Hub
+description = Manages entities in sync with the Acquia Content Hub
+core = 7.x
+package = Content Hub
+
+dependencies[] = content_hub_connector
+dependencies[] = views
+dependencies[] = rules
+dependencies[] = date
+dependencies[] = date_popup
+
+files[] = views/handlers/content_hub_handler_field.inc
+files[] = views/handlers/content_hub_handler_field_date.inc
+files[] = views/handlers/content_hub_handler_field_form.inc
+files[] = views/handlers/content_hub_handler_save_filter_form.inc
+files[] = views/content_hub_plugin_query.inc
+files[] = views/content_hub_handler_filter_search.inc
+files[] = views/content_hub_handler_filter_date.inc
+files[] = views/content_hub_handler_filter_select.inc
+files[] = views/content_hub_filter_plugin_query.inc
+files[] = views/content_hub_handler_sort_options.inc
+
+; Information added by custom packaging script #67 on 2017-05-10
+version = "1.29.0"

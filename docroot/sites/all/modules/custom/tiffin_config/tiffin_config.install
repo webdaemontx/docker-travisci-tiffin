@@ -151,3 +151,72 @@ function tiffin_config_update_7310($sandbox) {
     }
   }
 }
+
+/**
+ * Disable Unnecessary Modules
+ */
+function tiffin_config_update_7311($sandbox) {
+  $modules = array("registration", "paragraphs", "splashify", "easy_breadcrumbs");
+
+  foreach($modules as $module) {
+    if( module_exists($module)) {
+      module_disable(array($module));
+      drupal_uninstall_modules(array($module));
+    }
+  }
+}
+
+/**
+ * Enable the ShURLy Module(s)
+ */
+function tiffin_config_update_7312($sandbox) {
+    $modules = array("shurly");
+
+    foreach($modules as $module) {
+        if( !module_exists($module)) {
+            module_enable(array($module));
+        }
+    }
+}
+
+/**
+ * Disable WYSYWYG and replace with CKEditor Module.
+ *
+ */
+function tiffin_config_update_7313($sandbox) {
+    $modules = array("imce", "ckeditor_bootstrap_tabs");
+    if (module_exists("wetkit_wysiwyg")) {
+        module_disable(array("wetkit_wysiwyg"));
+        foreach($modules as $module) {
+            if( !module_exists($module)) {
+                module_enable(array($module));
+            }
+        }
+    }
+}
+
+/**
+ * Enable CKEditor Module.
+ *
+ */
+function tiffin_config_update_7314($sandbox) {
+    $modules = array("ckeditor");
+    foreach($modules as $module) {
+        if( !module_exists($module)) {
+            module_enable(array($module));
+        }
+    }
+}
+
+/**
+ * Disable CKEditor Module.
+ *
+ */
+function tiffin_config_update_7315($sandbox) {
+    $modules = array("ckeditor");
+    foreach($modules as $module) {
+        if( module_exists($module)) {
+            module_disable(array($module));
+        }
+    }
+}

@@ -1,0 +1,103 @@
+<?php
+/**
+ * @file
+ * Content Hub devel module hold functions for development.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function content_hub_devel_menu() {
+  $items = array();
+  $items['node/%node/content-hub-devel'] = array(
+    'title' => 'Content Hub Devel',
+    'page callback' => 'content_hub_devel_load_local_cdf',
+    'page arguments' => array('node', 1),
+    'access arguments' => array('administer content hub'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'content_hub_devel.pages.inc',
+    'weight' => 100,
+  );
+
+  $items['node/%node/content-hub-devel/local'] = array(
+    'title' => 'Local',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+
+  $items['node/%node/content-hub-devel/local-json'] = array(
+    'title' => 'Local JSON',
+    'page callback' => 'content_hub_devel_load_local_cdf',
+    'page arguments' => array('node', 1, 'json'),
+    'access arguments' => array('administer content hub'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'content_hub_devel.pages.inc',
+    'weight' => 100,
+  );
+
+  $items['node/%node/content-hub-devel/remote'] = array(
+    'title' => 'Remote',
+    'page callback' => 'content_hub_devel_load_remote_cdf',
+    'page arguments' => array('node', 1),
+    'access arguments' => array('administer content hub'),
+    'file' => 'content_hub_devel.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 100,
+  );
+
+  $items['node/%node/content-hub-devel/remote-json'] = array(
+    'title' => 'Remote JSON',
+    'page callback' => 'content_hub_devel_load_remote_cdf',
+    'page arguments' => array('node', 1, 'json'),
+    'access arguments' => array('administer content hub'),
+    'file' => 'content_hub_devel.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 100,
+  );
+
+  $items['taxonomy/term/%taxonomy_term/content-hub-devel'] = array(
+    'title' => 'Content Hub Devel',
+    'page callback' => 'content_hub_devel_load_local_cdf',
+    'page arguments' => array('taxonomy_term', 2),
+    'access arguments' => array('administer content hub'),
+    'file' => 'content_hub_devel.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 100,
+  );
+
+  $items['taxonomy/term/%taxonomy_term/content-hub-devel/local'] = array(
+    'title' => 'Local',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+
+  $items['taxonomy/term/%taxonomy_term/content-hub-devel/local-json'] = array(
+    'title' => 'Local JSON',
+    'page callback' => 'content_hub_devel_load_local_cdf',
+    'page arguments' => array('taxonomy_term', 2, 'json'),
+    'access arguments' => array('administer content hub'),
+    'file' => 'content_hub_devel.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 100,
+  );
+
+  $items['taxonomy/term/%taxonomy_term/content-hub-devel/remote'] = array(
+    'title' => 'Remote',
+    'page callback' => 'content_hub_devel_load_remote_cdf',
+    'page arguments' => array('taxonomy_term', 2),
+    'access arguments' => array('administer content hub'),
+    'file' => 'content_hub_devel.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 100,
+  );
+
+  $items['taxonomy/term/%taxonomy_term/content-hub-devel/remote-json'] = array(
+    'title' => 'Remote JSON',
+    'page callback' => 'content_hub_devel_load_remote_cdf',
+    'page arguments' => array('taxonomy_term', 2, 'json'),
+    'access arguments' => array('administer content hub'),
+    'file' => 'content_hub_devel.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 100,
+  );
+
+  return $items;
+}

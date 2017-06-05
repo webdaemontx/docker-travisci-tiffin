@@ -23,7 +23,7 @@ function wetkit_bootstrap_form_system_theme_settings_alter(&$form, $form_state, 
     '#attached' => array(
       'js'  => array(drupal_get_path('theme', 'bootstrap') . '/js/bootstrap.admin.js'),
     ),
-    '#prefix' => '<h2><small>' . t('WxT Bootstrap Settings') . '</small></h2>',
+    '#prefix' => '<h2><small>' . t('Wetkit Bootstrap Settings') . '</small></h2>',
     '#weight' => -10,
   );
 

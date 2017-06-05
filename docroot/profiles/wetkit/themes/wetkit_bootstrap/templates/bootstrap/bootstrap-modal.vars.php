@@ -48,3 +48,6 @@ function wetkit_bootstrap_process_bootstrap_modal(&$variables) {
   $variables['body'] = render($variables['body']);
   $variables['footer'] = render($variables['footer']);
 }
+
+
+

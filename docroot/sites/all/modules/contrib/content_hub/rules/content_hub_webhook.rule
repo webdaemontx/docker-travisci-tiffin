@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Content Hub Webhook Rule.
+ */
+
+$rule = '{ "content_hub_rule_webhook" : {
+      "LABEL" : "content_hub_webhook",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "content_hub" ],
+      "ON" : { "content_hub_event_webhook_landing" : [] },
+      "DO" : [
+        { "content_hub_action_webhook_landing" : { "webhook" : [ "webhook" ], "handler" : "entity_settings" } }
+      ]
+    }
+  }';

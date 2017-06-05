@@ -48,15 +48,6 @@ function uuid_menu() {
     'file' => 'uuid.admin.inc',
   );
 
-  // Support for autocomplete for UUID.
-  $items['uuid/autocomplete/%'] = array(
-    'access arguments' => array('access content'),
-    'page callback' => 'uuid_autocomplete_entity',
-    'page arguments' => array(2),
-    'type' => MENU_CALLBACK,
-    'file' => 'uuid.menu.inc',
-  );
-
   // Conditional support for Devel. A good thing for developers.
   if (module_exists('devel')) {
     $entity_types = array(

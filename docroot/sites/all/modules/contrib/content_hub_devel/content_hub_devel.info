@@ -1,0 +1,7 @@
+name = Acquia Content Hub Development
+description = Remote and local CDF (Common Data Format) for developers
+core = 7.x
+package = Content Hub
+
+dependencies[] = content_hub_connector
+dependencies[] = devel
