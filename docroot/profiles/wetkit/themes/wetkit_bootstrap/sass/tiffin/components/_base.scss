@@ -1485,23 +1485,23 @@ ul#click-on-programs {
 }
 
 .pane-graduate-admissions-hero {
-  position: relative;
   background-image: url('../images/new-graduate-admissions-top-hero.jpg');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  height: 360px;
+  height: 450px;
+  padding-top: 30px;
+  position: relative;
   width: 100%;
   ///*background-attachment: fixed;*/
-  padding-top: 30px;
 
-  h2 {
-    text-align: center;
-    color: $brand-green-title;
-    text-decoration: none;
+  h1 {
+    color: $white;
     font-size: 41px;
     margin-top: 0;
     padding-top: 0;
+    text-align: center;
+    text-decoration: none;
   }
 }
 
