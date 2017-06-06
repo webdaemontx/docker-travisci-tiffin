@@ -106,7 +106,7 @@
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'welcome' -->
     <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=welcome;gid=6132;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
 
-<?php }  else if (current_path() == 'apply-now') { ?>
+<?php }  else if (current_path() == 'apply-now' || current_path() == 'apply') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'how-to' -->
     <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=how-to;gid=6133;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
 
