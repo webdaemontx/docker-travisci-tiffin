@@ -220,3 +220,28 @@ function tiffin_config_update_7315($sandbox) {
         }
     }
 }
+
+/**
+ * Disable Maillog, RobotsTXT, Easy Breadcrumb, Hierarchical Select Taxonomy, and Apps Modules.
+ */
+function tiffin_config_update_7316($sandbox) {
+    $modules = array("maillog", "robotstxt", "easy_breadcrumb", "hs_taxonomy", "apps");
+    foreach ($modules as $module) {
+        if (module_exists($module)) {
+            module_disable(array($module));
+        }
+    }
+}
+
+/**
+ * Enable Mobile & UI Adjustments, OpenGraph, and Verification Metatag Modules.
+ * Also enable the Yoast SEO module to help site managers improve the SEO content.
+ */
+function tiffin_config_update_7317($sandbox) {
+    $modules = array("metatag_mobile", "metatag_opengraph", "metatag_verification", "yoast_seo");
+    foreach ($modules as $module) {
+        if (!module_exists($module)) {
+            module_enable($module);
+        }
+    }
+}
