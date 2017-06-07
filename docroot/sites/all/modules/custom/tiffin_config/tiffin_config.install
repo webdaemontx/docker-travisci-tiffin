@@ -241,7 +241,7 @@ function tiffin_config_update_7317($sandbox) {
     $modules = array("metatag_mobile", "metatag_opengraph", "metatag_verification", "yoast_seo");
     foreach ($modules as $module) {
         if (!module_exists($module)) {
-            module_enable($module);
+            module_enable(array($module));
         }
     }
 }
