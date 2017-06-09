@@ -6397,6 +6397,8 @@ fieldset#edit-academic-scholarship legend {
 
 .ui-dialog.media-wrapper {
 	background: #fff;
+	background-color: #555555;
+	height: 25%;
 	padding: .6em;
 	z-index: 9999;
 }

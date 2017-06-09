@@ -82,7 +82,7 @@ function wetkit_emberx_css_alter(&$css) {
     unset($css[$ember_path . '/css/ember-modal.css']);
   }
 
-  // Override Panels IPE styles by default. d
+  // Override Panels IPE styles by default.
   if (module_exists('panels_ipe') && variable_get('wetkit_emberx_panels_ipe_css', TRUE) == TRUE) {
     // Remove the default Panels IPE css.
     $path = drupal_get_path('module', 'panels_ipe');

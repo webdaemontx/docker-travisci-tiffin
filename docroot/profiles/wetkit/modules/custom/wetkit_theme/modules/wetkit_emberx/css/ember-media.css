@@ -2,9 +2,11 @@
  * Media browser styles.
  */
 .ui-dialog.media-wrapper {
-  padding: 0.6em;
+  background: #fff;
+  background-color: #555;
+  height:25%;
+  padding: .6em;
   z-index: 9999;
-  background: none;
 }
 .ui-dialog.media-wrapper .ui-dialog-titlebar {
   background: none;
@@ -59,8 +61,8 @@
 
 .media-wrapper .ui-state-default .ui-icon-closethick {
   background: url(../images/F05A27/x_F05A27.png) no-repeat right top;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
 }
 
 #media-browser-page-wrapper #media-browser-tabset #branding {

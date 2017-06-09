@@ -17,7 +17,7 @@
  *	jquery.ui.position.js
  *	jquery.ui.resizable.js
  */
-(function( $, undefined ) {
+(function($, undefined) {
 
 var sizeRelatedOptions = {
 		buttons: true,
