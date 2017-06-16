@@ -37,7 +37,7 @@ function profile2_staff_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_board_member_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -65,7 +65,7 @@ function profile2_staff_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_counselor_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -80,9 +80,9 @@ function profile2_staff_field_group_info() {
     'label' => 'Faculty Info',
     'weight' => '1',
     'children' => array(
-      0 => 'field_board_company_name',
-      1 => 'field_academic_school',
-      2 => 'field_program_reference',
+      0 => 'field_academic_school',
+      1 => 'field_program_reference',
+      2 => 'field_faculty_degrees_and_certs',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -94,7 +94,7 @@ function profile2_staff_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_faculty_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -133,7 +133,7 @@ function profile2_staff_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_general_info|profile2|staff|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

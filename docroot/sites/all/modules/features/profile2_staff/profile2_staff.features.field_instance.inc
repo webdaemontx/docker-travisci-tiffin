@@ -52,7 +52,7 @@ function profile2_staff_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 8,
     ),
   );
 
@@ -216,86 +216,6 @@ Use this field to provide a secondary title / position. ',
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 43,
-    ),
-  );
-
-  // Exported field_instance: 'profile2-staff-field_board_company_name'.
-  $field_instances['profile2-staff-field_board_company_name'] = array(
-    'bundle' => 'staff',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'faculty_detail' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-    ),
-    'entity_type' => 'profile2',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_board_company_name',
-    'label' => 'Degrees and Certificates',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'plain_text' => 'plain_text',
-          'tweet' => 'tweet',
-          'wetkit_html_text' => 'wetkit_html_text',
-          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-            'tweet' => array(
-              'weight' => -6,
-            ),
-            'wetkit_html_text' => array(
-              'weight' => -9,
-            ),
-            'wetkit_wysiwyg_text' => array(
-              'weight' => -10,
-            ),
-          ),
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 100,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
     ),
   );
 
@@ -579,7 +499,7 @@ Use this field to provide a secondary title / position. ',
     'bundle' => 'staff',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'You may add as many entries for each faculty member as is necessary. Just add a single entry, then add another. Degrees, Certificates, and any other awards or professional credentials.',
+    'description' => '',
     'display' => array(
       'account' => array(
         'label' => 'above',
@@ -592,7 +512,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 21,
       ),
       'faculty_detail' => array(
         'label' => 'above',
@@ -602,10 +522,37 @@ Use this field to provide a secondary title / position. ',
       ),
     ),
     'entity_type' => 'profile2',
+    'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_faculty_degrees_and_certs',
-    'label' => 'Faculty Degrees and Certificates',
+    'label' => 'Degrees and Certificates',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'tweet' => 'tweet',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+            'tweet' => array(
+              'weight' => -6,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
       'entity_translation_sync' => FALSE,
       'linkit' => array(
         'button_text' => 'Search',
@@ -622,192 +569,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'profile2-staff-field_faculty_department'.
-  $field_instances['profile2-staff-field_faculty_department'] = array(
-    'bundle' => 'staff',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 7,
-      ),
-      'faculty_detail' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'profile2',
-    'field_name' => 'field_faculty_department',
-    'label' => 'Department',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'profile2-staff-field_faculty_email_address'.
-  $field_instances['profile2-staff-field_faculty_email_address'] = array(
-    'bundle' => 'staff',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'email',
-        'settings' => array(),
-        'type' => 'email_default',
-        'weight' => 2,
-      ),
-      'faculty_detail' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'profile2',
-    'field_name' => 'field_faculty_email_address',
-    'label' => 'Faculty Email Address',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'email',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'email_textfield',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'profile2-staff-field_faculty_phone'.
-  $field_instances['profile2-staff-field_faculty_phone'] = array(
-    'bundle' => 'staff',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 3,
-      ),
-      'faculty_detail' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'profile2',
-    'field_name' => 'field_faculty_phone',
-    'label' => 'Faculty Phone',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'telephone',
-      'settings' => array(
-        'placeholder' => '',
-      ),
-      'type' => 'telephone_default',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'profile2-staff-field_faculty_type'.
-  $field_instances['profile2-staff-field_faculty_type'] = array(
-    'bundle' => 'staff',
-    'default_value' => array(
-      0 => array(
-        'tid' => 871,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'account' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 9,
-      ),
-      'faculty_detail' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'profile2',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_faculty_type',
-    'label' => 'Faculty Type',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 7,
     ),
   );
 
@@ -1163,11 +925,6 @@ Use this field to provide a secondary title / position. ',
   t('Company Name');
   t('Company State');
   t('Degrees and Certificates');
-  t('Department');
-  t('Faculty Degrees and Certificates');
-  t('Faculty Email Address');
-  t('Faculty Phone');
-  t('Faculty Type');
   t('Favorite Travel Spots');
   t('Hometown');
   t('Manual Order');
@@ -1179,7 +936,6 @@ Use this field to provide a secondary title / position. ',
   t('Some Tiffin employees hold two or more positions, such as Board Member and Faculty, or Faculty and Staff.
 
 Use this field to provide a secondary title / position. ');
-  t('You may add as many entries for each faculty member as is necessary. Just add a single entry, then add another. Degrees, Certificates, and any other awards or professional credentials.');
 
   return $field_instances;
 }

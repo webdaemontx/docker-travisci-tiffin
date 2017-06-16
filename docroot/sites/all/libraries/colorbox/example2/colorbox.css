@@ -20,7 +20,7 @@
     Change the following styles to modify the appearance of Colorbox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-#cboxOverlay{background:#fff; opacity: 0.9; filter: alpha(opacity = 90);}
+#cboxOverlay{background:#000; opacity: 0.9; filter: alpha(opacity = 90);}
 #colorbox{outline:#000 1px;}
     #cboxContent{margin-top:32px; overflow:visible; background:#000;}
         .cboxIframe{background:#fff;}
@@ -28,7 +28,7 @@
         #cboxLoadedContent{background:#f2f2f2; padding:1px;}
         #cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}
         #cboxLoadingOverlay{background:#000;}
-        #cboxTitle{position:absolute; top:-22px; left:0; color:#000;}
+        #cboxTitle{position:absolute; top:-22px; left:0; color:#f2f2f2;}
         #cboxCurrent{position:absolute; top:-22px; right:205px; text-indent:-9999px;}
 
         /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
