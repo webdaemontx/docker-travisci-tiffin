@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Profile2 Staff feature.
+ */
+
+include_once 'profile2_staff.features.inc';
