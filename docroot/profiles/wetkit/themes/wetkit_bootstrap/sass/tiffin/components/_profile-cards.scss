@@ -2,24 +2,25 @@
 
 .staff-cbox-wrapper {
   background-color: #f2f2f2;
-  color: #365543;
+  color: $brand-green-title;
 }
 
 .staff-figure {
-  color: #365543;
+  color: $brand-green-title;
   background-color: $white;
   float: left;
-  margin: 1% 3% 5%;
+  margin: 1% 3% 2%;
   padding: 1%;
 }
 
 .staff-figcaption {
-  color: #365543;
+  color: $brand-green-title;
+  font-size: .8em;
   width: 300px;
 }
 
 .profile-bio {
-  color: #365543;
+  color: $brand-green-title;
   margin: 5px 15px;
   padding: .1em;
 }

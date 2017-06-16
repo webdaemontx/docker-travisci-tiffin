@@ -6125,12 +6125,13 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	color: #365543;
 	background-color: #fff;
 	float: left;
-	margin: 1% 3% 5%;
+	margin: 1% 3% 2%;
 	padding: 1%;
 }
 
 .staff-figcaption {
 	color: #365543;
+	font-size: .8em;
 	width: 300px;
 }
 
