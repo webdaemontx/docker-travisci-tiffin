@@ -1,0 +1,29 @@
+diff --git a/entity.module b/entity.module
+index 36e5dc3..b4e2487 100644
+--- a/entity.module
++++ b/entity.module
+@@ -74,14 +74,11 @@ function entity_type_supports($entity_type, $op) {
+   if (isset($info[$keys[$op]])) {
+     return TRUE;
+   }
+-  if ($op == 'revision delete') {
+-    return in_array('EntityAPIControllerInterface', class_implements($info['controller class']));
+-  }
+   if ($op == 'form') {
+     return (bool) entity_ui_controller($entity_type);
+   }
+   if ($op != 'access') {
+-    return in_array('EntityAPIControllerInterface', class_implements($info['controller class']));
++    return !empty($info['controller class']) && class_exists($info['controller class']) && in_array('EntityAPIControllerInterface', class_implements($info['controller class']));
+   }
+   return FALSE;
+ }
+@@ -1476,7 +1473,7 @@ function entity_entity_info_alter(&$entity_info) {
+       $entity_info[$type]['configuration'] = !empty($info['exportable']);
+     }
+
+-    if (isset($info['controller class']) && in_array('EntityAPIControllerInterface', class_implements($info['controller class']))) {
++    if (isset($info['controller class']) && class_exists($info['controller class']) && in_array('EntityAPIControllerInterface', class_implements($info['controller class']))) {
+       // Automatically disable field cache when entity cache is used.
+       if (!empty($info['entity cache']) && module_exists('entitycache')) {
+         $entity_info[$type]['field cache'] = FALSE;
