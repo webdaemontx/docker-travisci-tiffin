@@ -245,3 +245,22 @@ function tiffin_config_update_7317($sandbox) {
         }
     }
 }
+
+/**
+ * Disable Tiffin Content Feature.
+ * Enable Colorbox, Profile2 Create, Profile2 Staff Feature.
+ */
+function tiffin_config_update_7318($sandbox) {
+  $modules = array("tiffin_content");
+  foreach ($modules as $module) {
+    if (module_exists($module)) {
+      module_disable(array($module));
+    }
+  }
+  $modules = array("colorbox", "profile2_create", "profile2_staff");
+  foreach ($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+    }
+  }
+}
