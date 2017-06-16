@@ -1,8 +1,24 @@
 @import '../abstracts/theme-vars';
 // Used for specific overriding styles.
 
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $brand-gold-transparent-70;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .list-group-item.active,
-.list-group-item.active:focus, .list-group-item.active:hover {
+.list-group-item.active:focus,
+.list-group-item.active:hover {
   background-color: $brand-green;
 }
 

@@ -1,5 +1,32 @@
 @import '../abstracts/theme-vars';
 
+.staff-cbox-wrapper {
+  background-color: #f2f2f2;
+  color: #365543;
+}
+
+.staff-figure {
+  color: #365543;
+  background-color: $white;
+  float: left;
+  margin: 1% 3% 5%;
+  padding: 1%;
+}
+
+.staff-figcaption {
+  color: #365543;
+  width: 300px;
+}
+
+.profile-bio {
+  color: #365543;
+  margin: 5px 15px;
+  padding: .1em;
+}
+
+
+
+
 .profile-grid-container {
   h2 {
     color: $brand-green;
@@ -30,20 +57,21 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
 }
 
 .grid-container {
-  align-content: center;
-  align-items: flex-start;
-  box-sizing: border-box;
+  //align-content: center;
+  //align-items: flex-start;
+  //box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  //flex-direction: row;
+  //flex-wrap: wrap;
 
   .faculty-container {
-    flex: 0 1 220px;
-    justify-content: flex-start;
-    margin: 0 1% 2%;
+    //flex: 0 1 220px;
+    //justify-content: space-around;
+    //margin: 0 1% 2%;
     max-height: 315px;
     order: 0;
-    width: 25%;
     @media (max-width: 414px) {
       display: block;
       margin: auto;
@@ -84,12 +112,18 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
     }
 
     .profile-name {
-      font-size: 17.5px;
+      font-size: 16px;
     }
 
     .profile-position {
-      font-size: 14px;
-      line-height: 1em;
+      font-size: 13.5px;
+      line-height: 1.1em;
+    }
+
+    .profile-email,
+    .profile-phone {
+      display: none;
+      font-size: 12px;
     }
 
     .profile-company {
