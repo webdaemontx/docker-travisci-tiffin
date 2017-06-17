@@ -652,6 +652,51 @@ Use this field to provide a secondary title / position. ',
     ),
   );
 
+  // Exported field_instance: 'profile2-staff-field_featured_categories'.
+  $field_instances['profile2-staff-field_featured_categories'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 20,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_featured_categories',
+    'label' => 'Categories',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'profile2-staff-field_manual_order'.
   $field_instances['profile2-staff-field_manual_order'] = array(
     'bundle' => 'staff',
@@ -921,6 +966,7 @@ Use this field to provide a secondary title / position. ',
   t('Alternate Title');
   t('Bio/Summary');
   t('Candid Photo');
+  t('Categories');
   t('Company City');
   t('Company Name');
   t('Company State');
