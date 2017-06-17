@@ -159,69 +159,6 @@ function tiffin_cabinet_and_staff_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_manual_order'.
-  $field_bases['field_manual_order'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_manual_order',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_member_type'.
-  $field_bases['field_member_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_member_type',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'board' => 'Board Member',
-        'cabinet' => 'Cabinet Member',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_phone'.
-  $field_bases['field_phone'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_phone',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'telephone',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'profile2_private' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'telephone',
-  );
-
   // Exported field_base: 'field_staff_bio_summary'.
   $field_bases['field_staff_bio_summary'] = array(
     'active' => 1,
