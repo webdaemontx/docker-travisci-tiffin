@@ -1201,12 +1201,13 @@ Use this field to provide a secondary title / position. ',
     'entity_type' => 'profile2',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_position',
-    'label' => 'Position',
+    'label' => 'Primary Position/Title',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'plain_text' => 'plain_text',
+          'tweet' => 0,
           'wetkit_html_text' => 'wetkit_html_text',
           'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
         ),
@@ -1216,6 +1217,9 @@ Use this field to provide a secondary title / position. ',
           'formats' => array(
             'plain_text' => array(
               'weight' => 10,
+            ),
+            'tweet' => array(
+              'weight' => -6,
             ),
             'wetkit_html_text' => array(
               'weight' => -9,
@@ -1414,7 +1418,7 @@ Use this field to provide a secondary title / position. ',
     'entity_type' => 'profile2',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_user_picture',
-    'label' => 'Picture',
+    'label' => 'Standard Photo',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -1423,7 +1427,7 @@ Use this field to provide a secondary title / position. ',
       'file_directory' => 'staff',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '2 MB',
-      'max_resolution' => '200x312',
+      'max_resolution' => '400x600',
       'min_resolution' => '200x312',
       'title_field' => 1,
       'user_register_form' => FALSE,
@@ -1436,11 +1440,18 @@ Use this field to provide a secondary title / position. ',
           'public' => 'public',
         ),
         'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
           'image' => 'image',
+          'video' => 0,
+          'wetkit_video' => 0,
         ),
-        'browser_plugins' => array(),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'bar',
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
       ),
       'type' => 'media_generic',
       'weight' => 5,
@@ -1468,8 +1479,7 @@ Use this field to provide a secondary title / position. ',
   t('Name Prefix');
   t('Name Suffix');
   t('Phone');
-  t('Picture');
-  t('Position');
+  t('Primary Position/Title');
   t('Programs Taught');
   t('Salutation');
   t('School');
@@ -1478,6 +1488,7 @@ Use this field to provide a secondary title / position. ',
   t('Some Tiffin employees hold two or more positions, such as Board Member and Faculty, or Faculty and Staff.
 
 Use this field to provide a secondary title / position. ');
+  t('Standard Photo');
 
   return $field_instances;
 }

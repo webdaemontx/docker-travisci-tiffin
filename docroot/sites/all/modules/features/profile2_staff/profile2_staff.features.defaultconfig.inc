@@ -2007,12 +2007,13 @@ Use this field to provide a secondary title / position. ',
       'entity_type' => 'profile2',
       'fences_wrapper' => 'div_div_div',
       'field_name' => 'field_position',
-      'label' => 'Position',
+      'label' => 'Primary Position/Title',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
             'plain_text' => 'plain_text',
+            'tweet' => 0,
             'wetkit_html_text' => 'wetkit_html_text',
             'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
           ),
@@ -2022,6 +2023,9 @@ Use this field to provide a secondary title / position. ',
             'formats' => array(
               'plain_text' => array(
                 'weight' => 10,
+              ),
+              'tweet' => array(
+                'weight' => -6,
               ),
               'wetkit_html_text' => array(
                 'weight' => -9,
@@ -2183,7 +2187,7 @@ Use this field to provide a secondary title / position. ',
       'settings' => array(
         'entity_translation_sync' => FALSE,
         'max_length' => 255,
-        'profile2_private' => 0,
+        'profile2_private' => FALSE,
       ),
       'translatable' => 0,
       'type' => 'text',
@@ -2332,7 +2336,7 @@ Use this field to provide a secondary title / position. ',
       'entity_type' => 'profile2',
       'fences_wrapper' => 'div_div_div',
       'field_name' => 'field_user_picture',
-      'label' => 'Picture',
+      'label' => 'Standard Photo',
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
@@ -2341,7 +2345,7 @@ Use this field to provide a secondary title / position. ',
         'file_directory' => 'staff',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '2 MB',
-        'max_resolution' => '200x312',
+        'max_resolution' => '400x600',
         'min_resolution' => '200x312',
         'title_field' => 1,
         'user_register_form' => FALSE,
@@ -2354,11 +2358,18 @@ Use this field to provide a secondary title / position. ',
             'public' => 'public',
           ),
           'allowed_types' => array(
+            'audio' => 0,
+            'document' => 0,
             'image' => 'image',
+            'video' => 0,
+            'wetkit_video' => 0,
           ),
-          'browser_plugins' => array(),
-          'preview_image_style' => 'thumbnail',
-          'progress_indicator' => 'bar',
+          'browser_plugins' => array(
+            'media_default--media_browser_1' => 'media_default--media_browser_1',
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+            'media_internet' => 0,
+            'upload' => 'upload',
+          ),
         ),
         'type' => 'media_generic',
         'weight' => 5,
@@ -2388,7 +2399,7 @@ Use this field to provide a secondary title / position. ',
   t('Name Suffix');
   t('Phone');
   t('Picture');
-  t('Position');
+  t('Primary Position/Title');
   t('Programs Taught');
   t('Salutation');
   t('School');
@@ -2397,6 +2408,7 @@ Use this field to provide a secondary title / position. ',
   t('Some Tiffin employees hold two or more positions, such as Board Member and Faculty, or Faculty and Staff.
 
 Use this field to provide a secondary title / position. ');
+  t('Standard Photo');
 
   return $fields;
 }
@@ -2434,7 +2446,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_board_member_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2462,7 +2474,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_counselor_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2490,7 +2502,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_faculty_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2528,7 +2540,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_general_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2558,7 +2570,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_photo_section_separator|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2586,7 +2598,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_profile_member_type|profile2|staff|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -3097,7 +3109,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_name_suffix']['field_api_classes'] = TRUE;
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -3244,7 +3256,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -3517,7 +3529,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -3725,7 +3737,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -3933,7 +3945,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -4141,7 +4153,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';

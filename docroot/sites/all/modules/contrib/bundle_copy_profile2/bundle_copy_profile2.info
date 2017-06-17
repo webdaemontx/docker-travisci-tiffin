@@ -1,0 +1,13 @@
+name = Bundle Copy Profile2
+description = Import and export Profile2 types through the UI.
+core = 7.x
+dependencies[] = ctools
+dependencies[] = profile2
+package = Fields
+
+; Information added by Drupal.org packaging script on 2017-05-26
+version = "7.x-1.0"
+core = "7.x"
+project = "bundle_copy_profile2"
+datestamp = "1495777687"
+
