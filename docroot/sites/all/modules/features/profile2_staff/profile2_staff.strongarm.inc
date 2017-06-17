@@ -13,6 +13,25 @@ function profile2_staff_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'default_field_group';
+  $strongarm->value = array(
+    'group_admission_tabs|node|program|form' => TRUE,
+    'group_career_opportunities|node|program|form' => FALSE,
+    'group_undergrad_overview|node|program|form' => FALSE,
+    'group_4year_course_sequence|node|program|form' => TRUE,
+    'group_sample_courses_tab|node|program|form' => TRUE,
+    'group_tuition_fees|node|program|form' => TRUE,
+    'group_general_info|profile2|staff|form' => FALSE,
+    'group_faculty_info|profile2|staff|form' => FALSE,
+    'group_counselor_info|profile2|staff|form' => FALSE,
+    'group_board_member_info|profile2|staff|form' => FALSE,
+    'group_faculty_info_tab|profile2|staff|form' => TRUE,
+  );
+  $export['default_field_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_profile2__staff';
   $strongarm->value = array(
     'view_modes' => array(

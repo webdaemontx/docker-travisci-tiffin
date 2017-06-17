@@ -2320,7 +2320,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_board_member_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2348,7 +2348,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_counselor_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2377,7 +2377,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_faculty_info|profile2|staff|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2416,7 +2416,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_general_info|profile2|staff|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -2687,13 +2687,6 @@ system/ajax/*';
   $strongarm->name = 'colorbox_visibility';
   $strongarm->value = '0';
   $export['colorbox_visibility'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'metatag_enable_profile2__staff';
-  $strongarm->value = 1;
-  $export['metatag_enable_profile2__staff'] = $strongarm;
 
   return $export;
 }
