@@ -130,6 +130,7 @@ function tiffin_faculty_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'text',
@@ -158,6 +159,7 @@ function tiffin_faculty_field_default_field_bases() {
       ),
       'entity_translation_sync' => FALSE,
       'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      'profile2_private' => 0,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',

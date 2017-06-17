@@ -57,7 +57,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Faculty Title */
+  /* Field: Field: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
@@ -157,7 +157,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'faculty' => 'faculty',
   );
-  /* Filter criterion: Content: School (field_academic_school) */
+  /* Filter criterion: Field: School (field_academic_school) */
   $handler->display->display_options['filters']['field_academic_school_tid']['id'] = 'field_academic_school_tid';
   $handler->display->display_options['filters']['field_academic_school_tid']['table'] = 'field_data_field_academic_school';
   $handler->display->display_options['filters']['field_academic_school_tid']['field'] = 'field_academic_school_tid';
@@ -201,7 +201,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'faculty' => 'faculty',
   );
-  /* Filter criterion: Content: School (field_academic_school) */
+  /* Filter criterion: Field: School (field_academic_school) */
   $handler->display->display_options['filters']['field_academic_school_tid']['id'] = 'field_academic_school_tid';
   $handler->display->display_options['filters']['field_academic_school_tid']['table'] = 'field_data_field_academic_school';
   $handler->display->display_options['filters']['field_academic_school_tid']['field'] = 'field_academic_school_tid';
@@ -259,7 +259,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Faculty Title */
+  /* Field: Field: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
@@ -301,7 +301,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'faculty' => 'faculty',
   );
-  /* Filter criterion: Content: School (field_academic_school) */
+  /* Filter criterion: Field: School (field_academic_school) */
   $handler->display->display_options['filters']['field_academic_school_tid']['id'] = 'field_academic_school_tid';
   $handler->display->display_options['filters']['field_academic_school_tid']['table'] = 'field_data_field_academic_school';
   $handler->display->display_options['filters']['field_academic_school_tid']['field'] = 'field_academic_school_tid';
@@ -352,7 +352,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Faculty Title */
+  /* Field: Field: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
@@ -434,7 +434,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title_1']['label'] = '';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
-  /* Contextual filter: Content: School (field_academic_school) */
+  /* Contextual filter: Field: School (field_academic_school) */
   $handler->display->display_options['arguments']['field_academic_school_tid']['id'] = 'field_academic_school_tid';
   $handler->display->display_options['arguments']['field_academic_school_tid']['table'] = 'field_data_field_academic_school';
   $handler->display->display_options['arguments']['field_academic_school_tid']['field'] = 'field_academic_school_tid';
@@ -541,7 +541,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Faculty Title */
+  /* Field: Field: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
@@ -626,7 +626,7 @@ function tiffin_faculty_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Program Reference */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -660,7 +660,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Faculty Title */
+  /* Field: Field: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
@@ -743,7 +743,7 @@ function tiffin_faculty_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Faculty Title */
+  /* Field: Field: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['table'] = 'field_data_field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
@@ -806,14 +806,8 @@ function tiffin_faculty_views_default_views() {
     t('View panes'),
     t('Faculty Landing Page'),
     t('Display all Faculty in a single list'),
-    t('  [field_user_picture]
-  <div class=" faculty-details" data-mh="faculty-details">
-    <span class="profile-name">[title]</span>
-    <span class="profile-position">[field_faculty_title]</span>
-  </div>'),
     t('Faculty Landing Page Pane'),
   );
-
   $export['the_faculty_for_program_pages'] = $view;
 
   return $export;

@@ -13,6 +13,7 @@ function profile2_staff_defaultconfig_features() {
       'field_default_fields' => 'field_default_fields',
       'field_group_info' => 'field_group_info',
       'strongarm' => 'strongarm',
+      'views_default_views' => 'views_default_views',
     ),
   );
 }
@@ -191,7 +192,7 @@ function profile2_staff_defaultconfig_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => 8,
+        'weight' => 1,
       ),
     ),
   );
@@ -303,7 +304,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 38,
+        'weight' => 6,
       ),
     ),
   );
@@ -415,7 +416,7 @@ Use this field to provide a secondary title / position. ',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 44,
+        'weight' => 10,
       ),
     ),
   );
@@ -521,7 +522,7 @@ Use this field to provide a secondary title / position. ',
           ),
         ),
         'type' => 'media_generic',
-        'weight' => 43,
+        'weight' => 6,
       ),
     ),
   );
@@ -631,7 +632,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 5,
+        'weight' => 2,
       ),
     ),
   );
@@ -741,7 +742,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 4,
+        'weight' => 1,
       ),
     ),
   );
@@ -863,7 +864,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => 6,
+        'weight' => 3,
       ),
     ),
   );
@@ -994,7 +995,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => 7,
+        'weight' => 6,
       ),
     ),
   );
@@ -1060,7 +1061,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'email_textfield',
-        'weight' => 39,
+        'weight' => 7,
       ),
     ),
   );
@@ -1170,7 +1171,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 45,
+        'weight' => 11,
       ),
     ),
   );
@@ -1280,7 +1281,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 4,
+        'weight' => 2,
       ),
     ),
   );
@@ -1468,7 +1469,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 34,
+        'weight' => 2,
       ),
     ),
   );
@@ -1574,7 +1575,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 35,
+        'weight' => 3,
       ),
     ),
   );
@@ -1795,7 +1796,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => 33,
+        'weight' => 1,
       ),
     ),
   );
@@ -1875,7 +1876,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => 36,
+        'weight' => 4,
       ),
     ),
   );
@@ -1941,7 +1942,7 @@ Use this field to provide a secondary title / position. ',
           'placeholder' => '',
         ),
         'type' => 'telephone_default',
-        'weight' => 40,
+        'weight' => 8,
       ),
     ),
   );
@@ -2006,13 +2007,12 @@ Use this field to provide a secondary title / position. ',
       'entity_type' => 'profile2',
       'fences_wrapper' => 'div_div_div',
       'field_name' => 'field_position',
-      'label' => 'Primary Position/Title',
+      'label' => 'Position',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
             'plain_text' => 'plain_text',
-            'tweet' => 0,
             'wetkit_html_text' => 'wetkit_html_text',
             'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
           ),
@@ -2022,9 +2022,6 @@ Use this field to provide a secondary title / position. ',
             'formats' => array(
               'plain_text' => array(
                 'weight' => 10,
-              ),
-              'tweet' => array(
-                'weight' => -6,
               ),
               'wetkit_html_text' => array(
                 'weight' => -9,
@@ -2051,7 +2048,111 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 37,
+        'weight' => 5,
+      ),
+    ),
+  );
+
+  // Exported field: 'profile2-staff-field_program_reference'.
+  $fields['profile2-staff-field_program_reference'] = array(
+    'field_config' => array(
+      'active' => 1,
+      'cardinality' => -1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'field_program_reference',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => 0,
+      'module' => 'entityreference',
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'property' => 'title',
+            'type' => 'property',
+          ),
+          'target_bundles' => array(
+            'program' => 'program',
+          ),
+        ),
+        'profile2_private' => FALSE,
+        'target_type' => 'node',
+      ),
+      'translatable' => 0,
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'staff',
+      'default_value' => NULL,
+      'deleted' => 0,
+      'description' => 'Select all of the programs/courses taught by this faculty member.',
+      'display' => array(
+        'account' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'bypass_access' => FALSE,
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => 600,
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => 600,
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 11,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 11,
+        ),
+        'faculty_detail' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'links' => TRUE,
+            'use_content_language' => TRUE,
+            'view_mode' => 'default',
+          ),
+          'type' => 'entityreference_entity_view',
+          'weight' => 10,
+        ),
+      ),
+      'entity_type' => 'profile2',
+      'fences_wrapper' => 'ul',
+      'field_name' => 'field_program_reference',
+      'label' => 'Programs Taught',
+      'required' => 0,
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => 2,
       ),
     ),
   );
@@ -2161,7 +2262,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 3,
+        'weight' => 1,
       ),
     ),
   );
@@ -2203,7 +2304,7 @@ Use this field to provide a secondary title / position. ',
     'field_instance' => array(
       'bundle' => 'staff',
       'deleted' => 0,
-      'description' => 'This image field is to be used as the default image photograph of the staff member (includes Faculty, Staff, Board Member, Cabinet Member, and Counselor).',
+      'description' => '',
       'display' => array(
         'account' => array(
           'label' => 'above',
@@ -2231,7 +2332,7 @@ Use this field to provide a secondary title / position. ',
       'entity_type' => 'profile2',
       'fences_wrapper' => 'div_div_div',
       'field_name' => 'field_user_picture',
-      'label' => 'Standard Photo',
+      'label' => 'Picture',
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
@@ -2240,7 +2341,7 @@ Use this field to provide a secondary title / position. ',
         'file_directory' => 'staff',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '2 MB',
-        'max_resolution' => '400x600',
+        'max_resolution' => '200x312',
         'min_resolution' => '200x312',
         'title_field' => 1,
         'user_register_form' => FALSE,
@@ -2253,21 +2354,14 @@ Use this field to provide a secondary title / position. ',
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'document' => 0,
             'image' => 'image',
-            'video' => 0,
-            'wetkit_video' => 0,
           ),
-          'browser_plugins' => array(
-            'media_default--media_browser_1' => 'media_default--media_browser_1',
-            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-            'media_internet' => 0,
-            'upload' => 'upload',
-          ),
+          'browser_plugins' => array(),
+          'preview_image_style' => 'thumbnail',
+          'progress_indicator' => 'bar',
         ),
         'type' => 'media_generic',
-        'weight' => 42,
+        'weight' => 5,
       ),
     ),
   );
@@ -2294,15 +2388,15 @@ Use this field to provide a secondary title / position. ',
   t('Name Suffix');
   t('Phone');
   t('Picture');
-  t('Primary Position/Title');
+  t('Position');
+  t('Programs Taught');
   t('Salutation');
   t('School');
+  t('Select all of the programs/courses taught by this faculty member.');
   t('Select the department(s) this staff member is assigned to. Each selection will result in their profile displaying on that department\'s staff listing.');
   t('Some Tiffin employees hold two or more positions, such as Board Member and Faculty, or Faculty and Staff.
 
 Use this field to provide a secondary title / position. ');
-  t('Standard Photo');
-  t('This image field is to be used as the default image photograph of the staff member (includes Faculty, Staff, Board Member, Cabinet Member, and Counselor).');
 
   return $fields;
 }
@@ -2340,7 +2434,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_board_member_info|profile2|staff|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2368,7 +2462,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_counselor_info|profile2|staff|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2396,7 +2490,7 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_faculty_info|profile2|staff|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -2416,13 +2510,12 @@ function profile2_staff_defaultconfig_field_group_info() {
       2 => 'field_phone',
       3 => 'field_first_name',
       4 => 'field_last_name',
-      5 => 'field_member_type',
-      6 => 'field_bio_summary',
-      7 => 'field_name_prefix',
-      8 => 'field_name_suffix',
-      9 => 'field_alternate_title',
-      10 => 'field_faculty_degrees_and_certs',
-      11 => 'group_photo_section_separator',
+      5 => 'field_bio_summary',
+      6 => 'field_name_prefix',
+      7 => 'field_name_suffix',
+      8 => 'field_alternate_title',
+      9 => 'field_faculty_degrees_and_certs',
+      10 => 'group_photo_section_separator',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -2435,7 +2528,65 @@ function profile2_staff_defaultconfig_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_general_info|profile2|staff|form'] = $field_group;
+  $field_groups[''] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_photo_section_separator|profile2|staff|form';
+  $field_group->group_name = 'group_photo_section_separator';
+  $field_group->entity_type = 'profile2';
+  $field_group->bundle = 'staff';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_general_info';
+  $field_group->data = array(
+    'label' => 'Photo Upload and Select',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_user_picture',
+      1 => 'field_candid_photo',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Photo Upload and Select',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $field_groups[''] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_profile_member_type|profile2|staff|form';
+  $field_group->group_name = 'group_profile_member_type';
+  $field_group->entity_type = 'profile2';
+  $field_group->bundle = 'staff';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Member Type',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_member_type',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-profile-member-type field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -2443,6 +2594,8 @@ function profile2_staff_defaultconfig_field_group_info() {
   t('Counselor Info');
   t('Faculty Info');
   t('General Information');
+  t('Member Type');
+  t('Photo Upload and Select');
 
   return $field_groups;
 }
@@ -2706,6 +2859,1410 @@ system/ajax/*';
   $strongarm->name = 'colorbox_visibility';
   $strongarm->value = '0';
   $export['colorbox_visibility'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_view_modes';
+  $strongarm->value = array(
+    'profile2' => array(
+      'faculty_detail' => array(
+        'label' => 'Faculty Detail',
+        'custom settings' => 1,
+      ),
+    ),
+  );
+  $export['entity_view_modes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_profile2__staff';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'account' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
+      'faculty_detail' => array(
+        'custom_settings' => TRUE,
+        'view_mode_modal' => array(
+          'target_view_mode' => '',
+          'modal_class' => '',
+          'title_field' => 'field_position',
+        ),
+      ),
+      'default' => array(
+        'view_mode_modal' => array(
+          'target_view_mode' => 'faculty_detail',
+          'modal_class' => '',
+          'title_field' => 'field_position',
+        ),
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '8',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_profile2__staff'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_picture_style';
+  $strongarm->value = 'faculty_220x293';
+  $export['user_picture_style'] = $strongarm;
+
+  return $export;
+}
+
+/**
+ * Implements hook_defaultconfig_views_default_views().
+ */
+function profile2_staff_defaultconfig_views_default_views() {
+  $export = array();
+
+  $view = new view();
+  $view->name = 'faculty_profile';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'profile';
+  $view->human_name = 'Faculty Profile';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Faculty Profile';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  /* Field: Field: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => 'faculty_220x293',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
+  /* Field: Field: Program Reference */
+  $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_program_reference']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_program_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_program_reference']['delta_offset'] = '0';
+  /* Field: Field: School */
+  $handler->display->display_options['fields']['field_academic_school']['id'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['table'] = 'field_data_field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['field'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_school']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_academic_school']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_academic_school']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['field_api_classes'] = TRUE;
+  /* Field: Profile: Bio/Summary */
+  $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['field_api_classes'] = TRUE;
+  /* Field: Profile: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
+  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['field_api_classes'] = TRUE;
+  /* Field: Field: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
+  /* Field: Profile: Label */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'profile';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: Profile: Name Prefix */
+  $handler->display->display_options['fields']['field_name_prefix']['id'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['table'] = 'field_data_field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['field'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_prefix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_name_prefix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_name_prefix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['field_api_classes'] = TRUE;
+  /* Field: Profile: Name Suffix */
+  $handler->display->display_options['fields']['field_name_suffix']['id'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['table'] = 'field_data_field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['field'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_name_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_name_suffix']['field_api_classes'] = TRUE;
+  /* Field: Profile: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['field_api_classes'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class="faculty-cbox-image">[field_user_picture]</div>
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="faculty-cbox-image">[field_user_picture]</div>
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+    <span class="profile-email">[field_email]</span>
+    <span class="profile-phone">[field_phone]</span>
+<span class="profile-phone">[field_academic_school]</span>
+<span class="profile-phone">[field_program_reference]</span>
+<span class="profile-phone">[field_bio_summary]</span>
+  </div>';
+  $handler->display->display_options['fields']['colorbox']['caption'] = '[field_position]';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 0;
+  $handler->display->display_options['fields']['colorbox']['custom_gid'] = '[pid]';
+  $handler->display->display_options['fields']['colorbox']['width'] = '85%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '80%';
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
+  /* Filter criterion: Field: Member Type (field_member_type) */
+  $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
+  $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['value'] = array(
+    'faculty' => 'faculty',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'faculty-profile';
+
+  /* Display: Faculty Detail Pane */
+  $handler = $view->new_display('panel_pane', 'Faculty Detail Pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['display_description'] = 'Default listing of all Tiffin faculty members using Colorbox';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  /* Field: Field: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_class'] = 'staff-cbox-image';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Profile: Name Prefix */
+  $handler->display->display_options['fields']['field_name_prefix']['id'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['table'] = 'field_data_field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['field'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_prefix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['hide_empty'] = TRUE;
+  /* Field: Field: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_default_classes'] = FALSE;
+  /* Field: Profile: Name Suffix */
+  $handler->display->display_options['fields']['field_name_suffix']['id'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['table'] = 'field_data_field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['field'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  /* Field: Profile: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['element_default_classes'] = FALSE;
+  /* Field: Position Trimmed for thumbnail display */
+  $handler->display->display_options['fields']['field_position_1']['id'] = 'field_position_1';
+  $handler->display->display_options['fields']['field_position_1']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position_1']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position_1']['ui_name'] = 'Position Trimmed for thumbnail display';
+  $handler->display->display_options['fields']['field_position_1']['label'] = '';
+  $handler->display->display_options['fields']['field_position_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position_1']['alter']['max_length'] = '85';
+  $handler->display->display_options['fields']['field_position_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_position_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_position_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_position_1']['settings'] = array(
+    'trim_length' => '80',
+  );
+  /* Field: Field: Faculty Degrees and Certificates */
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['id'] = 'field_faculty_degrees_and_certs';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['table'] = 'field_data_field_faculty_degrees_and_certs';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['field'] = 'field_faculty_degrees_and_certs';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['label'] = 'Degrees & Certificates';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['alter']['text'] = '<strong>Degrees & Certificates</strong>
+[field_faculty_degrees_and_certs]';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['empty'] = 'None Provided';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['multi_type'] = 'ul';
+  /* Field: Field: School */
+  $handler->display->display_options['fields']['field_academic_school']['id'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['table'] = 'field_data_field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['field'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_academic_school']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_academic_school']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['delta_offset'] = '0';
+  /* Field: Profile: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
+  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
+  /* Field: Field: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['type'] = 'telephone_link';
+  $handler->display->display_options['fields']['field_phone']['settings'] = array(
+    'title' => '',
+  );
+  /* Field: Profile: Bio/Summary */
+  $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="staff-cbox-wrapper">
+  <div class="staff-cbox-details">
+    <figure class="staff-figure">
+    <span class="profile-image">[field_user_picture]</span>
+      <figcaption class="staff-figcaption">
+        <h3>[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</h3>
+        <span class="profile-email">[field_email]</span><br>
+        <span class="profile-phone">[field_phone]</span><br>
+        <h4>[field_position]</h4>
+        <h5>[field_academic_school]</h5>
+        <h6>Degrees & Certificates</h6>
+        <span class="profile-degrees">[field_faculty_degrees_and_certs]</span>
+      </figcaption>
+  </div>
+<div class="profile-bio">[field_bio_summary]</div>
+</div>';
+  $handler->display->display_options['fields']['colorbox']['caption'] = '[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 0;
+  $handler->display->display_options['fields']['colorbox']['custom_gid'] = '[pid]';
+  $handler->display->display_options['fields']['colorbox']['width'] = '85%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '80%';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position_1]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  /* Sort criterion: Field: First Name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
+
+  /* Display: Staff Detail Pane */
+  $handler = $view->new_display('panel_pane', 'Staff Detail Pane', 'panel_pane_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['display_description'] = 'Default listing of all Tiffin staff members using Colorbox';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  /* Field: Field: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'faculty-staff-image';
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
+  /* Field: Field: Program Reference */
+  $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_program_reference']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_program_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_program_reference']['delta_offset'] = '0';
+  /* Field: Field: School */
+  $handler->display->display_options['fields']['field_academic_school']['id'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['table'] = 'field_data_field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['field'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_school']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_academic_school']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_academic_school']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['field_api_classes'] = TRUE;
+  /* Field: Profile: Bio/Summary */
+  $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['field_api_classes'] = TRUE;
+  /* Field: Profile: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
+  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['field_api_classes'] = TRUE;
+  /* Field: Field: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
+  /* Field: Profile: Label */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'profile';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: Profile: Name Prefix */
+  $handler->display->display_options['fields']['field_name_prefix']['id'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['table'] = 'field_data_field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['field'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_prefix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['hide_empty'] = TRUE;
+  /* Field: Profile: Name Suffix */
+  $handler->display->display_options['fields']['field_name_suffix']['id'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['table'] = 'field_data_field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['field'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  /* Field: Profile: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['field_api_classes'] = TRUE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '[field_user_picture]
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+    <span class="profile-email">[field_email]</span>
+    <span class="profile-phone">[field_phone]</span>
+<span class="profile-school">[field_academic_school]</span>
+<span class="profile-program">[field_program_reference]</span>
+<span class="profile-bio">[field_bio_summary]</span>
+  </div>';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 0;
+  $handler->display->display_options['fields']['colorbox']['custom_gid'] = '[pid]';
+  $handler->display->display_options['fields']['colorbox']['width'] = '85%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '80%';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  /* Sort criterion: Field: First Name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
+  /* Filter criterion: Field: Member Type (field_member_type) */
+  $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
+  $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['value'] = array(
+    'staff' => 'staff',
+  );
+
+  /* Display: Cabinet Detail Pane */
+  $handler = $view->new_display('panel_pane', 'Cabinet Detail Pane', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['display_description'] = 'Default listing of all Tiffin cabinet members using Colorbox';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  /* Field: Field: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'faculty-staff-image';
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
+  /* Field: Field: Program Reference */
+  $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_program_reference']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_program_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_program_reference']['delta_offset'] = '0';
+  /* Field: Field: School */
+  $handler->display->display_options['fields']['field_academic_school']['id'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['table'] = 'field_data_field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['field'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_school']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_academic_school']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_academic_school']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['field_api_classes'] = TRUE;
+  /* Field: Profile: Bio/Summary */
+  $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['field_api_classes'] = TRUE;
+  /* Field: Profile: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
+  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['field_api_classes'] = TRUE;
+  /* Field: Field: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
+  /* Field: Profile: Label */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'profile';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: Profile: Name Prefix */
+  $handler->display->display_options['fields']['field_name_prefix']['id'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['table'] = 'field_data_field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['field'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_prefix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['hide_empty'] = TRUE;
+  /* Field: Profile: Name Suffix */
+  $handler->display->display_options['fields']['field_name_suffix']['id'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['table'] = 'field_data_field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['field'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  /* Field: Profile: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['field_api_classes'] = TRUE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '[field_user_picture]
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+    <span class="profile-email">[field_email]</span>
+    <span class="profile-phone">[field_phone]</span>
+<span class="profile-school">[field_academic_school]</span>
+<span class="profile-program">[field_program_reference]</span>
+<span class="profile-bio">[field_bio_summary]</span>
+  </div>';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 0;
+  $handler->display->display_options['fields']['colorbox']['custom_gid'] = '[pid]';
+  $handler->display->display_options['fields']['colorbox']['width'] = '85%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '80%';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  /* Sort criterion: Field: First Name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
+  /* Filter criterion: Field: Member Type (field_member_type) */
+  $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
+  $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['value'] = array(
+    'cabinet' => 'cabinet',
+  );
+
+  /* Display: Board Detail Pane */
+  $handler = $view->new_display('panel_pane', 'Board Detail Pane', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['display_description'] = 'Default listing of all Tiffin board members using Colorbox';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  /* Field: Field: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'faculty-staff-image';
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
+  /* Field: Field: Program Reference */
+  $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_program_reference']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_program_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_program_reference']['delta_offset'] = '0';
+  /* Field: Field: School */
+  $handler->display->display_options['fields']['field_academic_school']['id'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['table'] = 'field_data_field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['field'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_school']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_academic_school']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_academic_school']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['field_api_classes'] = TRUE;
+  /* Field: Profile: Bio/Summary */
+  $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['field_api_classes'] = TRUE;
+  /* Field: Profile: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
+  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['field_api_classes'] = TRUE;
+  /* Field: Field: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
+  /* Field: Profile: Label */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'profile';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: Profile: Name Prefix */
+  $handler->display->display_options['fields']['field_name_prefix']['id'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['table'] = 'field_data_field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['field'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_prefix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['hide_empty'] = TRUE;
+  /* Field: Profile: Name Suffix */
+  $handler->display->display_options['fields']['field_name_suffix']['id'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['table'] = 'field_data_field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['field'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  /* Field: Profile: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['field_api_classes'] = TRUE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '[field_user_picture]
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+    <span class="profile-email">[field_email]</span>
+    <span class="profile-phone">[field_phone]</span>
+<span class="profile-school">[field_academic_school]</span>
+<span class="profile-program">[field_program_reference]</span>
+<span class="profile-bio">[field_bio_summary]</span>
+  </div>';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 0;
+  $handler->display->display_options['fields']['colorbox']['custom_gid'] = '[pid]';
+  $handler->display->display_options['fields']['colorbox']['width'] = '85%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '80%';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  /* Sort criterion: Field: First Name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
+  /* Filter criterion: Field: Member Type (field_member_type) */
+  $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
+  $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['value'] = array(
+    'cabinet' => 'cabinet',
+  );
+
+  /* Display: Counselor Detail Pane */
+  $handler = $view->new_display('panel_pane', 'Counselor Detail Pane', 'panel_pane_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['display_description'] = 'Default listing of all Tiffin counselors using Colorbox';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Profile: Profile ID */
+  $handler->display->display_options['fields']['pid']['id'] = 'pid';
+  $handler->display->display_options['fields']['pid']['table'] = 'profile';
+  $handler->display->display_options['fields']['pid']['field'] = 'pid';
+  $handler->display->display_options['fields']['pid']['label'] = '';
+  $handler->display->display_options['fields']['pid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['pid']['element_label_colon'] = FALSE;
+  /* Field: Field: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_last_name']['element_default_classes'] = FALSE;
+  /* Field: Field: Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['element_class'] = 'colorbox-inline';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'faculty-staff-image';
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
+  /* Field: Field: Program Reference */
+  $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
+  $handler->display->display_options['fields']['field_program_reference']['label'] = '';
+  $handler->display->display_options['fields']['field_program_reference']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_program_reference']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_program_reference']['settings'] = array(
+    'bypass_access' => 0,
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_program_reference']['delta_offset'] = '0';
+  /* Field: Field: School */
+  $handler->display->display_options['fields']['field_academic_school']['id'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['table'] = 'field_data_field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['field'] = 'field_academic_school';
+  $handler->display->display_options['fields']['field_academic_school']['label'] = '';
+  $handler->display->display_options['fields']['field_academic_school']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_academic_school']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_academic_school']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_academic_school']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 1,
+    'use_content_language' => 1,
+  );
+  $handler->display->display_options['fields']['field_academic_school']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_academic_school']['field_api_classes'] = TRUE;
+  /* Field: Profile: Bio/Summary */
+  $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bio_summary']['field_api_classes'] = TRUE;
+  /* Field: Profile: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['label'] = '';
+  $handler->display->display_options['fields']['field_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_email']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_email']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_email']['field_api_classes'] = TRUE;
+  /* Field: Field: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_phone']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_phone']['field_api_classes'] = TRUE;
+  /* Field: Profile: Label */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'profile';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: Profile: Name Prefix */
+  $handler->display->display_options['fields']['field_name_prefix']['id'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['table'] = 'field_data_field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['field'] = 'field_name_prefix';
+  $handler->display->display_options['fields']['field_name_prefix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_prefix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_prefix']['hide_empty'] = TRUE;
+  /* Field: Profile: Name Suffix */
+  $handler->display->display_options['fields']['field_name_suffix']['id'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['table'] = 'field_data_field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['field'] = 'field_name_suffix';
+  $handler->display->display_options['fields']['field_name_suffix']['label'] = '';
+  $handler->display->display_options['fields']['field_name_suffix']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  /* Field: Profile: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_position']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_position']['field_api_classes'] = TRUE;
+  /* Field: Colorbox: Colorbox trigger */
+  $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
+  $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['colorbox']['trigger_field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['colorbox']['popup'] = '[field_user_picture]
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+    <span class="profile-email">[field_email]</span>
+    <span class="profile-phone">[field_phone]</span>
+<span class="profile-school">[field_academic_school]</span>
+<span class="profile-program">[field_program_reference]</span>
+<span class="profile-bio">[field_bio_summary]</span>
+  </div>';
+  $handler->display->display_options['fields']['colorbox']['gid'] = 0;
+  $handler->display->display_options['fields']['colorbox']['custom_gid'] = '[pid]';
+  $handler->display->display_options['fields']['colorbox']['width'] = '85%';
+  $handler->display->display_options['fields']['colorbox']['height'] = '80%';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  /* Sort criterion: Field: First Name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Profile: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'profile';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff' => 'staff',
+  );
+  /* Filter criterion: Field: Member Type (field_member_type) */
+  $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
+  $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
+  $handler->display->display_options['filters']['field_member_type_value']['value'] = array(
+    'cabinet' => 'cabinet',
+  );
+  $translatables['faculty_profile'] = array(
+    t('Master'),
+    t('Faculty Profile'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('.'),
+    t(','),
+    t('  <div class="faculty-cbox-image">[field_user_picture]</div>
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>'),
+    t('Page'),
+    t('Faculty Detail Pane'),
+    t('<none>'),
+    t('Default listing of all Tiffin faculty members using Colorbox'),
+    t('Degrees & Certificates'),
+    t('<strong>Degrees & Certificates</strong>
+[field_faculty_degrees_and_certs]'),
+    t('None Provided'),
+    t('  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position_1]</span>
+  </div>'),
+    t('View panes'),
+    t('Staff Detail Pane'),
+    t('Default listing of all Tiffin staff members using Colorbox'),
+    t('
+  <div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-position">[field_position]</span>
+  </div>'),
+    t('Cabinet Detail Pane'),
+    t('Default listing of all Tiffin cabinet members using Colorbox'),
+    t('Board Detail Pane'),
+    t('Default listing of all Tiffin board members using Colorbox'),
+    t('Counselor Detail Pane'),
+    t('Default listing of all Tiffin counselors using Colorbox'),
+  );
+  $export['faculty_profile'] = $view;
 
   return $export;
 }

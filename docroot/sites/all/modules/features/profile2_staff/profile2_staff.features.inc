@@ -22,3 +22,19 @@ function profile2_staff_ctools_plugin_api($module = NULL, $api = NULL) {
 function profile2_staff_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
+
+/**
+ * Implements hook_default_profile2_type().
+ */
+function profile2_staff_default_profile2_type() {
+  $items = array();
+  $items['staff'] = entity_import('profile2_type', '{
+    "userCategory" : true,
+    "userView" : true,
+    "type" : "staff",
+    "label" : "Staff",
+    "weight" : "0",
+    "data" : { "registration" : 0, "use_page" : 1 }
+  }');
+  return $items;
+}

@@ -278,7 +278,7 @@ function tiffin_faculty_default_page_manager_pages() {
   $pane->panel = 'pearson_first';
   $pane->type = 'views_panes';
   $pane->subtype = 'the_faculty_for_program_pages-faculty_landing_pane';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'view_settings' => 'fields',
@@ -297,6 +297,29 @@ function tiffin_faculty_default_page_manager_pages() {
   $display->content['new-0d071666-71be-4879-bc2e-9a09fe05512c'] = $pane;
   $display->panels['pearson_first'][1] = 'new-0d071666-71be-4879-bc2e-9a09fe05512c';
   $pane = new stdClass();
+  $pane->pid = 'new-e7d5c182-f73c-4477-9050-eee617a34d52';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'faculty_profile-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'account',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'e7d5c182-f73c-4477-9050-eee617a34d52';
+  $display->content['new-e7d5c182-f73c-4477-9050-eee617a34d52'] = $pane;
+  $display->panels['pearson_first'][2] = 'new-e7d5c182-f73c-4477-9050-eee617a34d52';
+  $pane = new stdClass();
   $pane->pid = 'new-b42a512c-47c4-471d-a729-208a896b2734';
   $pane->panel = 'pearson_first';
   $pane->type = 'panels_mini';
@@ -314,11 +337,11 @@ function tiffin_faculty_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'b42a512c-47c4-471d-a729-208a896b2734';
   $display->content['new-b42a512c-47c4-471d-a729-208a896b2734'] = $pane;
-  $display->panels['pearson_first'][2] = 'new-b42a512c-47c4-471d-a729-208a896b2734';
+  $display->panels['pearson_first'][3] = 'new-b42a512c-47c4-471d-a729-208a896b2734';
   $pane = new stdClass();
   $pane->pid = 'new-06285cf6-e996-46b1-8f00-aa92c7813460';
   $pane->panel = 'pearson_second';

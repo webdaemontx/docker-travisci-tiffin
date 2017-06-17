@@ -52,7 +52,7 @@ function profile2_staff_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 1,
     ),
   );
 
@@ -133,7 +133,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 6,
     ),
   );
 
@@ -215,7 +215,7 @@ Use this field to provide a secondary title / position. ',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 44,
+      'weight' => 10,
     ),
   );
 
@@ -287,7 +287,7 @@ Use this field to provide a secondary title / position. ',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 43,
+      'weight' => 6,
     ),
   );
 
@@ -366,7 +366,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 2,
     ),
   );
 
@@ -445,7 +445,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 1,
     ),
   );
 
@@ -490,7 +490,99 @@ Use this field to provide a secondary title / position. ',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_department'.
+  $field_instances['profile2-staff-field_department'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the department(s) this staff member is assigned to. Each selection will result in their profile displaying on that department\'s staff listing.',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_department',
+    'label' => 'Department',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_email'.
+  $field_instances['profile2-staff-field_email'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 2,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 7,
     ),
   );
 
@@ -569,7 +661,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 45,
+      'weight' => 11,
     ),
   );
 
@@ -648,7 +740,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -694,6 +786,156 @@ Use this field to provide a secondary title / position. ',
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_first_name'.
+  $field_instances['profile2-staff-field_first_name'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_last_name'.
+  $field_instances['profile2-staff-field_last_name'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
     ),
   );
 
@@ -831,7 +1073,7 @@ Use this field to provide a secondary title / position. ',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 33,
+      'weight' => 1,
     ),
   );
 
@@ -878,7 +1120,186 @@ Use this field to provide a secondary title / position. ',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 36,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_phone'.
+  $field_instances['profile2-staff-field_phone'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 3,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_phone',
+    'label' => 'Phone',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'telephone',
+      'settings' => array(
+        'placeholder' => '',
+      ),
+      'type' => 'telephone_default',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_position'.
+  $field_instances['profile2-staff-field_position'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_position',
+    'label' => 'Position',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'plain_text' => 'plain_text',
+          'wetkit_html_text' => 'wetkit_html_text',
+          'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wetkit_html_text' => array(
+              'weight' => -9,
+            ),
+            'wetkit_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_program_reference'.
+  $field_instances['profile2-staff-field_program_reference'] = array(
+    'bundle' => 'staff',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select all of the programs/courses taught by this faculty member.',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'colorbox_node_classes' => '',
+          'colorbox_node_height' => 600,
+          'colorbox_node_link' => FALSE,
+          'colorbox_node_width' => 600,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 11,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => TRUE,
+          'use_content_language' => TRUE,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'ul',
+    'field_name' => 'field_program_reference',
+    'label' => 'Programs Taught',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
   );
 
@@ -957,7 +1378,72 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'profile2-staff-field_user_picture'.
+  $field_instances['profile2-staff-field_user_picture'] = array(
+    'bundle' => 'staff',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'account' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+      'faculty_detail' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'profile2',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_user_picture',
+    'label' => 'Picture',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'staff',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '2 MB',
+      'max_resolution' => '200x312',
+      'min_resolution' => '200x312',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'bar',
+      ),
+      'type' => 'media_generic',
+      'weight' => 5,
     ),
   );
 
@@ -971,14 +1457,24 @@ Use this field to provide a secondary title / position. ',
   t('Company Name');
   t('Company State');
   t('Degrees and Certificates');
+  t('Department');
+  t('Email');
   t('Favorite Travel Spots');
+  t('First Name');
   t('Hometown');
+  t('Last Name');
   t('Manual Order');
   t('Member Type');
   t('Name Prefix');
   t('Name Suffix');
+  t('Phone');
+  t('Picture');
+  t('Position');
+  t('Programs Taught');
   t('Salutation');
   t('School');
+  t('Select all of the programs/courses taught by this faculty member.');
+  t('Select the department(s) this staff member is assigned to. Each selection will result in their profile displaying on that department\'s staff listing.');
   t('Some Tiffin employees hold two or more positions, such as Board Member and Faculty, or Faculty and Staff.
 
 Use this field to provide a secondary title / position. ');

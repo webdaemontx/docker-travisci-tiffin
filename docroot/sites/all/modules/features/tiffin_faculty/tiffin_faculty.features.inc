@@ -79,19 +79,3 @@ function tiffin_faculty_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
-
-/**
- * Implements hook_default_profile2_type().
- */
-function tiffin_faculty_default_profile2_type() {
-  $items = array();
-  $items['staff'] = entity_import('profile2_type', '{
-    "userCategory" : true,
-    "userView" : true,
-    "type" : "staff",
-    "label" : "Staff",
-    "weight" : "0",
-    "data" : { "registration" : 0, "use_page" : 1 }
-  }');
-  return $items;
-}
