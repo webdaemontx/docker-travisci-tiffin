@@ -100,6 +100,7 @@ features[field_group][] = group_board_member_info|profile2|staff|form
 features[field_group][] = group_counselor_info|profile2|staff|form
 features[field_group][] = group_faculty_info|profile2|staff|form
 features[field_group][] = group_general_info|profile2|staff|form
+features[field_group][] = group_photo_section_separator|profile2|staff|form
 features[field_instance][] = profile2-staff-field_academic_school
 features[field_instance][] = profile2-staff-field_alternate_title
 features[field_instance][] = profile2-staff-field_bio_summary

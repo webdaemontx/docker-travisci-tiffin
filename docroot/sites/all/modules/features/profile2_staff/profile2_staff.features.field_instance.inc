@@ -215,7 +215,7 @@ Use this field to provide a secondary title / position. ',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 43,
+      'weight' => 44,
     ),
   );
 
@@ -287,7 +287,7 @@ Use this field to provide a secondary title / position. ',
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 42,
+      'weight' => 43,
     ),
   );
 
@@ -569,7 +569,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 45,
     ),
   );
 
@@ -693,7 +693,7 @@ Use this field to provide a secondary title / position. ',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -741,7 +741,7 @@ Use this field to provide a secondary title / position. ',
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 

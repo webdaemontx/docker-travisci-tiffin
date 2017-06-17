@@ -26,6 +26,7 @@ function profile2_staff_strongarm() {
     'group_counselor_info|profile2|staff|form' => FALSE,
     'group_board_member_info|profile2|staff|form' => FALSE,
     'group_faculty_info_tab|profile2|staff|form' => TRUE,
+    'group_photo_section_separator|profile2|staff|form' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -72,7 +73,7 @@ function profile2_staff_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
       ),
       'display' => array(),

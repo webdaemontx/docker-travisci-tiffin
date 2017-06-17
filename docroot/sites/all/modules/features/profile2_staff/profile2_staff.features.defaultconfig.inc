@@ -51,7 +51,7 @@ function profile2_staff_defaultconfig_field_default_fields() {
         'entity_translation_sync' => array(
           0 => 'fid',
         ),
-        'profile2_private' => FALSE,
+        'profile2_private' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => 0,
@@ -415,7 +415,7 @@ Use this field to provide a secondary title / position. ',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 43,
+        'weight' => 44,
       ),
     ),
   );
@@ -521,7 +521,7 @@ Use this field to provide a secondary title / position. ',
           ),
         ),
         'type' => 'media_generic',
-        'weight' => 42,
+        'weight' => 43,
       ),
     ),
   );
@@ -994,7 +994,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
   );
@@ -1060,7 +1060,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'email_textfield',
-        'weight' => 3,
+        'weight' => 39,
       ),
     ),
   );
@@ -1170,7 +1170,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 7,
+        'weight' => 45,
       ),
     ),
   );
@@ -1362,7 +1362,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
   );
@@ -1468,7 +1468,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 0,
+        'weight' => 34,
       ),
     ),
   );
@@ -1574,7 +1574,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 1,
+        'weight' => 35,
       ),
     ),
   );
@@ -1641,7 +1641,7 @@ Use this field to provide a secondary title / position. ',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
   );
@@ -1941,7 +1941,7 @@ Use this field to provide a secondary title / position. ',
           'placeholder' => '',
         ),
         'type' => 'telephone_default',
-        'weight' => 4,
+        'weight' => 40,
       ),
     ),
   );
@@ -2006,12 +2006,13 @@ Use this field to provide a secondary title / position. ',
       'entity_type' => 'profile2',
       'fences_wrapper' => 'div_div_div',
       'field_name' => 'field_position',
-      'label' => 'Position',
+      'label' => 'Primary Position/Title',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
             'plain_text' => 'plain_text',
+            'tweet' => 0,
             'wetkit_html_text' => 'wetkit_html_text',
             'wetkit_wysiwyg_text' => 'wetkit_wysiwyg_text',
           ),
@@ -2021,6 +2022,9 @@ Use this field to provide a secondary title / position. ',
             'formats' => array(
               'plain_text' => array(
                 'weight' => 10,
+              ),
+              'tweet' => array(
+                'weight' => -6,
               ),
               'wetkit_html_text' => array(
                 'weight' => -9,
@@ -2047,7 +2051,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 2,
+        'weight' => 37,
       ),
     ),
   );
@@ -2190,7 +2194,7 @@ Use this field to provide a secondary title / position. ',
         'entity_translation_sync' => array(
           0 => 'fid',
         ),
-        'profile2_private' => FALSE,
+        'profile2_private' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => 0,
@@ -2199,7 +2203,7 @@ Use this field to provide a secondary title / position. ',
     'field_instance' => array(
       'bundle' => 'staff',
       'deleted' => 0,
-      'description' => '',
+      'description' => 'This image field is to be used as the default image photograph of the staff member (includes Faculty, Staff, Board Member, Cabinet Member, and Counselor).',
       'display' => array(
         'account' => array(
           'label' => 'above',
@@ -2227,7 +2231,7 @@ Use this field to provide a secondary title / position. ',
       'entity_type' => 'profile2',
       'fences_wrapper' => 'div_div_div',
       'field_name' => 'field_user_picture',
-      'label' => 'Picture',
+      'label' => 'Standard Photo',
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
@@ -2236,20 +2240,34 @@ Use this field to provide a secondary title / position. ',
         'file_directory' => 'staff',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '2 MB',
-        'max_resolution' => '200x312',
+        'max_resolution' => '400x600',
         'min_resolution' => '200x312',
         'title_field' => 1,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'image',
+        'module' => 'media',
         'settings' => array(
-          'preview_image_style' => 'thumbnail',
-          'progress_indicator' => 'bar',
+          'allowed_schemes' => array(
+            'public' => 'public',
+          ),
+          'allowed_types' => array(
+            'audio' => 0,
+            'document' => 0,
+            'image' => 'image',
+            'video' => 0,
+            'wetkit_video' => 0,
+          ),
+          'browser_plugins' => array(
+            'media_default--media_browser_1' => 'media_default--media_browser_1',
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+            'media_internet' => 0,
+            'upload' => 'upload',
+          ),
         ),
-        'type' => 'image_image',
-        'weight' => 5,
+        'type' => 'media_generic',
+        'weight' => 42,
       ),
     ),
   );
@@ -2276,13 +2294,15 @@ Use this field to provide a secondary title / position. ',
   t('Name Suffix');
   t('Phone');
   t('Picture');
-  t('Position');
+  t('Primary Position/Title');
   t('Salutation');
   t('School');
   t('Select the department(s) this staff member is assigned to. Each selection will result in their profile displaying on that department\'s staff listing.');
   t('Some Tiffin employees hold two or more positions, such as Board Member and Faculty, or Faculty and Staff.
 
 Use this field to provide a secondary title / position. ');
+  t('Standard Photo');
+  t('This image field is to be used as the default image photograph of the staff member (includes Faculty, Staff, Board Member, Cabinet Member, and Counselor).');
 
   return $fields;
 }
@@ -2304,7 +2324,7 @@ function profile2_staff_defaultconfig_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Board Member Info',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_company_name',
       1 => 'field_company_city',
@@ -2333,7 +2353,7 @@ function profile2_staff_defaultconfig_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Counselor Info',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_staff_hometown',
       1 => 'field_favorite_travel_spots',
@@ -2361,11 +2381,10 @@ function profile2_staff_defaultconfig_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Faculty Info',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_academic_school',
       1 => 'field_program_reference',
-      2 => 'field_faculty_degrees_and_certs',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -2390,20 +2409,20 @@ function profile2_staff_defaultconfig_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'General Information',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'field_position',
       1 => 'field_email',
       2 => 'field_phone',
-      3 => 'field_user_picture',
-      4 => 'field_first_name',
-      5 => 'field_last_name',
-      6 => 'field_member_type',
-      7 => 'field_bio_summary',
-      8 => 'field_name_prefix',
-      9 => 'field_name_suffix',
-      10 => 'field_candid_photo',
-      11 => 'field_alternate_title',
+      3 => 'field_first_name',
+      4 => 'field_last_name',
+      5 => 'field_member_type',
+      6 => 'field_bio_summary',
+      7 => 'field_name_prefix',
+      8 => 'field_name_suffix',
+      9 => 'field_alternate_title',
+      10 => 'field_faculty_degrees_and_certs',
+      11 => 'group_photo_section_separator',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
