@@ -166,7 +166,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_name_suffix']['field_api_classes'] = TRUE;
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -234,7 +234,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['path'] = 'faculty-profile';
 
   /* Display: Faculty Detail Pane */
-  $handler = $view->new_display('panel_pane', 'Faculty Detail Pane', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'Faculty Detail Pane', 'profile2_staff_faculty_pane');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['display_description'] = 'Default listing of all Tiffin faculty members using Colorbox';
@@ -245,8 +245,9 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -275,7 +276,21 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'faculty_220x293',
+    'image_link' => '',
+  );
+  /* Field: Picture: Full Size */
+  $handler->display->display_options['fields']['field_user_picture_1']['id'] = 'field_user_picture_1';
+  $handler->display->display_options['fields']['field_user_picture_1']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture_1']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture_1']['ui_name'] = 'Picture: Full Size';
+  $handler->display->display_options['fields']['field_user_picture_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture_1']['settings'] = array(
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   /* Field: Profile: Name Prefix */
@@ -313,7 +328,19 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Full Name (trimmed) */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Full Name (trimmed)';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Full Name';
+  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['max_length'] = '24';
+  $handler->display->display_options['fields']['nothing_1']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -392,9 +419,10 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
-  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = 'Bio';
   $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_bio_summary']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_type'] = 'h2';
   $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
   /* Field: Colorbox: Colorbox trigger */
@@ -402,6 +430,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['colorbox']['hide_empty'] = TRUE;
@@ -409,7 +438,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="staff-cbox-wrapper">
   <div class="staff-cbox-details">
     <figure class="staff-figure">
-    <span class="profile-image">[field_user_picture]</span>
+    <span class="profile-image">[field_user_picture_1]</span>
       <figcaption class="staff-figcaption">
         <h3>[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</h3>
         <span class="profile-email">[field_email]</span><br>
@@ -420,7 +449,10 @@ function profile2_staff_views_default_views() {
         <span class="profile-degrees">[field_faculty_degrees_and_certs]</span>
       </figcaption>
   </div>
-<div class="profile-bio">[field_bio_summary]</div>
+<div class="profile-bio">
+<h3>[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix] Bio</h3>
+[field_bio_summary]
+</div>
 </div>';
   $handler->display->display_options['fields']['colorbox']['caption'] = '[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]';
   $handler->display->display_options['fields']['colorbox']['gid'] = 0;
@@ -432,8 +464,9 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class=" faculty-details" data-mh="faculty-details">
-    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[colorbox]  
+<div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[nothing_1]</span>
     <span class="profile-position">[field_position_1]</span>
   </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
@@ -586,7 +619,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -794,7 +827,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -1002,7 +1035,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -1210,7 +1243,7 @@ function profile2_staff_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
-  /* Field: Profile: Position */
+  /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
@@ -1308,12 +1341,16 @@ function profile2_staff_views_default_views() {
     t('Faculty Detail Pane'),
     t('<none>'),
     t('Default listing of all Tiffin faculty members using Colorbox'),
+    t('Full Name'),
+    t('[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]'),
     t('Degrees & Certificates'),
     t('<strong>Degrees & Certificates</strong>
 [field_faculty_degrees_and_certs]'),
     t('None Provided'),
-    t('  <div class=" faculty-details" data-mh="faculty-details">
-    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    t('Bio'),
+    t('[colorbox]  
+<div class=" faculty-details" data-mh="faculty-details">
+    <span class="profile-name">[nothing_1]</span>
     <span class="profile-position">[field_position_1]</span>
   </div>'),
     t('View panes'),
@@ -1331,6 +1368,7 @@ function profile2_staff_views_default_views() {
     t('Counselor Detail Pane'),
     t('Default listing of all Tiffin counselors using Colorbox'),
   );
+
   $export['faculty_profile'] = $view;
 
   return $export;
