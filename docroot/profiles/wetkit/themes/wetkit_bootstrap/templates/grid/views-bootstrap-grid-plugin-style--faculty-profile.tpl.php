@@ -15,13 +15,13 @@
 ?>
 
 <div id="views-bootstrap-grid-<?php print $id ?>" class="<?php print $classes ?>">
-  <div class="flex-container">
+  <div class="grid-container">
     <?php if ($options['alignment'] == 'horizontal'): ?>
 
       <?php foreach ($items as $row): ?>
         <div class="row">
           <?php foreach ($row['content'] as $column): ?>
-            <div class="col-xs-4 col-lg-2">
+            <div class="col-xs-4 col">
                 <div class="profile-card">
                   <?php print $column['content'] ?>
                 </div>
@@ -32,7 +32,7 @@
 
     <?php else: ?>
 
-      <div class="row morethan4">
+      <div class="row">
         <?php foreach ($items as $column): ?>
           <div class="col col-lg-<?php print $column_type ?>">
             <?php foreach ($column['content'] as $row): ?>

@@ -165,9 +165,10 @@ function profile2_staff_defaultconfig_field_default_fields() {
           'weight' => 10,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => 10,
         ),
         'faculty_detail' => array(
@@ -176,6 +177,13 @@ function profile2_staff_defaultconfig_field_default_fields() {
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
           'weight' => 9,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_plain',
+          'weight' => 10,
         ),
       ),
       'entity_type' => 'profile2',
@@ -243,17 +251,24 @@ Use this field to provide a secondary title / position. ',
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 18,
+          'weight' => 7,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 7,
         ),
       ),
       'entity_type' => 'profile2',
@@ -354,9 +369,10 @@ Use this field to provide a secondary title / position. ',
         ),
         'default' => array(
           'label' => 'above',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 13,
+          'type' => 'text_default',
+          'weight' => 18,
         ),
         'faculty_detail' => array(
           'label' => 'above',
@@ -364,6 +380,13 @@ Use this field to provide a secondary title / position. ',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 12,
+        ),
+        'page' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 18,
         ),
       ),
       'entity_type' => 'profile2',
@@ -471,16 +494,42 @@ Use this field to provide a secondary title / position. ',
           'weight' => 19,
         ),
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 15,
+          'label' => 'hidden',
+          'module' => 'colorbox',
+          'settings' => array(
+            'colorbox_caption' => 'auto',
+            'colorbox_caption_custom' => '',
+            'colorbox_gallery' => 'post',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_multivalue_index' => NULL,
+            'colorbox_node_style' => '',
+            'colorbox_node_style_first' => '',
+          ),
+          'type' => 'colorbox',
+          'weight' => 1,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 14,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'colorbox',
+          'settings' => array(
+            'colorbox_caption' => 'auto',
+            'colorbox_caption_custom' => '',
+            'colorbox_gallery' => 'post',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_multivalue_index' => NULL,
+            'colorbox_node_style' => '',
+            'colorbox_node_style_first' => '',
+          ),
+          'type' => 'colorbox',
+          'weight' => 1,
         ),
       ),
       'entity_type' => 'profile2',
@@ -571,17 +620,24 @@ Use this field to provide a secondary title / position. ',
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 19,
+          'weight' => 14,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 14,
         ),
       ),
       'entity_type' => 'profile2',
@@ -682,16 +738,24 @@ Use this field to provide a secondary title / position. ',
           'weight' => 8,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 8,
+          'type' => 'text_default',
+          'weight' => 13,
         ),
         'faculty_detail' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 16,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 13,
         ),
       ),
       'entity_type' => 'profile2',
@@ -837,17 +901,24 @@ Use this field to provide a secondary title / position. ',
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 20,
+          'weight' => 15,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 15,
         ),
       ),
       'entity_type' => 'profile2',
@@ -969,16 +1040,21 @@ Use this field to provide a secondary title / position. ',
         ),
         'default' => array(
           'label' => 'hidden',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 0,
+          'type' => 'hidden',
+          'weight' => 20,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 20,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1036,13 +1112,20 @@ Use this field to provide a secondary title / position. ',
           'module' => 'email',
           'settings' => array(),
           'type' => 'email_default',
-          'weight' => 2,
+          'weight' => 8,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'email',
+          'settings' => array(),
+          'type' => 'email_default',
+          'weight' => 8,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1114,13 +1197,20 @@ Use this field to provide a secondary title / position. ',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 21,
+          'weight' => 16,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 16,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1221,16 +1311,32 @@ Use this field to provide a secondary title / position. ',
           'weight' => 15,
         ),
         'default' => array(
-          'label' => 'inline',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 14,
+          'label' => 'above',
+          'module' => 'title',
+          'settings' => array(
+            'title_class' => '',
+            'title_link' => '',
+            'title_style' => '',
+          ),
+          'type' => 'title_linked',
+          'weight' => 12,
         ),
         'faculty_detail' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 13,
+        ),
+        'page' => array(
+          'label' => 'above',
+          'module' => 'title',
+          'settings' => array(
+            'title_class' => '',
+            'title_link' => '',
+            'title_style' => '',
+          ),
+          'type' => 'title_linked',
+          'weight' => 12,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1340,13 +1446,19 @@ Use this field to provide a secondary title / position. ',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 16,
+          'weight' => 21,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 15,
+        ),
+        'page' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 21,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1412,17 +1524,24 @@ Use this field to provide a secondary title / position. ',
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 5,
+          'weight' => 3,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 3,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1518,17 +1637,24 @@ Use this field to provide a secondary title / position. ',
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 6,
+          'weight' => 4,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 4,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1615,13 +1741,19 @@ Use this field to provide a secondary title / position. ',
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 17,
+          'weight' => 22,
         ),
         'faculty_detail' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 18,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 22,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1703,6 +1835,12 @@ Use this field to provide a secondary title / position. ',
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'page' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'profile2',
       'field_name' => 'field_member_type',
@@ -1772,7 +1910,7 @@ Use this field to provide a secondary title / position. ',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 1,
+          'weight' => 2,
         ),
         'faculty_detail' => array(
           'label' => 'hidden',
@@ -1780,6 +1918,13 @@ Use this field to provide a secondary title / position. ',
           'settings' => array(),
           'type' => 'list_default',
           'weight' => 1,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 2,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1852,7 +1997,7 @@ Use this field to provide a secondary title / position. ',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 4,
+          'weight' => 5,
         ),
         'faculty_detail' => array(
           'label' => 'hidden',
@@ -1860,6 +2005,13 @@ Use this field to provide a secondary title / position. ',
           'settings' => array(),
           'type' => 'list_default',
           'weight' => 4,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 5,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1917,13 +2069,20 @@ Use this field to provide a secondary title / position. ',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_plain',
-          'weight' => 3,
+          'weight' => 9,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_plain',
+          'weight' => 9,
         ),
       ),
       'entity_type' => 'profile2',
@@ -1995,13 +2154,20 @@ Use this field to provide a secondary title / position. ',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => 6,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 6,
         ),
       ),
       'entity_type' => 'profile2',
@@ -2126,9 +2292,14 @@ Use this field to provide a secondary title / position. ',
         ),
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 11,
+          'module' => 'entityreference',
+          'settings' => array(
+            'links' => TRUE,
+            'use_content_language' => TRUE,
+            'view_mode' => 'default',
+          ),
+          'type' => 'entityreference_entity_view',
+          'weight' => 17,
         ),
         'faculty_detail' => array(
           'label' => 'above',
@@ -2140,6 +2311,17 @@ Use this field to provide a secondary title / position. ',
           ),
           'type' => 'entityreference_entity_view',
           'weight' => 10,
+        ),
+        'page' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'links' => TRUE,
+            'use_content_language' => TRUE,
+            'view_mode' => 'default',
+          ),
+          'type' => 'entityreference_entity_view',
+          'weight' => 17,
         ),
       ),
       'entity_type' => 'profile2',
@@ -2206,15 +2388,23 @@ Use this field to provide a secondary title / position. ',
           'weight' => 13,
         ),
         'default' => array(
-          'label' => 'inline',
+          'label' => 'above',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 12,
+          'type' => 'text_default',
+          'weight' => 11,
         ),
         'faculty_detail' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => 11,
+        ),
+        'page' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
           'weight' => 11,
         ),
       ),
@@ -2318,18 +2508,40 @@ Use this field to provide a secondary title / position. ',
         ),
         'default' => array(
           'label' => 'hidden',
-          'module' => 'image',
+          'module' => 'colorbox',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'colorbox_caption' => 'custom',
+            'colorbox_caption_custom' => '[profile2:field_name_prefix] [profile2:field-first-name] [profile2:field_last_name]  [profile2:field-name-suffix]',
+            'colorbox_gallery' => 'post',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_multivalue_index' => NULL,
+            'colorbox_node_style' => '',
+            'colorbox_node_style_first' => '',
           ),
-          'type' => 'image',
-          'weight' => 4,
+          'type' => 'colorbox',
+          'weight' => 0,
         ),
         'faculty_detail' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'page' => array(
+          'label' => 'hidden',
+          'module' => 'colorbox',
+          'settings' => array(
+            'colorbox_caption' => 'custom',
+            'colorbox_caption_custom' => '[profile2:field_name_prefix] [profile2:field-first-name] [profile2:field_last_name]  [profile2:field-name-suffix]',
+            'colorbox_gallery' => 'post',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_multivalue_index' => NULL,
+            'colorbox_node_style' => '',
+            'colorbox_node_style_first' => '',
+          ),
+          'type' => 'colorbox',
           'weight' => 0,
         ),
       ),
@@ -2900,7 +3112,12 @@ system/ajax/*';
         'custom_settings' => FALSE,
       ),
       'page' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
+        'view_mode_modal' => array(
+          'target_view_mode' => '',
+          'modal_class' => '',
+          'title_field' => 'field_position',
+        ),
       ),
       'teaser' => array(
         'custom_settings' => FALSE,
@@ -2923,7 +3140,7 @@ system/ajax/*';
         'view_mode_modal' => array(
           'target_view_mode' => 'faculty_detail',
           'modal_class' => '',
-          'title_field' => 'field_position',
+          'title_field' => 'field_user_picture',
         ),
       ),
     ),
@@ -3016,7 +3233,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Programs Taught */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -3189,8 +3406,9 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -3219,7 +3437,21 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'faculty_220x293',
+    'image_link' => '',
+  );
+  /* Field: Picture: Full Size */
+  $handler->display->display_options['fields']['field_user_picture_1']['id'] = 'field_user_picture_1';
+  $handler->display->display_options['fields']['field_user_picture_1']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture_1']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture_1']['ui_name'] = 'Picture: Full Size';
+  $handler->display->display_options['fields']['field_user_picture_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture_1']['settings'] = array(
+    'image_style' => 'faculty',
     'image_link' => '',
   );
   /* Field: Profile: Name Prefix */
@@ -3265,7 +3497,8 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['label'] = 'Full Name';
   $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]';
-  $handler->display->display_options['fields']['nothing_1']['alter']['max_length'] = '29';
+  $handler->display->display_options['fields']['nothing_1']['alter']['max_length'] = '24';
+  $handler->display->display_options['fields']['nothing_1']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Field: Profile: Primary Position/Title */
@@ -3291,7 +3524,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_position_1']['settings'] = array(
     'trim_length' => '80',
   );
-  /* Field: Field: Degrees and Certificates */
+  /* Field: Field: Faculty Degrees and Certificates */
   $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['id'] = 'field_faculty_degrees_and_certs';
   $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['table'] = 'field_data_field_faculty_degrees_and_certs';
   $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['field'] = 'field_faculty_degrees_and_certs';
@@ -3347,9 +3580,10 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_bio_summary']['id'] = 'field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['table'] = 'field_data_field_bio_summary';
   $handler->display->display_options['fields']['field_bio_summary']['field'] = 'field_bio_summary';
-  $handler->display->display_options['fields']['field_bio_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_bio_summary']['label'] = 'Bio';
   $handler->display->display_options['fields']['field_bio_summary']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_bio_summary']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_bio_summary']['element_label_type'] = 'h2';
   $handler->display->display_options['fields']['field_bio_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bio_summary']['element_default_classes'] = FALSE;
   /* Field: Colorbox: Colorbox trigger */
@@ -3357,6 +3591,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['label'] = '';
+  $handler->display->display_options['fields']['colorbox']['exclude'] = TRUE;
   $handler->display->display_options['fields']['colorbox']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['colorbox']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['colorbox']['hide_empty'] = TRUE;
@@ -3364,7 +3599,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['popup'] = '<div class="staff-cbox-wrapper">
   <div class="staff-cbox-details">
     <figure class="staff-figure">
-    <span class="profile-image">[field_user_picture]</span>
+    <span class="profile-image">[field_user_picture_1]</span>
       <figcaption class="staff-figcaption">
         <h3>[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</h3>
         <span class="profile-email">[field_email]</span><br>
@@ -3375,7 +3610,10 @@ function profile2_staff_defaultconfig_views_default_views() {
         <span class="profile-degrees">[field_faculty_degrees_and_certs]</span>
       </figcaption>
   </div>
-<div class="profile-bio">[field_bio_summary]</div>
+<div class="profile-bio">
+<h3>[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix] Bio</h3>
+[field_bio_summary]
+</div>
 </div>';
   $handler->display->display_options['fields']['colorbox']['caption'] = '[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]';
   $handler->display->display_options['fields']['colorbox']['gid'] = 0;
@@ -3387,12 +3625,13 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class=" faculty-details" data-mh="faculty-details">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[colorbox]  
+<div class=" faculty-details" data-mh="faculty-details">
     <span class="profile-name">[nothing_1]</span>
     <span class="profile-position">[field_position_1]</span>
   </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_class'] = 'staff-container';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -3451,7 +3690,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Programs Taught */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -3659,7 +3898,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Programs Taught */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -3867,7 +4106,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Programs Taught */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -4075,7 +4314,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Programs Taught */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -4269,7 +4508,9 @@ function profile2_staff_defaultconfig_views_default_views() {
     t('<strong>Degrees & Certificates</strong>
 [field_faculty_degrees_and_certs]'),
     t('None Provided'),
-    t('  <div class=" faculty-details" data-mh="faculty-details">
+    t('Bio'),
+    t('[colorbox]  
+<div class=" faculty-details" data-mh="faculty-details">
     <span class="profile-name">[nothing_1]</span>
     <span class="profile-position">[field_position_1]</span>
   </div>'),
