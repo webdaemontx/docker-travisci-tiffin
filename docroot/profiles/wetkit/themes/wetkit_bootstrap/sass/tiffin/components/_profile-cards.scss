@@ -1,31 +1,5 @@
 @import '../abstracts/theme-vars';
 
-.staff-cbox-wrapper {
-  background-color: #f2f2f2;
-  color: $brand-green-title;
-}
-
-.staff-figure {
-  color: $brand-green-title;
-  background-color: $white;
-  float: left;
-  margin: 1% 3% 2%;
-  padding: 1%;
-}
-
-.staff-figcaption {
-  color: $brand-green-title;
-  font-size: .8em;
-  width: 300px;
-}
-
-.profile-bio {
-  color: $brand-green-title;
-  margin: 5px 15px;
-  padding: .1em;
-}
-
-
 
 
 .profile-grid-container {
@@ -58,21 +32,20 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
 }
 
 .grid-container {
-  //align-content: center;
-  //align-items: flex-start;
-  //box-sizing: border-box;
+  align-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  //flex-direction: row;
-  //flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 
   .faculty-container {
-    //flex: 0 1 220px;
-    //justify-content: space-around;
-    //margin: 0 1% 2%;
+    flex: 0 1 220px;
+    justify-content: flex-start;
+    margin: 0 1% 2%;
     max-height: 315px;
     order: 0;
+    width: 25%;
     @media (max-width: 414px) {
       display: block;
       margin: auto;
@@ -101,6 +74,7 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
     position: relative;
     right: 0;
     width: 100%;
+
     .profile-card {
       img {
         max-height: 293px;
@@ -113,18 +87,12 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
     }
 
     .profile-name {
-      font-size: 16px;
+      font-size: 17.5px;
     }
 
     .profile-position {
-      font-size: 13.5px;
-      line-height: 1.1em;
-    }
-
-    .profile-email,
-    .profile-phone {
-      display: none;
-      font-size: 12px;
+      font-size: 14px;
+      line-height: 1em;
     }
 
     .profile-company {
@@ -137,6 +105,7 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
         font-size: 1em;
         font-weight: bold;
       }
+
       .profile-position {
         font-size: .85em;
       }

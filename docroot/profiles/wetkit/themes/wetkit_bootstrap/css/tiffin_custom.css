@@ -5058,8 +5058,8 @@ body.node-type-program .pane-node-field-degree-type {
 }
 
 #finaidandcalc::before, #finaidandcalc::after {
-	display: table;
 	content: ' ';
+	display: table;
 }
 
 #finaidandcalc::after {
@@ -5294,8 +5294,8 @@ div#slide-panel ul li {
 }
 
 .view-events-landing .views-row::before, .view-events-landing .views-row::after {
-	display: table;
 	content: ' ';
+	display: table;
 }
 
 .view-events-landing .views-row::after {
@@ -6032,8 +6032,8 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 }
 
 .hero-buttons::before, .hero-buttons::after {
-	display: table;
 	content: ' ';
+	display: table;
 }
 
 .hero-buttons::after {
@@ -6116,31 +6116,6 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin-top: 35px;
 }
 
-.staff-cbox-wrapper {
-	background-color: #f2f2f2;
-	color: #365543;
-}
-
-.staff-figure {
-	color: #365543;
-	background-color: #fff;
-	float: left;
-	margin: 1% 3% 2%;
-	padding: 1%;
-}
-
-.staff-figcaption {
-	color: #365543;
-	font-size: .8em;
-	width: 300px;
-}
-
-.profile-bio {
-	color: #365543;
-	margin: 5px 15px;
-	padding: .1em;
-}
-
 .profile-grid-container h2 {
 	color: #385443;
 	margin-bottom: 24px;
@@ -6172,26 +6147,45 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 }
 
 .grid-container {
+	-webkit-align-content: center;
+	    -ms-flex-line-pack: center;
+	        align-content: center;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
 }
 
 .grid-container .faculty-container {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 1 220px;
+	    -ms-flex: 0 1 220px;
+	        flex: 0 1 220px;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	margin: 0 1% 2%;
 	max-height: 315px;
 	-webkit-box-ordinal-group: 1;
 	-webkit-order: 0;
 	    -ms-flex-order: 0;
 	        order: 0;
+	width: 25%;
 }
 
 @media (max-width: 414px) {
@@ -6247,18 +6241,12 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 }
 
 .grid-container .faculty-details .profile-name {
-	font-size: 16px;
+	font-size: 17.5px;
 }
 
 .grid-container .faculty-details .profile-position {
-	font-size: 13.5px;
-	line-height: 1.1em;
-}
-
-.grid-container .faculty-details .profile-email,
-.grid-container .faculty-details .profile-phone {
-	display: none;
-	font-size: 12px;
+	font-size: 14px;
+	line-height: 1em;
 }
 
 .grid-container .faculty-details .profile-company {
@@ -6369,6 +6357,148 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	border-radius: 5px;
 	font-size: .8em;
 	padding: 20px;
+}
+
+.staff-cbox-wrapper {
+	background-color: #f2f2f2;
+	color: #365543;
+}
+
+.staff-figure {
+	color: #365543;
+	background-color: #fff;
+	float: left;
+	margin: 1% 3% 2%;
+	padding: 1%;
+}
+
+.staff-figcaption {
+	color: #365543;
+	font-size: .8em;
+	width: 300px;
+}
+
+.profile-bio {
+	color: #365543;
+	margin: 5px 15px;
+	padding: .1em;
+}
+
+.flex-container {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.flex-container .staff-container {
+	max-height: 315px;
+	-webkit-box-ordinal-group: 1;
+	-webkit-order: 0;
+	    -ms-flex-order: 0;
+	        order: 0;
+}
+
+@media (max-width: 414px) {
+	.flex-container .staff-container {
+		display: block;
+		margin: auto;
+	}
+}
+
+.flex-container .cabinet-container {
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 1 220px;
+	    -ms-flex: 0 1 220px;
+	        flex: 0 1 220px;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	margin: 0 1% 2%;
+	max-height: 315px;
+	-webkit-box-ordinal-group: 1;
+	-webkit-order: 0;
+	    -ms-flex-order: 0;
+	        order: 0;
+}
+
+@media (max-width: 400px) {
+	.flex-container .cabinet-container {
+		display: block;
+		margin: auto;
+	}
+}
+
+.flex-container .faculty-details {
+	background-color: rgba(217, 191, 117, 0.7);
+	bottom: 75px;
+	color: #fff;
+	height: 75px;
+	left: 0;
+	padding: 5px;
+	position: relative;
+	right: 0;
+	width: 100%;
+}
+
+.flex-container .faculty-details .profile-card img {
+	max-height: 293px;
+	max-width: 220px;
+}
+
+.flex-container .faculty-details span {
+	display: block;
+}
+
+.flex-container .faculty-details .profile-name {
+	font-size: 16px;
+}
+
+.flex-container .faculty-details .profile-position {
+	font-size: 13.5px;
+	line-height: 1.1em;
+}
+
+.flex-container .faculty-details .profile-email,
+.flex-container .faculty-details .profile-phone {
+	display: none;
+	font-size: 12px;
+}
+
+.flex-container .faculty-details .profile-company {
+	font-size: 12px;
+	line-height: .8em;
+}
+
+@media screen and (max-width: 665px) and (min-width: 200px) {
+	.flex-container .faculty-details .profile-name {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	.flex-container .faculty-details .profile-position {
+		font-size: .85em;
+	}
+}
+
+@media screen and (max-width: 950px) and (min-width: 750px) {
+	.flex-container .faculty-details {
+		margin-right: auto;
+	}
+}
+
+@media screen and (min-width: 1080px) {
+	.flex-container .faculty-details {
+		margin-right: auto;
+	}
 }
 
 a {

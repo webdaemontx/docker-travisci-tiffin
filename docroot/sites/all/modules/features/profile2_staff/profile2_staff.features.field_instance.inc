@@ -133,7 +133,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -215,7 +215,7 @@ Use this field to provide a secondary title / position. ',
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -582,7 +582,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -661,7 +661,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1167,7 +1167,7 @@ Use this field to provide a secondary title / position. ',
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1246,7 +1246,7 @@ Use this field to provide a secondary title / position. ',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 

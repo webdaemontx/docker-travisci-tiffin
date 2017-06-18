@@ -304,7 +304,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
   );
@@ -416,7 +416,7 @@ Use this field to provide a secondary title / position. ',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 10,
+        'weight' => 11,
       ),
     ),
   );
@@ -1061,7 +1061,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'email_textfield',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
   );
@@ -1171,7 +1171,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 11,
+        'weight' => 12,
       ),
     ),
   );
@@ -1942,7 +1942,7 @@ Use this field to provide a secondary title / position. ',
           'placeholder' => '',
         ),
         'type' => 'telephone_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
     ),
   );
@@ -2052,7 +2052,7 @@ Use this field to provide a secondary title / position. ',
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
   );
@@ -2527,7 +2527,8 @@ function profile2_staff_defaultconfig_field_group_info() {
       7 => 'field_name_suffix',
       8 => 'field_alternate_title',
       9 => 'field_faculty_degrees_and_certs',
-      10 => 'group_photo_section_separator',
+      10 => 'field_profile_full_name',
+      11 => 'group_photo_section_separator',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -2553,7 +2554,7 @@ function profile2_staff_defaultconfig_field_group_info() {
   $field_group->parent_name = 'group_general_info';
   $field_group->data = array(
     'label' => 'Photo Upload and Select',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_user_picture',
       1 => 'field_candid_photo',
@@ -3015,7 +3016,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Program Reference */
+  /* Field: Field: Programs Taught */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -3177,7 +3178,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['path'] = 'faculty-profile';
 
   /* Display: Faculty Detail Pane */
-  $handler = $view->new_display('panel_pane', 'Faculty Detail Pane', 'panel_pane_1');
+  $handler = $view->new_display('panel_pane', 'Faculty Detail Pane', 'profile2_staff_faculty_pane');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['display_description'] = 'Default listing of all Tiffin faculty members using Colorbox';
@@ -3256,6 +3257,17 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_name_suffix']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_name_suffix']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_name_suffix']['delta_offset'] = '0';
+  /* Field: Full Name (trimmed) */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Full Name (trimmed)';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Full Name';
+  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['max_length'] = '29';
+  $handler->display->display_options['fields']['nothing_1']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Field: Profile: Primary Position/Title */
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
@@ -3279,7 +3291,7 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_position_1']['settings'] = array(
     'trim_length' => '80',
   );
-  /* Field: Field: Faculty Degrees and Certificates */
+  /* Field: Field: Degrees and Certificates */
   $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['id'] = 'field_faculty_degrees_and_certs';
   $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['table'] = 'field_data_field_faculty_degrees_and_certs';
   $handler->display->display_options['fields']['field_faculty_degrees_and_certs']['field'] = 'field_faculty_degrees_and_certs';
@@ -3376,11 +3388,11 @@ function profile2_staff_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class=" faculty-details" data-mh="faculty-details">
-    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-name">[nothing_1]</span>
     <span class="profile-position">[field_position_1]</span>
   </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'staff-container';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -3439,7 +3451,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Program Reference */
+  /* Field: Field: Programs Taught */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -3647,7 +3659,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Program Reference */
+  /* Field: Field: Programs Taught */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -3855,7 +3867,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Program Reference */
+  /* Field: Field: Programs Taught */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -4063,7 +4075,7 @@ function profile2_staff_defaultconfig_views_default_views() {
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_user_picture']['field_api_classes'] = TRUE;
-  /* Field: Field: Program Reference */
+  /* Field: Field: Programs Taught */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -4251,12 +4263,14 @@ function profile2_staff_defaultconfig_views_default_views() {
     t('Faculty Detail Pane'),
     t('<none>'),
     t('Default listing of all Tiffin faculty members using Colorbox'),
+    t('Full Name'),
+    t('[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]'),
     t('Degrees & Certificates'),
     t('<strong>Degrees & Certificates</strong>
 [field_faculty_degrees_and_certs]'),
     t('None Provided'),
     t('  <div class=" faculty-details" data-mh="faculty-details">
-    <span class="profile-name">[field_name_prefix] [field_first_name] [field_last_name] [field_name_suffix]</span>
+    <span class="profile-name">[nothing_1]</span>
     <span class="profile-position">[field_position_1]</span>
   </div>'),
     t('View panes'),

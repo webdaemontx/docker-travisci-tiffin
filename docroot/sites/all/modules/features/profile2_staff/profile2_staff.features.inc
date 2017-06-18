@@ -29,8 +29,8 @@ function profile2_staff_views_api($module = NULL, $api = NULL) {
 function profile2_staff_default_profile2_type() {
   $items = array();
   $items['staff'] = entity_import('profile2_type', '{
-    "userCategory" : true,
-    "userView" : true,
+    "userCategory" : false,
+    "userView" : false,
     "type" : "staff",
     "label" : "Staff",
     "weight" : "0",

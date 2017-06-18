@@ -118,7 +118,8 @@ function profile2_staff_field_group_info() {
       7 => 'field_name_suffix',
       8 => 'field_alternate_title',
       9 => 'field_faculty_degrees_and_certs',
-      10 => 'group_photo_section_separator',
+      10 => 'field_profile_full_name',
+      11 => 'group_photo_section_separator',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -144,7 +145,7 @@ function profile2_staff_field_group_info() {
   $field_group->parent_name = 'group_general_info';
   $field_group->data = array(
     'label' => 'Photo Upload and Select',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_user_picture',
       1 => 'field_candid_photo',
