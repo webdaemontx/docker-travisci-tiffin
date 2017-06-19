@@ -6376,16 +6376,26 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	padding: 1%;
 }
 
+@media (max-width: 480px) {
+	.staff-cbox-wrapper .staff-figure .image-responsive {
+		max-width: 80%;
+	}
+}
+
 .staff-cbox-wrapper .staff-figcaption {
 	color: #365543;
 	font-size: .8em;
-	width: 300px;
+	max-width: 300px;
 }
 
 .staff-cbox-wrapper .profile-bio {
 	color: #365543;
 	margin: 5px 15px;
 	padding: .1em;
+}
+
+.staff-cbox-wrapper span.profile-image img.image-responsive {
+	max-width: 70%;
 }
 
 a {
