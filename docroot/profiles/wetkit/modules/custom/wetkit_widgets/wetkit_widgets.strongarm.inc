@@ -13,13 +13,6 @@ function wetkit_widgets_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'media_dialog_theme';
-  $strongarm->value = 'wetkit_ember';
-  $export['media_dialog_theme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'media_wysiwyg_default_render';
   $strongarm->value = 'file_entity';
   $export['media_wysiwyg_default_render'] = $strongarm;
@@ -33,7 +26,6 @@ function wetkit_widgets_strongarm() {
     1 => 'video',
     2 => 'audio',
     3 => 'document',
-    4 => 'wetkit_video',
   );
   $export['media_wysiwyg_wysiwyg_allowed_types'] = $strongarm;
 
@@ -43,6 +35,13 @@ function wetkit_widgets_strongarm() {
   $strongarm->name = 'media_wysiwyg_wysiwyg_upload_directory';
   $strongarm->value = '';
   $export['media_wysiwyg_wysiwyg_upload_directory'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_file_wetkit_video_pattern';
+  $strongarm->value = '';
+  $export['pathauto_file_wetkit_video_pattern'] = $strongarm;
 
   return $export;
 }

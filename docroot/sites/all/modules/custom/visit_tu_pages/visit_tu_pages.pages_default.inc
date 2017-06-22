@@ -37,7 +37,7 @@ function visit_tu_pages_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_visit_tu__panel';
+  $handler->name = 'page_visit_tu__panel_context_cfba9322-2aee-4c77-a70c-86aab31e9866';
   $handler->task = 'page';
   $handler->subtask = 'visit_tu';
   $handler->handler = 'panel_context';
@@ -52,9 +52,20 @@ function visit_tu_pages_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'name' => 'panel',
+    'name' => '',
     'access' => array(
       'logic' => 'and',
+    ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Tiffin University students can take a virtual tour, find directions, and schedule a campus visit online; the visits can include an open house, a personal tour, or the option to stay the night.',
+        ),
+        'keywords' => array(
+          'value' => 'Tiffin University, campus visit, open house, personal tour, stay the night, virtual tour, visit online, directions, area attractions.',
+        ),
+      ),
     ),
   );
   $display = new panels_display();
@@ -70,7 +81,7 @@ function visit_tu_pages_default_page_manager_pages() {
   $display->title = '';
   $display->uuid = '0d2c7672-facf-42cf-9a87-9a063dd38d4e';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_visit_tu__panel';
+  $display->storage_id = 'page_visit_tu__panel_context_cfba9322-2aee-4c77-a70c-86aab31e9866';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -142,6 +153,29 @@ function visit_tu_pages_default_page_manager_pages() {
   $pane->uuid = 'e0993ea5-2ea3-4b85-9c00-1b4575b97fe2';
   $display->content['new-e0993ea5-2ea3-4b85-9c00-1b4575b97fe2'] = $pane;
   $display->panels['middle'][2] = 'new-e0993ea5-2ea3-4b85-9c00-1b4575b97fe2';
+  $pane = new stdClass();
+  $pane->pid = 'new-6a20a7bf-459a-44bb-b9bd-d962dc293c9c';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'floating_all_submenu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = '6a20a7bf-459a-44bb-b9bd-d962dc293c9c';
+  $display->content['new-6a20a7bf-459a-44bb-b9bd-d962dc293c9c'] = $pane;
+  $display->panels['middle'][3] = 'new-6a20a7bf-459a-44bb-b9bd-d962dc293c9c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -177,7 +211,7 @@ function visit_tu_pages_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_visit_tu_landing__panel';
+  $handler->name = 'page_visit_tu_landing__panel_context_40022313-9421-488b-a994-a333f963336d';
   $handler->task = 'page';
   $handler->subtask = 'visit_tu_landing';
   $handler->handler = 'panel_context';
@@ -192,9 +226,13 @@ function visit_tu_pages_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'name' => 'panel',
+    'name' => '',
     'access' => array(
       'logic' => 'and',
+    ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
     ),
   );
   $display = new panels_display();
@@ -210,7 +248,7 @@ function visit_tu_pages_default_page_manager_pages() {
   $display->title = '';
   $display->uuid = 'e6332446-aedf-48e1-909c-4f996af1d1c5';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'page_visit_tu_landing__panel';
+  $display->storage_id = 'page_visit_tu_landing__panel_context_40022313-9421-488b-a994-a333f963336d';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();

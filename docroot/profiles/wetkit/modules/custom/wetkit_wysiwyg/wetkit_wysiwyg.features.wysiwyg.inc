@@ -10,7 +10,7 @@
 function wetkit_wysiwyg_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: wetkit_html_text
+  // Exported profile: wetkit_html_text.
   $profiles['wetkit_html_text'] = array(
     'format' => 'wetkit_html_text',
     'editor' => 'markitup',
@@ -40,16 +40,21 @@ function wetkit_wysiwyg_wysiwyg_default_profiles() {
       'css_path' => '',
       'css_classes' => '',
     ),
+    'preferences' => array(
+      'add_to_summaries' => FALSE,
+      'default' => NULL,
+      'show_toggle' => NULL,
+      'user_choose' => NULL,
+      'version' => '1.1.14',
+    ),
     'name' => 'formatwetkit_html_text',
   );
 
-  // Exported profile: wetkit_wysiwyg_text
+  // Exported profile: wetkit_wysiwyg_text.
   $profiles['wetkit_wysiwyg_text'] = array(
     'format' => 'wetkit_wysiwyg_text',
     'editor' => 'ckeditor',
     'settings' => array(
-      'theme' => 'advanced',
-      'language' => 'en',
       'buttons' => array(
         'default' => array(
           'Bold' => 1,
@@ -90,9 +95,16 @@ function wetkit_wysiwyg_wysiwyg_default_profiles() {
           'Maximize' => 1,
           'SpellChecker' => 1,
           'Scayt' => 1,
+          'Templates' => 1,
+        ),
+        'bootstrap_tabs' => array(
+          'addTab' => 1,
         ),
         'linkit' => array(
           'linkit' => 1,
+        ),
+        'picture_ckeditor' => array(
+          'picture_ckeditor' => 1,
         ),
         'codemirror' => array(
           'codemirror' => 1,
@@ -101,13 +113,16 @@ function wetkit_wysiwyg_wysiwyg_default_profiles() {
           'media' => 1,
         ),
       ),
+      'theme' => 'advanced',
+      'language' => 'en',
       'toolbarLocation' => 'top',
       'resize_enabled' => 1,
       'default_toolbar_grouping' => 1,
       'simple_source_formatting' => 1,
       'acf_mode' => 0,
       'acf_allowed_content' => '',
-      'css_setting' => 'self',
+      'css_setting' => 'theme',
+      'css_theme' => 'wetkit_bootstrap',
       'css_path' => '',
       'stylesSet' => 'alert-info=div.alert alert-info
 alert-success=div.alert alert-success
@@ -115,8 +130,16 @@ alert-warning=div.alert alert-warning
 alert-danger=div.alert alert-danger
 badge=span.badge',
       'block_formats' => 'h1,h2,h3,h4,h5,h6',
-      'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,
+      'pasteFromWordPromptCleanup' => 0,
+      'pasteFromWordRemoveFontStyles' => 0,
+    ),
+    'preferences' => array(
+      'default' => 1,
+      'user_choose' => 1,
+      'show_toggle' => 1,
+      'add_to_summaries' => 1,
+      'version' => '4.6.2.20af917',
     ),
     'name' => 'formatwetkit_wysiwyg_text',
   );

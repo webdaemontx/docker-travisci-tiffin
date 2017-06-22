@@ -45,6 +45,10 @@ function tiffin_generic_school_page_default_page_manager_pages() {
     'access' => array(
       'logic' => 'and',
     ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'onecol';

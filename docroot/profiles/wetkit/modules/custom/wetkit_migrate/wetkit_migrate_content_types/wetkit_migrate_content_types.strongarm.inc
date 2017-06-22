@@ -138,5 +138,26 @@ function wetkit_migrate_content_types_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_wetkit_documentation'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_wetkit_documentation_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_wetkit_documentation_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_wetkit_documentation_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_wetkit_documentation_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_wetkit_documentation_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_wetkit_documentation_und_pattern'] = $strongarm;
+
   return $export;
 }

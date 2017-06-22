@@ -2,6 +2,8 @@ name = WetKit Migrate Content Types
 description = This features contains the custom content types and other configuration used by the WetKit Migrate Module
 core = 7.x
 package = WetKit
+version = 7.x-4.3
+project = wetkit_migrate
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = i18n_node
@@ -17,6 +19,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = wetkit_core
 dependencies[] = wetkit_wetboew
+datestamp = 1471826340
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = node-wetkit_documentation-body
@@ -35,10 +38,6 @@ features[variable][] = menu_parent_wetkit_documentation
 features[variable][] = node_options_wetkit_documentation
 features[variable][] = node_preview_wetkit_documentation
 features[variable][] = node_submitted_wetkit_documentation
-
-; Information added by Drupal.org packaging script on 2016-08-22
-version = "7.x-4.3"
-core = "7.x"
-project = "wetkit_migrate"
-datestamp = "1471826340"
-
+features[variable][] = pathauto_node_wetkit_documentation_en_pattern
+features[variable][] = pathauto_node_wetkit_documentation_pattern
+features[variable][] = pathauto_node_wetkit_documentation_und_pattern

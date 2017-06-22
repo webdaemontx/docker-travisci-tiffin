@@ -13,7 +13,7 @@ function wetkit_core_taxonomy_default_vocabularies() {
       'name' => 'Categories',
       'machine_name' => 'wetkit_categories',
       'description' => 'Default Vocabulary for the Web Experience Toolkit',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',

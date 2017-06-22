@@ -60,6 +60,7 @@ function wetkit_widgets_field_default_field_instances() {
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'module' => 'text',
@@ -79,10 +80,10 @@ function wetkit_widgets_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'link' => array(
         'label' => 'above',
@@ -103,9 +104,14 @@ function wetkit_widgets_field_default_field_instances() {
         'weight' => 0,
       ),
       'wysiwyg' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => 'content',
+          'title_style' => 'div',
+        ),
+        'type' => 'title_linked',
         'weight' => 0,
       ),
     ),
@@ -131,7 +137,7 @@ function wetkit_widgets_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -143,10 +149,10 @@ function wetkit_widgets_field_default_field_instances() {
     'description' => 'A field replacing file name.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'link' => array(
         'label' => 'above',
@@ -185,6 +191,7 @@ function wetkit_widgets_field_default_field_instances() {
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'module' => 'text',
@@ -248,6 +255,7 @@ function wetkit_widgets_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -312,6 +320,7 @@ function wetkit_widgets_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -374,6 +383,7 @@ function wetkit_widgets_field_default_field_instances() {
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'module' => 'text',
@@ -435,6 +445,7 @@ function wetkit_widgets_field_default_field_instances() {
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'module' => 'text',

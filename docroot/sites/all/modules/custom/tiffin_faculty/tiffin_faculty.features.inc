@@ -44,21 +44,6 @@ function tiffin_faculty_image_default_styles() {
     ),
   );
 
-  // Exported image style: faculty_220x293.
-  $styles['faculty_220x293'] = array(
-    'label' => 'Faculty 220x293',
-    'effects' => array(
-      7 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 220,
-          'height' => 293,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
   return $styles;
 }
 

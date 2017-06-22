@@ -41,7 +41,7 @@ function tiffin_get_to_know_tu_default_panels_mini() {
   $pane->panel = 'middle';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => '',

@@ -80,10 +80,10 @@ function academics_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => '',
     'title' => 'Undergraduate Academics',
-    'title_heading' => 'h2',
+    'title_heading' => 'h1',
     'body' => '&nbsp;',
     'format' => 'wetkit_html_text',
-    'substitute' => TRUE,
+    'substitute' => 1,
   );
   $export['undergraduate_academics_hero'] = $content;
 

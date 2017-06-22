@@ -2,6 +2,8 @@ name = WetKit Admin
 description = Administrative dashboard and related editing interfaces.
 core = 7.x
 package = WetKit
+version = 7.x-4.6
+project = wetkit_admin
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = admin_select
@@ -15,8 +17,7 @@ dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = wetkit_navbar
-scripts[] = wetkit-admin.js
-stylesheets[all][] = wetkit-admin.css
+datestamp = 1471825440
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
@@ -75,10 +76,3 @@ features[variable][] = wetkit_admin_advanced_plugins
 features[variable][] = wetkit_admin_front_page_and_sticky
 features[variable][] = wetkit_admin_link_description
 features[variable][] = wetkit_admin_machine_name
-
-; Information added by Drupal.org packaging script on 2016-08-22
-version = "7.x-4.6"
-core = "7.x"
-project = "wetkit_admin"
-datestamp = "1471825440"
-

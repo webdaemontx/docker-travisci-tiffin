@@ -202,7 +202,7 @@ function tiffin_homepage_default_panels_mini() {
     'title_heading' => 'h2',
     'body' => '<div id="social_media_home">
 <ul>
-<li><a href=""><div></div></a></li><li><a href=""><div></div></a></li><li><a href=""><div></div></a></li>
+<li><a href="https://www.facebook.com/TiffinU/"><div></div></a></li><li><a href="https://www.instagram.com/tiffinu/"><div></div></a></li><li><a href="https://twitter.com/tiffinu"><div></div></a></li>
 </ul>
 </div>',
     'format' => 'wetkit_html_text',
@@ -258,21 +258,31 @@ function tiffin_homepage_default_panels_mini() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
+    'admin_title' => 'Homepage Sticky Menu',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<ul>
-<li><a href="">Current Students</a></li>
-<li><a href="">Faculty &amp; Staff</a></li>
-<li><a href="">Alumni</a></li>
-<li><a href="">Employment</a></li>
-</ul>
-<ul>
-<li><a href="">Visit /</a></li>
-<li><a href="">Apply /</a></li>
-<li><a href="">Give</a></li>
-</ul>',
-    'format' => 'wetkit_html_text',
+    'body' => '<div class="sticky-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="footer-nav-left col-md-8">
+        <nav>
+          <a href="/current">Current Students</a>
+        	<a href="/faculty-staff">Faculty &amp; Staff</a>
+        	<a href="/advancement/alumni/">Alumni</a>
+        	<a href="/about/employment">Employment</a>
+        </nav>
+      </div>
+      <div class="footer-nav-right col-md-4">
+        <nav>
+          <a href="/apply-now">Apply</a>
+        	<a href="/visit">Visit</a>
+        	<a href="/advancement/giving">Give</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>',
+    'format' => 'wetkit_wysiwyg_text',
     'substitute' => TRUE,
   );
   $pane->cache = array();
@@ -318,19 +328,16 @@ function tiffin_homepage_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-9146ae5d-41f0-4a32-829f-dadb550758b6';
+  $pane->pid = 'new-2c798dd2-2c6c-42d0-a1b8-3aa5f3904d2e';
   $pane->panel = 'middle';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-1061';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => 'test',
-    'format' => 'wetkit_html_text',
-    'substitute' => TRUE,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -340,9 +347,83 @@ function tiffin_homepage_default_panels_mini() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
+  $pane->uuid = '2c798dd2-2c6c-42d0-a1b8-3aa5f3904d2e';
+  $display->content['new-2c798dd2-2c6c-42d0-a1b8-3aa5f3904d2e'] = $pane;
+  $display->panels['middle'][0] = 'new-2c798dd2-2c6c-42d0-a1b8-3aa5f3904d2e';
+  $pane = new stdClass();
+  $pane->pid = 'new-9146ae5d-41f0-4a32-829f-dadb550758b6';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<div id="temp-fix-front" style="margin-top: 10%;margin-left: 5%;"><img src="">
+<img class="media-element file-default img-responsive" src="http://tiffin.prod.acquia-sites.com/sites/default/files/find_program.png" alt="" title="" width="532" height="199" />
+
+
+</div>',
+    'format' => 'wetkit_html_text',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
   $pane->uuid = '9146ae5d-41f0-4a32-829f-dadb550758b6';
   $display->content['new-9146ae5d-41f0-4a32-829f-dadb550758b6'] = $pane;
-  $display->panels['middle'][0] = 'new-9146ae5d-41f0-4a32-829f-dadb550758b6';
+  $display->panels['middle'][1] = 'new-9146ae5d-41f0-4a32-829f-dadb550758b6';
+  $pane = new stdClass();
+  $pane->pid = 'new-61748b5e-37fb-4252-a6ba-a220cf0ffc65';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<style type="text/css">
+
+#mini-panel-homepage_top_hero{
+    height: 640px;
+    width: 100%;
+    background-image: url(\'../images/image-hero-top-one.jpg\');
+    background-size: 1200px 574px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#mini-panel-homepage_top_hero div.pane-webform-client-block-1061{
+    Width: 532px;
+    height: 200px;
+    border: 1px solid #042c18;
+}
+
+</style>',
+    'format' => 'wetkit_html_text',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '61748b5e-37fb-4252-a6ba-a220cf0ffc65';
+  $display->content['new-61748b5e-37fb-4252-a6ba-a220cf0ffc65'] = $pane;
+  $display->panels['middle'][2] = 'new-61748b5e-37fb-4252-a6ba-a220cf0ffc65';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
@@ -395,11 +476,11 @@ function tiffin_homepage_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<h3>Join the <span>TU</span> Family</h3>
+    'body' => '<h3>Ready. Set. <span>Go.</span></h3>
 <ul>
-<li><a href=""><div></div></a><a href="">APPLY NOW</a></li>
-<li><a href=""><div></div></a><a href="">VISIT CAMPUS</a></li>
-<li><a href=""><div></div></a><a href="">REQUEST INFO</a></li>
+<li><a href="/apply-now"><div></div></a><a href="/apply-now">APPLY NOW</a></li>
+<li><a href="/visit"><div></div></a><a href="/visit">VISIT CAMPUS</a></li>
+<li><a href="/info"><div></div></a><a href="/info">REQUEST INFO</a></li>
 </ul>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
@@ -459,11 +540,11 @@ function tiffin_homepage_default_panels_mini() {
     'title_heading' => 'h2',
     'body' => '<div id="you-and-tu">
 <h2></h2>
-<p>Your Journey awaits you</p>
+<p>Your Journey Awaits</p>
 <ul>
-<li><a href=""><div><h3>Start your Journey</h3></div></a></li>
-<li><a href=""><div><h3>Campus Life</h3></div></a></li>
-<li><a href=""><div><h3>Your career connection</h3></div></a></li>
+<li><a href="/admissions"><div><h3>Start Your Journey</h3></div></a></li>
+<li><a href="/campuslife"><div><h3>Campus Life</h3></div></a></li>
+<li><a href="/careers"><div><h3>Your Career Connection</h3></div></a></li>
 </ul></div>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,

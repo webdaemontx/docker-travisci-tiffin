@@ -48,17 +48,17 @@ function visit_tu_pages_default_panels_mini() {
     'title' => '',
     'title_heading' => 'h2',
     'body' => '<div class="visittop">
-<ul><li><a href="#">Campus Events</a></li>
-<li><a href="/about/directions/">Directions</a></li>
-<li><a href="/about/locations/">Campus Map</a></li>
-<li><a href="/about/tiffinoh/accomodations/">Accommodations</a></li>
-<li><a href="/about/tiffinoh/attractions/">Area Attractions</a></li>
+<ul><li><a href="/events">Campus Events</a></li>
+<li><a href="/about/directions">Directions</a></li>
+<li><a href="/map">Campus Map</a></li>
+<li><a href="/about/tiffinoh/accommodations">Accommodations</a></li>
+<li><a href="/about/tiffinoh/attractions">Area Attractions</a></li>
 </ul></div>
 <h2>Visit TU</h2>
 <ul id="visitclicks">
-<li><a href=""><div><p>Individual Visit</p></div></a></li>
-<li><a href=""><div><p>Large Group Visit</p></div></a></li>
-<li><a href=""><div><p>Open House</p></div></a></li>
+<li><a href="/visit/schedule"><div><p>Individual Visit</p></div></a></li>
+<li><a href="/visit/group"><div><p>Large Group Visit</p></div></a></li>
+<li><a href="/visit/open-house"><div><p>Open House</p></div></a></li>
 </ul>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,

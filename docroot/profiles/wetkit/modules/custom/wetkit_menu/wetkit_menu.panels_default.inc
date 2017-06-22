@@ -11,7 +11,7 @@ function wetkit_menu_default_panels_mini() {
   $export = array();
 
   $mini = new stdClass();
-  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->disabled = TRUE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
   $mini->name = 'wetkit_mini_panels_drupal_github';
   $mini->category = 'WetKit';
@@ -48,8 +48,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_3_a'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_3_a'),
+    'parent_mlid' => '1583',
+    'parent' => 'megamenu:1583',
     'title_link' => 1,
     'admin_title' => '',
     'level' => '1',
@@ -84,8 +84,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_3_e'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_3_e'),
+    'parent_mlid' => '1587',
+    'parent' => 'megamenu:1587',
     'title_link' => 1,
     'admin_title' => '',
     'level' => '1',
@@ -117,7 +117,7 @@ function wetkit_menu_default_panels_mini() {
   $export['wetkit_mini_panels_drupal_github'] = $mini;
 
   $mini = new stdClass();
-  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->disabled = TRUE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
   $mini->name = 'wetkit_mini_panels_drupal_wcms';
   $mini->category = 'WetKit';
@@ -155,8 +155,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_2'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_2'),
+    'parent_mlid' => '1570',
+    'parent' => 'megamenu:1570',
     'title_link' => 0,
     'admin_title' => '',
     'level' => '1',
@@ -193,8 +193,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_2_d'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_2_d'),
+    'parent_mlid' => '1574',
+    'parent' => 'megamenu:1574',
     'title_link' => 1,
     'admin_title' => '',
     'level' => '1',
@@ -229,8 +229,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_2_g'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_2_g'),
+    'parent_mlid' => '1577',
+    'parent' => 'megamenu:1577',
     'title_link' => 1,
     'admin_title' => '',
     'level' => '1',
@@ -265,8 +265,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu-focus',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_focus_eng_1'),
-    'parent' => 'megamenu-focus:' . _wetkit_menu_get_mlid('megamenu_focus_eng_1'),
+    'parent_mlid' => '1564',
+    'parent' => 'megamenu-focus:1564',
     'title_link' => 0,
     'admin_title' => '',
     'level' => '1',
@@ -294,7 +294,7 @@ function wetkit_menu_default_panels_mini() {
   $export['wetkit_mini_panels_drupal_wcms'] = $mini;
 
   $mini = new stdClass();
-  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->disabled = TRUE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
   $mini->name = 'wetkit_mini_panels_example_pages';
   $mini->category = 'WetKit';
@@ -331,8 +331,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_4'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_4'),
+    'parent_mlid' => '1591',
+    'parent' => 'megamenu:1591',
     'title_link' => 0,
     'admin_title' => '',
     'level' => '1',
@@ -360,7 +360,7 @@ function wetkit_menu_default_panels_mini() {
   $export['wetkit_mini_panels_example_pages'] = $mini;
 
   $mini = new stdClass();
-  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->disabled = TRUE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
   $mini->name = 'wetkit_mini_panels_home';
   $mini->category = 'WetKit';
@@ -398,8 +398,8 @@ function wetkit_menu_default_panels_mini() {
   $pane->access = array();
   $pane->configuration = array(
     'menu_name' => 'megamenu',
-    'parent_mlid' => _wetkit_menu_get_mlid('megamenu_eng_1'),
-    'parent' => 'megamenu:' . _wetkit_menu_get_mlid('megamenu_eng_1'),
+    'parent_mlid' => '1568',
+    'parent' => 'megamenu:1568',
     'title_link' => 0,
     'admin_title' => '',
     'level' => '1',
@@ -435,30 +435,4 @@ function wetkit_menu_default_panels_mini() {
   $export['wetkit_mini_panels_home'] = $mini;
 
   return $export;
-}
-
-/**
- * Custom function for retrieving mlids by link path.
- */
-function _wetkit_menu_get_mlid($source_id) {
-
-  // Avoid checking if table exists multiple times.
-  $table_exists = &drupal_static(__FUNCTION__ . '_table_exists');
-  if (!isset($table_exists)) {
-    $table_exists = db_table_exists('migrate_map_wetkitmigratemegamenulinks');
-  }
-  if (!$table_exists) {
-    return FALSE;
-  }
-  // Statically cache results of db queries.
-  $menu_links = &drupal_static(__FUNCTION__ . '_menu_links', array());
-  if (!isset($menu_links[$source_id])) {
-    $menu_links[$source_id] = db_select('migrate_map_wetkitmigratemegamenulinks')
-        ->fields('migrate_map_wetkitmigratemegamenulinks')
-        ->condition('sourceid1', $source_id)
-        ->execute()->fetch();
-  }
-  if (isset($menu_links[$source_id]->destid1)) {
-    return $menu_links[$source_id]->destid1;
-  }
 }

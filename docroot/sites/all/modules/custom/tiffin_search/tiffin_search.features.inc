@@ -57,37 +57,27 @@ function tiffin_search_default_search_api_index() {
         ]
       },
       "index_directly" : 1,
-      "cron_limit" : "500",
+      "cron_limit" : "100",
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : {
-            "default" : "0",
-            "bundles" : {
-              "wetkit_page" : "wetkit_page",
-              "event_calendar" : "event_calendar",
-              "events" : "events",
-              "news_page" : "news_page",
-              "panel" : "panel",
-              "program" : "program"
-            }
-          }
+          "settings" : { "default" : "1", "bundles" : [] }
         },
-        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_viewed_entity" : { "status" : 1, "weight" : "0", "settings" : { "mode" : "teaser" } },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "panelizer" : { "status" : 1, "weight" : "0", "settings" : [] }
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "panelizer" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_add_viewed_entity" : { "status" : 1, "weight" : "0", "settings" : { "mode" : "teaser" } },
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] }
       },
       "processors" : {
         "search_api_case_ignore" : {
           "status" : 1,
           "weight" : "0",
-          "settings" : { "fields" : { "type" : true, "title" : true, "body:value" : true } }
+          "settings" : { "fields" : { "title" : true, "url" : true, "body:value" : true } }
         },
         "search_api_html_filter" : {
           "status" : 1,
@@ -110,9 +100,9 @@ function tiffin_search_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
+              "title_field" : true,
               "field_alt_title" : true,
-              "body:value" : true,
-              "body:summary" : true
+              "body:value" : true
             },
             "spaces" : "[^\\\\p{L}\\\\p{N}]",
             "ignorable" : "[-]"
@@ -136,7 +126,7 @@ function tiffin_search_default_search_api_index() {
           }
         },
         "search_api_highlighting" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "40",
           "settings" : {
             "prefix" : "\\u003Cstrong\\u003E",
@@ -145,104 +135,46 @@ function tiffin_search_default_search_api_index() {
             "excerpt_length" : "256",
             "exclude_fields" : [],
             "highlight" : "always",
-            "highlight_partial" : 0
+            "highlight_partial" : 1
           }
         }
       },
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
-        "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
-        "field_academic_school" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_academic_school:description" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_academic_school:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_academic_school:name_field" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_academic_school:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_academic_school:url" : { "type" : "list\\u003Curi\\u003E" },
-        "field_alt_title" : { "type" : "text", "boost" : "3.0" },
+        "field_academic_school" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_alt_title" : { "type" : "text" },
+        "field_archived_content" : { "type" : "boolean" },
         "field_concentration:value" : { "type" : "text" },
         "field_curriculum_core_courses:value" : { "type" : "text" },
+        "field_curriculum_internship:value" : { "type" : "text" },
         "field_curriculum_prerequisites:value" : { "type" : "text" },
         "field_curriculum_program_content:value" : { "type" : "text" },
-        "field_curriculum_summary:format" : { "type" : "string" },
         "field_curriculum_summary:value" : { "type" : "text" },
-        "field_degree_type:description" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_degree_type:feed_nid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_degree_type:feed_node" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
-        "field_degree_type:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_degree_type:name_field" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_degree_type:node_count" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_degree_type:parent" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
-        "field_degree_type:parents_all" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
-        "field_degree_type:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_degree_type:url" : { "type" : "list\\u003Curi\\u003E" },
-        "field_degree_type:uuid" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_degree_type:vocabulary" : {
-          "type" : "list\\u003Cinteger\\u003E",
-          "entity_type" : "taxonomy_vocabulary"
-        },
-        "field_degree_type:weight" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_featured_categories" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_curriculum_thesis:value" : { "type" : "text" },
+        "field_degree_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_format:value" : { "type" : "text" },
-        "field_program_highlights:value" : { "type" : "text" },
         "field_program_level" : { "type" : "integer" },
         "field_program_location" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_program_location:description" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_program_location:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_program_location:name_field" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_program_location:parent" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
-        "field_program_location:parents_all" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
-        "field_program_location:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_program_location:url" : { "type" : "list\\u003Curi\\u003E" },
-        "field_program_location:vocabulary" : {
-          "type" : "list\\u003Cinteger\\u003E",
-          "entity_type" : "taxonomy_vocabulary"
-        },
-        "field_program_reference" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_program_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_program_type:description" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_program_type:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_program_type:name_field" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_program_type:node_count" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_program_type:parent" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
-        "field_program_type:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_program_type:url" : { "type" : "list\\u003Curi\\u003E" },
-        "field_program_type:vocabulary" : {
-          "type" : "list\\u003Cinteger\\u003E",
-          "entity_type" : "taxonomy_vocabulary"
-        },
         "field_related_majors_minors:value" : { "type" : "text" },
-        "field_tags" : { "type" : "list\\u003Ctext\\u003E" },
         "field_tu_graduates:value" : { "type" : "text" },
+        "field_undergrad_sample_courses:value" : { "type" : "text" },
         "field_undergraduate_careers:value" : { "type" : "text" },
-        "last_view" : { "type" : "date" },
-        "promote" : { "type" : "boolean" },
+        "field_uri" : { "type" : "text" },
+        "nid" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
         "search_api_panelizer_content" : { "type" : "text" },
         "search_api_panelizer_title" : { "type" : "text" },
+        "search_api_url" : { "type" : "uri" },
         "search_api_viewed" : { "type" : "text" },
-        "sticky" : { "type" : "boolean" },
+        "status" : { "type" : "integer" },
         "title" : { "type" : "text", "boost" : "5.0" },
-        "title_field" : { "type" : "text", "boost" : "2.0" },
+        "title_field" : { "type" : "text" },
         "type" : { "type" : "string" },
-        "views" : { "type" : "integer" }
+        "url" : { "type" : "uri" }
       }
     },
     "enabled" : "1",
@@ -259,17 +191,37 @@ function tiffin_search_default_search_api_page() {
   $items['search_api_results_page'] = entity_import('search_api_page', '{
     "index_id" : "default_node_index",
     "path" : "search",
-    "name" : "Search API Results Page",
+    "name" : "Search Results",
     "machine_name" : "search_api_results_page",
     "description" : "",
     "options" : {
       "mode" : "terms",
-      "fields" : [],
+      "fields" : {
+        "body:value" : "body:value",
+        "field_alt_title" : "field_alt_title",
+        "field_concentration:value" : "field_concentration:value",
+        "field_curriculum_core_courses:value" : "field_curriculum_core_courses:value",
+        "field_curriculum_internship:value" : "field_curriculum_internship:value",
+        "field_curriculum_prerequisites:value" : "field_curriculum_prerequisites:value",
+        "field_curriculum_program_content:value" : "field_curriculum_program_content:value",
+        "field_curriculum_summary:value" : "field_curriculum_summary:value",
+        "field_curriculum_thesis:value" : "field_curriculum_thesis:value",
+        "field_format:value" : "field_format:value",
+        "field_program_highlights:value" : "field_program_highlights:value",
+        "field_related_majors_minors:value" : "field_related_majors_minors:value",
+        "field_tu_graduates:value" : "field_tu_graduates:value",
+        "field_undergrad_sample_courses:value" : "field_undergrad_sample_courses:value",
+        "field_undergraduate_careers:value" : "field_undergraduate_careers:value",
+        "field_uri" : "field_uri",
+        "search_api_viewed" : "search_api_viewed",
+        "title" : "title",
+        "title_field" : "title_field"
+      },
       "per_page" : "10",
       "result_page_search_form" : 1,
       "get_per_page" : 0,
-      "view_mode" : "search_index",
-      "empty_behavior" : ""
+      "view_mode" : "teaser",
+      "empty_behavior" : "blocks"
     },
     "enabled" : "1"
   }');
@@ -298,14 +250,17 @@ function tiffin_search_default_search_api_server() {
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 1,
-      "retrieve_data" : 0,
+      "retrieve_data" : 1,
       "highlight_data" : 0,
       "skip_schema_check" : 0,
       "solr_version" : "",
       "http_method" : "AUTO",
       "log_query" : 1,
-      "log_response" : 1,
-      "commits_disabled" : 0
+      "log_response" : 0,
+      "commits_disabled" : 0,
+      "derived_key" : "a3ec975f1f62c1ac261d0a6705a00cedad3d55f7",
+      "acquia_search_possible_cores" : [ "RTVY-111238.prod.tiffin", "RTVY-111238.prod.default", "RTVY-111238" ],
+      "overridden_by_acquia_search" : 1
     },
     "enabled" : "1"
   }');

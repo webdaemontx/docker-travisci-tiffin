@@ -886,13 +886,10 @@ function wetkit_bean_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'icon_field',
-        'settings' => array(
-          'link_to_content' => FALSE,
-        ),
-        'type' => 'icon_field_default',
-        'weight' => 1,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'bean',
@@ -926,7 +923,7 @@ function wetkit_bean_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'bean',
@@ -962,10 +959,11 @@ function wetkit_bean_field_default_field_instances() {
     'description' => 'The Title of the block.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'bean',

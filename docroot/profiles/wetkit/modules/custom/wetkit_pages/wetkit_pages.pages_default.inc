@@ -426,7 +426,7 @@ function wetkit_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 100;
   $handler->conf = array(
-    'title' => 'Node',
+    'title' => 'Programs Node Panel',
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
@@ -434,14 +434,94 @@ function wetkit_pages_default_page_manager_handlers() {
     'css_id' => 'page-page',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'relationships' => array(
+      2 => array(
+        'identifier' => 'Taxonomy term from Content (on Content: School [field_academic_school])',
+        'keyword' => 'taxonomy_term',
+        'name' => 'entity_from_field:field_academic_school-node-taxonomy_term',
+        'delta' => '0',
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
     'access' => array(
       'logic' => 'and',
-      'plugins' => array(),
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'faculty/*
+forms
+forms/*
+visit
+visit/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'program' => 'program',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => '[node:field_program_summary]',
+        ),
+        'keywords' => array(
+          'value' => '[node:title],[node:field-alt-title],[node:field-program-type]',
+        ),
+        'robots' => array(
+          'value' => array(
+            'index' => 'index',
+            'follow' => 'follow',
+            'noindex' => 0,
+            'nofollow' => 0,
+            'noarchive' => 0,
+            'nosnippet' => 0,
+            'noimageindex' => 0,
+            'notranslate' => 0,
+          ),
+        ),
+        'rating' => array(
+          'value' => 'general',
+        ),
+        'referrer' => array(
+          'value' => 'origin',
+        ),
+        'rights' => array(
+          'value' => 'Copyright Tiffin University [current-date:custom:\'Y\']',
+        ),
+        'geo.position' => array(
+          'value' => '41.118535, -83.184479',
+        ),
+        'geo.placename' => array(
+          'value' => 'Tiffin University',
+        ),
+        'geo.region' => array(
+          'value' => 'US-OH',
+        ),
+        'icbm' => array(
+          'value' => '41.118535, -83.184479',
+        ),
+        'dcterms.description' => array(
+          'value' => '[node:field_program_summary]',
+        ),
+      ),
     ),
   );
   $display = new panels_display();
-  $display->layout = 'pearson';
+  $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -451,6 +531,7 @@ function wetkit_pages_default_page_manager_handlers() {
       'pearson_second' => NULL,
       'pearson_third' => NULL,
       'pearson_bottom' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
@@ -461,18 +542,27 @@ function wetkit_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-8437dbf9-f722-45bd-a04f-4479156d8bf6';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'page_title';
-  $pane->subtype = 'page_title';
+  $pane->pid = 'new-32f683be-6bbc-4ca8-85d4-65914d52e5d2';
+  $pane->panel = 'middle';
+  $pane->type = 'token';
+  $pane->subtype = 'node:field-degree-type';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_status',
+        'settings' => NULL,
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
-    'markup' => 'h1',
-    'class' => '',
-    'id' => 'wb-cont',
-    'override_title' => 0,
+    'sanitize' => 1,
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -482,74 +572,147 @@ function wetkit_pages_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '8437dbf9-f722-45bd-a04f-4479156d8bf6';
-  $display->content['new-8437dbf9-f722-45bd-a04f-4479156d8bf6'] = $pane;
-  $display->panels['pearson_first'][0] = 'new-8437dbf9-f722-45bd-a04f-4479156d8bf6';
+  $pane->uuid = '32f683be-6bbc-4ca8-85d4-65914d52e5d2';
+  $display->content['new-32f683be-6bbc-4ca8-85d4-65914d52e5d2'] = $pane;
+  $display->panels['middle'][0] = 'new-32f683be-6bbc-4ca8-85d4-65914d52e5d2';
   $pane = new stdClass();
-  $pane->pid = 'new-548f6dd8-b51f-42dc-a2d4-381485f1398f';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'page_tabs';
-  $pane->subtype = 'page_tabs';
+  $pane->pid = 'new-aa9abed6-aaa3-4c57-9885-5fca6c774210';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'undergraduate_program';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_status',
+        'settings' => NULL,
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
-    'type' => 'both',
-    'id' => 'tabs',
-    'override_title' => 0,
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '1',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 1,
+    'link_to_view' => 0,
+    'args' => '@0',
+    'url' => '',
+    'display' => 'block',
+    'context' => array(
+      0 => 'argument_entity_id:node_1.nid',
+    ),
+    'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
+    'style' => 'default',
     'settings' => NULL,
   );
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = '548f6dd8-b51f-42dc-a2d4-381485f1398f';
-  $display->content['new-548f6dd8-b51f-42dc-a2d4-381485f1398f'] = $pane;
-  $display->panels['pearson_first'][1] = 'new-548f6dd8-b51f-42dc-a2d4-381485f1398f';
+  $pane->uuid = 'aa9abed6-aaa3-4c57-9885-5fca6c774210';
+  $display->content['new-aa9abed6-aaa3-4c57-9885-5fca6c774210'] = $pane;
+  $display->panels['middle'][1] = 'new-aa9abed6-aaa3-4c57-9885-5fca6c774210';
   $pane = new stdClass();
-  $pane->pid = 'new-fef5f38e-474a-4752-9c0b-b8f465cf820e';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'node_content';
-  $pane->subtype = 'node_content';
+  $pane->pid = 'new-0a6b9cbd-e950-4c0b-8562-6559369a485e';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'quicktabs-undergraduate_program_tabs';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'entity_field_value:node:program:field_program_level',
+        'settings' => array(
+          'field_program_level' => array(
+            'und' => array(
+              0 => array(
+                'value' => '1',
+              ),
+            ),
+          ),
+          'field_program_level_value' => array(
+            0 => '1',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      2 => array(
+        'name' => 'node_status',
+        'settings' => NULL,
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $pane->configuration = array(
-    'links' => 1,
-    'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => array(),
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
-  $pane->uuid = 'fef5f38e-474a-4752-9c0b-b8f465cf820e';
-  $display->content['new-fef5f38e-474a-4752-9c0b-b8f465cf820e'] = $pane;
-  $display->panels['pearson_first'][2] = 'new-fef5f38e-474a-4752-9c0b-b8f465cf820e';
+  $pane->uuid = '0a6b9cbd-e950-4c0b-8562-6559369a485e';
+  $display->content['new-0a6b9cbd-e950-4c0b-8562-6559369a485e'] = $pane;
+  $display->panels['middle'][2] = 'new-0a6b9cbd-e950-4c0b-8562-6559369a485e';
   $pane = new stdClass();
-  $pane->pid = 'new-9370734e-69d4-46b7-80a1-1b9fc3b17091';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'node_updated';
-  $pane->subtype = 'node_updated';
+  $pane->pid = 'new-f1aaed84-bd30-40d1-b5ec-1aca8d724953';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'quicktabs-graduate_program_tabs';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'entity_field_value:node:program:field_program_level',
+        'settings' => array(
+          'field_program_level' => array(
+            'und' => array(
+              0 => array(
+                'value' => '2',
+              ),
+            ),
+          ),
+          'field_program_level_value' => array(
+            0 => '2',
+          ),
+        ),
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+      2 => array(
+        'name' => 'node_status',
+        'settings' => NULL,
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
-    'format' => 'short',
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -559,32 +722,35 @@ function wetkit_pages_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = '9370734e-69d4-46b7-80a1-1b9fc3b17091';
-  $display->content['new-9370734e-69d4-46b7-80a1-1b9fc3b17091'] = $pane;
-  $display->panels['pearson_first'][3] = 'new-9370734e-69d4-46b7-80a1-1b9fc3b17091';
+  $pane->uuid = 'f1aaed84-bd30-40d1-b5ec-1aca8d724953';
+  $display->content['new-f1aaed84-bd30-40d1-b5ec-1aca8d724953'] = $pane;
+  $display->panels['middle'][3] = 'new-f1aaed84-bd30-40d1-b5ec-1aca8d724953';
   $pane = new stdClass();
-  $pane->pid = 'new-99569479-f08f-4583-829d-b141df43000b';
-  $pane->panel = 'pearson_second';
-  $pane->type = 'menu_tree';
-  $pane->subtype = 'sidebar';
+  $pane->pid = 'new-3235d3f2-f8a4-4e13-b9ff-6cf98b592756';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'faculty_profile';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'menu_name' => 'sidebar',
-    'parent_mlid' => 0,
-    'show_menu_items' => array(),
-    'parent' => 'sidebar:0',
-    'title_link' => 0,
-    'admin_title' => '',
-    'level' => '1',
-    'follow' => 0,
-    'depth' => '0',
-    'expanded' => 1,
-    'sort' => 0,
-    'override_title' => 1,
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '8',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '@0',
+    'url' => '',
+    'display' => 'faculty_for_programs_block',
+    'context' => array(
+      0 => 'argument_entity_id:node_1.nid',
+    ),
+    'override_title' => 0,
     'override_title_text' => '',
-    'title_embed' => 0,
-    'theme' => 'menu_link__menu_block__wxt_sidebar',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -592,13 +758,231 @@ function wetkit_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 4;
   $pane->locks = array();
-  $pane->uuid = '99569479-f08f-4583-829d-b141df43000b';
-  $display->content['new-99569479-f08f-4583-829d-b141df43000b'] = $pane;
-  $display->panels['pearson_second'][0] = 'new-99569479-f08f-4583-829d-b141df43000b';
+  $pane->uuid = '3235d3f2-f8a4-4e13-b9ff-6cf98b592756';
+  $display->content['new-3235d3f2-f8a4-4e13-b9ff-6cf98b592756'] = $pane;
+  $display->panels['middle'][4] = 'new-3235d3f2-f8a4-4e13-b9ff-6cf98b592756';
+  $pane = new stdClass();
+  $pane->pid = 'new-280ae037-981c-443c-9f9d-f4207fef0575';
+  $pane->panel = 'middle';
+  $pane->type = 'views';
+  $pane->subtype = 'testimonials_slider';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_status',
+        'settings' => NULL,
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '5',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'default',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '280ae037-981c-443c-9f9d-f4207fef0575';
+  $display->content['new-280ae037-981c-443c-9f9d-f4207fef0575'] = $pane;
+  $display->panels['middle'][5] = 'new-280ae037-981c-443c-9f9d-f4207fef0575';
+  $pane = new stdClass();
+  $pane->pid = 'new-59d698a2-86f3-47f2-bbf2-39f0224ab9e2';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'discover_tiffin_ohio';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = '59d698a2-86f3-47f2-bbf2-39f0224ab9e2';
+  $display->content['new-59d698a2-86f3-47f2-bbf2-39f0224ab9e2'] = $pane;
+  $display->panels['middle'][6] = 'new-59d698a2-86f3-47f2-bbf2-39f0224ab9e2';
+  $pane = new stdClass();
+  $pane->pid = 'new-c2492bf1-ac0b-47e0-8e01-024914a00ffe';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-1576';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_status',
+        'settings' => NULL,
+        'context' => 'argument_entity_id:node_1',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = 'c2492bf1-ac0b-47e0-8e01-024914a00ffe';
+  $display->content['new-c2492bf1-ac0b-47e0-8e01-024914a00ffe'] = $pane;
+  $display->panels['middle'][7] = 'new-c2492bf1-ac0b-47e0-8e01-024914a00ffe';
+  $pane = new stdClass();
+  $pane->pid = 'new-ab70acfc-39d2-42cf-8daa-bd6dbe65c361';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'join_the_tu_family_white_backgro';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 8;
+  $pane->locks = array();
+  $pane->uuid = 'ab70acfc-39d2-42cf-8daa-bd6dbe65c361';
+  $display->content['new-ab70acfc-39d2-42cf-8daa-bd6dbe65c361'] = $pane;
+  $display->panels['middle'][8] = 'new-ab70acfc-39d2-42cf-8daa-bd6dbe65c361';
+  $pane = new stdClass();
+  $pane->pid = 'new-cbf29d2d-458f-4dd4-a852-112263a8185c';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'quick styles fix',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<script type="text/javascript">
+jQuery(\'#quicktabs-undergraduate_program_tabs > .item-list > ul.quicktabs-tabs\').append(\'<li id="tuitionclick"><a href="/undergrad/tuition/"></a></li>\');
+
+jQuery(\'#quicktabs-undergraduate_program_tabs > .item-list > ul.quicktabs-tabs > li#tuitionclick a\').prepend(document.createTextNode("Tuition & Fees"));
+
+jQuery(\'<div class="closeTabsModal"><a name="closeTabsModal"><div></div></a></div>\').prependTo("#quicktabs-undergraduate_program_tabs div .view-undergraduate-program");
+
+jQuery(\'#quicktabs-graduate_program_tabs > .item-list > ul.quicktabs-tabs > li#graduateprogramsclick a\').prepend(document.createTextNode("Graduate Programs"));
+
+jQuery(\'#quicktabs-graduate_program_tabs > .item-list > ul.quicktabs-tabs\').append(\'<li id="graduateprogramsclick"><a href="/academics/graduate">Graduate Programs</a></li>\');
+
+jQuery(\'#quicktabs-graduate_program_tabs > .item-list > ul.quicktabs-tabs\').append(\'<li id="tuitionclick"><a href="/undergrad/tuition/"></a></li>\');
+
+jQuery(\'#quicktabs-graduate_program_tabs > .item-list > ul.quicktabs-tabs > li#tuitionclick a\').prepend(document.createTextNode("Tuition & Fees"));
+
+jQuery(\'<div class="closeTabsModal"><a name="closeTabsModal"><div></div></a></div>\').prependTo("#quicktabs-undergraduate_program_tabs div .view-undergraduate-program");
+
+jQuery(\'<div class="closeTabsModal"><a name="closeTabsModal"><div></div></a></div>\').prependTo("#quicktabs-graduate_program_tabs div .view-undergraduate-program");
+
+jQuery(\'div.closeTabsModal a div\').prepend(document.createTextNode("x"));
+
+
+jQuery( document ).ready(function() {
+  jQuery("#quicktabs-tab-program_overview-0")[0].click();
+  jQuery("#quicktabs-tabpage-undergraduate_program_tabs-0").addClass(\'quicktabs-hide\');
+  jQuery("#quicktabs-tabpage-undergraduate_program_tabs-1").addClass(\'quicktabs-hide\');
+  jQuery("#quicktabs-tabpage-undergraduate_program_tabs-2").addClass(\'quicktabs-hide\');
+
+  jQuery("#quicktabs-tabpage-graduate_program_tabs-0").addClass(\'quicktabs-hide\');
+  jQuery("#quicktabs-tabpage-graduate_program_tabs-1").addClass(\'quicktabs-hide\');
+  jQuery("#quicktabs-tabpage-graduate_program_tabs-2").addClass(\'quicktabs-hide\');
+  jQuery(".closeTabsModel").removeClass(\'quicktabs-hide\');
+  jQuery(\'li#graduateprogramsclick a\').off();
+  jQuery(\'li#tuitionclick a\').off();
+});
+
+
+jQuery(document).on("click","a[name=\'closeTabsModal\']", function (e) {
+  jQuery("div#quicktabs-tabpage-undergraduate_program_tabs-0").addClass(\'quicktabs-hide\');
+  jQuery("div#quicktabs-tabpage-undergraduate_program_tabs-1").addClass(\'quicktabs-hide\');
+  jQuery("div#quicktabs-tabpage-undergraduate_program_tabs-2").addClass(\'quicktabs-hide\');
+
+  jQuery("div#quicktabs-tabpage-graduate_program_tabs-0").addClass(\'quicktabs-hide\');
+  jQuery("div#quicktabs-tabpage-graduate_program_tabs-1").addClass(\'quicktabs-hide\');
+  jQuery("div#quicktabs-tabpage-graduate_program_tabs-2").addClass(\'quicktabs-hide\');
+});
+</script>
+',
+    'format' => 'wetkit_html_text',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 9;
+  $pane->locks = array();
+  $pane->uuid = 'cbf29d2d-458f-4dd4-a852-112263a8185c';
+  $display->content['new-cbf29d2d-458f-4dd4-a852-112263a8185c'] = $pane;
+  $display->panels['middle'][9] = 'new-cbf29d2d-458f-4dd4-a852-112263a8185c';
+  $pane = new stdClass();
+  $pane->pid = 'new-a3368e25-4bc8-4fd5-8508-e246f8a4eb81';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'floating_all_submenu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 10;
+  $pane->locks = array();
+  $pane->uuid = 'a3368e25-4bc8-4fd5-8508-e246f8a4eb81';
+  $display->content['new-a3368e25-4bc8-4fd5-8508-e246f8a4eb81'] = $pane;
+  $display->panels['middle'][10] = 'new-a3368e25-4bc8-4fd5-8508-e246f8a4eb81';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-99569479-f08f-4583-829d-b141df43000b';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_3'] = $handler;
 
@@ -611,7 +995,7 @@ function wetkit_pages_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 99;
   $handler->conf = array(
-    'title' => 'Node (WxT)',
+    'title' => 'Basic Page Node Panel',
     'no_blocks' => 0,
     'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
@@ -632,6 +1016,17 @@ function wetkit_pages_default_page_manager_handlers() {
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
+        ),
+      ),
+    ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => '[node:body:?]',
+        ),
+        'keywords' => array(
+          'value' => 'Tiffin University, ',
         ),
       ),
     ),
@@ -660,31 +1055,6 @@ function wetkit_pages_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-aa132602-332c-40a7-8634-b3ecfce3a075';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'page_title';
-  $pane->subtype = 'page_title';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'markup' => 'h1',
-    'class' => '',
-    'id' => 'wb-cont',
-    'override_title' => 0,
-    'override_title_text' => '',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = 'aa132602-332c-40a7-8634-b3ecfce3a075';
-  $display->content['new-aa132602-332c-40a7-8634-b3ecfce3a075'] = $pane;
-  $display->panels['pearson_first'][0] = 'new-aa132602-332c-40a7-8634-b3ecfce3a075';
-  $pane = new stdClass();
   $pane->pid = 'new-1e302bb0-8226-4d3b-b2ee-a5ca14106935';
   $pane->panel = 'pearson_first';
   $pane->type = 'page_tabs';
@@ -703,11 +1073,11 @@ function wetkit_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 0;
   $pane->locks = array();
   $pane->uuid = '1e302bb0-8226-4d3b-b2ee-a5ca14106935';
   $display->content['new-1e302bb0-8226-4d3b-b2ee-a5ca14106935'] = $pane;
-  $display->panels['pearson_first'][1] = 'new-1e302bb0-8226-4d3b-b2ee-a5ca14106935';
+  $display->panels['pearson_first'][0] = 'new-1e302bb0-8226-4d3b-b2ee-a5ca14106935';
   $pane = new stdClass();
   $pane->pid = 'new-06f702e1-7dcb-4859-8646-e196e4c81a5d';
   $pane->panel = 'pearson_first';
@@ -730,11 +1100,11 @@ function wetkit_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '06f702e1-7dcb-4859-8646-e196e4c81a5d';
   $display->content['new-06f702e1-7dcb-4859-8646-e196e4c81a5d'] = $pane;
-  $display->panels['pearson_first'][2] = 'new-06f702e1-7dcb-4859-8646-e196e4c81a5d';
+  $display->panels['pearson_first'][1] = 'new-06f702e1-7dcb-4859-8646-e196e4c81a5d';
   $pane = new stdClass();
   $pane->pid = 'new-505f19a8-a0c9-4c36-ab92-711267c3cfa9';
   $pane->panel = 'pearson_first';
@@ -768,11 +1138,37 @@ function wetkit_pages_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '505f19a8-a0c9-4c36-ab92-711267c3cfa9';
   $display->content['new-505f19a8-a0c9-4c36-ab92-711267c3cfa9'] = $pane;
-  $display->panels['pearson_first'][3] = 'new-505f19a8-a0c9-4c36-ab92-711267c3cfa9';
+  $display->panels['pearson_first'][2] = 'new-505f19a8-a0c9-4c36-ab92-711267c3cfa9';
+  $pane = new stdClass();
+  $pane->pid = 'new-aa132602-332c-40a7-8634-b3ecfce3a075';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'page_title';
+  $pane->subtype = 'page_title';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'markup' => 'h1',
+    'class' => '',
+    'id' => '',
+    'override_title' => 0,
+    'override_title_text' => 'News & Events',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 3;
+  $pane->locks = array();
+  $pane->uuid = 'aa132602-332c-40a7-8634-b3ecfce3a075';
+  $display->content['new-aa132602-332c-40a7-8634-b3ecfce3a075'] = $pane;
+  $display->panels['pearson_first'][3] = 'new-aa132602-332c-40a7-8634-b3ecfce3a075';
   $pane = new stdClass();
   $pane->pid = 'new-d7ae79c9-99c4-4b11-85be-f01600ba49fe';
   $pane->panel = 'pearson_first';
@@ -832,47 +1228,45 @@ function wetkit_pages_default_page_manager_handlers() {
   $display->content['new-6cba6356-6fca-4013-b37f-586ecc43e30a'] = $pane;
   $display->panels['pearson_first'][5] = 'new-6cba6356-6fca-4013-b37f-586ecc43e30a';
   $pane = new stdClass();
-  $pane->pid = 'new-ddb8bcf4-4eb0-4c2d-99bb-5a361a034cc1';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'date_modified';
-  $pane->subtype = 'date_modified';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 6;
-  $pane->locks = array();
-  $pane->uuid = 'ddb8bcf4-4eb0-4c2d-99bb-5a361a034cc1';
-  $display->content['new-ddb8bcf4-4eb0-4c2d-99bb-5a361a034cc1'] = $pane;
-  $display->panels['pearson_first'][6] = 'new-ddb8bcf4-4eb0-4c2d-99bb-5a361a034cc1';
-  $pane = new stdClass();
-  $pane->pid = 'new-b8ebe185-dc0e-43da-8873-decde6dffdab';
+  $pane->pid = 'new-d4b08fad-965d-4e22-b5ff-521bd580e79d';
   $pane->panel = 'pearson_second';
   $pane->type = 'menu_tree';
-  $pane->subtype = 'sidebar';
+  $pane->subtype = 'menu-about-tu';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'about/*
+info
+institutionaldiversity/*
+commencement/*
+administration/*',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
-    'menu_name' => 'sidebar',
-    'parent_mlid' => 0,
-    'show_menu_items' => array(),
-    'parent' => 'sidebar:0',
+    'parent' => 'menu-about-tu:0',
     'title_link' => 0,
+    'title_embed' => 0,
+    'theme' => 'menu_link__menu_block__wxt_sidebar',
     'admin_title' => '',
     'level' => '1',
     'follow' => 0,
     'depth' => '0',
-    'expanded' => 1,
+    'depth_relative' => 0,
+    'expanded' => 0,
     'sort' => 0,
+    'menu_name' => 'menu-about-tu',
+    'parent_mlid' => '0',
     'override_title' => 1,
     'override_title_text' => '',
-    'title_embed' => 0,
-    'theme' => 'menu_link__menu_block__wxt_sidebar',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -882,11 +1276,11 @@ function wetkit_pages_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'b8ebe185-dc0e-43da-8873-decde6dffdab';
-  $display->content['new-b8ebe185-dc0e-43da-8873-decde6dffdab'] = $pane;
-  $display->panels['pearson_second'][0] = 'new-b8ebe185-dc0e-43da-8873-decde6dffdab';
+  $pane->uuid = 'd4b08fad-965d-4e22-b5ff-521bd580e79d';
+  $display->content['new-d4b08fad-965d-4e22-b5ff-521bd580e79d'] = $pane;
+  $display->panels['pearson_second'][0] = 'new-d4b08fad-965d-4e22-b5ff-521bd580e79d';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-b8ebe185-dc0e-43da-8873-decde6dffdab';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_4'] = $handler;
 

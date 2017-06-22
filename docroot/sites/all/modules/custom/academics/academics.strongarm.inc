@@ -44,27 +44,9 @@ function academics_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_defaults_taxonomy_term_schools';
   $strongarm->value = array(
-    'status' => 1,
-    'view modes' => array(
-      'page_manager' => array(
-        'status' => 1,
-        'substitute' => 'default',
-        'default' => 0,
-        'choice' => 0,
-      ),
-      'default' => array(
-        'status' => 1,
-        'substitute' => 'page_manager',
-        'default' => 1,
-        'choice' => 1,
-      ),
-      'featured' => array(
-        'status' => 0,
-        'substitute' => 0,
-        'default' => 0,
-        'choice' => 0,
-      ),
-    ),
+    'status' => 0,
+    'help' => '',
+    'view modes' => array(),
   );
   $export['panelizer_defaults_taxonomy_term_schools'] = $strongarm;
 
@@ -134,9 +116,23 @@ function academics_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_degree_type_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_degree_type_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_program_location_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_program_location_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_program_type_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_program_type_pattern'] = $strongarm;
 
   return $export;
 }

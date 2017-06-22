@@ -47,14 +47,11 @@ function tiffin_drone_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<a href="http://tiffin.dev.dd:8083/files/videos/drone-one.mp4" title="Virtual Tour" target="_blank" rel="noopener">
-<div id="watchtourshell">
-<div id="watchtour">TU Drone</div>
-<div id="playtour">&nbsp;</div>
-</div> 
-</a>
-
-',
+    'body' => '<div><h2 class="pane-title">TU Heminger Athletic Center, Tennis Courts and Weight Room Drone Video</h2><div>
+<div class="responsive-embed widescreen">
+<iframe width="1280" height="720" src="//www.youtube.com/embed/xqfoEIjsvgE?color2=FBE9EC&amp;rel=0&amp;loop=1&amp;playlist=xqfoEIjsvgE&amp;hd=1&amp;autoplay=1&amp;showsearch=0&amp;showinfo=0&amp;controls=0&amp;version=3&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+</div>
+<a href="https://youtu.be/xqfoEIjsvgE" class="video-click venobox" data-type="youtube" data-css="custom-overlay" data-autoplay="true"><i class="fa fa-play"></i><span class="sr-only">Play Video</span></a>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
   );

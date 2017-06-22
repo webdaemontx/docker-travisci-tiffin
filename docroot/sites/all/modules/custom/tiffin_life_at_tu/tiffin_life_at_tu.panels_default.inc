@@ -30,7 +30,7 @@ function tiffin_life_at_tu_default_panels_mini() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Dragon Perks';
+  $display->title = 'Dragon Life';
   $display->uuid = '531564ac-0a82-4d76-9819-dea609a7c6c1';
   $display->storage_type = 'panels_mini';
   $display->storage_id = 'dragon_perks';
@@ -47,19 +47,59 @@ function tiffin_life_at_tu_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<ul>
-<li><a href=""><div><p>Sports Tickets</p></div></a></li>
-<li><a href=""><div><p>ResLife Cinema</p></div></a></li>
-<li><a href=""><div><p>40 Plus Organizations</p></div></a></li>
-<li><a href=""><div><p>Financial Aid</p></div></a></li>
-</ul>
-<ul>
-<li><a href=""><div><p>Cars on Campus</p></div></a></li>
-<li><a href=""><div><p>Free Laundry and Printing</p></div></a></li>
-<li><a href=""><div><p>Internships</p></div></a></li>
-<li><a href=""><div><p>Small class Sizes</p></div></a></li>
-</ul>',
-    'format' => 'wetkit_html_text',
+    'body' => '<div class="icon-grid row">
+	<div class="col-md-4">
+		<div class="icon-grid-inner">[[{"fid":"7521","view_mode":"default","fields":{"format":"default","alignment":"","filename_field[en][0][value]":"van_dragon.png","field_file_image_alt_text[en][0][value]":"Road Trips","field_file_image_title_text[en][0][value]":"Road Trips"},"type":"media","field_deltas":{"1":{"format":"default","alignment":"","filename_field[en][0][value]":"van_dragon.png","field_file_image_alt_text[en][0][value]":"Road Trips","field_file_image_title_text[en][0][value]":"Road Trips"}},"attributes":{"alt":"Road Trips","title":"Road Trips","class":"media-element file-default","data-delta":"1"}}]]
+			<h3>Road Trips</h3>
+
+			<p>To performing arts &amp; sporting events</p>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="icon-grid-inner">[[{"fid":"7536","view_mode":"default","fields":{"format":"default","alignment":"","filename_field[en][0][value]":"organization.png","field_file_image_alt_text[en][0][value]":"Student organization","field_file_image_title_text[en][0][value]":"Student organization"},"type":"media","field_deltas":{"3":{"format":"default","alignment":"","filename_field[en][0][value]":"organization.png","field_file_image_alt_text[en][0][value]":"Student organization","field_file_image_title_text[en][0][value]":"Student organization"}},"attributes":{"alt":"Student organization","title":"Student organization","class":"media-element file-default","data-delta":"3"}}]]
+			<h3>40+ Organizations</h3>
+
+			<p>Pick an org or create your own</p>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="icon-grid-inner">[[{"fid":"7541","view_mode":"default","fields":{"format":"default","alignment":"","filename_field[en][0][value]":"coffee_cup.png","field_file_image_alt_text[en][0][value]":"Coffee cup","field_file_image_title_text[en][0][value]":"Coffee cup"},"type":"media","field_deltas":{"4":{"format":"default","alignment":"","filename_field[en][0][value]":"coffee_cup.png","field_file_image_alt_text[en][0][value]":"Coffee cup","field_file_image_title_text[en][0][value]":"Coffee cup"}},"attributes":{"alt":"Coffee cup","title":"Coffee cup","class":"media-element file-default","data-delta":"4"}}]]
+			<h3>Dragon Brew</h3>
+
+			<p>We proudly serve Starbucks</p>
+		</div>
+	</div>
+</div>
+
+<div class="icon-grid row">
+	<div class="col-md-4">
+		<div class="icon-grid-inner">[[{"fid":"7546","view_mode":"default","fields":{"format":"default","alignment":"","filename_field[en][0][value]":"icon-car.png","field_file_image_alt_text[en][0][value]":"Cars Welcome","field_file_image_title_text[en][0][value]":"Cars Welcome"},"type":"media","field_deltas":{"5":{"format":"default","alignment":"","filename_field[en][0][value]":"icon-car.png","field_file_image_alt_text[en][0][value]":"Cars Welcome","field_file_image_title_text[en][0][value]":"Cars Welcome"}},"attributes":{"alt":"Cars Welcome","title":"Cars Welcome","class":"media-element file-default","data-delta":"5"}}]]
+			<h3>Cars Welcome</h3>
+
+			<p>On campus all 4 years</p>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="icon-grid-inner">[[{"fid":"7551","view_mode":"default","fields":{"format":"default","alignment":"","filename_field[en][0][value]":"icon-laundry.png","field_file_image_alt_text[en][0][value]":"Free Laundry and Printing","field_file_image_title_text[en][0][value]":"Free Laundry and Printing"},"type":"media","field_deltas":{"6":{"format":"default","alignment":"","filename_field[en][0][value]":"icon-laundry.png","field_file_image_alt_text[en][0][value]":"Free Laundry and Printing","field_file_image_title_text[en][0][value]":"Free Laundry and Printing"}},"attributes":{"alt":"Free Laundry and Printing","title":"Free Laundry and Printing","class":"media-element file-default","data-delta":"6"}}]]
+			<h3>Free Laundry &amp; Printing</h3>
+
+			<p>Leave your quarters at home</p>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="icon-grid-inner">[[{"fid":"7556","view_mode":"default","fields":{"format":"default","alignment":"","filename_field[en][0][value]":"icon-dragon.png","field_file_image_alt_text[en][0][value]":"Best Mascot","field_file_image_title_text[en][0][value]":"Best Mascot"},"type":"media","field_deltas":{"7":{"format":"default","alignment":"","filename_field[en][0][value]":"icon-dragon.png","field_file_image_alt_text[en][0][value]":"Best Mascot","field_file_image_title_text[en][0][value]":"Best Mascot"}},"attributes":{"alt":"Best Mascot","title":"Best Mascot","class":"media-element file-default","data-delta":"7"}}]]
+			<h3>Best Mascot</h3>
+
+			<p>Our mascot breathes fire</p>
+		</div>
+	</div>
+</div>
+',
+    'format' => 'wetkit_wysiwyg_text',
     'substitute' => TRUE,
   );
   $pane->cache = array();
@@ -116,14 +156,14 @@ function tiffin_life_at_tu_default_panels_mini() {
     'title' => 'Life at TU',
     'title_heading' => 'h2',
     'body' => '<ul>
-<li><a href=""><div><p>Student Affairs &amp; Dean of Students</p></div></a></li>
-<li><a href=""><div><p>Student Activities</p></div></a></li>
-<li><a href=""><div><p>First Year Activities</p></div></a></li>
+<li class="hvr-shrink"><a href="/studentservices"><div><p>Student Services</p></div></a></li>
+<li class="hvr-shrink"><a href="/studentactivities"><div><p>Student Activities</p></div></a></li>
+<li class="hvr-shrink"><a href="/campuslife/first-year-experience"><div><p>First-Year Experience</p></div></a></li>
 </ul>
 <ul>
-<li><a href=""><div><p>TU Life + Housing</p></div></a></li>
-<li><a href=""><div><p>Campus Safety &amp; Security</p></div></a></li>
-<li><a href=""><div><p>Student Conduct &amp; Community Standards</p></div></a></li>
+<li class="hvr-shrink"><a href="/residencelife"><div><p>Residence Life & Housing</p></div></a></li>
+<li class="hvr-shrink"><a href="/residencelife/campus-security"><div><p>Campus Safety &amp; Security</p></div></a></li>
+<li class="hvr-shrink"><a href="https://www.aviserves.com/tiffin/"><div><p>Dining Services</p></div></a></li>
 </ul>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,

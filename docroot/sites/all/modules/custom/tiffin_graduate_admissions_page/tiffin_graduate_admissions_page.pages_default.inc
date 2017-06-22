@@ -56,6 +56,10 @@ function tiffin_graduate_admissions_page_default_page_manager_pages() {
     'access' => array(
       'logic' => 'and',
     ),
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -74,10 +78,85 @@ function tiffin_graduate_admissions_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
+  $pane->pid = 'new-ec59622b-d362-4cf6-8d70-799e4ef50ada';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'clone_of_international_top_nav';
+  $pane->shown = FALSE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'hero-sub-navigation',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'ec59622b-d362-4cf6-8d70-799e4ef50ada';
+  $display->content['new-ec59622b-d362-4cf6-8d70-799e4ef50ada'] = $pane;
+  $display->panels['middle'][0] = 'new-ec59622b-d362-4cf6-8d70-799e4ef50ada';
+  $pane = new stdClass();
   $pane->pid = 'new-db70aa79-a916-439d-9e82-0216a4dab84e';
   $pane->panel = 'middle';
   $pane->type = 'panels_mini';
   $pane->subtype = 'graduate_admissions_hero';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => 'Graduate Admissions',
+    'override_title_heading' => 'h1',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'has-sub-navigation',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'db70aa79-a916-439d-9e82-0216a4dab84e';
+  $display->content['new-db70aa79-a916-439d-9e82-0216a4dab84e'] = $pane;
+  $display->panels['middle'][1] = 'new-db70aa79-a916-439d-9e82-0216a4dab84e';
+  $pane = new stdClass();
+  $pane->pid = 'new-4881e2bd-8d6c-4b11-b87d-e649967d6995';
+  $pane->panel = 'middle';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'undergraduate_admissions-graduate_program_list_panel_pane';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '4881e2bd-8d6c-4b11-b87d-e649967d6995';
+  $display->content['new-4881e2bd-8d6c-4b11-b87d-e649967d6995'] = $pane;
+  $display->panels['middle'][2] = 'new-4881e2bd-8d6c-4b11-b87d-e649967d6995';
+  $pane = new stdClass();
+  $pane->pid = 'new-144563a1-ec0b-4d75-99c1-974344ebd5e4';
+  $pane->panel = 'middle';
+  $pane->type = 'block';
+  $pane->subtype = 'bean-schools-bean-block';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -91,25 +170,34 @@ function tiffin_graduate_admissions_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = 'db70aa79-a916-439d-9e82-0216a4dab84e';
-  $display->content['new-db70aa79-a916-439d-9e82-0216a4dab84e'] = $pane;
-  $display->panels['middle'][0] = 'new-db70aa79-a916-439d-9e82-0216a4dab84e';
+  $pane->uuid = '144563a1-ec0b-4d75-99c1-974344ebd5e4';
+  $display->content['new-144563a1-ec0b-4d75-99c1-974344ebd5e4'] = $pane;
+  $display->panels['middle'][3] = 'new-144563a1-ec0b-4d75-99c1-974344ebd5e4';
   $pane = new stdClass();
-  $pane->pid = 'new-8f0931d6-6cf9-44e2-9b3e-4ee46b7b4ffb';
+  $pane->pid = 'new-b879707f-c554-46e4-af24-bcc45ea9ef9a';
   $pane->panel = 'middle';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
+  $pane->type = 'views';
+  $pane->subtype = 'schools';
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => 'test',
-    'format' => 'wetkit_html_text',
-    'substitute' => TRUE,
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '5',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -117,11 +205,11 @@ function tiffin_graduate_admissions_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 4;
   $pane->locks = array();
-  $pane->uuid = '8f0931d6-6cf9-44e2-9b3e-4ee46b7b4ffb';
-  $display->content['new-8f0931d6-6cf9-44e2-9b3e-4ee46b7b4ffb'] = $pane;
-  $display->panels['middle'][1] = 'new-8f0931d6-6cf9-44e2-9b3e-4ee46b7b4ffb';
+  $pane->uuid = 'b879707f-c554-46e4-af24-bcc45ea9ef9a';
+  $display->content['new-b879707f-c554-46e4-af24-bcc45ea9ef9a'] = $pane;
+  $display->panels['middle'][4] = 'new-b879707f-c554-46e4-af24-bcc45ea9ef9a';
   $pane = new stdClass();
   $pane->pid = 'new-442491e7-c45a-410d-b23b-785184173aaf';
   $pane->panel = 'middle';
@@ -152,11 +240,11 @@ function tiffin_graduate_admissions_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 2;
+  $pane->position = 5;
   $pane->locks = array();
   $pane->uuid = '442491e7-c45a-410d-b23b-785184173aaf';
   $display->content['new-442491e7-c45a-410d-b23b-785184173aaf'] = $pane;
-  $display->panels['middle'][2] = 'new-442491e7-c45a-410d-b23b-785184173aaf';
+  $display->panels['middle'][5] = 'new-442491e7-c45a-410d-b23b-785184173aaf';
   $pane = new stdClass();
   $pane->pid = 'new-596979ad-5751-42cd-995e-cb1073aaf8e0';
   $pane->panel = 'middle';
@@ -175,13 +263,36 @@ function tiffin_graduate_admissions_page_default_page_manager_pages() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 3;
+  $pane->position = 6;
   $pane->locks = array();
   $pane->uuid = '596979ad-5751-42cd-995e-cb1073aaf8e0';
   $display->content['new-596979ad-5751-42cd-995e-cb1073aaf8e0'] = $pane;
-  $display->panels['middle'][3] = 'new-596979ad-5751-42cd-995e-cb1073aaf8e0';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->panels['middle'][6] = 'new-596979ad-5751-42cd-995e-cb1073aaf8e0';
+  $pane = new stdClass();
+  $pane->pid = 'new-0331daba-ea5a-4b44-89dd-eac1498cf00e';
+  $pane->panel = 'middle';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'floating_all_submenu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = '0331daba-ea5a-4b44-89dd-eac1498cf00e';
+  $display->content['new-0331daba-ea5a-4b44-89dd-eac1498cf00e'] = $pane;
+  $display->panels['middle'][7] = 'new-0331daba-ea5a-4b44-89dd-eac1498cf00e';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-db70aa79-a916-439d-9e82-0216a4dab84e';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['graduate_admissions'] = $page;

@@ -47,11 +47,34 @@ function tiffin_online_admissions_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<ul>
-<li><a href=""><div><p>How to Apply</p></div></a></li>
-<li><a href=""><div><p>Request Info</p></div></a></li>
-<li><a href=""><div><p>Visit TU</p></div></a></li>
-</ul>',
+    'body' => '<div class="hero-sub-navigation">
+<ul>
+<li><a href="/finaid">Financial Aid</a></li>
+<li><a href="/tuition">Tuition & Fees</a></li>
+<li><a href="http://youvis.it/TbhtrI" data-type="iframe" class="venobox" title="Virtual Tour" data-link-type="image">Virtual Tour</a></li>
+</ul>
+</div>
+<div class="steps-container">
+    <div class="container">
+      <ul class="page-hero-steps row">
+        <li class="col-lg-4">
+          <a href="/apply">
+            <span>1</span> How to Apply
+          </a>
+        </li>
+        <li class="col-lg-4">
+          <a href="/info">
+            <span>2</span> Request Info
+          </a>
+        </li>
+        <li class="col-lg-4">
+          <a href="/visit">
+            <span>3</span> Visit TU
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
   );
@@ -59,7 +82,10 @@ function tiffin_online_admissions_default_panels_mini() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();

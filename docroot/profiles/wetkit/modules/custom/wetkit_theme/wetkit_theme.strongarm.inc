@@ -24,16 +24,15 @@ function wetkit_theme_strongarm() {
     'toggle_favicon' => 1,
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
-    'default_logo' => 1,
-    'logo_path' => 'profiles/wetkit/libraries/theme-wet-boew/assets/logo.png',
+    'default_logo' => 0,
+    'logo_path' => 'public://tiffin-logo_0.png',
     'wetkit_theme_svg_logo_path' => 'profiles/wetkit/libraries/theme-wet-boew/assets/logo.svg',
     'wetkit_theme_svg_logo_upload' => '',
-    'wetkit_theme_svg_default_logo' => 1,
-    'default_favicon' => 1,
-    'favicon_path' => '',
-    'favicon_upload' => '',
+    'wetkit_theme_svg_default_logo' => 0,
+    'default_favicon' => 0,
+    'favicon_path' => 'public://favicon.ico',
     'bootstrap__active_tab' => 'edit-general',
-    'bootstrap_fluid_container' => 0,
+    'bootstrap_fluid_container' => 1,
     'bootstrap_button_size' => '',
     'bootstrap_button_colorize' => 1,
     'bootstrap_button_iconize' => 1,
@@ -120,7 +119,8 @@ function wetkit_theme_strongarm() {
     'gcweb_election' => 0,
     'rescan_breakpoints' => 'Scan this theme for breakpoints',
     'jquery_update_jquery_version' => '',
-    'global__active_tab' => 'edit-variable-realm-selector-language',
+    'global__active_tab' => 'edit-favicon',
+    'favicon_mimetype' => 'image/vnd.microsoft.icon',
   );
   $export['theme_wetkit_bootstrap_settings'] = $strongarm;
 
@@ -143,13 +143,16 @@ function wetkit_theme_strongarm() {
     'wetkit_theme_svg_logo_path' => '',
     'wetkit_theme_svg_logo_upload' => '',
     'wetkit_theme_svg_default_logo' => 0,
-    'default_favicon' => 1,
-    'favicon_path' => '',
+    'default_favicon' => 0,
+    'favicon_path' => 'public://favicon_0.ico',
     'favicon_upload' => '',
     'display_breadcrumbs' => 0,
     'ember_no_fadein_effect' => 0,
+    'views_ui_override' => 1,
     'rescan_breakpoints' => 'Scan this theme for breakpoints',
-    'jquery_update_jquery_version' => '1.8',
+    'jquery_update_jquery_version' => '1.10',
+    'global__active_tab' => 'edit-jquery-update',
+    'favicon_mimetype' => 'image/vnd.microsoft.icon',
   );
   $export['theme_wetkit_ember_settings'] = $strongarm;
 
@@ -157,7 +160,7 @@ function wetkit_theme_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'views_ui_custom_theme';
-  $strongarm->value = 'wetkit_ember';
+  $strongarm->value = '_default';
   $export['views_ui_custom_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -171,7 +174,7 @@ function wetkit_theme_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'views_ui_show_master_display';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['views_ui_show_master_display'] = $strongarm;
 
   return $export;

@@ -83,6 +83,13 @@ function wetkit_wysiwyg_filter_default_formats() {
           'filter_url_length' => 72,
         ),
       ),
+      'media_filter_paragraph_fix' => array(
+        'weight' => 1,
+        'status' => 1,
+        'settings' => array(
+          'replace' => 0,
+        ),
+      ),
     ),
   );
 

@@ -101,7 +101,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_board_company_name']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_board_company_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_board_company_name']['field_api_classes'] = TRUE;
-  /* Field: Content: Member Type */
+  /* Field: Field: Member Type */
   $handler->display->display_options['fields']['field_member_type']['id'] = 'field_member_type';
   $handler->display->display_options['fields']['field_member_type']['table'] = 'field_data_field_member_type';
   $handler->display->display_options['fields']['field_member_type']['field'] = 'field_member_type';
@@ -126,7 +126,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'board_member' => 'board_member',
   );
-  /* Filter criterion: Content: Member Type (field_member_type) */
+  /* Filter criterion: Field: Member Type (field_member_type) */
   $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
   $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
   $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
@@ -200,6 +200,19 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_class'] = 'cabinet-container';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: Content: Last Name */
+  $handler->display->display_options['fields']['field_board_last_name']['id'] = 'field_board_last_name';
+  $handler->display->display_options['fields']['field_board_last_name']['table'] = 'field_data_field_board_last_name';
+  $handler->display->display_options['fields']['field_board_last_name']['field'] = 'field_board_last_name';
+  $handler->display->display_options['fields']['field_board_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_board_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_board_last_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_board_last_name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last Name (field_board_last_name) */
+  $handler->display->display_options['sorts']['field_board_last_name_value']['id'] = 'field_board_last_name_value';
+  $handler->display->display_options['sorts']['field_board_last_name_value']['table'] = 'field_data_field_board_last_name';
+  $handler->display->display_options['sorts']['field_board_last_name_value']['field'] = 'field_board_last_name_value';
   $handler->display->display_options['path'] = 'about/board-members';
 
   /* Display: Trustees Pane */
@@ -265,7 +278,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_board_company_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_board_company_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_board_company_name']['element_default_classes'] = FALSE;
-  /* Field: Content: Member Type */
+  /* Field: Field: Member Type */
   $handler->display->display_options['fields']['field_member_type']['id'] = 'field_member_type';
   $handler->display->display_options['fields']['field_member_type']['table'] = 'field_data_field_member_type';
   $handler->display->display_options['fields']['field_member_type']['field'] = 'field_member_type';
@@ -302,7 +315,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'board_member' => 'board_member',
   );
-  /* Filter criterion: Content: Member Type (field_member_type) */
+  /* Filter criterion: Field: Member Type (field_member_type) */
   $handler->display->display_options['filters']['field_member_type_value']['id'] = 'field_member_type_value';
   $handler->display->display_options['filters']['field_member_type_value']['table'] = 'field_data_field_member_type';
   $handler->display->display_options['filters']['field_member_type_value']['field'] = 'field_member_type_value';
@@ -369,8 +382,9 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '4';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'field_user_picture' => 'field_user_picture',
@@ -383,12 +397,11 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'counselors_and_staff',
+    'image_style' => 'faculty_220x293',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -491,12 +504,12 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'image_style' => 'counselors_and_staff',
+    'image_style' => 'faculty_220x293',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -509,6 +522,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Faculty Title */
   $handler->display->display_options['fields']['field_faculty_title']['id'] = 'field_faculty_title';
@@ -516,21 +530,22 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['fields']['field_faculty_title']['field'] = 'field_faculty_title';
   $handler->display->display_options['fields']['field_faculty_title']['label'] = '';
   $handler->display->display_options['fields']['field_faculty_title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_faculty_title']['element_type'] = '0';
   $handler->display->display_options['fields']['field_faculty_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_faculty_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_faculty_title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_faculty_title']['field_api_classes'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="profile-details" data-mh="profile-details">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_user_picture]
+<div class="faculty-details" data-mh="faculty-details">
  <span class="profile-name">[title]</span>
 <span class="profile-position">[field_faculty_title]</span>
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'faculty-container';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -587,7 +602,8 @@ function tiffin_cabinet_and_staff_views_default_views() {
     t('Meet Your Admissions Counselors'),
     t('Admissions Counselors'),
     t('<h2 class="pane-title" style="text-center">[title]</h2>'),
-    t('<div class="profile-details" data-mh="profile-details">
+    t('[field_user_picture]
+<div class="faculty-details" data-mh="faculty-details">
  <span class="profile-name">[title]</span>
 <span class="profile-position">[field_faculty_title]</span>
 </div>'),
@@ -681,7 +697,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
 <span class="profile-phone">[field_phone]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Manual Order (field_manual_order) */
+  /* Sort criterion: Field: Manual Order (field_manual_order) */
   $handler->display->display_options['sorts']['field_manual_order_value']['id'] = 'field_manual_order_value';
   $handler->display->display_options['sorts']['field_manual_order_value']['table'] = 'field_data_field_manual_order';
   $handler->display->display_options['sorts']['field_manual_order_value']['field'] = 'field_manual_order_value';
@@ -689,7 +705,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
-  /* Contextual filter: Content: School (field_academic_school) */
+  /* Contextual filter: Field: School (field_academic_school) */
   $handler->display->display_options['arguments']['field_academic_school_tid']['id'] = 'field_academic_school_tid';
   $handler->display->display_options['arguments']['field_academic_school_tid']['table'] = 'field_data_field_academic_school';
   $handler->display->display_options['arguments']['field_academic_school_tid']['field'] = 'field_academic_school_tid';
@@ -738,7 +754,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'staff' => 'staff',
   );
-  /* Filter criterion: Content: Categories (field_featured_categories) */
+  /* Filter criterion: Field: Categories (field_featured_categories) */
   $handler->display->display_options['filters']['field_featured_categories_tid']['id'] = 'field_featured_categories_tid';
   $handler->display->display_options['filters']['field_featured_categories_tid']['table'] = 'field_data_field_featured_categories';
   $handler->display->display_options['filters']['field_featured_categories_tid']['field'] = 'field_featured_categories_tid';
@@ -766,7 +782,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'staff' => 'staff',
   );
-  /* Filter criterion: Content: Categories (field_featured_categories) */
+  /* Filter criterion: Field: Categories (field_featured_categories) */
   $handler->display->display_options['filters']['field_featured_categories_tid']['id'] = 'field_featured_categories_tid';
   $handler->display->display_options['filters']['field_featured_categories_tid']['table'] = 'field_data_field_featured_categories';
   $handler->display->display_options['filters']['field_featured_categories_tid']['field'] = 'field_featured_categories_tid';
@@ -797,7 +813,7 @@ function tiffin_cabinet_and_staff_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'staff' => 'staff',
   );
-  /* Filter criterion: Content: Categories (field_featured_categories) */
+  /* Filter criterion: Field: Categories (field_featured_categories) */
   $handler->display->display_options['filters']['field_featured_categories_tid']['id'] = 'field_featured_categories_tid';
   $handler->display->display_options['filters']['field_featured_categories_tid']['table'] = 'field_data_field_featured_categories';
   $handler->display->display_options['filters']['field_featured_categories_tid']['field'] = 'field_featured_categories_tid';

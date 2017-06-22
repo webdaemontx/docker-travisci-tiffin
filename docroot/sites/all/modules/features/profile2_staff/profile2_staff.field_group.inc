@@ -23,8 +23,8 @@ function profile2_staff_field_group_info() {
     'label' => 'Board Member Info',
     'weight' => '4',
     'children' => array(
-      0 => 'field_company_name',
-      1 => 'field_company_city',
+      0 => 'field_company_city',
+      1 => 'field_company_name',
       2 => 'field_company_state',
     ),
     'format_type' => 'tab',
@@ -42,6 +42,34 @@ function profile2_staff_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_categories_departments|profile2|staff|form';
+  $field_group->group_name = 'group_categories_departments';
+  $field_group->entity_type = 'profile2';
+  $field_group->bundle = 'staff';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Categories and Departments',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_department',
+      1 => 'field_featured_categories',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-categories-departments field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_categories_departments|profile2|staff|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_counselor_info|profile2|staff|form';
   $field_group->group_name = 'group_counselor_info';
   $field_group->entity_type = 'profile2';
@@ -52,8 +80,8 @@ function profile2_staff_field_group_info() {
     'label' => 'Counselor Info',
     'weight' => '3',
     'children' => array(
-      0 => 'field_staff_hometown',
-      1 => 'field_favorite_travel_spots',
+      0 => 'field_favorite_travel_spots',
+      1 => 'field_staff_hometown',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -113,13 +141,12 @@ function profile2_staff_field_group_info() {
       2 => 'field_phone',
       3 => 'field_first_name',
       4 => 'field_last_name',
-      5 => 'field_bio_summary',
-      6 => 'field_name_prefix',
-      7 => 'field_name_suffix',
-      8 => 'field_alternate_title',
-      9 => 'field_faculty_degrees_and_certs',
-      10 => 'field_profile_full_name',
-      11 => 'group_photo_section_separator',
+      5 => 'field_alternate_title',
+      6 => 'field_bio_summary',
+      7 => 'field_faculty_degrees_and_certs',
+      8 => 'field_name_prefix',
+      9 => 'field_name_suffix',
+      10 => 'group_photo_section_separator',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -195,6 +222,7 @@ function profile2_staff_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Board Member Info');
+  t('Categories and Departments');
   t('Counselor Info');
   t('Faculty Info');
   t('General Information');

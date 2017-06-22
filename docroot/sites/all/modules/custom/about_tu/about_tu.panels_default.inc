@@ -47,10 +47,10 @@ function about_tu_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<div id="about-tiffin"><h3>About Tiffin Ohio</h3>
+    'body' => '<div id="about-tiffin"><h3 style="font-size: 52px;">About Tiffin, Ohio</h3>
 <ul><li><p>Population:</p><p>17,963</p></li>
 <li><p>Founded:</p><p>1812</p></li>
-<li><p>Closest Airports:</p><p>Tiffin Metro Airport, Toledo Express Airport</p></li>
+<li><p>Closest Airports:</p><p>Cleveland Hopkins International Airport, Detroit Metropolitan Airport.</p></li>
 <li><p>Notable:</p><p>First public building in the United States to be wired for electricity.</p></li></ul>
 </div>',
     'format' => 'wetkit_html_text',
@@ -111,11 +111,13 @@ function about_tu_default_panels_mini() {
     'title_heading' => 'h2',
     'body' => '<h1>About TU</h1>
 <div id="abouttutop">
-<ul>
-<li><a href=""><div class="hvr-bounce-to-bottom"><p>History</p></div></a></li>
-<li><a href=""><div class="hvr-bounce-to-bottom"><p>Leadership</p></div></a></li>
-<li><a href=""><div class="hvr-bounce-to-bottom"><p>University Info</p></div></a></li>
+<div class="container">
+<ul class="row">
+<li class="col-md-4 col-xs-12"><a href="/about/ataglance/history/"><div class=""><p class="outlined-buttons">History</p></div></a></li>
+<li class="col-md-4 col-xs-12"><a href="/about/welcome/"><div><p class="outlined-buttons">Leadership</p></div></a></li>
+<li class="col-md-4 col-xs-12"><a href="/about/ataglance/"><div><p class="outlined-buttons">University Info</p></div></a></li>
 </ul>
+</div>
 </div>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
@@ -173,7 +175,7 @@ function about_tu_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<div id="discover-tiffin"><a href=""><p>Discover the City of Tiffin</p></a></div>',
+    'body' => '<div id="discover-tiffin"><a href="/visit"><p>Discover the City of Tiffin</p></a></div>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
   );

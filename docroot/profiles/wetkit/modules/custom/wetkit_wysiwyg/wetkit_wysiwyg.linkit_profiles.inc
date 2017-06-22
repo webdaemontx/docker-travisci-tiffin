@@ -24,7 +24,7 @@ function wetkit_wysiwyg_default_linkit_profiles() {
       'plain_text' => 0,
     ),
     'search_plugins' => array(
-      'entity:field_collection_item' => array(
+      'entity:taxonomy_term' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -33,7 +33,7 @@ function wetkit_wysiwyg_default_linkit_profiles() {
         'weight' => '-10',
       ),
       'entity:file' => array(
-        'enabled' => 0,
+        'enabled' => 1,
         'weight' => '-10',
       ),
       'entity:user' => array(
@@ -44,13 +44,31 @@ function wetkit_wysiwyg_default_linkit_profiles() {
     'entity:node' => array(
       'result_description' => '[node:title_field]',
       'bundles' => array(
-        'wetkit_page' => 0,
-        'deploy_content_moderated' => 0,
-        'deploy_content_simple' => 0,
+        'wetkit_page' => 'wetkit_page',
+        'faculty' => 'faculty',
+        'news_page' => 'news_page',
+        'program' => 'program',
         'wetkit_documentation' => 0,
+        'panel' => 0,
+        'webform' => 0,
       ),
       'group_by_bundle' => 0,
       'include_unpublished' => 0,
+    ),
+    'entity:taxonomy_term' => array(
+      'result_description' => '',
+      'bundles' => array(
+        'wetkit_categories' => 0,
+        'degree_type' => 0,
+        'program_type' => 0,
+        'schools' => 0,
+        'department' => 0,
+        'area_of_study' => 0,
+        'campus' => 0,
+        'major' => 0,
+        'program' => 0,
+      ),
+      'group_by_bundle' => 0,
     ),
     'entity:file' => array(
       'result_description' => '',
@@ -64,6 +82,7 @@ function wetkit_wysiwyg_default_linkit_profiles() {
       'group_by_bundle' => 0,
       'show_scheme' => 0,
       'group_by_scheme' => 0,
+      'url_type' => 'entity',
       'image_extra_info' => array(
         'thumbnail' => 'thumbnail',
         'dimensions' => 'dimensions',
@@ -80,24 +99,24 @@ function wetkit_wysiwyg_default_linkit_profiles() {
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'target' => array(
-        'enabled' => 0,
-        'weight' => '-10',
-      ),
-      'class' => array(
-        'enabled' => 0,
-        'weight' => '-10',
-      ),
-      'rel' => array(
-        'enabled' => 0,
+      'title' => array(
+        'enabled' => 1,
         'weight' => '-10',
       ),
       'id' => array(
-        'enabled' => 0,
+        'enabled' => 1,
         'weight' => '-10',
       ),
-      'title' => array(
-        'enabled' => 0,
+      'class' => array(
+        'enabled' => 1,
+        'weight' => '-10',
+      ),
+      'rel' => array(
+        'enabled' => 1,
+        'weight' => '-10',
+      ),
+      'target' => array(
+        'enabled' => 1,
         'weight' => '-10',
       ),
     ),

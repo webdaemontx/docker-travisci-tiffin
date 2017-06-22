@@ -364,5 +364,12 @@ function wetkit_bean_strongarm() {
   );
   $export['field_bundle_settings_field_collection_item__field_bean_slide_collection'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_wetkit_categories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_wetkit_categories_pattern'] = $strongarm;
+
   return $export;
 }

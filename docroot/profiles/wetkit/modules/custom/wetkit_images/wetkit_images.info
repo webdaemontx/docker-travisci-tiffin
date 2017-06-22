@@ -2,6 +2,8 @@ name = WetKit Images
 description = Provides scaling and cropping to images and other functionality.
 core = 7.x
 package = WetKit
+version = 7.x-4.5
+project = wetkit_images
 dependencies[] = breakpoints
 dependencies[] = ctools
 dependencies[] = features
@@ -10,6 +12,7 @@ dependencies[] = image
 dependencies[] = media
 dependencies[] = picture
 dependencies[] = strongarm
+datestamp = 1467939262
 features[breakpoint_group][] = wxt_responsive_image
 features[breakpoints][] = custom.user.mobile
 features[breakpoints][] = custom.user.narrow
@@ -58,10 +61,3 @@ features[image][] = wetkit_image_video
 features[image][] = wetkit_image_wide
 features[variable][] = picture_ckeditor_groups
 features[variable][] = picture_ckeditor_label
-
-; Information added by Drupal.org packaging script on 2016-07-08
-version = "7.x-4.5"
-core = "7.x"
-project = "wetkit_images"
-datestamp = "1467939262"
-

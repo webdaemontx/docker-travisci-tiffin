@@ -21,6 +21,7 @@ dependencies[] = text
 dependencies[] = views
 dependencies[] = views_bootstrap
 dependencies[] = views_content
+dependencies[] = wetkit_core
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0

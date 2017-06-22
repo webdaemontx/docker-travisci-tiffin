@@ -16,7 +16,7 @@ function academics_quicktabs_default_quicktabs() {
   $quicktabs->machine_name = 'graduate_program_tabs';
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = FALSE;
-  $quicktabs->default_tab = 999999;
+  $quicktabs->default_tab = 0;
   $quicktabs->title = 'Graduate Program Tabs';
   $quicktabs->tabs = array(
     0 => array(
@@ -58,7 +58,7 @@ function academics_quicktabs_default_quicktabs() {
       'vid' => 'undergraduate_program',
       'display' => 'panel_pane_8',
       'args' => '',
-      'title' => 'TU Graduates',
+      'title' => 'Where TU Grads Work',
       'weight' => '-99',
       'type' => 'view',
     ),
@@ -70,8 +70,8 @@ function academics_quicktabs_default_quicktabs() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Careers');
-  t('TU Graduates');
   t('Undergraduate - Career Opportunities');
+  t('Where TU Grads Work');
 
   $export['graduates_career_opportunities'] = $quicktabs;
 
@@ -86,34 +86,42 @@ function academics_quicktabs_default_quicktabs() {
   $quicktabs->tabs = array(
     0 => array(
       'vid' => 'undergraduate_program',
-      'display' => 'panel_pane_6',
+      'display' => 'program_highlights_pane',
       'args' => '',
-      'title' => 'Curriculum',
+      'title' => 'Highlights',
       'weight' => '-100',
       'type' => 'view',
     ),
     1 => array(
       'vid' => 'undergraduate_program',
-      'display' => 'panel_pane_10',
+      'display' => 'panel_pane_6',
       'args' => '',
-      'title' => 'Format',
+      'title' => 'Curriculum',
       'weight' => '-99',
       'type' => 'view',
     ),
     2 => array(
       'vid' => 'undergraduate_program',
-      'display' => 'panel_pane_11',
+      'display' => 'panel_pane_10',
       'args' => '',
-      'title' => 'Concentration',
+      'title' => 'Format',
       'weight' => '-98',
       'type' => 'view',
     ),
     3 => array(
       'vid' => 'undergraduate_program',
+      'display' => 'panel_pane_11',
+      'args' => '',
+      'title' => 'Concentration',
+      'weight' => '-97',
+      'type' => 'view',
+    ),
+    4 => array(
+      'vid' => 'undergraduate_program',
       'display' => 'panel_pane_3',
       'args' => '',
       'title' => 'Sample Courses',
-      'weight' => '-97',
+      'weight' => '-96',
       'type' => 'view',
     ),
   );
@@ -126,6 +134,7 @@ function academics_quicktabs_default_quicktabs() {
   t('Concentration');
   t('Curriculum');
   t('Format');
+  t('Highlights');
   t('Program Overview');
   t('Sample Courses');
 

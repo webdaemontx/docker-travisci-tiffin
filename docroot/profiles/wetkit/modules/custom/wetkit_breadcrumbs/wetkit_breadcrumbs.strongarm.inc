@@ -77,14 +77,18 @@ function wetkit_breadcrumbs_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'path_breadcrumbs_internal_render_themes';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    'bootstrap' => 'bootstrap',
+    'ember' => 'ember',
+    'wetkit_bootstrap' => 'wetkit_bootstrap',
+  );
   $export['path_breadcrumbs_internal_render_themes'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'path_breadcrumbs_rich_snippets';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['path_breadcrumbs_rich_snippets'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -98,7 +102,7 @@ function wetkit_breadcrumbs_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'path_breadcrumbs_url_cleaning_method';
-  $strongarm->value = 'none';
+  $strongarm->value = 'pathauto';
   $export['path_breadcrumbs_url_cleaning_method'] = $strongarm;
 
   return $export;

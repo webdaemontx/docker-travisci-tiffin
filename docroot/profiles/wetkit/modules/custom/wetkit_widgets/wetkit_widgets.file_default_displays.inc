@@ -342,17 +342,17 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__default__file_field_file_download_link';
-  $file_display->weight = 0;
-  $file_display->status = FALSE;
+  $file_display->weight = -47;
+  $file_display->status = TRUE;
   $file_display->settings = array(
-    'text' => 'Download [file:name]',
+    'text' => ' [file:field_document_name]',
   );
   $export['document__default__file_field_file_download_link'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__default__file_field_file_table';
-  $file_display->weight = 0;
+  $file_display->weight = -49;
   $file_display->status = FALSE;
   $file_display->settings = '';
   $export['document__default__file_field_file_table'] = $file_display;
@@ -360,7 +360,7 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__default__file_field_file_url_plain';
-  $file_display->weight = 0;
+  $file_display->weight = -44;
   $file_display->status = FALSE;
   $file_display->settings = '';
   $export['document__default__file_field_file_url_plain'] = $file_display;
@@ -368,24 +368,24 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__default__file_field_file_wetkit_video';
-  $file_display->weight = 0;
+  $file_display->weight = -50;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'controls' => 1,
+    'controls' => 0,
     'autoplay' => 0,
     'loop' => 0,
     'size' => array(
       'width' => '',
       'height' => '',
     ),
-    'multiple_file_behaviour' => 'sources',
+    'multiple_file_behaviour' => 'tags',
   );
   $export['document__default__file_field_file_wetkit_video'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__default__file_field_media_large_icon';
-  $file_display->weight = 0;
+  $file_display->weight = -48;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'image_style' => '',
@@ -395,25 +395,25 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__link__file_field_file_default';
-  $file_display->weight = 0;
-  $file_display->status = TRUE;
+  $file_display->weight = -44;
+  $file_display->status = FALSE;
   $file_display->settings = '';
   $export['document__link__file_field_file_default'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__link__file_field_file_download_link';
-  $file_display->weight = 0;
-  $file_display->status = FALSE;
+  $file_display->weight = -46;
+  $file_display->status = TRUE;
   $file_display->settings = array(
-    'text' => 'Download [file:name]',
+    'text' => ' [file:field_document_name]',
   );
   $export['document__link__file_field_file_download_link'] = $file_display;
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__link__file_field_file_table';
-  $file_display->weight = 0;
+  $file_display->weight = -49;
   $file_display->status = FALSE;
   $file_display->settings = '';
   $export['document__link__file_field_file_table'] = $file_display;
@@ -421,7 +421,7 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__link__file_field_file_url_plain';
-  $file_display->weight = 0;
+  $file_display->weight = -45;
   $file_display->status = FALSE;
   $file_display->settings = '';
   $export['document__link__file_field_file_url_plain'] = $file_display;
@@ -429,7 +429,7 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__link__file_field_file_wetkit_video';
-  $file_display->weight = 0;
+  $file_display->weight = -50;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'controls' => 1,
@@ -446,7 +446,7 @@ function wetkit_widgets_file_default_displays() {
   $file_display = new stdClass();
   $file_display->api_version = 1;
   $file_display->name = 'document__link__file_field_media_large_icon';
-  $file_display->weight = 0;
+  $file_display->weight = -48;
   $file_display->status = FALSE;
   $file_display->settings = array(
     'image_style' => '',
@@ -553,7 +553,7 @@ function wetkit_widgets_file_default_displays() {
   $file_display->api_version = 1;
   $file_display->name = 'document__wysiwyg__file_field_file_default';
   $file_display->weight = 0;
-  $file_display->status = FALSE;
+  $file_display->status = TRUE;
   $file_display->settings = '';
   $export['document__wysiwyg__file_field_file_default'] = $file_display;
 
@@ -646,11 +646,15 @@ function wetkit_widgets_file_default_displays() {
     'sizes' => '(min-width: 0px)',
     'image_styles' => array(
       '_empty image_' => '_empty image_',
+      'flexslider_full' => 0,
+      'flexslider_thumbnail' => 0,
       'thumbnail' => 0,
       'medium' => 0,
       'large' => 0,
       'linkit_thumb' => 0,
       'media_thumbnail' => 0,
+      'faculty' => 0,
+      'faculty_220x293' => 0,
       'highlighted' => 0,
       'wetkit_image_featured' => 0,
       'wetkit_image_full' => 0,
@@ -663,6 +667,7 @@ function wetkit_widgets_file_default_displays() {
       'wetkit_image_thumbnail' => 0,
       'wetkit_image_video' => 0,
       'wetkit_image_wide' => 0,
+      '150_x_150' => 0,
       '_original image_' => 0,
     ),
     'fallback_image_style' => 'thumbnail',

@@ -28,6 +28,7 @@ function profile2_staff_strongarm() {
     'group_faculty_info_tab|profile2|staff|form' => TRUE,
     'group_photo_section_separator|profile2|staff|form' => FALSE,
     'group_profile_member_type|profile2|staff|form' => FALSE,
+    'group_categories_departments|profile2|staff|form' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 

@@ -101,7 +101,7 @@ function wetkit_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache_lifetime';
-  $strongarm->value = '1800';
+  $strongarm->value = '900';
   $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -227,7 +227,7 @@ function wetkit_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_admin_theme';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -241,14 +241,14 @@ function wetkit_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_compression';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['page_compression'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_manager_node_edit_disabled';
-  $strongarm->value = 0;
+  $strongarm->value = TRUE;
   $export['page_manager_node_edit_disabled'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -323,21 +323,28 @@ function wetkit_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_reduce_ascii';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['pathauto_reduce_ascii'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_wetkit_categories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_wetkit_categories_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_transliterate';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['pathauto_transliterate'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_update_action';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['pathauto_update_action'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -2,6 +2,8 @@ name = WetKit Migration
 description = Migrates various content into Drupal such as the WET-BOEW Documentation
 core = 7.x
 package = WetKit
+version = 7.x-4.3
+project = wetkit_migrate
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = i18n_taxonomy
@@ -17,6 +19,7 @@ dependencies[] = wetkit_language
 dependencies[] = wetkit_migrate_content_types
 dependencies[] = wetkit_pages
 dependencies[] = wetkit_wetboew
+datestamp = 1471826340
 features[ctools][] = page_manager:pages_default:1
 features[features_api][] = api:2
 features[page_manager_handlers][] = node_view_panel_context
@@ -34,10 +37,3 @@ files[] = migrations/documentation/migrate_documentation_menu.inc
 files[] = migrations/menu/migrate_mega_menu.inc
 files[] = migrations/menu/migrate_site_menu.inc
 files[] = migrations/taxonomy/migrate_taxonomy.inc
-
-; Information added by Drupal.org packaging script on 2016-08-22
-version = "7.x-4.3"
-core = "7.x"
-project = "wetkit_migrate"
-datestamp = "1471826340"
-

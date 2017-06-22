@@ -146,7 +146,7 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Program Tabs',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
       0 => 'group_header_tabs',
       1 => 'group_career_opportunities',
@@ -183,7 +183,6 @@ function academics_field_group_info() {
     'weight' => '27',
     'children' => array(
       0 => 'group_curriculum_tab',
-      1 => 'group_tuition_fees',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -213,7 +212,7 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Header',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_poster',
       1 => 'field_program_summary',
@@ -333,6 +332,7 @@ function academics_field_group_info() {
       1 => 'field_undergrad_sample_courses',
       2 => 'field_format',
       3 => 'field_concentration',
+      4 => 'field_program_highlights',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -359,7 +359,7 @@ function academics_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Undergraduate',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'group_undergraduate_tabs',
     ),
@@ -391,7 +391,7 @@ function academics_field_group_info() {
   $field_group->parent_name = 'group_undergraduate_html';
   $field_group->data = array(
     'label' => 'Undergraduate Tabs',
-    'weight' => '57',
+    'weight' => '60',
     'children' => array(
       0 => 'group_related_majors_minors_tab',
     ),

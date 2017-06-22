@@ -127,7 +127,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_advanced_type_board_member_display';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['custom_search_advanced_type_board_member_display'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -155,7 +155,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_advanced_type_faculty_display';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['custom_search_advanced_type_faculty_display'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -211,7 +211,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_advanced_type_staff_display';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['custom_search_advanced_type_staff_display'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -337,7 +337,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_criteria_negative_weight';
-  $strongarm->value = '-9';
+  $strongarm->value = '-8';
   $export['custom_search_criteria_negative_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -393,7 +393,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_criteria_phrase_weight';
-  $strongarm->value = '-8';
+  $strongarm->value = '-9';
   $export['custom_search_criteria_phrase_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -421,7 +421,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_element';
-  $strongarm->value = 'searchfield';
+  $strongarm->value = 'textfield';
   $export['custom_search_element'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -442,7 +442,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_hint_text';
-  $strongarm->value = 'Enter the terms you wish to search for.';
+  $strongarm->value = 'Enter your search terms here.';
   $export['custom_search_hint_text'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -486,13 +486,13 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->name = 'custom_search_node_types';
   $strongarm->value = array(
     'wetkit_page' => 'wetkit_page',
-    'event_calendar' => 'event_calendar',
     'events' => 'events',
     'news_page' => 'news_page',
     'panel' => 'panel',
     'program' => 'program',
     'board_member' => 0,
     'wetkit_documentation' => 0,
+    'event_calendar' => 0,
     'facebook' => 0,
     'faculty' => 0,
     'instagram' => 0,
@@ -508,21 +508,21 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_node_types_excluded';
   $strongarm->value = array(
+    'board_member' => 'board_member',
     'wetkit_documentation' => 'wetkit_documentation',
+    'event_calendar' => 'event_calendar',
     'facebook' => 'facebook',
+    'faculty' => 'faculty',
     'instagram' => 'instagram',
+    'staff' => 'staff',
     'testimonials_slider' => 'testimonials_slider',
     'tweet' => 'tweet',
     'webform' => 'webform',
     'wetkit_page' => 0,
-    'board_member' => 0,
-    'event_calendar' => 0,
     'events' => 0,
-    'faculty' => 0,
     'news_page' => 0,
     'panel' => 0,
     'program' => 0,
-    'staff' => 0,
   );
   $export['custom_search_node_types_excluded'] = $strongarm;
 
@@ -547,11 +547,11 @@ function tiffin_search_defaultconfig_strongarm() {
       'region' => 'popup',
     ),
     'criteria_phrase' => array(
-      'sort' => '-8',
+      'sort' => '-9',
       'region' => 'popup',
     ),
     'criteria_negative' => array(
-      'sort' => '-9',
+      'sort' => '-8',
       'region' => 'popup',
     ),
     'custom_paths' => array(
@@ -559,7 +559,7 @@ function tiffin_search_defaultconfig_strongarm() {
       'region' => 'popup',
     ),
     'submit_button' => array(
-      'sort' => '-5',
+      'sort' => '-9',
       'region' => 'block',
     ),
     'content_types' => array(
@@ -574,9 +574,8 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_other';
   $strongarm->value = array(
+    'file_entity' => 'file_entity',
     'advanced_help' => 0,
-    'apachesolr_search' => 0,
-    'file_entity' => 0,
     'user' => 0,
   );
   $export['custom_search_other'] = $strongarm;
@@ -592,7 +591,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_paths_selector';
-  $strongarm->value = 'radios';
+  $strongarm->value = 'select';
   $export['custom_search_paths_selector'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -613,14 +612,14 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_results_advanced_search';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['custom_search_results_advanced_search'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_results_advanced_search_collapsed';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['custom_search_results_advanced_search_collapsed'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -641,7 +640,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_results_info_type';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['custom_search_results_info_type'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -690,7 +689,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_submit_button_weight';
-  $strongarm->value = '-5';
+  $strongarm->value = '-9';
   $export['custom_search_submit_button_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -847,7 +846,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search404_no_redirect';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['search404_no_redirect'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -904,7 +903,6 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'apachesolr_search' => 'apachesolr_search',
     'file_entity' => 'file_entity',
     'node' => 'node',
     'advanced_help' => 0,
@@ -930,7 +928,7 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_solr_last_optimize';
-  $strongarm->value = 1492981543;
+  $strongarm->value = 1498069201;
   $export['search_api_solr_last_optimize'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -944,14 +942,14 @@ function tiffin_search_defaultconfig_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_default_module';
-  $strongarm->value = 'apachesolr_search';
+  $strongarm->value = 'node';
   $export['search_default_module'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_logging';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['search_logging'] = $strongarm;
 
   return $export;

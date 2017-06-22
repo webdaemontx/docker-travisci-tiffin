@@ -27,7 +27,7 @@ function wetkit_users_path_breadcrumbs_settings_info() {
     'arguments' => array(),
     'access' => array(),
   );
-  $path_breadcrumb->weight = -96;
+  $path_breadcrumb->weight = -100;
   $export['wetkit_pm_existing_pages_user'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -49,7 +49,7 @@ function wetkit_users_path_breadcrumbs_settings_info() {
     'arguments' => array(),
     'access' => array(),
   );
-  $path_breadcrumb->weight = -95;
+  $path_breadcrumb->weight = -99;
   $export['wetkit_pm_existing_pages_user_password'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -69,7 +69,7 @@ function wetkit_users_path_breadcrumbs_settings_info() {
     'arguments' => array(),
     'access' => array(),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -97;
   $export['wetkit_pm_existing_pages_user_register'] = $path_breadcrumb;
 
   return $export;

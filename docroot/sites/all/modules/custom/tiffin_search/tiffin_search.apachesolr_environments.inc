@@ -19,7 +19,7 @@ function tiffin_search_apachesolr_environments() {
   $environment->conf = array(
     'apachesolr_access_always_add_grants' => 0,
     'apachesolr_direct_commit' => 1,
-    'apachesolr_read_only' => '1',
+    'apachesolr_read_only' => '0',
     'apachesolr_search_changed_boost' => '0:0',
     'apachesolr_search_comment_boost' => '0:0',
     'apachesolr_search_date_boost' => '0:0',
@@ -27,30 +27,33 @@ function tiffin_search_apachesolr_environments() {
     'apachesolr_search_promote_boost' => '0',
     'apachesolr_search_sticky_boost' => '0',
     'apachesolr_search_type_boosts' => array(
-      'audio' => '0',
       'wetkit_page' => '2.0',
       'board_member' => '0',
-      'document' => '0',
       'wetkit_documentation' => '1.0',
       'event_calendar' => '1.0',
       'events' => '1.0',
       'facebook' => '0',
       'faculty' => '0',
-      'image' => '0',
       'instagram' => '0',
       'news_page' => '1.0',
-      'panel' => '0.5',
+      'panel' => '0',
       'program' => '21.0',
       'staff' => '0',
       'testimonials_slider' => '0',
       'tweet' => '0',
-      'video' => '0',
       'webform' => '0',
-      'wetkit_video' => '0',
     ),
-    'apachesolr_soft_commit' => 0,
+    'apachesolr_soft_commit' => 1,
   );
-  $environment->index_bundles = array();
+  $environment->index_bundles = array(
+    'node' => array(
+      0 => 'events',
+      1 => 'news_page',
+      2 => 'panel',
+      3 => 'program',
+      4 => 'wetkit_page',
+    ),
+  );
   $export['acquia_solr_search_server'] = $environment;
 
   return $export;

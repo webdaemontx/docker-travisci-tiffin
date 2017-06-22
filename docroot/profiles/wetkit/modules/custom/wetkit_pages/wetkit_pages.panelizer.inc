@@ -26,8 +26,16 @@ function wetkit_pages_panelizer_defaults() {
   $panelizer->title_element = 'H2';
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = '';
-  $panelizer->pipeline = 'ipe';
-  $panelizer->contexts = array();
+  $panelizer->pipeline = 'standard';
+  $panelizer->contexts = array(
+    0 => array(
+      'identifier' => 'Content',
+      'keyword' => 'node',
+      'name' => 'entity:node',
+      'entity_id' => '2511',
+      'id' => 1,
+    ),
+  );
   $panelizer->relationships = array();
   $display = new panels_display();
   $display->layout = 'pearson';
@@ -42,6 +50,7 @@ function wetkit_pages_panelizer_defaults() {
       'pearson_first' => NULL,
       'pearson_bottom' => NULL,
       'pearson_second' => NULL,
+      'pearson_third' => NULL,
     ),
     'pearson_second' => array(
       'style' => '-1',
@@ -55,18 +64,16 @@ function wetkit_pages_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-96317722-52b6-4af5-b758-2d2217070728';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'page_title';
-  $pane->subtype = 'page_title';
+  $pane->pid = 'new-f820aa29-af81-402a-b5f3-cbd7965a6394';
+  $pane->panel = 'pearson_bottom';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'join_the_tu_family_white_backgro';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'markup' => 'h1',
-    'class' => '',
-    'id' => 'wb-cont',
     'override_title' => 0,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -76,9 +83,107 @@ function wetkit_pages_panelizer_defaults() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
+  $pane->uuid = 'f820aa29-af81-402a-b5f3-cbd7965a6394';
+  $display->content['new-f820aa29-af81-402a-b5f3-cbd7965a6394'] = $pane;
+  $display->panels['pearson_bottom'][0] = 'new-f820aa29-af81-402a-b5f3-cbd7965a6394';
+  $pane = new stdClass();
+  $pane->pid = 'new-8b70d863-ea8a-45b3-9a51-6b67f7cb2204';
+  $pane->panel = 'pearson_bottom';
+  $pane->type = 'panels_mini';
+  $pane->subtype = 'floating_all_submenu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '8b70d863-ea8a-45b3-9a51-6b67f7cb2204';
+  $display->content['new-8b70d863-ea8a-45b3-9a51-6b67f7cb2204'] = $pane;
+  $display->panels['pearson_bottom'][1] = 'new-8b70d863-ea8a-45b3-9a51-6b67f7cb2204';
+  $pane = new stdClass();
+  $pane->pid = 'new-1cc1f227-26bb-4fff-9a54-e1be4754f997';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_featured_image';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'hidden',
+    'formatter' => 'image',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'image_style' => '',
+      'image_link' => '',
+    ),
+    'context' => array(),
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '1cc1f227-26bb-4fff-9a54-e1be4754f997';
+  $display->content['new-1cc1f227-26bb-4fff-9a54-e1be4754f997'] = $pane;
+  $display->panels['pearson_first'][0] = 'new-1cc1f227-26bb-4fff-9a54-e1be4754f997';
+  $pane = new stdClass();
+  $pane->pid = 'new-96317722-52b6-4af5-b758-2d2217070728';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'page_title';
+  $pane->subtype = 'page_title';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'node_type',
+        'settings' => array(
+          'type' => array(
+            'program' => 'program',
+            'webform' => 'webform',
+            'wetkit_page' => 'wetkit_page',
+            'panel' => 'panel',
+          ),
+        ),
+        'context' => 'panelizer',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'markup' => 'h1',
+    'class' => '',
+    'id' => 'wb-cont',
+    'override_title' => 0,
+    'override_title_text' => 'sdfadf',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
   $pane->uuid = '96317722-52b6-4af5-b758-2d2217070728';
   $display->content['new-96317722-52b6-4af5-b758-2d2217070728'] = $pane;
-  $display->panels['pearson_first'][0] = 'new-96317722-52b6-4af5-b758-2d2217070728';
+  $display->panels['pearson_first'][1] = 'new-96317722-52b6-4af5-b758-2d2217070728';
   $pane = new stdClass();
   $pane->pid = 'new-1e7fc0dc-36b7-499f-a1ee-e4458eeedc93';
   $pane->panel = 'pearson_first';
@@ -101,11 +206,11 @@ function wetkit_pages_panelizer_defaults() {
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 1;
+  $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '1e7fc0dc-36b7-499f-a1ee-e4458eeedc93';
   $display->content['new-1e7fc0dc-36b7-499f-a1ee-e4458eeedc93'] = $pane;
-  $display->panels['pearson_first'][1] = 'new-1e7fc0dc-36b7-499f-a1ee-e4458eeedc93';
+  $display->panels['pearson_first'][2] = 'new-1e7fc0dc-36b7-499f-a1ee-e4458eeedc93';
   $pane = new stdClass();
   $pane->pid = 'new-4a43c32f-7a8d-4147-92d0-61d51a73333f';
   $pane->panel = 'pearson_first';
@@ -114,7 +219,7 @@ function wetkit_pages_panelizer_defaults() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'links' => 1,
+    'links' => 0,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
@@ -123,30 +228,7 @@ function wetkit_pages_panelizer_defaults() {
     'leave_node_title' => 0,
     'build_mode' => 'full',
     'context' => array(),
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '4a43c32f-7a8d-4147-92d0-61d51a73333f';
-  $display->content['new-4a43c32f-7a8d-4147-92d0-61d51a73333f'] = $pane;
-  $display->panels['pearson_first'][2] = 'new-4a43c32f-7a8d-4147-92d0-61d51a73333f';
-  $pane = new stdClass();
-  $pane->pid = 'new-4f47e56c-213d-4af4-b5e1-084ca78518fb';
-  $pane->panel = 'pearson_first';
-  $pane->type = 'node_updated';
-  $pane->subtype = 'node_updated';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'format' => 'short',
-    'context' => 'panelizer',
-    'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -156,29 +238,578 @@ function wetkit_pages_panelizer_defaults() {
   $pane->extras = array();
   $pane->position = 3;
   $pane->locks = array();
-  $pane->uuid = '4f47e56c-213d-4af4-b5e1-084ca78518fb';
-  $display->content['new-4f47e56c-213d-4af4-b5e1-084ca78518fb'] = $pane;
-  $display->panels['pearson_first'][3] = 'new-4f47e56c-213d-4af4-b5e1-084ca78518fb';
+  $pane->uuid = '4a43c32f-7a8d-4147-92d0-61d51a73333f';
+  $display->content['new-4a43c32f-7a8d-4147-92d0-61d51a73333f'] = $pane;
+  $display->panels['pearson_first'][3] = 'new-4a43c32f-7a8d-4147-92d0-61d51a73333f';
   $pane = new stdClass();
-  $pane->pid = 'new-74bd2e5a-7cf3-4f70-bdb0-135ba581fa23';
-  $pane->panel = 'pearson_second';
-  $pane->type = 'menu_tree';
-  $pane->subtype = 'sidebar';
+  $pane->pid = 'new-802b5652-61f8-4117-a463-354e0dbedbaf';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-2506';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'logic' => 'or',
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'academics/resources/center-for-teaching-excellence/sign-up',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
-    'menu_name' => 'sidebar',
-    'parent_mlid' => 0,
-    'parent' => 'sidebar:0',
-    'title_link' => 0,
-    'admin_title' => '',
-    'level' => '1',
-    'follow' => 0,
-    'depth' => '0',
-    'expanded' => 1,
-    'sort' => 0,
     'override_title' => 1,
     'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(),
+    'style' => 'configure_panes',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = '802b5652-61f8-4117-a463-354e0dbedbaf';
+  $display->content['new-802b5652-61f8-4117-a463-354e0dbedbaf'] = $pane;
+  $display->panels['pearson_first'][4] = 'new-802b5652-61f8-4117-a463-354e0dbedbaf';
+  $pane = new stdClass();
+  $pane->pid = 'new-431f4af9-16bb-4d60-b59d-e18fd69c6c88';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-2941';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'security/anonymous-witness',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '431f4af9-16bb-4d60-b59d-e18fd69c6c88';
+  $display->content['new-431f4af9-16bb-4d60-b59d-e18fd69c6c88'] = $pane;
+  $display->panels['pearson_first'][5] = 'new-431f4af9-16bb-4d60-b59d-e18fd69c6c88';
+  $pane = new stdClass();
+  $pane->pid = 'new-f01825cd-975d-4a4e-9ccc-d53f1f48720e';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-2711';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'mobile',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = 'f01825cd-975d-4a4e-9ccc-d53f1f48720e';
+  $display->content['new-f01825cd-975d-4a4e-9ccc-d53f1f48720e'] = $pane;
+  $display->panels['pearson_first'][6] = 'new-f01825cd-975d-4a4e-9ccc-d53f1f48720e';
+  $pane = new stdClass();
+  $pane->pid = 'new-33844d08-75f6-4987-8ceb-cef51a1ada5c';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-9311';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'info/international',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 7;
+  $pane->locks = array();
+  $pane->uuid = '33844d08-75f6-4987-8ceb-cef51a1ada5c';
+  $display->content['new-33844d08-75f6-4987-8ceb-cef51a1ada5c'] = $pane;
+  $display->panels['pearson_first'][7] = 'new-33844d08-75f6-4987-8ceb-cef51a1ada5c';
+  $pane = new stdClass();
+  $pane->pid = 'new-2a2d1e7d-4619-46eb-9b91-83c4922e203c';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-1421';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'visit/group',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 8;
+  $pane->locks = array();
+  $pane->uuid = '2a2d1e7d-4619-46eb-9b91-83c4922e203c';
+  $display->content['new-2a2d1e7d-4619-46eb-9b91-83c4922e203c'] = $pane;
+  $display->panels['pearson_first'][8] = 'new-2a2d1e7d-4619-46eb-9b91-83c4922e203c';
+  $pane = new stdClass();
+  $pane->pid = 'new-001e06cd-c5b6-4ad8-9292-8b776acd4e59';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-3891';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'visit/grad-orientation',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 9;
+  $pane->locks = array();
+  $pane->uuid = '001e06cd-c5b6-4ad8-9292-8b776acd4e59';
+  $display->content['new-001e06cd-c5b6-4ad8-9292-8b776acd4e59'] = $pane;
+  $display->panels['pearson_first'][9] = 'new-001e06cd-c5b6-4ad8-9292-8b776acd4e59';
+  $pane = new stdClass();
+  $pane->pid = 'new-c4518009-2fbe-4bea-ac5a-6d5de9517887';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-1546';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'visit/open-house',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 10;
+  $pane->locks = array();
+  $pane->uuid = 'c4518009-2fbe-4bea-ac5a-6d5de9517887';
+  $display->content['new-c4518009-2fbe-4bea-ac5a-6d5de9517887'] = $pane;
+  $display->panels['pearson_first'][10] = 'new-c4518009-2fbe-4bea-ac5a-6d5de9517887';
+  $pane = new stdClass();
+  $pane->pid = 'new-533cc197-8f48-49fb-9f2b-b9e70309b7f8';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-2946';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'apply/online',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 11;
+  $pane->locks = array();
+  $pane->uuid = '533cc197-8f48-49fb-9f2b-b9e70309b7f8';
+  $display->content['new-533cc197-8f48-49fb-9f2b-b9e70309b7f8'] = $pane;
+  $display->panels['pearson_first'][11] = 'new-533cc197-8f48-49fb-9f2b-b9e70309b7f8';
+  $pane = new stdClass();
+  $pane->pid = 'new-8a8a188b-9e1e-4783-b81e-a099b1e8b3ac';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-286';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'forms/graduate/summer-financial-aid',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 12;
+  $pane->locks = array();
+  $pane->uuid = '8a8a188b-9e1e-4783-b81e-a099b1e8b3ac';
+  $display->content['new-8a8a188b-9e1e-4783-b81e-a099b1e8b3ac'] = $pane;
+  $display->panels['pearson_first'][12] = 'new-8a8a188b-9e1e-4783-b81e-a099b1e8b3ac';
+  $pane = new stdClass();
+  $pane->pid = 'new-26300d33-5f0c-45de-9c70-90996a7d938c';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-286';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'commencement/graduation-application',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 13;
+  $pane->locks = array();
+  $pane->uuid = '26300d33-5f0c-45de-9c70-90996a7d938c';
+  $display->content['new-26300d33-5f0c-45de-9c70-90996a7d938c'] = $pane;
+  $display->panels['pearson_first'][13] = 'new-26300d33-5f0c-45de-9c70-90996a7d938c';
+  $pane = new stdClass();
+  $pane->pid = 'new-b432a27e-0ea6-4c52-871c-c5c8fb9feb69';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-1506';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'forms/photoagreement',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 14;
+  $pane->locks = array();
+  $pane->uuid = 'b432a27e-0ea6-4c52-871c-c5c8fb9feb69';
+  $display->content['new-b432a27e-0ea6-4c52-871c-c5c8fb9feb69'] = $pane;
+  $display->panels['pearson_first'][14] = 'new-b432a27e-0ea6-4c52-871c-c5c8fb9feb69';
+  $pane = new stdClass();
+  $pane->pid = 'new-0435ae9e-ff10-4e20-a1f8-749ffa80ae50';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'block';
+  $pane->subtype = 'webform-client-block-1541';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'contact',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 15;
+  $pane->locks = array();
+  $pane->uuid = '0435ae9e-ff10-4e20-a1f8-749ffa80ae50';
+  $display->content['new-0435ae9e-ff10-4e20-a1f8-749ffa80ae50'] = $pane;
+  $display->panels['pearson_first'][15] = 'new-0435ae9e-ff10-4e20-a1f8-749ffa80ae50';
+  $pane = new stdClass();
+  $pane->pid = 'new-afe9d197-0a84-434e-b371-87beb5903175';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'faculty_profile-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'artsci/faculty',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'items_per_page' => '0',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'account',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 16;
+  $pane->locks = array();
+  $pane->uuid = 'afe9d197-0a84-434e-b371-87beb5903175';
+  $display->content['new-afe9d197-0a84-434e-b371-87beb5903175'] = $pane;
+  $display->panels['pearson_first'][16] = 'new-afe9d197-0a84-434e-b371-87beb5903175';
+  $pane = new stdClass();
+  $pane->pid = 'new-7315f7bd-378e-44ec-9d07-4c6795385e0f';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'faculty_profile-panel_pane_6';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'business/faculty',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'items_per_page' => '0',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'account',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 17;
+  $pane->locks = array();
+  $pane->uuid = '7315f7bd-378e-44ec-9d07-4c6795385e0f';
+  $display->content['new-7315f7bd-378e-44ec-9d07-4c6795385e0f'] = $pane;
+  $display->panels['pearson_first'][17] = 'new-7315f7bd-378e-44ec-9d07-4c6795385e0f';
+  $pane = new stdClass();
+  $pane->pid = 'new-4208a866-c2d1-48eb-80c6-c4bd3d7cc2a3';
+  $pane->panel = 'pearson_first';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'faculty_profile-panel_pane_7';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'criminaljustice/faculty',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'items_per_page' => '0',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'account',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 18;
+  $pane->locks = array();
+  $pane->uuid = '4208a866-c2d1-48eb-80c6-c4bd3d7cc2a3';
+  $display->content['new-4208a866-c2d1-48eb-80c6-c4bd3d7cc2a3'] = $pane;
+  $display->panels['pearson_first'][18] = 'new-4208a866-c2d1-48eb-80c6-c4bd3d7cc2a3';
+  $pane = new stdClass();
+  $pane->pid = 'new-ba5d7253-c0ef-4716-b555-fcbbc7da1464';
+  $pane->panel = 'pearson_second';
+  $pane->type = 'menu_tree';
+  $pane->subtype = 'main-menu';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      1 => array(
+        'name' => 'mna',
+        'settings' => array(
+          'menu' => array(
+            'main-menu' => 'main-menu',
+          ),
+        ),
+        'context' => 'panelizer',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'or',
+  );
+  $pane->configuration = array(
+    'parent' => 'main-menu:0',
+    'title_link' => 1,
+    'title_embed' => 1,
+    'theme' => 'menu_link__menu_block__wxt_sidebar',
+    'admin_title' => 'Mega Menu - Main Menu Left Nav',
+    'level' => '1',
+    'follow' => 'active',
+    'depth' => '0',
+    'depth_relative' => 0,
+    'expanded' => 0,
+    'sort' => 1,
+    'menu_name' => 'main-menu',
+    'parent_mlid' => '0',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -188,9 +819,66 @@ function wetkit_pages_panelizer_defaults() {
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '74bd2e5a-7cf3-4f70-bdb0-135ba581fa23';
-  $display->content['new-74bd2e5a-7cf3-4f70-bdb0-135ba581fa23'] = $pane;
-  $display->panels['pearson_second'][0] = 'new-74bd2e5a-7cf3-4f70-bdb0-135ba581fa23';
+  $pane->uuid = 'ba5d7253-c0ef-4716-b555-fcbbc7da1464';
+  $display->content['new-ba5d7253-c0ef-4716-b555-fcbbc7da1464'] = $pane;
+  $display->panels['pearson_second'][0] = 'new-ba5d7253-c0ef-4716-b555-fcbbc7da1464';
+  $pane = new stdClass();
+  $pane->pid = 'new-6fcefd6a-1621-4ed5-a9e4-c58cb87e1a79';
+  $pane->panel = 'pearson_second';
+  $pane->type = 'menu_tree';
+  $pane->subtype = 'menu-main-links';
+  $pane->shown = FALSE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'path_visibility',
+        'settings' => array(
+          'visibility_setting' => '1',
+          'paths' => 'contact/
+interest
+interest/*
+directory/
+forms/graduate/summer-financial-aid
+forms/graduate/summer-financial-aid/*
+forms/*',
+        ),
+        'context' => 'empty',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'parent' => 'menu-main-links:0',
+    'title_link' => 1,
+    'title_embed' => 1,
+    'theme' => 'menu_link__menu_block__wxt_sidebar',
+    'admin_title' => '',
+    'level' => '1',
+    'follow' => 'active',
+    'depth' => '0',
+    'depth_relative' => 0,
+    'expanded' => 0,
+    'sort' => 1,
+    'menu_name' => 'menu-main-links',
+    'parent_mlid' => '0',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'menu-block-wrapper',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '6fcefd6a-1621-4ed5-a9e4-c58cb87e1a79';
+  $display->content['new-6fcefd6a-1621-4ed5-a9e4-c58cb87e1a79'] = $pane;
+  $display->panels['pearson_second'][1] = 'new-6fcefd6a-1621-4ed5-a9e4-c58cb87e1a79';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;

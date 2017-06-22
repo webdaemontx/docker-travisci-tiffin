@@ -120,6 +120,7 @@ features[field_base][] = field_phone
 features[field_base][] = field_position
 features[field_base][] = field_program_reference
 features[field_group][] = group_board_member_info|profile2|staff|form
+features[field_group][] = group_categories_departments|profile2|staff|form
 features[field_group][] = group_counselor_info|profile2|staff|form
 features[field_group][] = group_faculty_info|profile2|staff|form
 features[field_group][] = group_general_info|profile2|staff|form

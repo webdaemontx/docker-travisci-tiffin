@@ -2,6 +2,8 @@ name = WetKit Language
 description = Helps configure a multilingual site for Drupal WxT.
 core = 7.x
 package = WetKit
+version = 7.x-4.8
+project = wetkit_language
 dependencies[] = ctools
 dependencies[] = defaultconfig
 dependencies[] = entity_translation
@@ -31,10 +33,10 @@ dependencies[] = token
 dependencies[] = variable
 dependencies[] = variable_realm
 dependencies[] = variable_store
+datestamp = 1467939541
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[language][] = en
-features[language][] = fr
 features[variable][] = entity_translation_entity_types
 features[variable][] = entity_translation_settings_file__audio
 features[variable][] = entity_translation_settings_file__document
@@ -67,10 +69,3 @@ features[variable][] = pathauto_node_wetkit_page_pattern
 features[variable][] = pathauto_node_wetkit_page_und_pattern
 features[variable][] = translation_language_type
 features[variable][] = variable_realm_list_language
-
-; Information added by Drupal.org packaging script on 2016-07-08
-version = "7.x-4.8"
-core = "7.x"
-project = "wetkit_language"
-datestamp = "1467939541"
-

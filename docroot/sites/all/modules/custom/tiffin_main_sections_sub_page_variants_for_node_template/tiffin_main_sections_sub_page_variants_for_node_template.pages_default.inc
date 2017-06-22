@@ -43,6 +43,10 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
       ),
     ),
     'name' => 'about-tu-sub-pages',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'pearson';
@@ -61,7 +65,7 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
   $display->title = '';
   $display->uuid = '1bf15d51-1e58-4020-a094-07e73bcc4d53';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_3';
+  $display->storage_id = 'node_view__about-tu-sub-pages';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -362,6 +366,10 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
       ),
     ),
     'name' => 'academics-sub-pages',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'pearson';
@@ -380,7 +388,7 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
   $display->title = '';
   $display->uuid = '1bf15d51-1e58-4020-a094-07e73bcc4d53';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_3';
+  $display->storage_id = 'node_view__academics-sub-pages';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -644,6 +652,10 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
       ),
     ),
     'name' => 'admissions-sub-pages',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'pearson';
@@ -665,7 +677,7 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
   $display->title = '';
   $display->uuid = '3bbeea49-7539-4b22-90c7-a0a1d588106b';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_4';
+  $display->storage_id = 'node_view__admissions-sub-pages';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -956,6 +968,10 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
       ),
     ),
     'name' => 'life-at-tu-sub-pages',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'pearson';
@@ -974,7 +990,7 @@ function tiffin_main_sections_sub_page_variants_for_node_template_default_page_m
   $display->title = '';
   $display->uuid = '1bf15d51-1e58-4020-a094-07e73bcc4d53';
   $display->storage_type = 'page_manager';
-  $display->storage_id = 'node_view_panel_context_3';
+  $display->storage_id = 'node_view__life-at-tu-sub-pages';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();

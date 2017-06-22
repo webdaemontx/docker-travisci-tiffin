@@ -27,21 +27,24 @@ function wetkit_users_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'panelizer_defaults_user_user';
   $strongarm->value = array(
-    'status' => 0,
+    'status' => 1,
     'view modes' => array(
       'page_manager' => array(
         'status' => 1,
+        'substitute' => '',
         'default' => 1,
         'choice' => 0,
       ),
       'default' => array(
         'status' => 1,
+        'substitute' => '',
         'default' => 1,
         'choice' => 0,
       ),
       'featured' => array(
-        'status' => 1,
-        'default' => 1,
+        'status' => 0,
+        'substitute' => 0,
+        'default' => 0,
         'choice' => 0,
       ),
     ),

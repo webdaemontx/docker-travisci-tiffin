@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the WetKit WET-BOEW feature.
+ */
+
+include_once 'wetkit_wetboew.features.inc';
+/**
+ * @file
  * wetkit_wetboew.module
  */
 

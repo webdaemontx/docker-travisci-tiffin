@@ -2,6 +2,8 @@ name = WetKit WYSIWYG
 description = Integrates a WYSIWYG workflow for Drupal WxT.
 core = 7.x
 package = WetKit
+version = 7.x-4.8
+project = wetkit_wysiwyg
 dependencies[] = ctools
 dependencies[] = defaultconfig
 dependencies[] = features
@@ -13,7 +15,7 @@ dependencies[] = picture
 dependencies[] = strongarm
 dependencies[] = uuid_link
 dependencies[] = wysiwyg
-stylesheets[all][] = css/wetkit-wysiwyg.css
+datestamp = 1486564998
 features[ctools][] = linkit:linkit_profiles:1
 features[ctools][] = strongarm:strongarm:1
 features[defaultconfig][] = user_default_permissions:use text format wetkit_html_text
@@ -27,10 +29,3 @@ features[variable][] = media__wysiwyg_browser_plugins
 features[variable][] = media__wysiwyg_upload_directory
 features[wysiwyg][] = wetkit_html_text
 features[wysiwyg][] = wetkit_wysiwyg_text
-
-; Information added by Drupal.org packaging script on 2017-02-08
-version = "7.x-4.8"
-core = "7.x"
-project = "wetkit_wysiwyg"
-datestamp = "1486564998"
-

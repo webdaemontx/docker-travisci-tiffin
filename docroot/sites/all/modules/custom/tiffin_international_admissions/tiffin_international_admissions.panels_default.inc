@@ -47,11 +47,35 @@ function tiffin_international_admissions_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<ul>
-<li><a href=""><div><p>How to Apply</p></div></a></li>
-<li><a href=""><div><p>Tuition Info</p></div></a></li>
-<li><a href=""><div><p>Meat Faculty</p></div></a></li>
-</ul>',
+    'body' => '<div class="hero-sub-navigation">
+<ul>
+<li><a href="/about/ataglance/accreditations">Accreditation</a></li>
+<li><a href="/international/admissionreq">Tuition & Fees</a></li>
+<li><a href="/visit">Visit Campus</a></li>
+<li><a href="/about">About TU</a></li>
+</ul>
+</div>
+<div class="steps-container">
+    <div class="container">
+      <ul class="page-hero-steps row">
+        <li class="col-lg-4">
+          <a href="https://form.jotformpro.com/tiffinu/international-application">
+            <span>1</span> How to Apply
+          </a>
+        </li>
+        <li class="col-lg-4">
+          <a href="/tuition">
+            <span>2</span> Tuition Info
+          </a>
+        </li>
+        <li class="col-lg-4">
+          <a href="/international/staff">
+            <span>3</span> Meet The Staff
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
   );
@@ -110,7 +134,7 @@ function tiffin_international_admissions_default_panels_mini() {
     'title_heading' => 'h2',
     'body' => '<div id="social_media_home">
 <ul>
-<li><a href=""><div></div></a></li><li><a href=""><div></div></a></li><li><a href=""><div></div></a></li>
+<li><a href="https://www.facebook.com/Tiffin-University-International-Admissions-Student-Services-345188190870/" target="_blank" rel="noopener"><div></div></a></li><li><a href="https://www.instagram.com/tiffinu/" target="_blank" rel="noopener"><div></div></a></li><li><a href="https://twitter.com/tiffinu" target="_blank" rel="noopener"><div></div></a></li>
 </ul>
 </div>',
     'format' => 'wetkit_html_text',
@@ -170,11 +194,13 @@ function tiffin_international_admissions_default_panels_mini() {
     'title' => '',
     'title_heading' => 'h2',
     'body' => '<ul>
-<li><a href="">Accreditation</a></li>
-<li><a href="">Tuition & Fees</a></li>
-<li><a href="">Virtual Tour</a></li>
-<li><a href="">About TU</a></li>
-</ul>',
+<li><a href="/about/ataglance/accreditations">Accreditation</a></li>
+<li><a href="/international/admissionreq">Tuition & Fees</a></li>
+<li><a class="virtualtour_embed processed" data-inst="59973" data-platform="v" href="/visit/#virtualtour" title="Virtual Tour">Virtual Tour</a></li>
+<li><a href="/about">About TU</a></li>
+</ul>
+
+<script async="async" defer="defer" src="http://www.youvisit.com/tour/Embed/js2"></script>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
   );

@@ -2,6 +2,8 @@ name = WetKit Bean
 description = Default Bean implementations for use with Drupal WxT.
 core = 7.x
 package = WetKit
+version = 7.x-4.5
+project = wetkit_bean
 dependencies[] = bean
 dependencies[] = bean_admin_ui
 dependencies[] = ctools
@@ -25,6 +27,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = title
 dependencies[] = wetkit_core
+datestamp = 1471825446
 features[ctools][] = bean_admin_ui:bean:5
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
@@ -110,6 +113,7 @@ features[variable][] = field_bundle_settings_bean__wetkit_slide
 features[variable][] = field_bundle_settings_bean__wetkit_twitter
 features[variable][] = field_bundle_settings_field_collection_item__field_bean_media_collection
 features[variable][] = field_bundle_settings_field_collection_item__field_bean_slide_collection
+features[variable][] = pathauto_taxonomy_term_wetkit_categories_pattern
 files[] = plugins/bean/wetkit_bean.bean.inc
 files[] = plugins/bean/wetkit_bean.highlight.inc
 files[] = plugins/bean/wetkit_bean.link.inc
@@ -122,10 +126,3 @@ files[] = plugins/bean/wetkit_bean.slideout.inc
 files[] = plugins/bean/wetkit_bean.twitter.inc
 files[] = plugins/beanslide/interface.inc
 files[] = plugins/beanslide/tabbedinterface.inc
-
-; Information added by Drupal.org packaging script on 2016-08-22
-version = "7.x-4.5"
-core = "7.x"
-project = "wetkit_bean"
-datestamp = "1471825446"
-

@@ -30,4 +30,5 @@ features[variable][] = menu_parent_testimonials_slider
 features[variable][] = node_options_testimonials_slider
 features[variable][] = node_preview_testimonials_slider
 features[variable][] = node_submitted_testimonials_slider
+features[variable][] = pathauto_node_testimonials_slider_pattern
 project path = sites/all/modules/custom

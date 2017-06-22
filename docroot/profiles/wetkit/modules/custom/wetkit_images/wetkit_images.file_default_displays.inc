@@ -49,7 +49,9 @@ function wetkit_images_file_default_displays() {
   $file_display->name = 'image__default__file_field_media_large_icon';
   $file_display->weight = 0;
   $file_display->status = FALSE;
-  $file_display->settings = '';
+  $file_display->settings = array(
+    'image_style' => '',
+  );
   $export['image__default__file_field_media_large_icon'] = $file_display;
 
   $file_display = new stdClass();

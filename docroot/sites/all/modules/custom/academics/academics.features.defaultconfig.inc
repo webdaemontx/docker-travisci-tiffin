@@ -550,16 +550,14 @@ function academics_defaultconfig_path_breadcrumbs_settings_info() {
   $path_breadcrumb = new stdClass();
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'academics_undergrad';
-  $path_breadcrumb->name = 'Academics undergrad';
+  $path_breadcrumb->name = 'Academics Landing Pages';
   $path_breadcrumb->path = 'academics/%name';
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Academics',
-      1 => '%name',
     ),
     'paths' => array(
       0 => '/academics',
-      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 0,
@@ -569,7 +567,7 @@ function academics_defaultconfig_path_breadcrumbs_settings_info() {
         'argument' => 'string',
         'settings' => array(
           'identifier' => '%',
-          'use_tail' => 0,
+          'use_tail' => 1,
         ),
       ),
     ),
@@ -595,11 +593,20 @@ function academics_defaultconfig_path_breadcrumbs_settings_info() {
           'context' => 'name',
           'not' => FALSE,
         ),
+        2 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'academics/*',
+          ),
+          'context' => 'name',
+          'not' => FALSE,
+        ),
       ),
       'logic' => 'or',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -98;
   $export['academics_undergrad'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -637,7 +644,7 @@ function academics_defaultconfig_path_breadcrumbs_settings_info() {
       'logic' => 'or',
     ),
   );
-  $path_breadcrumb->weight = 2;
+  $path_breadcrumb->weight = -95;
   $export['advancement_clone_clone'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -674,7 +681,7 @@ function academics_defaultconfig_path_breadcrumbs_settings_info() {
       'logic' => 'or',
     ),
   );
-  $path_breadcrumb->weight = 2;
+  $path_breadcrumb->weight = -94;
   $export['school_artssciences_programs'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -712,7 +719,7 @@ function academics_defaultconfig_path_breadcrumbs_settings_info() {
       'logic' => 'or',
     ),
   );
-  $path_breadcrumb->weight = 3;
+  $path_breadcrumb->weight = -92;
   $export['school_criminaljustice_programs'] = $path_breadcrumb;
 
   return $export;
@@ -746,7 +753,7 @@ function academics_defaultconfig_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -754,23 +761,26 @@ function academics_defaultconfig_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'ical' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'redirect' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'xmlsitemap' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
       ),
       'display' => array(
@@ -780,6 +790,10 @@ function academics_defaultconfig_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
             'weight' => '10',
             'visible' => FALSE,
           ),
@@ -809,7 +823,6 @@ function academics_defaultconfig_strongarm() {
   $strongarm->name = 'panelizer_defaults_node_program';
   $strongarm->value = array(
     'status' => 1,
-    'help' => '',
     'view modes' => array(
       'page_manager' => array(
         'status' => 0,
@@ -824,8 +837,14 @@ function academics_defaultconfig_strongarm() {
         'choice' => 0,
       ),
       'teaser' => array(
-        'status' => 0,
-        'substitute' => 0,
+        'status' => 1,
+        'substitute' => '',
+        'default' => 1,
+        'choice' => 1,
+      ),
+      'search_result' => array(
+        'status' => 1,
+        'substitute' => 'teaser',
         'default' => 0,
         'choice' => 0,
       ),
@@ -951,6 +970,20 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
     2 => '2',
   );
+  /* Filter criterion: Content: Display as Major (field_display_as_major) */
+  $handler->display->display_options['filters']['field_display_as_major_value']['id'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['table'] = 'field_data_field_display_as_major';
+  $handler->display->display_options['filters']['field_display_as_major_value']['field'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Program State (field_program_state) */
+  $handler->display->display_options['filters']['field_program_state_value']['id'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['table'] = 'field_data_field_program_state';
+  $handler->display->display_options['filters']['field_program_state_value']['field'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -979,8 +1012,8 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
 
-  /* Display: Find My Program - Graduate Programs */
-  $handler = $view->new_display('webform_select', 'Find My Program - Graduate Programs', 'webform_select_2');
+  /* Display: All Graduate Programs */
+  $handler = $view->new_display('webform_select', 'All Graduate Programs', 'webform_select_2');
   $handler->display->display_options['display_description'] = 'The webform options for the Graduate programs listing on Find My Program webform';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1010,8 +1043,10 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['sorts']['field_alt_title_value']['table'] = 'field_data_field_alt_title';
   $handler->display->display_options['sorts']['field_alt_title_value']['field'] = 'field_alt_title_value';
 
-  /* Display: Find My Program - All Programs */
-  $handler = $view->new_display('webform_select', 'Find My Program - All Programs', 'webform_select_3');
+  /* Display: All Programs */
+  $handler = $view->new_display('webform_select', 'All Programs', 'webform_select_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Webform Options - All Programs';
   $handler->display->display_options['display_description'] = 'The webform options for ALL programs listing on Find My Program webform';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1064,6 +1099,165 @@ function academics_defaultconfig_views_default_views() {
     1 => '1',
     2 => '2',
   );
+  /* Filter criterion: Content: Display as Major (field_display_as_major) */
+  $handler->display->display_options['filters']['field_display_as_major_value']['id'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['table'] = 'field_data_field_display_as_major';
+  $handler->display->display_options['filters']['field_display_as_major_value']['field'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Program State (field_program_state) */
+  $handler->display->display_options['filters']['field_program_state_value']['id'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['table'] = 'field_data_field_program_state';
+  $handler->display->display_options['filters']['field_program_state_value']['field'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Undergraduate Programs Webform Options */
+  $handler = $view->new_display('webform_select', 'Undergraduate Programs Webform Options', 'webform_select_undergrad');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Undergraduate Programs Webform Options';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'webform_views_select_style';
+  $handler->display->display_options['style_options']['mapping']['webform_select_key'] = 'nid';
+  $handler->display->display_options['style_options']['mapping']['webform_select_value'] = 'field_alt_title';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'program' => 'program',
+  );
+  /* Filter criterion: Content: Program Level (field_program_level) */
+  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
+  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
+  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
+  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Display as Major (field_display_as_major) */
+  $handler->display->display_options['filters']['field_display_as_major_value']['id'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['table'] = 'field_data_field_display_as_major';
+  $handler->display->display_options['filters']['field_display_as_major_value']['field'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Program State (field_program_state) */
+  $handler->display->display_options['filters']['field_program_state_value']['id'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['table'] = 'field_data_field_program_state';
+  $handler->display->display_options['filters']['field_program_state_value']['field'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Online/Off-Campus Undergraduate Programs Webform Options */
+  $handler = $view->new_display('webform_select', 'Online/Off-Campus Undergraduate Programs Webform Options', 'webform_select_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Online/Off-Campus Undergraduate Programs';
+  $handler->display->display_options['display_description'] = 'Listing of Online/Off-Campus Undergraduate Programs';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'webform_views_select_style';
+  $handler->display->display_options['style_options']['mapping']['webform_select_key'] = 'nid';
+  $handler->display->display_options['style_options']['mapping']['webform_select_value'] = 'field_alt_title';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Alt-Title */
+  $handler->display->display_options['fields']['field_alt_title']['id'] = 'field_alt_title';
+  $handler->display->display_options['fields']['field_alt_title']['table'] = 'field_data_field_alt_title';
+  $handler->display->display_options['fields']['field_alt_title']['field'] = 'field_alt_title';
+  $handler->display->display_options['fields']['field_alt_title']['label'] = '';
+  $handler->display->display_options['fields']['field_alt_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_alt_title']['element_default_classes'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Alt-Title (field_alt_title) */
+  $handler->display->display_options['sorts']['field_alt_title_value']['id'] = 'field_alt_title_value';
+  $handler->display->display_options['sorts']['field_alt_title_value']['table'] = 'field_data_field_alt_title';
+  $handler->display->display_options['sorts']['field_alt_title_value']['field'] = 'field_alt_title_value';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'program' => 'program',
+  );
+  /* Filter criterion: Content: Program Level (field_program_level) */
+  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
+  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
+  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
+  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Display as Major (field_display_as_major) */
+  $handler->display->display_options['filters']['field_display_as_major_value']['id'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['table'] = 'field_data_field_display_as_major';
+  $handler->display->display_options['filters']['field_display_as_major_value']['field'] = 'field_display_as_major_value';
+  $handler->display->display_options['filters']['field_display_as_major_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Program State (field_program_state) */
+  $handler->display->display_options['filters']['field_program_state_value']['id'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['table'] = 'field_data_field_program_state';
+  $handler->display->display_options['filters']['field_program_state_value']['field'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Content: Program Location (field_program_location) */
+  $handler->display->display_options['filters']['field_program_location_tid']['id'] = 'field_program_location_tid';
+  $handler->display->display_options['filters']['field_program_location_tid']['table'] = 'field_data_field_program_location';
+  $handler->display->display_options['filters']['field_program_location_tid']['field'] = 'field_program_location_tid';
+  $handler->display->display_options['filters']['field_program_location_tid']['value'] = array(
+    0 => '491',
+    1 => '316',
+  );
+  $handler->display->display_options['filters']['field_program_location_tid']['vocabulary'] = 'program_location';
   $translatables['graduate_programs_webform_options'] = array(
     t('Master'),
     t('Graduate Programs Webform Options'),
@@ -1074,10 +1268,15 @@ function academics_defaultconfig_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Block'),
-    t('Find My Program - Graduate Programs'),
+    t('All Graduate Programs'),
     t('The webform options for the Graduate programs listing on Find My Program webform'),
-    t('Find My Program - All Programs'),
+    t('All Programs'),
+    t('Webform Options - All Programs'),
     t('The webform options for ALL programs listing on Find My Program webform'),
+    t('Undergraduate Programs Webform Options'),
+    t('Online/Off-Campus Undergraduate Programs Webform Options'),
+    t('Online/Off-Campus Undergraduate Programs'),
+    t('Listing of Online/Off-Campus Undergraduate Programs'),
   );
   $export['graduate_programs_webform_options'] = $view;
 
@@ -1269,10 +1468,10 @@ function academics_defaultconfig_views_default_views() {
 
   $view = new view();
   $view->name = 'undergraduate_program';
-  $view->description = '';
+  $view->description = 'All of the tabs that display in the Program Landing Pages are managed by this view.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Undergraduate Program';
+  $view->human_name = 'Program Tabs ';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1302,7 +1501,9 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h1';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1347,70 +1548,25 @@ function academics_defaultconfig_views_default_views() {
     'program' => 'program',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Program State (field_program_state) */
+  $handler->display->display_options['filters']['field_program_state_value']['id'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['table'] = 'field_data_field_program_state';
+  $handler->display->display_options['filters']['field_program_state_value']['field'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['value'] = array(
+    1 => '1',
+  );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Graduate Program Title and Summary */
+  $handler = $view->new_display('block', 'Graduate Program Title and Summary', 'grad_program_title_summary_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Undergraduate Program';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'program' => 'program',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Program Level (field_program_level) */
-  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
-  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
-    1 => '1',
-    2 => '2',
-  );
-  $handler->display->display_options['filters']['field_program_level_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_program_level_value']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['display_description'] = 'Displays the program title (H1) and the summary';
   $handler->display->display_options['block_description'] = 'Undergraduate Program block';
 
   /* Display: Undergraduate Program Summary */
   $handler = $view->new_display('panel_pane', 'Undergraduate Program Summary', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Undergraduate Program';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'program' => 'program',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Program Level (field_program_level) */
-  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
-  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_program_level_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_program_level_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -1484,39 +1640,6 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_undergraduate_tuition_fees']['id'] = 'field_undergraduate_tuition_fees';
-  $handler->display->display_options['fields']['field_undergraduate_tuition_fees']['table'] = 'field_data_field_undergraduate_tuition_fees';
-  $handler->display->display_options['fields']['field_undergraduate_tuition_fees']['field'] = 'field_undergraduate_tuition_fees';
-  $handler->display->display_options['fields']['field_undergraduate_tuition_fees']['label'] = 'Tuition and Fees';
-  $handler->display->display_options['fields']['field_undergraduate_tuition_fees']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'program' => 'program',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Graduate Tuition &amp; Fees */
-  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
-  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['ui_name'] = 'Graduate Tuition & Fees';
-  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_program_level_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_program_level_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -1579,7 +1702,7 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Program Reference */
+  /* Field: Field: Program Reference */
   $handler->display->display_options['fields']['field_program_reference']['id'] = 'field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['field_program_reference']['field'] = 'field_program_reference';
@@ -1588,7 +1711,7 @@ function academics_defaultconfig_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_program_reference']['delta_offset'] = '0';
-  /* Field: Content: Program Reference (field_program_reference:delta) */
+  /* Field: Field: Program Reference (field_program_reference:delta) */
   $handler->display->display_options['fields']['delta']['id'] = 'delta';
   $handler->display->display_options['fields']['delta']['table'] = 'field_data_field_program_reference';
   $handler->display->display_options['fields']['delta']['field'] = 'delta';
@@ -1617,23 +1740,6 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'program' => 'program',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Graduate Program Summary */
   $handler = $view->new_display('panel_pane', 'Graduate Program Summary', 'graduate_summary_panel_pane');
@@ -1748,33 +1854,6 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'program' => 'program',
   );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'program' => 'program',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Program Level (field_program_level) */
-  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
-  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
-    1 => '1',
-    2 => '2',
-  );
-  $handler->display->display_options['filters']['field_program_level_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_program_level_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['pane_title'] = 'Undergraduate Curriculum Summary pane';
 
   /* Display: Undergraduate Concentration */
@@ -1825,33 +1904,6 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'program' => 'program',
   );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'program' => 'program',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Undergraduate Tuition &amp; Fees */
-  $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
-  $handler->display->display_options['filters']['field_program_level_value']['field'] = 'field_program_level_value';
-  $handler->display->display_options['filters']['field_program_level_value']['ui_name'] = 'Undergraduate Tuition & Fees';
-  $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_program_level_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_program_level_value']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['pane_title'] = 'Undergraduate Curriculum Summary pane';
 
   /* Display: TU Graduates Summary */
@@ -1992,8 +2044,9 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_concentration']['field_api_classes'] = TRUE;
   $handler->display->display_options['pane_title'] = 'Graduate Curriculum Summary pane';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: Undergraduate Program Title and Summary */
+  $handler = $view->new_display('block', 'Undergraduate Program Title and Summary', 'undergrad_program_title_summary_block');
+  $handler->display->display_options['display_description'] = 'Displays the program title (H1) and the summary';
 
   /* Display: Sample Courses */
   $handler = $view->new_display('panel_pane', 'Sample Courses', 'panel_pane_3');
@@ -2030,8 +2083,8 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['fields']['field_undergrad_sample_courses']['field_api_classes'] = TRUE;
   $handler->display->display_options['pane_title'] = 'Sample Courses pane';
 
-  /* Display: Webform Options */
-  $handler = $view->new_display('webform_select', 'Webform Options', 'webform_select_1');
+  /* Display: Undergraduate Programs Webform Options */
+  $handler = $view->new_display('webform_select', 'Undergraduate Programs Webform Options', 'webform_select_1');
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -2080,6 +2133,13 @@ function academics_defaultconfig_views_default_views() {
     'program' => 'program',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Program State (field_program_state) */
+  $handler->display->display_options['filters']['field_program_state_value']['id'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['table'] = 'field_data_field_program_state';
+  $handler->display->display_options['filters']['field_program_state_value']['field'] = 'field_program_state_value';
+  $handler->display->display_options['filters']['field_program_state_value']['value'] = array(
+    1 => '1',
+  );
   /* Filter criterion: Content: Program Level (field_program_level) */
   $handler->display->display_options['filters']['field_program_level_value']['id'] = 'field_program_level_value';
   $handler->display->display_options['filters']['field_program_level_value']['table'] = 'field_data_field_program_level';
@@ -2087,6 +2147,60 @@ function academics_defaultconfig_views_default_views() {
   $handler->display->display_options['filters']['field_program_level_value']['value'] = array(
     1 => '1',
   );
+
+  /* Display: Program Highlights */
+  $handler = $view->new_display('panel_pane', 'Program Highlights', 'program_highlights_pane');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Highlights';
+  $handler->display->display_options['display_description'] = 'Graduate and Undergraduate Highlights Pane';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Highlights */
+  $handler->display->display_options['fields']['field_program_highlights']['id'] = 'field_program_highlights';
+  $handler->display->display_options['fields']['field_program_highlights']['table'] = 'field_data_field_program_highlights';
+  $handler->display->display_options['fields']['field_program_highlights']['field'] = 'field_program_highlights';
+  $handler->display->display_options['fields']['field_program_highlights']['label'] = '';
+  $handler->display->display_options['fields']['field_program_highlights']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_program_highlights']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_program_highlights']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_program_highlights']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_program_highlights']['field_api_classes'] = TRUE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'none',
+      'context' => 'entity:bean.field-bean-highlight-description',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
+  $handler->display->display_options['link_to_view'] = '1';
   $translatables['undergraduate_program'] = array(
     t('Master'),
     t('Undergraduates Program'),
@@ -2099,8 +2213,9 @@ function academics_defaultconfig_views_default_views() {
     t('Content entity referenced from field_program_reference'),
     t('[title]'),
     t('All'),
-    t('Block'),
+    t('Graduate Program Title and Summary'),
     t('Undergraduate Program'),
+    t('Displays the program title (H1) and the summary'),
     t('Undergraduate Program block'),
     t('Undergraduate Program Summary'),
     t('View panes'),
@@ -2110,7 +2225,6 @@ function academics_defaultconfig_views_default_views() {
     t('Undergraduate Tuition & Fees'),
     t('Tuition & Fees'),
     t('Undergraduate Tuition & Fees pane'),
-    t('Tuition and Fees'),
     t('Faculty'),
     t('Faculty associated with this program and or school'),
     t('image from field_user_picture'),
@@ -2135,9 +2249,13 @@ function academics_defaultconfig_views_default_views() {
     t('Format'),
     t('Concentration Summary'),
     t('Concentration'),
+    t('Undergraduate Program Title and Summary'),
     t('Sample Courses'),
     t('Sample Courses pane'),
-    t('Webform Options'),
+    t('Undergraduate Programs Webform Options'),
+    t('Program Highlights'),
+    t('Highlights'),
+    t('Graduate and Undergraduate Highlights Pane'),
   );
   $export['undergraduate_program'] = $view;
 

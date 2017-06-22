@@ -47,24 +47,24 @@ function tiffin_ccp_default_panels_mini() {
     'admin_title' => '',
     'title' => '',
     'title_heading' => 'h2',
-    'body' => '<div class="tiptop">
+    'body' => '<div class="hero-sub-navigation">
 <ul>
-<li><a href="">Accreditation</a></li>
-<li><a href="">Tuition & Fees</a></li>
-<li><a href="">Virtual Tour</a></li>
-<li><a href="">About TU</a></li>
+<li><a href="/about/ataglance/accreditations">Accreditation</a></li>
+<li><a href="/tuition">Tuition & Fees</a></li>
+<li><a href="/visit">Visit TU</a></li>
+<li><a href="/about">About TU</a></li>
 </ul>
 </div>
 <div class="midclicks">
-<ul>
-<li><a href=""><div><p>How to Apply</p></div></a></li>
-<li><a href=""><div><p>Important Dates</p></div></a></li>
-<li><a href=""><div><p>Schedules</p></div></a></li>
-</ul>
-<ul>
-<li><a href=""><div><p>Admission Requirements</p></div></a></li>
-<li><a href=""><div><p>Books</p></div></a></li>
-</ul>
+    <ul>
+        <li><a href="#" data-toggle="modal" data-target="#js-how-to-apply"><div><p>How to Apply</p></div></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#js-important-dates"><div><p>Important Dates</p></div></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#js-schedules"><div><p>Courses & Schedules</p></div></a></li>
+    </ul>
+    <ul>
+        <li><a href="#" data-toggle="modal" data-target="#js-admin-requirements"><div><p>Admission Requirements</p></div></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#js-books"><div><p>Books</p></div></a></li>
+    </ul>
 </div>',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
@@ -128,12 +128,16 @@ function tiffin_ccp_default_panels_mini() {
 &nbsp;
 </div>
 <ul>
-<li>Megan Miller</li>
-<li>Phone: 419-777-777</li>
-<li>Email: MMiller@Tiffin.edu</li>
-<li>Fax: 419-777-7777</li>
+<li>Jay Feuerstein</li>
+<li>155 Miami Street<br/>
+Tiffin, OH 44883</li>
+<li>Email: ccp@tiffin.edu</li>
+<li>Toll Free: 567-268-6011</li>
+<li>Fax: 419-443-5009</li>
 </ul>
-</div>',
+</div>
+
+',
     'format' => 'wetkit_html_text',
     'substitute' => TRUE,
   );
@@ -192,7 +196,7 @@ function tiffin_ccp_default_panels_mini() {
     'title_heading' => 'h2',
     'body' => '<ul>
 <li><a href="">Accreditation</a></li>
-<li><a href="">Tuition & Fees</a></li>
+<li><a href="/tuition">Tuition & Fees</a></li>
 <li><a href="">Virtual Tour</a></li>
 <li><a href="">About TU</a></li>
 </ul>',

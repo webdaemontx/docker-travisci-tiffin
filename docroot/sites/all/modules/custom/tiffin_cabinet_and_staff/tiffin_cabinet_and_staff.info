@@ -84,6 +84,7 @@ features[variable][] = node_preview_staff
 features[variable][] = node_submitted_board_member
 features[variable][] = node_submitted_staff
 features[variable][] = pathauto_node_board_member_pattern
+features[variable][] = pathauto_node_staff_pattern
 features[variable][] = xmlsitemap_settings_node_board_member
 features[variable][] = xmlsitemap_settings_node_staff
 features[views_view][] = cabinet_members

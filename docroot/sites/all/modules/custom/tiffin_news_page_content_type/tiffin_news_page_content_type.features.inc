@@ -19,7 +19,7 @@ function tiffin_news_page_content_type_ctools_plugin_api($module = NULL, $api = 
 function tiffin_news_page_content_type_node_info() {
   $items = array(
     'news_page' => array(
-      'name' => t('News Page'),
+      'name' => t('News'),
       'base' => 'node_content',
       'description' => t('Simple News Page'),
       'has_title' => '1',
