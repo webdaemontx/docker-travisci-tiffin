@@ -87,7 +87,7 @@ function acquia_purge_drush_command() {
  */
 function drush_acquia_purge_ap_diagnosis($v = ACQUIA_PURGE_SEVLEVEL_INFO) {
   $oldverbosity = drush_get_context('DRUSH_VERBOSE');
-  $tests = _acquia_purge_get_diagnosis($v);
+  $tests = _acquia_purge_service()->diagnostics()->get($v);
 
   // Define a mapping between install.inc's requirement states and drush_log().
   $severitymap = array(
@@ -164,7 +164,7 @@ function _drush_acquia_purge_ap_diagnosis_log(array $test, $longest) {
     str_repeat(' ', $pad_maxlength - strlen($type)),
     drupal_strtoupper($test['name']),
     str_repeat(' ', $longest - strlen($test['name'])),
-    drupal_strtolower($test['value_plain'])
+    $test['value_plain']
   );
 
   // Print descriptions for warnings and errors.
@@ -210,7 +210,7 @@ function drush_acquia_purge_ap_purge($paths = NULL) {
   }
 
   // Stop invocation if serious error conditions have been found.
-  if (!_acquia_purge_are_we_allowed_to_purge()) {
+  if ($service->diagnostics()->isSystemBlocked()) {
     return drush_acquia_purge_ap_diagnosis(ACQUIA_PURGE_SEVLEVEL_ERROR);
   }
 
@@ -248,6 +248,7 @@ function drush_acquia_purge_ap_forget() {
   // Retrieve statistics, clear the queue and log to Drush.
   $remaining = $service->stats('remaining');
   $service->clear();
+  $service->oddities()->wipe();
   drush_log(dt("Removed @remaining items from the queue.",
     array('@remaining' => $remaining)), 'ok');
 }
@@ -280,7 +281,7 @@ function drush_acquia_purge_ap_list() {
 function drush_acquia_purge_ap_process(&$context = NULL) {
   $service = _acquia_purge_service();
 
-  if (!_acquia_purge_are_we_allowed_to_purge()) {
+  if ($service->diagnostics()->isSystemBlocked()) {
     drush_set_error(dt('Diagnostic error conditions were found, aborting.'));
     return drush_acquia_purge_ap_diagnosis(ACQUIA_PURGE_SEVLEVEL_ERROR);
   }
@@ -297,7 +298,7 @@ function drush_acquia_purge_ap_process(&$context = NULL) {
     }
 
     // Define the batch operation we're going to conduct.
-    $steps = (int) ceil($stats['remaining'] / _acquia_purge_get_capacity());
+    $steps = (int) ceil($stats['remaining'] / $service->capacity()->queueClaimsLimit());
     $batch = array(
       'title' => dt('Purging'),
       'operations' => array(),

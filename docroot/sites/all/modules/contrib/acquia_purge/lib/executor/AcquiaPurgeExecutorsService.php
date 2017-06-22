@@ -17,7 +17,7 @@ class AcquiaPurgeExecutorsService implements \Iterator {
    */
   protected $core_backends = array(
     '_acquia_purge_executor_page_cache',
-    '_acquia_purge_executor_ah',
+    '_acquia_purge_executor_acquia',
   );
 
   /**
@@ -53,7 +53,7 @@ class AcquiaPurgeExecutorsService implements \Iterator {
     _acquia_purge_load('_acquia_purge_executor_base');
     foreach ($this->getRegisteredBackends() as $service_or_path) {
       $class = _acquia_purge_load($service_or_path);
-      if ($class::isEnabled()) {
+      if ($class::isEnabled($this->service)) {
         $instance = new $class($this->service);
         if (!($instance instanceof AcquiaPurgeExecutorInterface)) {
           throw new \RuntimeException("$class != AcquiaPurgeExecutorInterface");

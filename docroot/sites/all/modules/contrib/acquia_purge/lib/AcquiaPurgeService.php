@@ -36,6 +36,20 @@ class AcquiaPurgeService {
   protected $deduplicateLists = array();
 
   /**
+   * The loaded AcquiaPurgeCapacity object.
+   *
+   * @var AcquiaPurgeCapacity
+   */
+  protected $capacity = NULL;
+
+  /**
+   * The loaded AcquiaPurgeDiagnostics object.
+   *
+   * @var AcquiaPurgeDiagnostics
+   */
+  protected $diagnostics = NULL;
+
+  /**
    * The loaded AcquiaPurgeExecutorsService object.
    *
    * @var AcquiaPurgeExecutorsService
@@ -55,6 +69,13 @@ class AcquiaPurgeService {
    * @var AcquiaPurgeHostingInfo
    */
   protected $hostingInfo = NULL;
+
+  /**
+   * The loaded AcquiaPurgeOddities object.
+   *
+   * @var AcquiaPurgeOddities
+   */
+  protected $oddities = NULL;
 
   /**
    * The loaded AcquiaPurgeProcessorsService object.
@@ -161,6 +182,20 @@ class AcquiaPurgeService {
   }
 
   /**
+   * Retrieve the capacity tracker service.
+   *
+   * @return AcquiaPurgeCapacity
+   *   The capacity tracker object.
+   */
+  public function capacity() {
+    if (is_null($this->capacity)) {
+      $class = _acquia_purge_load('_acquia_purge_capacity');
+      $this->capacity = new $class($this);
+    }
+    return $this->capacity;
+  }
+
+  /**
    * Empty the queue and reset all state data.
    */
   public function clear() {
@@ -201,7 +236,7 @@ class AcquiaPurgeService {
    *   TRUE when the path is in the given list, FALSE when not.
    */
   public function deduplicate($path, $list = 'queued', $l = 500) {
-    $memcached_backed_storage = _acquia_purge_are_we_using_memcached();
+    $memcached_backed_storage = $this->hostingInfo()->isMemcachedUsed();
 
     // And then each $list gets its own subsection.
     if (!isset($this->deduplicateLists[$list])) {
@@ -226,6 +261,34 @@ class AcquiaPurgeService {
     }
 
     return $exists;
+  }
+
+  /**
+   * Retrieve the AcquiaPurgeDiagnostics object.
+   *
+   * @return AcquiaPurgeDiagnostics
+   *   The diagnostics service.
+   */
+  public function diagnostics() {
+    if (is_null($this->diagnostics)) {
+      $class = _acquia_purge_load('_acquia_purge_diagnostics');
+      $this->diagnostics = new $class($this);
+    }
+    return $this->diagnostics;
+  }
+
+  /**
+   * Retrieve IDs of the loaded executor plugins.
+   *
+   * @return string[]
+   *   Non-associative array with plugin IDs.
+   */
+  public function executorIds() {
+    $ids = array();
+    foreach ($this->executors() as $executor) {
+      $ids[] = $executor->getId();
+    }
+    return $ids;
   }
 
   /**
@@ -315,13 +378,17 @@ class AcquiaPurgeService {
   }
 
   /**
-   * Retrieve the 'logged_errors' state item from state storage.
+   * Retrieve the AcquiaPurgeOddities object.
    *
-   * @return AcquiaPurgeStateItemInterface
-   *   The state item.
+   * @return AcquiaPurgeOddities
+   *   The oddities service.
    */
-  public function loggedErrors() {
-    return $this->state()->get('logged_errors', array());
+  public function oddities() {
+    if (is_null($this->oddities)) {
+      $class = _acquia_purge_load('_acquia_purge_oddities');
+      $this->oddities = new $class($this);
+    }
+    return $this->oddities;
   }
 
   /**
@@ -339,15 +406,15 @@ class AcquiaPurgeService {
     }
 
     // How much can we safely process during this request?
-    $maxitems = _acquia_purge_get_capacity();
+    $maxitems = $this->capacity()->queueClaimsLimit();
     if ($maxitems < 1) {
       return FALSE;
     }
 
     // Ask the diagnostic subsystem to identify ACQUIA_PURGE_SEVLEVEL_ERROR
     // level severities, which mandate processing to stop and log the problem.
-    if (count($e = _acquia_purge_get_diagnosis(ACQUIA_PURGE_SEVLEVEL_ERROR))) {
-      _acquia_purge_get_diagnosis_logged($e);
+    if ($err = $this->diagnostics()->isSystemBlocked()) {
+      $this->diagnostics()->log($err);
       return FALSE;
     }
 
@@ -405,7 +472,7 @@ class AcquiaPurgeService {
     $this->queue()->releaseItemMultiple($failed);
 
     // Adjust the remaining capacity downwards for future ::process() calls.
-    _acquia_purge_get_capacity(count($succeeded) + count($failed));
+    $this->capacity()->queueClaimsSubtract(count($succeeded) + count($failed));
 
     // When the bottom of the queue has been reached, reset all state data.
     if ($this->queue()->numberOfItems() === 0) {
@@ -514,7 +581,7 @@ class AcquiaPurgeService {
     if (is_null($this->state)) {
       _acquia_purge_load('_acquia_purge_state_storage_interface');
       _acquia_purge_load('_acquia_purge_state_storage_base');
-      if (_acquia_purge_are_we_using_memcached()) {
+      if ($this->hostingInfo()->isMemcachedUsed()) {
         $class = _acquia_purge_load('_acquia_purge_state_storage_memcache');
         $this->state = new $class(
           ACQUIA_PURGE_STATE_MEMKEY,
@@ -561,28 +628,6 @@ class AcquiaPurgeService {
     }
 
     return is_null($key) ? $info : $info[$key];
-  }
-
-  /**
-   * Keep track of detected issues in the upstream VCL deployed on Acquia Cloud.
-   *
-   * @param null|string $add_oddity
-   *   (optional) When passed, it registers the parameter as detected behavioral
-   *   oddity. For example: 403's are not normal and indicate a custom VCL.
-   *
-   * @return string[]
-   *   The list of known oddities.
-   */
-  public function vclOddities($add_oddity = NULL) {
-    $state_item = $this->state()->get('vcl_oddities', array());
-    if (!is_null($add_oddity)) {
-      $oddities = $state_item->get();
-      if (!in_array($add_oddity, $oddities)) {
-        $oddities[] = $add_oddity;
-        $state_item->set($oddities);
-      }
-    }
-    return $state_item->get();
   }
 
 }

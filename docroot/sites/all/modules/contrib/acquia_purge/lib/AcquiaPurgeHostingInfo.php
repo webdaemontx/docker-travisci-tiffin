@@ -32,6 +32,13 @@ class AcquiaPurgeHostingInfo {
   protected $domains = array();
 
   /**
+   * The backend class the page cache operates on.
+   *
+   * @var string
+   */
+  protected $pageCacheBackend = 'DrupalDatabaseCache';
+
+  /**
    * The list of protocol schemes to be purged.
    *
    * @var string[]
@@ -48,22 +55,29 @@ class AcquiaPurgeHostingInfo {
   /**
    * The Acquia site group.
    *
-   * @var bool|string
+   * @var boolean|string
    */
   protected $siteGroup = FALSE;
 
   /**
    * The Acquia site name.
    *
-   * @var bool|string
+   * @var boolean|string
    */
   protected $siteName = FALSE;
 
   /**
-  * Whether the current hosting environment is Acquia Cloud or not.
-  *
-  * @var bool
-  */
+   * Whether Drupal's caches are powered by memcache.
+   *
+   * @var boolean
+   */
+  protected $isMemcachedUsed = FALSE;
+
+  /**
+   * Whether the current hosting environment is Acquia Cloud.
+   *
+   * @var boolean
+   */
   protected $isThisAcquiaCloud = FALSE;
 
   /**
@@ -81,6 +95,11 @@ class AcquiaPurgeHostingInfo {
     if (isset($_ENV['AH_SITE_GROUP']) && !empty($_ENV['AH_SITE_GROUP'])) {
       $this->siteGroup = $_ENV['AH_SITE_GROUP'];
     }
+    if (!empty($GLOBALS['gardens_site_settings'])) {
+      $this->siteEnvironment = $GLOBALS['gardens_site_settings']['env'];
+      $this->siteGroup = $GLOBALS['gardens_site_settings']['site'];
+      $this->siteName = $this->siteGroup . '.' . $this->siteEnvironment;
+    }
 
     // Determine the balancer token and IP addresses.
     if (is_array($reverse_proxies = variable_get('reverse_proxies'))) {
@@ -95,12 +114,23 @@ class AcquiaPurgeHostingInfo {
       $this->balancerToken = (string) trim($token_configured);
     }
 
+    // Determine what the page cache is operating on.
+    $cache = variable_get('cache_default_class', $this->pageCacheBackend);
+    $this->pageCacheBackend = variable_get('cache_class_cache_page', $cache);
+
     // Determine what the protocol schemes are based on settings.
-    if (_acquia_purge_variable('acquia_purge_http') === TRUE) {
+    if (_acquia_purge_variable('acquia_purge_http')) {
       $this->schemes[] = 'http';
     }
-    if (_acquia_purge_variable('acquia_purge_https') === TRUE) {
+    if (_acquia_purge_variable('acquia_purge_https')) {
       $this->schemes[] = 'https';
+    }
+
+    // Determine whether memcached is powering Drupal's caches or not.
+    if (_acquia_purge_variable('acquia_purge_memcache')) {
+      if (($cache == 'MemCacheDrupal') && function_exists('dmemcache_get')) {
+        $this->isMemcachedUsed = TRUE;
+      }
     }
 
     // Test the gathered information to determine if this is/isn't Acquia Cloud.
@@ -122,10 +152,9 @@ class AcquiaPurgeHostingInfo {
   protected function domains() {
 
     // Avoid automatic detection when 'acquia_purge_domains' contains hardcodes.
-    $hardcodes = _acquia_purge_variable('acquia_purge_domains');
-    if (is_array($hardcodes) && count($hardcodes)) {
-      foreach ($hardcodes as $hardcoded_domain) {
-        $this->domains[] = $hardcoded_domain;
+    if ($this->areDomainsHardcoded()) {
+      foreach (_acquia_purge_variable('acquia_purge_domains') as $hardcode) {
+        $this->domains[] = $hardcode;
       }
     }
 
@@ -356,6 +385,16 @@ class AcquiaPurgeHostingInfo {
   }
 
   /**
+   * Get the backend class the page cache operates on.
+   *
+   * @return string
+   *   Class name, e.g. 'DrupalDatabaseCache', 'DrupalFakeCache' or different.
+   */
+  public function getPageCacheBackend() {
+    return $this->pageCacheBackend;
+  }
+
+  /**
    * Get a list of protocol schemes that will be purged.
    *
    * @return string[]
@@ -378,7 +417,7 @@ class AcquiaPurgeHostingInfo {
   /**
    * Get the Acquia site group.
    *
-   * @return false|string
+   * @return boolean|string
    *   The site group, e.g. 'site' or '' when unavailable.
    */
   public function getSiteGroup() {
@@ -388,7 +427,7 @@ class AcquiaPurgeHostingInfo {
   /**
    * Get the Acquia site name.
    *
-   * @return false|string
+   * @return boolean|string
    *   The site group, e.g. 'sitedev' or '' when unavailable.
    */
   public function getSiteName() {
@@ -396,9 +435,40 @@ class AcquiaPurgeHostingInfo {
   }
 
   /**
+   * Are the domains manually hardcoded?
+   *
+   * @return bool
+   *   Boolean TRUE if domains are hardcoded, FALSE if automatically discovered.
+   */
+  public function areDomainsHardcoded() {
+    $hardcodes = _acquia_purge_variable('acquia_purge_domains');
+    return is_array($hardcodes) && count($hardcodes);
+  }
+
+  /**
+   * Determine if Drupal's caches are powered by memcache.
+   *
+   * @return bool
+   *   Boolean TRUE memcached is in use, FALSE if not.
+   */
+  public function isMemcachedUsed() {
+    return $this->isMemcachedUsed;
+  }
+
+  /**
+   * Determine whether DrupalFakeCache is powering the page cache or not.
+   *
+   * @return boolean
+   *   True when DrupalFakeCache is active, FALSE otherwise.
+   */
+  public function isPageCacheFake() {
+    return ($this->pageCacheBackend === 'DrupalFakeCache') ? TRUE : FALSE;
+  }
+
+  /**
    * Determine whether the current hosting environment is Acquia Cloud or not.
    *
-   * @return true|false
+   * @return boolean
    *   Boolean expression where 'true' indicates Acquia Cloud or 'false'.
    */
   public function isThisAcquiaCloud() {

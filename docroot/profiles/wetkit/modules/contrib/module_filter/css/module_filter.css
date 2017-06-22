@@ -8,7 +8,7 @@
 .module-filter-clear a {
   margin-left: 5px;
   font-size: 11px;
-  position: relative;
+  position: absolute;
 }
 #module-filter-show-wrapper .form-item {
   display: inline;
@@ -17,4 +17,10 @@
   text-align: center;
   text-transform: uppercase;
   color: #888;
+}
+#module-filter-modules {
+  position: relative;
+}
+#module-filter-modules table {
+  position: absolute;
 }

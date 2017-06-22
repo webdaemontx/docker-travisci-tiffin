@@ -1,8 +1,7 @@
 <?php
-
-/* *
+/**
  * @file
- * Administration page specific functions
+ * Administration page specific functions.
  */
 
 /**
@@ -21,11 +20,17 @@ function search404_settings() {
     '#description' => t('Works only with Core, Apache Solr, Lucene and Xapian searches. An HTTP status of 301 or 302 will be returned for this redirect.'),
     '#default_value' => variable_get('search404_first', FALSE),
   );
+  $form['search404_first_on_paths'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Jump directly to the first search result only on the listed paths.'),
+    '#description' => t('Enter one path per line. The "*" character is a wildcard. Example paths are blog for the blog page and blog/* for every personal blog.'),
+    '#default_value' => variable_get('search404_first_on_paths', ''),
+  );
   $form['search404_do_google_cse'] = array(
     '#type' => 'checkbox',
     '#title' => t('Do a Google CSE Search instead of a Drupal Search when a 404 occurs'),
     '#description' => t('Requires Google CSE and Google CSE Search modules to be enabled.'),
-    '#attributes' => module_exists('google_cse') ? array()  : array('disabled' => 'disabled'),
+    '#attributes' => module_exists('google_cse') ? array() : array('disabled' => 'disabled'),
     '#default_value' => variable_get('search404_do_google_cse', FALSE),
   );
   $form['search404_do_google_cse_adv'] = array(
@@ -39,7 +44,7 @@ function search404_settings() {
     '#type' => 'checkbox',
     '#title' => t('Do a "Search by page" Search instead of a Drupal Search when a 404 occurs'),
     '#description' => t('Requires "Search by page" module to be enabled.'),
-    '#attributes' => module_exists('search_by_page') ? array()  : array('disabled' => 'disabled'),
+    '#attributes' => module_exists('search_by_page') ? array() : array('disabled' => 'disabled'),
     '#default_value' => variable_get('search404_do_search_by_page', FALSE),
   );
   // Custom search path implementation (for Search API integration #1076190)
@@ -66,7 +71,8 @@ function search404_settings() {
     '#description' => t('This experimental feature notably allows to force 404 when using a custom search path.'),
     '#default_value' => variable_get('search404_no_redirect', FALSE),
   );
-  // Added for having a 301 redirect instead of the standard 302 (offered by the drupal_goto).
+  // Added for having a 301 redirect instead of the standard 302
+  // (offered by the drupal_goto).
   $form['search404_redirect_301'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use a 301 Redirect instead of 302 Redirect'),
@@ -87,6 +93,12 @@ function search404_settings() {
     '#description' => t('Disable the Drupal error message when search results are shown on a 404 page.'),
     '#default_value' => variable_get('search404_disable_error_message', FALSE),
   );
+  $form['search404_search_message'] = array(
+    '#title' => t('Custom error message'),
+    '#type' => 'textfield',
+    '#description' => t('A custom error message that should be displayed when search results are shown on a 404 page, use "@keys" to insert the searched key value.'),
+    '#default_value' => variable_get('search404_search_message', ''),
+  );
   $form['advanced'] = array(
     '#type' => 'fieldset',
     '#title' => t('Advanced settings'),
@@ -98,6 +110,7 @@ function search404_settings() {
     '#title' => t('Use OR between keywords when searching'),
     '#default_value' => variable_get('search404_use_or', FALSE),
   );
+
   $form['advanced']['search404_use_search_engine'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use auto-detection of keywords from search engine referer'),
@@ -109,6 +122,12 @@ function search404_settings() {
     '#title' => t('Words to ignore'),
     '#description' => t('These words will be ignored from the search query. Separate words with a space, e.g.: "and or the".'),
     '#default_value' => variable_get('search404_ignore', t('and or the')),
+  );
+  $form['advanced']['search404_ignore_paths'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Specific paths to ignore'),
+    '#description' => t('These paths will be ignored. Site default "Page not found" page will be displayed. Enter one path per line. The "*" character is a wildcard. Example paths are blog for the blog page and blog/* for every personal blog.'),
+    '#default_value' => variable_get('search404_ignore_paths', ''),
   );
   $form['advanced']['search404_ignore_extensions'] = array(
     '#type' => 'textfield',
@@ -142,7 +161,8 @@ function search404_settings() {
     '#default_value' => variable_get('search404_page_text', ''),
     '#description' => t('You can enter a custom text message that can be displayed at the top of the search results, HTML formatting can be used.'),
   );
-  // Helps reset the site_404 variable to search404 in case the user changes it manually.
+  // Helps reset the site_404 variable to search404 in case the user changes
+  // it manually.
   $form['site_404'] = array(
     '#type' => 'hidden',
     '#value' => 'search404',

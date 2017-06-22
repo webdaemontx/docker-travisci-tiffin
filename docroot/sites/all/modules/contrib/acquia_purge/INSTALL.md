@@ -57,12 +57,11 @@ exist as of this version and documented below:
 ║                          ║       ║ from detected domains.                    ║
 ║                          ║       ║ $conf['acquia_purge_stripports'] = [80];  ║
 ║                          ║       ║                                           ║
-║ acquia_purge_cron        ║ FALSE ║ Once enabled, this will process queue     ║
-║                          ║       ║ items during cron. The client side AJAX   ║
-║                          ║       ║ processor cannot be disabled, but it will ║
-║                          ║       ║ run less, especially combined with late   ║
-║                          ║       ║ runtime processing enabled.               ║
-║                          ║       ║ $conf['acquia_purge_cron'] = TRUE;        ║
+║ acquia_purge_cron        ║ TRUE  ║ Once disabled, queue items will no longer ║
+║                          ║       ║ be processed during cron. Other processors║
+║                          ║       ║ like AJAX, will have to run more to keep  ║
+║                          ║       ║ up with the queue.                        ║
+║                          ║       ║ $conf['acquia_purge_cron'] = FALSE;       ║
 ║                          ║       ║                                           ║
 ║ acquia_purge_lateruntime ║ FALSE ║ When enabled, processing of the queue will║
 ║                          ║       ║ start during the same request items got   ║
@@ -143,6 +142,12 @@ exist as of this version and documented below:
 ║                          ║       ║ can consider disabling it followed by     ║
 ║                          ║       ║ 'drush ap-forget' to see if that works.   ║
 ║                          ║       ║ $conf['acquia_purge_memcache'] = FALSE;   ║
+║                          ║       ║                                           ║
+║ acquia_purge_trim_slashes║ TRUE  ║ When set to FALSE, this will cause the    ║
+║                          ║       ║ hook_expire_cache() implementation to stop║
+║                          ║       ║ trimming / characters from URLs coming    ║
+║                          ║       ║ from the expire module.                   ║
+║                          ║       ║ $conf['acquia_purge_trim_slashes'] =FALSE;║
 ║                          ║       ║                                           ║
 ║ acquia_purge_passivemode ║ FALSE ║ When set to TRUE, this will cause the     ║
 ║                          ║       ║ hook_expire_cache() implementation to stop║
