@@ -1,0 +1,121 @@
+<?php
+/**
+ * @file
+ * Contains test class for the views_handler_field_regex_rewrite handler
+ */
+class ViewsFieldRegexRewriteTest extends ViewsSqlTest {
+
+  protected function setUp() {
+    parent::setUp();
+    module_enable(array('views_regex_rewrite'));
+  }
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Field: Regular Expression Re-Write',
+      'description' => 'Test the views_handler_field_regex_rewrite field handler',
+      'group' => 'Views Handlers',
+    );
+  }
+
+  function viewsData() {
+    module_load_include('inc', 'views_regex_rewrite', 'views_regex_rewrite.views');
+    $data = parent::viewsData();
+    //ensure we have the views data included;
+    $data += views_regex_rewrite_views_data();
+    return $data;
+  }
+
+  public function testFieldCustom() {
+
+    
+    foreach ($this->dataProvider() as $data) {
+
+      $view = $this->getBasicView();
+
+      $fields = $view->display['default']->handler->get_option('fields');
+
+      $fields['job'] = array(
+        'id' => 'job',
+        'table' => 'views_test',
+        'field' => 'job',
+        'relationship' => 'none'
+      );
+
+      $fields['regex_rewrite'] = array(
+        'id' => 'regex_rewrite',
+        'table' => 'views',
+        'field' => 'regex_rewrite',
+        'alter' => array(
+          'text' => $data['text'],
+          'text_patterns' => implode("\n", $data['patterns']),
+          'text_replacements' => implode("\n", $data['replacements']),
+        ),
+      );
+
+      //Add our rewrite field
+      $view->display['default']->handler->set_option('fields', $fields);
+      $this->executeView($view);
+
+      foreach ($data['expected'] as $i => $value) {
+        $this->assertEqual($value, $view->style_plugin->get_field($i, 'regex_rewrite'));
+      }
+    }
+  }
+
+  private function dataProvider() {
+
+    return array(
+      //a simple test
+      array(
+        'text' => '[name]',
+        'patterns' => array(
+          '/[A-Za-z]+/'
+        ),
+        'replacements' => array(
+          'alpha'
+        ),
+        'expected' => array(
+          'alpha',
+        ),
+      ),
+      //Test with multiple patterns and replacements
+      array(
+        'text' => '[name] is [age]',
+        'patterns' => array(
+          '/30/',
+          '/25/'
+        ),
+        'replacements' => array(
+          'old',
+          'young'
+        ),
+        'expected' => array(
+          'John is young',
+          'George is 27',
+          'Ringo is 28',
+          'Paul is 26',
+          'Meredith is old'
+        ),
+      ),
+      //Test with tokens in all 3 fields
+      array(
+        'text' => '[name] is a [job]',
+        'patterns' => array(
+          '/[name] is a Singer/',
+        ),
+        'replacements' => array(
+          '[name] sings',
+        ),
+        'expected' => array(
+          'John sings',
+          'George sings',
+          'Ringo is a Drummer',
+          'Paul is a Songwriter',
+          'Meredith is a Speaker'
+        ),
+      )
+    );
+  }
+
+}
