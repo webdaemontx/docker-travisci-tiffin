@@ -6217,7 +6217,6 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 }
 
 .grid-container .faculty-container figure .figure-name {
-	bottom: 55px;
 	font-size: 1.3em;
 	margin: 0 5px;
 	position: relative;
@@ -6229,7 +6228,6 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 }
 
 .grid-container .faculty-container figure .figure-position {
-	bottom: 45px;
 	font-size: 1em;
 	line-height: 1em;
 	margin: 4px 6px 0 5px;
@@ -6242,7 +6240,6 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 
 .grid-container .faculty-container figure .profile-email,
 .grid-container .faculty-container figure .profile-phone {
-	bottom: 35px;
 	font-size: 1em;
 	line-height: 1.2em;
 	margin: 10px;
@@ -6281,9 +6278,12 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 	height: 100%;
 	position: absolute;
 	top: 218px;
-	-webkit-transition: .25s;
-	-o-transition: .25s;
-	transition: .25s;
+	-webkit-transition: .25s ease-out;
+	-o-transition: .25s ease-out;
+	transition: .25s ease-out;
+	-webkit-transition-delay: .5s;
+	     -o-transition-delay: .5s;
+	        transition-delay: .5s;
 	width: 100%;
 }
 

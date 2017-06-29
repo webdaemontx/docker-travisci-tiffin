@@ -1,7 +1,5 @@
 @import '../abstracts/theme-vars';
 
-
-
 .profile-grid-container {
   h2 {
     color: $brand-green;
@@ -72,7 +70,7 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
       }
 
       .figure-name {
-        bottom: 55px;
+        //bottom: 55px;
         font-size: 1.3em;
         margin: 0 5px;
         position: relative;
@@ -82,7 +80,7 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
       }
 
       .figure-position {
-        bottom: 45px;
+        //bottom: 45px;
         font-size: 1em;
         line-height: 1em;
         margin: 4px 6px 0 5px;
@@ -93,7 +91,7 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
 
       .profile-email,
       .profile-phone {
-        bottom: 35px;
+        //bottom: 15px;
         font-size: 1em;
         line-height: 1.2em;
         margin:10px;
@@ -129,7 +127,8 @@ div.pane-life-at-tu-staff-panel-pane-2 > .pane-content {
         height: 100%;
         position: absolute;
         top: 218px;
-        transition: .25s;
+        transition: .25s ease-out;
+        transition-delay: .5s;
         width: 100%;
 
         a {
