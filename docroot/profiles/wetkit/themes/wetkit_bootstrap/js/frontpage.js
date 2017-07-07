@@ -3,7 +3,7 @@
  */
 (function($, Drupal) {
     Drupal.behaviors.frontpage = {
-        attach:function()
+        attach: function()
         {
             jQuery("#webform-uuid-3e910914-01b0-4ad1-8d70-7f6116c073d7").submit(function( event ) {
 

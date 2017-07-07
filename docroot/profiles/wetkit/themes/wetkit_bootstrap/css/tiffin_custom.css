@@ -6249,7 +6249,7 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 
 .grid-container .faculty-container figure:hover figcaption {
 	background: rgba(217, 191, 117, 0.85);
-	top: 0;
+	top: -45px;
 }
 
 .grid-container .faculty-container figure:hover figcaption .profile-name,

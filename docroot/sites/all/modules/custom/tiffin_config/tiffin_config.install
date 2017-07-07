@@ -264,3 +264,25 @@ function tiffin_config_update_7318($sandbox) {
     }
   }
 }
+
+/**
+ * Disable Wetkit Migrate, Easy Breadcrumb, Appointments, Migrate UI,
+ * Migrate, Void Menu, MailLog, Migrate Extras.
+ * Enable Honeypot.
+ */
+function tiffin_config_update_7319($sandbox) {
+  $modules = array("wetkit_migrate", "easy_breadcrumb", "appointments",
+    "migrate_ui", "migrate", "migrate_extras", "void_menu", "maillog");
+
+  foreach ($modules as $module) {
+    if (module_exists($module)) {
+      module_disable(array($module));
+    }
+  }
+  $modules = array("honeypot");
+  foreach ($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+    }
+  }
+}

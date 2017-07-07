@@ -24,6 +24,30 @@ function profile2_staff_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function profile2_staff_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: faculty_220x293.
+  $styles['faculty_220x293'] = array(
+    'label' => 'Faculty 220x293',
+    'effects' => array(
+      11 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 220,
+          'height' => 293,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_default_profile2_type().
  */
 function profile2_staff_default_profile2_type() {

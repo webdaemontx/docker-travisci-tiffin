@@ -392,12 +392,23 @@ if (arg(0) == 'node' && is_numeric(arg(1)) && arg(1) == 1561) {
   $variables['container_class'] = 'container';
   }
 
-/**
- * Implements hook_preprocess_page().
- * Load the Find My Program javascript if on the front page
- */
+  /*
+   * Implements hook_preprocess_page().
+   * Load the Find My Program javascript if on the front page
+   */
   if(drupal_is_front_page()) {
     drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/frontpage.js');
+  }
+
+  /*
+   * Implements hook_preprocess_page().
+   * If the view is Faculty Profile Faculty Detail Pane, attach the js below.
+   */
+  //$view = $variables['view'];
+  //$view = views_get_page_view();
+    $path = current_path();
+  if ($path == 'faculty') {
+    drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/profile2-staff-faculty-pane.js');
   }
 }
 

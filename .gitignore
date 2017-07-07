@@ -33,3 +33,5 @@ docroot/sites/all/libraries/FirePHPCore/*
 linters/*
 
 tiffin_drush_cli_output\.txt
+
+docroot/txt_files/

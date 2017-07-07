@@ -99,7 +99,7 @@ function profile2_staff_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 0,
+      'default_image' => 8861,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -523,15 +523,15 @@ function profile2_staff_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'jr' => ' Jr.',
+        'sr' => ' Sr.',
+        'iii' => ' III',
         'phd' => ', Ph.D.',
         'edd' => ', Ed.D.',
         'jd' => ', J.D.',
         'dba' => ', D.B.A.',
         'dm' => ', D.M.',
         'dsm' => ', D.S.M.',
-        'jr' => ', Jr.',
-        'sr' => ', Sr.',
-        'iii' => ', III',
         'med' => ', Me.D',
         'cpa' => ', CPA',
       ),
