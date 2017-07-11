@@ -6230,7 +6230,7 @@ div#trustees.pane-content #presidents-cabinet div.faculty-details {
 .grid-container .faculty-container figure .figure-position {
 	font-size: 1em;
 	line-height: 1em;
-	margin: 4px 6px 0 5px;
+	margin: 4px 6px 0 10px;
 	position: relative;
 	text-shadow: 1px 1px 1px #555;
 	-webkit-transition: .25s;
