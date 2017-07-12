@@ -99,7 +99,7 @@
 </script>
 <!-- END Google Analytics Tag -->
 
-<! -- Begin Google Goal / Campaign Tracking for specific pages -->
+<!-- Begin Google Goal / Campaign Tracking for specific pages -->
 <?php if (current_path() == 'academics') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'landing-academics' -->
     <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=landing-academics;gid=6131;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
@@ -152,3 +152,4 @@
   <script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
 </body>
 </html>
+

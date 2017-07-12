@@ -86,7 +86,7 @@ function wetkit_bootstrap_css_alter(&$css) {
   // Exclude specified CSS files from theme.
   $excludes = bootstrap_get_theme_info(NULL, 'exclude][css');
 
-  $overrides = "$theme_path/css/3.3.5/overrides.min.css";
+  $overrides = "$theme_path/css/3.3.7/overrides.min.css";
   if (file_exists($overrides)) {
     $css[$overrides] = array(
       'data' => $overrides,
