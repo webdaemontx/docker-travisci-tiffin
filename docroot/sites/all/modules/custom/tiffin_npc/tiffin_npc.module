@@ -47,7 +47,7 @@ function tiffin_npc_netprice_form($form, &$form_state) {
     $currstep = 0;
   }
   $form_state['step'] = $currstep;
-  $allsteps = getForm();
+  $allsteps = get_form();
   $currform = $allsteps[$currstep];
 
   return $currform;
