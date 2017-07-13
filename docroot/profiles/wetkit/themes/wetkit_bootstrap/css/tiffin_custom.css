@@ -5684,6 +5684,7 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	margin: auto;
 	max-height: 500px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	padding: 0;
 	position: absolute;
 	top: 20%;
@@ -5693,6 +5694,14 @@ body.node-type-program .pane-content > #quicktabs-undergraduate_program_tabs > .
 	        transform: translate(-50%, -20%);
 	width: 95%;
 	z-index: 5;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.quicktabs-tabpage .quicktabs-wrapper {
+		/* IE10+ CSS styles go here */
+		overflow-y: visible;
+		overflow-x: hidden;
+	}
 }
 
 @media screen and (min-width: 800px) {
