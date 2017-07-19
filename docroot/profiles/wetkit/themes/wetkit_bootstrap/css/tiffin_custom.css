@@ -5126,7 +5126,8 @@ body.page-pictureu {
 	}
 }
 
-.pictureu-webform-pane {
+.pictureu-webform-pane,
+form .webform-client-form-10711 {
 	background-color: rgba(255, 255, 255, 0.85);
 	left: 75%;
 	padding-left: 25px;
@@ -5136,7 +5137,8 @@ body.page-pictureu {
 }
 
 @media (max-width: 1080px) {
-	.pictureu-webform-pane {
+	.pictureu-webform-pane,
+	form .webform-client-form-10711 {
 		left: 60%;
 	}
 }
