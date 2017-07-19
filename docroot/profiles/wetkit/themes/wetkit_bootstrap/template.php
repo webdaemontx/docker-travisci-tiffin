@@ -6,17 +6,13 @@
 
 function wetkit_bootstrap_qt_quicktabs(&$variables) {
   $element = $variables['element'];
-  //dpm($element['#options']['attributes']['class']);
   $element['#options']['attributes']['class'] .= ' program-nav-items';
-  //dpm($element['#options']['attributes']['class']);
   $output = '<div class="item-list container">';
   $output .= '<div ' . drupal_attributes($element['#options']['attributes']) . '>';
   $output .= drupal_render($element['tabs']);
   $output .= drupal_render($element['container']);
   $output .= '</div></div>';
   return $output;
-  //dpm($attributes);
-  //dpm($variables['element']['#options']['attributes']['class']);
 }
 /*
  * Implements hook_html_head_alter().
@@ -99,14 +95,12 @@ function wetkit_bootstrap_css_alter(&$css) {
       'weight' => -1,
     );
   }
-
   if (!empty($excludes)) {
     $css = array_diff_key($css, drupal_map_assoc($excludes));
   }
 }
 
-
 drupal_add_js(drupal_get_path('theme', 'wetkit_bootstrap') . '/js/animated-menu-line.js', array(
-    'type' => 'file',
-    'group' => JS_THEME,
+  'type' => 'file',
+  'group' => JS_THEME,
 ));

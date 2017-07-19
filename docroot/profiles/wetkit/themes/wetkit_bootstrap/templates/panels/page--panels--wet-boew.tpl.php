@@ -73,12 +73,15 @@
  * @ingroup themeable
  */
 ?>
+<?php
+$path = current_path();
+if($path != 'pictureu'): ?>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div id="wb-bnr">
     <div id="wb-bar">
       <div class="<?php print $container_class; ?>">
         <div class="row">
-          <section id="wb-lng" class="visible-md visible-lg">
+          <section id="wb-lrg" class="visible-md visible-lg">
             <?php print $menu_bar; ?>
           </section>
           <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
@@ -113,7 +116,6 @@
     <div class="pnl-strt <?php print $container_class; ?> visible-md visible-lg nvbar">
       <h2><?php print t('Topics menu'); ?></h2>
       <div class="row">
-
         <div id="tiffin_logo">
           <a href="<?php print url('<front>'); ?>">
             <?php if ($logo): ?>
@@ -121,13 +123,10 @@
             <?php endif; ?>
           </a>
         </div>
-
-
         <div class="main-navigation">
           <?php print render($page['mega_menu']); ?>
           <?php print render($secondary_nav); ?>
         </div>
-
         <section id="wb-srch" class="search-form">
           <h2><?php print t('Search'); ?></h2>
           <?php if ($search_box): ?>
@@ -138,18 +137,19 @@
     </div>
   </nav>
   <?php print render($page['header']); ?>
-    <?php $no_breadcrumbs = array("Visit Tiffin University"); ?>
-    <?php if (!(in_array($title, $no_breadcrumbs))): ?>
-  <nav class="site-breadcrumbs" role="navigation" property="breadcrumb">
-    <div class="<?php print $container_class; ?>">
-      <div class="row">
-        <?php print render($breadcrumb); ?>
-      </div>
-    </div>
-  </nav>
-    <?php endif; ?>
 </header>
-<main role="<?php print $wxt_role_main; ?>" class="<?php print $container_class; ?>">
+<?php endif; ?>
+  <?php if($path === 'pictureu'): ?>
+<header>
+  <div class="tiffin-logo">
+      <?php if ($logo): ?>
+        <img class="pictureu" alt="<?php print t('Tiffin University'); ?>" src="<?php print $logo; ?>"/>
+      <?php endif; ?>
+  </div>
+  <?php print render($page['header']); ?>
+</header>
+<?php endif; // END check for path = pictureu. ?>
+<main role="<?php print $wxt_role_main; ?>" class="<?php print $container_class; ?>" <?php ($path != 'pictureu'?: print 'style = "background-color: transparent"'); ?> ">
   <div class="row">
     <section<?php print $content_column_class; ?>>
       <?php if (empty($panels_layout)): ?>

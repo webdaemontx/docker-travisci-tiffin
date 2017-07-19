@@ -4818,8 +4818,6 @@ body.node-type-program .pane-node-field-degree-type {
 	}
 }
 
-/* responsive life at tu */
-/* responsive undergrad */
 /* responsive undergrad */
 @media (max-width: 1400px) {
 	.view-testimonials-slider .views-field-body {
@@ -5099,6 +5097,80 @@ body.node-type-program .pane-node-field-degree-type {
 
 .page-node-1561 #text_4 {
 	padding: 0 10px 1px 20px;
+}
+
+body.page-pictureu {
+	background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	        background-size: cover;
+}
+
+.tiffin-logo .pictureu {
+	clear: none;
+	float: left;
+	position: fixed;
+	z-index: 100;
+}
+
+.tiffin-logo .pictureu img {
+	height: 55px;
+	width: 140px;
+}
+
+@media (min-width: 992px) {
+	.tiffin-logo .pictureu {
+		left: 40px;
+		top: 30px;
+	}
+}
+
+.pictureu-webform-pane {
+	background-color: rgba(255, 255, 255, 0.85);
+	left: 75%;
+	padding-left: 25px;
+	position: relative;
+	width: 400px;
+	z-index: 10;
+}
+
+@media (max-width: 1080px) {
+	.pictureu-webform-pane {
+		left: 60%;
+	}
+}
+
+h2.pictureu {
+	margin-top: 19px !important;
+}
+
+#mini-panel-tu_drone_no_title .pictureu {
+	position: relative;
+	width: 101%;
+}
+
+@media (min-width: 992px) {
+	#mini-panel-tu_drone_no_title .pictureu {
+		margin-top: 10%;
+	}
+}
+
+.pictureu.see-for-yourself {
+	background-color: #fff;
+	padding: 10px 20px 25px 10px;
+	margin-top: -39px;
+}
+
+@media (min-width: 992px) {
+	.pictureu.see-for-yourself {
+		padding-left: 20%;
+	}
+}
+
+.pictureu.see-for-yourself h2 {
+	color: #365543;
+	text-align: left;
 }
 
 body.panels-ipe {

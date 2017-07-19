@@ -24,7 +24,7 @@ function wetkit_bootstrap_system_themes_page($variables) {
       continue;
     }
     // Start new theme group.
-    $output .= '<div class="system-themes-list system-themes-list-'. $state .' clearfix"><h2>'. $title .'</h2>';
+    $output .= '<div class="system-themes-list system-themes-list-' . $state . ' clearfix"><h2>' . $title . '</h2>';
 
     foreach ($theme_groups[$state] as $theme) {
 

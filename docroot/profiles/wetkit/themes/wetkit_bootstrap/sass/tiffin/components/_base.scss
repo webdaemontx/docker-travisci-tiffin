@@ -66,20 +66,6 @@ main {
   background: $brand-green-title !important;
 }
 
-//.sticky-bottom {
-//  position: fixed !important;
-//  bottom: 0 !important;
-//  z-index: 3;
-//  width: 100%;
-//  height: 77px;
-//}
-//
-//@media screen and (max-width: 600px) {
-//  .sticky-bottom {
-//    display: none !important;
-//  }
-//}
-
 .carousel-s2 .field-item img.img-responsive {
   max-height: 375px;
   max-width: 464px;
@@ -4930,8 +4916,6 @@ body.node-type-program .pane-node-field-degree-type {
         width: 100% !important;
         margin-bottom: 10px;
 
-        //float: left !important;
-
         p {
           margin: 64px 0 0 40% !important;
           width: 200px !important;
@@ -4939,17 +4923,6 @@ body.node-type-program .pane-node-field-degree-type {
       }
     }
   }
-
-  //.pane-dragon-perks ul {
-  //  display: block;
-  //  margin: 0;
-  //  padding: 0;
-  //
-  //  li {
-  //    width: 100% !important;
-  //    height: 250px;
-  //  }
-  //}
 }
 
 @media (max-width: 675px) {
@@ -4981,64 +4954,7 @@ body.node-type-program .pane-node-field-degree-type {
       font-size: 14px;
     }
   }
-  //.pane-tu-drone-vid div#watchtour {
-  //  margin-left: 8%;
-  //}
-  //#tiffinClickMap {
-  //  display: none;
-  //}
 }
-
-/* responsive life at tu */
-/* responsive undergrad */
-
-//.pane-financial-aid-virtual-tour {
-//  height: 560px;
-//}
-
-//#finaidandcalc div {
-//  height: 437px;
-//  -webkit-background-size: contain;
-//  background-size: contain;
-//}
-//
-//@media (max-width: 1110px) {
-//  //.pane-financial-aid-virtual-tour {
-//  //  height: auto;
-//  //}
-//  #finaidandcalc {
-//    //width: 85%;
-//    div {
-//      height: 426px;
-//    }
-//  }
-//}
-
-//@media (max-width: 725px) {
-//  .pane-financial-aid-virtual-tour {
-//    height: 1040px !important;
-//  }
-//  #finaidandcalc {
-//    div {
-//      width: 75%;
-//      margin: 0 auto !important;
-//      float: none !important;
-//      height: 437px;
-//    }
-//    a:nth-of-type(2) div {
-//      //margin-top: 20px !important;
-//    }
-//  }
-//}
-
-//@media (max-width: 550px) {
-//  //.pane-financial-aid-virtual-tour {
-//  //  height: auto;
-//  //}
-//  #finaidandcalc div {
-//    height: 256px;
-//  }
-//}
 
 /* responsive undergrad */
 @media (max-width: 1400px) {
@@ -5393,3 +5309,71 @@ body.node-type-program .pane-node-field-degree-type {
     padding: 0 10px 1px 20px;
   }
 }
+
+//Custom Landing Page PictureU Styling
+body.page-pictureu {
+  background-image: url('/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tiffin-logo .pictureu {
+  clear: none;
+  float: left;
+  position: fixed;
+  z-index: 100;
+
+  img {
+    height: 55px;
+    width: 140px;
+  }
+
+  @media (min-width: 992px) {
+    left: 40px;
+    top: 30px;
+  }
+}
+
+.pictureu-webform-pane {
+  background-color: $white-transparent-85;
+  left: 75%;
+  padding-left: 25px;
+  position: relative;
+  width: 400px;
+  z-index: 10;
+
+  @media (max-width: 1080px) {
+    left: 60%;
+  }
+}
+
+h2.pictureu {
+  margin-top: 19px !important;
+}
+
+#mini-panel-tu_drone_no_title .pictureu {
+  //margin-top: 34%;
+  position: relative;
+  width: 101%;
+
+  @media (min-width: 992px) {
+    margin-top: 10%;
+  }
+}
+
+.pictureu.see-for-yourself {
+  background-color: $white;
+  padding: 10px 20px 25px 10px;
+  margin-top: -39px;
+
+  @media (min-width: 992px) {
+    padding-left: 20%;
+  }
+  h2 {
+    color: $brand-green-title;
+    text-align: left;
+  }
+}
+
+

@@ -13,7 +13,6 @@ jQuery( '<li><div id="tiffin_logo" class="logoMobile"><a href="/" tabindex="-1">
 
 jQuery( '#mini-panel-floating_all_submenu' ).addClass( 'sticky-bottom' );
 
-
 /*
 function cleanMenu () {
 
