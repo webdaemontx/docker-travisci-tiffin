@@ -5335,17 +5335,28 @@ body.page-pictureu {
   }
 }
 
-.pictureu-webform-pane,
-.webform-client-form-10711 {
+.webform-client-form-10711,
+.webform-client-form-10474 {
   background-color: $white-transparent-85;
   left: 75%;
-  padding-left: 25px;
+  padding: 5px 10px 15px 25px;
   position: relative;
   width: 400px;
   z-index: 10;
 
   @media (max-width: 1080px) {
     left: 60%;
+  }
+
+  .btn-default {
+    background-color: $brand-green;
+    color: $brand-gold;
+
+    &:hover {
+      background-color: $brand-gold;
+      color: $brand-green;
+      outline: none;
+    }
   }
 }
 

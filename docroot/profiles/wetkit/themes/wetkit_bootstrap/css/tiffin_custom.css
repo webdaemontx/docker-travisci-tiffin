@@ -5126,21 +5126,34 @@ body.page-pictureu {
 	}
 }
 
-.pictureu-webform-pane,
-.webform-client-form-10711 {
+.webform-client-form-10711,
+.webform-client-form-10474 {
 	background-color: rgba(255, 255, 255, 0.85);
 	left: 75%;
-	padding-left: 25px;
+	padding: 5px 10px 15px 25px;
 	position: relative;
 	width: 400px;
 	z-index: 10;
 }
 
 @media (max-width: 1080px) {
-	.pictureu-webform-pane,
-	.webform-client-form-10711 {
+	.webform-client-form-10711,
+	.webform-client-form-10474 {
 		left: 60%;
 	}
+}
+
+.webform-client-form-10711 .btn-default,
+.webform-client-form-10474 .btn-default {
+	background-color: #385443;
+	color: #d9bf75;
+}
+
+.webform-client-form-10711 .btn-default:hover,
+.webform-client-form-10474 .btn-default:hover {
+	background-color: #d9bf75;
+	color: #385443;
+	outline: none;
 }
 
 h2.pictureu {
