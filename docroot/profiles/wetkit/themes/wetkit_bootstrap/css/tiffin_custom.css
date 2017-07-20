@@ -5099,95 +5099,6 @@ body.node-type-program .pane-node-field-degree-type {
 	padding: 0 10px 1px 20px;
 }
 
-body.page-pictureu {
-	background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg");
-	background-position: center;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	        background-size: cover;
-}
-
-.tiffin-logo .pictureu {
-	clear: none;
-	float: left;
-	position: fixed;
-	z-index: 100;
-}
-
-.tiffin-logo .pictureu img {
-	height: 55px;
-	width: 140px;
-}
-
-@media (min-width: 992px) {
-	.tiffin-logo .pictureu {
-		left: 40px;
-		top: 30px;
-	}
-}
-
-.webform-client-form-10711,
-.webform-client-form-10474 {
-	background-color: rgba(255, 255, 255, 0.85);
-	left: 75%;
-	padding: 5px 10px 15px 25px;
-	position: relative;
-	width: 400px;
-	z-index: 10;
-}
-
-@media (max-width: 1080px) {
-	.webform-client-form-10711,
-	.webform-client-form-10474 {
-		left: 60%;
-	}
-}
-
-.webform-client-form-10711 .btn-default,
-.webform-client-form-10474 .btn-default {
-	background-color: #385443;
-	color: #d9bf75;
-}
-
-.webform-client-form-10711 .btn-default:hover,
-.webform-client-form-10474 .btn-default:hover {
-	background-color: #d9bf75;
-	color: #385443;
-	outline: none;
-}
-
-h2.pictureu {
-	margin-top: 19px !important;
-}
-
-#mini-panel-tu_drone_no_title .pictureu {
-	position: relative;
-	width: 101%;
-}
-
-@media (min-width: 992px) {
-	#mini-panel-tu_drone_no_title .pictureu {
-		margin-top: 10%;
-	}
-}
-
-.pictureu.see-for-yourself {
-	background-color: #fff;
-	padding: 10px 20px 25px 10px;
-	margin-top: -39px;
-}
-
-@media (min-width: 992px) {
-	.pictureu.see-for-yourself {
-		padding-left: 20%;
-	}
-}
-
-.pictureu.see-for-yourself h2 {
-	color: #365543;
-	text-align: left;
-}
-
 body.panels-ipe {
 	margin-bottom: 0 !important;
 }
@@ -7079,6 +6990,99 @@ fieldset#edit-academic-scholarship legend {
 .pane-menu-about-tu .active-trail h3 a {
 	color: white !important;
 	font-style: italic;
+}
+
+/*!
+ * Copyright (c) 2017.
+ * PictureU Landing Page SCSS
+ */
+body.page-pictureu {
+	background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	        background-size: cover;
+}
+
+.tiffin-logo .pictureu {
+	clear: none;
+	float: left;
+	position: absolute;
+	z-index: 100;
+}
+
+.tiffin-logo .pictureu img {
+	height: 55px;
+	width: 140px;
+}
+
+@media (min-width: 992px) {
+	.tiffin-logo .pictureu {
+		left: 40px;
+		top: 30px;
+	}
+}
+
+.webform-client-form-10711,
+.webform-client-form-10474 {
+	background-color: rgba(255, 255, 255, 0.85);
+	left: 75%;
+	padding: 5px 10px 15px 25px;
+	position: relative;
+	width: 400px;
+	z-index: 10;
+}
+
+@media (max-width: 1080px) {
+	.webform-client-form-10711,
+	.webform-client-form-10474 {
+		left: 60%;
+	}
+}
+
+.webform-client-form-10711 .btn-default,
+.webform-client-form-10474 .btn-default {
+	background-color: #385443;
+	color: #d9bf75;
+}
+
+.webform-client-form-10711 .btn-default:hover,
+.webform-client-form-10474 .btn-default:hover {
+	background-color: #d9bf75;
+	color: #385443;
+	outline: none;
+}
+
+h2.pictureu {
+	margin-top: 19px !important;
+}
+
+#mini-panel-tu_drone_no_title .pictureu {
+	position: relative;
+	width: 101%;
+}
+
+@media (min-width: 992px) {
+	#mini-panel-tu_drone_no_title .pictureu {
+		margin-top: 10%;
+	}
+}
+
+.pictureu.see-for-yourself {
+	background-color: #fff;
+	padding: 10px 20px 25px 10px;
+	margin-top: -39px;
+}
+
+@media (min-width: 992px) {
+	.pictureu.see-for-yourself {
+		padding-left: 20%;
+	}
+}
+
+.pictureu.see-for-yourself h2 {
+	color: #365543;
+	text-align: left;
 }
 
 .ccp-container {

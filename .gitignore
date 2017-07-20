@@ -35,3 +35,11 @@ linters/*
 tiffin_drush_cli_output\.txt
 
 docroot/txt_files/
+
+# Composer vendor directory and json files
+docroot/sites/all/vendor
+docroot/profiles/wetkit/themes/wetkit_bootstrap/package-lock.json
+docroot/profiles/wetkit/themes/wetkit_bootstrap/package.json
+*/package.json
+*/package-lock.json
+*/vendor/*
