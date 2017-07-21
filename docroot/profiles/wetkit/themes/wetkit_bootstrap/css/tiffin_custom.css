@@ -7044,13 +7044,15 @@ fieldset#edit-academic-scholarship legend {
 #pictureu .webform-client-form-10711 .btn-default,
 #pictureu .webform-client-form-10474 .btn-default {
 	background-color: #385443;
+	border: 0;
 	color: #d9bf75;
+	outline: none;
 }
 
 #pictureu .webform-client-form-10711 .btn-default:hover,
 #pictureu .webform-client-form-10474 .btn-default:hover {
-	background-color: #d9bf75;
-	color: #385443;
+	border: 0;
+	color: #fff;
 	outline: none;
 }
 

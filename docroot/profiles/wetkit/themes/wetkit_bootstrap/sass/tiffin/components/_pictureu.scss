@@ -44,11 +44,13 @@
 
     .btn-default {
       background-color: $brand-green;
+      border: 0;
       color: $brand-gold;
+      outline: none;
 
       &:hover {
-        background-color: $brand-gold;
-        color: $brand-green;
+        border: 0;
+        color: $white;
         outline: none;
       }
     }
