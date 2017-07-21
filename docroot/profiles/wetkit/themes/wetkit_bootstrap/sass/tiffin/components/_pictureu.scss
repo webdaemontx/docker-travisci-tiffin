@@ -1,23 +1,106 @@
 /*!
  * Copyright (c) 2017.
- * PictureU Landing Page SCSS
+ * Custom Landing Page PictureU Landing Page SCSS
  */
 
-//Custom Landing Page PictureU Styling
-body.page-pictureu {
+@import '../abstracts/theme-vars';
+
+/*body.page-pictureu {
   background-image: url('/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg');
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+}*/
+
+#pictureu {
+  position: relative;
+  top: -125px;
+
+  @media (max-width: 1080px) {
+    top: -145px;
+  }
+
+  .webform-client-form-10711,
+  .webform-client-form-10474 {
+    background-color: $white-transparent-85;
+    left: 75%;
+    padding: 5px 10px 15px 25px;
+    position: relative;
+    width: 400px;
+    z-index: 10;
+
+    @media (max-width: 1080px) {
+      left: 60%;
+    }
+
+    .btn-default {
+      background-color: $brand-green;
+      color: $brand-gold;
+
+      &:hover {
+        background-color: $brand-gold;
+        color: $brand-green;
+        outline: none;
+      }
+    }
+  }
 }
 
-.tiffin-logo .pictureu {
+h2.pictureu {
+  margin-top: 19px !important;
+}
+
+.pictureu {
+
+  h1 {
+    color: $white;
+    float: left;
+    font-size: 48px;
+    font-weight: 900;
+    margin:5% 45% 0 5%;
+    position: relative;
+    text-align: left;
+    z-index: 5;
+  }
+
+  .file-image {
+    position: absolute;
+  }
+
+  #mini-panel-tu_drone_no_title {
+    position: relative;
+    width: 101%;
+
+    @media (min-width: 992px) {
+      margin-top: 10%;
+    }
+  }
+
+  &.see-for-yourself {
+    background-color: $white;
+    margin-top: -39px;
+    padding: 10px 20px 25px 10px;
+
+    @media (min-width: 992px) {
+      padding-left: 20%;
+    }
+
+    h2 {
+      color: $brand-green-title;
+      text-align: left;
+    }
+  }
+}
+
+.tiffin-logo {
   clear: none;
   float: left;
+  left: 40px;
   position: absolute;
-  z-index: 100;
+  top: 30px;
+  z-index: 10;
 
-  img {
+  img.pictureu {
     height: 55px;
     width: 140px;
   }
@@ -28,57 +111,5 @@ body.page-pictureu {
   }
 }
 
-.webform-client-form-10711,
-.webform-client-form-10474 {
-  background-color: $white-transparent-85;
-  left: 75%;
-  padding: 5px 10px 15px 25px;
-  position: relative;
-  width: 400px;
-  z-index: 10;
-
-  @media (max-width: 1080px) {
-    left: 60%;
-  }
-
-  .btn-default {
-    background-color: $brand-green;
-    color: $brand-gold;
-
-    &:hover {
-      background-color: $brand-gold;
-      color: $brand-green;
-      outline: none;
-    }
-  }
-}
-
-h2.pictureu {
-  margin-top: 19px !important;
-}
-
-#mini-panel-tu_drone_no_title .pictureu {
-  //margin-top: 34%;
-  position: relative;
-  width: 101%;
-
-  @media (min-width: 992px) {
-    margin-top: 10%;
-  }
-}
-
-.pictureu.see-for-yourself {
-  background-color: $white;
-  padding: 10px 20px 25px 10px;
-  margin-top: -39px;
-
-  @media (min-width: 992px) {
-    padding-left: 20%;
-  }
-  h2 {
-    color: $brand-green-title;
-    text-align: left;
-  }
-}
 
 
