@@ -7019,15 +7019,26 @@ fieldset#edit-academic-scholarship legend {
 	left: 75%;
 	padding: 5px 10px 15px 25px;
 	position: relative;
-	width: 400px;
+	width: 375px;
 	z-index: 10;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1600px) {
 	#pictureu .webform-client-form-10711,
 	#pictureu .webform-client-form-10474 {
 		left: 60%;
 	}
+}
+
+#pictureu .webform-client-form-10711 .form-actions,
+#pictureu .webform-client-form-10474 .form-actions {
+	padding-left: 0;
+}
+
+#pictureu .webform-client-form-10711 .btn,
+#pictureu .webform-client-form-10474 .btn {
+	height: 50px;
+	width: 320px;
 }
 
 #pictureu .webform-client-form-10711 .btn-default,
