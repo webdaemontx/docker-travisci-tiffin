@@ -652,6 +652,16 @@ if (file_exists('/var/www/site-php')) {
 if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   switch ($_ENV['AH_SITE_ENVIRONMENT']) {
     case 'dev':
+      // Increase memory limit.
+      if ((strpos($_GET['q'], 'admin') === 0) || (strpos($_GET['q'], 'node/add') === 0) || (strpos($_GET['q'], 'node/') === 0 && preg_match('/^node\/[\d]+\/edit/', $_GET['q']) === 1)) {
+        ini_set('memory_limit', '198M');
+      }
+      else {
+        ini_set('memory_limit', '256M');
+      }
+      if (drupal_is_cli()) {
+        ini_set('memory_limit', '512M');
+      }
       // Alter the charset and collation of the databases.
       /* $databases['default']['default']['charset'] = 'utf8mb4';
       $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
