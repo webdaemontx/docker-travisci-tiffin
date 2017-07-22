@@ -7,9 +7,9 @@ core = 7.x
 
 files[] = tests/acquia_lift.test
 
-; Information added by Drupal.org packaging script on 2017-03-17
-version = "7.x-3.0"
+; Information added by Drupal.org packaging script on 2017-07-10
+version = "7.x-3.1"
 core = "7.x"
 project = "acquia_lift"
-datestamp = "1489774698"
+datestamp = "1499717047"
 
