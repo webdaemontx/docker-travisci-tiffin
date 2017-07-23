@@ -663,8 +663,8 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
         ini_set('memory_limit', '512M');
       }
       // Alter the charset and collation of the databases.
-       $databases['default']['default']['charset'] = 'utf8mb4';
-      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+      //$databases['default']['default']['charset'] = 'utf8mb4';
+      //$databases['default']['default']['collation'] = 'utf8mb4_general_ci';
       $databases['tiffindev']['default']['charset'] = 'utf8mb4';
       $databases['tiffindev']['default']['collation'] = 'utf8mb4_general_ci';
       // Now connect to the default database.
@@ -682,8 +682,8 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
       break;
 
     case 'test':
-      $databases['default']['default']['charset'] = 'utf8mb4';
-      $databases['default']['default']['collation'] = 'utf8mb4_general_ci';
+      //$databases['default']['default']['charset'] = 'utf8mb4';
+      //$databases['default']['default']['collation'] = 'utf8mb4_general_ci';
       $databases['tiffinstg']['default']['charset'] = 'utf8mb4';
       $databases['tiffinstg']['default']['collation'] = 'utf8mb4_general_ci';
       // Now connect to the default database.
