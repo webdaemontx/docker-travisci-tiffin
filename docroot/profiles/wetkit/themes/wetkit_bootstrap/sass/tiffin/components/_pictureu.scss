@@ -13,12 +13,6 @@
 }*/
 
 #pictureu {
-  position: relative;
-  top: -125px;
-
-  @media (max-width: 1080px) {
-    top: -145px;
-  }
 
   .webform-client-form-10711,
   .webform-client-form-10474 {
@@ -26,20 +20,51 @@
     left: 75%;
     padding: 5px 10px 15px 25px;
     position: relative;
+    top: -125px;
     width: 375px;
     z-index: 10;
 
-    @media (max-width: 1600px) {
+    @media only screen and (max-width: 768px) and (min-width: 320px) {
+      background-color: unset;
+      display: block;
+      float: none;
+      left: 0;
+      padding: 5px 0 45px 25px;
+      position: relative;
+    }
+
+    @media only screen and (max-width: 1170px) and (min-width: 768px) {
       left: 60%;
+      position: relative;
+      width: 375px;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      top: 40px;
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 320px) {
+      top: 25px;
+      width: 100%;
     }
 
     .form-actions {
       padding-left: 0;
     }
 
+    .form-control {
+      width: 93%;
+    }
+
     .btn {
       height: 50px;
       width: 320px;
+
+      @media only screen and (max-width: 768px) and (min-width: 320px) {
+        width: 97%;
+      }
     }
 
     .btn-default {
@@ -61,6 +86,22 @@ h2.pictureu {
   margin-top: 19px !important;
 }
 
+.pane-2.pictureu {
+  bottom: 25px;
+  position: relative;
+}
+
+#pictureu-pane-1.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    top: -15px;
+  }
+}
+
 .pictureu {
 
   h1 {
@@ -72,6 +113,17 @@ h2.pictureu {
     position: relative;
     text-align: left;
     z-index: 5;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin: 15% 30% 0 5%;
+    }
+
+    @media only screen and (max-width: 320px) {
+      font-size: 1.5em;
+      margin: 37% 21% 0 5%;
+    }
   }
 
   .file-image {
@@ -123,6 +175,15 @@ h2.pictureu {
   @media (min-width: 992px) {
     left: 40px;
     top: 30px;
+  }
+
+  @media (max-width: 768px) {
+    left: 20px;
+    top: 20px;
+
+    img.pictureu {
+      width: 100px;
+    }
   }
 }
 

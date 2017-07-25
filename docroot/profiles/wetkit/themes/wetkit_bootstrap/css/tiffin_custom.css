@@ -4838,6 +4838,7 @@ body.node-type-program .pane-node-field-degree-type {
 	.view-testimonials-slider .view-header h3 {
 		margin-top: -15px;
 		font-size: 36px;
+		font-weight: 600;
 		color: #365543;
 	}
 }
@@ -7002,31 +7003,52 @@ fieldset#edit-academic-scholarship legend {
   background-repeat: no-repeat;
   background-size: 100%;
 }*/
-#pictureu {
-	position: relative;
-	top: -125px;
-}
-
-@media (max-width: 1080px) {
-	#pictureu {
-		top: -145px;
-	}
-}
-
 #pictureu .webform-client-form-10711,
 #pictureu .webform-client-form-10474 {
 	background-color: rgba(255, 255, 255, 0.85);
 	left: 75%;
 	padding: 5px 10px 15px 25px;
 	position: relative;
+	top: -125px;
 	width: 375px;
 	z-index: 10;
 }
 
-@media (max-width: 1600px) {
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+	#pictureu .webform-client-form-10711,
+	#pictureu .webform-client-form-10474 {
+		background-color: unset;
+		display: block;
+		float: none;
+		left: 0;
+		padding: 5px 0 45px 25px;
+		position: relative;
+	}
+}
+
+@media only screen and (max-width: 1170px) and (min-width: 768px) {
 	#pictureu .webform-client-form-10711,
 	#pictureu .webform-client-form-10474 {
 		left: 60%;
+		position: relative;
+		width: 375px;
+		z-index: 10;
+	}
+}
+
+@media (max-width: 768px) {
+	#pictureu .webform-client-form-10711,
+	#pictureu .webform-client-form-10474 {
+		top: 40px;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#pictureu .webform-client-form-10711,
+	#pictureu .webform-client-form-10474 {
+		top: 25px;
+		width: 100%;
 	}
 }
 
@@ -7035,10 +7057,22 @@ fieldset#edit-academic-scholarship legend {
 	padding-left: 0;
 }
 
+#pictureu .webform-client-form-10711 .form-control,
+#pictureu .webform-client-form-10474 .form-control {
+	width: 93%;
+}
+
 #pictureu .webform-client-form-10711 .btn,
 #pictureu .webform-client-form-10474 .btn {
 	height: 50px;
 	width: 320px;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+	#pictureu .webform-client-form-10711 .btn,
+	#pictureu .webform-client-form-10474 .btn {
+		width: 97%;
+	}
 }
 
 #pictureu .webform-client-form-10711 .btn-default,
@@ -7060,6 +7094,24 @@ h2.pictureu {
 	margin-top: 19px !important;
 }
 
+.pane-2.pictureu {
+	bottom: 25px;
+	position: relative;
+}
+
+#pictureu-pane-1.img-responsive {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	#pictureu-pane-1.img-responsive {
+		position: relative;
+		top: -15px;
+	}
+}
+
 .pictureu h1 {
 	color: #fff;
 	float: left;
@@ -7069,6 +7121,21 @@ h2.pictureu {
 	position: relative;
 	text-align: left;
 	z-index: 5;
+}
+
+@media screen and (max-width: 768px) {
+	.pictureu h1 {
+		font-size: 2.5em;
+		font-weight: 600;
+		margin: 15% 30% 0 5%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.pictureu h1 {
+		font-size: 1.5em;
+		margin: 37% 21% 0 5%;
+	}
 }
 
 .pictureu .file-image {
@@ -7129,8 +7196,18 @@ h2.pictureu {
 	}
 }
 
+@media (max-width: 768px) {
+	.tiffin-logo {
+		left: 20px;
+		top: 20px;
+	}
+	.tiffin-logo img.pictureu {
+		width: 100px;
+	}
+}
+
 #footer.pictureu {
-	padding: 40px 0px 40px;
+	padding: 40px 0px 10px;
 }
 
 .ccp-container {
