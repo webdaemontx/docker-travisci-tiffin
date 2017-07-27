@@ -112,5 +112,6 @@
 <?php print $page_bottom; ?>
 <!-- END $page_bottom -->
 <script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/theme.js"></script>
+<script src="<?php global $base_url; echo $base_url, '/'; print drupal_get_path('theme', 'wetkit_bootstrap'); ?>/js/pictureu.js"></script>
 </body>
 </html>
