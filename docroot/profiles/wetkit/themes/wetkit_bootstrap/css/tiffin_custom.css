@@ -7008,8 +7008,8 @@ fieldset#edit-academic-scholarship legend {
 	background-color: rgba(255, 255, 255, 0.85);
 	left: 75%;
 	padding: 5px 10px 15px 25px;
-	position: relative;
-	top: -125px;
+	position: absolute;
+	top: 0;
 	width: 375px;
 	z-index: 10;
 }
@@ -7019,18 +7019,16 @@ fieldset#edit-academic-scholarship legend {
 	#pictureu .webform-client-form-10474 {
 		background-color: unset;
 		display: block;
-		float: none;
+		height: 470px;
 		left: 0;
-		padding: 5px 0 45px 25px;
 		position: relative;
 	}
 }
 
-@media only screen and (max-width: 1170px) and (min-width: 768px) {
+@media only screen and (max-width: 1515px) and (min-width: 768px) {
 	#pictureu .webform-client-form-10711,
 	#pictureu .webform-client-form-10474 {
 		left: 60%;
-		position: relative;
 		width: 375px;
 		z-index: 10;
 	}
@@ -7039,7 +7037,6 @@ fieldset#edit-academic-scholarship legend {
 @media (max-width: 768px) {
 	#pictureu .webform-client-form-10711,
 	#pictureu .webform-client-form-10474 {
-		top: 40px;
 		width: 100%;
 	}
 }
@@ -7047,7 +7044,6 @@ fieldset#edit-academic-scholarship legend {
 @media only screen and (max-width: 320px) {
 	#pictureu .webform-client-form-10711,
 	#pictureu .webform-client-form-10474 {
-		top: 25px;
 		width: 100%;
 	}
 }
@@ -7099,10 +7095,45 @@ h2.pictureu {
 	position: relative;
 }
 
+#pictureu-pane-1 .media-element-container {
+	height: 1360px;
+}
+
+@media screen and (max-width: 1440px) {
+	#pictureu-pane-1 .media-element-container {
+		height: 810px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	#pictureu-pane-1 .media-element-container {
+		height: 576px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#pictureu-pane-1 .media-element-container {
+		height: 432px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	#pictureu-pane-1 .media-element-container {
+		height: 239px;
+	}
+}
+
 #pictureu-pane-1.img-responsive {
+	clear: both;
 	display: block;
 	height: auto;
 	max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	#pictureu-pane-1.img-responsive {
+		max-height: 415px;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -7117,17 +7148,34 @@ h2.pictureu {
 	float: left;
 	font-size: 48px;
 	font-weight: 900;
-	margin: 5% 45% 0 5%;
+	margin: 10% 45% 0 24%;
 	position: relative;
 	text-align: left;
 	z-index: 5;
+	/*    @media screen and (max-width: 992px) {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin: 15% 40% 0 10%;
+    }*/
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 2400px) {
 	.pictureu h1 {
-		font-size: 2.5em;
-		font-weight: 600;
-		margin: 15% 30% 0 5%;
+		font-size: 66px;
+		margin: 10% 35% 0% 20%;
+	}
+}
+
+@media screen and (max-width: 1550px) {
+	.pictureu h1 {
+		font-size: 3px 0.2em;
+		margin: 15% 40% 0% 5%;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.pictureu h1 {
+		font-size: 2em;
 	}
 }
 
@@ -7140,6 +7188,7 @@ h2.pictureu {
 
 .pictureu .file-image {
 	position: absolute;
+	top: 0;
 }
 
 .pictureu #mini-panel-tu_drone_no_title {
@@ -7162,6 +7211,12 @@ h2.pictureu {
 @media (min-width: 992px) {
 	.pictureu.see-for-yourself {
 		padding-left: 20%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.pictureu.see-for-yourself {
+		padding: 0 20px 50px 10px;
 	}
 }
 
