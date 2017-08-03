@@ -7004,7 +7004,8 @@ fieldset#edit-academic-scholarship legend {
   background-size: 100%;
 }*/
 #pictureu .webform-client-form-10711,
-#pictureu .webform-client-form-10474 {
+#pictureu .webform-client-form-10474,
+#pictureu .webform-client-form-10956 {
 	background-color: rgba(255, 255, 255, 0.85);
 	left: 75%;
 	padding: 5px 10px 15px 25px;
@@ -7016,7 +7017,8 @@ fieldset#edit-academic-scholarship legend {
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
 	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474 {
+	#pictureu .webform-client-form-10474,
+	#pictureu .webform-client-form-10956 {
 		background-color: unset;
 		display: block;
 		height: 470px;
@@ -7027,7 +7029,8 @@ fieldset#edit-academic-scholarship legend {
 
 @media only screen and (max-width: 1515px) and (min-width: 768px) {
 	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474 {
+	#pictureu .webform-client-form-10474,
+	#pictureu .webform-client-form-10956 {
 		left: 60%;
 		width: 375px;
 		z-index: 10;
@@ -7036,43 +7039,50 @@ fieldset#edit-academic-scholarship legend {
 
 @media (max-width: 768px) {
 	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474 {
+	#pictureu .webform-client-form-10474,
+	#pictureu .webform-client-form-10956 {
 		width: 100%;
 	}
 }
 
 @media only screen and (max-width: 320px) {
 	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474 {
+	#pictureu .webform-client-form-10474,
+	#pictureu .webform-client-form-10956 {
 		width: 100%;
 	}
 }
 
 #pictureu .webform-client-form-10711 .form-actions,
-#pictureu .webform-client-form-10474 .form-actions {
+#pictureu .webform-client-form-10474 .form-actions,
+#pictureu .webform-client-form-10956 .form-actions {
 	padding-left: 0;
 }
 
 #pictureu .webform-client-form-10711 .form-control,
-#pictureu .webform-client-form-10474 .form-control {
+#pictureu .webform-client-form-10474 .form-control,
+#pictureu .webform-client-form-10956 .form-control {
 	width: 93%;
 }
 
 #pictureu .webform-client-form-10711 .btn,
-#pictureu .webform-client-form-10474 .btn {
+#pictureu .webform-client-form-10474 .btn,
+#pictureu .webform-client-form-10956 .btn {
 	height: 50px;
 	width: 320px;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
 	#pictureu .webform-client-form-10711 .btn,
-	#pictureu .webform-client-form-10474 .btn {
+	#pictureu .webform-client-form-10474 .btn,
+	#pictureu .webform-client-form-10956 .btn {
 		width: 97%;
 	}
 }
 
 #pictureu .webform-client-form-10711 .btn-default,
-#pictureu .webform-client-form-10474 .btn-default {
+#pictureu .webform-client-form-10474 .btn-default,
+#pictureu .webform-client-form-10956 .btn-default {
 	background-color: #385443;
 	border: 0;
 	color: #d9bf75;
@@ -7080,7 +7090,8 @@ fieldset#edit-academic-scholarship legend {
 }
 
 #pictureu .webform-client-form-10711 .btn-default:hover,
-#pictureu .webform-client-form-10474 .btn-default:hover {
+#pictureu .webform-client-form-10474 .btn-default:hover,
+#pictureu .webform-client-form-10956 .btn-default:hover {
 	border: 0;
 	color: #fff;
 	outline: none;
