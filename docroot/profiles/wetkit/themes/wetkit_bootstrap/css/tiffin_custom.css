@@ -7083,8 +7083,9 @@ fieldset#edit-academic-scholarship legend {
 	.request-information {
 		height: 450px;
 		margin-left: 0;
-		margin-top: 40px;
 		padding: 5px 10px 15px 45px;
+		position: absolute;
+		top: 300px;
 		width: 100%;
 	}
 }

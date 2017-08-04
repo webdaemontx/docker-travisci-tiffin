@@ -71,9 +71,11 @@
     @media only screen and (max-width: 425px) and (min-width: 200px) {
       height: 450px;
       margin-left: 0;
-      margin-top: 40px;
       padding: 5px 10px 15px 45px;
+      position: absolute;
+      top: 300px;
       width: 100%;
+
     }
 
     .form-actions {
