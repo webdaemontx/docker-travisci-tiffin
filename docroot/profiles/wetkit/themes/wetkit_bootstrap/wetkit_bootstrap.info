@@ -18,6 +18,20 @@ regions[footer] = Footer
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 
+;; ========================================
+;; Custom Breakpoints for Responsive Images
+;; ========================================
+
+; BREAKPOINTS
+; ------------
+breakpoints[wide] = (min-width: 1890)
+breakpoints[narrow] = (min-width: 1440px)
+breakpoints[lg] = (min-width: 1170px)
+breakpoints[md] = (min-width: 960px)
+breakpoints[normal] = (min-width: 768px)
+breakpoints[mobile] = (min-width: 425px)
+breakpoints[xs] = (min-width: 360px)
+
 ; ========================================
 ; Stylesheets
 ; ========================================

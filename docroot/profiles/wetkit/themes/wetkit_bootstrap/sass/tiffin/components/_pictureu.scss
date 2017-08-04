@@ -5,51 +5,70 @@
 
 @import '../abstracts/theme-vars';
 
-/*body.page-pictureu {
+.pane-pictureu-hero-top {
   background-image: url('/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg');
-  background-position: top;
   background-repeat: no-repeat;
-  background-size: 100%;
-}*/
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  width: 100%;
+  padding-top: 30px;
 
-#pictureu {
+  @media (max-width: 760px) {
+    background-attachment: fixed;
+  }
 
-  .webform-client-form-10711,
-  .webform-client-form-10474,
-  .webform-client-form-10956 {
+  h1 {
+    color: $white;
+    font-size: 4em;
+    font-weight: 900;
+    margin: 2% 40% 0 19%;
+    text-align: left;
+
+    @media (max-width: 960px) and (min-width: 768px){
+      font-size: 3.5em;
+      margin: 10% 20% 0 13%;
+    }
+  }
+}
+
+  .request-information {
     background-color: $white-transparent-85;
-    left: 75%;
+    margin-left: 68%;
+    margin-top: -15%;
     padding: 5px 10px 15px 25px;
-    position: absolute;
-    top: 0;
     width: 375px;
-    z-index: 10;
 
-    @media only screen and (max-width: 768px) and (min-width: 320px) {
-      background-color: unset;
-      display: block;
-      height: 470px;
-      left: 0;
-      position: relative;
-      //top: 80px;
+    @media only screen and (max-width: 960px) and (min-width: 320px) {
+      height: 450px;
+      margin-left: 50%;
+      margin-top: -6%;
+      padding: 5px 10px 15px 45px;
     }
 
-    @media only screen and (max-width: 1515px) and (min-width: 768px) {
-      left: 60%;
-      //position: relative;
-      width: 375px;
-      z-index: 10;
-    }
-
-    @media (max-width: 768px) {
-      //top: 40px;
-      width: 100%;
-    }
+/*    @media only screen and (max-width: 1170px) and (min-width: 960px) {
+      position: absolute;
+      top: 140px;
+      right: 25px;
+    }*/
 
     @media only screen and (max-width: 320px) {
       //top: 25px;
       width: 100%;
     }
+    /*  }
+
+      .webform-client-form-10711,
+      .webform-client-form-10474,
+      .webform-client-form-10956 {
+        background-color: $white-transparent-85;
+        left: 75%;
+        padding: 5px 10px 15px 25px;
+        position: absolute;
+        top: 0;
+        width: 375px;
+        z-index: 10;*/
+
 
     .form-actions {
       padding-left: 0;
@@ -81,7 +100,6 @@
       }
     }
   }
-}
 
 h2.pictureu {
   margin-top: 19px !important;
@@ -92,7 +110,7 @@ h2.pictureu {
   position: relative;
 }
 
-#pictureu-pane-1 .media-element-container {
+/*#pictureu-pane-1 .media-element-container {
   height: 1360px;
 
   @media screen and (max-width: 1440px) {
@@ -110,9 +128,9 @@ h2.pictureu {
   @media screen and (max-width: 425px) {
     height: 239px;
   }
-}
+}*/
 
-#pictureu-pane-1.img-responsive {
+/*#pictureu-pane-1.img-responsive {
   clear: both;
   display: block;
   height: auto;
@@ -126,58 +144,14 @@ h2.pictureu {
     position: relative;
     top: -15px;
   }
-}
+}*/
+
 
 .pictureu {
-
-  h1 {
-    color: $white;
-    float: left;
-    font-size: 48px;
-    font-weight: 900;
-    margin: 10% 45% 0 24%;
-    position: relative;
-    text-align: left;
-    z-index: 5;
-
-    @media screen and (max-width: 2400px) {
-      font-size: 66px;
-      margin: 10% 35% 0% 20%;
-    }
-
-    @media screen and (max-width: 1550px) {
-      font-size: 3px.2em;
-      margin: 15% 40% 0% 5%;
-    }
-
-/*    @media screen and (max-width: 992px) {
-      font-size: 2.5em;
-      font-weight: 600;
-      margin: 15% 40% 0 10%;
-    }*/
-
-    @media only screen and (max-width: 425px) {
-      font-size: 2em;
-    }
-
-    @media only screen and (max-width: 320px) {
-      font-size: 1.5em;
-      margin: 37% 21% 0 5%;
-    }
-  }
 
   .file-image {
     position: absolute;
     top: 0;
-  }
-
-  #mini-panel-tu_drone_no_title {
-    position: relative;
-    width: 101%;
-
-    @media (min-width: 992px) {
-      margin-top: 10%;
-    }
   }
 
   &.see-for-yourself {
@@ -233,5 +207,5 @@ h2.pictureu {
 }
 
 #footer.pictureu {
-  padding: 40px 0px 10px;
+  padding: 40px 10px 0 10px;
 }

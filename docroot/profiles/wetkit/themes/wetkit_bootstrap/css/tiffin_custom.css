@@ -6756,12 +6756,14 @@ fieldset#edit-academic-scholarship legend {
 	padding-bottom: 56.25%;
 }
 
-.pane-tu-drone-vid {
+.pane-tu-drone-vid,
+.pane-tu-drone-no-title {
 	position: relative;
 	overflow: hidden;
 }
 
-.pane-tu-drone-vid .video-click {
+.pane-tu-drone-vid .video-click,
+.pane-tu-drone-no-title .video-click {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -6773,20 +6775,25 @@ fieldset#edit-academic-scholarship legend {
 	color: transparent;
 }
 
-.pane-tu-drone-vid .fa-play {
+.pane-tu-drone-vid .fa-play,
+.pane-tu-drone-no-title .fa-play {
 	display: none;
 }
 
 @media screen and (min-width: 600px) {
-	.pane-tu-drone-vid {
+	.pane-tu-drone-vid,
+	.pane-tu-drone-no-title {
 		height: 600px;
 	}
-	.pane-tu-drone-vid .fa-play {
+	.pane-tu-drone-vid .fa-play,
+	.pane-tu-drone-no-title .fa-play {
 		display: block;
 		color: #fff;
 		font-size: 60px;
 	}
-	.pane-tu-drone-vid .fa-play:hover, .pane-tu-drone-vid .fa-play:focus {
+	.pane-tu-drone-vid .fa-play:hover, .pane-tu-drone-vid .fa-play:focus,
+	.pane-tu-drone-no-title .fa-play:hover,
+	.pane-tu-drone-no-title .fa-play:focus {
 		color: #385443;
 	}
 }
@@ -6997,101 +7004,105 @@ fieldset#edit-academic-scholarship legend {
  * Copyright (c) 2017.
  * Custom Landing Page PictureU Landing Page SCSS
  */
-/*body.page-pictureu {
-  background-image: url('/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}*/
-#pictureu .webform-client-form-10711,
-#pictureu .webform-client-form-10474,
-#pictureu .webform-client-form-10956 {
+.pane-pictureu-hero-top {
+	background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/image-pictureu-hero.jpg");
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	        background-size: cover;
+	background-position: center;
+	height: 700px;
+	width: 100%;
+	padding-top: 30px;
+}
+
+@media (max-width: 760px) {
+	.pane-pictureu-hero-top {
+		background-attachment: fixed;
+	}
+}
+
+.pane-pictureu-hero-top h1 {
+	color: #fff;
+	font-size: 4em;
+	font-weight: 900;
+	margin: 2% 40% 0 19%;
+	text-align: left;
+}
+
+@media (max-width: 960px) and (min-width: 768px) {
+	.pane-pictureu-hero-top h1 {
+		font-size: 3.5em;
+		margin: 10% 20% 0 13%;
+	}
+}
+
+.request-information {
 	background-color: rgba(255, 255, 255, 0.85);
-	left: 75%;
+	margin-left: 68%;
+	margin-top: -15%;
 	padding: 5px 10px 15px 25px;
-	position: absolute;
-	top: 0;
 	width: 375px;
-	z-index: 10;
+	/*    @media only screen and (max-width: 1170px) and (min-width: 960px) {
+      position: absolute;
+      top: 140px;
+      right: 25px;
+    }*/
+	/*  }
+
+      .webform-client-form-10711,
+      .webform-client-form-10474,
+      .webform-client-form-10956 {
+        background-color: $white-transparent-85;
+        left: 75%;
+        padding: 5px 10px 15px 25px;
+        position: absolute;
+        top: 0;
+        width: 375px;
+        z-index: 10;*/
 }
 
-@media only screen and (max-width: 768px) and (min-width: 320px) {
-	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474,
-	#pictureu .webform-client-form-10956 {
-		background-color: unset;
-		display: block;
-		height: 470px;
-		left: 0;
-		position: relative;
-	}
-}
-
-@media only screen and (max-width: 1515px) and (min-width: 768px) {
-	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474,
-	#pictureu .webform-client-form-10956 {
-		left: 60%;
-		width: 375px;
-		z-index: 10;
-	}
-}
-
-@media (max-width: 768px) {
-	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474,
-	#pictureu .webform-client-form-10956 {
-		width: 100%;
+@media only screen and (max-width: 960px) and (min-width: 320px) {
+	.request-information {
+		height: 450px;
+		margin-left: 50%;
+		margin-top: -6%;
+		padding: 5px 10px 15px 45px;
 	}
 }
 
 @media only screen and (max-width: 320px) {
-	#pictureu .webform-client-form-10711,
-	#pictureu .webform-client-form-10474,
-	#pictureu .webform-client-form-10956 {
+	.request-information {
 		width: 100%;
 	}
 }
 
-#pictureu .webform-client-form-10711 .form-actions,
-#pictureu .webform-client-form-10474 .form-actions,
-#pictureu .webform-client-form-10956 .form-actions {
+.request-information .form-actions {
 	padding-left: 0;
 }
 
-#pictureu .webform-client-form-10711 .form-control,
-#pictureu .webform-client-form-10474 .form-control,
-#pictureu .webform-client-form-10956 .form-control {
+.request-information .form-control {
 	width: 93%;
 }
 
-#pictureu .webform-client-form-10711 .btn,
-#pictureu .webform-client-form-10474 .btn,
-#pictureu .webform-client-form-10956 .btn {
+.request-information .btn {
 	height: 50px;
 	width: 320px;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
-	#pictureu .webform-client-form-10711 .btn,
-	#pictureu .webform-client-form-10474 .btn,
-	#pictureu .webform-client-form-10956 .btn {
+	.request-information .btn {
 		width: 97%;
 	}
 }
 
-#pictureu .webform-client-form-10711 .btn-default,
-#pictureu .webform-client-form-10474 .btn-default,
-#pictureu .webform-client-form-10956 .btn-default {
+.request-information .btn-default {
 	background-color: #385443;
 	border: 0;
 	color: #d9bf75;
 	outline: none;
 }
 
-#pictureu .webform-client-form-10711 .btn-default:hover,
-#pictureu .webform-client-form-10474 .btn-default:hover,
-#pictureu .webform-client-form-10956 .btn-default:hover {
+.request-information .btn-default:hover {
 	border: 0;
 	color: #fff;
 	outline: none;
@@ -7106,111 +7117,43 @@ h2.pictureu {
 	position: relative;
 }
 
-#pictureu-pane-1 .media-element-container {
-	height: 1360px;
-}
+/*#pictureu-pane-1 .media-element-container {
+  height: 1360px;
 
-@media screen and (max-width: 1440px) {
-	#pictureu-pane-1 .media-element-container {
-		height: 810px;
-	}
-}
+  @media screen and (max-width: 1440px) {
+    height: 810px;
+  }
 
-@media screen and (max-width: 1024px) {
-	#pictureu-pane-1 .media-element-container {
-		height: 576px;
-	}
-}
+  @media screen and (max-width: 1024px) {
+    height: 576px;
+  }
 
-@media screen and (max-width: 768px) {
-	#pictureu-pane-1 .media-element-container {
-		height: 432px;
-	}
-}
+  @media screen and (max-width: 768px) {
+    height: 432px;
+  }
 
-@media screen and (max-width: 425px) {
-	#pictureu-pane-1 .media-element-container {
-		height: 239px;
-	}
-}
+  @media screen and (max-width: 425px) {
+    height: 239px;
+  }
+}*/
+/*#pictureu-pane-1.img-responsive {
+  clear: both;
+  display: block;
+  height: auto;
+  max-width: 100%;
 
-#pictureu-pane-1.img-responsive {
-	clear: both;
-	display: block;
-	height: auto;
-	max-width: 100%;
-}
+  @media screen and (max-width: 768px) {
+    max-height: 415px;
+  }
 
-@media screen and (max-width: 768px) {
-	#pictureu-pane-1.img-responsive {
-		max-height: 415px;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	#pictureu-pane-1.img-responsive {
-		position: relative;
-		top: -15px;
-	}
-}
-
-.pictureu h1 {
-	color: #fff;
-	float: left;
-	font-size: 48px;
-	font-weight: 900;
-	margin: 10% 45% 0 24%;
-	position: relative;
-	text-align: left;
-	z-index: 5;
-	/*    @media screen and (max-width: 992px) {
-      font-size: 2.5em;
-      font-weight: 600;
-      margin: 15% 40% 0 10%;
-    }*/
-}
-
-@media screen and (max-width: 2400px) {
-	.pictureu h1 {
-		font-size: 66px;
-		margin: 10% 35% 0% 20%;
-	}
-}
-
-@media screen and (max-width: 1550px) {
-	.pictureu h1 {
-		font-size: 3px 0.2em;
-		margin: 15% 40% 0% 5%;
-	}
-}
-
-@media only screen and (max-width: 425px) {
-	.pictureu h1 {
-		font-size: 2em;
-	}
-}
-
-@media only screen and (max-width: 320px) {
-	.pictureu h1 {
-		font-size: 1.5em;
-		margin: 37% 21% 0 5%;
-	}
-}
-
+  @media screen and (min-width: 768px) {
+    position: relative;
+    top: -15px;
+  }
+}*/
 .pictureu .file-image {
 	position: absolute;
 	top: 0;
-}
-
-.pictureu #mini-panel-tu_drone_no_title {
-	position: relative;
-	width: 101%;
-}
-
-@media (min-width: 992px) {
-	.pictureu #mini-panel-tu_drone_no_title {
-		margin-top: 10%;
-	}
 }
 
 .pictureu.see-for-yourself {
@@ -7273,7 +7216,7 @@ h2.pictureu {
 }
 
 #footer.pictureu {
-	padding: 40px 0px 10px;
+	padding: 40px 10px 0 10px;
 }
 
 .ccp-container {
