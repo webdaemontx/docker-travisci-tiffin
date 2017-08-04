@@ -7021,6 +7021,19 @@ fieldset#edit-academic-scholarship legend {
 	}
 }
 
+@media (max-width: 425px) and (min-width: 200px) {
+	.pane-pictureu-hero-top {
+		background-image: url("/profiles/wetkit/themes/wetkit_bootstrap/images/pictureu-hero-xs.jpg");
+		-webkit-background-size: contain;
+		        background-size: contain;
+		background-position: top;
+		height: 245px;
+		width: 100%;
+		margin-top: -30px;
+		padding-bottom: 700px;
+	}
+}
+
 .pane-pictureu-hero-top h1 {
 	color: #fff;
 	font-size: 4em;
@@ -7036,6 +7049,14 @@ fieldset#edit-academic-scholarship legend {
 	}
 }
 
+@media (max-width: 425px) and (min-width: 200px) {
+	.pane-pictureu-hero-top h1 {
+		font-size: 2em;
+		margin: 0 10px;
+		padding-top: 130px;
+	}
+}
+
 .request-information {
 	background-color: rgba(255, 255, 255, 0.85);
 	margin-left: 68%;
@@ -7047,21 +7068,9 @@ fieldset#edit-academic-scholarship legend {
       top: 140px;
       right: 25px;
     }*/
-	/*  }
-
-      .webform-client-form-10711,
-      .webform-client-form-10474,
-      .webform-client-form-10956 {
-        background-color: $white-transparent-85;
-        left: 75%;
-        padding: 5px 10px 15px 25px;
-        position: absolute;
-        top: 0;
-        width: 375px;
-        z-index: 10;*/
 }
 
-@media only screen and (max-width: 960px) and (min-width: 320px) {
+@media only screen and (max-width: 960px) and (min-width: 425px) {
 	.request-information {
 		height: 450px;
 		margin-left: 50%;
@@ -7070,8 +7079,12 @@ fieldset#edit-academic-scholarship legend {
 	}
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 425px) and (min-width: 200px) {
 	.request-information {
+		height: 450px;
+		margin-left: 0;
+		margin-top: 40px;
+		padding: 5px 10px 15px 45px;
 		width: 100%;
 	}
 }
@@ -7180,8 +7193,22 @@ h2.pictureu {
 	text-align: left;
 }
 
+@media (max-width: 425px) {
+	.pictureu.see-for-yourself h2 {
+		font-size: 26px;
+		padding-top: 15px;
+		text-align: center;
+	}
+}
+
 .pictureu.see-for-yourself .pane-content p {
 	font-size: 20px;
+}
+
+@media (max-width: 425px) {
+	.pictureu.see-for-yourself .pane-content p {
+		font-size: 16px;
+	}
 }
 
 .tiffin-logo {
