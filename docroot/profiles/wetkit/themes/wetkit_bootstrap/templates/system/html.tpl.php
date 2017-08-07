@@ -102,35 +102,35 @@
 <!-- Begin Google Goal / Campaign Tracking for specific pages -->
 <?php if (current_path() == 'academics') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'landing-academics' -->
-    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=landing-academics;gid=6131;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=landing-academics;gid=6131;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } elseif (current_path() == 'graduate/welcome') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'welcome' -->
-    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=welcome;gid=6132;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=welcome;gid=6132;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } elseif (current_path() == 'apply-now' || current_path() == 'apply') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'how-to' -->
-    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=how-to;gid=6133;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=how-to;gid=6133;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } elseif (current_path() == 'node/1501') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'schedule-visit' -->
-    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=schedule-visit;gid=6136;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=schedule-visit;gid=6136;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } elseif (current_path() == 'node/1336/done') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'campus-visit' -->
-    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=campus-visit;gid=6137;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script>var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=campus-visit;gid=6137;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } elseif (current_path() == 'node/2946') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'online-app' -->
-    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=online-app;gid=6138;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=online-app;gid=6138;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } elseif (current_path() == 'node/2946/done') { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'online-app-thanks' -->
-    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=online-app-thanks;gid=6139;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=online-app-thanks;gid=6139;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("style", "display:none");x.setAttribute("height", "1");document.body.appendChild(x);</script>
 
 <?php } elseif (drupal_is_front_page()) { ?>
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'main-edu' -->
-    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=main-edu;gid=6142;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+    <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=main-edu;gid=6142;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
 <?php } ?>
 
