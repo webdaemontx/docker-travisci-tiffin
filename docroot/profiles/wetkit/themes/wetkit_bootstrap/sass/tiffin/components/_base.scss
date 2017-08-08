@@ -209,7 +209,7 @@ div.pane-board-members {
 
     &#edit-submitted-degree-type div {
       label {
-        font-size: 34px;
+        font-size: 26px;
         color: #042c18;
         input {
           height: 24px;
@@ -220,7 +220,7 @@ div.pane-board-members {
       }
 
       &:nth-of-type(1) {
-        width: 60%;
+        width: 43%;
         float: left;
         clear: none;
         margin-bottom: 7px;
@@ -230,7 +230,17 @@ div.pane-board-members {
       }
 
       &:nth-of-type(2) {
-        width: 40%;
+        width: 30%;
+        float: left;
+        clear: none;
+        margin-bottom: 0;
+        margin-top: 0;
+        label {
+        }
+      }
+
+      &:nth-of-type(3) {
+        width: 25%;
         float: left;
         clear: none;
         margin-bottom: 0;
