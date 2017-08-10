@@ -240,13 +240,11 @@ div.pane-board-members {
       }
 
       &:nth-of-type(3) {
-        width: 25%;
+        width: fit-content;
         float: left;
         clear: none;
         margin-bottom: 0;
         margin-top: 0;
-        label {
-        }
       }
     }
   }
@@ -265,18 +263,26 @@ div.pane-board-members {
     height: 47px;
     width: 390px;
     background: url('../images/down-triangle.png') no-repeat right;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: $gray-transparent-75;
     background-position-x: 360px;
-    appearance: none;
+    -webkit-appearance: none;
     color: $brand-green-title;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     font-size: 27px;
+
+    @media (max-width: 575px) {
+      background-position-x: 240px;
+    }
   }
   .form-actions {
     width: 10px;
     float: left;
     clear: none;
+
+    @media (max-width: 575px) {
+      padding-left: 2px;
+    }
   }
 }
 
@@ -3066,7 +3072,7 @@ ul {
         }
       }
       &.pane-webform-client-block-1061 {
-        height: 330px !important;
+        height: 375px !important;
       }
     }
     select.form-select {
@@ -3075,6 +3081,7 @@ ul {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       margin-bottom: 16px;
+      margin-top: 25px;
     }
   }
   #mini-panel-homepage_submenu ul {
