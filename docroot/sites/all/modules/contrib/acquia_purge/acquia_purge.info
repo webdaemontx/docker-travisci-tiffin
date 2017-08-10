@@ -42,9 +42,9 @@ files[] = lib/executor/AcquiaPurgeExecutorPageCache.php
 files[] = lib/executor/AcquiaPurgeExecutorAcquia.php
 files[] = lib/executor/AcquiaPurgeExecutorsService.php
 
-; Information added by Drupal.org packaging script on 2017-06-21
-version = "7.x-1.4-beta1"
+; Information added by Drupal.org packaging script on 2017-08-10
+version = "7.x-1.4-beta2"
 core = "7.x"
 project = "acquia_purge"
-datestamp = "1498054446"
+datestamp = "1502359748"
 
