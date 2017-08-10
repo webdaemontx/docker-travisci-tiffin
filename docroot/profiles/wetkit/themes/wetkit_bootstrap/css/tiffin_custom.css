@@ -265,6 +265,7 @@ div.pane-board-members .img-responsive {
 	background-color: rgba(255, 255, 255, 0.75);
 	background-position-x: 360px;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	color: #365543;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
