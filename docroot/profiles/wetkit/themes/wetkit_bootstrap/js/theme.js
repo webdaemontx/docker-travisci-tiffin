@@ -3,9 +3,10 @@
 
  jQuery( '#mini-panel-homepage_submenu' ).addClass( 'sticky-bottom' );
 
-jQuery( '<div id="tiffin_logo"><a href="/" tabindex="-1"><img alt="Tiffin University" src="http://tiffin.edu/sites/default/files/tiffin-logo_0.png"></a></div>' ).prependTo( "body.page-search #navbar .wb-menu div.row" );
-jQuery( '<div id="tiffin_logo"><a href="/" tabindex="-1"><img alt="Tiffin University" src="http://tiffin.edu/sites/default/files/tiffin-logo_0.png"></a></div>' ).prependTo( "body.page-news #navbar .wb-menu div.row" );
+/*jQuery( '<div id="tiffin_logo"><a href="/" tabindex="-1"><img alt="Tiffin University" src="http://tiffin.edu/sites/default/files/tiffin-logo_0.png"></a></div>' ).prependTo( "body.page-search #navbar .wb-menu div.row" );
 
+jQuery( '<div id="tiffin_logo"><a href="/" tabindex="-1"><img alt="Tiffin University" src="http://tiffin.edu/sites/default/files/tiffin-logo_0.png"></a></div>' ).prependTo( "body.page-news #navbar .wb-menu div.row" );
+*/
 jQuery( 'ul[role= "menubar"] li.dropdown a' ).css( 'cursor', 'pointer' );
 jQuery( 'ul[role= "menubar"] li.dropdown a' ).removeClass( 'item' );
 
