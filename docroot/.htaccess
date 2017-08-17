@@ -108,6 +108,11 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} ^pictureu\.tiffin\.edu  [NC]
   RewriteRule ^ http://www.tiffin.edu/pictureu  [L,R]
 
+  RewriteCond %{HTTP_HOST} ^experience\.tiffin\.edu  [NC]
+  RewriteRule ^ http://www.tiffin.edu/visit/open-house  [L,R]
+
+  RewriteCond %{HTTP_HOST} ^personal\.tiffin\.edu  [NC]
+  RewriteRule ^ http://www.tiffin.edu/visit/schedule  [L,R]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
