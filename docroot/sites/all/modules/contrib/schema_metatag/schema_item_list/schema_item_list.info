@@ -1,0 +1,13 @@
+name = "Schema.org: ItemList"
+description = "Adds Schema.org/ItemList to the JSON LD array, for Views."
+package = SEO
+core = 7.x
+dependencies[] = schema_metatag
+dependencies[] = metatag_views
+
+; Information added by Drupal.org packaging script on 2017-08-04
+version = "7.x-1.0-rc1"
+core = "7.x"
+project = "schema_metatag"
+datestamp = "1501851549"
+
