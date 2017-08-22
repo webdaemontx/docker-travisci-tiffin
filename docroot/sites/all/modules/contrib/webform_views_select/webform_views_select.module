@@ -27,7 +27,8 @@ function webform_views_select_webform_select_options_info() {
         if ($view->display[$id]->display_plugin == 'webform_select') {
           if (!empty($view->human_name)) {
             $viewname = $view->human_name;
-          } else {
+          }
+          else {
             $viewname = $view->name;
           }
           $items[$view->name . '-' . $id] = array(
@@ -64,38 +65,17 @@ function webform_views_select_options($component, $flat, $filter, $args = array(
 }
 
 /**
- * Internal function to get the results
+ * Internal function to get the results.
  */
 function webform_views_select_options_from_view($view, $flat = FALSE) {
   $view->pre_execute();
   $view->render();
 
   // Check if the view was built correctly.
-  if (! $view->built) {
+  if (!$view->built) {
     watchdog('webform_views_select', 'There was an error while building display %display of view %view', array('%view' => $view->name, '%display' => $view->current_display), WATCHDOG_ERROR);
     return array();
   }
 
-  // Render the fields.
-  $results = array();
-  if (!empty($view->result) || $view->style_plugin->even_empty()) {
-    $results = $view->style_plugin->render_fields($view->result);
-  }
-
-  // Do not group if a flat list is requested.
-  if ($flat) {
-    $grouping_options = array();
-  }
-  else {
-    $grouping_options = $view->style_options['grouping'];
-  }
-
-  // Group the rows according to the grouping instructions, if specified.
-  $sets = $view->style_plugin->render_grouping($results, $grouping_options, TRUE);
-  $rows = $view->style_plugin->render_grouping_sets($sets);
-  if (empty($grouping_options)) {
-    $rows = $rows[''];
-  }
-
-  return $rows;
+  return $view->display_handler->execute($flat);
 }
