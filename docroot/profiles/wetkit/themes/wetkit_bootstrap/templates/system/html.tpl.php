@@ -132,6 +132,34 @@
     <!-- Tiffin University JavaScript Conversion; Goal ID: 'main-edu' -->
     <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=main-edu;gid=6142;ord="+ordnumber+";v=117";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");x.setAttribute("style", "display:none");document.body.appendChild(x);</script>
 
+  <!--=============================================================
+
+  Tiffin University Conversion Tracking / JS
+
+  -------------------------------------------------------------
+
+  @property Tiffin Website
+
+  @created 08/02/2017
+
+  @author lbofill@chegg.com
+
+  @documentation https://barometric.atlassian.net/wiki/pages/viewpage.action?pageId=491671
+
+
+  =============================================================
+
+  Desktop Conversion JS Pixels:
+
+  --------------------------------------------------------------->
+<?php } elseif (current_path() == ('node/246' || 'about/locations')) { ?>
+  <!-- Tiffin University JavaScript Conversion; Goal ID: 'degreecomp-welcome' -->
+  <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=degreecomp-welcome;gid=6781;ord="+ordnumber+";v=118";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
+<?php } elseif (current_path() == ('degreecomp/welcome')) { ?>
+  <!-- Tiffin University JavaScript Conversion; Goal ID: 'locations' -->
+  <script type="text/javascript">var ordnumber = Math.random() * 10000000000000;var sscUrl = ("https:" == document.location.protocol ? "https://" : "http://") + "trkn.us/pixel/conv/ppt=1098;g=locations;gid=6782;ord="+ordnumber+";v=118";var x = document.createElement("IMG");x.setAttribute("src", sscUrl);x.setAttribute("width", "1");x.setAttribute("height", "1");document.body.appendChild(x);</script>
+
 <?php } ?>
 
 <ul id="wb-tphp">
