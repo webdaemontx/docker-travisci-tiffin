@@ -137,6 +137,13 @@ if($path != 'pictureu'): ?>
     </div>
   </nav>
   <?php print render($page['header']); ?>
+  <nav class="site-breadcrumbs" role="navigation" property="breadcrumb">
+    <div class="<?php print $container_class; ?>">
+      <div class="row">
+        <?php print render($breadcrumb); ?>
+      </div>
+    </div>
+  </nav>
 </header>
 <?php endif; ?>
   <?php if($path === 'pictureu'): ?>
