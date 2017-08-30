@@ -43,3 +43,9 @@ docroot/profiles/wetkit/themes/wetkit_bootstrap/package.json
 */package.json
 */package-lock.json
 */vendor/*
+
+docroot/visual-monitor/
+
+docroot/behat/
+
+docroot/\.shoov\.yml
