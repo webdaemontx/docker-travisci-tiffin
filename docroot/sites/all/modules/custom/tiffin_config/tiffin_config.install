@@ -286,3 +286,16 @@ function tiffin_config_update_7319($sandbox) {
     }
   }
 }
+
+/**
+ * Added LDAP Module.
+ */
+function tiffin_config_update_7320($sandbox) {
+  $modules = array("ldap", "ldap_views", "ldap_user", "ldap_test", "ldap_servers", "ldap_query", "ldap_help", "ldap_authorization_drupal_role", "ldap_authorization", "ldap_authentication");
+
+  foreach ($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+    }
+  }
+}
