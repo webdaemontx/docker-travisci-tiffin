@@ -32,7 +32,7 @@ function webform_views_select_webform_select_options_info() {
             $viewname = $view->name;
           }
           $items[$view->name . '-' . $id] = array(
-            'title' => t('Views') . ': ' . $viewname . ' - ' . $display->display_title,
+            'title' => t('Views: @view - @display', array('@view' => $viewname, '@display' => $display->display_title)),
             'options callback' => 'webform_views_select_options',
             'options arguments' => array('view' => $view->name, 'display_id' => $id),
           );
@@ -57,9 +57,15 @@ function webform_views_select_options($component, $flat, $filter, $args = array(
     $args = $filter;
   }
 
-  // Get the view and execute it.
+  // Get the view and display.
   $view = views_get_view($args['view']);
   $view->set_display($args['display_id']);
+
+  // Set view arguments if present (Might be useful when used in a form alter
+  // function, seee README.txt for an example).
+  if (isset($args['view_args'])) {
+    $view->set_arguments($args['view_args']);
+  }
 
   return webform_views_select_options_from_view($view, $flat);
 }

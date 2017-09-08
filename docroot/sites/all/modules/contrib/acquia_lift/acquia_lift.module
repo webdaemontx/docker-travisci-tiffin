@@ -110,6 +110,7 @@ function acquia_lift_page_build(&$page) {
   }
   _acquia_lift_add_meta_tag('contentReplacementMode', variable_get('acquia_lift_content_replacement_mode', 'untrusted'));
   _acquia_lift_add_meta_tag('contentOrigin', variable_get('acquia_lift_content_origin', ''));
+  _acquia_lift_add_meta_tag('userAccess', variable_get('acquia_lift_user_access', ''));
 
   // If there are querystring parameters present corresponding to the configured
   // identity params, we add the identity and identity type to the meta tags.
@@ -138,15 +139,12 @@ function acquia_lift_page_build(&$page) {
 
   // Add the lift js bootstrap loader
   $js_file = $assets_url . '/lift.js';
-  $attached['js'] = array(
-    'type' => 'file',
-    'file' => $js_file,
+  $attached['js'][$js_file] = array(
+    'type' => 'external',
     'weight' => JS_DEFAULT - 10,
   );
-  $module_path = drupal_get_path('module', 'acquia_lift');
-  $attached['css'] = array(
-    $module_path . '/css/acquia_lift.css' => array(),
-  );
+  $css_path = drupal_get_path('module', 'acquia_lift') . '/css/acquia_lift.css';
+  $attached['css'][$css_path] = array();
   $page['page_top']['acquia_lift'] = array(
     '#attached' => $attached
   );

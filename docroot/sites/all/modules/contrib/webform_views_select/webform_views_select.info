@@ -8,9 +8,9 @@ files[] = WebformViewsSelectStyle.inc
 files[] = WebformViewsSelectHandler.inc
 files[] = tests/webform_views_select.test
 
-; Information added by Drupal.org packaging script on 2017-08-11
-version = "7.x-1.0-beta4"
+; Information added by Drupal.org packaging script on 2017-08-29
+version = "7.x-1.0-rc2"
 core = "7.x"
 project = "webform_views_select"
-datestamp = "1502450646"
+datestamp = "1503994751"
 
