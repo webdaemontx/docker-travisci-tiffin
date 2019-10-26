@@ -3,7 +3,7 @@
   "version": "7.3.0-dev",
   "private": true,
   "devDependencies": {
-    "bower": "~1.3.0",
+    "bower": ">=1.8.8",
     "glob": "^5.0.14",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
@@ -35,49 +35,41 @@
     "jsdelivr": "https://api.jsdelivr.com/v1/bootstrap/libraries"
   },
   "githooks": {
-    "post-checkout": [
-      {
-        "files": [
-          "package.json",
-          "Gruntfile.js",
-          ".githooks.js.hbs",
-          "grunt/**/*"
-        ],
-        "commands": "npm install",
-        "matchAll": false
-      }
-    ],
-    "post-merge": [
-      {
-        "files": [
-          "package.json",
-          "Gruntfile.js",
-          ".githooks.js.hbs",
-          "grunt/**/*"
-        ],
-        "commands": "npm install",
-        "matchAll": false
-      }
-    ],
-    "pre-commit": [
-      {
-        "files": "starterkits/less/less/**/*.less",
-        "commands": [
-          "grunt compile"
-        ],
-        "matchAll": false,
-        "staged": true
-      }
-    ],
-    "post-commit": [
-      {
-        "files": "css/**/*.css",
-        "commands": [
-          "git add css/**/*.css",
-          "git commit -m \"Automated commit: grunt compile (CSS)\n\n$(git log -1 --pretty=%B)\" --author=\"$(git config user.name) <$(git config user.email)>\""
-        ],
-        "matchAll": false
-      }
-    ]
+    "post-checkout": [{
+      "files": [
+        "package.json",
+        "Gruntfile.js",
+        ".githooks.js.hbs",
+        "grunt/**/*"
+      ],
+      "commands": "npm install",
+      "matchAll": false
+    }],
+    "post-merge": [{
+      "files": [
+        "package.json",
+        "Gruntfile.js",
+        ".githooks.js.hbs",
+        "grunt/**/*"
+      ],
+      "commands": "npm install",
+      "matchAll": false
+    }],
+    "pre-commit": [{
+      "files": "starterkits/less/less/**/*.less",
+      "commands": [
+        "grunt compile"
+      ],
+      "matchAll": false,
+      "staged": true
+    }],
+    "post-commit": [{
+      "files": "css/**/*.css",
+      "commands": [
+        "git add css/**/*.css",
+        "git commit -m \"Automated commit: grunt compile (CSS)\n\n$(git log -1 --pretty=%B)\" --author=\"$(git config user.name) <$(git config user.email)>\""
+      ],
+      "matchAll": false
+    }]
   }
 }
